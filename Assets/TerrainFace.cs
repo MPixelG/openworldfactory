@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TerrainFace
 {
+    //A TerrainFace consist of a mesh (octahedron 8 Triangles as faces 12 edges and 6 vertices) including multiple vertices (V3), texture coordinates (uvs) and a list of all triangles in the mesh     
     Mesh _mesh;
     int _resolution;
     private Vector3[] _vertices;
@@ -13,6 +14,8 @@ public class TerrainFace
         this._vertices = vertices;
         
     }
+    //depending on the resolution given the triangles in the mesh are broken down into smaller bits -> Subdivides 1 triangle into res² smaller ones
+    //method returns a tuple of vertices array, triangle index array
     public (Vector3[], int[]) TriangleFragmentation(Vector3[] triangle, int res)
     {
         Vector3[] vertices = new Vector3[(res + 1)*(res + 2) / 2];
@@ -20,15 +23,16 @@ public class TerrainFace
         vertices[0] = triangle[0];
         vertices[(res*(res+1)/2)-1] = triangle[1];
         vertices[res*(res-1)/2] = triangle[2];
-        Vector3 u = triangle[0];
-        Vector3 r = triangle[1];
-        Vector3 l = triangle[2];
+        Vector3 u = triangle[0]; //top
+        Vector3 r = triangle[1]; //right base
+        Vector3 l = triangle[2]; // left base
         int n = 0;
         int m = 0;
         for (int i = 1; i < res - 1; i++)
         {
             n += i + 1;
             m += i;
+            //lerp linear interpolation (start, end, weight between 0 and 1) 
             vertices[n] = Vector3.Lerp(u, r, (float)i/res);
             vertices[(res*(res-1)/2)+i] = Vector3.Lerp(l, r, (float)i/res);
             vertices[m] = Vector3.Lerp(u, l, (float)i/res);
@@ -64,6 +68,7 @@ public class TerrainFace
         return (vertices, triangles);
     }
 
+    //Projects the subdivided face onto a unit sphere
     public void ConstructMesh()
     {
         /*Vector3[] vertices = new Vector3[_resolution * _resolution];
@@ -95,6 +100,7 @@ public class TerrainFace
         Vector3[] pointOnOctasphere = pointOnOctahedron;
         for (int i = 0; i < pointOnOctasphere.Length; i++)
         {
+            //normalise onto unit sphere
             pointOnOctasphere[i] = pointOnOctasphere[i].normalized;
         }
 
