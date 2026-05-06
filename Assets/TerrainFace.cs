@@ -4,23 +4,69 @@ public class TerrainFace
 {
     Mesh _mesh;
     int _resolution;
-    Vector3 _localUp;
-    Vector3 _axisA;
-    Vector3 _axisB;
+    private Vector3[] _vertices;
 
-    public TerrainFace(Mesh mesh, int resolution, Vector3 localUp)
+    public TerrainFace(Mesh mesh, int resolution, Vector3[] vertices)
     {
         this._mesh = mesh;
         this._resolution = resolution;
-        this._localUp = localUp;
+        this._vertices = vertices;
+        
+    }
+    public (Vector3[], int[]) TriangleFragmentation(Vector3[] triangle, int res)
+    {
+        Vector3[] vertices = new Vector3[(res + 1)*(res + 2) / 2];
+        int[] triangles = new int[res * res*3];
+        vertices[0] = triangle[0];
+        vertices[(res*(res+1)/2)-1] = triangle[1];
+        vertices[res*(res-1)/2] = triangle[2];
+        Vector3 u = triangle[0];
+        Vector3 r = triangle[1];
+        Vector3 l = triangle[2];
+        int n = 0;
+        int m = 0;
+        for (int i = 1; i < res - 1; i++)
+        {
+            n += i + 1;
+            m += i;
+            vertices[n] = Vector3.Lerp(u, r, (float)i/res);
+            vertices[(res*(res-1)/2)+i] = Vector3.Lerp(l, r, (float)i/res);
+            vertices[m] = Vector3.Lerp(u, l, (float)i/res);
+            if (i != 1)
+            {
+                for (int j = 1; j < i - 1; j++)
+                {
+                    vertices[m+j] =  Vector3.Lerp(vertices[m],vertices[n], (float)j/i);
+                }
+            }
+        }
 
-        _axisA = new Vector3(localUp.y, localUp.z, localUp.x);
-        _axisB = Vector3.Cross(localUp, _axisA);
+        int n2 = 1;
+        int triCount = 0;
+        for (int i = 0; i < (res * (res - 1) / 2) - 1; i++)
+        {
+            triangles[triCount] = i;
+            triangles[triCount + 1] = i + n2+1;
+            triangles[triCount + 2] = i + n2;
+            triCount+=3;
+            if (i != (n2 * (n2 + 1) / 2) - 1)
+            {
+                triangles[triCount] = i;
+                triangles[triCount + 1] = i + 1;
+                triangles[triCount + 2] = i + n2 + 1;
+                triCount += 3;
+            }
+            else
+            {
+                n2++;
+            }
+        }
+        return (vertices, triangles);
     }
 
     public void ConstructMesh()
     {
-        Vector3[] vertices = new Vector3[_resolution * _resolution];
+        /*Vector3[] vertices = new Vector3[_resolution * _resolution];
         int[] triangles = new int[(_resolution-1) * (_resolution-1) * 6];
         int triIndex = 0;
         for (int y = 0; y < _resolution; y++)
@@ -43,11 +89,18 @@ public class TerrainFace
                     triIndex += 6;
                 }
             }
+        }*/
+        (Vector3[],int[]) fragmentedTriangles = TriangleFragmentation(_vertices, _resolution);
+        Vector3[] pointOnOctahedron = fragmentedTriangles.Item1;
+        Vector3[] pointOnOctasphere = pointOnOctahedron;
+        for (int i = 0; i < pointOnOctasphere.Length; i++)
+        {
+            pointOnOctasphere[i] = pointOnOctasphere[i].normalized;
         }
 
         _mesh.Clear();
-        _mesh.vertices = vertices;
-        _mesh.triangles = triangles;
+        _mesh.vertices = pointOnOctahedron;
+        _mesh.triangles = fragmentedTriangles.Item2;
         _mesh.RecalculateNormals();
     }
 }
