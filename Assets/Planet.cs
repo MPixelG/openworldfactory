@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
-    [Range(2,256)]
+    [Range(1,256)]
     public int resolution = 10;
     [SerializeField, HideInInspector]
     private MeshFilter[] meshFilters;
@@ -17,15 +17,26 @@ public class Planet : MonoBehaviour
 
     void Initialize()
     {
+        int triCount = 0;
         if (meshFilters == null || meshFilters.Length == 0)
         {
-            meshFilters = new MeshFilter[6];
+            meshFilters = new MeshFilter[8];
         }
-        _terrainFaces = new TerrainFace[6];
+        _terrainFaces = new TerrainFace[8];
         
-        Vector3[] directions = {Vector3.up, Vector3.down, Vector3.left, Vector3.right, Vector3.forward, Vector3.back};
+        Vector3[] vertices =
+        {
+            Vector3.up,Vector3.right,Vector3.forward,
+            Vector3.up,Vector3.back,Vector3.right,
+            Vector3.up,Vector3.left,Vector3.back,
+            Vector3.up,Vector3.forward,Vector3.left,
+            Vector3.forward,Vector3.right,Vector3.down,
+            Vector3.right,Vector3.back,Vector3.down,
+            Vector3.back,Vector3.left,Vector3.down,
+            Vector3.left,Vector3.forward,Vector3.down
+        };
         
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 8; i++)
         {
             if (meshFilters[i] == null)
             {
@@ -35,8 +46,9 @@ public class Planet : MonoBehaviour
                 meshFilters[i] = meshObj.AddComponent<MeshFilter>();
                 meshFilters[i].sharedMesh = new Mesh();
             }
-
-            _terrainFaces[i] = new TerrainFace(meshFilters[i].sharedMesh, resolution, directions[i]);
+            Vector3[] vert = {vertices[triCount],vertices[triCount+1],vertices[triCount+2]};
+            triCount += 3;
+            _terrainFaces[i] = new TerrainFace(meshFilters[i].sharedMesh, resolution, vert);
         }
     }
 
