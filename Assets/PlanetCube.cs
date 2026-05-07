@@ -2,13 +2,16 @@ using UnityEngine;
 
 public class PlanetCube : MonoBehaviour
 {
+    // Controls how detailed each cube face mesh is
     [Range(2,256)]
     public int resolution = 10;
     [SerializeField, HideInInspector]
     
     private MeshFilter[] meshFilters;
+    // One TerrainFace per cube side (6 total)
     private TerrainFace[]  _terrainFaces;
-
+    
+    // Called automatically in editor when values change
     private void OnValidate()
     {
         Initialize();
@@ -17,27 +20,36 @@ public class PlanetCube : MonoBehaviour
 
     void Initialize()
     {
+        // Ensure we always have 6 mesh slots (cube faces)
         if (meshFilters == null || meshFilters.Length != 6)
         {
             meshFilters = new MeshFilter[6];
         }
         _terrainFaces = new TerrainFace[6];
+        
+        // Directions for each cube face
         Vector3[] directions = {Vector3.up, Vector3.down, Vector3.left, Vector3.right,  Vector3.forward, Vector3.back};
         
         for (int i = 0; i < 6; i++)
         {
+            // Create mesh objects if they don't exist yet
             if (meshFilters[i] == null)
             {
                 GameObject meshObj = new GameObject("mesh");
+                // Parent meshes to the planet object
                 meshObj.transform.parent = transform;
+                // Add renderer + material
                 meshObj.AddComponent<MeshRenderer>().sharedMaterial = new Material(Shader.Find("Standard"));
+                // Add mesh filter with empty mesh
                 meshFilters[i] = meshObj.AddComponent<MeshFilter>();
                 meshFilters[i].sharedMesh = new Mesh();
             }
+            // Create a terrain face pointing in one cube direction
             _terrainFaces[i] = new TerrainFace(meshFilters[i].sharedMesh, resolution, directions[i]);
         }
     }
-
+    
+    // Builds all 6 cube faces
     void GenerateMesh()
     {
         foreach (TerrainFace face in _terrainFaces)
