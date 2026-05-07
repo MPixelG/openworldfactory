@@ -18,23 +18,23 @@ public class TerrainFace
         Vector3[] vertices = new Vector3[(res + 1)*(res + 2) / 2];
         int[] triangles = new int[res * res*3];
         vertices[0] = triangle[0];
-        vertices[(res*(res+1)/2)-1] = triangle[1];
-        vertices[res*(res-1)/2] = triangle[2];
+        vertices[((res+1)*(res+2)/2)-1] = triangle[1];
+        vertices[res*(res+1)/2] = triangle[2];
         Vector3 u = triangle[0];
         Vector3 r = triangle[1];
         Vector3 l = triangle[2];
         int n = 0;
         int m = 0;
-        for (int i = 1; i < res - 1; i++)
+        for (int i = 1; i < res; i++)
         {
             n += i + 1;
             m += i;
-            vertices[n] = Vector3.Lerp(u, r, (float)i/res);
-            vertices[(res*(res-1)/2)+i] = Vector3.Lerp(l, r, (float)i/res);
-            vertices[m] = Vector3.Lerp(u, l, (float)i/res);
+            vertices[n] = Vector3.Lerp(u,r, (float)i/res);
+            vertices[(res*(res+1)/2)+i] = Vector3.Lerp(l,r, (float)i/res);
+            vertices[m] = Vector3.Lerp(u,l, (float)i/res);
             if (i != 1)
             {
-                for (int j = 1; j < i - 1; j++)
+                for (int j = 1; j < i; j++)
                 {
                     vertices[m+j] =  Vector3.Lerp(vertices[m],vertices[n], (float)j/i);
                 }
@@ -53,7 +53,7 @@ public class TerrainFace
             {
                 triangles[triCount] = i;
                 triangles[triCount + 1] = i + 1;
-                triangles[triCount + 2] = i + n2 + 1;
+                triangles[triCount + 2] = i + n2+1;
                 triCount += 3;
             }
             else
@@ -92,11 +92,6 @@ public class TerrainFace
         }*/
         (Vector3[],int[]) fragmentedTriangles = TriangleFragmentation(_vertices, _resolution);
         Vector3[] pointOnOctahedron = fragmentedTriangles.Item1;
-        Vector3[] pointOnOctasphere = pointOnOctahedron;
-        for (int i = 0; i < pointOnOctasphere.Length; i++)
-        {
-            pointOnOctasphere[i] = pointOnOctasphere[i].normalized;
-        }
 
         _mesh.Clear();
         _mesh.vertices = pointOnOctahedron;
