@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
-    [Range(1,361)]
+    [Range(1,256)]
     public int resolution = 10;
     [SerializeField, HideInInspector]
-    //
+    
     private MeshFilter[] meshFilters;
     private TerrainFace[]  _terrainFaces;
 
@@ -24,7 +24,6 @@ public class Planet : MonoBehaviour
             meshFilters = new MeshFilter[8];
         }
         _terrainFaces = new TerrainFace[8];
-        
         Vector3[] vertices =
         {
             Vector3.up,Vector3.right,Vector3.forward,
