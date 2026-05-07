@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
-    [Range(1,256)]
+    [Range(1,361)]
     public int resolution = 10;
     [SerializeField, HideInInspector]
     private MeshFilter[] meshFilters;
@@ -18,7 +18,7 @@ public class Planet : MonoBehaviour
     void Initialize()
     {
         int triCount = 0;
-        if (meshFilters == null || meshFilters.Length == 0)
+        if (meshFilters == null || meshFilters.Length != 8)
         {
             meshFilters = new MeshFilter[8];
         }
