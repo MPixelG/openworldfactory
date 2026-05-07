@@ -6,6 +6,7 @@ public class Planet : MonoBehaviour
     [Range(1,361)]
     public int resolution = 10;
     [SerializeField, HideInInspector]
+    //
     private MeshFilter[] meshFilters;
     private TerrainFace[]  _terrainFaces;
 
