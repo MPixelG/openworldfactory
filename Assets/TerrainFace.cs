@@ -41,55 +41,49 @@ public class TerrainFace
         Vector3[] vertices = new Vector3[(res + 1)*(res + 2) / 2];
         // Each subdivision creates small triangles
         int[] triangles = new int[res * res*3];
-        // Set corner vertices
-        vertices[0] = triangle[2];
-        vertices[((res+1)*(res+2)/2)-1] = triangle[1];
-        vertices[res*(res+1)/2] = triangle[0];
-        Vector3 u = triangle[2];
-        Vector3 r = triangle[1];
-        Vector3 l = triangle[0];
-        int n = 0;
-        int m = 0;
-        // Generate rows of interpolated vertices
-        for (int i = 1; i < res; i++)
+        // Original triangle corners.
+        Vector3 a = triangle[2];
+        Vector3 b = triangle[1];
+        Vector3 c = triangle[0];
+        // Distance between subdivision steps in barycentric space.
+        float step = 1f / res;
+        int vertexIndex = 0;
+        int indexPos = 0;
+        // Generate all subdivided vertices row by row.
+        // Uses barycentric interpolation to stay inside the triangle.
+        for (int row = 0; row <= res; row++)
         {
-            n += i + 1;
-            m += i;
-            // Edge interpolation
-            vertices[n] = Vector3.Lerp(u,r, (float)i/res);
-            vertices[(res*(res+1)/2)+i] = Vector3.Lerp(l,r, (float)i/res);
-            vertices[m] = Vector3.Lerp(u,l, (float)i/res);
-            // Fill inner vertices between edges
-            if (i != 1)
+            for (int col = 0; col <= res-row; col++)
             {
-                for (int j = 1; j < i; j++)
-                {
-                    vertices[m+j] =  Vector3.Lerp(vertices[m],vertices[n], (float)j/i);
-                }
-            }
+                float u = col*step;
+                float v = row*step;
+                // Interpolate between triangle corners.
+                vertices[vertexIndex++] = (1f-u-v)*a+u*b+v*c;
+            }  
         }
-        // Build triangle indices
-        int n2 = 1;
-        int triCount = 0;
-        for (int i = 0; i < ((res) * (res + 1) / 2); i++)
+        // Converts triangular grid coordinates (row, col)
+        // into a flat array index.
+        int VertexIndex(int row, int col)
         {
-            // First triangle
-            triangles[triCount] = i;
-            triangles[triCount + 1] = i + n2+1;
-            triangles[triCount + 2] = i + n2;
-            triCount+=3;
-            // Second triangle (except at row edges)
-            if (i != (n2 * (n2 + 1) / 2) - 1)
+            return row * (res + 1) - row * (row - 1) / 2 + col;
+        }
+        // Build triangle indices for the mesh.
+        for (int row = 0; row < res; row++)
+        {
+            for (int col = 0; col < res-row; col++)
             {
-                triangles[triCount] = i;
-                triangles[triCount + 1] = i + 1;
-                triangles[triCount + 2] = i + n2+1;
-                triCount += 3;
-            }
-            else
-            {
-                n2++;
-            }
+                // First triangle in the current grid cell.
+                triangles[indexPos++] =  VertexIndex(row, col);
+                triangles[indexPos++] = VertexIndex(row, col+1);
+                triangles[indexPos++] = VertexIndex(row+1, col);
+                // Second triangle (if the cell is not on the edge).
+                if (col+1<res-row)
+                {
+                    triangles[indexPos++] = VertexIndex(row, col+1);
+                    triangles[indexPos++] = VertexIndex(row+1, col+1);
+                    triangles[indexPos++] = VertexIndex(row+1, col);
+                }
+            } 
         }
         return (vertices, triangles);
     }
