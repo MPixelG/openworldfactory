@@ -1,28 +1,49 @@
 
+using NUnit.Framework.Constraints;
 using UnityEngine;
 
+[ExecuteAlways] //it should also run in editor mode otherwise prefab collaboration could be a problem
 public class Planet : MonoBehaviour
 {
+    //changes flag
+    bool _needsGeneration = false;
     // Controls mesh detail level
     [Range(1,256)]
     public int resolution = 10;
-    [SerializeField, HideInInspector]
     
+    [SerializeField, HideInInspector]
     private MeshFilter[] meshFilters;
     // Stores all terrain faces of the planet
     private TerrainFace[]  _terrainFaces;
     
     // Automatically rebuilds the planet
     // whenever values change in the Inspector
+    // Called automatically in editor when values change
     private void OnValidate()
     {
-        Initialize();
-        GenerateMesh();
+        //Just set the flag, do NO structural work here
+        if (gameObject.activeInHierarchy)
+        {
+            _needsGeneration = true;
+        }
+    }
+
+    private void Update()
+    {
+        //update is safe for structural change to meshes etc
+        if (_needsGeneration)
+        {
+            Initialize();
+            GenerateMesh();
+            
+            // Reset the flag so it only runs once per change
+            _needsGeneration = false; 
+        }
     }
 
     void Initialize()
     {
-        int triCount = 0;
+      
         // Ensure we have 8 mesh filters
         // (one for each octahedron face)
         if (meshFilters == null || meshFilters.Length != 8)
@@ -46,11 +67,21 @@ public class Planet : MonoBehaviour
         
         // Create all 8 triangle faces
         for (int i = 0; i < 8; i++)
-        {
-            // Create mesh objects if they don't exist yet
+        {   //name the faces for unity to know which face is generated and referenced
+            string faceName = $"OctaFace_{i}";
+            // reconnect to reference 
             if (meshFilters[i] == null)
             {
-                GameObject meshObj = new GameObject("mesh");
+                Transform child = transform.Find(faceName);
+                if (child != null)
+                {
+                    meshFilters[i] = child.GetComponent<MeshFilter>();
+                }
+            }
+            //if they still does not exist meaning there is no reference
+            if (meshFilters[i] == null)
+            {
+                GameObject meshObj = new GameObject(faceName);
                 // Parent meshes to the planet object
                 meshObj.transform.parent = transform;
                 // Add renderer + material
@@ -59,9 +90,8 @@ public class Planet : MonoBehaviour
                 meshFilters[i] = meshObj.AddComponent<MeshFilter>();
                 meshFilters[i].sharedMesh = new Mesh();
             }
-            // Get the 3 vertices for this triangle face
-            Vector3[] vert = {vertices[triCount],vertices[triCount+1],vertices[triCount+2]};
-            triCount += 3;
+            // Get the 3 vertices for this triangle face skipped triCount for i variable
+            Vector3[] vert = {vertices[i*3],vertices[i*3+1],vertices[i*3+2]};
             // Create terrain face for this triangle
             _terrainFaces[i] = new TerrainFace(meshFilters[i].sharedMesh, resolution, vert);
         }
