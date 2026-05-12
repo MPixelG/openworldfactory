@@ -1,7 +1,10 @@
 using UnityEngine;
 
+[ExecuteAlways] //it should also run in editor mode otherwise prefab collaboration could be a problem
 public class PlanetCube : MonoBehaviour
 {
+    //tracks when changes are happening
+    private bool _needsGeneration = false;
     // Controls how detailed each cube face mesh is
     [Range(2,256)]
     public int resolution = 10;
@@ -12,12 +15,30 @@ public class PlanetCube : MonoBehaviour
     private TerrainFace[]  _terrainFaces;
     
     // Called automatically in editor when values change
-    private void OnValidate()
+   private void OnValidate()
     {
-        Initialize();
-        GenerateMesh();
+        //Just set the flag, do NO structural work here
+        if (gameObject.activeInHierarchy)
+        {
+            _needsGeneration = true;
+        }
     }
 
+    private void Update()
+    {
+        //update is safe for structural change to meshes etc
+        if (_needsGeneration)
+        {
+            Initialize();
+            GenerateMesh();
+            
+            // Reset the flag so it only runs once per change
+            _needsGeneration = false; 
+        }
+    }
+    
+    
+    
     void Initialize()
     {
         // Ensure we always have 6 mesh slots (cube faces)
@@ -25,17 +46,29 @@ public class PlanetCube : MonoBehaviour
         {
             meshFilters = new MeshFilter[6];
         }
+
         _terrainFaces = new TerrainFace[6];
-        
+
         // Directions for each cube face
-        Vector3[] directions = {Vector3.up, Vector3.down, Vector3.left, Vector3.right,  Vector3.forward, Vector3.back};
-        
+        Vector3[] directions = { Vector3.up, Vector3.down, Vector3.left, Vector3.right, Vector3.forward, Vector3.back };
+
         for (int i = 0; i < 6; i++)
         {
             // Create mesh objects if they don't exist yet
             if (meshFilters[i] == null)
             {
-                GameObject meshObj = new GameObject("mesh");
+                //try to find existing children first
+                Transform child = transform.Find("mesh_" + i);
+                if (child != null)
+                {
+                    meshFilters[i] = child.GetComponent<MeshFilter>();
+                }
+            }
+
+
+            if (meshFilters[i] == null)
+            {
+                GameObject meshObj = new GameObject("mesh_" + i);
                 // Parent meshes to the planet object
                 meshObj.transform.parent = transform;
                 // Add renderer + material
@@ -44,17 +77,20 @@ public class PlanetCube : MonoBehaviour
                 meshFilters[i] = meshObj.AddComponent<MeshFilter>();
                 meshFilters[i].sharedMesh = new Mesh();
             }
+
             // Create a terrain face pointing in one cube direction
             _terrainFaces[i] = new TerrainFace(meshFilters[i].sharedMesh, resolution, directions[i]);
         }
     }
     
+
     // Builds all 6 cube faces
     void GenerateMesh()
     {
+        if (_terrainFaces == null) return;
         foreach (TerrainFace face in _terrainFaces)
         {
             face.ConstructMesh();
-        } 
+        }
     }
-}
+    }

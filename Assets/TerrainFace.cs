@@ -125,6 +125,9 @@ public class TerrainFace
     // Builds the final mesh and applies it to Unity's Mesh object
     public void ConstructMesh()
     {
+        // Safety check 
+        if (_mesh == null) return;
+        
         Vector3[] pointOnUnitSphere;
         int[] triangles;
         if (!_cubeMesh)
@@ -150,7 +153,8 @@ public class TerrainFace
         _mesh.Clear();
         _mesh.vertices = pointOnUnitSphere;
         _mesh.triangles = triangles;
-        // Recalculate lighting normals
+        // Recalculate lighting normals and mesh boundaries
         _mesh.RecalculateNormals();
+        _mesh.RecalculateBounds();
     }
 }
