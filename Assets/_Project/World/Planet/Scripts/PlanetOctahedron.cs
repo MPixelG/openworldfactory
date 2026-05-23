@@ -1,12 +1,11 @@
 
-using NUnit.Framework.Constraints;
 using UnityEngine;
 
 [ExecuteAlways] //it should also run in editor mode otherwise prefab collaboration could be a problem
 public class Planet : MonoBehaviour
 {
     //changes flag
-    bool _needsGeneration = false;
+    private bool _needsGeneration;
     // Controls mesh detail level
     [Range(1,256)]
     public int resolution = 10;
@@ -81,9 +80,14 @@ public class Planet : MonoBehaviour
             //if they still does not exist meaning there is no reference
             if (meshFilters[i] == null)
             {
-                GameObject meshObj = new GameObject(faceName);
-                // Parent meshes to the planet object
-                meshObj.transform.parent = transform;
+                GameObject meshObj = new GameObject(faceName)
+                {
+                    transform =
+                    {
+                        // Parent meshes to the planet object
+                        parent = transform
+                    }
+                };
                 // Add renderer + material
                 meshObj.AddComponent<MeshRenderer>().sharedMaterial = new Material(Shader.Find("Standard"));
                 // Add mesh filter with empty mesh

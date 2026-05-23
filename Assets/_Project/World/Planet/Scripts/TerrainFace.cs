@@ -4,15 +4,16 @@ public class TerrainFace
 {
     // Determines whether we generate a cube-based sphere face
     // or subdivide a triangle face.
-    bool _cubeMesh;
-    Mesh _mesh;
-    int _resolution;
+    private readonly bool _cubeMesh;
+    private readonly Mesh _mesh;
+
+    private readonly int _resolution;
     // Used for triangle-based generation
-    private Vector3[] _vertices;
+    private readonly Vector3[] _vertices;
     // Face orientation vectors
-    Vector3 _localUp;
-    Vector3 _axisA;
-    Vector3 _axisB;
+    private readonly Vector3 _localUp;
+    private readonly Vector3 _axisA;
+    private readonly Vector3 _axisB;
     
     // Constructor for cube-sphere generation
     public TerrainFace(Mesh mesh, int resolution, Vector3 localUp)
@@ -35,7 +36,7 @@ public class TerrainFace
     }
     // Splits a triangle into many smaller triangles
     // based on the given resolution.
-    public (Vector3[], int[]) TriangleFragmentation(Vector3[] triangle, int res)
+    private static (Vector3[], int[]) TriangleFragmentation(Vector3[] triangle, int res)
     {
         // Total vertex count for a triangular grid
         Vector3[] vertices = new Vector3[(res + 1)*(res + 2) / 2];
@@ -61,12 +62,7 @@ public class TerrainFace
                 vertices[vertexIndex++] = (1f-u-v)*a+u*b+v*c;
             }  
         }
-        // Converts triangular grid coordinates (row, col)
-        // into a flat array index.
-        int VertexIndex(int row, int col)
-        {
-            return row * (res + 1) - row * (row - 1) / 2 + col;
-        }
+
         // Build triangle indices for the mesh.
         for (int row = 0; row < res; row++)
         {
@@ -86,10 +82,17 @@ public class TerrainFace
             } 
         }
         return (vertices, triangles);
+
+        // Converts triangular grid coordinates (row, col)
+        // into a flat array index.
+        int VertexIndex(int row, int col)
+        {
+            return row * (res + 1) - row * (row - 1) / 2 + col;
+        }
     }
     // Creates one face of a cube sphere.
     // Vertices are projected from cube space onto a sphere.
-    public (Vector3[],int[]) ConstructCubeMesh()
+    private (Vector3[],int[]) ConstructCubeMesh()
     {
         Vector3[] vertices = new Vector3[_resolution * _resolution];
         // Two triangles per quad
@@ -133,9 +136,8 @@ public class TerrainFace
         if (!_cubeMesh)
         {
             // Generate subdivided triangle mesh
-            (Vector3[], int[]) fragmentedTriangles = TriangleFragmentation(_vertices, _resolution);
-            Vector3[] pointOnOctahedron = fragmentedTriangles.Item1;
-            triangles = fragmentedTriangles.Item2;
+            var (pointOnOctahedron, fragmentedTriangles) = TriangleFragmentation(_vertices, _resolution);
+            triangles = fragmentedTriangles;
             pointOnUnitSphere = pointOnOctahedron;
             // Project all vertices onto sphere
             for (int i = 0; i < pointOnUnitSphere.Length; i++)
