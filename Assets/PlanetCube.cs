@@ -16,7 +16,7 @@ public class PlanetCube : MonoBehaviour
     
     // Called automatically in editor when values change
    private void OnValidate()
-    {
+   {
         //Just set the flag, do NO structural work here
         if (gameObject.activeInHierarchy)
         {
