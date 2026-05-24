@@ -77,9 +77,17 @@ namespace _Project.World.Planet.Scripts
                     }
                     else
                     {
-                        GameObject meshObj = new GameObject("mesh_" + i);
-                        // Parent meshes to the planet object
-                        meshObj.transform.parent = transform;
+                        GameObject meshObj = new GameObject("mesh_" + i)
+                        {
+                            transform =
+                            {
+                                // Parent meshes to the planet object
+                                parent = transform
+                            }
+                        };
+                        
+                        
+                        
                         // Add renderer + material
                         meshObj.AddComponent<MeshRenderer>()
                             .sharedMaterial = new Material(Shader.Find("Standard"));
