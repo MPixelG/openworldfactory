@@ -23,10 +23,10 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
             // helper vars for the single corners of the cube
             int3 p0 = new int3(pos.x, pos.y, pos.z);
             int3 p1 = new int3(pos.x + 1, pos.y, pos.z);
-            int3 p2 = new int3(pos.x + 1, pos.y, pos.z + 1);
-            int3 p3 = new int3(pos.x, pos.y, pos.z + 1);
-            int3 p4 = new int3(pos.x, pos.y + 1, pos.z);
-            int3 p5 = new int3(pos.x + 1, pos.y + 1, pos.z);
+            int3 p2 = new int3(pos.x + 1, pos.y+1, pos.z);
+            int3 p3 = new int3(pos.x, pos.y+1, pos.z);
+            int3 p4 = new int3(pos.x, pos.y, pos.z+1);
+            int3 p5 = new int3(pos.x + 1, pos.y, pos.z+1);
             int3 p6 = new int3(pos.x + 1, pos.y + 1, pos.z + 1);
             int3 p7 = new int3(pos.x, pos.y + 1, pos.z + 1);
             
@@ -78,7 +78,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
             List<Triangle> triangles = new List<Triangle>();
             for (int i=0;McTables.TriTable[cubeIndex, i]!=-1;i+=3) { // go in steps of 3 (a triangle consists of 3 points 🤯) until we find a -1 which marks the end of that triangle list
                 Triangle triangle = new Triangle(
-                    vertices[McTables.TriTable[cubeIndex, i]],
+                    vertices[McTables.TriTable[cubeIndex, i]], //TODO vertex deduplication
                     vertices[McTables.TriTable[cubeIndex, i+1]],
                     vertices[McTables.TriTable[cubeIndex, i+2]]
                 );
@@ -97,10 +97,10 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
             if (grid.DensityAt(pos.x, pos.y, pos.z) < isoLevel) cubeIndex |= 1;// the |= operator sets every bit that is set in the right operand to 1 in the left operand also to 1.
                                                                                // so if the left number (cubeIndex) is 0b11001000 and the right one (the mask, lets say 4) is 0b00000100 the result of that operation would be 0b11001100
             if (grid.DensityAt(pos.x + 1, pos.y, pos.z) < isoLevel) cubeIndex |= 2;
-            if (grid.DensityAt(pos.x + 1, pos.y, pos.z + 1) < isoLevel) cubeIndex |= 4;
-            if (grid.DensityAt(pos.x, pos.y, pos.z + 1) < isoLevel) cubeIndex |= 8;
-            if (grid.DensityAt(pos.x, pos.y + 1, pos.z) < isoLevel) cubeIndex |= 16;
-            if (grid.DensityAt(pos.x + 1, pos.y + 1, pos.z) < isoLevel) cubeIndex |= 32;
+            if (grid.DensityAt(pos.x + 1, pos.y+1, pos.z) < isoLevel) cubeIndex |= 4;
+            if (grid.DensityAt(pos.x, pos.y+1, pos.z) < isoLevel) cubeIndex |= 8;
+            if (grid.DensityAt(pos.x, pos.y, pos.z+1) < isoLevel) cubeIndex |= 16;
+            if (grid.DensityAt(pos.x + 1, pos.y, pos.z+1) < isoLevel) cubeIndex |= 32;
             if (grid.DensityAt(pos.x + 1, pos.y + 1, pos.z + 1) < isoLevel) cubeIndex |= 64;
             if (grid.DensityAt(pos.x, pos.y + 1, pos.z + 1) < isoLevel) cubeIndex |= 128;
 

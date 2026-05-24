@@ -9,7 +9,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
     [ExecuteAlways]
     public class MarchingCubesChunk : MonoBehaviour
     {
-        [Header("Chunk settings"), Range(1, 32)] [SerializeField]
+        [Header("Chunk settings"), Range(1, 64)] [SerializeField]
         private int size = 4;
 
         [Header("Noise settings")] 
@@ -96,10 +96,9 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
                 allTriangles.AddRange(tris); //add all 
             });
 
-            Mesh mesh = BuildMesh(allTriangles.ToArray()); // build the mesh from the triangles 
-
+            Mesh mesh = BuildMesh(allTriangles.ToArray()); // build the mesh from the triangles
             _meshFilter.sharedMesh = mesh; //and apply it to the mesh filter
-            _meshRenderer.sharedMaterial.SetInt("_Cull", (int)UnityEngine.Rendering.CullMode.Front); // 
+            _meshRenderer.sharedMaterial.SetInt("_Cull", (int)UnityEngine.Rendering.CullMode.Back);
 
             CacheSettings();
         }
@@ -108,32 +107,65 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         private Mesh BuildMesh(Triangle[] tris)
         {
             Mesh mesh = new Mesh(); // we start with a plain empty mesh
+            
+            mesh.indexFormat = UnityEngine.Rendering.IndexFormat.UInt32; // allow more than 65535 vertices (which is the default limit for meshes) by using 32 bit indices
+
 
             List<Vector3> vertices = new List<Vector3>(); // we will put the vertices into this list
             List<int> indices = new List<int>(); // and the indices into this one, as the name suggests
+            
+            List<Vector3> normals = new List<Vector3>();
+            
+            Dictionary<Vector3, int> indexMap = new Dictionary<Vector3, int>();
 
-            foreach (var t in tris) // we iterate over every triangle
+            foreach (var t in tris)
             {
-                int startIndex = vertices.Count; // the start index is just the current position in the vertex list
+                int i0 = GetOrAddVertex(t.P1, vertices, normals, indexMap);
+                int i1 = GetOrAddVertex(t.P2, vertices, normals, indexMap);
+                int i2 = GetOrAddVertex(t.P3, vertices, normals, indexMap);
 
-                vertices.Add(t.P1);
-                vertices.Add(t.P2); // add the 3 points of the triangle
-                vertices.Add(t.P3);
+                indices.Add(i0);
+                indices.Add(i1);
+                indices.Add(i2);
 
-                indices.Add(startIndex + 0);
-                indices.Add(startIndex + 1); // and add the indices
-                indices.Add(startIndex + 2);
+                Vector3 normal = Vector3.Cross(t.P2 - t.P1, t.P3 - t.P1).normalized;
+                normals[i0] += normal;
+                normals[i1] += normal;
+                normals[i2] += normal;
             }
 
-            //vertices.Reverse();
+            
+
+            for (int i = 0; i < normals.Count; i++) // we need to normalize the normals because we added them up for every triangle that shares a vertex to get smooth shading, but now they are not normalized anymore
+            {
+                normals[i] = normals[i].normalized;
+            }
+            
+            
             
             mesh.SetVertices(vertices); // set the vertices
+            mesh.SetNormals(normals);
             mesh.SetTriangles(indices, 0); // and set the indices
 
-            mesh.RecalculateNormals(); //recalculate normals and bounds so that the lighting and culling works correctly
-            mesh.RecalculateBounds();
+            mesh.RecalculateBounds();//recalculate bounds
 
             return mesh;
+        }
+        
+        private int GetOrAddVertex(
+            Vector3 v,
+            List<Vector3> vertices,
+            List<Vector3> normals,
+            Dictionary<Vector3, int> indexMap)
+        {
+            if (indexMap.TryGetValue(v, out var index))
+                return index;
+
+            index = vertices.Count;
+            vertices.Add(v);
+            normals.Add(Vector3.zero);
+            indexMap.Add(v, index);
+            return index;
         }
         
         // if the user changed any setting the mesh should be updated
