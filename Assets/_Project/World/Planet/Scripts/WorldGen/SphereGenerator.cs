@@ -13,6 +13,9 @@ namespace _Project.World.Planet.Scripts.WorldGen
     {
         [SerializeField]
         private float radius;
+        
+        [SerializeField]
+        private Vector3 center;
 
         protected SphereGenerator()
         {
@@ -21,9 +24,10 @@ namespace _Project.World.Planet.Scripts.WorldGen
 
         protected SphereGenerator(Vector3 center, float radius)
         {
+            this.center = center;
             this.radius = radius;
         }
         
-        public override float DensityAt(Vector3 worldPosition, Vector3 center) => radius - Vector3.Distance(worldPosition, center);
+        public override float DensityAt(Vector3 worldPosition) => radius - Vector3.Distance(worldPosition, center);
     }
 }

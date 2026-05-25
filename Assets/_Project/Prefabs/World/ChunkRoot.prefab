@@ -46,12 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12a0f8e24c049abade3f4c5e0e9867a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.MarchingCubes.MarchingCubesChunk
-  size: 25
+  size: 26
+  chunkCoord: {x: 0, y: 0, z: 0}
   terrainGenerator: {fileID: 11400000, guid: d3f2ecbee304df78cbbdf2b09e0df9aa, type: 2}
   isoLevel: 0.5
-  tmpPrefab: {fileID: 4300263252451060063, guid: cc89f29ecd39dcc1fb6c6cd0c384fdae, type: 3}
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  textScale: 0.5
 --- !u!23 &8696363654118075953
 MeshRenderer:
   m_ObjectHideFlags: 0

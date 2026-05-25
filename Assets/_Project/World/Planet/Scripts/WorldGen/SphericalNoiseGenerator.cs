@@ -24,9 +24,9 @@ namespace _Project.World.Planet.Scripts.WorldGen
         }
 
 
-        public override float DensityAt(Vector3 worldPosition, Vector3 center)
+        public override float DensityAt(Vector3 worldPosition)
         {
-            float sphereSdf = base.DensityAt(worldPosition, center); // the base sphere sdf
+            float sphereSdf = base.DensityAt(worldPosition); // the base sphere sdf
 
             float rawNoise = noise.cnoise(worldPosition * noiseFrequency); // get some noise at the current world position, scaled by the frequency
 

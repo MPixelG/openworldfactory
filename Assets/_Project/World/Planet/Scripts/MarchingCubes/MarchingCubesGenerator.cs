@@ -126,5 +126,96 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
 
             return (p);
         }
+
+
+
+        public static Mesh GenerateMesh(MarchingCubesGrid grid, float isoLevel)
+        {
+            
+            List<Triangle> allTriangles = new List<Triangle>(); //will contain the triangles
+
+            grid.ForEach((pos, _) => // is called for every density in the 3d array
+            {
+                var tris = MarchingCubesGenerator.GenerateAt(pos, grid, isoLevel); // generate the triangles using the marching cubes algorithm
+                allTriangles.AddRange(tris); //add all 
+            });
+            
+            Mesh mesh = BuildMesh(allTriangles.ToArray()); // build the mesh from the triangles
+
+            return mesh;
+        }
+        
+        
+        // this function actually builds the mesh using the given triangle. this also contains calculating the indices, normals and bounds of the mesh.
+        private static Mesh BuildMesh(Triangle[] tris)
+        {
+            Mesh mesh = new Mesh
+            {
+                indexFormat = UnityEngine.Rendering.IndexFormat.UInt32 // allow more than 65535 vertices (which is the default limit for meshes) by using 32 bit indices
+            }; // we start with a plain empty mesh
+
+
+            List<Vector3> vertices = new List<Vector3>(); // we will put the vertices into this list
+            List<int> indices = new List<int>(); // and the indices into this one, as the name suggests
+            
+            List<Vector3> normals = new List<Vector3>();
+            
+            Dictionary<Vector3, int> indexMap = new Dictionary<Vector3, int>(); // this is used for index deduplication.
+                                                                                // since every triangle has 3 vertices and many triangles share vertices with each other, we want to avoid adding the same vertex multiple times to the vertices list.
+                                                                                // that would be a waste of memory and also cause visual artifacts. so we use this dictionary to check if we already added a vertex and if so we just reuse its index instead of adding it again.
+
+            foreach (var t in tris)
+            {
+                int i0 = GetOrAddVertex(t.P1, vertices, normals, indexMap);
+                int i1 = GetOrAddVertex(t.P2, vertices, normals, indexMap);
+                int i2 = GetOrAddVertex(t.P3, vertices, normals, indexMap);
+
+                indices.Add(i0);
+                indices.Add(i1);
+                indices.Add(i2);
+
+                Vector3 normal = Vector3.Cross(t.P2 - t.P1, t.P3 - t.P1).normalized; // this calculates a good normal value based on the triangle vertices, which is important for the lighting to look smooth.
+                normals[i0] += normal;
+                normals[i1] += normal;
+                normals[i2] += normal;
+            }
+
+            
+
+            for (int i = 0; i < normals.Count; i++) // we need to normalize the normals because we added them up for every triangle that shares a vertex to get smooth shading, but now they are not normalized anymore
+            {
+                normals[i] = normals[i].normalized;
+            }
+            
+            mesh.SetVertices(vertices); // set the vertices
+            mesh.SetNormals(normals);
+            mesh.SetTriangles(indices, 0); // and set the indices
+
+            mesh.RecalculateBounds();//recalculate bounds
+
+            return mesh;
+        }
+        
+        /// <summary>
+        /// checks if the given vertex already exists in the vertices list and if so returns its index,
+        /// otherwise it adds it to the list and returns the new index
+        /// </summary>
+        private static int GetOrAddVertex(
+            Vector3 v,
+            List<Vector3> vertices,
+            List<Vector3> normals,
+            Dictionary<Vector3, int> indexMap)
+        {
+            if (indexMap.TryGetValue(v, out var index))
+                return index;
+
+            index = vertices.Count;
+            vertices.Add(v);
+            normals.Add(Vector3.zero);
+            indexMap.Add(v, index);
+            return index;
+        }
+        
+        
     }
 }

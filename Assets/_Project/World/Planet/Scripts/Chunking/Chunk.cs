@@ -8,5 +8,7 @@ namespace _Project.World.Planet.Scripts.Chunking
     /// </summary>
     public abstract class Chunk : MonoBehaviour
     {
+        protected MeshFilter MeshFilter; // the mesh filter is used to pass the vertices to unity.
+        protected MeshRenderer MeshRenderer; // and the mesh renderer actually renders these. 
     }
 }

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a520447c1e864086a9ab59a050af6b9b, type: 3}
-  m_Name: DefaultSphericalNoiseGenerator
+  m_Name: bigTerrain
   m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.WorldGen.SphericalNoiseGenerator
-  radius: 13
-  center: {x: 13, y: 13, z: 13}
-  noiseFrequency: 0.207
-  noiseAmplitude: 0.27
-  noiseBias: 0.548
+  radius: 30
+  center: {x: 0, y: 0, z: 0}
+  noiseFrequency: 0.271
+  noiseAmplitude: 0.49
+  noiseBias: 0.867

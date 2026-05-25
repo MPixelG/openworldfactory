@@ -8,7 +8,7 @@ namespace _Project.World.Planet.Scripts.WorldGen
     /// </summary>
     public abstract class TerrainGenerator : ScriptableObject
     {
-        public abstract float DensityAt(Vector3 worldPosition, Vector3 center);
+        public abstract float DensityAt(Vector3 worldPosition);
         
         
         public event Action OnSettingsChanged;
