@@ -11,11 +11,9 @@ namespace _Project.World.Planet.Scripts.WorldGen
     [CreateAssetMenu(menuName = "WorldGen/SphericalGenerator")] [Serializable]
     public class SphereGenerator : TerrainGenerator
     {
-        [SerializeField]
-        private float radius;
+        [SerializeField] protected float radius;
         
-        [SerializeField]
-        private Vector3 center;
+        [SerializeField] protected Vector3 center;
 
         protected SphereGenerator()
         {
@@ -28,6 +26,6 @@ namespace _Project.World.Planet.Scripts.WorldGen
             this.radius = radius;
         }
         
-        public override float DensityAt(Vector3 worldPosition) => radius - Vector3.Distance(worldPosition, center);
+        public override float DensityAt(Vector3 worldPosition) => Vector3.Distance(worldPosition, center) - radius;
     }
 }

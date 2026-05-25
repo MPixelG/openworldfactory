@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.Chunking.GridChunkSystem
   chunkPrefab: {fileID: 3772216710374293253, guid: 8c244d9bd5592693cbb6eb0a735bc18d, type: 3}
-  chunkSize: 10
+  chunkSize: 15
   gridStart: {x: 0, y: 0, z: 0}
-  gridDimensions: {x: 15, y: 15, z: 15}
-  terrainGenerator: {fileID: 11400000, guid: d2829746a24a84c72bd9a0a57e40cd79, type: 2}
-  isoLevel: 0.837
+  gridDimensions: {x: 5, y: 5, z: 5}
+  terrainGenerator: {fileID: 11400000, guid: 8c04c47e8cdbd93ec99e8dc38c5a1cec, type: 2}
+  isoLevel: 0.442

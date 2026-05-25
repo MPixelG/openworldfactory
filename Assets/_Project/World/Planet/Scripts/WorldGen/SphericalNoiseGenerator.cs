@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -11,8 +12,8 @@ namespace _Project.World.Planet.Scripts.WorldGen
     public class SphericalNoiseGenerator : SphereGenerator
     {
         
-        [SerializeField, Range(0.01f, 1f)] private float noiseFrequency; // the frequency of the noise. it scales the input to the noise function so lower frequency = less noise, higher frequency = more noise
-        [SerializeField, Range(0.01f, 3f)] private float noiseAmplitude; // the amount of noise that gets added
+        [SerializeField, Range(0.001f, 1f)] private float noiseFrequency; // the frequency of the noise. it scales the input to the noise function so lower frequency = less noise, higher frequency = more noise
+        [SerializeField, Range(0.01f, 1f)] private float noiseAmplitude; // the amount of noise that gets added
         [SerializeField, Range(0f, 1f)] private float noiseBias; // a minimum noise value that gets added so that the sphere always has a fraction of its size, even if the noise is negative
 
         
@@ -24,15 +25,33 @@ namespace _Project.World.Planet.Scripts.WorldGen
         }
 
 
+        private Dictionary<int3, float> _noiseCache = new(); // a cache for the noise values at different angles to the center
+
+
+
         public override float DensityAt(Vector3 worldPosition)
         {
-            float sphereSdf = base.DensityAt(worldPosition); // the base sphere sdf
+            float3 delta = worldPosition - center;
 
-            float rawNoise = noise.cnoise(worldPosition * noiseFrequency); // get some noise at the current world position, scaled by the frequency
+            float dist = math.length(delta);
 
-            float noiseValue = rawNoise * noiseAmplitude; // scale the noise by the amplitude
-            
-            return sphereSdf * (noiseValue + noiseBias); // and apply this noise to the sphere sdf
+            float sphereSdf = dist - radius;
+
+            float3 dir = delta / dist;
+
+            float rawNoise = noise.cnoise(dir * noiseFrequency * radius);
+
+            float noiseValue = Math.Clamp(rawNoise, -100, 100) * noiseAmplitude * radius;
+
+            return sphereSdf - noiseValue;
+        }
+
+
+        protected override void OnValidate()
+        {
+            _noiseCache ??= new Dictionary<int3, float>();
+            _noiseCache.Clear();
+            base.OnValidate();
         }
     }
 }

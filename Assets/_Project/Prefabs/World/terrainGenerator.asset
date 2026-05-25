@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128f456c39854b4caca7ce456c73b792, type: 3}
   m_Name: terrainGenerator
   m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.WorldGen.TerrainNoiseGenerator
-  noiseFrequency: 0.07
+  noiseFrequency: 0.05
   noiseAmplitude: 0.5
   noiseBias: 0.8

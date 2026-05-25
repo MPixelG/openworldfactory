@@ -58,7 +58,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         public float DensityAt(int x, int y, int z)
         {
             if(x < 0 || x > _size || y < 0 || y > _size || z < 0 || z > _size)
-                return 0;
+                return 1f;
 
             Vector3 worldPos = new Vector3(x, y, z) + _pos;
 
@@ -69,7 +69,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
                 worldPos.y >= _worldMax.y ||
                 worldPos.z >= _worldMax.z)
             {
-                return 0f;
+                return 1f;
             }
             
             

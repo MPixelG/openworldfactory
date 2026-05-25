@@ -94,15 +94,15 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         {
             int cubeIndex = 0;
 
-            if (grid.DensityAt(pos.x, pos.y, pos.z) < isoLevel) cubeIndex |= 1;// the |= operator sets every bit that is set in the right operand to 1 in the left operand also to 1.
+            if (grid.DensityAt(pos.x, pos.y, pos.z) > isoLevel) cubeIndex |= 1;// the |= operator sets every bit that is set in the right operand to 1 in the left operand also to 1.
                                                                                // so if the left number (cubeIndex) is 0b11001000 and the right one (the mask, lets say 4) is 0b00000100 the result of that operation would be 0b11001100
-            if (grid.DensityAt(pos.x + 1, pos.y, pos.z) < isoLevel) cubeIndex |= 2;
-            if (grid.DensityAt(pos.x + 1, pos.y+1, pos.z) < isoLevel) cubeIndex |= 4;
-            if (grid.DensityAt(pos.x, pos.y+1, pos.z) < isoLevel) cubeIndex |= 8;
-            if (grid.DensityAt(pos.x, pos.y, pos.z+1) < isoLevel) cubeIndex |= 16;
-            if (grid.DensityAt(pos.x + 1, pos.y, pos.z+1) < isoLevel) cubeIndex |= 32;
-            if (grid.DensityAt(pos.x + 1, pos.y + 1, pos.z + 1) < isoLevel) cubeIndex |= 64;
-            if (grid.DensityAt(pos.x, pos.y + 1, pos.z + 1) < isoLevel) cubeIndex |= 128;
+            if (grid.DensityAt(pos.x + 1, pos.y, pos.z) > isoLevel) cubeIndex |= 2;
+            if (grid.DensityAt(pos.x + 1, pos.y+1, pos.z) > isoLevel) cubeIndex |= 4;
+            if (grid.DensityAt(pos.x, pos.y+1, pos.z) > isoLevel) cubeIndex |= 8;
+            if (grid.DensityAt(pos.x, pos.y, pos.z+1) > isoLevel) cubeIndex |= 16;
+            if (grid.DensityAt(pos.x + 1, pos.y, pos.z+1) > isoLevel) cubeIndex |= 32;
+            if (grid.DensityAt(pos.x + 1, pos.y + 1, pos.z + 1) > isoLevel) cubeIndex |= 64;
+            if (grid.DensityAt(pos.x, pos.y + 1, pos.z + 1) > isoLevel) cubeIndex |= 128;
 
             return cubeIndex;
         }

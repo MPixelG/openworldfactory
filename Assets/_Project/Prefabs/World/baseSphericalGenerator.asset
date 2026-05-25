@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a520447c1e864086a9ab59a050af6b9b, type: 3}
-  m_Name: bigTerrain
-  m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.WorldGen.SphericalNoiseGenerator
-  radius: 30
+  m_Script: {fileID: 11500000, guid: 7828b3649f9e4f0ca400790150c13da4, type: 3}
+  m_Name: baseSphericalGenerator
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.WorldGen.SphereGenerator
+  radius: 10
   center: {x: 0, y: 0, z: 0}
-  noiseFrequency: 0.222
-  noiseAmplitude: 2.8
-  noiseBias: 0
