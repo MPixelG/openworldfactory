@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Mathematics;
 using UnityEngine;
 using TMPro;
@@ -9,6 +10,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
     [ExecuteAlways]
     public class MarchingCubesChunk : MonoBehaviour
     {
+        private static readonly int Cull = Shader.PropertyToID("_Cull");
+
         [Header("Chunk settings"), Range(1, 64)] [SerializeField]
         private int size = 4;
 
@@ -86,7 +89,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         private void Rebuild()
         {
             EnsureComponents(); //ensure there is a mesh filter and renderer we can apply the mesh to
-            _grid = new MarchingCubesGrid(size, noiseFrequency, noiseAmplitude, noiseBias); //generate a grid of density values
+            _grid = new MarchingCubesGrid(size, new SphericalNoiseGenerator(new Vector3(size/2f, size/2f, size/2f), size/2f, noiseFrequency, noiseAmplitude, noiseBias)); //generate a grid of density values
 
             List<Triangle> allTriangles = new List<Triangle>(); //will contain the triangles
 
@@ -98,17 +101,18 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
 
             Mesh mesh = BuildMesh(allTriangles.ToArray()); // build the mesh from the triangles
             _meshFilter.sharedMesh = mesh; //and apply it to the mesh filter
-            _meshRenderer.sharedMaterial.SetInt("_Cull", (int)UnityEngine.Rendering.CullMode.Back);
+            _meshRenderer.sharedMaterial.SetInt(Cull, (int)UnityEngine.Rendering.CullMode.Back);
 
             CacheSettings();
         }
 
         // this function actually builds the mesh using the given triangle. this also contains calculating the indices, normals and bounds of the mesh.
-        private Mesh BuildMesh(Triangle[] tris)
+        private static Mesh BuildMesh(Triangle[] tris)
         {
-            Mesh mesh = new Mesh(); // we start with a plain empty mesh
-            
-            mesh.indexFormat = UnityEngine.Rendering.IndexFormat.UInt32; // allow more than 65535 vertices (which is the default limit for meshes) by using 32 bit indices
+            Mesh mesh = new Mesh
+            {
+                indexFormat = UnityEngine.Rendering.IndexFormat.UInt32 // allow more than 65535 vertices (which is the default limit for meshes) by using 32 bit indices
+            }; // we start with a plain empty mesh
 
 
             List<Vector3> vertices = new List<Vector3>(); // we will put the vertices into this list
@@ -152,7 +156,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
             return mesh;
         }
         
-        private int GetOrAddVertex(
+        private static int GetOrAddVertex(
             Vector3 v,
             List<Vector3> vertices,
             List<Vector3> normals,

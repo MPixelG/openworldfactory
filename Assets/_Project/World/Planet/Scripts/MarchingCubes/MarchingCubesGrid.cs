@@ -1,4 +1,5 @@
 using System;
+using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -14,16 +15,13 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
     {
         private float[,,] _densities; // 3d array of density values
         private readonly int _size; // the size of the density array
-        private readonly float _noiseFrequency; // the frequency of the noise. it scales the input to the noise function so lower frequency = less noise, higher frequency = more noise
-        private readonly float _noiseAmplitude; // the amount of noise that gets added
-        private readonly float _noiseBias; // a minimum noise value that gets added so that the sphere always has a fraction of its size, even if the noise is negative
 
-        public MarchingCubesGrid(int size, float noiseFrequency, float noiseAmplitude, float noiseBias)
+        private readonly TerrainGenerator _generator;
+
+        public MarchingCubesGrid(int size, TerrainGenerator terrainGenerator)
         {
+            _generator = terrainGenerator;
             _size = size;
-            _noiseFrequency = noiseFrequency;
-            _noiseAmplitude = noiseAmplitude;
-            _noiseBias = noiseBias;
             BuildDensities();
         }
 
@@ -43,12 +41,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
                         Vector3 pos = new Vector3(x, y, z);
 
                         _densities[x, y, z] = SampleDensity(
-                            pos,
-                            new Vector3(_size / 2f, _size / 2f, _size / 2f),
-                            _size / 2f,
-                            _noiseFrequency,
-                            _noiseAmplitude,
-                            _noiseBias
+                            pos
                         );
                     }
                 }
@@ -60,22 +53,11 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         /// <summary>
         /// this is the density sampling function. it gets called for every point in the grid. so you could pass a distance function to the center of the grid to get a sphere. take a look at sdfs (signed distance functions).
         /// </summary>
-        public static float SampleDensity(
-            Vector3 pos,
-            Vector3 sphereCenter,
-            float radius,
-            float noiseFrequency,
-            float noiseAmplitude,
-            float noiseBias
+        private float SampleDensity(
+            Vector3 pos
         )
         {
-            float sphereSdf = radius - Vector3.Distance(pos, sphereCenter);
-
-            float rawNoise = noise.cnoise(pos * noiseFrequency);
-
-            float noiseValue = rawNoise * noiseAmplitude;
-            
-            return sphereSdf * (noiseValue + noiseBias);
+            return _generator.DensityAt(pos);
         }
 
 
