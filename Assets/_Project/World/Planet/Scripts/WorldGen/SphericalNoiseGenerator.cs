@@ -1,7 +1,6 @@
 using System;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _Project.World.Planet.Scripts.WorldGen
 {
@@ -27,13 +26,13 @@ namespace _Project.World.Planet.Scripts.WorldGen
 
         public override float DensityAt(Vector3 worldPosition, Vector3 center)
         {
-            float sphereSdf = base.DensityAt(worldPosition, center);
+            float sphereSdf = base.DensityAt(worldPosition, center); // the base sphere sdf
 
-            float rawNoise = noise.cnoise(worldPosition * noiseFrequency);
+            float rawNoise = noise.cnoise(worldPosition * noiseFrequency); // get some noise at the current world position, scaled by the frequency
 
-            float noiseValue = rawNoise * noiseAmplitude;
+            float noiseValue = rawNoise * noiseAmplitude; // scale the noise by the amplitude
             
-            return sphereSdf * (noiseValue + noiseBias);
+            return sphereSdf * (noiseValue + noiseBias); // and apply this noise to the sphere sdf
         }
     }
 }

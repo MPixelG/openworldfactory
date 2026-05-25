@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
+using _Project.World.Planet.Scripts.Chunking;
 using _Project.World.Planet.Scripts.WorldGen;
-using Unity.Mathematics;
 using UnityEngine;
-using TMPro;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes
 {
     [ExecuteAlways]
-    public class MarchingCubesChunk : MonoBehaviour
+    public class MarchingCubesChunk : Chunk
     {
         private static readonly int Cull = Shader.PropertyToID("_Cull");
 
@@ -19,11 +18,6 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         [SerializeReference] private TerrainGenerator terrainGenerator;
         [SerializeField, Range(0f, 1f)] private float isoLevel = 0.5f;
 
-        [Header("Debug Text Settings")]
-        [SerializeField] private GameObject tmpPrefab;
-        [SerializeField] private Color textColor = Color.crimson;
-        [SerializeField] private float textScale = 0.2f;
-
         private MarchingCubesGrid _grid;
 
         private MeshFilter _meshFilter; // the mesh filter is used to pass the vertices to unity.
@@ -31,6 +25,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
 
         // the last values so that it knows if something changed
         private float _lastIsoLevel;
+        private int _lastSize;
 
         private void Awake()
         {
@@ -48,13 +43,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         // whether the user changed the settings and the applied mesh is outdated
         private bool HasSettingsChanged()
         {
-            return Math.Abs(_lastIsoLevel - isoLevel) > 0.0001f;
-        }
-
-        //caches the settings in the last versions
-        private void CacheSettings()
-        {
-            _lastIsoLevel = isoLevel;
+            return Math.Abs(_lastIsoLevel - isoLevel) > 0.0001f || Math.Abs(_lastSize - size) > 0;
         }
 
         //ensures the components (currently the mesh filter and renderer) are applied to the game object
@@ -75,6 +64,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         //rebuilds the mesh
         private void Rebuild()
         {
+            Debug.Log("Rebuilding MarchingCubesChunk at " + transform.position);
             if (_rebuilding) return; // if we are already rebuilding we dont want to start another rebuild task
             _rebuilding = true;
             EnsureComponents(); //ensure there is a mesh filter and renderer we can apply the mesh to
@@ -82,7 +72,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
 
             List<Triangle> allTriangles = new List<Triangle>(); //will contain the triangles
 
-            _grid.ForEach((pos, density) => // is called for every density in the 3d array
+            _grid.ForEach((pos, _) => // is called for every density in the 3d array
             {
                 var tris = MarchingCubesGenerator.GenerateAt(pos, _grid, isoLevel); // generate the triangles using the marching cubes algorithm
                 allTriangles.AddRange(tris); //add all 
@@ -92,7 +82,12 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
             _meshFilter.sharedMesh = mesh; //and apply it to the mesh filter
             _meshRenderer.sharedMaterial.SetInt(Cull, (int)UnityEngine.Rendering.CullMode.Back);
 
-            CacheSettings();
+            
+            // save the last versions of the iso level and size so that we know if the values updated
+            _lastIsoLevel = isoLevel;
+            _lastSize = size;
+            
+            
             _rebuilding = false;
         }
 
@@ -137,8 +132,6 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
                 normals[i] = normals[i].normalized;
             }
             
-            
-            
             mesh.SetVertices(vertices); // set the vertices
             mesh.SetNormals(normals);
             mesh.SetTriangles(indices, 0); // and set the indices
@@ -169,59 +162,18 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         }
 
 
-        private bool _rebuilding = false;
-        
-        // if the user changed any setting the mesh should be updated
-        private void Update()
-        {
-            if (!Application.isPlaying) return; // if the application isnt even running we can return
-            if (!HasSettingsChanged()) return; // and if the user didnt change anything we can also return
-            Rebuild();
-        }
+        private bool _rebuilding;
         
         private void OnEnable()
         {
-            Subscribe();
+            if (terrainGenerator != null)
+                terrainGenerator.OnSettingsChanged += Rebuild; // this way we add a listener to the onSettingsChanged action that gets called every time the user changes a value
         }
 
         private void OnDisable()
         {
-            Unsubscribe();
-        }
-
-        private void Subscribe()
-        {
-            if (terrainGenerator != null)
-                terrainGenerator.OnSettingsChanged += Rebuild; // this way we add a listener to the onSettingsChanged action that gets called every time the user changes a value 
-        }
-
-        private void Unsubscribe()
-        {
             if (terrainGenerator != null)
                 terrainGenerator.OnSettingsChanged -= Rebuild; // remove the listener
-        }
-
-        // draws a cube index at a given pos, deprecated, will remove that soon
-        private void DrawDebugText(int3 gridPos, int cubeIndex)
-        {
-            if (tmpPrefab == null) return;
-
-            Vector3 worldPos = transform.TransformPoint(
-                new Vector3(gridPos.x, gridPos.y, gridPos.z)
-            );
-
-            GameObject go = Instantiate(tmpPrefab, worldPos, Quaternion.identity, transform);
-            go.name = $"CubeIndex_{gridPos.x}_{gridPos.y}_{gridPos.z}";
-
-            var tmp = go.GetComponent<TMP_Text>();
-            tmp.text = cubeIndex.ToString();
-            tmp.fontSize = 3f;
-            tmp.alignment = TextAlignmentOptions.Center;
-            tmp.color = textColor;
-
-            go.transform.localScale = Vector3.one * textScale;
-            
-            Debug.Log("CubeIndex: " + cubeIndex);
         }
     }
 }
