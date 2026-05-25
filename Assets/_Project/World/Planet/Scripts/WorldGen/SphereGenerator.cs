@@ -1,21 +1,29 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Project.World.Planet.Scripts.WorldGen
 {
     /// <summary>
     /// A simple terrain generator that creates a spherical planet
     /// </summary>
+    [CreateAssetMenu(menuName = "WorldGen/SphericalGenerator")] [Serializable]
     public class SphereGenerator : TerrainGenerator
     {
-        private readonly Vector3 _center;
-        private readonly float _radius;
+        [SerializeField]
+        private float radius;
+
+        protected SphereGenerator()
+        {
+            radius = 10;
+        }
 
         protected SphereGenerator(Vector3 center, float radius)
         {
-            _center = center;
-            _radius = radius;
+            this.radius = radius;
         }
         
-        public override float DensityAt(Vector3 worldPosition) => _radius - Vector3.Distance(worldPosition, _center);
+        public override float DensityAt(Vector3 worldPosition, Vector3 center) => radius - Vector3.Distance(worldPosition, center);
     }
 }

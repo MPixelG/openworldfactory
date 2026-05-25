@@ -16,11 +16,10 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         private int size = 4;
 
         [Header("Noise settings")] 
-        [SerializeField, Range(0.01f, 1f)] private float noiseFrequency = 0.09f;
-        [SerializeField, Range(1f, 100f)] private float noiseAmplitude = 10.2f;
-        [SerializeField, Range(0f, 1f)] private float noiseBias = 0.8f;
+        [SerializeReference] private TerrainGenerator terrainGenerator;
         [SerializeField, Range(0f, 1f)] private float isoLevel = 0.5f;
 
+        [Header("Debug Text Settings")]
         [SerializeField] private GameObject tmpPrefab;
         [SerializeField] private Color textColor = Color.crimson;
         [SerializeField] private float textScale = 0.2f;
@@ -31,10 +30,6 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         private MeshRenderer _meshRenderer; // and the mesh renderer actually renders these. 
 
         // the last values so that it knows if something changed
-        private int _lastSize;
-        private float _lastNoiseFrequency;
-        private float _lastNoiseAmplitude;
-        private float _lastNoiseBias;
         private float _lastIsoLevel;
 
         private void Awake()
@@ -53,20 +48,12 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         // whether the user changed the settings and the applied mesh is outdated
         private bool HasSettingsChanged()
         {
-            return _lastSize != size
-                   || Math.Abs(_lastNoiseFrequency - noiseFrequency) > 0.0001f
-                   || Math.Abs(_lastNoiseAmplitude - noiseAmplitude) > 0.0001f
-                   || Math.Abs(_lastNoiseBias - noiseBias) > 0.0001f
-                   || Math.Abs(_lastIsoLevel - isoLevel) > 0.0001f;
+            return Math.Abs(_lastIsoLevel - isoLevel) > 0.0001f;
         }
 
         //caches the settings in the last versions
         private void CacheSettings()
         {
-            _lastSize = size;
-            _lastNoiseFrequency = noiseFrequency;
-            _lastNoiseAmplitude = noiseAmplitude;
-            _lastNoiseBias = noiseBias;
             _lastIsoLevel = isoLevel;
         }
 
@@ -88,8 +75,10 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         //rebuilds the mesh
         private void Rebuild()
         {
+            if (_rebuilding) return; // if we are already rebuilding we dont want to start another rebuild task
+            _rebuilding = true;
             EnsureComponents(); //ensure there is a mesh filter and renderer we can apply the mesh to
-            _grid = new MarchingCubesGrid(size, new SphericalNoiseGenerator(new Vector3(size/2f, size/2f, size/2f), size/2f, noiseFrequency, noiseAmplitude, noiseBias)); //generate a grid of density values
+            _grid = new MarchingCubesGrid(size, terrainGenerator); //generate a grid of density values
 
             List<Triangle> allTriangles = new List<Triangle>(); //will contain the triangles
 
@@ -104,6 +93,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
             _meshRenderer.sharedMaterial.SetInt(Cull, (int)UnityEngine.Rendering.CullMode.Back);
 
             CacheSettings();
+            _rebuilding = false;
         }
 
         // this function actually builds the mesh using the given triangle. this also contains calculating the indices, normals and bounds of the mesh.
@@ -120,7 +110,9 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
             
             List<Vector3> normals = new List<Vector3>();
             
-            Dictionary<Vector3, int> indexMap = new Dictionary<Vector3, int>();
+            Dictionary<Vector3, int> indexMap = new Dictionary<Vector3, int>(); // this is used for index deduplication.
+                                                                                // since every triangle has 3 vertices and many triangles share vertices with each other, we want to avoid adding the same vertex multiple times to the vertices list.
+                                                                                // that would be a waste of memory and also cause visual artifacts. so we use this dictionary to check if we already added a vertex and if so we just reuse its index instead of adding it again.
 
             foreach (var t in tris)
             {
@@ -132,7 +124,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
                 indices.Add(i1);
                 indices.Add(i2);
 
-                Vector3 normal = Vector3.Cross(t.P2 - t.P1, t.P3 - t.P1).normalized;
+                Vector3 normal = Vector3.Cross(t.P2 - t.P1, t.P3 - t.P1).normalized; // this calculates a good normal value based on the triangle vertices, which is important for the lighting to look smooth.
                 normals[i0] += normal;
                 normals[i1] += normal;
                 normals[i2] += normal;
@@ -156,6 +148,10 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
             return mesh;
         }
         
+        /// <summary>
+        /// checks if the given vertex already exists in the vertices list and if so returns its index,
+        /// otherwise it adds it to the list and returns the new index
+        /// </summary>
         private static int GetOrAddVertex(
             Vector3 v,
             List<Vector3> vertices,
@@ -171,6 +167,9 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
             indexMap.Add(v, index);
             return index;
         }
+
+
+        private bool _rebuilding = false;
         
         // if the user changed any setting the mesh should be updated
         private void Update()
@@ -178,6 +177,28 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
             if (!Application.isPlaying) return; // if the application isnt even running we can return
             if (!HasSettingsChanged()) return; // and if the user didnt change anything we can also return
             Rebuild();
+        }
+        
+        private void OnEnable()
+        {
+            Subscribe();
+        }
+
+        private void OnDisable()
+        {
+            Unsubscribe();
+        }
+
+        private void Subscribe()
+        {
+            if (terrainGenerator != null)
+                terrainGenerator.OnSettingsChanged += Rebuild; // this way we add a listener to the onSettingsChanged action that gets called every time the user changes a value 
+        }
+
+        private void Unsubscribe()
+        {
+            if (terrainGenerator != null)
+                terrainGenerator.OnSettingsChanged -= Rebuild; // remove the listener
         }
 
         // draws a cube index at a given pos, deprecated, will remove that soon

@@ -32,6 +32,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         {
             _densities = new float[_size + 1, _size + 1, _size + 1];
             
+            Vector3 center = new Vector3(_size / 2f, _size / 2f, _size / 2f);
+            
             for (int x = 0; x < _size + 1; x++)
             {
                 for (int y = 0; y < _size + 1; y++)
@@ -41,7 +43,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
                         Vector3 pos = new Vector3(x, y, z);
 
                         _densities[x, y, z] = SampleDensity(
-                            pos
+                            pos, 
+                            center
                         );
                     }
                 }
@@ -54,10 +57,11 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         /// this is the density sampling function. it gets called for every point in the grid. so you could pass a distance function to the center of the grid to get a sphere. take a look at sdfs (signed distance functions).
         /// </summary>
         private float SampleDensity(
-            Vector3 pos
+            Vector3 pos,
+            Vector3 center
         )
         {
-            return _generator.DensityAt(pos);
+            return _generator.DensityAt(pos, center);
         }
 
 
