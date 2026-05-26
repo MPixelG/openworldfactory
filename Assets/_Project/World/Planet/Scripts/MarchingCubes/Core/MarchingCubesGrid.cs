@@ -3,7 +3,7 @@ using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace _Project.World.Planet.Scripts.MarchingCubes
+namespace _Project.World.Planet.Scripts.MarchingCubes.Core
 {
     
     /// <summary>
@@ -11,7 +11,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
     /// you can think of it as a 3D array of density values, where each value represents the density at a specific point in space.
     /// the marching cubes algorithm will use these density values to determine where to create vertices and triangles for the mesh.
     /// </summary>
-    public class MarchingCubesGrid
+    public class _MarchingCubesGrid
     {
         private float[,,] _densities; // 3d array of density values
         private readonly int _size; // the size of the density array
@@ -19,9 +19,9 @@ namespace _Project.World.Planet.Scripts.MarchingCubes
         private readonly Vector3 _worldMax;
         private readonly Vector3 _pos; // the origin of the grid in world space
 
-        private readonly TerrainGenerator _generator;
+        private readonly IDensitySampler _generator;
 
-        public MarchingCubesGrid(int size, TerrainGenerator terrainGenerator, Vector3 pos, Vector3 worldMin, Vector3 worldMax)
+        public _MarchingCubesGrid(int size, IDensitySampler terrainGenerator, Vector3 pos, Vector3 worldMin, Vector3 worldMax)
         {
             _generator = terrainGenerator;
             _size = size;

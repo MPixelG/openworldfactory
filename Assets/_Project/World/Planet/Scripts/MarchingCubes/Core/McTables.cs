@@ -1,4 +1,4 @@
-namespace _Project.World.Planet.Scripts.MarchingCubes
+namespace _Project.World.Planet.Scripts.MarchingCubes.Core
 {
     
     // this class contains the precomputed values for the marching cubes algorithm
