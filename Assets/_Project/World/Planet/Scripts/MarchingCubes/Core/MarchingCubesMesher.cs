@@ -82,7 +82,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.Core
                     vertices[McTables.TriTable[cubeIndex, i]],
                     vertices[McTables.TriTable[cubeIndex, i+1]],
                     vertices[McTables.TriTable[cubeIndex, i+2]]
-                );
+                    );
             }
         }
 

@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a42f314ddd4ac1845e78786dde7088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.Chunking.GridChunkSystem
-  chunkSize: 16
-  worldSize: {x: 5, y: 5, z: 5}
+  chunkSize: 32
+  worldSize: {x: 3, y: 3, z: 3}
