@@ -17,7 +17,6 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
         /// <summary>
         /// this adds a triangle to the mesh and calculates its indices and normals. this way you can just call this method for every triangle you want to add and it will take care of the rest.
         /// </summary>
-        /// <param name="a-c">the 3 corners of the triangle</param>
         public void AddTriangle(float3 a, float3 b, float3 c)
         {
             // Skip triangles with invalid or degenerate data to avoid NaN normals.

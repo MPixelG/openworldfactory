@@ -32,7 +32,7 @@ namespace _Project.World.Planet.Scripts.Chunking
             data.State = ChunkState.Meshing;
             
             
-            MeshData meshData = MarchingCubesMeshDataBuilder.GenerateMeshDataAt(position, _size, densityField);
+            MeshData meshData = MarchingCubesMeshDataBuilder.GenerateMeshDataAt(_size, densityField);
 
             data.MeshData = meshData;
             

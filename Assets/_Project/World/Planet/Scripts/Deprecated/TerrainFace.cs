@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Project.World.Planet.Scripts
+namespace _Project.World.Planet.Scripts.Deprecated
 {
     public class TerrainFace
     {

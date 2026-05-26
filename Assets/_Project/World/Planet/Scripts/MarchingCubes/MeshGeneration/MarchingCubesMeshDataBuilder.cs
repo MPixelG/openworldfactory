@@ -1,3 +1,4 @@
+using _Project.World.Planet.Scripts.MarchingCubes.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using Unity.Mathematics;
 
@@ -5,7 +6,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
 {
     public static class MarchingCubesMeshDataBuilder
     {
-        public static MeshData GenerateMeshDataAt(int3 chunkPos, int size, DensityField densityField)
+        public static MeshData GenerateMeshDataAt(int size, DensityField densityField)
         {
             MeshDataBuilder meshDataBuilder = new MeshDataBuilder();
             for (int x = 0; x < size; x++)

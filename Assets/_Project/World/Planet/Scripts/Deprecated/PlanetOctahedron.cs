@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-namespace _Project.World.Planet.Scripts
+namespace _Project.World.Planet.Scripts.Deprecated
 {
     [ExecuteAlways] //it should also run in editor mode otherwise prefab collaboration could be a problem
     public class Planet : MonoBehaviour
@@ -104,7 +104,7 @@ namespace _Project.World.Planet.Scripts
         }
     
         // Generates the mesh for every face
-        void GenerateMesh()
+        private void GenerateMesh()
         {
             foreach (TerrainFace face in _terrainFaces)
             {

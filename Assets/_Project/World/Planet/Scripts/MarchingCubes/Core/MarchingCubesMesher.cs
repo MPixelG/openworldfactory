@@ -1,11 +1,11 @@
 using System;
-using _Project.World.Planet.Scripts.MarchingCubes.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
+using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using Unity.Mathematics;
 
-namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
+namespace _Project.World.Planet.Scripts.MarchingCubes.Core
 {
-    public class MarchingCubesMesher
+    public static class MarchingCubesMesher
     {
         private const float IsoLevel = 0.5f;
         

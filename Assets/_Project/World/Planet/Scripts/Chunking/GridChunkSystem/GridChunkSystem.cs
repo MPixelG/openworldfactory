@@ -3,7 +3,7 @@ using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace _Project.World.Planet.Scripts.Chunking
+namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 {
     [ExecuteAlways]
     public class GridChunkSystem : MonoBehaviour

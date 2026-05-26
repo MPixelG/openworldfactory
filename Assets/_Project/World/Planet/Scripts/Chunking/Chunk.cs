@@ -29,8 +29,6 @@ namespace _Project.World.Planet.Scripts.Chunking
                 _meshFilter = gameObject.GetComponent<MeshFilter>() ?? gameObject.AddComponent<MeshFilter>();
             if (_meshRenderer == null)
                 _meshRenderer = gameObject.GetComponent<MeshRenderer>() ?? gameObject.AddComponent<MeshRenderer>();
-
-            if (_meshRenderer.sharedMaterial != null) return;
         }
         
         private void SetupMaterial()

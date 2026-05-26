@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Project.World.Planet.Scripts
+namespace _Project.World.Planet.Scripts.Deprecated
 {
 // Das Attribut muss vor der Klassendeklaration stehen
     [ExecuteAlways] // läuft auch im Editor

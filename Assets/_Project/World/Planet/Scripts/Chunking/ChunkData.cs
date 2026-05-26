@@ -1,5 +1,4 @@
 using _Project.World.Planet.Scripts.Chunking.Core;
-using _Project.World.Planet.Scripts.MarchingCubes;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 
