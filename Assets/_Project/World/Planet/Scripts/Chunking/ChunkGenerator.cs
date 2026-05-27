@@ -6,33 +6,33 @@ using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.Chunking
 {
-    public class ChunkFactory
+    public class ChunkGenerator
     {
         private readonly IDensitySampler _densitySampler;
-        private readonly int _size;
+        private readonly int _chunkSize;
         
-        public ChunkFactory(IDensitySampler densitySampler, int size)
+        public ChunkGenerator(IDensitySampler densitySampler, int chunkSize)
         {
             _densitySampler = densitySampler;
-            _size = size;
+            _chunkSize = chunkSize;
         }
 
-        public ChunkData GenerateChunkAt(int3 position)
+        public ChunkData GenerateChunkAt(ChunkCoord position)
         {
             ChunkData data = new ChunkData
             {
-                Coord = new ChunkCoord(position.x, position.y, position.z),
+                Coord = position,
                 State = ChunkState.GeneratingDensity,
                 IsDirty = true,
             };
             
-            DensityField densityField = DensityFieldBuilder.BuildDensityField(_densitySampler, _size, position * _size);
+            DensityField densityField = DensityFieldBuilder.BuildDensityField(_densitySampler, _chunkSize, position.Value * _chunkSize);
             
             data.DensityField = densityField;
             data.State = ChunkState.Meshing;
             
             
-            MeshData meshData = MarchingCubesMeshDataBuilder.GenerateMeshDataAt(_size, densityField);
+            MeshData meshData = MarchingCubesMeshDataGenerator.GenerateMeshDataAt(_chunkSize, densityField);
 
             data.MeshData = meshData;
             

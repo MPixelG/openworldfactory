@@ -8,12 +8,10 @@ namespace _Project.World.Planet.Scripts.Chunking
     /// A chunk is a region of density values in space. it is used to split the terrain into multiple portions and put these chunks next to each other to allow dynamic loading / unloading of specific regions, different LODs (Levels of Details) and more.  
     /// </summary>
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-    public class Chunk : MonoBehaviour
+    public class ChunkRenderer : MonoBehaviour
     {
         private static readonly int Cull = Shader.PropertyToID("_Cull");
-        
-        
-        public ChunkData Data;
+
         private MeshFilter _meshFilter; // the mesh filter is used to pass the vertices to unity.
         private MeshRenderer _meshRenderer; // and the mesh renderer actually renders these. 
 

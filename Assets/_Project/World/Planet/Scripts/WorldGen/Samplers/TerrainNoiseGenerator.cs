@@ -2,7 +2,7 @@ using System;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace _Project.World.Planet.Scripts.WorldGen
+namespace _Project.World.Planet.Scripts.WorldGen.Samplers
 {
     [CreateAssetMenu(menuName = "WorldGen/TerrainGenerator")] [Serializable]
     public class TerrainNoiseGenerator : ScriptableObject, IDensitySampler

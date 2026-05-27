@@ -4,7 +4,7 @@ using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
 {
-    public static class MarchingCubesMeshDataBuilder
+    public static class MarchingCubesMeshDataGenerator
     {
         public static MeshData GenerateMeshDataAt(int size, DensityField densityField)
         {

@@ -41,8 +41,6 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
             _meshData.Indices.Add(i0);
             _meshData.Indices.Add(i1);
             _meshData.Indices.Add(i2);
-
-            float area = math.length(normal);
             
             float angleA = AngleBetween(ab, ac);
             float angleB = AngleBetween(c - b, a - b);
