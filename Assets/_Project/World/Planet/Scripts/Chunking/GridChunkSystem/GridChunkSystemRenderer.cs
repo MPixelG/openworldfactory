@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using _Project.World.Planet.Scripts.Chunking.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
@@ -40,7 +39,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 
         private void FixedUpdate()
         {
-            float3 viewerPosition = _viewer != null ? (float3) _viewer.position : float3.zero;
+            float3 viewerPosition = _viewer != null ? _viewer.position : float3.zero;
             _chunkManager?.Update(viewerPosition);
             SyncRenderers();
         }
