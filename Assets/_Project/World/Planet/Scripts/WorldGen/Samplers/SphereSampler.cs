@@ -1,6 +1,5 @@
 using System;
 using Unity.Mathematics;
-using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.WorldGen.Samplers
 {
@@ -10,21 +9,20 @@ namespace _Project.World.Planet.Scripts.WorldGen.Samplers
     [Serializable]
     public class SphereSampler : IDensitySampler
     {
-        public float radius;
-
-        public float3 center;
+        private readonly float _radius;
+        private readonly float3 _center;
 
         public SphereSampler()
+            : this(float3.zero, 10f)
         {
-            radius = 10;
         }
 
-        public SphereSampler(Vector3 center, float radius)
+        public SphereSampler(float3 center, float radius)
         {
-            this.center = center;
-            this.radius = radius;
+            _center = center;
+            _radius = radius;
         }
 
-        public virtual float DensityAt(float3 position) => Vector3.Distance(position, center) - radius;
+        public virtual float DensityAt(float3 position) => math.distance(position, _center) - _radius;
     }
 }

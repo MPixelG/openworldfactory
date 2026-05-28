@@ -1,8 +1,7 @@
-using _Project.World.Planet.Scripts.Chunking.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 
-namespace _Project.World.Planet.Scripts.Chunking
+namespace _Project.World.Planet.Scripts.Chunking.Core
 {
     public class ChunkData
     {

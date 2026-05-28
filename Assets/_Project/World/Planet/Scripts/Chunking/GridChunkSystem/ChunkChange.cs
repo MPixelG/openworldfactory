@@ -1,3 +1,5 @@
+using _Project.World.Planet.Scripts.Chunking.Core;
+
 namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 {
     public struct ChunkChange

@@ -13,17 +13,9 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
             };
 
 
-            mesh.SetVertices(data.GetVertexVectors());
-            mesh.SetNormals(data.GetNormalVectors());
+            mesh.SetVertices(data.Vertices.ConvertAll(v => new Vector3(v.x, v.y, v.z)));
+            mesh.SetNormals(data.Normals.ConvertAll(v => new Vector3(v.x, v.y, v.z)));
             mesh.SetTriangles(data.Indices, 0);
-
-
-            Debug.Log("Test");
-
-
-
-
-
 
 
             mesh.RecalculateBounds();

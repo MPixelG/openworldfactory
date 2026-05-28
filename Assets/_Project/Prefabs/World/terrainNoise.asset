@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 128f456c39854b4caca7ce456c73b792, type: 3}
-  m_Name: terrainGenerator
-  m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.WorldGen.TerrainNoiseGenerator
+  m_Script: {fileID: 11500000, guid: f15dfb65ae5f472f84b5549220fc6f90, type: 3}
+  m_Name: terrainNoise
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.WorldGen.Unity.TerrainNoiseGeneratorSettings
   noiseFrequency: 0.05
   noiseAmplitude: 0.5
   noiseBias: 0.8

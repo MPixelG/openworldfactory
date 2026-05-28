@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using _Project.World.Planet.Scripts.WorldGen.Samplers;
+using _Project.World.Planet.Scripts.Chunking.Core;
+using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
@@ -11,10 +12,11 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         private readonly Dictionary<ChunkCoord, ChunkData> _chunks = new();
         private readonly ChunkGenerator _chunkGenerator;
         private readonly ChunkStreamer _chunkStreamer;
-        private readonly int _chunkSize;
+        public readonly int ChunkSize;
+        private readonly int _viewDistanceInChunks;
 
         public event Action<ChunkChange> ChunkChange;
-        
+
         public ChunkData GetChunkAt(ChunkCoord position) => _chunks[position];
         public IEnumerable<ChunkCoord> GetLoadedChunkCoords() => _chunks.Keys;
 
@@ -25,15 +27,16 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         }
 
 
-        public GridChunkManager(int chunkSize)
+        public GridChunkManager(int chunkSize, int viewDistanceInChunks, IDensitySampler densitySampler)
         {
-            _chunkSize = chunkSize;
-            
+            ChunkSize = chunkSize;
+            _viewDistanceInChunks = viewDistanceInChunks;
+
             _chunkGenerator = new ChunkGenerator(
-                densitySampler: new SphereSampler(),
-                chunkSize: _chunkSize
-                );
-            _chunkStreamer = new ChunkStreamer(_chunkSize);
+                densitySampler: densitySampler,
+                chunkSize: ChunkSize
+            );
+            _chunkStreamer = new ChunkStreamer(ChunkSize);
         }
 
 
@@ -46,26 +49,24 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         {
             HashSet<ChunkCoord> chunksToKeep = _chunkStreamer.ComputeVisibleChunks(
                 viewerPosition: viewerPosition,
-                viewDistanceInChunks: 4
+                viewDistanceInChunks: _viewDistanceInChunks
             );
 
             IEnumerable<ChunkCoord> filteredChunksToKeep = chunksToKeep.Where(chunk => !_chunks.ContainsKey(chunk));
-            
+
             foreach (var chunk in filteredChunksToKeep)
             {
                 LoadChunkAt(chunk);
             }
-            
-            
+
+
             HashSet<ChunkCoord> chunksToUnload = new(_chunks.Keys);
-            if (chunksToUnload == null) throw new ArgumentNullException(nameof(chunksToUnload));
             chunksToUnload.ExceptWith(chunksToKeep);
-            
+
             foreach (var chunk in chunksToUnload)
             {
                 UnloadChunkAt(chunk);
             }
-            
         }
 
 

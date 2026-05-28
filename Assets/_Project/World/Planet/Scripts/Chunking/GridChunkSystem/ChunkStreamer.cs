@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using _Project.World.Planet.Scripts.Chunking.Core;
 using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
@@ -13,6 +14,9 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         }
 
         private ChunkCoord _lastCalculatedChunkCoord;
+        private bool _hasLastCalculated;
+        private HashSet<ChunkCoord> _lastVisibleChunks = new();
+
         public HashSet<ChunkCoord> ComputeVisibleChunks(
             float3 viewerPosition,
             int viewDistanceInChunks
@@ -22,8 +26,19 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
                 (int3) math.floor(viewerPosition / _chunkSize)
             );
 
-            if (_lastCalculatedChunkCoord.Equals(viewerChunk) || viewDistanceInChunks == 0) return new HashSet<ChunkCoord>();
-            
+            if (viewDistanceInChunks <= 0)
+            {
+                _lastCalculatedChunkCoord = viewerChunk;
+                _hasLastCalculated = true;
+                _lastVisibleChunks.Clear();
+                return new HashSet<ChunkCoord>();
+            }
+
+            if (_hasLastCalculated && _lastCalculatedChunkCoord.Equals(viewerChunk))
+            {
+                return new HashSet<ChunkCoord>(_lastVisibleChunks);
+            }
+
             // calculate a sphere of chunks that need to be generated
             HashSet<ChunkCoord> visibleChunks = new();
             for (int x = -viewDistanceInChunks; x <= viewDistanceInChunks; x++)
@@ -40,9 +55,12 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
                     }
                 }
             }
-            
-            
-            return visibleChunks;
+
+            _lastCalculatedChunkCoord = viewerChunk;
+            _hasLastCalculated = true;
+            _lastVisibleChunks = visibleChunks;
+
+            return new HashSet<ChunkCoord>(_lastVisibleChunks);
         }
     }
 }

@@ -1,22 +1,32 @@
 using System;
 using Unity.Mathematics;
-using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.WorldGen.Samplers
 {
-    [CreateAssetMenu(menuName = "WorldGen/TerrainGenerator")] [Serializable]
-    public class TerrainNoiseGenerator : ScriptableObject, IDensitySampler
+    [Serializable]
+    public class TerrainNoiseGenerator : IDensitySampler
     {
+        private readonly float _noiseFrequency;
+        private readonly float _noiseAmplitude;
+        private readonly float _noiseBias;
 
-        [SerializeField] private float noiseFrequency = 0.05f;
-        [SerializeField] private float noiseAmplitude = 0.5f;
-        [SerializeField] private float noiseBias = 0.8f;
+        public TerrainNoiseGenerator()
+            : this(0.05f, 0.5f, 0.8f)
+        {
+        }
+
+        public TerrainNoiseGenerator(float noiseFrequency, float noiseAmplitude, float noiseBias)
+        {
+            _noiseFrequency = noiseFrequency;
+            _noiseAmplitude = noiseAmplitude;
+            _noiseBias = noiseBias;
+        }
 
         public float DensityAt(float3 position)
         {
-            float rawNoise = noise.cnoise(position * noiseFrequency); // get some noise at the current world position, scaled by the frequency
-            
-            return noiseAmplitude * rawNoise + noiseBias;
+            float rawNoise = noise.cnoise(position * _noiseFrequency); // get some noise at the current world position, scaled by the frequency
+
+            return _noiseAmplitude * rawNoise + _noiseBias;
         }
     }
 }

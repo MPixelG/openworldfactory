@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using _Project.World.Planet.Scripts.Chunking.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using Unity.Mathematics;
 using Unity.VisualScripting;
@@ -10,6 +11,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
     public class GridChunkSystemRenderer : MonoBehaviour
     {
         private GridChunkManager _chunkManager;
+        private Transform _viewer;
 
         private readonly Dictionary<ChunkCoord, ChunkRenderer> _chunkRenderers = new();
         private readonly Queue<ChunkChange> _chunkChanges = new();
@@ -26,6 +28,11 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
                 _chunkManager.ChunkChange += OnChunkChange;
         }
 
+        public void SetViewer(Transform viewer)
+        {
+            _viewer = viewer;
+        }
+
         private void OnChunkChange(ChunkChange chunkChange)
         {
             _chunkChanges.Enqueue(chunkChange);
@@ -33,7 +40,8 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 
         private void FixedUpdate()
         {
-            _chunkManager?.Update(float3.zero);
+            float3 viewerPosition = _viewer != null ? (float3) _viewer.position : float3.zero;
+            _chunkManager?.Update(viewerPosition);
             SyncRenderers();
         }
 
@@ -61,29 +69,32 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 
         private void CreateRendererAt(ChunkCoord loadedChunkCoord)
         {
-            GameObject go = new($"Chunk_{loadedChunkCoord}")
-            {
-                transform =
-                {
-                    parent = transform,
-                }
-            };
+            GameObject go = new($"Chunk_{loadedChunkCoord}");
+
+            go.transform.parent = transform;
+
+            int3 worldPos = (loadedChunkCoord.Value * _chunkManager.ChunkSize);
+            
+            go.transform.position = new Vector3(worldPos.x, worldPos.y, worldPos.z);
 
             ChunkRenderer chunkRenderer =
                 go.AddComponent<ChunkRenderer>();
-            
-            MeshData meshData = _chunkManager.GetChunkAt(loadedChunkCoord).MeshData;
+
+            MeshData meshData =
+                _chunkManager.GetChunkAt(loadedChunkCoord).MeshData;
+
             Mesh unityMesh = UnityMeshBuilder.Build(meshData);
-            
+
             chunkRenderer.ApplyMeshData(unityMesh);
+
             _chunkRenderers.Add(loadedChunkCoord, chunkRenderer);
         }
 
         private void DestroyRendererAt(ChunkCoord loadedChunkCoord)
         {
             ChunkRenderer chunkRenderer = _chunkRenderers[loadedChunkCoord];
-            _chunkRenderers.Remove(loadedChunkCoord);
             Destroy(chunkRenderer.gameObject);
+            _chunkRenderers.Remove(loadedChunkCoord);
         }
 
         private void UpdateRendererAt(ChunkCoord loadedChunkCoord)
