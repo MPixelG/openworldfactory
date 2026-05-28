@@ -1,7 +1,7 @@
-using System;
+using System.Collections.Generic;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
-using _Project.World.Planet.Scripts.WorldGen;
-using _Project.World.Planet.Scripts.WorldGen.Samplers;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
@@ -11,15 +11,87 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
     {
         private GridChunkManager _chunkManager;
 
+        private readonly Dictionary<ChunkCoord, ChunkRenderer> _chunkRenderers = new();
+        private readonly Queue<ChunkChange> _chunkChanges = new();
 
         public void SetChunkManager(GridChunkManager chunkManager)
         {
+            // unsubscribe old
+            if (_chunkManager != null)
+                _chunkManager.ChunkChange -= OnChunkChange;
+            
             _chunkManager = chunkManager;
+            
+            if (_chunkManager != null)
+                _chunkManager.ChunkChange += OnChunkChange;
         }
-        
+
+        private void OnChunkChange(ChunkChange chunkChange)
+        {
+            _chunkChanges.Enqueue(chunkChange);
+        }
+
         private void FixedUpdate()
         {
-            _chunkManager?.Update();
+            _chunkManager?.Update(float3.zero);
+            SyncRenderers();
+        }
+
+
+        private void SyncRenderers()
+        {
+            while (_chunkChanges.Count > 0)
+            {
+                ChunkChange chunkChange = _chunkChanges.Dequeue();
+
+                switch (chunkChange.Type)
+                {
+                    case ChunkChangeType.Load:
+                        CreateRendererAt(chunkChange.Coord);
+                        break;
+                    case ChunkChangeType.Unload:
+                        DestroyRendererAt(chunkChange.Coord);
+                        break;
+                    case ChunkChangeType.Update:
+                        UpdateRendererAt(chunkChange.Coord);
+                        break;
+                }
+            }
+        }
+
+        private void CreateRendererAt(ChunkCoord loadedChunkCoord)
+        {
+            GameObject go = new($"Chunk_{loadedChunkCoord}")
+            {
+                transform =
+                {
+                    parent = transform,
+                }
+            };
+
+            ChunkRenderer chunkRenderer =
+                go.AddComponent<ChunkRenderer>();
+            
+            MeshData meshData = _chunkManager.GetChunkAt(loadedChunkCoord).MeshData;
+            Mesh unityMesh = UnityMeshBuilder.Build(meshData);
+            
+            chunkRenderer.ApplyMeshData(unityMesh);
+            _chunkRenderers.Add(loadedChunkCoord, chunkRenderer);
+        }
+
+        private void DestroyRendererAt(ChunkCoord loadedChunkCoord)
+        {
+            ChunkRenderer chunkRenderer = _chunkRenderers[loadedChunkCoord];
+            _chunkRenderers.Remove(loadedChunkCoord);
+            Destroy(chunkRenderer.gameObject);
+        }
+
+        private void UpdateRendererAt(ChunkCoord loadedChunkCoord)
+        {
+            ChunkRenderer chunkRenderer = _chunkRenderers[loadedChunkCoord];
+            MeshData meshData = _chunkManager.GetChunkAt(loadedChunkCoord).MeshData;
+            Mesh unityMesh = UnityMeshBuilder.Build(meshData);
+            chunkRenderer.ApplyMeshData(unityMesh);
         }
     }
 }

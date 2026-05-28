@@ -9,12 +9,20 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
     public class GridChunkManager
     {
         private readonly Dictionary<ChunkCoord, ChunkData> _chunks = new();
-        private ChunkGenerator _chunkGenerator;
-        private ChunkStreamer _chunkStreamer;
+        private readonly ChunkGenerator _chunkGenerator;
+        private readonly ChunkStreamer _chunkStreamer;
         private readonly int _chunkSize;
+
+        public event Action<ChunkChange> ChunkChange;
         
         public ChunkData GetChunkAt(ChunkCoord position) => _chunks[position];
-        public void SetChunkAt(ChunkCoord position, ChunkData chunkData) => _chunks[position] = chunkData;
+        public IEnumerable<ChunkCoord> GetLoadedChunkCoords() => _chunks.Keys;
+
+        private void SetChunkAt(ChunkCoord position, ChunkData chunkData)
+        {
+            _chunks[position] = chunkData;
+            ChunkChange?.Invoke(new ChunkChange(position, ChunkChangeType.Update));
+        }
 
 
         public GridChunkManager(int chunkSize)
@@ -23,29 +31,25 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
             
             _chunkGenerator = new ChunkGenerator(
                 densitySampler: new SphereSampler(),
-                chunkSize: chunkSize
+                chunkSize: _chunkSize
                 );
+            _chunkStreamer = new ChunkStreamer(_chunkSize);
         }
 
 
-        public void Update()
+        public void Update(float3 viewerPosition)
         {
-
-            
-            
-            
-
-
+            SyncChunks(viewerPosition);
         }
 
-        private void SyncChunks()
+        private void SyncChunks(float3 viewerPosition)
         {
             HashSet<ChunkCoord> chunksToKeep = _chunkStreamer.ComputeVisibleChunks(
-                viewerPosition: int3.zero,
+                viewerPosition: viewerPosition,
                 viewDistanceInChunks: 4
             );
-            
-            IEnumerable<ChunkCoord> filteredChunksToKeep = chunksToKeep.Where(chunk => !_chunks.ContainsKey(chunk) || _chunks[chunk] == null);
+
+            IEnumerable<ChunkCoord> filteredChunksToKeep = chunksToKeep.Where(chunk => !_chunks.ContainsKey(chunk));
             
             foreach (var chunk in filteredChunksToKeep)
             {
@@ -69,11 +73,13 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         {
             ChunkData chunkData = _chunkGenerator.GenerateChunkAt(position);
             _chunks[position] = chunkData;
+            ChunkChange?.Invoke(new ChunkChange(position, ChunkChangeType.Load));
         }
 
         private void UnloadChunkAt(ChunkCoord position)
         {
-            _chunks[position] = null;
+            _chunks.Remove(position);
+            ChunkChange?.Invoke(new ChunkChange(position, ChunkChangeType.Unload));
         }
     }
 }

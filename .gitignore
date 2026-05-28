@@ -10,6 +10,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/[Pp]ackages/com.unity.ide.rider/
 *.log
 
 /Assets/AllSkyFree/*
