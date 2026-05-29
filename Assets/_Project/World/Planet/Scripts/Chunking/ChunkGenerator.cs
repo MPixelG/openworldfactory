@@ -2,18 +2,20 @@ using _Project.World.Planet.Scripts.Chunking.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using _Project.World.Planet.Scripts.WorldGen;
+using _Project.World.Planet.Scripts.WorldGen.Burst;
+using _Project.World.Planet.Scripts.WorldGen.Unity;
 using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.Chunking
 {
     public class ChunkGenerator
     {
-        private readonly IDensitySampler _densitySampler;
+        private readonly BurstSamplerSettings _densitySamplerSettings;
         private readonly int _chunkSize;
         
-        public ChunkGenerator(IDensitySampler densitySampler, int chunkSize)
+        public ChunkGenerator(BurstSamplerSettings densitySamplerSettings, int chunkSize)
         {
-            _densitySampler = densitySampler;
+            _densitySamplerSettings = densitySamplerSettings;
             _chunkSize = chunkSize;
         }
 
@@ -26,7 +28,7 @@ namespace _Project.World.Planet.Scripts.Chunking
                 IsDirty = true,
             };
             
-            DensityField densityField = DensityFieldBuilder.BuildDensityField(_densitySampler, _chunkSize, position.Value * _chunkSize);
+            DensityField densityField = DensityFieldBuilder.BuildBurstDensityField(_densitySamplerSettings, _chunkSize, position.Value * (_chunkSize));
             
             data.DensityField = densityField;
             data.State = ChunkState.Meshing;

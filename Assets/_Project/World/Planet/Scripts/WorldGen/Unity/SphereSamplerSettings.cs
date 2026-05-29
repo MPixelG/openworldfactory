@@ -1,7 +1,5 @@
 using _Project.World.Planet.Scripts.WorldGen.Samplers;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _Project.World.Planet.Scripts.WorldGen.Unity
 {

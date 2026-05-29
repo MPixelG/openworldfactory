@@ -1,11 +1,12 @@
 using System.Runtime.CompilerServices;
+using Unity.Collections;
 using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
 {
     public class DensityField
     {
-        private readonly float[] _densities;
+        private readonly NativeArray<float> _densities;
         private readonly int _size;
         
         
@@ -31,7 +32,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
             return _densities[IndexOf(x, y, z, _size)];
         }
 
-        public DensityField(float[] densities, int size)
+        public DensityField(NativeArray<float> densities, int size)
         {
             _densities = densities;
             _size = size;

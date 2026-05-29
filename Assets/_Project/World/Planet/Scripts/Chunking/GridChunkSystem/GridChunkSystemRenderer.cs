@@ -6,7 +6,6 @@ using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 {
-    [ExecuteAlways]
     public class GridChunkSystemRenderer : MonoBehaviour
     {
         private GridChunkManager _chunkManager;

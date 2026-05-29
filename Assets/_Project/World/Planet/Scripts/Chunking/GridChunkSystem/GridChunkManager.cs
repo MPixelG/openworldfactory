@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using _Project.World.Planet.Scripts.Chunking.Core;
-using _Project.World.Planet.Scripts.WorldGen;
+using _Project.World.Planet.Scripts.WorldGen.Burst;
 using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
@@ -38,14 +38,14 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         public GridChunkManager(
             int chunkSize,
             int viewDistanceInChunks,
-            IDensitySampler densitySampler
+            BurstSamplerSettings densitySamplerSettings
         )
         {
             ChunkSize = chunkSize;
             _viewDistanceInChunks = viewDistanceInChunks;
 
             _chunkGenerator = new ChunkGenerator(
-                densitySampler,
+                densitySamplerSettings,
                 chunkSize
             );
 
@@ -157,10 +157,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 
             try
             {
-                ChunkData chunkData = await Task.Run(() =>
-                {
-                    return _chunkGenerator.GenerateChunkAt(coord);
-                });
+                ChunkData chunkData = await Task.Run(() => _chunkGenerator.GenerateChunkAt(coord));
 
                 _completedChunks.Enqueue((coord, chunkData));
             }
