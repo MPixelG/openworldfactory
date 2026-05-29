@@ -3,7 +3,6 @@ using UnityEngine.Serialization;
 
 namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity
 {
-    [ExecuteAlways]
     public class GridChunkSystemBootstrap : MonoBehaviour
     {
         [SerializeField] private GridChunkSystemSettings settings;

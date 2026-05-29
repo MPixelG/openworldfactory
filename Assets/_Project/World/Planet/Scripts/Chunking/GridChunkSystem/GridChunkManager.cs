@@ -27,7 +27,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 
         private int _activeGenerationTasks;
 
-        private const int ChunksPerFrame = 1;
+        private const int ChunksPerFrame = 24;
         private const int MaxConcurrentGenerationTasks = 8;
 
         public readonly int ChunkSize;
@@ -85,8 +85,8 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 
             for (int i = 0; i < ChunksPerFrame; i++)
             {
-                if (_activeGenerationTasks >= MaxConcurrentGenerationTasks)
-                    break;
+                //if (_activeGenerationTasks >= MaxConcurrentGenerationTasks)
+                //    break;
 
                 if (_loadQueue.Count <= 0)
                     break;

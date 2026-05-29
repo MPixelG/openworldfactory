@@ -13,6 +13,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.Core
         public static void GenerateAt(int3 pos, DensityField grid, MeshDataBuilder meshDataBuilder)
         {
             int cubeIndex = GetCubeIndexAt(pos, grid, IsoLevel); // calculates the cube index at that position. look at the description of that function if you want to know what it does
+
+            if (cubeIndex is 256 or 0) return;
             
             int edgeFlags = McTables.EdgeTable[cubeIndex]; // converts the given corner configuration to a binary number where every bit represents one edge. note that we convert an 8 bit number (one bit for every corner) to a 12 bit number (one bit for every edge). 
             // we take that value from a huge precomputed table that contains the edge configuration for every possible corner configuration. So every bit is 1 if the isosurface cuts through that edge. 

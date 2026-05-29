@@ -35,11 +35,11 @@ namespace _Project.World.Planet.Scripts.Chunking
             
             
             MeshData meshData = MarchingCubesMeshDataGenerator.GenerateMeshDataAt(_chunkSize, densityField);
-
+            
             data.MeshData = meshData;
             
             data.State = ChunkState.WaitingForMeshUpload;
-
+            
             return data;
         }
     }
