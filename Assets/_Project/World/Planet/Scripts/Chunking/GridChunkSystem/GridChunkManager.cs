@@ -1,6 +1,7 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using _Project.World.Planet.Scripts.Chunking.Core;
 using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Mathematics;
@@ -10,121 +11,206 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
     public class GridChunkManager
     {
         private readonly Dictionary<ChunkCoord, ChunkData> _chunks = new();
+        private readonly Dictionary<ChunkCoord, ChunkLifecycleState> _chunkStates = new();
+
+        private readonly Queue<ChunkCoord> _loadQueue = new();
+        private readonly Queue<ChunkCoord> _unloadQueue = new();
+
+        private readonly ConcurrentQueue<(ChunkCoord coord, ChunkData data)>
+            _completedChunks = new();
+
         private readonly ChunkGenerator _chunkGenerator;
         private readonly ChunkStreamer _chunkStreamer;
+
+        private int3 _lastViewerChunk;
+        private bool _hasLastViewerChunk;
+
+        private int _activeGenerationTasks;
+
+        private const int ChunksPerFrame = 1;
+        private const int MaxConcurrentGenerationTasks = 8;
+
         public readonly int ChunkSize;
         private readonly int _viewDistanceInChunks;
 
         public event Action<ChunkChange> ChunkChange;
 
-        private readonly Dictionary<ChunkCoord, ChunkLifecycleState> _chunkStates = new();
-
-
-        private readonly Queue<ChunkCoord> _loadQueue = new();
-        private readonly Queue<ChunkCoord> _unloadQueue = new();
-
-        public ChunkData GetChunkAt(ChunkCoord position) => _chunks[position];
-        public IEnumerable<ChunkCoord> GetLoadedChunkCoords() => _chunks.Keys;
-
-        private void SetChunkAt(ChunkCoord position, ChunkData chunkData)
-        {
-            _chunks[position] = chunkData;
-            ChunkChange?.Invoke(new ChunkChange(position, ChunkChangeType.Update));
-        }
-
-
-        public GridChunkManager(int chunkSize, int viewDistanceInChunks, IDensitySampler densitySampler)
+        public GridChunkManager(
+            int chunkSize,
+            int viewDistanceInChunks,
+            IDensitySampler densitySampler
+        )
         {
             ChunkSize = chunkSize;
             _viewDistanceInChunks = viewDistanceInChunks;
 
             _chunkGenerator = new ChunkGenerator(
-                densitySampler: densitySampler,
-                chunkSize: ChunkSize
+                densitySampler,
+                chunkSize
             );
-            _chunkStreamer = new ChunkStreamer(ChunkSize);
+
+            _chunkStreamer = new ChunkStreamer(chunkSize);
         }
 
+        public ChunkData GetChunkAt(ChunkCoord coord)
+        {
+            return _chunks[coord];
+        }
+
+        public IEnumerable<ChunkCoord> GetLoadedChunkCoords()
+        {
+            return _chunks.Keys;
+        }
 
         public void Update(float3 viewerPosition)
         {
-            
-            const int chunksPerFrame = 1;
+            ProcessCompletedChunks();
 
-            for (int i = 0; i < chunksPerFrame; i++)
-            {
-                if(_unloadQueue.Count > 0)
-                    UnloadChunkAt(_unloadQueue.Dequeue());
-                else if (_loadQueue.Count > 0)
-                    LoadChunkAt(_loadQueue.Dequeue());
-
-                else break;
-            }
-            
             SyncChunks(viewerPosition);
+
+            ProcessQueues();
+        }
+
+        private void ProcessQueues()
+        {
+            for (int i = 0; i < ChunksPerFrame; i++)
+            {
+                if (_unloadQueue.Count <= 0)
+                    break;
+
+                ChunkCoord coord = _unloadQueue.Dequeue();
+
+                UnloadChunk(coord);
+            }
+
+            for (int i = 0; i < ChunksPerFrame; i++)
+            {
+                if (_activeGenerationTasks >= MaxConcurrentGenerationTasks)
+                    break;
+
+                if (_loadQueue.Count <= 0)
+                    break;
+
+                ChunkCoord coord = _loadQueue.Dequeue();
+
+                _ = GenerateChunkAsync(coord);
+            }
         }
 
         private void SyncChunks(float3 viewerPosition)
         {
-            HashSet<ChunkCoord> chunksToKeep = _chunkStreamer.ComputeVisibleChunks(
-                viewerPosition: viewerPosition,
-                viewDistanceInChunks: _viewDistanceInChunks
-            );
+            int3 viewerChunk =
+                (int3)math.floor(viewerPosition / ChunkSize);
 
-            IEnumerable<ChunkCoord> filteredChunksToKeep = chunksToKeep.Where(chunk => !_chunks.ContainsKey(chunk));
-
-            foreach (var chunk in filteredChunksToKeep)
+            if (_hasLastViewerChunk &&
+                viewerChunk.Equals(_lastViewerChunk))
             {
-                if (_chunkStates.TryGetValue(chunk, out var state))
+                return;
+            }
+
+            _lastViewerChunk = viewerChunk;
+            _hasLastViewerChunk = true;
+
+            HashSet<ChunkCoord> visibleChunks =
+                _chunkStreamer.ComputeVisibleChunks(
+                    viewerPosition,
+                    _viewDistanceInChunks
+                );
+
+            foreach (ChunkCoord coord in visibleChunks)
+            {
+                if (_chunkStates.TryGetValue(coord, out var state))
                 {
                     if (state != ChunkLifecycleState.Unloaded)
                         continue;
                 }
 
-                _chunkStates[chunk] = ChunkLifecycleState.Queued;
-                _loadQueue.Enqueue(chunk);
+                _chunkStates[coord] = ChunkLifecycleState.Queued;
+
+                _loadQueue.Enqueue(coord);
             }
 
+            HashSet<ChunkCoord> chunksToUnload =
+                new(_chunks.Keys);
 
-            HashSet<ChunkCoord> chunksToUnload = new(_chunks.Keys);
-            chunksToUnload.ExceptWith(chunksToKeep);
+            chunksToUnload.ExceptWith(visibleChunks);
 
-            foreach (var chunk in chunksToUnload)
+            foreach (ChunkCoord coord in chunksToUnload)
             {
-                if (_chunkStates.TryGetValue(chunk, out var state))
-                {
-                    if (state != ChunkLifecycleState.Loaded)
-                        continue;
-                }
+                if (!_chunkStates.TryGetValue(coord, out var state))
+                    continue;
 
-                _chunkStates[chunk] = ChunkLifecycleState.Queued;
-                _unloadQueue.Enqueue(chunk);
+                if (state != ChunkLifecycleState.Loaded)
+                    continue;
+
+                _chunkStates[coord] = ChunkLifecycleState.QueuedForUnload;
+
+                _unloadQueue.Enqueue(coord);
             }
         }
 
-
-        private void LoadChunkAt(ChunkCoord position)
+        private async Task GenerateChunkAsync(ChunkCoord coord)
         {
-            _chunkStates[position] = ChunkLifecycleState.Generating;
-            ChunkData chunkData = _chunkGenerator.GenerateChunkAt(position);
-            _chunks[position] = chunkData;
-            ChunkChange?.Invoke(new ChunkChange(position, ChunkChangeType.Load));
-            _chunkStates[position] = ChunkLifecycleState.Loaded;
+            _activeGenerationTasks++;
+
+            _chunkStates[coord] = ChunkLifecycleState.Generating;
+
+            try
+            {
+                ChunkData chunkData = await Task.Run(() =>
+                {
+                    return _chunkGenerator.GenerateChunkAt(coord);
+                });
+
+                _completedChunks.Enqueue((coord, chunkData));
+            }
+            finally
+            {
+                _activeGenerationTasks--;
+            }
         }
 
-        private void UnloadChunkAt(ChunkCoord position)
+        private void ProcessCompletedChunks()
         {
-            _chunks.Remove(position);
-            ChunkChange?.Invoke(new ChunkChange(position, ChunkChangeType.Unload));
-            _chunkStates.Remove(position);
+            while (_completedChunks.TryDequeue(out var result))
+            {
+                ChunkCoord coord = result.coord;
+                ChunkData data = result.data;
+
+                if (!_chunkStates.TryGetValue(coord, out var state))
+                    continue;
+
+                if (state != ChunkLifecycleState.Generating)
+                    continue;
+
+                _chunks[coord] = data;
+
+                _chunkStates[coord] = ChunkLifecycleState.Loaded;
+
+                ChunkChange?.Invoke(
+                    new ChunkChange(coord, ChunkChangeType.Load)
+                );
+            }
+        }
+
+        private void UnloadChunk(ChunkCoord coord)
+        {
+            _chunks.Remove(coord);
+
+            _chunkStates.Remove(coord);
+
+            ChunkChange?.Invoke(
+                new ChunkChange(coord, ChunkChangeType.Unload)
+            );
         }
     }
-}
 
-enum ChunkLifecycleState
-{
-    Unloaded,
-    Queued,
-    Generating,
-    Loaded
+    public enum ChunkLifecycleState
+    {
+        Unloaded,
+        Queued,
+        Generating,
+        Loaded,
+        QueuedForUnload
+    }
 }

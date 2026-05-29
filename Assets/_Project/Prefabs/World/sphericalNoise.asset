@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f040aeef71839d6a0ad33e72c5c714ef, type: 3}
   m_Name: sphericalNoise
   m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.WorldGen.Unity.SphericalNoiseSamplerSettings
-  radius: 10
+  radius: 100
   center: {x: 0, y: 0, z: 0}
   noiseFrequency: 0.05
   noiseAmplitude: 0.5
