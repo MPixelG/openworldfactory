@@ -31,5 +31,14 @@ namespace _Project.World.Planet.Scripts.Chunking.Core
 
         public static bool operator ==(ChunkCoord a, ChunkCoord b) => a.Equals(b);
         public static bool operator !=(ChunkCoord a, ChunkCoord b) => !a.Equals(b);
+
+
+        public static ChunkCoord ParseChunkCoord(string coord)
+        {
+            string[] coords = coord.Replace("ChunkCoord(", "").Replace(")", "").Split(',');
+            return new ChunkCoord(int.Parse(coords[0]), int.Parse(coords[1]), int.Parse(coords[2]));
+        }
+
+        public override string ToString() => $"ChunkCoord({X}, {Y}, {Z})";
     }
 }

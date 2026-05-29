@@ -37,7 +37,30 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
             _chunkChanges.Enqueue(chunkChange);
         }
 
-        private void FixedUpdate()
+        private void Awake()
+        {
+            RebuildRendererDictionary();
+        }
+
+
+        private void RebuildRendererDictionary()
+        {
+            _chunkRenderers.Clear();
+
+            ChunkRenderer[] renderers =
+                GetComponentsInChildren<ChunkRenderer>();
+
+            foreach (var chunkRenderer in renderers)
+            {
+                string rendererName = chunkRenderer.gameObject.name;
+                
+                ChunkCoord coord = ChunkCoord.ParseChunkCoord(rendererName);
+
+                _chunkRenderers[coord] = chunkRenderer;
+            }
+        }
+
+        private void Update() //todo use coroutine + timer
         {
             float3 viewerPosition = _viewer != null ? _viewer.position : float3.zero;
             _chunkManager?.Update(viewerPosition);

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemSettings
   chunkSize: 16
   viewDistanceInChunks: 4
-  densitySampler: {fileID: 0}
+  densitySampler: {fileID: 11400000, guid: f0f16f969ae3a46c39d405b63e723f3b, type: 2}
