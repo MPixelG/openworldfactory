@@ -25,7 +25,6 @@ namespace _Project.World.Planet.Scripts.Chunking
             {
                 Coord = position,
                 State = ChunkState.GeneratingDensity,
-                IsDirty = true,
             };
             
             DensityField densityField = DensityFieldBuilder.BuildBurstDensityField(_densitySamplerSettings, _chunkSize, position.Value * (_chunkSize));

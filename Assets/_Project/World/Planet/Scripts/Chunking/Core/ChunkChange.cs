@@ -1,7 +1,9 @@
-using _Project.World.Planet.Scripts.Chunking.Core;
-
-namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
+namespace _Project.World.Planet.Scripts.Chunking.Core
 {
+    
+    /// <summary>
+    /// a chunk change is a change the chunk manager made. this is used to signal the unity side of the project that doesnt have direct access to the data what changes have been made so that the graphics get updated correctly. 
+    /// </summary>
     public struct ChunkChange
     {
         public ChunkCoord Coord;
@@ -14,6 +16,9 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         }
     }
 
+    /// <summary>
+    /// the type of the ChunkChange. 
+    /// </summary>
     public enum ChunkChangeType
     {
         Load,

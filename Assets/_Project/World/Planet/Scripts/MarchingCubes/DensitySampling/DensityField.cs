@@ -11,7 +11,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
         
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)] // this tells the compiler to inline the function. that means it tries to put the content of this function into the place it was used. it is like you typed that formula out instead of calling the function there
-        public static int IndexOf(int x, int y, int z, int size)
+        private static int IndexOf(int x, int y, int z, int size)
         {
             return x + y*size + z*size*size;
         }

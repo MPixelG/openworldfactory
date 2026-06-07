@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration

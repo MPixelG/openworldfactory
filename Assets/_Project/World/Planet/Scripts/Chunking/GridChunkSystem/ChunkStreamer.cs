@@ -4,6 +4,11 @@ using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 {
+    /// <summary>
+    /// the chunk streamer is responsible for calculating what chunks to display.
+    /// it has no reference to any chunk systems and only contains a function that returns a set of chunks that should be visible based on the viewers position (in world pos).
+    /// everything else is managed by the chunk manager.
+    /// </summary>
     public class ChunkStreamer
     {
         private readonly int _chunkSize;
@@ -13,10 +18,16 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
             _chunkSize = chunkSize;
         }
 
-        private ChunkCoord _lastCalculatedChunkCoord;
-        private bool _hasLastCalculated;
-        private HashSet<ChunkCoord> _lastVisibleChunks = new();
+        private ChunkCoord _lastCalculatedChunkCoord; // the chunk coordinate of the last viewer position where the visible chunk coords were calculated for. this is used to avoid recalculating the visible chunks if the viewer is still in the same chunk as the last calculation
+        private bool _hasLastCalculated; // indicates whether there has been a calculation of visible chunks yet 
+        private HashSet<ChunkCoord> _lastVisibleChunks = new(); // contains the visible chunks of the last valid calculation
 
+        /// <summary>
+        /// calculates the visible chunks based on the viewers position and the view distance in chunks
+        /// </summary>
+        /// <param name="viewerPosition"> the world position of the viewer</param>
+        /// <param name="viewDistanceInChunks"> the viewers view distance in chunks. it is used as a radius of a sphere around the viewer where every chunk thats inside that sphere is returned. </param>
+        /// <returns> a set of chunk coords of visible chunks</returns>
         public HashSet<ChunkCoord> ComputeVisibleChunks(
             float3 viewerPosition,
             int viewDistanceInChunks

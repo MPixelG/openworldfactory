@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce486e4789149fa97ec54cf403847fd, type: 3}
   m_Name: New Burst Sampler Settings
   m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.WorldGen.Burst.BurstSamplerSettings
-  radius: 300
+  radius: 130

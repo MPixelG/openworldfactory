@@ -8,10 +8,13 @@ using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 {
+    /// <summary>
+    /// this is the core of the logic of this system. the grid chunk manager is responsible for managing the chunks states, generating the chunks and loading / unloading them. 
+    /// </summary>
     public class GridChunkManager
     {
         private readonly Dictionary<ChunkCoord, ChunkData> _chunks = new();
-        private readonly Dictionary<ChunkCoord, ChunkLifecycleState> _chunkStates = new();
+        private readonly Dictionary<ChunkCoord, ChunkLifecycleState> _chunkStates = new(); //todo use ChunkState instead
 
         private readonly Queue<ChunkCoord> _loadQueue = new();
         private readonly Queue<ChunkCoord> _unloadQueue = new();
@@ -27,7 +30,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 
         private int _activeGenerationTasks;
 
-        private const int ChunksPerFrame = 24;
+        private const int ChunksPerFrame = 8;
         private const int MaxConcurrentGenerationTasks = 8;
 
         public readonly int ChunkSize;
@@ -54,7 +57,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 
         public ChunkData GetChunkAt(ChunkCoord coord)
         {
-            return _chunks[coord];
+            return _chunks.GetValueOrDefault(coord);
         }
 
         public IEnumerable<ChunkCoord> GetLoadedChunkCoords()
@@ -85,8 +88,8 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 
             for (int i = 0; i < ChunksPerFrame; i++)
             {
-                //if (_activeGenerationTasks >= MaxConcurrentGenerationTasks)
-                //    break;
+                if (_activeGenerationTasks >= MaxConcurrentGenerationTasks)
+                    break;
 
                 if (_loadQueue.Count <= 0)
                     break;
@@ -202,7 +205,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         }
     }
 
-    public enum ChunkLifecycleState
+    public enum ChunkLifecycleState //todo remove
     {
         Unloaded,
         Queued,

@@ -90,9 +90,19 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 
         private void CreateRendererAt(ChunkCoord loadedChunkCoord)
         {
-            GameObject go = new($"Chunk_{loadedChunkCoord}");
-
-            go.transform.parent = transform;
+            
+            MeshData meshData =
+                _chunkManager.GetChunkAt(loadedChunkCoord)?.MeshData;
+            
+            if(meshData == null) return;
+            
+            GameObject go = new($"Chunk_{loadedChunkCoord}")
+            {
+                transform =
+                {
+                    parent = transform
+                }
+            };
 
             int3 worldPos = (loadedChunkCoord.Value * _chunkManager.ChunkSize);
             
@@ -100,9 +110,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 
             ChunkRenderer chunkRenderer =
                 go.AddComponent<ChunkRenderer>();
-
-            MeshData meshData =
-                _chunkManager.GetChunkAt(loadedChunkCoord).MeshData;
+            
 
             Mesh unityMesh = UnityMeshBuilder.Build(meshData);
 
@@ -121,7 +129,8 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         private void UpdateRendererAt(ChunkCoord loadedChunkCoord)
         {
             ChunkRenderer chunkRenderer = _chunkRenderers[loadedChunkCoord];
-            MeshData meshData = _chunkManager.GetChunkAt(loadedChunkCoord).MeshData;
+            MeshData meshData = _chunkManager.GetChunkAt(loadedChunkCoord)?.MeshData;
+            if (meshData == null) return;
             Mesh unityMesh = UnityMeshBuilder.Build(meshData);
             chunkRenderer.ApplyMeshData(unityMesh);
         }
