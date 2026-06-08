@@ -27,28 +27,30 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
 
             float3 ab = b - a;
             float3 ac = c - a;
-            float3 normal = math.cross(ab, ac);
-            if (math.lengthsq(normal) < 1e-12f)
+            float3 normal = math.cross(ab, ac); // using the cross product of the 3 points we can get a rough estimation of the normals
+            
+            if (math.lengthsq(normal) < 1e-12f) // if the length of the normal is invalid there probably was a division through zero somewhere
+                                                // so we just return (some really strange artifacts appear when there are vertices with NaN values in the mesh)
             {
                 return;
             }
 
             int i0 = GetOrAddVertex(a);
-            int i1 = GetOrAddVertex(b);
+            int i1 = GetOrAddVertex(b); // get or add the vertices and get their indices. this way we dont always generate new indices and since they connect their normals connect too and the results are smoother. 
             int i2 = GetOrAddVertex(c);
 
             _meshData.Indices.Add(i0);
-            _meshData.Indices.Add(i1);
+            _meshData.Indices.Add(i1); // add those indices to the mesh data
             _meshData.Indices.Add(i2);
             
             float angleA = AngleBetween(ab, ac);
-            float angleB = AngleBetween(c - b, a - b);
+            float angleB = AngleBetween(c - b, a - b); // we calculate the angles between the edges of the triangle and use them to weight the normals. this way we get better results for triangles that are not equilateral and avoid artifacts in sharp corners.
             float angleC = AngleBetween(a - c, b - c);
 
-            float3 faceNormal = math.normalize(math.cross(ab, ac));
+            float3 faceNormal = math.normalize(normal); // normalize the normal so it has a length of 1. this way we can use it to calculate the vertex normals by adding it to the corresponding vertices and then normalizing them at the end.
 
             _meshData.Normals[i0] += faceNormal * angleA;
-            _meshData.Normals[i1] += faceNormal * angleB;
+            _meshData.Normals[i1] += faceNormal * angleB; // weight the normals by the angles to get better results for non-equilateral triangles
             _meshData.Normals[i2] += faceNormal * angleC;
             
         }
@@ -60,17 +62,17 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
         /// <param name="v">the vertex to add or get</param>
         private int GetOrAddVertex(float3 v)
         {
-            int3 vertexKey = GetVertexKey(v);
-            if (_vertexMap.TryGetValue(vertexKey, out int index))
+            int3 vertexKey = GetVertexKey(v); // calculate the vertex key of that vertex
+            if (_vertexMap.TryGetValue(vertexKey, out int index)) // if we already have a vertex with that key we return its index
                 return index;
             
 
-            index = _meshData.Vertices.Count;
+            index = _meshData.Vertices.Count; // otherwise we set the index to the current length of the vertices list 
 
-            _meshData.Vertices.Add(v);
-            _meshData.Normals.Add(float3.zero);
+            _meshData.Vertices.Add(v); // and add that vertex
+            _meshData.Normals.Add(float3.zero); // and normals
 
-            _vertexMap.Add(vertexKey, index);
+            _vertexMap.Add(vertexKey, index); // finally add it to the vertex map
 
             return index;
         }
@@ -93,19 +95,31 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
             }
         }
         
+        /// <summary>
+        /// calculates the angle between 2 vectors
+        /// </summary>
+        /// <param name="a">vector a</param>
+        /// <param name="b">vector b</param>
+        /// <returns>the angle in radians</returns>
         private static float AngleBetween(float3 a, float3 b)
         {
-            float len = math.length(a) * math.length(b);
+            float len = math.length(a) * math.length(b); // get the length
 
-            if (len < 1e-8f)
+            if (len < 1e-8f) // and check if its tiny, if it is we can skip the calculation since something that tiny will result in something even tinier and we can just return 0 to be more efficient 
                 return 0f;
 
-            float d = math.clamp(math.dot(a, b) / len, -1f, 1f);
+            float d = math.clamp(math.dot(a, b) / len, -1f, 1f); // now just calculate the dot product and scale it down by the length.
+                                                                 // due to floating point inaccuracies it can happen that the value is slightly above 1 or below -1 so we just clamp it.
 
-            return math.acos(d);
+            return math.acos(d); // finally we use acos to get the angle in radians
         }
         
         
-        private int3 GetVertexKey(float3 v) => (int3)math.round(v * 10f);
+        /// <summary>
+        /// calculates a key based on the vertex position. it rounds on one decimal since thats smooth enough.
+        /// </summary>
+        /// <param name="v">the vertex position</param>
+        /// <returns>a 3d value to be used as a key</returns>
+        private static int3 GetVertexKey(float3 v) => (int3)math.round(v * 10f);
     }
 }

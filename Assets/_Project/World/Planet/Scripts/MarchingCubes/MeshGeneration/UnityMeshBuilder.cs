@@ -13,12 +13,12 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
             };
 
 
-            mesh.SetVertices(data.Vertices.ConvertAll(v => new Vector3(v.x, v.y, v.z)));
-            mesh.SetNormals(data.Normals.ConvertAll(v => new Vector3(v.x, v.y, v.z)));
-            mesh.SetTriangles(data.Indices, 0);
+            mesh.SetVertices(data.Vertices.ConvertAll(v => new Vector3(v.x, v.y, v.z))); // apply the vertices to the unity mesh. we have to convert the float3 vertices to Vector3 for this.
+            mesh.SetNormals(data.Normals.ConvertAll(v => new Vector3(v.x, v.y, v.z))); // same for the normals.
+            mesh.SetTriangles(data.Indices, 0); // the indices are just a list of ints so we can pass that directly. the submesh of 0 indicates that we only have one material for this mesh, so all triangles belong to the same submesh.
 
 
-            mesh.RecalculateBounds();
+            mesh.RecalculateBounds(); // and finally we recalculate the bounds of that mesh
 
             return mesh;
         }

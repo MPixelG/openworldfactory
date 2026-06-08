@@ -30,23 +30,26 @@ namespace _Project.World.Planet.Scripts.Chunking
         
         private void SetupMaterial()
         {
-            if (_meshRenderer.sharedMaterial != null) return;
+            if (_meshRenderer.sharedMaterial != null) return; // if a material is already set we dont need to set one ourselves
 
-            Shader shader = Shader.Find("Universal Render Pipeline/Lit") 
-                            ?? Shader.Find("Standard");
+            Shader shader = Shader.Find("Universal Render Pipeline/Lit") // use the default lit shader
+                            ?? Shader.Find("Standard"); // or the standard one as a backup
 
-            var mat = new Material(shader);
-            mat.SetInt(Cull, (int)UnityEngine.Rendering.CullMode.Back);
+            var mat = new Material(shader); // apply that shader to a new material
 
-            _meshRenderer.sharedMaterial = mat;
+            _meshRenderer.sharedMaterial = mat; // and apply that material to the renderer
         }
 
 
+        /// <summary>
+        /// applies a given mesh to this renderer
+        /// </summary>
+        /// <param name="mesh"></param>
         public void ApplyMeshData(Mesh mesh)
         {
-            EnsureComponents();
-            SetupMaterial();
-            _meshFilter.mesh = mesh;
+            EnsureComponents(); // ensure the renderer and filter are available
+            SetupMaterial(); // and also ensure a material is set for the renderer so that the mesh is actually visible
+            _meshFilter.mesh = mesh; // finally apply the mesh to the filter for it to get rendered
         }
         
     }
