@@ -1,0 +1,14 @@
+PROJECT_NAME           = "Openworld Factory (Name WIP)"
+OUTPUT_DIRECTORY       = docs_doxygen
+INPUT                  = Assets/_Project
+RECURSIVE             = YES
+
+EXTRACT_ALL           = YES
+EXTRACT_PRIVATE       = YES
+
+GENERATE_HTML         = YES
+GENERATE_LATEX        = NO
+
+QUIET                 = YES
+
+FILE_PATTERNS = *.cs
