@@ -1,0 +1,11 @@
+<map id="_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt" name="_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,84,276,139"/>
+<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ae36a67e88fb304887650874b85d12d06" title=" " alt="" coords="332,5,603,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="254,81,339,61,340,66,255,87"/>
+<area shape="rect" id="Node000004" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a3df3d5aa96c255b06033b78b3367c7c2" title=" " alt="" coords="324,84,611,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="276,109,310,109,310,114,276,114"/>
+<area shape="rect" id="Node000005" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f" title=" " alt="" coords="332,163,603,217"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="255,136,340,157,339,162,254,141"/>
+<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a27a824111d86d6b871c6c8ca5a4b4fdf" title="checks if the given vertex already exists in the vertices list and if so returns its index,..." alt="" coords="659,5,944,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="603,30,645,30,645,35,603,35"/>
+</map>

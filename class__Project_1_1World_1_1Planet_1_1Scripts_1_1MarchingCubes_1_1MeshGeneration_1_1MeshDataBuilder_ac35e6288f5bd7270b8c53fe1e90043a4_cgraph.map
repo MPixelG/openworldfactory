@@ -1,5 +1,0 @@
-<map id="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.GetOrAddVertex" name="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.GetOrAddVertex">
-<area shape="rect" id="Node000001" title="checks if the given vertex already exists in the vertices list and if so returns its index,..." alt="" coords="5,5,277,60"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a34808c938c6b18773bee0dbc1959977c" title="calculates a key based on the vertex position. it rounds on one decimal since thats smooth enough." alt="" coords="325,5,597,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="278,30,311,30,311,35,278,35"/>
-</map>

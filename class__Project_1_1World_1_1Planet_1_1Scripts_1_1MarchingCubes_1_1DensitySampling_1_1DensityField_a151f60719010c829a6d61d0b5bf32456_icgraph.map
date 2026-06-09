@@ -1,4 +1,8 @@
 <map id="_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt" name="_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt">
-<area shape="rect" id="Node000001" title="returns the density value at a given position. caution! this does not interpolate between positions s..." alt="" coords="5,29,296,84"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="200,19,182,11,151,8,124,10,107,15,100,21,100,29,95,29,95,19,105,10,124,5,151,3,183,6,202,14"/>
+<area shape="rect" id="Node000001" title="returns the density value at a given position. caution! this does not interpolate between positions s..." alt="" coords="344,45,635,100"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="547,35,526,27,489,24,459,26,439,31,430,37,430,45,424,45,425,35,436,26,458,21,489,19,527,22,549,30"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a0b7dd98995f30a8fe5e0a4c1126fc909" title=" " alt="" coords="15,5,287,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="330,57,286,51,287,46,331,51"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#ac58bcd172afedd04eeb3066e38d5e004" title="returns an interpolated density value at a given position. this is used to get smoother results when ..." alt="" coords="5,84,296,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="331,93,297,97,296,92,330,88"/>
 </map>

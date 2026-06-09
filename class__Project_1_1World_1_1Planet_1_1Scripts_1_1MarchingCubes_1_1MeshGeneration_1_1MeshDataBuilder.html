@@ -90,9 +90,11 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder__coll__graph.png" border="0" usemap="#a__Project_8World_8Planet_8Scripts_8MarchingCubes_8MeshGeneration_8MeshDataBuilder_coll__map" alt="Collaboration graph"/></div>
 <map name="a__Project_8World_8Planet_8Scripts_8MarchingCubes_8MeshGeneration_8MeshDataBuilder_coll__map" id="a__Project_8World_8Planet_8Scripts_8MarchingCubes_8MeshGeneration_8MeshDataBuilder_coll__map">
-<area shape="rect" title=" " alt="" coords="21,108,293,163"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html" title="a small class that stores vertices, normals and indices." alt="" coords="5,5,308,45"/>
-<area shape="poly" title=" " alt="" coords="159,59,159,108,154,108,154,59"/>
+<area shape="rect" title=" " alt="" coords="467,30,739,85"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html" title="a small class that stores vertices, normals and indices." alt="" coords="15,5,318,45"/>
+<area shape="poly" title=" " alt="" coords="332,35,467,45,466,50,332,40"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html" title=" " alt="" coords="5,69,328,109"/>
+<area shape="poly" title=" " alt="" coords="341,74,466,65,467,70,342,79"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -100,41 +102,79 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a721681fe9f2dff837469350235bf4d93" id="r_a721681fe9f2dff837469350235bf4d93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html">MeshData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a721681fe9f2dff837469350235bf4d93">Build</a> ()</td></tr>
 <tr class="separator:a721681fe9f2dff837469350235bf4d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab14ccdebc9a957b3518df7d42b0066f9" id="r_ab14ccdebc9a957b3518df7d42b0066f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ab14ccdebc9a957b3518df7d42b0066f9">AddTriangle</a> (float3 a, float3 b, float3 c)</td></tr>
-<tr class="memdesc:ab14ccdebc9a957b3518df7d42b0066f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">this adds a triangle to the mesh and calculates its indices and normals. this way you can just call this method for every triangle you want to add and it will take care of the rest.  <br /></td></tr>
-<tr class="separator:ab14ccdebc9a957b3518df7d42b0066f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76bf8e1a4d7756594a89e1fcd0c4497f" id="r_a76bf8e1a4d7756594a89e1fcd0c4497f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a76bf8e1a4d7756594a89e1fcd0c4497f">MeshDataBuilder</a> (<a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html">DensityField</a> densityField)</td></tr>
+<tr class="separator:a76bf8e1a4d7756594a89e1fcd0c4497f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83b9835644e153298e52c8e41f67a813" id="r_a83b9835644e153298e52c8e41f67a813"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a83b9835644e153298e52c8e41f67a813">AddTriangle</a> (float3 a, <a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a> ka, float3 b, <a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a> kb, float3 c, <a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a> kc)</td></tr>
+<tr class="memdesc:a83b9835644e153298e52c8e41f67a813"><td class="mdescLeft">&#160;</td><td class="mdescRight">this adds a triangle to the mesh and calculates its indices and normals. this way you can just call this method for every triangle you want to add and it will take care of the rest.  <br /></td></tr>
+<tr class="separator:a83b9835644e153298e52c8e41f67a813"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93b1e5121c02007693805778ef084239" id="r_a93b1e5121c02007693805778ef084239"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a93b1e5121c02007693805778ef084239">NormalizeNormals</a> ()</td></tr>
 <tr class="memdesc:a93b1e5121c02007693805778ef084239"><td class="mdescLeft">&#160;</td><td class="mdescRight">this normalizes the normals. that means every normal has a length of exactly 1.  <br /></td></tr>
 <tr class="separator:a93b1e5121c02007693805778ef084239"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ac35e6288f5bd7270b8c53fe1e90043a4" id="r_ac35e6288f5bd7270b8c53fe1e90043a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ac35e6288f5bd7270b8c53fe1e90043a4">GetOrAddVertex</a> (float3 v)</td></tr>
-<tr class="memdesc:ac35e6288f5bd7270b8c53fe1e90043a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if the given vertex already exists in the vertices list and if so returns its index, otherwise it adds it to the list and returns the new index  <br /></td></tr>
-<tr class="separator:ac35e6288f5bd7270b8c53fe1e90043a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb340a54947caff3ddf6fc20fe0e0ec5" id="r_afb340a54947caff3ddf6fc20fe0e0ec5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#afb340a54947caff3ddf6fc20fe0e0ec5">GetOrAddVertex</a> (<a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a> key, float3 v)</td></tr>
+<tr class="memdesc:afb340a54947caff3ddf6fc20fe0e0ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if the given vertex already exists in the vertices list and if so returns its index, otherwise it adds it to the list and returns the new index  <br /></td></tr>
+<tr class="separator:afb340a54947caff3ddf6fc20fe0e0ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
 <tr class="memitem:a7daf8aa30527b217f37e6870199c8ada" id="r_a7daf8aa30527b217f37e6870199c8ada"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a7daf8aa30527b217f37e6870199c8ada">AngleBetween</a> (float3 a, float3 b)</td></tr>
 <tr class="memdesc:a7daf8aa30527b217f37e6870199c8ada"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates the angle between 2 vectors  <br /></td></tr>
 <tr class="separator:a7daf8aa30527b217f37e6870199c8ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34808c938c6b18773bee0dbc1959977c" id="r_a34808c938c6b18773bee0dbc1959977c"><td class="memItemLeft" align="right" valign="top">static int3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a34808c938c6b18773bee0dbc1959977c">GetVertexKey</a> (float3 v)</td></tr>
-<tr class="memdesc:a34808c938c6b18773bee0dbc1959977c"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates a key based on the vertex position. it rounds on one decimal since thats smooth enough.  <br /></td></tr>
-<tr class="separator:a34808c938c6b18773bee0dbc1959977c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7dd98995f30a8fe5e0a4c1126fc909" id="r_a0b7dd98995f30a8fe5e0a4c1126fc909"><td class="memItemLeft" align="right" valign="top">static float3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a0b7dd98995f30a8fe5e0a4c1126fc909">CalculateSmoothNormal</a> (float3 pos, <a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html">DensityField</a> densityField)</td></tr>
+<tr class="separator:a0b7dd98995f30a8fe5e0a4c1126fc909"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a6f6ab31ed8e6ef1c3a81d7180ee76d20" id="r_a6f6ab31ed8e6ef1c3a81d7180ee76d20"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html">MeshData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a> = new()</td></tr>
 <tr class="separator:a6f6ab31ed8e6ef1c3a81d7180ee76d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac358d807e9226021e10bca233526413d" id="r_ac358d807e9226021e10bca233526413d"><td class="memItemLeft" align="right" valign="top">readonly Dictionary&lt; int3, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ac358d807e9226021e10bca233526413d">_vertexMap</a> = new()</td></tr>
-<tr class="separator:ac358d807e9226021e10bca233526413d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada556c1762ec9bd0a86c0ce091b6ac51" id="r_ada556c1762ec9bd0a86c0ce091b6ac51"><td class="memItemLeft" align="right" valign="top">readonly Dictionary&lt; <a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ada556c1762ec9bd0a86c0ce091b6ac51">_vertexMap</a> = new()</td></tr>
+<tr class="separator:ada556c1762ec9bd0a86c0ce091b6ac51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a236a4dae0d49a0b3c7414d2ffef80bdd" id="r_a236a4dae0d49a0b3c7414d2ffef80bdd"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html">DensityField</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a236a4dae0d49a0b3c7414d2ffef80bdd">_densityField</a></td></tr>
+<tr class="separator:a236a4dae0d49a0b3c7414d2ffef80bdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00006">6</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab14ccdebc9a957b3518df7d42b0066f9" name="ab14ccdebc9a957b3518df7d42b0066f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab14ccdebc9a957b3518df7d42b0066f9">&#9670;&#160;</a></span>AddTriangle()</h2>
+<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00008">8</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a76bf8e1a4d7756594a89e1fcd0c4497f" name="a76bf8e1a4d7756594a89e1fcd0c4497f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76bf8e1a4d7756594a89e1fcd0c4497f">&#9670;&#160;</a></span>MeshDataBuilder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.MeshDataBuilder </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html">DensityField</a>&#160;</td>
+          <td class="paramname"><em>densityField</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00020">20</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>        {</div>
+<div class="line"><span class="lineno">   22</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a236a4dae0d49a0b3c7414d2ffef80bdd">_densityField</a> = densityField;</div>
+<div class="line"><span class="lineno">   23</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_html_a236a4dae0d49a0b3c7414d2ffef80bdd"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a236a4dae0d49a0b3c7414d2ffef80bdd">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._densityField</a></div><div class="ttdeci">readonly DensityField _densityField</div><div class="ttdef"><b>Definition</b> <a href="MeshDataBuilder_8cs_source.html#l00016">MeshDataBuilder.cs:16</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="MeshDataBuilder_8cs_source.html#l00016">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._densityField</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a83b9835644e153298e52c8e41f67a813" name="a83b9835644e153298e52c8e41f67a813"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83b9835644e153298e52c8e41f67a813">&#9670;&#160;</a></span>AddTriangle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -151,14 +191,32 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>&#160;</td>
+          <td class="paramname"><em>ka</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">float3&#160;</td>
           <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>&#160;</td>
+          <td class="paramname"><em>kb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">float3&#160;</td>
-          <td class="paramname"><em>c</em>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>&#160;</td>
+          <td class="paramname"><em>kc</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -175,64 +233,43 @@ Private Attributes</h2></td></tr>
 
 <p>this adds a triangle to the mesh and calculates its indices and normals. this way you can just call this method for every triangle you want to add and it will take care of the rest. </p>
 
-<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00020">20</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>        {</div>
-<div class="line"><span class="lineno">   22</span>            <span class="comment">// Skip triangles with invalid or degenerate data to avoid NaN normals.</span></div>
-<div class="line"><span class="lineno">   23</span>            <span class="keywordflow">if</span> (!math.all(math.isfinite(a)) || !math.all(math.isfinite(b)) || !math.all(math.isfinite(c)))</div>
-<div class="line"><span class="lineno">   24</span>            {</div>
-<div class="line"><span class="lineno">   25</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   26</span>            }</div>
-<div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>            float3 ab = b - a;</div>
-<div class="line"><span class="lineno">   29</span>            float3 ac = c - a;</div>
-<div class="line"><span class="lineno">   30</span>            float3 normal = math.cross(ab, ac); <span class="comment">// using the cross product of the 3 points we can get a rough estimation of the normals</span></div>
-<div class="line"><span class="lineno">   31</span>            </div>
-<div class="line"><span class="lineno">   32</span>            <span class="keywordflow">if</span> (math.lengthsq(normal) &lt; 1e-12f) <span class="comment">// if the length of the normal is invalid there probably was a division through zero somewhere</span></div>
-<div class="line"><span class="lineno">   33</span>                                                <span class="comment">// so we just return (some really strange artifacts appear when there are vertices with NaN values in the mesh)</span></div>
-<div class="line"><span class="lineno">   34</span>            {</div>
-<div class="line"><span class="lineno">   35</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   36</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00028">28</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>        {</div>
+<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">if</span> (!math.all(math.isfinite(a)) ||</div>
+<div class="line"><span class="lineno">   34</span>                !math.all(math.isfinite(b)) ||</div>
+<div class="line"><span class="lineno">   35</span>                !math.all(math.isfinite(c)))</div>
+<div class="line"><span class="lineno">   36</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>            <span class="keywordtype">int</span> i0 = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ac35e6288f5bd7270b8c53fe1e90043a4">GetOrAddVertex</a>(a);</div>
-<div class="line"><span class="lineno">   39</span>            <span class="keywordtype">int</span> i1 = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ac35e6288f5bd7270b8c53fe1e90043a4">GetOrAddVertex</a>(b); <span class="comment">// get or add the vertices and get their indices. this way we dont always generate new indices and since they connect their normals connect too and the results are smoother. </span></div>
-<div class="line"><span class="lineno">   40</span>            <span class="keywordtype">int</span> i2 = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ac35e6288f5bd7270b8c53fe1e90043a4">GetOrAddVertex</a>(c);</div>
+<div class="line"><span class="lineno">   38</span>            <span class="keywordtype">int</span> i0 = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#afb340a54947caff3ddf6fc20fe0e0ec5">GetOrAddVertex</a>(ka, a);</div>
+<div class="line"><span class="lineno">   39</span>            <span class="keywordtype">int</span> i1 = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#afb340a54947caff3ddf6fc20fe0e0ec5">GetOrAddVertex</a>(kb, b);</div>
+<div class="line"><span class="lineno">   40</span>            <span class="keywordtype">int</span> i2 = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#afb340a54947caff3ddf6fc20fe0e0ec5">GetOrAddVertex</a>(kc, c);</div>
 <div class="line"><span class="lineno">   41</span> </div>
 <div class="line"><span class="lineno">   42</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a7e6d4f38125865eef95297465b005e44">Indices</a>.Add(i0);</div>
-<div class="line"><span class="lineno">   43</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a7e6d4f38125865eef95297465b005e44">Indices</a>.Add(i1); <span class="comment">// add those indices to the mesh data</span></div>
+<div class="line"><span class="lineno">   43</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a7e6d4f38125865eef95297465b005e44">Indices</a>.Add(i1);</div>
 <div class="line"><span class="lineno">   44</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a7e6d4f38125865eef95297465b005e44">Indices</a>.Add(i2);</div>
-<div class="line"><span class="lineno">   45</span>            </div>
-<div class="line"><span class="lineno">   46</span>            <span class="keywordtype">float</span> angleA = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a7daf8aa30527b217f37e6870199c8ada">AngleBetween</a>(ab, ac);</div>
-<div class="line"><span class="lineno">   47</span>            <span class="keywordtype">float</span> angleB = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a7daf8aa30527b217f37e6870199c8ada">AngleBetween</a>(c - b, a - b); <span class="comment">// we calculate the angles between the edges of the triangle and use them to weight the normals. this way we get better results for triangles that are not equilateral and avoid artifacts in sharp corners.</span></div>
-<div class="line"><span class="lineno">   48</span>            <span class="keywordtype">float</span> angleC = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a7daf8aa30527b217f37e6870199c8ada">AngleBetween</a>(a - c, b - c);</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>            float3 faceNormal = math.normalize(normal); <span class="comment">// normalize the normal so it has a length of 1. this way we can use it to calculate the vertex normals by adding it to the corresponding vertices and then normalizing them at the end.</span></div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>[i0] += faceNormal * angleA;</div>
-<div class="line"><span class="lineno">   53</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>[i1] += faceNormal * angleB; <span class="comment">// weight the normals by the angles to get better results for non-equilateral triangles</span></div>
-<div class="line"><span class="lineno">   54</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>[i2] += faceNormal * angleC;</div>
-<div class="line"><span class="lineno">   55</span>            </div>
-<div class="line"><span class="lineno">   56</span>        }</div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_html_a6f6ab31ed8e6ef1c3a81d7180ee76d20"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._meshData</a></div><div class="ttdeci">readonly MeshData _meshData</div><div class="ttdef"><b>Definition</b> <a href="MeshDataBuilder_8cs_source.html#l00008">MeshDataBuilder.cs:8</a></div></div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_html_a7daf8aa30527b217f37e6870199c8ada"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a7daf8aa30527b217f37e6870199c8ada">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.AngleBetween</a></div><div class="ttdeci">static float AngleBetween(float3 a, float3 b)</div><div class="ttdoc">calculates the angle between 2 vectors</div><div class="ttdef"><b>Definition</b> <a href="MeshDataBuilder_8cs_source.html#l00104">MeshDataBuilder.cs:104</a></div></div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_html_ac35e6288f5bd7270b8c53fe1e90043a4"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ac35e6288f5bd7270b8c53fe1e90043a4">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.GetOrAddVertex</a></div><div class="ttdeci">int GetOrAddVertex(float3 v)</div><div class="ttdoc">checks if the given vertex already exists in the vertices list and if so returns its index,...</div><div class="ttdef"><b>Definition</b> <a href="MeshDataBuilder_8cs_source.html#l00063">MeshDataBuilder.cs:63</a></div></div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>            float3 normal = math.normalize(math.cross(b - a, c - a));</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>[i0] += normal;</div>
+<div class="line"><span class="lineno">   49</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>[i1] += normal;</div>
+<div class="line"><span class="lineno">   50</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>[i2] += normal;</div>
+<div class="line"><span class="lineno">   51</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_html_a6f6ab31ed8e6ef1c3a81d7180ee76d20"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._meshData</a></div><div class="ttdeci">readonly MeshData _meshData</div><div class="ttdef"><b>Definition</b> <a href="MeshDataBuilder_8cs_source.html#l00010">MeshDataBuilder.cs:10</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_html_afb340a54947caff3ddf6fc20fe0e0ec5"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#afb340a54947caff3ddf6fc20fe0e0ec5">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.GetOrAddVertex</a></div><div class="ttdeci">int GetOrAddVertex(VertexKey key, float3 v)</div><div class="ttdoc">checks if the given vertex already exists in the vertices list and if so returns its index,...</div><div class="ttdef"><b>Definition</b> <a href="MeshDataBuilder_8cs_source.html#l00058">MeshDataBuilder.cs:58</a></div></div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData_html_a7e6d4f38125865eef95297465b005e44"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a7e6d4f38125865eef95297465b005e44">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Indices</a></div><div class="ttdeci">readonly List&lt; int &gt; Indices</div><div class="ttdef"><b>Definition</b> <a href="MeshData_8cs_source.html#l00013">MeshData.cs:13</a></div></div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData_html_a97844c9be77507dc67f9e2fbbbc06b88"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Normals</a></div><div class="ttdeci">readonly List&lt; float3 &gt; Normals</div><div class="ttdef"><b>Definition</b> <a href="MeshData_8cs_source.html#l00012">MeshData.cs:12</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="MeshDataBuilder_8cs_source.html#l00008">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._meshData</a>, <a class="el" href="MeshDataBuilder_8cs_source.html#l00104">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.AngleBetween()</a>, <a class="el" href="MeshDataBuilder_8cs_source.html#l00063">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.GetOrAddVertex()</a>, <a class="el" href="MeshData_8cs_source.html#l00013">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Indices</a>, and <a class="el" href="MeshData_8cs_source.html#l00012">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Normals</a>.</p>
+<p class="reference">References <a class="el" href="MeshDataBuilder_8cs_source.html#l00010">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._meshData</a>, <a class="el" href="MeshDataBuilder_8cs_source.html#l00058">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.GetOrAddVertex()</a>, <a class="el" href="MeshData_8cs_source.html#l00013">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Indices</a>, and <a class="el" href="MeshData_8cs_source.html#l00012">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Normals</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_ab14ccdebc9a957b3518df7d42b0066f9_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_ab14ccdebc9a957b3518df7d42b0066f9_cgraph" alt=""/></div>
-<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_ab14ccdebc9a957b3518df7d42b0066f9_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_ab14ccdebc9a957b3518df7d42b0066f9_cgraph">
-<area shape="rect" title="this adds a triangle to the mesh and calculates its indices and normals. this way you can just call t..." alt="" coords="5,45,277,100"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a7daf8aa30527b217f37e6870199c8ada" title="calculates the angle between 2 vectors" alt="" coords="325,5,597,60"/>
-<area shape="poly" title=" " alt="" coords="277,53,311,49,312,54,278,58"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ac35e6288f5bd7270b8c53fe1e90043a4" title="checks if the given vertex already exists in the vertices list and if so returns its index,..." alt="" coords="325,84,597,139"/>
-<area shape="poly" title=" " alt="" coords="278,86,312,91,311,96,277,92"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a34808c938c6b18773bee0dbc1959977c" title="calculates a key based on the vertex position. it rounds on one decimal since thats smooth enough." alt="" coords="645,84,917,139"/>
-<area shape="poly" title=" " alt="" coords="598,109,631,109,631,114,598,114"/>
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a83b9835644e153298e52c8e41f67a813_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a83b9835644e153298e52c8e41f67a813_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a83b9835644e153298e52c8e41f67a813_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a83b9835644e153298e52c8e41f67a813_cgraph">
+<area shape="rect" title="this adds a triangle to the mesh and calculates its indices and normals. this way you can just call t..." alt="" coords="5,5,277,60"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#afb340a54947caff3ddf6fc20fe0e0ec5" title="checks if the given vertex already exists in the vertices list and if so returns its index,..." alt="" coords="325,5,597,60"/>
+<area shape="poly" title=" " alt="" coords="278,30,311,30,311,35,278,35"/>
 </map>
 </div>
 
@@ -282,33 +319,19 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the angle in radians</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00104">104</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  105</span>        {</div>
-<div class="line"><span class="lineno">  106</span>            <span class="keywordtype">float</span> len = math.length(a) * math.length(b); <span class="comment">// get the length</span></div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>            <span class="keywordflow">if</span> (len &lt; 1e-8f) <span class="comment">// and check if its tiny, if it is we can skip the calculation since something that tiny will result in something even tinier and we can just return 0 to be more efficient </span></div>
-<div class="line"><span class="lineno">  109</span>                <span class="keywordflow">return</span> 0f;</div>
-<div class="line"><span class="lineno">  110</span> </div>
-<div class="line"><span class="lineno">  111</span>            <span class="keywordtype">float</span> d = math.clamp(math.dot(a, b) / len, -1f, 1f); <span class="comment">// now just calculate the dot product and scale it down by the length.</span></div>
-<div class="line"><span class="lineno">  112</span>                                                                 <span class="comment">// due to floating point inaccuracies it can happen that the value is slightly above 1 or below -1 so we just clamp it.</span></div>
-<div class="line"><span class="lineno">  113</span> </div>
-<div class="line"><span class="lineno">  114</span>            <span class="keywordflow">return</span> math.acos(d); <span class="comment">// finally we use acos to get the angle in radians</span></div>
-<div class="line"><span class="lineno">  115</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00097">97</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>        {</div>
+<div class="line"><span class="lineno">   99</span>            <span class="keywordtype">float</span> len = math.length(a) * math.length(b); <span class="comment">// get the length</span></div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">if</span> (len &lt; 1e-8f) <span class="comment">// and check if its tiny, if it is we can skip the calculation since something that tiny will result in something even tinier and we can just return 0 to be more efficient </span></div>
+<div class="line"><span class="lineno">  102</span>                <span class="keywordflow">return</span> 0f;</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>            <span class="keywordtype">float</span> d = math.clamp(math.dot(a, b) / len, -1f, 1f); <span class="comment">// now just calculate the dot product and scale it down by the length.</span></div>
+<div class="line"><span class="lineno">  105</span>                                                                 <span class="comment">// due to floating point inaccuracies it can happen that the value is slightly above 1 or below -1 so we just clamp it.</span></div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">return</span> math.acos(d); <span class="comment">// finally we use acos to get the angle in radians</span></div>
+<div class="line"><span class="lineno">  108</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="MeshDataBuilder_8cs_source.html#l00020">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.AddTriangle()</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a7daf8aa30527b217f37e6870199c8ada_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a7daf8aa30527b217f37e6870199c8ada_icgraph" alt=""/></div>
-<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a7daf8aa30527b217f37e6870199c8ada_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a7daf8aa30527b217f37e6870199c8ada_icgraph">
-<area shape="rect" title="calculates the angle between 2 vectors" alt="" coords="325,5,597,60"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ab14ccdebc9a957b3518df7d42b0066f9" title="this adds a triangle to the mesh and calculates its indices and normals. this way you can just call t..." alt="" coords="5,5,277,60"/>
-<area shape="poly" title=" " alt="" coords="311,35,278,35,278,30,311,30"/>
-</map>
-</div>
-
 </div>
 </div>
 <a id="a721681fe9f2dff837469350235bf4d93" name="a721681fe9f2dff837469350235bf4d93"></a>
@@ -328,8 +351,92 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ac35e6288f5bd7270b8c53fe1e90043a4" name="ac35e6288f5bd7270b8c53fe1e90043a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac35e6288f5bd7270b8c53fe1e90043a4">&#9670;&#160;</a></span>GetOrAddVertex()</h2>
+<a id="a0b7dd98995f30a8fe5e0a4c1126fc909" name="a0b7dd98995f30a8fe5e0a4c1126fc909"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b7dd98995f30a8fe5e0a4c1126fc909">&#9670;&#160;</a></span>CalculateSmoothNormal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float3 _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.CalculateSmoothNormal </td>
+          <td>(</td>
+          <td class="paramtype">float3&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html">DensityField</a>&#160;</td>
+          <td class="paramname"><em>densityField</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00111">111</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>        {</div>
+<div class="line"><span class="lineno">  113</span>            <span class="comment">// we sample slightly around the position to estimate the gradient</span></div>
+<div class="line"><span class="lineno">  114</span>            <span class="comment">// this works like a derivative of the density field</span></div>
+<div class="line"><span class="lineno">  115</span>            </div>
+<div class="line"><span class="lineno">  116</span>            <span class="keywordtype">float</span> eps = 0.1f;</div>
+<div class="line"><span class="lineno">  117</span>            </div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>            <span class="keywordtype">float</span> dx =</div>
+<div class="line"><span class="lineno">  120</span>                densityField.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">DensityAt</a>(pos + <span class="keyword">new</span> float3(eps,0,0))</div>
+<div class="line"><span class="lineno">  121</span>                - densityField.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">DensityAt</a>(pos - <span class="keyword">new</span> float3(eps,0,0));</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>            <span class="keywordtype">float</span> dy =</div>
+<div class="line"><span class="lineno">  124</span>                densityField.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">DensityAt</a>(pos + <span class="keyword">new</span> float3(0,eps,0))</div>
+<div class="line"><span class="lineno">  125</span>                - densityField.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">DensityAt</a>(pos - <span class="keyword">new</span> float3(0,eps,0));</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>            <span class="keywordtype">float</span> dz =</div>
+<div class="line"><span class="lineno">  128</span>                densityField.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">DensityAt</a>(pos + <span class="keyword">new</span> float3(0,0,eps))</div>
+<div class="line"><span class="lineno">  129</span>                - densityField.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">DensityAt</a>(pos - <span class="keyword">new</span> float3(0,0,eps));</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>            float3 gradient = <span class="keyword">new</span> float3(dx, dy, dz);</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>            <span class="comment">// fallback in case gradient is zero</span></div>
+<div class="line"><span class="lineno">  134</span>            <span class="keywordflow">if</span> (math.lengthsq(gradient) &lt; 1e-12f)</div>
+<div class="line"><span class="lineno">  135</span>            {</div>
+<div class="line"><span class="lineno">  136</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> float3(0, 1, 0);</div>
+<div class="line"><span class="lineno">  137</span>            }</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>            <span class="comment">// negative because density usually increases inward</span></div>
+<div class="line"><span class="lineno">  140</span>            <span class="keywordflow">return</span> math.normalize(-gradient);</div>
+<div class="line"><span class="lineno">  141</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_html_a151f60719010c829a6d61d0b5bf32456"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt</a></div><div class="ttdeci">float DensityAt(int3 position)</div><div class="ttdoc">returns the density value at a given position. caution! this does not interpolate between positions s...</div><div class="ttdef"><b>Definition</b> <a href="DensityField_8cs_source.html#l00038">DensityField.cs:38</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="DensityField_8cs_source.html#l00038">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a0b7dd98995f30a8fe5e0a4c1126fc909_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a0b7dd98995f30a8fe5e0a4c1126fc909_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a0b7dd98995f30a8fe5e0a4c1126fc909_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a0b7dd98995f30a8fe5e0a4c1126fc909_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,277,84"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456" title="returns the density value at a given position. caution! this does not interpolate between positions s..." alt="" coords="325,29,616,84"/>
+<area shape="poly" title=" " alt="" coords="277,54,311,54,311,59,277,59"/>
+<area shape="poly" title=" " alt="" coords="408,29,408,19,419,10,440,5,471,3,507,6,528,14,526,19,506,11,471,8,441,10,422,15,413,21,413,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afb340a54947caff3ddf6fc20fe0e0ec5" name="afb340a54947caff3ddf6fc20fe0e0ec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb340a54947caff3ddf6fc20fe0e0ec5">&#9670;&#160;</a></span>GetOrAddVertex()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -340,9 +447,19 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">int _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.GetOrAddVertex </td>
           <td>(</td>
-          <td class="paramtype">float3&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">float3&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -360,101 +477,35 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00063">63</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   64</span>        {</div>
-<div class="line"><span class="lineno">   65</span>            int3 vertexKey = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a34808c938c6b18773bee0dbc1959977c">GetVertexKey</a>(v); <span class="comment">// calculate the vertex key of that vertex</span></div>
-<div class="line"><span class="lineno">   66</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ac358d807e9226021e10bca233526413d">_vertexMap</a>.TryGetValue(vertexKey, out <span class="keywordtype">int</span> index)) <span class="comment">// if we already have a vertex with that key we return its index</span></div>
-<div class="line"><span class="lineno">   67</span>                <span class="keywordflow">return</span> index;</div>
-<div class="line"><span class="lineno">   68</span>            </div>
+<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00058">58</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>        {</div>
+<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ada556c1762ec9bd0a86c0ce091b6ac51">_vertexMap</a>.TryGetValue(key, out <span class="keywordtype">int</span> index))</div>
+<div class="line"><span class="lineno">   61</span>                <span class="keywordflow">return</span> index;</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>            index = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#aebe9a73ef3524a6a93db0361564d0968">Vertices</a>.Count;</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#aebe9a73ef3524a6a93db0361564d0968">Vertices</a>.Add(v);</div>
+<div class="line"><span class="lineno">   66</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>.Add(float3.zero);</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ada556c1762ec9bd0a86c0ce091b6ac51">_vertexMap</a>.Add(key, index);</div>
 <div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>            index = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#aebe9a73ef3524a6a93db0361564d0968">Vertices</a>.Count; <span class="comment">// otherwise we set the index to the current length of the vertices list </span></div>
-<div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   72</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#aebe9a73ef3524a6a93db0361564d0968">Vertices</a>.Add(v); <span class="comment">// and add that vertex</span></div>
-<div class="line"><span class="lineno">   73</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>.Add(float3.zero); <span class="comment">// and normals</span></div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ac358d807e9226021e10bca233526413d">_vertexMap</a>.Add(vertexKey, index); <span class="comment">// finally add it to the vertex map</span></div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">return</span> index;</div>
-<div class="line"><span class="lineno">   78</span>        }</div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_html_a34808c938c6b18773bee0dbc1959977c"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a34808c938c6b18773bee0dbc1959977c">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.GetVertexKey</a></div><div class="ttdeci">static int3 GetVertexKey(float3 v)</div><div class="ttdoc">calculates a key based on the vertex position. it rounds on one decimal since thats smooth enough.</div></div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_html_ac358d807e9226021e10bca233526413d"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ac358d807e9226021e10bca233526413d">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._vertexMap</a></div><div class="ttdeci">readonly Dictionary&lt; int3, int &gt; _vertexMap</div><div class="ttdef"><b>Definition</b> <a href="MeshDataBuilder_8cs_source.html#l00010">MeshDataBuilder.cs:10</a></div></div>
+<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">return</span> index;</div>
+<div class="line"><span class="lineno">   71</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_html_ada556c1762ec9bd0a86c0ce091b6ac51"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ada556c1762ec9bd0a86c0ce091b6ac51">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._vertexMap</a></div><div class="ttdeci">readonly Dictionary&lt; VertexKey, int &gt; _vertexMap</div><div class="ttdef"><b>Definition</b> <a href="MeshDataBuilder_8cs_source.html#l00012">MeshDataBuilder.cs:12</a></div></div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData_html_aebe9a73ef3524a6a93db0361564d0968"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#aebe9a73ef3524a6a93db0361564d0968">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Vertices</a></div><div class="ttdeci">readonly List&lt; float3 &gt; Vertices</div><div class="ttdef"><b>Definition</b> <a href="MeshData_8cs_source.html#l00011">MeshData.cs:11</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="MeshDataBuilder_8cs_source.html#l00008">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._meshData</a>, <a class="el" href="MeshDataBuilder_8cs_source.html#l00010">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._vertexMap</a>, <a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a34808c938c6b18773bee0dbc1959977c">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.GetVertexKey()</a>, <a class="el" href="MeshData_8cs_source.html#l00012">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Normals</a>, and <a class="el" href="MeshData_8cs_source.html#l00011">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Vertices</a>.</p>
+<p class="reference">References <a class="el" href="MeshDataBuilder_8cs_source.html#l00010">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._meshData</a>, <a class="el" href="MeshDataBuilder_8cs_source.html#l00012">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._vertexMap</a>, <a class="el" href="MeshData_8cs_source.html#l00012">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Normals</a>, and <a class="el" href="MeshData_8cs_source.html#l00011">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Vertices</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MeshDataBuilder_8cs_source.html#l00020">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.AddTriangle()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MeshDataBuilder_8cs_source.html#l00028">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.AddTriangle()</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_ac35e6288f5bd7270b8c53fe1e90043a4_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_ac35e6288f5bd7270b8c53fe1e90043a4_cgraph" alt=""/></div>
-<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_ac35e6288f5bd7270b8c53fe1e90043a4_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_ac35e6288f5bd7270b8c53fe1e90043a4_cgraph">
-<area shape="rect" title="checks if the given vertex already exists in the vertices list and if so returns its index,..." alt="" coords="5,5,277,60"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a34808c938c6b18773bee0dbc1959977c" title="calculates a key based on the vertex position. it rounds on one decimal since thats smooth enough." alt="" coords="325,5,597,60"/>
-<area shape="poly" title=" " alt="" coords="278,30,311,30,311,35,278,35"/>
-</map>
-</div>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_ac35e6288f5bd7270b8c53fe1e90043a4_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_ac35e6288f5bd7270b8c53fe1e90043a4_icgraph" alt=""/></div>
-<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_ac35e6288f5bd7270b8c53fe1e90043a4_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_ac35e6288f5bd7270b8c53fe1e90043a4_icgraph">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_afb340a54947caff3ddf6fc20fe0e0ec5_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_afb340a54947caff3ddf6fc20fe0e0ec5_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_afb340a54947caff3ddf6fc20fe0e0ec5_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_afb340a54947caff3ddf6fc20fe0e0ec5_icgraph">
 <area shape="rect" title="checks if the given vertex already exists in the vertices list and if so returns its index,..." alt="" coords="325,5,597,60"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ab14ccdebc9a957b3518df7d42b0066f9" title="this adds a triangle to the mesh and calculates its indices and normals. this way you can just call t..." alt="" coords="5,5,277,60"/>
-<area shape="poly" title=" " alt="" coords="311,35,278,35,278,30,311,30"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a34808c938c6b18773bee0dbc1959977c" name="a34808c938c6b18773bee0dbc1959977c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34808c938c6b18773bee0dbc1959977c">&#9670;&#160;</a></span>GetVertexKey()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static int3 _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.GetVertexKey </td>
-          <td>(</td>
-          <td class="paramtype">float3&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>calculates a key based on the vertex position. it rounds on one decimal since thats smooth enough. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">v</td><td>the vertex position</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a 3d value to be used as a key</dd></dl>
-
-<p class="reference">Referenced by <a class="el" href="MeshDataBuilder_8cs_source.html#l00063">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.GetOrAddVertex()</a>.</p>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a34808c938c6b18773bee0dbc1959977c_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a34808c938c6b18773bee0dbc1959977c_icgraph" alt=""/></div>
-<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a34808c938c6b18773bee0dbc1959977c_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder_a34808c938c6b18773bee0dbc1959977c_icgraph">
-<area shape="rect" title="calculates a key based on the vertex position. it rounds on one decimal since thats smooth enough." alt="" coords="645,5,917,60"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ac35e6288f5bd7270b8c53fe1e90043a4" title="checks if the given vertex already exists in the vertices list and if so returns its index,..." alt="" coords="325,5,597,60"/>
-<area shape="poly" title=" " alt="" coords="631,35,598,35,598,30,631,30"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ab14ccdebc9a957b3518df7d42b0066f9" title="this adds a triangle to the mesh and calculates its indices and normals. this way you can just call t..." alt="" coords="5,5,277,60"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a83b9835644e153298e52c8e41f67a813" title="this adds a triangle to the mesh and calculates its indices and normals. this way you can just call t..." alt="" coords="5,5,277,60"/>
 <area shape="poly" title=" " alt="" coords="311,35,278,35,278,30,311,30"/>
 </map>
 </div>
@@ -486,26 +537,52 @@ Private Attributes</h2></td></tr>
 
 <p>this normalizes the normals. that means every normal has a length of exactly 1. </p>
 
-<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00083">83</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>        {</div>
-<div class="line"><span class="lineno">   85</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>.Count; i++)</div>
-<div class="line"><span class="lineno">   86</span>            {</div>
-<div class="line"><span class="lineno">   87</span>                float3 n = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>[i];</div>
-<div class="line"><span class="lineno">   88</span>                <span class="keywordflow">if</span> (!math.all(math.isfinite(n)) || math.lengthsq(n) &lt; 1e-12f)</div>
-<div class="line"><span class="lineno">   89</span>                {</div>
-<div class="line"><span class="lineno">   90</span>                    <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>[i] = <span class="keyword">new</span> float3(0f, 1f, 0f);</div>
-<div class="line"><span class="lineno">   91</span>                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   92</span>                }</div>
-<div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>[i] = math.normalize(n);</div>
-<div class="line"><span class="lineno">   95</span>            }</div>
-<div class="line"><span class="lineno">   96</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00076">76</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>        {</div>
+<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>.Count; i++)</div>
+<div class="line"><span class="lineno">   79</span>            {</div>
+<div class="line"><span class="lineno">   80</span>                float3 n = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>[i];</div>
+<div class="line"><span class="lineno">   81</span>                <span class="keywordflow">if</span> (!math.all(math.isfinite(n)) || math.lengthsq(n) &lt; 1e-12f)</div>
+<div class="line"><span class="lineno">   82</span>                {</div>
+<div class="line"><span class="lineno">   83</span>                    <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>[i] = <span class="keyword">new</span> float3(0f, 1f, 0f);</div>
+<div class="line"><span class="lineno">   84</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   85</span>                }</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a6f6ab31ed8e6ef1c3a81d7180ee76d20">_meshData</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88">Normals</a>[i] = math.normalize(n);</div>
+<div class="line"><span class="lineno">   88</span>            }</div>
+<div class="line"><span class="lineno">   89</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="MeshDataBuilder_8cs_source.html#l00008">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._meshData</a>, and <a class="el" href="MeshData_8cs_source.html#l00012">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Normals</a>.</p>
+<p class="reference">References <a class="el" href="MeshDataBuilder_8cs_source.html#l00010">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._meshData</a>, and <a class="el" href="MeshData_8cs_source.html#l00012">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Normals</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a236a4dae0d49a0b3c7414d2ffef80bdd" name="a236a4dae0d49a0b3c7414d2ffef80bdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a236a4dae0d49a0b3c7414d2ffef80bdd">&#9670;&#160;</a></span>_densityField</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html">DensityField</a> _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._densityField</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00016">16</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="MeshDataBuilder_8cs_source.html#l00020">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.MeshDataBuilder()</a>.</p>
+
+</div>
+</div>
 <a id="a6f6ab31ed8e6ef1c3a81d7180ee76d20" name="a6f6ab31ed8e6ef1c3a81d7180ee76d20"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6f6ab31ed8e6ef1c3a81d7180ee76d20">&#9670;&#160;</a></span>_meshData</h2>
 
@@ -526,14 +603,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00008">8</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00010">10</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MeshDataBuilder_8cs_source.html#l00020">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.AddTriangle()</a>, <a class="el" href="MeshDataBuilder_8cs_source.html#l00063">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.GetOrAddVertex()</a>, and <a class="el" href="MeshDataBuilder_8cs_source.html#l00083">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.NormalizeNormals()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MeshDataBuilder_8cs_source.html#l00028">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.AddTriangle()</a>, <a class="el" href="MeshDataBuilder_8cs_source.html#l00058">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.GetOrAddVertex()</a>, and <a class="el" href="MeshDataBuilder_8cs_source.html#l00076">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.NormalizeNormals()</a>.</p>
 
 </div>
 </div>
-<a id="ac358d807e9226021e10bca233526413d" name="ac358d807e9226021e10bca233526413d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac358d807e9226021e10bca233526413d">&#9670;&#160;</a></span>_vertexMap</h2>
+<a id="ada556c1762ec9bd0a86c0ce091b6ac51" name="ada556c1762ec9bd0a86c0ce091b6ac51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada556c1762ec9bd0a86c0ce091b6ac51">&#9670;&#160;</a></span>_vertexMap</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -542,7 +619,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">readonly Dictionary&lt;int3, int&gt; _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._vertexMap = new()</td>
+          <td class="memname">readonly Dictionary&lt;<a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>, int&gt; _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder._vertexMap = new()</td>
         </tr>
       </table>
   </td>
@@ -552,9 +629,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00010">10</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MeshDataBuilder_8cs_source.html#l00012">12</a> of file <a class="el" href="MeshDataBuilder_8cs_source.html">MeshDataBuilder.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MeshDataBuilder_8cs_source.html#l00063">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.GetOrAddVertex()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MeshDataBuilder_8cs_source.html#l00058">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.GetOrAddVertex()</a>.</p>
 
 </div>
 </div>

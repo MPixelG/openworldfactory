@@ -1,5 +1,0 @@
-<map id="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.AngleBetween" name="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.AngleBetween">
-<area shape="rect" id="Node000001" title="calculates the angle between 2 vectors" alt="" coords="325,5,597,60"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ab14ccdebc9a957b3518df7d42b0066f9" title="this adds a triangle to the mesh and calculates its indices and normals. this way you can just call t..." alt="" coords="5,5,277,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="311,35,278,35,278,30,311,30"/>
-</map>

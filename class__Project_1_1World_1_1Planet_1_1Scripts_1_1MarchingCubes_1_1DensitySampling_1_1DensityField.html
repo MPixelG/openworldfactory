@@ -95,6 +95,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3c762b93316860524d06e9563816b087" id="r_a3c762b93316860524d06e9563816b087"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a3c762b93316860524d06e9563816b087">DensityAt</a> (int x, int y, int z)</td></tr>
 <tr class="memdesc:a3c762b93316860524d06e9563816b087"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the density value at a given position. caution! this does not interpolate between positions so it only returns values for values that are exactly on the requested grid positions.  <br /></td></tr>
 <tr class="separator:a3c762b93316860524d06e9563816b087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac58bcd172afedd04eeb3066e38d5e004" id="r_ac58bcd172afedd04eeb3066e38d5e004"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#ac58bcd172afedd04eeb3066e38d5e004">DensityAt</a> (float3 position)</td></tr>
+<tr class="memdesc:ac58bcd172afedd04eeb3066e38d5e004"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns an interpolated density value at a given position. this is used to get smoother results when the position is not exactly on the grid. it uses trilinear interpolation to calculate the density value based on the 8 surrounding grid points.  <br /></td></tr>
+<tr class="separator:ac58bcd172afedd04eeb3066e38d5e004"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7df2fcbf9b57ee2392e6b303ba8c94c1" id="r_a7df2fcbf9b57ee2392e6b303ba8c94c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a7df2fcbf9b57ee2392e6b303ba8c94c1">Dispose</a> ()</td></tr>
+<tr class="separator:a7df2fcbf9b57ee2392e6b303ba8c94c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -109,8 +114,8 @@ Static Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aa99d0edfc816707e2708df9bc003235a" id="r_aa99d0edfc816707e2708df9bc003235a"><td class="memItemLeft" align="right" valign="top">readonly NativeArray&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#aa99d0edfc816707e2708df9bc003235a">_densities</a></td></tr>
-<tr class="separator:aa99d0edfc816707e2708df9bc003235a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4afaa97a862470ffe99d2e07f5883a47" id="r_a4afaa97a862470ffe99d2e07f5883a47"><td class="memItemLeft" align="right" valign="top">NativeArray&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a4afaa97a862470ffe99d2e07f5883a47">_densities</a></td></tr>
+<tr class="separator:a4afaa97a862470ffe99d2e07f5883a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -155,27 +160,104 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">densities</td><td>the density values used represented as a 1d array</td></tr>
-    <tr><td class="paramname">size</td><td>the grid size. caution! the grid size should be 1 higher than the chunk size!</td></tr>
+    <tr><td class="paramname">size</td><td>the grid size. caution! the grid size should be 2 higher than the chunk size!</td></tr>
   </table>
   </dd>
 </dl>
-<p>// todo padding of 2 instead of 1 </p>
 
 <p class="definition">Definition at line <a class="el" href="DensityField_8cs_source.html#l00017">17</a> of file <a class="el" href="DensityField_8cs_source.html">DensityField.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   18</span>        {</div>
-<div class="line"><span class="lineno">   19</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#aa99d0edfc816707e2708df9bc003235a">_densities</a> = densities;</div>
+<div class="line"><span class="lineno">   19</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a4afaa97a862470ffe99d2e07f5883a47">_densities</a> = densities;</div>
 <div class="line"><span class="lineno">   20</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">Size</a> = size;</div>
 <div class="line"><span class="lineno">   21</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_html_a4afaa97a862470ffe99d2e07f5883a47"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a4afaa97a862470ffe99d2e07f5883a47">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField._densities</a></div><div class="ttdeci">NativeArray&lt; float &gt; _densities</div><div class="ttdef"><b>Definition</b> <a href="DensityField_8cs_source.html#l00009">DensityField.cs:9</a></div></div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_html_a632399fa3a1205a9829f0524d7620ec1"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.Size</a></div><div class="ttdeci">readonly int Size</div><div class="ttdef"><b>Definition</b> <a href="DensityField_8cs_source.html#l00010">DensityField.cs:10</a></div></div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_html_aa99d0edfc816707e2708df9bc003235a"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#aa99d0edfc816707e2708df9bc003235a">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField._densities</a></div><div class="ttdeci">readonly NativeArray&lt; float &gt; _densities</div><div class="ttdef"><b>Definition</b> <a href="DensityField_8cs_source.html#l00009">DensityField.cs:9</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="DensityField_8cs_source.html#l00009">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField._densities</a>, and <a class="el" href="DensityField_8cs_source.html#l00010">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.Size</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac58bcd172afedd04eeb3066e38d5e004" name="ac58bcd172afedd04eeb3066e38d5e004"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac58bcd172afedd04eeb3066e38d5e004">&#9670;&#160;</a></span>DensityAt() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float _Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt </td>
+          <td>(</td>
+          <td class="paramtype">float3&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>returns an interpolated density value at a given position. this is used to get smoother results when the position is not exactly on the grid. it uses trilinear interpolation to calculate the density value based on the 8 surrounding grid points. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>the position of the requested density</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the interpolated density value at that position</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="DensityField_8cs_source.html#l00071">71</a> of file <a class="el" href="DensityField_8cs_source.html">DensityField.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>        {</div>
+<div class="line"><span class="lineno">   73</span>            int3 posInt = (int3)math.floor(position); <span class="comment">// get the integer part of the position. this is the position of the grid point that is closest to the given position but still smaller than it.</span></div>
+<div class="line"><span class="lineno">   74</span>            float3 posFrac = position - posInt; <span class="comment">// get the fractional part of the position. this is the distance from the closest grid point to the given position. it is a value between 0 and 1.</span></div>
+<div class="line"><span class="lineno">   75</span>            </div>
+<div class="line"><span class="lineno">   76</span>            <span class="comment">// get the density values of the 8 surrounding grid points1</span></div>
+<div class="line"><span class="lineno">   77</span>            <span class="keywordtype">float</span> d000 = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">DensityAt</a>(posInt.x, posInt.y, posInt.z);</div>
+<div class="line"><span class="lineno">   78</span>            <span class="keywordtype">float</span> d001 = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">DensityAt</a>(posInt.x, posInt.y, posInt.z + 1);</div>
+<div class="line"><span class="lineno">   79</span>            <span class="keywordtype">float</span> d010 = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">DensityAt</a>(posInt.x, posInt.y + 1, posInt.z);</div>
+<div class="line"><span class="lineno">   80</span>            <span class="keywordtype">float</span> d011 = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">DensityAt</a>(posInt.x, posInt.y + 1, posInt.z + 1);</div>
+<div class="line"><span class="lineno">   81</span>            <span class="keywordtype">float</span> d100 = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">DensityAt</a>(posInt.x + 1, posInt.y, posInt.z);</div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordtype">float</span> d101 = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">DensityAt</a>(posInt.x + 1, posInt.y, posInt.z + 1);</div>
+<div class="line"><span class="lineno">   83</span>            <span class="keywordtype">float</span> d110 = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">DensityAt</a>(posInt.x + 1, posInt.y + 1, posInt.z);</div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordtype">float</span> d111 = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">DensityAt</a>(posInt.x + 1, posInt.y + 1, posInt.z + 1);</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>            <span class="comment">// perform trilinear interpolation</span></div>
+<div class="line"><span class="lineno">   87</span>            <span class="keywordtype">float</span> d00 = math.lerp(d000, d100, posFrac.x); <span class="comment">// interpolate between d000 and d100 based on the x fractional part</span></div>
+<div class="line"><span class="lineno">   88</span>            <span class="keywordtype">float</span> d01 = math.lerp(d001, d101, posFrac.x); <span class="comment">// interpolate between d001 and d101 based on the x fractional part</span></div>
+<div class="line"><span class="lineno">   89</span>            <span class="keywordtype">float</span> d10 = math.lerp(d010, d110, posFrac.x); <span class="comment">// interpolate between d010 and d110 based on the x fractional part</span></div>
+<div class="line"><span class="lineno">   90</span>            <span class="keywordtype">float</span> d11 = math.lerp(d011, d111, posFrac.x); <span class="comment">// interpolate between d011 and d111 based on the x fractional part</span></div>
+<div class="line"><span class="lineno">   91</span>            </div>
+<div class="line"><span class="lineno">   92</span>            <span class="keywordtype">float</span> d0 = math.lerp(d00, d10, posFrac.y); <span class="comment">// interpolate between d00 and d10 based on the y fractional part</span></div>
+<div class="line"><span class="lineno">   93</span>            <span class="keywordtype">float</span> d1 = math.lerp(d01, d11, posFrac.y); <span class="comment">// interpolate between d01 and d11 based on the y fractional part</span></div>
+<div class="line"><span class="lineno">   94</span>            </div>
+<div class="line"><span class="lineno">   95</span>            <span class="keywordflow">return</span> math.lerp(d0, d1, posFrac.z); <span class="comment">// interpolate between d0 and d1 based on the z fractional part and return the result</span></div>
+<div class="line"><span class="lineno">   96</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_html_a151f60719010c829a6d61d0b5bf32456"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt</a></div><div class="ttdeci">float DensityAt(int3 position)</div><div class="ttdoc">returns the density value at a given position. caution! this does not interpolate between positions s...</div><div class="ttdef"><b>Definition</b> <a href="DensityField_8cs_source.html#l00038">DensityField.cs:38</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="DensityField_8cs_source.html#l00038">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt()</a>.</p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_ac58bcd172afedd04eeb3066e38d5e004_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_ac58bcd172afedd04eeb3066e38d5e004_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_ac58bcd172afedd04eeb3066e38d5e004_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_ac58bcd172afedd04eeb3066e38d5e004_cgraph">
+<area shape="rect" title="returns an interpolated density value at a given position. this is used to get smoother results when ..." alt="" coords="5,29,296,84"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456" title="returns the density value at a given position. caution! this does not interpolate between positions s..." alt="" coords="344,29,635,84"/>
+<area shape="poly" title=" " alt="" coords="296,54,330,54,330,59,296,59"/>
+<area shape="poly" title=" " alt="" coords="424,29,425,19,436,10,458,5,489,3,527,6,549,14,547,19,526,11,489,8,459,10,439,15,430,21,430,29"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a3c762b93316860524d06e9563816b087" name="a3c762b93316860524d06e9563816b087"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c762b93316860524d06e9563816b087">&#9670;&#160;</a></span>DensityAt() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c762b93316860524d06e9563816b087">&#9670;&#160;</a></span>DensityAt() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -227,21 +309,27 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DensityField_8cs_source.html#l00050">50</a> of file <a class="el" href="DensityField_8cs_source.html">DensityField.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   51</span>        {</div>
-<div class="line"><span class="lineno">   52</span>            <span class="keywordflow">if</span> (x &lt; 0 || x &gt;= <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">Size</a> || y &lt; 0 || y &gt;= <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">Size</a> || z &lt; 0 || z &gt;= <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">Size</a>)</div>
-<div class="line"><span class="lineno">   53</span>            {</div>
-<div class="line"><span class="lineno">   54</span>                <span class="keywordflow">return</span> 0; <span class="comment">// if the requested position is outside the bounds we just return 0.</span></div>
-<div class="line"><span class="lineno">   55</span>            }</div>
-<div class="line"><span class="lineno">   56</span>            </div>
-<div class="line"><span class="lineno">   57</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#aa99d0edfc816707e2708df9bc003235a">_densities</a>[<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a589c94a5401dd6f5520adfa39ec2d283">IndexOf</a>(x, y, z, <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">Size</a>)]; <span class="comment">// return the density value at the given position. we calculate the index in the 1d array based on the x, y and z values and the size of the grid.</span></div>
-<div class="line"><span class="lineno">   58</span>        }</div>
+<div class="line"><span class="lineno">   52</span>            x++;</div>
+<div class="line"><span class="lineno">   53</span>            y++;</div>
+<div class="line"><span class="lineno">   54</span>            z++;</div>
+<div class="line"><span class="lineno">   55</span>            </div>
+<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">if</span> (x &lt; 0) x = 0;</div>
+<div class="line"><span class="lineno">   57</span>            <span class="keywordflow">if</span> (x &gt;= <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">Size</a>) x = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">Size</a> - 1;</div>
+<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">if</span> (y &lt; 0) y = 0;</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">if</span> (y &gt;= <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">Size</a>) y = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">Size</a> - 1;</div>
+<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">if</span> (z &lt; 0) z = 0;</div>
+<div class="line"><span class="lineno">   61</span>            <span class="keywordflow">if</span> (z &gt;= <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">Size</a>) z = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">Size</a> - 1;</div>
+<div class="line"><span class="lineno">   62</span>            </div>
+<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a4afaa97a862470ffe99d2e07f5883a47">_densities</a>[<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a589c94a5401dd6f5520adfa39ec2d283">IndexOf</a>(x, y, z, <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">Size</a>)]; <span class="comment">// return the density value at the given position. we calculate the index in the 1d array based on the x, y and z values and the size of the grid.</span></div>
+<div class="line"><span class="lineno">   64</span>        }</div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_html_a589c94a5401dd6f5520adfa39ec2d283"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a589c94a5401dd6f5520adfa39ec2d283">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.IndexOf</a></div><div class="ttdeci">static int IndexOf(int x, int y, int z, int size)</div><div class="ttdoc">calculates a unique 1d index for storing the 3d grid in a 1d array. we use a 1d array since it is mor...</div><div class="ttdef"><b>Definition</b> <a href="DensityField_8cs_source.html#l00028">DensityField.cs:28</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="DensityField_8cs_source.html#l00009">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField._densities</a>, <a class="el" href="DensityField_8cs_source.html#l00028">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.IndexOf()</a>, and <a class="el" href="DensityField_8cs_source.html#l00010">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.Size</a>.</p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a3c762b93316860524d06e9563816b087_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a3c762b93316860524d06e9563816b087_cgraph" alt=""/></div>
 <map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a3c762b93316860524d06e9563816b087_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a3c762b93316860524d06e9563816b087_cgraph">
 <area shape="rect" title="returns the density value at a given position. caution! this does not interpolate between positions s..." alt="" coords="5,5,296,60"/>
@@ -253,7 +341,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a151f60719010c829a6d61d0b5bf32456" name="a151f60719010c829a6d61d0b5bf32456"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a151f60719010c829a6d61d0b5bf32456">&#9670;&#160;</a></span>DensityAt() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a151f60719010c829a6d61d0b5bf32456">&#9670;&#160;</a></span>DensityAt() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,31 +377,80 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   39</span>        {</div>
 <div class="line"><span class="lineno">   40</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">DensityAt</a>(position.x, position.y, position.z);</div>
 <div class="line"><span class="lineno">   41</span>        }</div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_html_a151f60719010c829a6d61d0b5bf32456"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a151f60719010c829a6d61d0b5bf32456">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt</a></div><div class="ttdeci">float DensityAt(int3 position)</div><div class="ttdoc">returns the density value at a given position. caution! this does not interpolate between positions s...</div><div class="ttdef"><b>Definition</b> <a href="DensityField_8cs_source.html#l00038">DensityField.cs:38</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="DensityField_8cs_source.html#l00038">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DensityField_8cs_source.html#l00038">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt()</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p class="reference">Referenced by <a class="el" href="MeshDataBuilder_8cs_source.html#l00111">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.CalculateSmoothNormal()</a>, <a class="el" href="DensityField_8cs_source.html#l00071">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt()</a>, and <a class="el" href="DensityField_8cs_source.html#l00038">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a151f60719010c829a6d61d0b5bf32456_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a151f60719010c829a6d61d0b5bf32456_cgraph" alt=""/></div>
 <map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a151f60719010c829a6d61d0b5bf32456_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a151f60719010c829a6d61d0b5bf32456_cgraph">
 <area shape="rect" title="returns the density value at a given position. caution! this does not interpolate between positions s..." alt="" coords="5,29,296,84"/>
 <area shape="poly" title=" " alt="" coords="95,29,95,19,105,10,124,5,151,3,183,6,202,14,200,19,182,11,151,8,124,10,107,15,100,21,100,29"/>
 </map>
 </div>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a151f60719010c829a6d61d0b5bf32456_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a151f60719010c829a6d61d0b5bf32456_icgraph" alt=""/></div>
 <map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a151f60719010c829a6d61d0b5bf32456_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a151f60719010c829a6d61d0b5bf32456_icgraph">
-<area shape="rect" title="returns the density value at a given position. caution! this does not interpolate between positions s..." alt="" coords="5,29,296,84"/>
-<area shape="poly" title=" " alt="" coords="200,19,182,11,151,8,124,10,107,15,100,21,100,29,95,29,95,19,105,10,124,5,151,3,183,6,202,14"/>
+<area shape="rect" title="returns the density value at a given position. caution! this does not interpolate between positions s..." alt="" coords="344,45,635,100"/>
+<area shape="poly" title=" " alt="" coords="547,35,526,27,489,24,459,26,439,31,430,37,430,45,424,45,425,35,436,26,458,21,489,19,527,22,549,30"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a0b7dd98995f30a8fe5e0a4c1126fc909" title=" " alt="" coords="15,5,287,60"/>
+<area shape="poly" title=" " alt="" coords="330,57,286,51,287,46,331,51"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#ac58bcd172afedd04eeb3066e38d5e004" title="returns an interpolated density value at a given position. this is used to get smoother results when ..." alt="" coords="5,84,296,139"/>
+<area shape="poly" title=" " alt="" coords="331,93,297,97,296,92,330,88"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7df2fcbf9b57ee2392e6b303ba8c94c1" name="a7df2fcbf9b57ee2392e6b303ba8c94c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7df2fcbf9b57ee2392e6b303ba8c94c1">&#9670;&#160;</a></span>Dispose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.Dispose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DensityField_8cs_source.html#l00098">98</a> of file <a class="el" href="DensityField_8cs_source.html">DensityField.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>        {</div>
+<div class="line"><span class="lineno">  100</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a4afaa97a862470ffe99d2e07f5883a47">_densities</a>.Dispose();</div>
+<div class="line"><span class="lineno">  101</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="DensityField_8cs_source.html#l00009">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField._densities</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="BurstMeshGenerator_8cs_source.html#l00029">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Execute()</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a7df2fcbf9b57ee2392e6b303ba8c94c1_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a7df2fcbf9b57ee2392e6b303ba8c94c1_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a7df2fcbf9b57ee2392e6b303ba8c94c1_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a7df2fcbf9b57ee2392e6b303ba8c94c1_icgraph">
+<area shape="rect" title=" " alt="" coords="324,5,615,60"/>
+<area shape="rect" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a5cc45013080b4d96c990b8c21994eeb3" title=" " alt="" coords="5,5,276,60"/>
+<area shape="poly" title=" " alt="" coords="310,35,276,35,276,30,310,30"/>
 </map>
 </div>
 
@@ -374,11 +511,11 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   31</span>        }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="DensityField_8cs_source.html#l00050">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt()</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a589c94a5401dd6f5520adfa39ec2d283_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a589c94a5401dd6f5520adfa39ec2d283_icgraph" alt=""/></div>
 <map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a589c94a5401dd6f5520adfa39ec2d283_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_a589c94a5401dd6f5520adfa39ec2d283_icgraph">
 <area shape="rect" title="calculates a unique 1d index for storing the 3d grid in a 1d array. we use a 1d array since it is mor..." alt="" coords="344,5,635,60"/>
@@ -390,8 +527,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa99d0edfc816707e2708df9bc003235a" name="aa99d0edfc816707e2708df9bc003235a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa99d0edfc816707e2708df9bc003235a">&#9670;&#160;</a></span>_densities</h2>
+<a id="a4afaa97a862470ffe99d2e07f5883a47" name="a4afaa97a862470ffe99d2e07f5883a47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4afaa97a862470ffe99d2e07f5883a47">&#9670;&#160;</a></span>_densities</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -400,7 +537,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">readonly NativeArray&lt;float&gt; _Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField._densities</td>
+          <td class="memname">NativeArray&lt;float&gt; _Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField._densities</td>
         </tr>
       </table>
   </td>
@@ -412,7 +549,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DensityField_8cs_source.html#l00009">9</a> of file <a class="el" href="DensityField_8cs_source.html">DensityField.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DensityField_8cs_source.html#l00050">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt()</a>, and <a class="el" href="DensityField_8cs_source.html#l00017">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityField()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DensityField_8cs_source.html#l00050">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt()</a>, <a class="el" href="DensityField_8cs_source.html#l00017">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityField()</a>, and <a class="el" href="DensityField_8cs_source.html#l00098">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.Dispose()</a>.</p>
 
 </div>
 </div>
@@ -430,7 +567,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DensityField_8cs_source.html#l00010">10</a> of file <a class="el" href="DensityField_8cs_source.html">DensityField.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DensityField_8cs_source.html#l00050">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt()</a>, and <a class="el" href="DensityField_8cs_source.html#l00017">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityField()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DensityField_8cs_source.html#l00050">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt()</a>, <a class="el" href="DensityField_8cs_source.html#l00017">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityField()</a>, and <a class="el" href="BurstMeshGenerator_8cs_source.html#l00029">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Execute()</a>.</p>
 
 </div>
 </div>
