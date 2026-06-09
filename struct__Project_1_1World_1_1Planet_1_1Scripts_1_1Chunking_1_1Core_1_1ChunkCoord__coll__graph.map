@@ -1,0 +1,5 @@
+<map id="_Project.World.Planet.Scripts.Chunking.Core.ChunkCoord" name="_Project.World.Planet.Scripts.Chunking.Core.ChunkCoord">
+<area shape="rect" id="Node000001" title="A chunk coord is basically an int3 but as its own data type. this way we always know what an int3 val..." alt="" coords="5,79,217,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="11,5,211,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,44,114,79,109,79,109,44"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="_Project.World.Planet.Scripts.Deprecated.PlanetCube" name="_Project.World.Planet.Scripts.Deprecated.PlanetCube">
+<area shape="rect" id="Node000001" title=" " alt="" coords="57,108,269,148"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,13,129,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,46,147,106,143,110,86,50"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html" title=" " alt="" coords="153,5,365,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="234,57,183,110,179,106,230,54"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,92,135,117"/>
+<area shape="rect" id="Node000001" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemSettings.html" title="the settings contain everything thats customizable about the system. so visual settings,..." alt="" coords="188,5,460,60"/>
+<area shape="poly" id="edge13_Node000000_Node000001" title=" " alt="" coords="128,86,182,70,226,58,227,63,183,75,129,91"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Burst_1_1BurstSamplerSettings.html" title=" " alt="" coords="190,85,458,125"/>
+<area shape="poly" id="edge14_Node000000_Node000002" title=" " alt="" coords="148,102,190,102,190,107,148,107"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Unity_1_1DensitySamplerSettings.html" title=" " alt="" coords="183,149,465,189"/>
+<area shape="poly" id="edge15_Node000000_Node000003" title=" " alt="" coords="127,119,183,134,232,146,231,151,182,139,126,124"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Unity_1_1SphereSamplerSettings.html" title=" " alt="" coords="513,77,792,117"/>
+<area shape="poly" id="edge16_Node000003_Node000004" title=" " alt="" coords="429,143,560,114,561,119,430,148"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Unity_1_1SphericalNoiseSamplerSettings.html" title=" " alt="" coords="514,141,791,196"/>
+<area shape="poly" id="edge17_Node000003_Node000005" title=" " alt="" coords="479,166,514,166,514,171,479,171"/>
+<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Unity_1_1TerrainNoiseGeneratorSettings.html" title=" " alt="" coords="517,220,789,275"/>
+<area shape="poly" id="edge18_Node000003_Node000006" title=" " alt="" coords="422,189,538,217,537,222,421,194"/>
+</map>

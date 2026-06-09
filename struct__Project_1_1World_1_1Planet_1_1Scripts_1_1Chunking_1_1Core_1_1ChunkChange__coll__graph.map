@@ -1,0 +1,7 @@
+<map id="_Project.World.Planet.Scripts.Chunking.Core.ChunkChange" name="_Project.World.Planet.Scripts.Chunking.Core.ChunkChange">
+<area shape="rect" id="Node000001" title="a chunk change is a change the chunk manager made. this is used to signal the unity side of the proje..." alt="" coords="5,183,217,223"/>
+<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html" title="A chunk coord is basically an int3 but as its own data type. this way we always know what an int3 val..." alt="" coords="5,80,217,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,134,114,183,109,183,109,134"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="11,5,211,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="114,44,114,80,109,80,109,44"/>
+</map>
