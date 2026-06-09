@@ -16,11 +16,11 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
             MeshDataBuilder meshDataBuilder = new MeshDataBuilder(); // the mesh data is used to store the vertices, normals and indices of the mesh. we use a builder to easily add new vertices and indices and then build the final mesh data at the end.
             
             int size = densityField.Size;
-            for (int x = 0; x < size; x++)
+            for (int x = 0; x < size-1; x++)
             {
-                for (int y = 0; y < size; y++)
+                for (int y = 0; y < size-1; y++)
                 {
-                    for (int z = 0; z < size; z++)
+                    for (int z = 0; z < size-1; z++)
                     {
                         MarchingCubesMesher.GenerateAt((new int3(x, y, z)), densityField, meshDataBuilder); // generate the mesh for every grid cell and use the mesh builder to add it all to one large mesh
                     }

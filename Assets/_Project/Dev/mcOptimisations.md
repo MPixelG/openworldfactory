@@ -15,7 +15,7 @@ it will act as a blackboard for me to write down all the ideas and plans for the
 - [x] Split the MarchingCubesGenerator class into
   - MarchingCubesMesher: responsible for taking the density field and generating the mesh data (vertices, normals, indices, etc.)
   - UnityMeshBuilder: takes the MeshData and converts it into a Unity Mesh
-- [ ] Split the GridChunkSystem into
+- [x] Split the GridChunkSystem into
   - ChunkManager: responsible for managing the chunks, it will keep track of which chunks are loaded, which ones need to be created or destroyed, and handle the communication between the ChunkData and ChunkRenderer.
   - ChunkStreamer: responsible for streaming the chunks in and out based on the player's position and view distance. it will request the ChunkManager to create or destroy chunks as needed.
   - ChunkGenerator: responsible for creating the ChunkData for a given chunk coordinate. 
@@ -25,13 +25,8 @@ it will act as a blackboard for me to write down all the ideas and plans for the
   - ChunkStreamer: responsible for checking what chunks should be loaded based on the player's position and view distance
   - ChunkManager: responsible for managing everything. it will be the only class that contains a Dictionary of the chunk coordinates and their corresponding ChunkData. it will handle the creation and destruction of chunks, as well as the communication to the renderer.
   - GridChunkSystemRenderer: responsible for rendering the chunks in the grid. it will take the data via dependency injection from the ChunkManager and render the chunks accordingly. it is only responsible for rendering and doesnt contain any logic.
-  - 
 
 
 ## Data management
 - [x] use a 1D array for storing density values instead of a 3D array because unity doesnt handle 3D arrays well
 - [ ] better approach for vertex deduplication, currently im using a dictionary to store the vertices and their indices
-
-
-
-
