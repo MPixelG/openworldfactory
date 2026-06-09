@@ -1,7 +1,5 @@
 <map id="World/Planet/Scripts/WorldGen" name="World/Planet/Scripts/WorldGen">
-<area shape="rect" id="node2" href="dir_c45bf32288ae42494ce2638add1991bd.html" title="Burst" alt="" coords="227,63,283,88"/>
-<area shape="rect" id="node3" href="dir_c2b33f02107393f59f15615d99bebe54.html" title="Samplers" alt="" coords="120,63,203,88"/>
-<area shape="rect" id="node4" href="dir_52f32c03858a4d6d3350a112d17e1464.html" title="Unity" alt="" coords="38,63,95,88"/>
-<area shape="rect" id="clust2" href="dir_a6e16dced842a4e11179bfc034fbbc96.html" alt="" coords="27,52,403,99"/>
-<area shape="rect" id="clust1" href="dir_5c66e90f8cb795b8173d26aeeccb6fa6.html" title="Scripts" alt="" coords="16,16,413,109"/>
+<area shape="rect" id="node2" href="dir_c45bf32288ae42494ce2638add1991bd.html" title="Burst" alt="" coords="37,63,93,88"/>
+<area shape="rect" id="clust2" href="dir_a6e16dced842a4e11179bfc034fbbc96.html" alt="" coords="27,52,213,99"/>
+<area shape="rect" id="clust1" href="dir_5c66e90f8cb795b8173d26aeeccb6fa6.html" title="Scripts" alt="" coords="16,16,224,109"/>
 </map>

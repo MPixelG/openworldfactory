@@ -1,9 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$interface__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1IDensitySampler.html" title="The base for all terrain generators. every DensitySampler must contain a function that returns the de..." alt="" coords="5,77,217,117"/>
-<area shape="rect" id="Node000001" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Samplers_1_1SphereSampler.html" title="A simple terrain generator that creates a spherical planet." alt="" coords="289,5,542,45"/>
-<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="199,71,265,55,317,43,318,48,266,60,200,76"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Samplers_1_1SphericalNoiseSampler.html" title="a combination of the SphereGenerator and a noise generator. it creates a sphere with noise on top of ..." alt="" coords="290,70,541,125"/>
-<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="231,95,290,95,290,100,231,100"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Samplers_1_1TerrainNoiseGenerator.html" title=" " alt="" coords="265,149,565,189"/>
-<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="204,118,266,133,323,147,322,152,265,139,203,123"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,13,96,38"/>
+<area shape="rect" id="Node000001" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html" title="A chunk coord is basically an int3 but as its own data type. this way we always know what an int3 val..." alt="" coords="144,5,356,45"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="110,23,144,23,144,28,110,28"/>
 </map>

@@ -1,5 +1,0 @@
-<map id="_Project.World.Planet.Scripts.WorldGen.Samplers.SphericalNoiseSampler" name="_Project.World.Planet.Scripts.WorldGen.Samplers.SphericalNoiseSampler">
-<area shape="rect" id="Node000001" title="a combination of the SphereGenerator and a noise generator. it creates a sphere with noise on top of ..." alt="" coords="5,79,256,133"/>
-<area shape="rect" id="Node000002" href="$interface__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1IDensitySampler.html" title="The base for all terrain generators. every DensitySampler must contain a function that returns the de..." alt="" coords="65,5,196,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,44,133,79,128,79,128,44"/>
-</map>
