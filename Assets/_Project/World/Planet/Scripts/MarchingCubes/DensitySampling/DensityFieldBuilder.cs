@@ -2,7 +2,6 @@ using _Project.World.Planet.Scripts.Chunking.Core;
 using _Project.World.Planet.Scripts.WorldGen.Burst;
 using Unity.Collections;
 using Unity.Jobs;
-using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
 {
