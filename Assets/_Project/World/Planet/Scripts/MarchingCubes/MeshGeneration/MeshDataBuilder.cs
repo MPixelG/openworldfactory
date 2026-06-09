@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
@@ -7,52 +9,45 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
     {
         private readonly MeshData _meshData = new();
 
-        private readonly Dictionary<int3, int> _vertexMap = new(); // this is used for index deduplication.
+        private readonly Dictionary<VertexKey, int> _vertexMap = new(); // this is used for index deduplication.
                                                                      // since every triangle has 3 vertices and many triangles share vertices with each other, we want to avoid adding the same vertex multiple times to the vertices list.
                                                                      // that would be a waste of memory and also cause visual artifacts. so we use this dictionary to check if we already added a vertex and if so we just reuse its index instead of adding it again.
 
+        private readonly DensityField _densityField; // we need the density field to calculate the normals. we could pass it as a parameter to the AddTriangle method but since we need it for every triangle it would be more efficient to just store it as a field in the builder.
 
         public MeshData Build() => _meshData;
+
+        public MeshDataBuilder(DensityField densityField)
+        {
+            _densityField = densityField;
+        }
 
         /// <summary>
         /// this adds a triangle to the mesh and calculates its indices and normals. this way you can just call this method for every triangle you want to add and it will take care of the rest.
         /// </summary>
-        public void AddTriangle(float3 a, float3 b, float3 c)
+        public void AddTriangle(
+            float3 a, VertexKey ka,
+            float3 b, VertexKey kb,
+            float3 c, VertexKey kc)
         {
-            // Skip triangles with invalid or degenerate data to avoid NaN normals.
-            if (!math.all(math.isfinite(a)) || !math.all(math.isfinite(b)) || !math.all(math.isfinite(c)))
-            {
+            if (!math.all(math.isfinite(a)) ||
+                !math.all(math.isfinite(b)) ||
+                !math.all(math.isfinite(c)))
                 return;
-            }
 
-            float3 ab = b - a;
-            float3 ac = c - a;
-            float3 normal = math.cross(ab, ac); // using the cross product of the 3 points we can get a rough estimation of the normals
-            
-            if (math.lengthsq(normal) < 1e-12f) // if the length of the normal is invalid there probably was a division through zero somewhere
-                                                // so we just return (some really strange artifacts appear when there are vertices with NaN values in the mesh)
-            {
-                return;
-            }
-
-            int i0 = GetOrAddVertex(a);
-            int i1 = GetOrAddVertex(b); // get or add the vertices and get their indices. this way we dont always generate new indices and since they connect their normals connect too and the results are smoother. 
-            int i2 = GetOrAddVertex(c);
+            int i0 = GetOrAddVertex(ka, a);
+            int i1 = GetOrAddVertex(kb, b);
+            int i2 = GetOrAddVertex(kc, c);
 
             _meshData.Indices.Add(i0);
-            _meshData.Indices.Add(i1); // add those indices to the mesh data
+            _meshData.Indices.Add(i1);
             _meshData.Indices.Add(i2);
-            
-            float angleA = AngleBetween(ab, ac);
-            float angleB = AngleBetween(c - b, a - b); // we calculate the angles between the edges of the triangle and use them to weight the normals. this way we get better results for triangles that are not equilateral and avoid artifacts in sharp corners.
-            float angleC = AngleBetween(a - c, b - c);
 
-            float3 faceNormal = math.normalize(normal); // normalize the normal so it has a length of 1. this way we can use it to calculate the vertex normals by adding it to the corresponding vertices and then normalizing them at the end.
+            float3 normal = math.normalize(math.cross(b - a, c - a));
 
-            _meshData.Normals[i0] += faceNormal * angleA;
-            _meshData.Normals[i1] += faceNormal * angleB; // weight the normals by the angles to get better results for non-equilateral triangles
-            _meshData.Normals[i2] += faceNormal * angleC;
-            
+            _meshData.Normals[i0] += normal;
+            _meshData.Normals[i1] += normal;
+            _meshData.Normals[i2] += normal;
         }
         
         /// <summary>
@@ -60,19 +55,17 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
         /// otherwise it adds it to the list and returns the new index
         /// </summary>
         /// <param name="v">the vertex to add or get</param>
-        private int GetOrAddVertex(float3 v)
+        private int GetOrAddVertex(VertexKey key, float3 v)
         {
-            int3 vertexKey = GetVertexKey(v); // calculate the vertex key of that vertex
-            if (_vertexMap.TryGetValue(vertexKey, out int index)) // if we already have a vertex with that key we return its index
+            if (_vertexMap.TryGetValue(key, out int index))
                 return index;
-            
 
-            index = _meshData.Vertices.Count; // otherwise we set the index to the current length of the vertices list 
+            index = _meshData.Vertices.Count;
 
-            _meshData.Vertices.Add(v); // and add that vertex
-            _meshData.Normals.Add(float3.zero); // and normals
+            _meshData.Vertices.Add(v);
+            _meshData.Normals.Add(float3.zero);
 
-            _vertexMap.Add(vertexKey, index); // finally add it to the vertex map
+            _vertexMap.Add(key, index);
 
             return index;
         }
@@ -115,11 +108,58 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
         }
         
         
-        /// <summary>
-        /// calculates a key based on the vertex position. it rounds on one decimal since thats smooth enough.
-        /// </summary>
-        /// <param name="v">the vertex position</param>
-        /// <returns>a 3d value to be used as a key</returns>
-        private static int3 GetVertexKey(float3 v) => (int3)math.round(v * 10f);
+        private static float3 CalculateSmoothNormal(float3 pos, DensityField densityField)
+        {
+            // we sample slightly around the position to estimate the gradient
+            // this works like a derivative of the density field
+            
+            float eps = 0.1f;
+            
+
+            float dx =
+                densityField.DensityAt(pos + new float3(eps,0,0))
+                - densityField.DensityAt(pos - new float3(eps,0,0));
+
+            float dy =
+                densityField.DensityAt(pos + new float3(0,eps,0))
+                - densityField.DensityAt(pos - new float3(0,eps,0));
+
+            float dz =
+                densityField.DensityAt(pos + new float3(0,0,eps))
+                - densityField.DensityAt(pos - new float3(0,0,eps));
+
+            float3 gradient = new float3(dx, dy, dz);
+
+            // fallback in case gradient is zero
+            if (math.lengthsq(gradient) < 1e-12f)
+            {
+                return new float3(0, 1, 0);
+            }
+
+            // negative because density usually increases inward
+            return math.normalize(-gradient);
+        }
+    }
+    
+    public readonly struct VertexKey : IEquatable<VertexKey>
+    {
+        public readonly int X;
+        public readonly int Y;
+        public readonly int Z;
+        public readonly byte Edge;
+
+        public VertexKey(int3 cell, byte edge)
+        {
+            X = cell.x;
+            Y = cell.y;
+            Z = cell.z;
+            Edge = edge;
+        }
+
+        public bool Equals(VertexKey other)
+            => X == other.X && Y == other.Y && Z == other.Z && Edge == other.Edge;
+
+        public override int GetHashCode()
+            => HashCode.Combine(X, Y, Z, Edge);
     }
 }

@@ -259,6 +259,8 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         /// <param name="coord">the coordinate of the chunk to unload</param>
         private void UnloadChunk(ChunkCoord coord)
         {
+            _chunks[coord].DensityField.Dispose(); // dispose the density field of that chunk to free up memory
+            
             _chunks.Remove(coord); // remove its data
 
             _chunkStates.Remove(coord); // and state

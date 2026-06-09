@@ -6,14 +6,14 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
 {
     public class DensityField
     {
-        private readonly NativeArray<float> _densities;
+        private NativeArray<float> _densities;
         public readonly int Size;
         
         /// <summary>
         /// creates a density field based of the given densities and a given size. the densities should be a 3d array stored inside a 1d array. the index should be calculated using <code>int index = x + y*size + z*size*size</code>
         /// </summary>
         /// <param name="densities">the density values used represented as a 1d array</param>
-        /// <param name="size">the grid size. caution! the grid size should be 1 higher than the chunk size!</param> // todo padding of 2 instead of 1
+        /// <param name="size">the grid size. caution! the grid size should be 2 higher than the chunk size!</param>
         public DensityField(NativeArray<float> densities, int size)
         {
             _densities = densities;
@@ -49,12 +49,55 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
         /// <returns>the density of the given position. it is usually a value between 0 and 1.</returns>
         public float DensityAt(int x, int y, int z)
         {
-            if (x < 0 || x >= Size || y < 0 || y >= Size || z < 0 || z >= Size)
-            {
-                return 0; // if the requested position is outside the bounds we just return 0.
-            }
+            x++;
+            y++;
+            z++;
+            
+            if (x < 0) x = 0;
+            if (x >= Size) x = Size - 1;
+            if (y < 0) y = 0;
+            if (y >= Size) y = Size - 1;
+            if (z < 0) z = 0;
+            if (z >= Size) z = Size - 1;
             
             return _densities[IndexOf(x, y, z, Size)]; // return the density value at the given position. we calculate the index in the 1d array based on the x, y and z values and the size of the grid.
+        }
+
+        /// <summary>
+        /// returns an interpolated density value at a given position. this is used to get smoother results when the position is not exactly on the grid. it uses trilinear interpolation to calculate the density value based on the 8 surrounding grid points.
+        /// </summary>
+        /// <param name="position">the position of the requested density</param>
+        /// <returns>the interpolated density value at that position</returns>
+        public float DensityAt(float3 position)
+        {
+            int3 posInt = (int3)math.floor(position); // get the integer part of the position. this is the position of the grid point that is closest to the given position but still smaller than it.
+            float3 posFrac = position - posInt; // get the fractional part of the position. this is the distance from the closest grid point to the given position. it is a value between 0 and 1.
+            
+            // get the density values of the 8 surrounding grid points1
+            float d000 = DensityAt(posInt.x, posInt.y, posInt.z);
+            float d001 = DensityAt(posInt.x, posInt.y, posInt.z + 1);
+            float d010 = DensityAt(posInt.x, posInt.y + 1, posInt.z);
+            float d011 = DensityAt(posInt.x, posInt.y + 1, posInt.z + 1);
+            float d100 = DensityAt(posInt.x + 1, posInt.y, posInt.z);
+            float d101 = DensityAt(posInt.x + 1, posInt.y, posInt.z + 1);
+            float d110 = DensityAt(posInt.x + 1, posInt.y + 1, posInt.z);
+            float d111 = DensityAt(posInt.x + 1, posInt.y + 1, posInt.z + 1);
+
+            // perform trilinear interpolation
+            float d00 = math.lerp(d000, d100, posFrac.x); // interpolate between d000 and d100 based on the x fractional part
+            float d01 = math.lerp(d001, d101, posFrac.x); // interpolate between d001 and d101 based on the x fractional part
+            float d10 = math.lerp(d010, d110, posFrac.x); // interpolate between d010 and d110 based on the x fractional part
+            float d11 = math.lerp(d011, d111, posFrac.x); // interpolate between d011 and d111 based on the x fractional part
+            
+            float d0 = math.lerp(d00, d10, posFrac.y); // interpolate between d00 and d10 based on the y fractional part
+            float d1 = math.lerp(d01, d11, posFrac.y); // interpolate between d01 and d11 based on the y fractional part
+            
+            return math.lerp(d0, d1, posFrac.z); // interpolate between d0 and d1 based on the z fractional part and return the result
+        }
+
+        public void Dispose()
+        {
+            _densities.Dispose();
         }
     }
 }

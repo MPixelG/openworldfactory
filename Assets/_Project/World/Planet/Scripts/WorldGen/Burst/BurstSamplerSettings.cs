@@ -9,14 +9,14 @@ namespace _Project.World.Planet.Scripts.WorldGen.Burst
     {
         public float radius;
         
-        public BurstSphericalNoiseSamplerJob CreateSampler(int chunkSize, int3 origin)
+        public BurstSphericalNoiseSamplerJob CreateSampler(int gridSize, int3 origin)
         {
             return new BurstSphericalNoiseSamplerJob
             {
                 Origin = origin,
-                Radius = radius,
-                Size = chunkSize,
+                Size = gridSize,
                 
+                Radius = radius,
                 ReferenceRadius = 200f,
 
                 TerrainHeight = 169f,
