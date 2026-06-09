@@ -5,24 +5,27 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   docs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Install Doxygen + Graphviz
+      - name: Install Doxygen
         run: |
           sudo apt-get update
           sudo apt-get install -y doxygen graphviz
 
-      - name: Run Doxygen
+      - name: Generate docs
         run: doxygen Doxyfile
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: docs_doxygen/html
