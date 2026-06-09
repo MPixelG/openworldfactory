@@ -1,0 +1,9 @@
+<map id="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.AddTriangle" name="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshDataBuilder.AddTriangle">
+<area shape="rect" id="Node000001" title="this adds a triangle to the mesh and calculates its indices and normals. this way you can just call t..." alt="" coords="5,45,277,100"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a7daf8aa30527b217f37e6870199c8ada" title="calculates the angle between 2 vectors" alt="" coords="325,5,597,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="277,53,311,49,312,54,278,58"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#ac35e6288f5bd7270b8c53fe1e90043a4" title="checks if the given vertex already exists in the vertices list and if so returns its index,..." alt="" coords="325,84,597,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="278,86,312,91,311,96,277,92"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshDataBuilder.html#a34808c938c6b18773bee0dbc1959977c" title="calculates a key based on the vertex position. it rounds on one decimal since thats smooth enough." alt="" coords="645,84,917,139"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="598,109,631,109,631,114,598,114"/>
+</map>

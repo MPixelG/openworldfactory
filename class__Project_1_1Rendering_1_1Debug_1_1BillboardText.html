@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -79,9 +80,11 @@ $(function() {
   <div class="headertitle"><div class="title">_Project.Rendering.Debug.BillboardText Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for _Project.Rendering.Debug.BillboardText:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for _Project.Rendering.Debug.BillboardText:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1Rendering_1_1Debug_1_1BillboardText__inherit__graph.png" border="0" usemap="#a__Project_8Rendering_8Debug_8BillboardText_inherit__map" alt="Inheritance graph"/></div>
 <map name="a__Project_8Rendering_8Debug_8BillboardText_inherit__map" id="a__Project_8Rendering_8Debug_8BillboardText_inherit__map">
 <area shape="rect" title=" " alt="" coords="5,79,200,119"/>
@@ -89,9 +92,11 @@ Inheritance diagram for _Project.Rendering.Debug.BillboardText:</div>
 <area shape="poly" title=" " alt="" coords="105,44,105,79,100,79,100,44"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for _Project.Rendering.Debug.BillboardText:</div>
-<div class="dyncontent">
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for _Project.Rendering.Debug.BillboardText:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1Rendering_1_1Debug_1_1BillboardText__coll__graph.png" border="0" usemap="#a__Project_8Rendering_8Debug_8BillboardText_coll__map" alt="Collaboration graph"/></div>
 <map name="a__Project_8Rendering_8Debug_8BillboardText_coll__map" id="a__Project_8Rendering_8Debug_8BillboardText_coll__map">
 <area shape="rect" title=" " alt="" coords="5,79,200,119"/>
@@ -105,7 +110,10 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a6d2b3744b99d9f88dc9cd2917ab6cb81" id="r_a6d2b3744b99d9f88dc9cd2917ab6cb81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1Rendering_1_1Debug_1_1BillboardText.html#a6d2b3744b99d9f88dc9cd2917ab6cb81">LateUpdate</a> ()</td></tr>
 <tr class="separator:a6d2b3744b99d9f88dc9cd2917ab6cb81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="BillboardText_8cs_source.html#l00010">10</a> of file <a class="el" href="BillboardText_8cs_source.html">BillboardText.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6d2b3744b99d9f88dc9cd2917ab6cb81" name="a6d2b3744b99d9f88dc9cd2917ab6cb81"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6d2b3744b99d9f88dc9cd2917ab6cb81">&#9670;&#160;</a></span>LateUpdate()</h2>
 
@@ -129,10 +137,31 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="BillboardText_8cs_source.html#l00012">12</a> of file <a class="el" href="BillboardText_8cs_source.html">BillboardText.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>        {</div>
+<div class="line"><span class="lineno">   14</span>            Camera cam = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   15</span> </div>
+<div class="line"><span class="lineno">   16</span><span class="preprocessor">#if UNITY_EDITOR</span></div>
+<div class="line"><span class="lineno">   17</span>            <span class="keywordflow">if</span> (!Application.isPlaying &amp;&amp; SceneView.lastActiveSceneView != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   18</span>            {</div>
+<div class="line"><span class="lineno">   19</span>                cam = SceneView.lastActiveSceneView.camera;</div>
+<div class="line"><span class="lineno">   20</span>            }</div>
+<div class="line"><span class="lineno">   21</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>            <span class="keywordflow">if</span> (cam == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   24</span>            {</div>
+<div class="line"><span class="lineno">   25</span>                cam = Camera.main;</div>
+<div class="line"><span class="lineno">   26</span>            }</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>            <span class="keywordflow">if</span> (cam == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>            transform.rotation = cam.transform.rotation;</div>
+<div class="line"><span class="lineno">   31</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Assets/_Project/Rendering/Debug/<a class="el" href="BillboardText_8cs.html">BillboardText.cs</a></li>
+<li>Assets/_Project/Rendering/Debug/<a class="el" href="BillboardText_8cs_source.html">BillboardText.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,0 +1,7 @@
+<map id="_Project.World.Planet.Scripts.Chunking.ChunkRenderer.ApplyMeshData" name="_Project.World.Planet.Scripts.Chunking.ChunkRenderer.ApplyMeshData">
+<area shape="rect" id="Node000001" title="applies a given mesh to this renderer" alt="" coords="5,37,299,77"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a5640743dd19c8884caeed976334beaf8" title=" " alt="" coords="347,5,663,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="298,41,333,38,333,44,299,47"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a705a40744556fe569f1ad6ddaa4f540d" title=" " alt="" coords="364,69,645,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="299,68,350,73,350,78,298,73"/>
+</map>

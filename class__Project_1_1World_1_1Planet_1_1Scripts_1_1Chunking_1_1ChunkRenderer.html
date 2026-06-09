@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -86,9 +87,11 @@ $(function() {
 <p>A chunk is a region of density values in space. it is used to split the terrain into multiple portions and put these chunks next to each other to allow dynamic loading / unloading of specific regions, different LODs (Levels of Details) and more. <br  />
   
  <a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for _Project.World.Planet.Scripts.Chunking.ChunkRenderer:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for _Project.World.Planet.Scripts.Chunking.ChunkRenderer:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer__inherit__graph.png" border="0" usemap="#a__Project_8World_8Planet_8Scripts_8Chunking_8ChunkRenderer_inherit__map" alt="Inheritance graph"/></div>
 <map name="a__Project_8World_8Planet_8Scripts_8Chunking_8ChunkRenderer_inherit__map" id="a__Project_8World_8Planet_8Scripts_8Chunking_8ChunkRenderer_inherit__map">
 <area shape="rect" title="A chunk is a region of density values in space. it is used to split the terrain into multiple portion..." alt="" coords="5,79,217,119"/>
@@ -96,9 +99,11 @@ Inheritance diagram for _Project.World.Planet.Scripts.Chunking.ChunkRenderer:</d
 <area shape="poly" title=" " alt="" coords="114,44,114,79,109,79,109,44"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for _Project.World.Planet.Scripts.Chunking.ChunkRenderer:</div>
-<div class="dyncontent">
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for _Project.World.Planet.Scripts.Chunking.ChunkRenderer:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer__coll__graph.png" border="0" usemap="#a__Project_8World_8Planet_8Scripts_8Chunking_8ChunkRenderer_coll__map" alt="Collaboration graph"/></div>
 <map name="a__Project_8World_8Planet_8Scripts_8Chunking_8ChunkRenderer_coll__map" id="a__Project_8World_8Planet_8Scripts_8Chunking_8ChunkRenderer_coll__map">
 <area shape="rect" title="A chunk is a region of density values in space. it is used to split the terrain into multiple portion..." alt="" coords="5,79,217,119"/>
@@ -137,6 +142,8 @@ Static Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A chunk is a region of density values in space. it is used to split the terrain into multiple portions and put these chunks next to each other to allow dynamic loading / unloading of specific regions, different LODs (Levels of Details) and more. <br  />
  </p>
+
+<p class="definition">Definition at line <a class="el" href="ChunkRenderer_8cs_source.html#l00010">10</a> of file <a class="el" href="ChunkRenderer_8cs_source.html">ChunkRenderer.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a681ef138d0e2ee824f9ad012376b27b2" name="a681ef138d0e2ee824f9ad012376b27b2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a681ef138d0e2ee824f9ad012376b27b2">&#9670;&#160;</a></span>ApplyMeshData()</h2>
@@ -170,6 +177,52 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="ChunkRenderer_8cs_source.html#l00048">48</a> of file <a class="el" href="ChunkRenderer_8cs_source.html">ChunkRenderer.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>        {</div>
+<div class="line"><span class="lineno">   50</span>            <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a5640743dd19c8884caeed976334beaf8">EnsureComponents</a>(); <span class="comment">// ensure the renderer and filter are available</span></div>
+<div class="line"><span class="lineno">   51</span>            <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a705a40744556fe569f1ad6ddaa4f540d">SetupMaterial</a>(); <span class="comment">// and also ensure a material is set for the renderer so that the mesh is actually visible</span></div>
+<div class="line"><span class="lineno">   52</span>            _meshFilter.mesh = mesh; <span class="comment">// finally apply the mesh to the filter for it to get rendered</span></div>
+<div class="line"><span class="lineno">   53</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_html_a5640743dd19c8884caeed976334beaf8"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a5640743dd19c8884caeed976334beaf8">_Project.World.Planet.Scripts.Chunking.ChunkRenderer.EnsureComponents</a></div><div class="ttdeci">void EnsureComponents()</div><div class="ttdef"><b>Definition</b> <a href="ChunkRenderer_8cs_source.html#l00023">ChunkRenderer.cs:23</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_html_a705a40744556fe569f1ad6ddaa4f540d"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a705a40744556fe569f1ad6ddaa4f540d">_Project.World.Planet.Scripts.Chunking.ChunkRenderer.SetupMaterial</a></div><div class="ttdeci">void SetupMaterial()</div><div class="ttdef"><b>Definition</b> <a href="ChunkRenderer_8cs_source.html#l00031">ChunkRenderer.cs:31</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ChunkRenderer_8cs_source.html#l00023">_Project.World.Planet.Scripts.Chunking.ChunkRenderer.EnsureComponents()</a>, and <a class="el" href="ChunkRenderer_8cs_source.html#l00031">_Project.World.Planet.Scripts.Chunking.ChunkRenderer.SetupMaterial()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00091">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.CreateRendererAt()</a>, and <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00129">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.UpdateRendererAt()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a681ef138d0e2ee824f9ad012376b27b2_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a681ef138d0e2ee824f9ad012376b27b2_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a681ef138d0e2ee824f9ad012376b27b2_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a681ef138d0e2ee824f9ad012376b27b2_cgraph">
+<area shape="rect" title="applies a given mesh to this renderer" alt="" coords="5,37,299,77"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a5640743dd19c8884caeed976334beaf8" title=" " alt="" coords="347,5,663,45"/>
+<area shape="poly" title=" " alt="" coords="298,41,333,38,333,44,299,47"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a705a40744556fe569f1ad6ddaa4f540d" title=" " alt="" coords="364,69,645,109"/>
+<area shape="poly" title=" " alt="" coords="299,68,350,73,350,78,298,73"/>
+</map>
+</div>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a681ef138d0e2ee824f9ad012376b27b2_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a681ef138d0e2ee824f9ad012376b27b2_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a681ef138d0e2ee824f9ad012376b27b2_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a681ef138d0e2ee824f9ad012376b27b2_icgraph">
+<area shape="rect" title="applies a given mesh to this renderer" alt="" coords="977,53,1271,93"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ac39b432dc11a7d366ae3892b97688f69" title=" " alt="" coords="653,5,929,60"/>
+<area shape="poly" title=" " alt="" coords="963,56,929,52,930,47,964,51"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ae74169a910aae91b19a9a78bc425acb2" title=" " alt="" coords="653,84,929,139"/>
+<area shape="poly" title=" " alt="" coords="964,94,930,98,929,93,963,89"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a03c3c81b867c37a362470388531af700" title=" " alt="" coords="329,45,605,100"/>
+<area shape="poly" title=" " alt="" coords="640,54,606,58,605,53,640,49"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ad09ca2ea43799c554c71e58f971d8439" title=" " alt="" coords="5,45,281,100"/>
+<area shape="poly" title=" " alt="" coords="316,75,282,75,282,70,316,70"/>
+<area shape="poly" title=" " alt="" coords="640,96,605,92,606,87,640,91"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a40f2199a4d32128799979ed29a9d8187" name="a40f2199a4d32128799979ed29a9d8187"></a>
@@ -194,6 +247,25 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ChunkRenderer_8cs_source.html#l00017">17</a> of file <a class="el" href="ChunkRenderer_8cs_source.html">ChunkRenderer.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>        {</div>
+<div class="line"><span class="lineno">   19</span>            <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a5640743dd19c8884caeed976334beaf8">EnsureComponents</a>();</div>
+<div class="line"><span class="lineno">   20</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ChunkRenderer_8cs_source.html#l00023">_Project.World.Planet.Scripts.Chunking.ChunkRenderer.EnsureComponents()</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a40f2199a4d32128799979ed29a9d8187_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a40f2199a4d32128799979ed29a9d8187_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a40f2199a4d32128799979ed29a9d8187_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a40f2199a4d32128799979ed29a9d8187_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,239,45"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a5640743dd19c8884caeed976334beaf8" title=" " alt="" coords="287,5,603,45"/>
+<area shape="poly" title=" " alt="" coords="239,23,273,23,273,28,239,28"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -220,6 +292,43 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ChunkRenderer_8cs_source.html#l00023">23</a> of file <a class="el" href="ChunkRenderer_8cs_source.html">ChunkRenderer.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>        {</div>
+<div class="line"><span class="lineno">   25</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#ad12d7264febc26a408a88b37bb460144">_meshFilter</a> == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   26</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#ad12d7264febc26a408a88b37bb460144">_meshFilter</a> = gameObject.GetComponent&lt;MeshFilter&gt;() ?? gameObject.AddComponent&lt;MeshFilter&gt;();</div>
+<div class="line"><span class="lineno">   27</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a86296bcda13d07098b96498926d7df32">_meshRenderer</a> == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   28</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a86296bcda13d07098b96498926d7df32">_meshRenderer</a> = gameObject.GetComponent&lt;MeshRenderer&gt;() ?? gameObject.AddComponent&lt;MeshRenderer&gt;();</div>
+<div class="line"><span class="lineno">   29</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_html_a86296bcda13d07098b96498926d7df32"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a86296bcda13d07098b96498926d7df32">_Project.World.Planet.Scripts.Chunking.ChunkRenderer._meshRenderer</a></div><div class="ttdeci">MeshRenderer _meshRenderer</div><div class="ttdef"><b>Definition</b> <a href="ChunkRenderer_8cs_source.html#l00015">ChunkRenderer.cs:15</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_html_ad12d7264febc26a408a88b37bb460144"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#ad12d7264febc26a408a88b37bb460144">_Project.World.Planet.Scripts.Chunking.ChunkRenderer._meshFilter</a></div><div class="ttdeci">MeshFilter _meshFilter</div><div class="ttdef"><b>Definition</b> <a href="ChunkRenderer_8cs_source.html#l00014">ChunkRenderer.cs:14</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ChunkRenderer_8cs_source.html#l00014">_Project.World.Planet.Scripts.Chunking.ChunkRenderer._meshFilter</a>, and <a class="el" href="ChunkRenderer_8cs_source.html#l00015">_Project.World.Planet.Scripts.Chunking.ChunkRenderer._meshRenderer</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ChunkRenderer_8cs_source.html#l00048">_Project.World.Planet.Scripts.Chunking.ChunkRenderer.ApplyMeshData()</a>, and <a class="el" href="ChunkRenderer_8cs_source.html#l00017">_Project.World.Planet.Scripts.Chunking.ChunkRenderer.Awake()</a>.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a5640743dd19c8884caeed976334beaf8_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a5640743dd19c8884caeed976334beaf8_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a5640743dd19c8884caeed976334beaf8_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a5640743dd19c8884caeed976334beaf8_icgraph">
+<area shape="rect" title=" " alt="" coords="1319,83,1635,123"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a681ef138d0e2ee824f9ad012376b27b2" title="applies a given mesh to this renderer" alt="" coords="977,51,1271,91"/>
+<area shape="poly" title=" " alt="" coords="1305,90,1271,87,1271,82,1305,85"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a40f2199a4d32128799979ed29a9d8187" title=" " alt="" coords="1007,115,1241,155"/>
+<area shape="poly" title=" " alt="" coords="1305,122,1241,127,1241,122,1305,116"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ac39b432dc11a7d366ae3892b97688f69" title=" " alt="" coords="653,5,929,60"/>
+<area shape="poly" title=" " alt="" coords="963,55,929,51,930,46,964,50"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ae74169a910aae91b19a9a78bc425acb2" title=" " alt="" coords="653,84,929,139"/>
+<area shape="poly" title=" " alt="" coords="964,93,930,97,929,92,963,88"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a03c3c81b867c37a362470388531af700" title=" " alt="" coords="329,45,605,100"/>
+<area shape="poly" title=" " alt="" coords="640,54,606,58,605,53,640,49"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ad09ca2ea43799c554c71e58f971d8439" title=" " alt="" coords="5,45,281,100"/>
+<area shape="poly" title=" " alt="" coords="316,75,282,75,282,70,316,70"/>
+<area shape="poly" title=" " alt="" coords="640,96,605,92,606,87,640,91"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a705a40744556fe569f1ad6ddaa4f540d" name="a705a40744556fe569f1ad6ddaa4f540d"></a>
@@ -245,6 +354,43 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ChunkRenderer_8cs_source.html#l00031">31</a> of file <a class="el" href="ChunkRenderer_8cs_source.html">ChunkRenderer.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>        {</div>
+<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a86296bcda13d07098b96498926d7df32">_meshRenderer</a>.sharedMaterial != <span class="keyword">null</span>) <span class="keywordflow">return</span>; <span class="comment">// if a material is already set we dont need to set one ourselves</span></div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>            Shader shader = Shader.Find(<span class="stringliteral">&quot;Universal Render Pipeline/Lit&quot;</span>) <span class="comment">// use the default lit shader</span></div>
+<div class="line"><span class="lineno">   36</span>                            ?? Shader.Find(<span class="stringliteral">&quot;Standard&quot;</span>); <span class="comment">// or the standard one as a backup</span></div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>            var mat = <span class="keyword">new</span> Material(shader); <span class="comment">// apply that shader to a new material</span></div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>            _meshRenderer.sharedMaterial = mat; <span class="comment">// and apply that material to the renderer</span></div>
+<div class="line"><span class="lineno">   41</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ChunkRenderer_8cs_source.html#l00015">_Project.World.Planet.Scripts.Chunking.ChunkRenderer._meshRenderer</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ChunkRenderer_8cs_source.html#l00048">_Project.World.Planet.Scripts.Chunking.ChunkRenderer.ApplyMeshData()</a>.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a705a40744556fe569f1ad6ddaa4f540d_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a705a40744556fe569f1ad6ddaa4f540d_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a705a40744556fe569f1ad6ddaa4f540d_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer_a705a40744556fe569f1ad6ddaa4f540d_icgraph">
+<area shape="rect" title=" " alt="" coords="1319,53,1600,93"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a681ef138d0e2ee824f9ad012376b27b2" title="applies a given mesh to this renderer" alt="" coords="977,53,1271,93"/>
+<area shape="poly" title=" " alt="" coords="1305,75,1271,75,1271,70,1305,70"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ac39b432dc11a7d366ae3892b97688f69" title=" " alt="" coords="653,5,929,60"/>
+<area shape="poly" title=" " alt="" coords="963,56,929,52,930,47,964,51"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ae74169a910aae91b19a9a78bc425acb2" title=" " alt="" coords="653,84,929,139"/>
+<area shape="poly" title=" " alt="" coords="964,94,930,98,929,93,963,89"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a03c3c81b867c37a362470388531af700" title=" " alt="" coords="329,45,605,100"/>
+<area shape="poly" title=" " alt="" coords="640,54,606,58,605,53,640,49"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ad09ca2ea43799c554c71e58f971d8439" title=" " alt="" coords="5,45,281,100"/>
+<area shape="poly" title=" " alt="" coords="316,75,282,75,282,70,316,70"/>
+<area shape="poly" title=" " alt="" coords="640,96,605,92,606,87,640,91"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -268,6 +414,10 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ChunkRenderer_8cs_source.html#l00014">14</a> of file <a class="el" href="ChunkRenderer_8cs_source.html">ChunkRenderer.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ChunkRenderer_8cs_source.html#l00023">_Project.World.Planet.Scripts.Chunking.ChunkRenderer.EnsureComponents()</a>.</p>
+
 </div>
 </div>
 <a id="a86296bcda13d07098b96498926d7df32" name="a86296bcda13d07098b96498926d7df32"></a>
@@ -289,6 +439,10 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ChunkRenderer_8cs_source.html#l00015">15</a> of file <a class="el" href="ChunkRenderer_8cs_source.html">ChunkRenderer.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ChunkRenderer_8cs_source.html#l00023">_Project.World.Planet.Scripts.Chunking.ChunkRenderer.EnsureComponents()</a>, and <a class="el" href="ChunkRenderer_8cs_source.html#l00031">_Project.World.Planet.Scripts.Chunking.ChunkRenderer.SetupMaterial()</a>.</p>
 
 </div>
 </div>
@@ -312,10 +466,12 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ChunkRenderer_8cs_source.html#l00012">12</a> of file <a class="el" href="ChunkRenderer_8cs_source.html">ChunkRenderer.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Assets/_Project/World/Planet/Scripts/Chunking/<a class="el" href="ChunkRenderer_8cs.html">ChunkRenderer.cs</a></li>
+<li>Assets/_Project/World/Planet/Scripts/Chunking/<a class="el" href="ChunkRenderer_8cs_source.html">ChunkRenderer.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

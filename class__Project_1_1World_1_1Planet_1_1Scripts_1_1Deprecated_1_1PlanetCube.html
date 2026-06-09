@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -81,9 +82,11 @@ $(function() {
   <div class="headertitle"><div class="title">_Project.World.Planet.Scripts.Deprecated.PlanetCube Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for _Project.World.Planet.Scripts.Deprecated.PlanetCube:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for _Project.World.Planet.Scripts.Deprecated.PlanetCube:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube__inherit__graph.png" border="0" usemap="#a__Project_8World_8Planet_8Scripts_8Deprecated_8PlanetCube_inherit__map" alt="Inheritance graph"/></div>
 <map name="a__Project_8World_8Planet_8Scripts_8Deprecated_8PlanetCube_inherit__map" id="a__Project_8World_8Planet_8Scripts_8Deprecated_8PlanetCube_inherit__map">
 <area shape="rect" title=" " alt="" coords="5,79,217,119"/>
@@ -91,9 +94,11 @@ Inheritance diagram for _Project.World.Planet.Scripts.Deprecated.PlanetCube:</di
 <area shape="poly" title=" " alt="" coords="114,44,114,79,109,79,109,44"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for _Project.World.Planet.Scripts.Deprecated.PlanetCube:</div>
-<div class="dyncontent">
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for _Project.World.Planet.Scripts.Deprecated.PlanetCube:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube__coll__graph.png" border="0" usemap="#a__Project_8World_8Planet_8Scripts_8Deprecated_8PlanetCube_coll__map" alt="Collaboration graph"/></div>
 <map name="a__Project_8World_8Planet_8Scripts_8Deprecated_8PlanetCube_coll__map" id="a__Project_8World_8Planet_8Scripts_8Deprecated_8PlanetCube_coll__map">
 <area shape="rect" title=" " alt="" coords="57,108,269,148"/>
@@ -131,7 +136,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a7f4136edce10ca5cfe8ba7cf665bfcab" id="r_a7f4136edce10ca5cfe8ba7cf665bfcab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html">TerrainFace</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7f4136edce10ca5cfe8ba7cf665bfcab">_terrainFaces</a></td></tr>
 <tr class="separator:a7f4136edce10ca5cfe8ba7cf665bfcab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="PlanetCube_8cs_source.html#l00007">7</a> of file <a class="el" href="PlanetCube_8cs_source.html">PlanetCube.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7657ebd1e1babc458977eef2f0000865" name="a7657ebd1e1babc458977eef2f0000865"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7657ebd1e1babc458977eef2f0000865">&#9670;&#160;</a></span>GenerateMesh()</h2>
 
@@ -154,6 +162,50 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PlanetCube_8cs_source.html#l00106">106</a> of file <a class="el" href="PlanetCube_8cs_source.html">PlanetCube.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>        {</div>
+<div class="line"><span class="lineno">  108</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7f4136edce10ca5cfe8ba7cf665bfcab">_terrainFaces</a> == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  109</span>            <span class="keywordflow">foreach</span> (TerrainFace face <span class="keywordflow">in</span> <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7f4136edce10ca5cfe8ba7cf665bfcab">_terrainFaces</a>)</div>
+<div class="line"><span class="lineno">  110</span>            {</div>
+<div class="line"><span class="lineno">  111</span>                face.ConstructMesh();</div>
+<div class="line"><span class="lineno">  112</span>            }</div>
+<div class="line"><span class="lineno">  113</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_html_a7f4136edce10ca5cfe8ba7cf665bfcab"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7f4136edce10ca5cfe8ba7cf665bfcab">_Project.World.Planet.Scripts.Deprecated.PlanetCube._terrainFaces</a></div><div class="ttdeci">TerrainFace[] _terrainFaces</div><div class="ttdef"><b>Definition</b> <a href="PlanetCube_8cs_source.html#l00018">PlanetCube.cs:18</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="PlanetCube_8cs_source.html#l00018">_Project.World.Planet.Scripts.Deprecated.PlanetCube._terrainFaces</a>, and <a class="el" href="TerrainFace_8cs_source.html#l00131">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructMesh()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PlanetCube_8cs_source.html#l00020">_Project.World.Planet.Scripts.Deprecated.PlanetCube.Start()</a>, and <a class="el" href="PlanetCube_8cs_source.html#l00036">_Project.World.Planet.Scripts.Deprecated.PlanetCube.Update()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a7657ebd1e1babc458977eef2f0000865_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a7657ebd1e1babc458977eef2f0000865_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a7657ebd1e1babc458977eef2f0000865_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a7657ebd1e1babc458977eef2f0000865_cgraph">
+<area shape="rect" title=" " alt="" coords="5,49,280,89"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a013ddc776cc12554373159ef518b3c6d" title=" " alt="" coords="328,49,603,89"/>
+<area shape="poly" title=" " alt="" coords="280,66,315,66,315,71,280,71"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a0aa2451ca7853d3a5e455ac862b75bba" title=" " alt="" coords="693,5,933,60"/>
+<area shape="poly" title=" " alt="" coords="603,52,679,44,679,49,603,57"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa8ff34882a9b40c142753884fdae6889" title=" " alt="" coords="651,85,975,125"/>
+<area shape="poly" title=" " alt="" coords="603,80,637,84,637,89,603,86"/>
+</map>
+</div>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a7657ebd1e1babc458977eef2f0000865_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a7657ebd1e1babc458977eef2f0000865_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a7657ebd1e1babc458977eef2f0000865_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a7657ebd1e1babc458977eef2f0000865_icgraph">
+<area shape="rect" title=" " alt="" coords="280,37,555,77"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a006282df421b561c4f438b8e76719537" title=" " alt="" coords="13,5,225,45"/>
+<area shape="poly" title=" " alt="" coords="266,44,225,39,225,34,267,39"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#aba874eae00444382814f49f5ff61a230" title=" " alt="" coords="5,69,232,109"/>
+<area shape="poly" title=" " alt="" coords="267,76,232,80,232,75,266,71"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -180,6 +232,82 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="PlanetCube_8cs_source.html#l00049">49</a> of file <a class="el" href="PlanetCube_8cs_source.html">PlanetCube.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>        {</div>
+<div class="line"><span class="lineno">   51</span>            <span class="comment">// Ensure we always have 6 mesh slots (cube faces)</span></div>
+<div class="line"><span class="lineno">   52</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a0d12581d1460203ffb67ae692ad04f49">meshFilters</a> == <span class="keyword">null</span> || <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a0d12581d1460203ffb67ae692ad04f49">meshFilters</a>.Length != 6)</div>
+<div class="line"><span class="lineno">   53</span>            {</div>
+<div class="line"><span class="lineno">   54</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a0d12581d1460203ffb67ae692ad04f49">meshFilters</a> = <span class="keyword">new</span> MeshFilter[6];</div>
+<div class="line"><span class="lineno">   55</span>            }</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7f4136edce10ca5cfe8ba7cf665bfcab">_terrainFaces</a> = <span class="keyword">new</span> TerrainFace[6];</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>            <span class="comment">// Directions for each cube face</span></div>
+<div class="line"><span class="lineno">   60</span>            Vector3[] directions =</div>
+<div class="line"><span class="lineno">   61</span>            {</div>
+<div class="line"><span class="lineno">   62</span>                Vector3.up, Vector3.down,</div>
+<div class="line"><span class="lineno">   63</span>                Vector3.left, Vector3.right,</div>
+<div class="line"><span class="lineno">   64</span>                Vector3.forward, Vector3.back</div>
+<div class="line"><span class="lineno">   65</span>            };</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; i++)</div>
+<div class="line"><span class="lineno">   68</span>            {</div>
+<div class="line"><span class="lineno">   69</span>                <span class="comment">// Create mesh objects if they don&#39;t exist yet</span></div>
+<div class="line"><span class="lineno">   70</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a0d12581d1460203ffb67ae692ad04f49">meshFilters</a>[i] == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   71</span>                {</div>
+<div class="line"><span class="lineno">   72</span>                    <span class="comment">// Try to find existing children first</span></div>
+<div class="line"><span class="lineno">   73</span>                    Transform child = transform.Find(<span class="stringliteral">&quot;mesh_&quot;</span> + i);</div>
+<div class="line"><span class="lineno">   74</span>                    <span class="keywordflow">if</span> (child != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   75</span>                    {</div>
+<div class="line"><span class="lineno">   76</span>                        <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a0d12581d1460203ffb67ae692ad04f49">meshFilters</a>[i] = child.GetComponent&lt;MeshFilter&gt;();</div>
+<div class="line"><span class="lineno">   77</span>                    }</div>
+<div class="line"><span class="lineno">   78</span>                    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   79</span>                    {</div>
+<div class="line"><span class="lineno">   80</span>                        GameObject meshObj = <span class="keyword">new</span> GameObject(<span class="stringliteral">&quot;mesh_&quot;</span> + i)</div>
+<div class="line"><span class="lineno">   81</span>                        {</div>
+<div class="line"><span class="lineno">   82</span>                            transform =</div>
+<div class="line"><span class="lineno">   83</span>                            {</div>
+<div class="line"><span class="lineno">   84</span>                                <span class="comment">// Parent meshes to the planet object</span></div>
+<div class="line"><span class="lineno">   85</span>                                parent = transform</div>
+<div class="line"><span class="lineno">   86</span>                            }</div>
+<div class="line"><span class="lineno">   87</span>                        };</div>
+<div class="line"><span class="lineno">   88</span>                        </div>
+<div class="line"><span class="lineno">   89</span>                        </div>
+<div class="line"><span class="lineno">   90</span>                        </div>
+<div class="line"><span class="lineno">   91</span>                        <span class="comment">// Add renderer + material</span></div>
+<div class="line"><span class="lineno">   92</span>                        meshObj.AddComponent&lt;MeshRenderer&gt;()</div>
+<div class="line"><span class="lineno">   93</span>                            .sharedMaterial = <span class="keyword">new</span> Material(Shader.Find(<span class="stringliteral">&quot;Standard&quot;</span>));</div>
+<div class="line"><span class="lineno">   94</span>                        <span class="comment">// Add mesh filter with empty mesh</span></div>
+<div class="line"><span class="lineno">   95</span>                        <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a0d12581d1460203ffb67ae692ad04f49">meshFilters</a>[i] = meshObj.AddComponent&lt;MeshFilter&gt;();</div>
+<div class="line"><span class="lineno">   96</span>                        <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a0d12581d1460203ffb67ae692ad04f49">meshFilters</a>[i].sharedMesh = <span class="keyword">new</span> Mesh();</div>
+<div class="line"><span class="lineno">   97</span>                    }</div>
+<div class="line"><span class="lineno">   98</span>                }</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>                <span class="comment">// Create a terrain face pointing in one cube direction</span></div>
+<div class="line"><span class="lineno">  101</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7f4136edce10ca5cfe8ba7cf665bfcab">_terrainFaces</a>[i] = <span class="keyword">new</span> TerrainFace(<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a0d12581d1460203ffb67ae692ad04f49">meshFilters</a>[i].sharedMesh, <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#abdc1515a5b464eea63d9f2537ab1883e">resolution</a>, directions[i]);</div>
+<div class="line"><span class="lineno">  102</span>            }</div>
+<div class="line"><span class="lineno">  103</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_html_a0d12581d1460203ffb67ae692ad04f49"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a0d12581d1460203ffb67ae692ad04f49">_Project.World.Planet.Scripts.Deprecated.PlanetCube.meshFilters</a></div><div class="ttdeci">MeshFilter[] meshFilters</div><div class="ttdef"><b>Definition</b> <a href="PlanetCube_8cs_source.html#l00015">PlanetCube.cs:15</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_html_abdc1515a5b464eea63d9f2537ab1883e"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#abdc1515a5b464eea63d9f2537ab1883e">_Project.World.Planet.Scripts.Deprecated.PlanetCube.resolution</a></div><div class="ttdeci">int resolution</div><div class="ttdef"><b>Definition</b> <a href="PlanetCube_8cs_source.html#l00013">PlanetCube.cs:13</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="PlanetCube_8cs_source.html#l00018">_Project.World.Planet.Scripts.Deprecated.PlanetCube._terrainFaces</a>, <a class="el" href="PlanetCube_8cs_source.html#l00015">_Project.World.Planet.Scripts.Deprecated.PlanetCube.meshFilters</a>, and <a class="el" href="PlanetCube_8cs_source.html#l00013">_Project.World.Planet.Scripts.Deprecated.PlanetCube.resolution</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PlanetCube_8cs_source.html#l00020">_Project.World.Planet.Scripts.Deprecated.PlanetCube.Start()</a>, and <a class="el" href="PlanetCube_8cs_source.html#l00036">_Project.World.Planet.Scripts.Deprecated.PlanetCube.Update()</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a44a7fdbcce0e1c34d92e19d1635e8ec1_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a44a7fdbcce0e1c34d92e19d1635e8ec1_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a44a7fdbcce0e1c34d92e19d1635e8ec1_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a44a7fdbcce0e1c34d92e19d1635e8ec1_icgraph">
+<area shape="rect" title=" " alt="" coords="280,37,515,77"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a006282df421b561c4f438b8e76719537" title=" " alt="" coords="13,5,225,45"/>
+<area shape="poly" title=" " alt="" coords="266,45,224,40,225,35,267,40"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#aba874eae00444382814f49f5ff61a230" title=" " alt="" coords="5,69,232,109"/>
+<area shape="poly" title=" " alt="" coords="267,75,232,79,232,74,266,70"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a2cc16daadca5eceda5c3585a0e688ff3" name="a2cc16daadca5eceda5c3585a0e688ff3"></a>
@@ -204,6 +332,18 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PlanetCube_8cs_source.html#l00027">27</a> of file <a class="el" href="PlanetCube_8cs_source.html">PlanetCube.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span>        {</div>
+<div class="line"><span class="lineno">   29</span>            <span class="comment">// Just set the flag, do NO structural work here</span></div>
+<div class="line"><span class="lineno">   30</span>            <span class="keywordflow">if</span> (gameObject.activeInHierarchy)</div>
+<div class="line"><span class="lineno">   31</span>            {</div>
+<div class="line"><span class="lineno">   32</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a718e22628743bad1cac66dfdd0c6fe68">_needsGeneration</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   33</span>            }</div>
+<div class="line"><span class="lineno">   34</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_html_a718e22628743bad1cac66dfdd0c6fe68"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a718e22628743bad1cac66dfdd0c6fe68">_Project.World.Planet.Scripts.Deprecated.PlanetCube._needsGeneration</a></div><div class="ttdeci">bool _needsGeneration</div><div class="ttdef"><b>Definition</b> <a href="PlanetCube_8cs_source.html#l00010">PlanetCube.cs:10</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="PlanetCube_8cs_source.html#l00010">_Project.World.Planet.Scripts.Deprecated.PlanetCube._needsGeneration</a>.</p>
 
 </div>
 </div>
@@ -230,6 +370,36 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="PlanetCube_8cs_source.html#l00020">20</a> of file <a class="el" href="PlanetCube_8cs_source.html">PlanetCube.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>        {</div>
+<div class="line"><span class="lineno">   22</span>            <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a44a7fdbcce0e1c34d92e19d1635e8ec1">Initialize</a>();</div>
+<div class="line"><span class="lineno">   23</span>            <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7657ebd1e1babc458977eef2f0000865">GenerateMesh</a>();</div>
+<div class="line"><span class="lineno">   24</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_html_a44a7fdbcce0e1c34d92e19d1635e8ec1"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a44a7fdbcce0e1c34d92e19d1635e8ec1">_Project.World.Planet.Scripts.Deprecated.PlanetCube.Initialize</a></div><div class="ttdeci">void Initialize()</div><div class="ttdef"><b>Definition</b> <a href="PlanetCube_8cs_source.html#l00049">PlanetCube.cs:49</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_html_a7657ebd1e1babc458977eef2f0000865"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7657ebd1e1babc458977eef2f0000865">_Project.World.Planet.Scripts.Deprecated.PlanetCube.GenerateMesh</a></div><div class="ttdeci">void GenerateMesh()</div><div class="ttdef"><b>Definition</b> <a href="PlanetCube_8cs_source.html#l00106">PlanetCube.cs:106</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="PlanetCube_8cs_source.html#l00106">_Project.World.Planet.Scripts.Deprecated.PlanetCube.GenerateMesh()</a>, and <a class="el" href="PlanetCube_8cs_source.html#l00049">_Project.World.Planet.Scripts.Deprecated.PlanetCube.Initialize()</a>.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a006282df421b561c4f438b8e76719537_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a006282df421b561c4f438b8e76719537_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a006282df421b561c4f438b8e76719537_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_a006282df421b561c4f438b8e76719537_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,217,121"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7657ebd1e1babc458977eef2f0000865" title=" " alt="" coords="265,49,540,89"/>
+<area shape="poly" title=" " alt="" coords="217,86,251,83,252,88,218,92"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a44a7fdbcce0e1c34d92e19d1635e8ec1" title=" " alt="" coords="285,113,520,153"/>
+<area shape="poly" title=" " alt="" coords="218,110,272,116,271,121,217,115"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a013ddc776cc12554373159ef518b3c6d" title=" " alt="" coords="588,49,863,89"/>
+<area shape="poly" title=" " alt="" coords="540,66,575,66,575,71,540,71"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a0aa2451ca7853d3a5e455ac862b75bba" title=" " alt="" coords="953,5,1193,60"/>
+<area shape="poly" title=" " alt="" coords="863,52,939,44,939,49,863,57"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa8ff34882a9b40c142753884fdae6889" title=" " alt="" coords="911,85,1235,125"/>
+<area shape="poly" title=" " alt="" coords="863,80,897,84,897,89,863,86"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="aba874eae00444382814f49f5ff61a230" name="aba874eae00444382814f49f5ff61a230"></a>
@@ -255,6 +425,41 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="PlanetCube_8cs_source.html#l00036">36</a> of file <a class="el" href="PlanetCube_8cs_source.html">PlanetCube.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>        {</div>
+<div class="line"><span class="lineno">   38</span>            <span class="comment">// update is safe for structural change to meshes etc</span></div>
+<div class="line"><span class="lineno">   39</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a718e22628743bad1cac66dfdd0c6fe68">_needsGeneration</a>)</div>
+<div class="line"><span class="lineno">   40</span>            {</div>
+<div class="line"><span class="lineno">   41</span>                <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a44a7fdbcce0e1c34d92e19d1635e8ec1">Initialize</a>();</div>
+<div class="line"><span class="lineno">   42</span>                <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7657ebd1e1babc458977eef2f0000865">GenerateMesh</a>();</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>                <span class="comment">// Reset the flag so it only runs once per change</span></div>
+<div class="line"><span class="lineno">   45</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a718e22628743bad1cac66dfdd0c6fe68">_needsGeneration</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   46</span>            }</div>
+<div class="line"><span class="lineno">   47</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="PlanetCube_8cs_source.html#l00010">_Project.World.Planet.Scripts.Deprecated.PlanetCube._needsGeneration</a>, <a class="el" href="PlanetCube_8cs_source.html#l00106">_Project.World.Planet.Scripts.Deprecated.PlanetCube.GenerateMesh()</a>, and <a class="el" href="PlanetCube_8cs_source.html#l00049">_Project.World.Planet.Scripts.Deprecated.PlanetCube.Initialize()</a>.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_aba874eae00444382814f49f5ff61a230_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_aba874eae00444382814f49f5ff61a230_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_aba874eae00444382814f49f5ff61a230_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube_aba874eae00444382814f49f5ff61a230_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,232,121"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7657ebd1e1babc458977eef2f0000865" title=" " alt="" coords="280,49,555,89"/>
+<area shape="poly" title=" " alt="" coords="232,86,266,82,267,87,233,91"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a44a7fdbcce0e1c34d92e19d1635e8ec1" title=" " alt="" coords="300,113,535,153"/>
+<area shape="poly" title=" " alt="" coords="233,110,286,116,286,121,232,115"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a013ddc776cc12554373159ef518b3c6d" title=" " alt="" coords="603,49,877,89"/>
+<area shape="poly" title=" " alt="" coords="555,66,589,66,589,71,555,71"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a0aa2451ca7853d3a5e455ac862b75bba" title=" " alt="" coords="967,5,1207,60"/>
+<area shape="poly" title=" " alt="" coords="877,52,953,44,954,49,878,57"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa8ff34882a9b40c142753884fdae6889" title=" " alt="" coords="925,85,1249,125"/>
+<area shape="poly" title=" " alt="" coords="878,80,912,84,911,89,877,86"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -278,6 +483,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="PlanetCube_8cs_source.html#l00010">10</a> of file <a class="el" href="PlanetCube_8cs_source.html">PlanetCube.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PlanetCube_8cs_source.html#l00027">_Project.World.Planet.Scripts.Deprecated.PlanetCube.OnValidate()</a>, and <a class="el" href="PlanetCube_8cs_source.html#l00036">_Project.World.Planet.Scripts.Deprecated.PlanetCube.Update()</a>.</p>
+
 </div>
 </div>
 <a id="a7f4136edce10ca5cfe8ba7cf665bfcab" name="a7f4136edce10ca5cfe8ba7cf665bfcab"></a>
@@ -299,6 +508,10 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PlanetCube_8cs_source.html#l00018">18</a> of file <a class="el" href="PlanetCube_8cs_source.html">PlanetCube.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PlanetCube_8cs_source.html#l00106">_Project.World.Planet.Scripts.Deprecated.PlanetCube.GenerateMesh()</a>, and <a class="el" href="PlanetCube_8cs_source.html#l00049">_Project.World.Planet.Scripts.Deprecated.PlanetCube.Initialize()</a>.</p>
 
 </div>
 </div>
@@ -322,6 +535,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="PlanetCube_8cs_source.html#l00015">15</a> of file <a class="el" href="PlanetCube_8cs_source.html">PlanetCube.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PlanetCube_8cs_source.html#l00049">_Project.World.Planet.Scripts.Deprecated.PlanetCube.Initialize()</a>.</p>
+
 </div>
 </div>
 <a id="abdc1515a5b464eea63d9f2537ab1883e" name="abdc1515a5b464eea63d9f2537ab1883e"></a>
@@ -336,10 +553,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="PlanetCube_8cs_source.html#l00013">13</a> of file <a class="el" href="PlanetCube_8cs_source.html">PlanetCube.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PlanetCube_8cs_source.html#l00049">_Project.World.Planet.Scripts.Deprecated.PlanetCube.Initialize()</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Assets/_Project/World/Planet/Scripts/Deprecated/<a class="el" href="PlanetCube_8cs.html">PlanetCube.cs</a></li>
+<li>Assets/_Project/World/Planet/Scripts/Deprecated/<a class="el" href="PlanetCube_8cs_source.html">PlanetCube.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

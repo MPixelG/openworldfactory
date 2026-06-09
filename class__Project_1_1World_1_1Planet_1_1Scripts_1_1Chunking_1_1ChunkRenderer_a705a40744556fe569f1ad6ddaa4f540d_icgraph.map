@@ -1,0 +1,14 @@
+<map id="_Project.World.Planet.Scripts.Chunking.ChunkRenderer.SetupMaterial" name="_Project.World.Planet.Scripts.Chunking.ChunkRenderer.SetupMaterial">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1319,53,1600,93"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a681ef138d0e2ee824f9ad012376b27b2" title="applies a given mesh to this renderer" alt="" coords="977,53,1271,93"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1305,75,1271,75,1271,70,1305,70"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ac39b432dc11a7d366ae3892b97688f69" title=" " alt="" coords="653,5,929,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="963,56,929,52,930,47,964,51"/>
+<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ae74169a910aae91b19a9a78bc425acb2" title=" " alt="" coords="653,84,929,139"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="964,94,930,98,929,93,963,89"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a03c3c81b867c37a362470388531af700" title=" " alt="" coords="329,45,605,100"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="640,54,606,58,605,53,640,49"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ad09ca2ea43799c554c71e58f971d8439" title=" " alt="" coords="5,45,281,100"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="316,75,282,75,282,70,316,70"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="640,96,605,92,606,87,640,91"/>
+</map>

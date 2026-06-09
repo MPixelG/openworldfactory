@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -85,9 +86,11 @@ $(function() {
 
 <p>Basic free-fly camera movement using the new Unity Input System.  
  <a href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for _Project.Gameplay.BasicCameraMovement:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for _Project.Gameplay.BasicCameraMovement:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1Gameplay_1_1BasicCameraMovement__inherit__graph.png" border="0" usemap="#a__Project_8Gameplay_8BasicCameraMovement_inherit__map" alt="Inheritance graph"/></div>
 <map name="a__Project_8Gameplay_8BasicCameraMovement_inherit__map" id="a__Project_8Gameplay_8BasicCameraMovement_inherit__map">
 <area shape="rect" title="Basic free&#45;fly camera movement using the new Unity Input System." alt="" coords="5,79,239,119"/>
@@ -95,9 +98,11 @@ Inheritance diagram for _Project.Gameplay.BasicCameraMovement:</div>
 <area shape="poly" title=" " alt="" coords="125,44,125,79,119,79,119,44"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for _Project.Gameplay.BasicCameraMovement:</div>
-<div class="dyncontent">
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for _Project.Gameplay.BasicCameraMovement:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1Gameplay_1_1BasicCameraMovement__coll__graph.png" border="0" usemap="#a__Project_8Gameplay_8BasicCameraMovement_coll__map" alt="Collaboration graph"/></div>
 <map name="a__Project_8Gameplay_8BasicCameraMovement_coll__map" id="a__Project_8Gameplay_8BasicCameraMovement_coll__map">
 <area shape="rect" title="Basic free&#45;fly camera movement using the new Unity Input System." alt="" coords="5,79,239,119"/>
@@ -144,6 +149,8 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Basic free-fly camera movement using the new Unity Input System. </p>
+
+<p class="definition">Definition at line <a class="el" href="BasicCameraMovement_8cs_source.html#l00009">9</a> of file <a class="el" href="BasicCameraMovement_8cs_source.html">BasicCameraMovement.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac79f769cc17b42025917e38d6ad6b9f6" name="ac79f769cc17b42025917e38d6ad6b9f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac79f769cc17b42025917e38d6ad6b9f6">&#9670;&#160;</a></span>GetAccelerationVector()</h2>
@@ -167,6 +174,61 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="BasicCameraMovement_8cs_source.html#l00096">96</a> of file <a class="el" href="BasicCameraMovement_8cs_source.html">BasicCameraMovement.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>        {</div>
+<div class="line"><span class="lineno">   98</span>            Vector3 moveInput = Vector3.zero;</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>            Keyboard kb = Keyboard.current;</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>            <span class="keywordflow">if</span> (kb.wKey.isPressed)</div>
+<div class="line"><span class="lineno">  103</span>                moveInput += Vector3.forward;</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">if</span> (kb.sKey.isPressed)</div>
+<div class="line"><span class="lineno">  106</span>                moveInput += Vector3.back;</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>            <span class="keywordflow">if</span> (kb.aKey.isPressed)</div>
+<div class="line"><span class="lineno">  109</span>                moveInput += Vector3.left;</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>            <span class="keywordflow">if</span> (kb.dKey.isPressed)</div>
+<div class="line"><span class="lineno">  112</span>                moveInput += Vector3.right;</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>            <span class="keywordflow">if</span> (kb.eKey.isPressed)</div>
+<div class="line"><span class="lineno">  115</span>                moveInput += Vector3.up;</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>            <span class="keywordflow">if</span> (kb.qKey.isPressed)</div>
+<div class="line"><span class="lineno">  118</span>                moveInput += Vector3.down;</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>            Vector3 direction =</div>
+<div class="line"><span class="lineno">  121</span>                transform.TransformVector(moveInput.normalized);</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>            <span class="keywordtype">float</span> currentAcceleration = <a class="code hl_variable" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a02cb7e2bf1fe5de711db9125ddfcbf5c">acceleration</a>;</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>            <span class="keywordflow">if</span> (kb.leftCtrlKey.isPressed)</div>
+<div class="line"><span class="lineno">  126</span>                currentAcceleration *= <a class="code hl_variable" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a4c1eb372fa67bb56bf79770dc66b9c82">accSprintMultiplier</a>;</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>            <span class="keywordflow">return</span> direction * currentAcceleration;</div>
+<div class="line"><span class="lineno">  129</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_html_a02cb7e2bf1fe5de711db9125ddfcbf5c"><div class="ttname"><a href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a02cb7e2bf1fe5de711db9125ddfcbf5c">_Project.Gameplay.BasicCameraMovement.acceleration</a></div><div class="ttdeci">float acceleration</div><div class="ttdef"><b>Definition</b> <a href="BasicCameraMovement_8cs_source.html#l00012">BasicCameraMovement.cs:12</a></div></div>
+<div class="ttc" id="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_html_a4c1eb372fa67bb56bf79770dc66b9c82"><div class="ttname"><a href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a4c1eb372fa67bb56bf79770dc66b9c82">_Project.Gameplay.BasicCameraMovement.accSprintMultiplier</a></div><div class="ttdeci">float accSprintMultiplier</div><div class="ttdef"><b>Definition</b> <a href="BasicCameraMovement_8cs_source.html#l00013">BasicCameraMovement.cs:13</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="BasicCameraMovement_8cs_source.html#l00012">_Project.Gameplay.BasicCameraMovement.acceleration</a>, and <a class="el" href="BasicCameraMovement_8cs_source.html#l00013">_Project.Gameplay.BasicCameraMovement.accSprintMultiplier</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="BasicCameraMovement_8cs_source.html#l00067">_Project.Gameplay.BasicCameraMovement.UpdateInput()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1Gameplay_1_1BasicCameraMovement_ac79f769cc17b42025917e38d6ad6b9f6_icgraph.png" border="0" usemap="#aclass__Project_1_1Gameplay_1_1BasicCameraMovement_ac79f769cc17b42025917e38d6ad6b9f6_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_ac79f769cc17b42025917e38d6ad6b9f6_icgraph" id="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_ac79f769cc17b42025917e38d6ad6b9f6_icgraph">
+<area shape="rect" title=" " alt="" coords="568,5,809,45"/>
+<area shape="rect" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a2281bbb727856c1bd6ddde1f85e82db2" title=" " alt="" coords="287,5,520,45"/>
+<area shape="poly" title=" " alt="" coords="554,28,520,28,520,23,554,23"/>
+<area shape="rect" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a186fb7e99c95dd425a71daa2f4f0daf9" title=" " alt="" coords="5,5,239,45"/>
+<area shape="poly" title=" " alt="" coords="273,28,239,28,239,23,273,23"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -193,6 +255,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="BasicCameraMovement_8cs_source.html#l00043">43</a> of file <a class="el" href="BasicCameraMovement_8cs_source.html">BasicCameraMovement.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>        {</div>
+<div class="line"><span class="lineno">   45</span>            <a class="code hl_property" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a1f714a1e8b69ca010330dc4213af1208">Focused</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   46</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_html_a1f714a1e8b69ca010330dc4213af1208"><div class="ttname"><a href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a1f714a1e8b69ca010330dc4213af1208">_Project.Gameplay.BasicCameraMovement.Focused</a></div><div class="ttdeci">static bool Focused</div><div class="ttdef"><b>Definition</b> <a href="BasicCameraMovement_8cs_source.html#l00024">BasicCameraMovement.cs:25</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="BasicCameraMovement_8cs_source.html#l00025">_Project.Gameplay.BasicCameraMovement.Focused</a>.</p>
+
 </div>
 </div>
 <a id="a3103935d5d013e8a29083977d84cce62" name="a3103935d5d013e8a29083977d84cce62"></a>
@@ -217,6 +287,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="BasicCameraMovement_8cs_source.html#l00037">37</a> of file <a class="el" href="BasicCameraMovement_8cs_source.html">BasicCameraMovement.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>        {</div>
+<div class="line"><span class="lineno">   39</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a60775c3f772d481e5b3670dc907fa903">focusOnEnable</a>)</div>
+<div class="line"><span class="lineno">   40</span>                <a class="code hl_property" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a1f714a1e8b69ca010330dc4213af1208">Focused</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   41</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_html_a60775c3f772d481e5b3670dc907fa903"><div class="ttname"><a href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a60775c3f772d481e5b3670dc907fa903">_Project.Gameplay.BasicCameraMovement.focusOnEnable</a></div><div class="ttdeci">bool focusOnEnable</div><div class="ttdef"><b>Definition</b> <a href="BasicCameraMovement_8cs_source.html#l00020">BasicCameraMovement.cs:20</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="BasicCameraMovement_8cs_source.html#l00025">_Project.Gameplay.BasicCameraMovement.Focused</a>, and <a class="el" href="BasicCameraMovement_8cs_source.html#l00020">_Project.Gameplay.BasicCameraMovement.focusOnEnable</a>.</p>
 
 </div>
 </div>
@@ -243,6 +322,44 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="BasicCameraMovement_8cs_source.html#l00048">48</a> of file <a class="el" href="BasicCameraMovement_8cs_source.html">BasicCameraMovement.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>        {</div>
+<div class="line"><span class="lineno">   50</span>            <span class="comment">// Focus handling</span></div>
+<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">if</span> (<a class="code hl_property" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a1f714a1e8b69ca010330dc4213af1208">Focused</a>)</div>
+<div class="line"><span class="lineno">   52</span>                <a class="code hl_function" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a2281bbb727856c1bd6ddde1f85e82db2">UpdateInput</a>();</div>
+<div class="line"><span class="lineno">   53</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Mouse.current.leftButton.wasPressedThisFrame)</div>
+<div class="line"><span class="lineno">   54</span>                <a class="code hl_property" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a1f714a1e8b69ca010330dc4213af1208">Focused</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>            <span class="comment">// Damping</span></div>
+<div class="line"><span class="lineno">   57</span>            <a class="code hl_variable" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#ad0224ad98800295405e6ca6f9cb7edc6">_velocity</a> = Vector3.Lerp(</div>
+<div class="line"><span class="lineno">   58</span>                <a class="code hl_variable" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#ad0224ad98800295405e6ca6f9cb7edc6">_velocity</a>,</div>
+<div class="line"><span class="lineno">   59</span>                Vector3.zero,</div>
+<div class="line"><span class="lineno">   60</span>                <a class="code hl_variable" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#ab0f4b07eb377cb9f2a028fd423522b79">dampingCoefficient</a> * Time.deltaTime</div>
+<div class="line"><span class="lineno">   61</span>            );</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>            <span class="comment">// Apply movement</span></div>
+<div class="line"><span class="lineno">   64</span>            transform.position += <a class="code hl_variable" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#ad0224ad98800295405e6ca6f9cb7edc6">_velocity</a> * Time.deltaTime;</div>
+<div class="line"><span class="lineno">   65</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_html_a2281bbb727856c1bd6ddde1f85e82db2"><div class="ttname"><a href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a2281bbb727856c1bd6ddde1f85e82db2">_Project.Gameplay.BasicCameraMovement.UpdateInput</a></div><div class="ttdeci">void UpdateInput()</div><div class="ttdef"><b>Definition</b> <a href="BasicCameraMovement_8cs_source.html#l00067">BasicCameraMovement.cs:67</a></div></div>
+<div class="ttc" id="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_html_ab0f4b07eb377cb9f2a028fd423522b79"><div class="ttname"><a href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#ab0f4b07eb377cb9f2a028fd423522b79">_Project.Gameplay.BasicCameraMovement.dampingCoefficient</a></div><div class="ttdeci">float dampingCoefficient</div><div class="ttdef"><b>Definition</b> <a href="BasicCameraMovement_8cs_source.html#l00014">BasicCameraMovement.cs:14</a></div></div>
+<div class="ttc" id="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_html_ad0224ad98800295405e6ca6f9cb7edc6"><div class="ttname"><a href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#ad0224ad98800295405e6ca6f9cb7edc6">_Project.Gameplay.BasicCameraMovement._velocity</a></div><div class="ttdeci">Vector3 _velocity</div><div class="ttdef"><b>Definition</b> <a href="BasicCameraMovement_8cs_source.html#l00022">BasicCameraMovement.cs:22</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="BasicCameraMovement_8cs_source.html#l00022">_Project.Gameplay.BasicCameraMovement._velocity</a>, <a class="el" href="BasicCameraMovement_8cs_source.html#l00014">_Project.Gameplay.BasicCameraMovement.dampingCoefficient</a>, <a class="el" href="BasicCameraMovement_8cs_source.html#l00025">_Project.Gameplay.BasicCameraMovement.Focused</a>, and <a class="el" href="BasicCameraMovement_8cs_source.html#l00067">_Project.Gameplay.BasicCameraMovement.UpdateInput()</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1Gameplay_1_1BasicCameraMovement_a186fb7e99c95dd425a71daa2f4f0daf9_cgraph.png" border="0" usemap="#aclass__Project_1_1Gameplay_1_1BasicCameraMovement_a186fb7e99c95dd425a71daa2f4f0daf9_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_a186fb7e99c95dd425a71daa2f4f0daf9_cgraph" id="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_a186fb7e99c95dd425a71daa2f4f0daf9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,239,45"/>
+<area shape="rect" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a2281bbb727856c1bd6ddde1f85e82db2" title=" " alt="" coords="287,5,520,45"/>
+<area shape="poly" title=" " alt="" coords="239,23,273,23,273,28,239,28"/>
+<area shape="rect" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#ac79f769cc17b42025917e38d6ad6b9f6" title=" " alt="" coords="568,5,809,45"/>
+<area shape="poly" title=" " alt="" coords="520,23,554,23,554,28,520,28"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a2281bbb727856c1bd6ddde1f85e82db2" name="a2281bbb727856c1bd6ddde1f85e82db2"></a>
@@ -268,6 +385,65 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="BasicCameraMovement_8cs_source.html#l00067">67</a> of file <a class="el" href="BasicCameraMovement_8cs_source.html">BasicCameraMovement.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>        {</div>
+<div class="line"><span class="lineno">   69</span>            <span class="comment">// Movement</span></div>
+<div class="line"><span class="lineno">   70</span>            <a class="code hl_variable" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#ad0224ad98800295405e6ca6f9cb7edc6">_velocity</a> += <a class="code hl_function" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#ac79f769cc17b42025917e38d6ad6b9f6">GetAccelerationVector</a>() * Time.deltaTime;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>            <span class="comment">// Mouse look</span></div>
+<div class="line"><span class="lineno">   73</span>            Vector2 mouseDelta = Mouse.current.delta.ReadValue();</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>            mouseDelta *= <a class="code hl_variable" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a787651c7baebb2b65842a0ee0545b038">lookSensitivity</a>;</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>            Quaternion rotation = transform.rotation;</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>            Quaternion horiz = Quaternion.AngleAxis(</div>
+<div class="line"><span class="lineno">   80</span>                mouseDelta.x,</div>
+<div class="line"><span class="lineno">   81</span>                Vector3.up</div>
+<div class="line"><span class="lineno">   82</span>            );</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>            Quaternion vert = Quaternion.AngleAxis(</div>
+<div class="line"><span class="lineno">   85</span>                -mouseDelta.y,</div>
+<div class="line"><span class="lineno">   86</span>                Vector3.right</div>
+<div class="line"><span class="lineno">   87</span>            );</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>            transform.rotation = horiz * rotation * vert;</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>            <span class="comment">// Unlock cursor</span></div>
+<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">if</span> (Keyboard.current.escapeKey.wasPressedThisFrame)</div>
+<div class="line"><span class="lineno">   93</span>                <a class="code hl_property" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a1f714a1e8b69ca010330dc4213af1208">Focused</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   94</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_html_a787651c7baebb2b65842a0ee0545b038"><div class="ttname"><a href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a787651c7baebb2b65842a0ee0545b038">_Project.Gameplay.BasicCameraMovement.lookSensitivity</a></div><div class="ttdeci">float lookSensitivity</div><div class="ttdef"><b>Definition</b> <a href="BasicCameraMovement_8cs_source.html#l00017">BasicCameraMovement.cs:17</a></div></div>
+<div class="ttc" id="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_html_ac79f769cc17b42025917e38d6ad6b9f6"><div class="ttname"><a href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#ac79f769cc17b42025917e38d6ad6b9f6">_Project.Gameplay.BasicCameraMovement.GetAccelerationVector</a></div><div class="ttdeci">Vector3 GetAccelerationVector()</div><div class="ttdef"><b>Definition</b> <a href="BasicCameraMovement_8cs_source.html#l00096">BasicCameraMovement.cs:96</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="BasicCameraMovement_8cs_source.html#l00022">_Project.Gameplay.BasicCameraMovement._velocity</a>, <a class="el" href="BasicCameraMovement_8cs_source.html#l00025">_Project.Gameplay.BasicCameraMovement.Focused</a>, <a class="el" href="BasicCameraMovement_8cs_source.html#l00096">_Project.Gameplay.BasicCameraMovement.GetAccelerationVector()</a>, and <a class="el" href="BasicCameraMovement_8cs_source.html#l00017">_Project.Gameplay.BasicCameraMovement.lookSensitivity</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="BasicCameraMovement_8cs_source.html#l00048">_Project.Gameplay.BasicCameraMovement.Update()</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1Gameplay_1_1BasicCameraMovement_a2281bbb727856c1bd6ddde1f85e82db2_cgraph.png" border="0" usemap="#aclass__Project_1_1Gameplay_1_1BasicCameraMovement_a2281bbb727856c1bd6ddde1f85e82db2_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_a2281bbb727856c1bd6ddde1f85e82db2_cgraph" id="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_a2281bbb727856c1bd6ddde1f85e82db2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,239,45"/>
+<area shape="rect" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#ac79f769cc17b42025917e38d6ad6b9f6" title=" " alt="" coords="287,5,528,45"/>
+<area shape="poly" title=" " alt="" coords="239,23,273,23,273,28,239,28"/>
+</map>
+</div>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1Gameplay_1_1BasicCameraMovement_a2281bbb727856c1bd6ddde1f85e82db2_icgraph.png" border="0" usemap="#aclass__Project_1_1Gameplay_1_1BasicCameraMovement_a2281bbb727856c1bd6ddde1f85e82db2_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_a2281bbb727856c1bd6ddde1f85e82db2_icgraph" id="aclass__Project_1_1Gameplay_1_1BasicCameraMovement_a2281bbb727856c1bd6ddde1f85e82db2_icgraph">
+<area shape="rect" title=" " alt="" coords="287,5,520,45"/>
+<area shape="rect" href="class__Project_1_1Gameplay_1_1BasicCameraMovement.html#a186fb7e99c95dd425a71daa2f4f0daf9" title=" " alt="" coords="5,5,239,45"/>
+<area shape="poly" title=" " alt="" coords="273,28,239,28,239,23,273,23"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -291,6 +467,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="BasicCameraMovement_8cs_source.html#l00022">22</a> of file <a class="el" href="BasicCameraMovement_8cs_source.html">BasicCameraMovement.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="BasicCameraMovement_8cs_source.html#l00048">_Project.Gameplay.BasicCameraMovement.Update()</a>, and <a class="el" href="BasicCameraMovement_8cs_source.html#l00067">_Project.Gameplay.BasicCameraMovement.UpdateInput()</a>.</p>
+
 </div>
 </div>
 <a id="a02cb7e2bf1fe5de711db9125ddfcbf5c" name="a02cb7e2bf1fe5de711db9125ddfcbf5c"></a>
@@ -304,6 +484,10 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="BasicCameraMovement_8cs_source.html#l00012">12</a> of file <a class="el" href="BasicCameraMovement_8cs_source.html">BasicCameraMovement.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="BasicCameraMovement_8cs_source.html#l00096">_Project.Gameplay.BasicCameraMovement.GetAccelerationVector()</a>.</p>
 
 </div>
 </div>
@@ -319,6 +503,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="BasicCameraMovement_8cs_source.html#l00013">13</a> of file <a class="el" href="BasicCameraMovement_8cs_source.html">BasicCameraMovement.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="BasicCameraMovement_8cs_source.html#l00096">_Project.Gameplay.BasicCameraMovement.GetAccelerationVector()</a>.</p>
+
 </div>
 </div>
 <a id="ab0f4b07eb377cb9f2a028fd423522b79" name="ab0f4b07eb377cb9f2a028fd423522b79"></a>
@@ -332,6 +520,10 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="BasicCameraMovement_8cs_source.html#l00014">14</a> of file <a class="el" href="BasicCameraMovement_8cs_source.html">BasicCameraMovement.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="BasicCameraMovement_8cs_source.html#l00048">_Project.Gameplay.BasicCameraMovement.Update()</a>.</p>
 
 </div>
 </div>
@@ -347,6 +539,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="BasicCameraMovement_8cs_source.html#l00020">20</a> of file <a class="el" href="BasicCameraMovement_8cs_source.html">BasicCameraMovement.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="BasicCameraMovement_8cs_source.html#l00037">_Project.Gameplay.BasicCameraMovement.OnEnable()</a>.</p>
+
 </div>
 </div>
 <a id="a787651c7baebb2b65842a0ee0545b038" name="a787651c7baebb2b65842a0ee0545b038"></a>
@@ -360,6 +556,10 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="BasicCameraMovement_8cs_source.html#l00017">17</a> of file <a class="el" href="BasicCameraMovement_8cs_source.html">BasicCameraMovement.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="BasicCameraMovement_8cs_source.html#l00067">_Project.Gameplay.BasicCameraMovement.UpdateInput()</a>.</p>
 
 </div>
 </div>
@@ -384,10 +584,25 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="BasicCameraMovement_8cs_source.html#l00024">24</a> of file <a class="el" href="BasicCameraMovement_8cs_source.html">BasicCameraMovement.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>        {</div>
+<div class="line"><span class="lineno">   26</span>            <span class="keyword">get</span> =&gt; Cursor.lockState == CursorLockMode.Locked;</div>
+<div class="line"><span class="lineno">   27</span>            <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   28</span>            {</div>
+<div class="line"><span class="lineno">   29</span>                Cursor.lockState = value</div>
+<div class="line"><span class="lineno">   30</span>                    ? CursorLockMode.Locked</div>
+<div class="line"><span class="lineno">   31</span>                    : CursorLockMode.None;</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>                Cursor.visible = !value;</div>
+<div class="line"><span class="lineno">   34</span>            }</div>
+<div class="line"><span class="lineno">   35</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="BasicCameraMovement_8cs_source.html#l00043">_Project.Gameplay.BasicCameraMovement.OnDisable()</a>, <a class="el" href="BasicCameraMovement_8cs_source.html#l00037">_Project.Gameplay.BasicCameraMovement.OnEnable()</a>, <a class="el" href="BasicCameraMovement_8cs_source.html#l00048">_Project.Gameplay.BasicCameraMovement.Update()</a>, and <a class="el" href="BasicCameraMovement_8cs_source.html#l00067">_Project.Gameplay.BasicCameraMovement.UpdateInput()</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Assets/_Project/Gameplay/<a class="el" href="BasicCameraMovement_8cs.html">BasicCameraMovement.cs</a></li>
+<li>Assets/_Project/Gameplay/<a class="el" href="BasicCameraMovement_8cs_source.html">BasicCameraMovement.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

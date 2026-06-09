@@ -1,0 +1,7 @@
+<map id="_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructMesh" name="_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructMesh">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,49,280,89"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a0aa2451ca7853d3a5e455ac862b75bba" title=" " alt="" coords="370,5,610,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="280,52,356,44,357,49,280,57"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa8ff34882a9b40c142753884fdae6889" title=" " alt="" coords="328,85,652,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="280,80,315,84,314,89,280,86"/>
+</map>

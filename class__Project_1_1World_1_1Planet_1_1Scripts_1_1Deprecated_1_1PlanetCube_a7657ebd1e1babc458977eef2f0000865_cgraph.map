@@ -1,0 +1,9 @@
+<map id="_Project.World.Planet.Scripts.Deprecated.PlanetCube.GenerateMesh" name="_Project.World.Planet.Scripts.Deprecated.PlanetCube.GenerateMesh">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,49,280,89"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a013ddc776cc12554373159ef518b3c6d" title=" " alt="" coords="328,49,603,89"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="280,66,315,66,315,71,280,71"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a0aa2451ca7853d3a5e455ac862b75bba" title=" " alt="" coords="693,5,933,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="603,52,679,44,679,49,603,57"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa8ff34882a9b40c142753884fdae6889" title=" " alt="" coords="651,85,975,125"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="603,80,637,84,637,89,603,86"/>
+</map>

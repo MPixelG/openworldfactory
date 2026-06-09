@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -83,9 +84,11 @@ $(function() {
 
 <p>the chunk streamer is responsible for calculating what chunks to display. it has no reference to any chunk systems and only contains a function that returns a set of chunks that should be visible based on the viewers position (in world pos). everything else is managed by the chunk manager.  
  <a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#details">More...</a></p>
-<div class="dynheader">
-Collaboration diagram for _Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for _Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer__coll__graph.png" border="0" usemap="#a__Project_8World_8Planet_8Scripts_8Chunking_8GridChunkSystem_8ChunkStreamer_coll__map" alt="Collaboration graph"/></div>
 <map name="a__Project_8World_8Planet_8Scripts_8Chunking_8GridChunkSystem_8ChunkStreamer_coll__map" id="a__Project_8World_8Planet_8Scripts_8Chunking_8GridChunkSystem_8ChunkStreamer_coll__map">
 <area shape="rect" title="the chunk streamer is responsible for calculating what chunks to display. it has no reference to any ..." alt="" coords="5,183,315,223"/>
@@ -117,6 +120,8 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>the chunk streamer is responsible for calculating what chunks to display. it has no reference to any chunk systems and only contains a function that returns a set of chunks that should be visible based on the viewers position (in world pos). everything else is managed by the chunk manager. </p>
+
+<p class="definition">Definition at line <a class="el" href="ChunkStreamer_8cs_source.html#l00012">12</a> of file <a class="el" href="ChunkStreamer_8cs_source.html">ChunkStreamer.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a73b2e92cf43bcdcb8d205057abe884ba" name="a73b2e92cf43bcdcb8d205057abe884ba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a73b2e92cf43bcdcb8d205057abe884ba">&#9670;&#160;</a></span>ChunkStreamer()</h2>
@@ -141,6 +146,14 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ChunkStreamer_8cs_source.html#l00016">16</a> of file <a class="el" href="ChunkStreamer_8cs_source.html">ChunkStreamer.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>        {</div>
+<div class="line"><span class="lineno">   18</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#aec602fdd25f488f72a6713128b8e0106">_chunkSize</a> = chunkSize;</div>
+<div class="line"><span class="lineno">   19</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer_html_aec602fdd25f488f72a6713128b8e0106"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#aec602fdd25f488f72a6713128b8e0106">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer._chunkSize</a></div><div class="ttdeci">readonly int _chunkSize</div><div class="ttdef"><b>Definition</b> <a href="ChunkStreamer_8cs_source.html#l00014">ChunkStreamer.cs:14</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ChunkStreamer_8cs_source.html#l00014">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer._chunkSize</a>.</p>
 
 </div>
 </div>
@@ -189,6 +202,87 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a set of chunk coords of visible chunks</dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="ChunkStreamer_8cs_source.html#l00031">31</a> of file <a class="el" href="ChunkStreamer_8cs_source.html">ChunkStreamer.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>        {</div>
+<div class="line"><span class="lineno">   36</span>            <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html">ChunkCoord</a> viewerChunk = <span class="keyword">new</span>(</div>
+<div class="line"><span class="lineno">   37</span>                (int3) math.floor(viewerPosition / <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#aec602fdd25f488f72a6713128b8e0106">_chunkSize</a>)</div>
+<div class="line"><span class="lineno">   38</span>            );</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>            <span class="keywordflow">if</span> (viewDistanceInChunks &lt;= 0)</div>
+<div class="line"><span class="lineno">   41</span>            {</div>
+<div class="line"><span class="lineno">   42</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a2cce9d99c46ddeb512cb48b40c6969f4">_lastCalculatedChunkCoord</a> = viewerChunk;</div>
+<div class="line"><span class="lineno">   43</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a3ae91fae5a005c0b1d7241ab1bec30d3">_hasLastCalculated</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   44</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a6337aa46c5a668fe597ebf8092a3ad05">_lastVisibleChunks</a>.Clear();</div>
+<div class="line"><span class="lineno">   45</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> HashSet&lt;ChunkCoord&gt;();</div>
+<div class="line"><span class="lineno">   46</span>            }</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a3ae91fae5a005c0b1d7241ab1bec30d3">_hasLastCalculated</a> &amp;&amp; <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a2cce9d99c46ddeb512cb48b40c6969f4">_lastCalculatedChunkCoord</a>.<a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a11f747d1ae0a7f7d0ce6ea39eb804e3f">Equals</a>(viewerChunk))</div>
+<div class="line"><span class="lineno">   49</span>            {</div>
+<div class="line"><span class="lineno">   50</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> HashSet&lt;ChunkCoord&gt;(<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a6337aa46c5a668fe597ebf8092a3ad05">_lastVisibleChunks</a>);</div>
+<div class="line"><span class="lineno">   51</span>            }</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>            <span class="comment">// calculate a sphere of chunks that need to be generated</span></div>
+<div class="line"><span class="lineno">   54</span>            HashSet&lt;ChunkCoord&gt; visibleChunks = <span class="keyword">new</span>();</div>
+<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = -viewDistanceInChunks; x &lt;= viewDistanceInChunks; x++)</div>
+<div class="line"><span class="lineno">   56</span>            {</div>
+<div class="line"><span class="lineno">   57</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = -viewDistanceInChunks; y &lt;= viewDistanceInChunks; y++)</div>
+<div class="line"><span class="lineno">   58</span>                {</div>
+<div class="line"><span class="lineno">   59</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> z = -viewDistanceInChunks; z &lt;= viewDistanceInChunks; z++)</div>
+<div class="line"><span class="lineno">   60</span>                    {</div>
+<div class="line"><span class="lineno">   61</span>                        <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html">ChunkCoord</a> chunkCoord = viewerChunk + <span class="keyword">new</span> int3(x, y, z);</div>
+<div class="line"><span class="lineno">   62</span>                        <span class="keywordflow">if</span> (math.distance(viewerChunk.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a43d0cfa29f44a09d96eca32db87c3d59">Value</a>, chunkCoord.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a43d0cfa29f44a09d96eca32db87c3d59">Value</a>) &lt;= viewDistanceInChunks)</div>
+<div class="line"><span class="lineno">   63</span>                        {</div>
+<div class="line"><span class="lineno">   64</span>                            visibleChunks.Add(chunkCoord);</div>
+<div class="line"><span class="lineno">   65</span>                        }</div>
+<div class="line"><span class="lineno">   66</span>                    }</div>
+<div class="line"><span class="lineno">   67</span>                }</div>
+<div class="line"><span class="lineno">   68</span>            }</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a2cce9d99c46ddeb512cb48b40c6969f4">_lastCalculatedChunkCoord</a> = viewerChunk;</div>
+<div class="line"><span class="lineno">   71</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a3ae91fae5a005c0b1d7241ab1bec30d3">_hasLastCalculated</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   72</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a6337aa46c5a668fe597ebf8092a3ad05">_lastVisibleChunks</a> = visibleChunks;</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> HashSet&lt;ChunkCoord&gt;(<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a6337aa46c5a668fe597ebf8092a3ad05">_lastVisibleChunks</a>);</div>
+<div class="line"><span class="lineno">   75</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer_html_a2cce9d99c46ddeb512cb48b40c6969f4"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a2cce9d99c46ddeb512cb48b40c6969f4">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer._lastCalculatedChunkCoord</a></div><div class="ttdeci">ChunkCoord _lastCalculatedChunkCoord</div><div class="ttdef"><b>Definition</b> <a href="ChunkStreamer_8cs_source.html#l00021">ChunkStreamer.cs:21</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer_html_a3ae91fae5a005c0b1d7241ab1bec30d3"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a3ae91fae5a005c0b1d7241ab1bec30d3">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer._hasLastCalculated</a></div><div class="ttdeci">bool _hasLastCalculated</div><div class="ttdef"><b>Definition</b> <a href="ChunkStreamer_8cs_source.html#l00022">ChunkStreamer.cs:22</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer_html_a6337aa46c5a668fe597ebf8092a3ad05"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a6337aa46c5a668fe597ebf8092a3ad05">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer._lastVisibleChunks</a></div><div class="ttdeci">HashSet&lt; ChunkCoord &gt; _lastVisibleChunks</div><div class="ttdef"><b>Definition</b> <a href="ChunkStreamer_8cs_source.html#l00023">ChunkStreamer.cs:23</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord_html"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html">_Project.World.Planet.Scripts.Chunking.Core.ChunkCoord</a></div><div class="ttdoc">A chunk coord is basically an int3 but as its own data type. this way we always know what an int3 val...</div><div class="ttdef"><b>Definition</b> <a href="ChunkCoord_8cs_source.html#l00009">ChunkCoord.cs:10</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord_html_a11f747d1ae0a7f7d0ce6ea39eb804e3f"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a11f747d1ae0a7f7d0ce6ea39eb804e3f">_Project.World.Planet.Scripts.Chunking.Core.ChunkCoord.Equals</a></div><div class="ttdeci">bool Equals(ChunkCoord other)</div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord_html_a43d0cfa29f44a09d96eca32db87c3d59"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a43d0cfa29f44a09d96eca32db87c3d59">_Project.World.Planet.Scripts.Chunking.Core.ChunkCoord.Value</a></div><div class="ttdeci">readonly int3 Value</div><div class="ttdef"><b>Definition</b> <a href="ChunkCoord_8cs_source.html#l00011">ChunkCoord.cs:11</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ChunkStreamer_8cs_source.html#l00014">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer._chunkSize</a>, <a class="el" href="ChunkStreamer_8cs_source.html#l00022">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer._hasLastCalculated</a>, <a class="el" href="ChunkStreamer_8cs_source.html#l00021">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer._lastCalculatedChunkCoord</a>, <a class="el" href="ChunkStreamer_8cs_source.html#l00023">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer._lastVisibleChunks</a>, <a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a11f747d1ae0a7f7d0ce6ea39eb804e3f">_Project.World.Planet.Scripts.Chunking.Core.ChunkCoord.Equals()</a>, and <a class="el" href="ChunkCoord_8cs_source.html#l00011">_Project.World.Planet.Scripts.Chunking.Core.ChunkCoord.Value</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GridChunkManager_8cs_source.html#l00154">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager.SyncChunks()</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer_a1c33f9053e683f078390968438958a96_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer_a1c33f9053e683f078390968438958a96_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer_a1c33f9053e683f078390968438958a96_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer_a1c33f9053e683f078390968438958a96_cgraph">
+<area shape="rect" title="calculates the visible chunks based on the viewers position and the view distance in chunks" alt="" coords="5,5,317,60"/>
+<area shape="rect" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a11f747d1ae0a7f7d0ce6ea39eb804e3f" title=" " alt="" coords="365,13,612,53"/>
+<area shape="poly" title=" " alt="" coords="317,30,351,30,351,35,317,35"/>
+</map>
+</div>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer_a1c33f9053e683f078390968438958a96_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer_a1c33f9053e683f078390968438958a96_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer_a1c33f9053e683f078390968438958a96_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer_a1c33f9053e683f078390968438958a96_icgraph">
+<area shape="rect" title="calculates the visible chunks based on the viewers position and the view distance in chunks" alt="" coords="977,5,1289,60"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#ae9455f87b933943de8afb5fbe1df72db" title="syncs the loaded chunks with the viewers position. it calculates what chunks should be loaded based o..." alt="" coords="653,5,929,60"/>
+<area shape="poly" title=" " alt="" coords="964,35,930,35,930,30,964,30"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#ad574d29d7a45ae0b4f62c50c26c7e2ae" title="updates the chunk manager. this should be called once per frame. it processes the completed chunk gen..." alt="" coords="329,5,605,60"/>
+<area shape="poly" title=" " alt="" coords="640,35,606,35,606,30,640,30"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ad09ca2ea43799c554c71e58f971d8439" title=" " alt="" coords="5,5,281,60"/>
+<area shape="poly" title=" " alt="" coords="316,35,282,35,282,30,316,30"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -212,6 +306,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ChunkStreamer_8cs_source.html#l00014">14</a> of file <a class="el" href="ChunkStreamer_8cs_source.html">ChunkStreamer.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ChunkStreamer_8cs_source.html#l00016">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer.ChunkStreamer()</a>, and <a class="el" href="ChunkStreamer_8cs_source.html#l00031">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer.ComputeVisibleChunks()</a>.</p>
+
 </div>
 </div>
 <a id="a3ae91fae5a005c0b1d7241ab1bec30d3" name="a3ae91fae5a005c0b1d7241ab1bec30d3"></a>
@@ -233,6 +331,10 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ChunkStreamer_8cs_source.html#l00022">22</a> of file <a class="el" href="ChunkStreamer_8cs_source.html">ChunkStreamer.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ChunkStreamer_8cs_source.html#l00031">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer.ComputeVisibleChunks()</a>.</p>
 
 </div>
 </div>
@@ -256,6 +358,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ChunkStreamer_8cs_source.html#l00021">21</a> of file <a class="el" href="ChunkStreamer_8cs_source.html">ChunkStreamer.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ChunkStreamer_8cs_source.html#l00031">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer.ComputeVisibleChunks()</a>.</p>
+
 </div>
 </div>
 <a id="a6337aa46c5a668fe597ebf8092a3ad05" name="a6337aa46c5a668fe597ebf8092a3ad05"></a>
@@ -278,10 +384,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ChunkStreamer_8cs_source.html#l00023">23</a> of file <a class="el" href="ChunkStreamer_8cs_source.html">ChunkStreamer.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ChunkStreamer_8cs_source.html#l00031">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer.ComputeVisibleChunks()</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Assets/_Project/World/Planet/Scripts/Chunking/GridChunkSystem/<a class="el" href="ChunkStreamer_8cs.html">ChunkStreamer.cs</a></li>
+<li>Assets/_Project/World/Planet/Scripts/Chunking/GridChunkSystem/<a class="el" href="ChunkStreamer_8cs_source.html">ChunkStreamer.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

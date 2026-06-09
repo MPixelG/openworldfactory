@@ -1,0 +1,39 @@
+<map id="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.Update" name="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.Update">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,223,281,277"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a03c3c81b867c37a362470388531af700" title=" " alt="" coords="329,144,605,199"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="256,220,340,199,341,205,257,225"/>
+<area shape="rect" id="Node000010" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#ad574d29d7a45ae0b4f62c50c26c7e2ae" title="updates the chunk manager. this should be called once per frame. it processes the completed chunk gen..." alt="" coords="329,261,605,316"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="282,264,316,268,315,273,281,269"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ac39b432dc11a7d366ae3892b97688f69" title=" " alt="" coords="653,5,929,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="512,141,577,105,652,69,671,62,672,67,654,74,579,109,514,146"/>
+<area shape="rect" id="Node000008" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a994fe711e3c2ef01749eace831584066" title=" " alt="" coords="653,163,929,217"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="606,177,640,179,639,184,605,182"/>
+<area shape="rect" id="Node000009" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ae74169a910aae91b19a9a78bc425acb2" title=" " alt="" coords="653,84,929,139"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="605,143,639,137,640,142,606,148"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a681ef138d0e2ee824f9ad012376b27b2" title="applies a given mesh to this renderer" alt="" coords="987,90,1280,130"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="913,57,1031,84,1030,90,912,63"/>
+<area shape="rect" id="Node000007" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a79650c30c63ce53caf21eaafc54779e0" title="returns the chunk data of a given position. if no chunk exists at that position, null is returned." alt="" coords="995,8,1271,63"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="930,31,981,31,981,37,930,36"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a5640743dd19c8884caeed976334beaf8" title=" " alt="" coords="1337,58,1653,98"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1280,94,1323,91,1324,96,1281,100"/>
+<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a705a40744556fe569f1ad6ddaa4f540d" title=" " alt="" coords="1355,122,1636,162"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="1281,120,1341,126,1341,131,1280,126"/>
+<area shape="poly" id="edge9_Node000009_Node000004" title=" " alt="" coords="930,108,972,108,972,113,930,113"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="915,81,996,63,997,68,916,86"/>
+<area shape="rect" id="Node000011" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#acf48488734cd01d040aa748481210ba9" title="processes the completed chunk generations. it shifts the generated data from the _completedChunks que..." alt="" coords="653,241,929,296"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="605,277,639,275,640,281,606,283"/>
+<area shape="rect" id="Node000012" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a801c839c6937815070f58de0f0fc05e8" title="loads / unloads chunks if they are in the different queueues. it doesnt check what chunks need to be ..." alt="" coords="653,320,929,375"/>
+<area shape="poly" id="edge13_Node000010_Node000012" title=" " alt="" coords="606,311,640,317,639,322,605,316"/>
+<area shape="rect" id="Node000016" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#ae9455f87b933943de8afb5fbe1df72db" title="syncs the loaded chunks with the viewers position. it calculates what chunks should be loaded based o..." alt="" coords="653,399,929,453"/>
+<area shape="poly" id="edge17_Node000010_Node000016" title=" " alt="" coords="515,314,580,350,654,385,672,392,671,397,652,390,577,355,512,318"/>
+<area shape="rect" id="Node000013" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a6f809eacb6fa867fdcd119e8291f7981" title="generates a chunk at a given position using the chunk generator" alt="" coords="995,320,1271,375"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="930,345,981,345,981,350,930,350"/>
+<area shape="rect" id="Node000015" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#af0feb1e1104b07d8876d81b644b1be9c" title="unloads the chunk at a given position" alt="" coords="995,241,1271,296"/>
+<area shape="poly" id="edge16_Node000012_Node000015" title=" " alt="" coords="910,317,1000,297,1001,302,911,323"/>
+<area shape="rect" id="Node000014" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkGenerator.html#a0fea0694891c9f157bd89cfc7b2fef69" title="generates the chunk data at a given chunk position." alt="" coords="1367,320,1623,375"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="1272,345,1353,345,1353,350,1272,350"/>
+<area shape="rect" id="Node000017" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a1c33f9053e683f078390968438958a96" title="calculates the visible chunks based on the viewers position and the view distance in chunks" alt="" coords="977,399,1289,453"/>
+<area shape="poly" id="edge18_Node000016_Node000017" title=" " alt="" coords="930,423,964,423,964,429,930,429"/>
+<area shape="rect" id="Node000018" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a11f747d1ae0a7f7d0ce6ea39eb804e3f" title=" " alt="" coords="1372,406,1619,446"/>
+<area shape="poly" id="edge19_Node000017_Node000018" title=" " alt="" coords="1290,423,1358,423,1358,429,1290,429"/>
+</map>

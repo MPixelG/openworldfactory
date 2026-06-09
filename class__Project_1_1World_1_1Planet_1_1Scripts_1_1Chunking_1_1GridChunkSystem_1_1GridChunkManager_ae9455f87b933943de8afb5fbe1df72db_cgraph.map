@@ -1,0 +1,7 @@
+<map id="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager.SyncChunks" name="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager.SyncChunks">
+<area shape="rect" id="Node000001" title="syncs the loaded chunks with the viewers position. it calculates what chunks should be loaded based o..." alt="" coords="5,5,281,60"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a1c33f9053e683f078390968438958a96" title="calculates the visible chunks based on the viewers position and the view distance in chunks" alt="" coords="329,5,641,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="282,30,316,30,316,35,282,35"/>
+<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a11f747d1ae0a7f7d0ce6ea39eb804e3f" title=" " alt="" coords="689,13,936,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="641,30,675,30,675,35,641,35"/>
+</map>

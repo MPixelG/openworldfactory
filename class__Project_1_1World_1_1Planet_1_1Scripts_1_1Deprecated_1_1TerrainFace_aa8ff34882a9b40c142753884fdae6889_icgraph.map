@@ -1,0 +1,15 @@
+<map id="_Project.World.Planet.Scripts.Deprecated.TerrainFace.TriangleFragmentation" name="_Project.World.Planet.Scripts.Deprecated.TerrainFace.TriangleFragmentation">
+<area shape="rect" id="Node000001" title=" " alt="" coords="925,101,1249,141"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a013ddc776cc12554373159ef518b3c6d" title=" " alt="" coords="603,101,877,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="912,124,878,124,878,119,912,119"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7657ebd1e1babc458977eef2f0000865" title=" " alt="" coords="280,69,555,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="589,109,554,106,555,100,589,104"/>
+<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a52a19523a873ec08b0277ee6075dfd31" title=" " alt="" coords="297,133,538,173"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="589,139,538,144,538,139,589,134"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a006282df421b561c4f438b8e76719537" title=" " alt="" coords="13,5,225,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="309,69,212,48,213,43,310,64"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#aba874eae00444382814f49f5ff61a230" title=" " alt="" coords="5,69,232,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="266,92,232,92,232,87,266,87"/>
+<area shape="rect" id="Node000007" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a9e2375855774b110fb83b40aaeadd324" title=" " alt="" coords="13,133,225,173"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="283,156,225,156,225,151,283,151"/>
+</map>

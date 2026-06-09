@@ -1,0 +1,9 @@
+<map id="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager.UnloadChunk" name="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager.UnloadChunk">
+<area shape="rect" id="Node000001" title="unloads the chunk at a given position" alt="" coords="977,5,1253,60"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a801c839c6937815070f58de0f0fc05e8" title="loads / unloads chunks if they are in the different queueues. it doesnt check what chunks need to be ..." alt="" coords="653,5,929,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="964,35,930,35,930,30,964,30"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#ad574d29d7a45ae0b4f62c50c26c7e2ae" title="updates the chunk manager. this should be called once per frame. it processes the completed chunk gen..." alt="" coords="329,5,605,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="640,35,606,35,606,30,640,30"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ad09ca2ea43799c554c71e58f971d8439" title=" " alt="" coords="5,5,281,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="316,35,282,35,282,30,316,30"/>
+</map>

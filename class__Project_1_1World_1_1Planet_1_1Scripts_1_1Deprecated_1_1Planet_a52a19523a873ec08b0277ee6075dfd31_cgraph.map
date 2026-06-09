@@ -1,0 +1,9 @@
+<map id="_Project.World.Planet.Scripts.Deprecated.Planet.GenerateMesh" name="_Project.World.Planet.Scripts.Deprecated.Planet.GenerateMesh">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,49,247,89"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a013ddc776cc12554373159ef518b3c6d" title=" " alt="" coords="295,49,569,89"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,66,281,66,281,71,247,71"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a0aa2451ca7853d3a5e455ac862b75bba" title=" " alt="" coords="659,5,899,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="569,52,645,44,646,49,570,57"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa8ff34882a9b40c142753884fdae6889" title=" " alt="" coords="617,85,941,125"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="570,80,604,84,603,89,569,86"/>
+</map>

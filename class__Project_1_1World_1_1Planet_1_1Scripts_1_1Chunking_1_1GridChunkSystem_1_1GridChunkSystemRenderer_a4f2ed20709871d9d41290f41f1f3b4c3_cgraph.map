@@ -1,0 +1,7 @@
+<map id="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.Awake" name="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.Awake">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,281,60"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#aae33f34f4d6c1d8eb07442148c856d27" title=" " alt="" coords="329,5,637,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="281,30,316,30,316,35,281,35"/>
+<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a11fe2b499e941abfbf313e15c8eaa11f" title="parses the chunk coord from a given string in the format &quot;ChunkCoord(x,y)&quot;" alt="" coords="685,13,1004,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="638,30,671,30,671,35,638,35"/>
+</map>

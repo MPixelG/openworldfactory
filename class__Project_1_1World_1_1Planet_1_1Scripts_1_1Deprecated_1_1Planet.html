@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -81,9 +82,11 @@ $(function() {
   <div class="headertitle"><div class="title">_Project.World.Planet.Scripts.Deprecated.Planet Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for _Project.World.Planet.Scripts.Deprecated.Planet:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for _Project.World.Planet.Scripts.Deprecated.Planet:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet__inherit__graph.png" border="0" usemap="#a__Project_8World_8Planet_8Scripts_8Deprecated_8Planet_inherit__map" alt="Inheritance graph"/></div>
 <map name="a__Project_8World_8Planet_8Scripts_8Deprecated_8Planet_inherit__map" id="a__Project_8World_8Planet_8Scripts_8Deprecated_8Planet_inherit__map">
 <area shape="rect" title=" " alt="" coords="5,79,217,119"/>
@@ -91,9 +94,11 @@ Inheritance diagram for _Project.World.Planet.Scripts.Deprecated.Planet:</div>
 <area shape="poly" title=" " alt="" coords="114,44,114,79,109,79,109,44"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for _Project.World.Planet.Scripts.Deprecated.Planet:</div>
-<div class="dyncontent">
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for _Project.World.Planet.Scripts.Deprecated.Planet:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet__coll__graph.png" border="0" usemap="#a__Project_8World_8Planet_8Scripts_8Deprecated_8Planet_coll__map" alt="Collaboration graph"/></div>
 <map name="a__Project_8World_8Planet_8Scripts_8Deprecated_8Planet_coll__map" id="a__Project_8World_8Planet_8Scripts_8Deprecated_8Planet_coll__map">
 <area shape="rect" title=" " alt="" coords="57,108,269,148"/>
@@ -129,7 +134,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a69405da2539160c2eb14597a171bf5a0" id="r_a69405da2539160c2eb14597a171bf5a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html">TerrainFace</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a69405da2539160c2eb14597a171bf5a0">_terrainFaces</a></td></tr>
 <tr class="separator:a69405da2539160c2eb14597a171bf5a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="PlanetOctahedron_8cs_source.html#l00007">7</a> of file <a class="el" href="PlanetOctahedron_8cs_source.html">PlanetOctahedron.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a52a19523a873ec08b0277ee6075dfd31" name="a52a19523a873ec08b0277ee6075dfd31"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a52a19523a873ec08b0277ee6075dfd31">&#9670;&#160;</a></span>GenerateMesh()</h2>
 
@@ -152,6 +160,47 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PlanetOctahedron_8cs_source.html#l00107">107</a> of file <a class="el" href="PlanetOctahedron_8cs_source.html">PlanetOctahedron.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>        {</div>
+<div class="line"><span class="lineno">  109</span>            <span class="keywordflow">foreach</span> (TerrainFace face <span class="keywordflow">in</span> <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a69405da2539160c2eb14597a171bf5a0">_terrainFaces</a>)</div>
+<div class="line"><span class="lineno">  110</span>            {</div>
+<div class="line"><span class="lineno">  111</span>                face.ConstructMesh();</div>
+<div class="line"><span class="lineno">  112</span>            } </div>
+<div class="line"><span class="lineno">  113</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_html_a69405da2539160c2eb14597a171bf5a0"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a69405da2539160c2eb14597a171bf5a0">_Project.World.Planet.Scripts.Deprecated.Planet._terrainFaces</a></div><div class="ttdeci">TerrainFace[] _terrainFaces</div><div class="ttdef"><b>Definition</b> <a href="PlanetOctahedron_8cs_source.html#l00018">PlanetOctahedron.cs:18</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="PlanetOctahedron_8cs_source.html#l00018">_Project.World.Planet.Scripts.Deprecated.Planet._terrainFaces</a>, and <a class="el" href="TerrainFace_8cs_source.html#l00131">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructMesh()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PlanetOctahedron_8cs_source.html#l00032">_Project.World.Planet.Scripts.Deprecated.Planet.Update()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a52a19523a873ec08b0277ee6075dfd31_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a52a19523a873ec08b0277ee6075dfd31_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a52a19523a873ec08b0277ee6075dfd31_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a52a19523a873ec08b0277ee6075dfd31_cgraph">
+<area shape="rect" title=" " alt="" coords="5,49,247,89"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a013ddc776cc12554373159ef518b3c6d" title=" " alt="" coords="295,49,569,89"/>
+<area shape="poly" title=" " alt="" coords="247,66,281,66,281,71,247,71"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a0aa2451ca7853d3a5e455ac862b75bba" title=" " alt="" coords="659,5,899,60"/>
+<area shape="poly" title=" " alt="" coords="569,52,645,44,646,49,570,57"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa8ff34882a9b40c142753884fdae6889" title=" " alt="" coords="617,85,941,125"/>
+<area shape="poly" title=" " alt="" coords="570,80,604,84,603,89,569,86"/>
+</map>
+</div>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a52a19523a873ec08b0277ee6075dfd31_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a52a19523a873ec08b0277ee6075dfd31_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a52a19523a873ec08b0277ee6075dfd31_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a52a19523a873ec08b0277ee6075dfd31_icgraph">
+<area shape="rect" title=" " alt="" coords="265,5,507,45"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a9e2375855774b110fb83b40aaeadd324" title=" " alt="" coords="5,5,217,45"/>
+<area shape="poly" title=" " alt="" coords="252,28,217,28,217,23,252,23"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -178,6 +227,85 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="PlanetOctahedron_8cs_source.html#l00045">45</a> of file <a class="el" href="PlanetOctahedron_8cs_source.html">PlanetOctahedron.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>        {</div>
+<div class="line"><span class="lineno">   47</span>      </div>
+<div class="line"><span class="lineno">   48</span>            <span class="comment">// Ensure we have 8 mesh filters</span></div>
+<div class="line"><span class="lineno">   49</span>            <span class="comment">// (one for each octahedron face)</span></div>
+<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a2174322ff61e1e324db25fd51a3ddf7e">meshFilters</a> == <span class="keyword">null</span> || <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a2174322ff61e1e324db25fd51a3ddf7e">meshFilters</a>.Length != 8)</div>
+<div class="line"><span class="lineno">   51</span>            {</div>
+<div class="line"><span class="lineno">   52</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a2174322ff61e1e324db25fd51a3ddf7e">meshFilters</a> = <span class="keyword">new</span> MeshFilter[8];</div>
+<div class="line"><span class="lineno">   53</span>            }</div>
+<div class="line"><span class="lineno">   54</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a69405da2539160c2eb14597a171bf5a0">_terrainFaces</a> = <span class="keyword">new</span> TerrainFace[8];</div>
+<div class="line"><span class="lineno">   55</span>            <span class="comment">// Vertices for an octahedron</span></div>
+<div class="line"><span class="lineno">   56</span>            <span class="comment">// Every 3 vertices define one triangle face</span></div>
+<div class="line"><span class="lineno">   57</span>            Vector3[] vertices =</div>
+<div class="line"><span class="lineno">   58</span>            {</div>
+<div class="line"><span class="lineno">   59</span>                Vector3.up,Vector3.right,Vector3.forward,</div>
+<div class="line"><span class="lineno">   60</span>                Vector3.up,Vector3.back,Vector3.right,</div>
+<div class="line"><span class="lineno">   61</span>                Vector3.up,Vector3.left,Vector3.back,</div>
+<div class="line"><span class="lineno">   62</span>                Vector3.up,Vector3.forward,Vector3.left,</div>
+<div class="line"><span class="lineno">   63</span>                Vector3.forward,Vector3.right,Vector3.down,</div>
+<div class="line"><span class="lineno">   64</span>                Vector3.right,Vector3.back,Vector3.down,</div>
+<div class="line"><span class="lineno">   65</span>                Vector3.back,Vector3.left,Vector3.down,</div>
+<div class="line"><span class="lineno">   66</span>                Vector3.left,Vector3.forward,Vector3.down</div>
+<div class="line"><span class="lineno">   67</span>            };</div>
+<div class="line"><span class="lineno">   68</span>        </div>
+<div class="line"><span class="lineno">   69</span>            <span class="comment">// Create all 8 triangle faces</span></div>
+<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 8; i++)</div>
+<div class="line"><span class="lineno">   71</span>            {   <span class="comment">//name the faces for unity to know which face is generated and referenced</span></div>
+<div class="line"><span class="lineno">   72</span>                <span class="keywordtype">string</span> faceName = $<span class="stringliteral">&quot;OctaFace_{i}&quot;</span>;</div>
+<div class="line"><span class="lineno">   73</span>                <span class="comment">// reconnect to reference </span></div>
+<div class="line"><span class="lineno">   74</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a2174322ff61e1e324db25fd51a3ddf7e">meshFilters</a>[i] == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   75</span>                {</div>
+<div class="line"><span class="lineno">   76</span>                    Transform child = transform.Find(faceName);</div>
+<div class="line"><span class="lineno">   77</span>                    <span class="keywordflow">if</span> (child != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   78</span>                    {</div>
+<div class="line"><span class="lineno">   79</span>                        <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a2174322ff61e1e324db25fd51a3ddf7e">meshFilters</a>[i] = child.GetComponent&lt;MeshFilter&gt;();</div>
+<div class="line"><span class="lineno">   80</span>                    }</div>
+<div class="line"><span class="lineno">   81</span>                }</div>
+<div class="line"><span class="lineno">   82</span>                <span class="comment">//if they still does not exist meaning there is no reference</span></div>
+<div class="line"><span class="lineno">   83</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a2174322ff61e1e324db25fd51a3ddf7e">meshFilters</a>[i] == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   84</span>                {</div>
+<div class="line"><span class="lineno">   85</span>                    GameObject meshObj = <span class="keyword">new</span> GameObject(faceName)</div>
+<div class="line"><span class="lineno">   86</span>                    {</div>
+<div class="line"><span class="lineno">   87</span>                        transform =</div>
+<div class="line"><span class="lineno">   88</span>                        {</div>
+<div class="line"><span class="lineno">   89</span>                            <span class="comment">// Parent meshes to the planet object</span></div>
+<div class="line"><span class="lineno">   90</span>                            parent = transform</div>
+<div class="line"><span class="lineno">   91</span>                        }</div>
+<div class="line"><span class="lineno">   92</span>                    };</div>
+<div class="line"><span class="lineno">   93</span>                    <span class="comment">// Add renderer + material</span></div>
+<div class="line"><span class="lineno">   94</span>                    meshObj.AddComponent&lt;MeshRenderer&gt;().sharedMaterial = <span class="keyword">new</span> Material(Shader.Find(<span class="stringliteral">&quot;Standard&quot;</span>));</div>
+<div class="line"><span class="lineno">   95</span>                    <span class="comment">// Add mesh filter with empty mesh</span></div>
+<div class="line"><span class="lineno">   96</span>                    <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a2174322ff61e1e324db25fd51a3ddf7e">meshFilters</a>[i] = meshObj.AddComponent&lt;MeshFilter&gt;();</div>
+<div class="line"><span class="lineno">   97</span>                    <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a2174322ff61e1e324db25fd51a3ddf7e">meshFilters</a>[i].sharedMesh = <span class="keyword">new</span> Mesh();</div>
+<div class="line"><span class="lineno">   98</span>                }</div>
+<div class="line"><span class="lineno">   99</span>                <span class="comment">// Get the 3 vertices for this triangle face skipped triCount for i variable</span></div>
+<div class="line"><span class="lineno">  100</span>                Vector3[] vert = {vertices[i*3],vertices[i*3+1],vertices[i*3+2]};</div>
+<div class="line"><span class="lineno">  101</span>                <span class="comment">// Create terrain face for this triangle</span></div>
+<div class="line"><span class="lineno">  102</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a69405da2539160c2eb14597a171bf5a0">_terrainFaces</a>[i] = <span class="keyword">new</span> TerrainFace(<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a2174322ff61e1e324db25fd51a3ddf7e">meshFilters</a>[i].sharedMesh, <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a8e24ccef114c96bba3a665df07693521">resolution</a>, vert);</div>
+<div class="line"><span class="lineno">  103</span>            }</div>
+<div class="line"><span class="lineno">  104</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_html_a2174322ff61e1e324db25fd51a3ddf7e"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a2174322ff61e1e324db25fd51a3ddf7e">_Project.World.Planet.Scripts.Deprecated.Planet.meshFilters</a></div><div class="ttdeci">MeshFilter[] meshFilters</div><div class="ttdef"><b>Definition</b> <a href="PlanetOctahedron_8cs_source.html#l00016">PlanetOctahedron.cs:16</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_html_a8e24ccef114c96bba3a665df07693521"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a8e24ccef114c96bba3a665df07693521">_Project.World.Planet.Scripts.Deprecated.Planet.resolution</a></div><div class="ttdeci">int resolution</div><div class="ttdef"><b>Definition</b> <a href="PlanetOctahedron_8cs_source.html#l00013">PlanetOctahedron.cs:13</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="PlanetOctahedron_8cs_source.html#l00018">_Project.World.Planet.Scripts.Deprecated.Planet._terrainFaces</a>, <a class="el" href="PlanetOctahedron_8cs_source.html#l00016">_Project.World.Planet.Scripts.Deprecated.Planet.meshFilters</a>, and <a class="el" href="PlanetOctahedron_8cs_source.html#l00013">_Project.World.Planet.Scripts.Deprecated.Planet.resolution</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PlanetOctahedron_8cs_source.html#l00032">_Project.World.Planet.Scripts.Deprecated.Planet.Update()</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a92d937ef65220297edabe9fbe619d4d6_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a92d937ef65220297edabe9fbe619d4d6_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a92d937ef65220297edabe9fbe619d4d6_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a92d937ef65220297edabe9fbe619d4d6_icgraph">
+<area shape="rect" title=" " alt="" coords="265,5,477,45"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a9e2375855774b110fb83b40aaeadd324" title=" " alt="" coords="5,5,217,45"/>
+<area shape="poly" title=" " alt="" coords="252,28,218,28,218,23,252,23"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a8bd85760b15a8c9bf2ea2da41fc98d15" name="a8bd85760b15a8c9bf2ea2da41fc98d15"></a>
@@ -202,6 +330,18 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PlanetOctahedron_8cs_source.html#l00023">23</a> of file <a class="el" href="PlanetOctahedron_8cs_source.html">PlanetOctahedron.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>        {</div>
+<div class="line"><span class="lineno">   25</span>            <span class="comment">//Just set the flag, do NO structural work here</span></div>
+<div class="line"><span class="lineno">   26</span>            <span class="keywordflow">if</span> (gameObject.activeInHierarchy)</div>
+<div class="line"><span class="lineno">   27</span>            {</div>
+<div class="line"><span class="lineno">   28</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#abca1957f08dd2f3865928398320fec62">_needsGeneration</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   29</span>            }</div>
+<div class="line"><span class="lineno">   30</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_html_abca1957f08dd2f3865928398320fec62"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#abca1957f08dd2f3865928398320fec62">_Project.World.Planet.Scripts.Deprecated.Planet._needsGeneration</a></div><div class="ttdeci">bool _needsGeneration</div><div class="ttdef"><b>Definition</b> <a href="PlanetOctahedron_8cs_source.html#l00010">PlanetOctahedron.cs:10</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="PlanetOctahedron_8cs_source.html#l00010">_Project.World.Planet.Scripts.Deprecated.Planet._needsGeneration</a>.</p>
 
 </div>
 </div>
@@ -228,6 +368,43 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="PlanetOctahedron_8cs_source.html#l00032">32</a> of file <a class="el" href="PlanetOctahedron_8cs_source.html">PlanetOctahedron.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>        {</div>
+<div class="line"><span class="lineno">   34</span>            <span class="comment">//update is safe for structural change to meshes etc</span></div>
+<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#abca1957f08dd2f3865928398320fec62">_needsGeneration</a>)</div>
+<div class="line"><span class="lineno">   36</span>            {</div>
+<div class="line"><span class="lineno">   37</span>                <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a92d937ef65220297edabe9fbe619d4d6">Initialize</a>();</div>
+<div class="line"><span class="lineno">   38</span>                <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a52a19523a873ec08b0277ee6075dfd31">GenerateMesh</a>();</div>
+<div class="line"><span class="lineno">   39</span>            </div>
+<div class="line"><span class="lineno">   40</span>                <span class="comment">// Reset the flag so it only runs once per change</span></div>
+<div class="line"><span class="lineno">   41</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#abca1957f08dd2f3865928398320fec62">_needsGeneration</a> = <span class="keyword">false</span>; </div>
+<div class="line"><span class="lineno">   42</span>            }</div>
+<div class="line"><span class="lineno">   43</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_html_a52a19523a873ec08b0277ee6075dfd31"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a52a19523a873ec08b0277ee6075dfd31">_Project.World.Planet.Scripts.Deprecated.Planet.GenerateMesh</a></div><div class="ttdeci">void GenerateMesh()</div><div class="ttdef"><b>Definition</b> <a href="PlanetOctahedron_8cs_source.html#l00107">PlanetOctahedron.cs:107</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_html_a92d937ef65220297edabe9fbe619d4d6"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a92d937ef65220297edabe9fbe619d4d6">_Project.World.Planet.Scripts.Deprecated.Planet.Initialize</a></div><div class="ttdeci">void Initialize()</div><div class="ttdef"><b>Definition</b> <a href="PlanetOctahedron_8cs_source.html#l00045">PlanetOctahedron.cs:45</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="PlanetOctahedron_8cs_source.html#l00010">_Project.World.Planet.Scripts.Deprecated.Planet._needsGeneration</a>, <a class="el" href="PlanetOctahedron_8cs_source.html#l00107">_Project.World.Planet.Scripts.Deprecated.Planet.GenerateMesh()</a>, and <a class="el" href="PlanetOctahedron_8cs_source.html#l00045">_Project.World.Planet.Scripts.Deprecated.Planet.Initialize()</a>.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a9e2375855774b110fb83b40aaeadd324_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a9e2375855774b110fb83b40aaeadd324_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a9e2375855774b110fb83b40aaeadd324_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet_a9e2375855774b110fb83b40aaeadd324_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,217,121"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a52a19523a873ec08b0277ee6075dfd31" title=" " alt="" coords="265,49,507,89"/>
+<area shape="poly" title=" " alt="" coords="217,86,251,82,252,87,218,91"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a92d937ef65220297edabe9fbe619d4d6" title=" " alt="" coords="280,113,492,153"/>
+<area shape="poly" title=" " alt="" coords="218,110,267,116,266,121,217,116"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a013ddc776cc12554373159ef518b3c6d" title=" " alt="" coords="555,49,829,89"/>
+<area shape="poly" title=" " alt="" coords="507,66,541,66,541,71,507,71"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a0aa2451ca7853d3a5e455ac862b75bba" title=" " alt="" coords="919,5,1159,60"/>
+<area shape="poly" title=" " alt="" coords="829,52,905,44,906,49,830,57"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa8ff34882a9b40c142753884fdae6889" title=" " alt="" coords="877,85,1201,125"/>
+<area shape="poly" title=" " alt="" coords="830,80,864,84,863,89,829,86"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -251,6 +428,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="PlanetOctahedron_8cs_source.html#l00010">10</a> of file <a class="el" href="PlanetOctahedron_8cs_source.html">PlanetOctahedron.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PlanetOctahedron_8cs_source.html#l00023">_Project.World.Planet.Scripts.Deprecated.Planet.OnValidate()</a>, and <a class="el" href="PlanetOctahedron_8cs_source.html#l00032">_Project.World.Planet.Scripts.Deprecated.Planet.Update()</a>.</p>
+
 </div>
 </div>
 <a id="a69405da2539160c2eb14597a171bf5a0" name="a69405da2539160c2eb14597a171bf5a0"></a>
@@ -272,6 +453,10 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PlanetOctahedron_8cs_source.html#l00018">18</a> of file <a class="el" href="PlanetOctahedron_8cs_source.html">PlanetOctahedron.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PlanetOctahedron_8cs_source.html#l00107">_Project.World.Planet.Scripts.Deprecated.Planet.GenerateMesh()</a>, and <a class="el" href="PlanetOctahedron_8cs_source.html#l00045">_Project.World.Planet.Scripts.Deprecated.Planet.Initialize()</a>.</p>
 
 </div>
 </div>
@@ -295,6 +480,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="PlanetOctahedron_8cs_source.html#l00016">16</a> of file <a class="el" href="PlanetOctahedron_8cs_source.html">PlanetOctahedron.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PlanetOctahedron_8cs_source.html#l00045">_Project.World.Planet.Scripts.Deprecated.Planet.Initialize()</a>.</p>
+
 </div>
 </div>
 <a id="a8e24ccef114c96bba3a665df07693521" name="a8e24ccef114c96bba3a665df07693521"></a>
@@ -309,10 +498,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="PlanetOctahedron_8cs_source.html#l00013">13</a> of file <a class="el" href="PlanetOctahedron_8cs_source.html">PlanetOctahedron.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PlanetOctahedron_8cs_source.html#l00045">_Project.World.Planet.Scripts.Deprecated.Planet.Initialize()</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Assets/_Project/World/Planet/Scripts/Deprecated/<a class="el" href="PlanetOctahedron_8cs.html">PlanetOctahedron.cs</a></li>
+<li>Assets/_Project/World/Planet/Scripts/Deprecated/<a class="el" href="PlanetOctahedron_8cs_source.html">PlanetOctahedron.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

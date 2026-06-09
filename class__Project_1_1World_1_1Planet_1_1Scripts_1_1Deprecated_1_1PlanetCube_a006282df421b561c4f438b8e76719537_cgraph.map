@@ -1,0 +1,13 @@
+<map id="_Project.World.Planet.Scripts.Deprecated.PlanetCube.Start" name="_Project.World.Planet.Scripts.Deprecated.PlanetCube.Start">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,217,121"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7657ebd1e1babc458977eef2f0000865" title=" " alt="" coords="265,49,540,89"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,86,251,83,252,88,218,92"/>
+<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a44a7fdbcce0e1c34d92e19d1635e8ec1" title=" " alt="" coords="285,113,520,153"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="218,110,272,116,271,121,217,115"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a013ddc776cc12554373159ef518b3c6d" title=" " alt="" coords="588,49,863,89"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="540,66,575,66,575,71,540,71"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a0aa2451ca7853d3a5e455ac862b75bba" title=" " alt="" coords="953,5,1193,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="863,52,939,44,939,49,863,57"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa8ff34882a9b40c142753884fdae6889" title=" " alt="" coords="911,85,1235,125"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="863,80,897,84,897,89,863,86"/>
+</map>

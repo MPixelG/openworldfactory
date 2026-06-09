@@ -1,0 +1,5 @@
+<map id="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager.GenerateChunkAsync" name="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager.GenerateChunkAsync">
+<area shape="rect" id="Node000001" title="generates a chunk at a given position using the chunk generator" alt="" coords="5,5,281,60"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkGenerator.html#a0fea0694891c9f157bd89cfc7b2fef69" title="generates the chunk data at a given chunk position." alt="" coords="329,5,585,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="282,30,316,30,316,35,282,35"/>
+</map>

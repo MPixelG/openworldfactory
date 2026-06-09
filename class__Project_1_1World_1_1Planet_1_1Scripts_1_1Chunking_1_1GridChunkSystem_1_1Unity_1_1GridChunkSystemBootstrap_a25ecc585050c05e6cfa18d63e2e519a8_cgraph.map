@@ -1,0 +1,9 @@
+<map id="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap.OnDisable" name="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap.OnDisable">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,45,277,100"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a9f7290d33eedc1e852ea941dd9bed21d" title=" " alt="" coords="325,5,601,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="277,53,311,49,312,54,278,58"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a35e19f071b96ce70b67fc511e8249beb" title=" " alt="" coords="325,84,601,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="278,86,312,90,311,96,277,92"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a6632d490d416717ca02223b696467f5d" title=" " alt="" coords="649,5,925,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="601,30,635,30,635,35,601,35"/>
+</map>

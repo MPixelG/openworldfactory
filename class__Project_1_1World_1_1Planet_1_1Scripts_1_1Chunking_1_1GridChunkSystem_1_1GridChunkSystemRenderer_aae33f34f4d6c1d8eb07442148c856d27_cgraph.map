@@ -1,0 +1,5 @@
+<map id="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.RebuildRendererDictionary" name="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.RebuildRendererDictionary">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,313,60"/>
+<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a11fe2b499e941abfbf313e15c8eaa11f" title="parses the chunk coord from a given string in the format &quot;ChunkCoord(x,y)&quot;" alt="" coords="361,13,680,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="314,30,347,30,347,35,314,35"/>
+</map>

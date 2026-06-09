@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -127,7 +128,10 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:a10d62a987b25c745bad322a485fce26b" id="r_a10d62a987b25c745bad322a485fce26b"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a10d62a987b25c745bad322a485fce26b">Vector3</a> []</td></tr>
 <tr class="separator:a10d62a987b25c745bad322a485fce26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="TerrainFace_8cs_source.html#l00005">5</a> of file <a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af5dffa940ab5a0bfcc311678fe1c78be" name="af5dffa940ab5a0bfcc311678fe1c78be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af5dffa940ab5a0bfcc311678fe1c78be">&#9670;&#160;</a></span>TerrainFace() <span class="overload">[1/2]</span></h2>
 
@@ -167,6 +171,22 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TerrainFace_8cs_source.html#l00021">21</a> of file <a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>        {</div>
+<div class="line"><span class="lineno">   23</span>            this._cubeMesh = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   24</span>            this._localUp =  localUp;</div>
+<div class="line"><span class="lineno">   25</span>            this._mesh = mesh;</div>
+<div class="line"><span class="lineno">   26</span>            this._resolution = resolution;</div>
+<div class="line"><span class="lineno">   27</span>            <span class="comment">// Create two perpendicular axes for the face plane</span></div>
+<div class="line"><span class="lineno">   28</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#ab683f5850876c58b4549753c6de0b0c6">_axisA</a> = <span class="keyword">new</span> <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a10d62a987b25c745bad322a485fce26b">Vector3</a>(localUp.y, localUp.z, localUp.x);</div>
+<div class="line"><span class="lineno">   29</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a1ce66f7b1f26c7ff4102268df9e6fd72">_axisB</a> = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a10d62a987b25c745bad322a485fce26b">Vector3</a>.Cross(localUp, <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#ab683f5850876c58b4549753c6de0b0c6">_axisA</a>);</div>
+<div class="line"><span class="lineno">   30</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_html_a10d62a987b25c745bad322a485fce26b"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a10d62a987b25c745bad322a485fce26b">_Project.World.Planet.Scripts.Deprecated.TerrainFace.Vector3</a></div><div class="ttdeci">static Vector3[]</div><div class="ttdef"><b>Definition</b> <a href="TerrainFace_8cs_source.html#l00041">TerrainFace.cs:41</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_html_a1ce66f7b1f26c7ff4102268df9e6fd72"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a1ce66f7b1f26c7ff4102268df9e6fd72">_Project.World.Planet.Scripts.Deprecated.TerrainFace._axisB</a></div><div class="ttdeci">readonly Vector3 _axisB</div><div class="ttdef"><b>Definition</b> <a href="TerrainFace_8cs_source.html#l00018">TerrainFace.cs:18</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_html_ab683f5850876c58b4549753c6de0b0c6"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#ab683f5850876c58b4549753c6de0b0c6">_Project.World.Planet.Scripts.Deprecated.TerrainFace._axisA</a></div><div class="ttdeci">readonly Vector3 _axisA</div><div class="ttdef"><b>Definition</b> <a href="TerrainFace_8cs_source.html#l00017">TerrainFace.cs:17</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="TerrainFace_8cs_source.html#l00017">_Project.World.Planet.Scripts.Deprecated.TerrainFace._axisA</a>, <a class="el" href="TerrainFace_8cs_source.html#l00018">_Project.World.Planet.Scripts.Deprecated.TerrainFace._axisB</a>, and <a class="el" href="TerrainFace_8cs_source.html#l00041">_Project.World.Planet.Scripts.Deprecated.TerrainFace.Vector3</a>.</p>
 
 </div>
 </div>
@@ -210,6 +230,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TerrainFace_8cs_source.html#l00032">32</a> of file <a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>        {</div>
+<div class="line"><span class="lineno">   34</span>            this._cubeMesh = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   35</span>            this._mesh = mesh;</div>
+<div class="line"><span class="lineno">   36</span>            this._resolution = resolution;</div>
+<div class="line"><span class="lineno">   37</span>            this._vertices = vertices;</div>
+<div class="line"><span class="lineno">   38</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -236,6 +264,68 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TerrainFace_8cs_source.html#l00097">97</a> of file <a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>        {</div>
+<div class="line"><span class="lineno">   99</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a10d62a987b25c745bad322a485fce26b">Vector3</a>[] vertices = <span class="keyword">new</span> <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a10d62a987b25c745bad322a485fce26b">Vector3</a>[<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa9b1b8e15a151724b71da61e7c6a5920">_resolution</a> * <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa9b1b8e15a151724b71da61e7c6a5920">_resolution</a>];</div>
+<div class="line"><span class="lineno">  100</span>            <span class="comment">// Two triangles per quad</span></div>
+<div class="line"><span class="lineno">  101</span>            <span class="keywordtype">int</span>[] triangles = <span class="keyword">new</span> <span class="keywordtype">int</span>[(<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa9b1b8e15a151724b71da61e7c6a5920">_resolution</a>-1) * (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa9b1b8e15a151724b71da61e7c6a5920">_resolution</a>-1) * 6];</div>
+<div class="line"><span class="lineno">  102</span>            <span class="keywordtype">int</span> triIndex = 0;</div>
+<div class="line"><span class="lineno">  103</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa9b1b8e15a151724b71da61e7c6a5920">_resolution</a>; y++)</div>
+<div class="line"><span class="lineno">  104</span>            {</div>
+<div class="line"><span class="lineno">  105</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa9b1b8e15a151724b71da61e7c6a5920">_resolution</a>; x++)</div>
+<div class="line"><span class="lineno">  106</span>                { </div>
+<div class="line"><span class="lineno">  107</span>                    <span class="keywordtype">int</span> i = x + y * <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa9b1b8e15a151724b71da61e7c6a5920">_resolution</a>;</div>
+<div class="line"><span class="lineno">  108</span>                    <span class="comment">// Convert grid position into 0-1 range</span></div>
+<div class="line"><span class="lineno">  109</span>                    Vector2 percent = <span class="keyword">new</span> Vector2(x,y)/(<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa9b1b8e15a151724b71da61e7c6a5920">_resolution</a>-1);</div>
+<div class="line"><span class="lineno">  110</span>                    <span class="comment">// Position on cube face</span></div>
+<div class="line"><span class="lineno">  111</span>                    <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a10d62a987b25c745bad322a485fce26b">Vector3</a> pointOnUnitCube = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a560d69481a9aeda36c358ebe3dd04d88">_localUp</a>+(percent.x - 0.5f)*2*<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#ab683f5850876c58b4549753c6de0b0c6">_axisA</a>+(percent.y - 0.5f)*2*<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a1ce66f7b1f26c7ff4102268df9e6fd72">_axisB</a>;</div>
+<div class="line"><span class="lineno">  112</span>                    <span class="comment">// Normalize to project onto sphere</span></div>
+<div class="line"><span class="lineno">  113</span>                    <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a10d62a987b25c745bad322a485fce26b">Vector3</a> pointOnUnitSphere = pointOnUnitCube.normalized;</div>
+<div class="line"><span class="lineno">  114</span>                    vertices[i] = pointOnUnitSphere;</div>
+<div class="line"><span class="lineno">  115</span>                    <span class="comment">// Generate quad triangles</span></div>
+<div class="line"><span class="lineno">  116</span>                    <span class="keywordflow">if</span> (x != <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa9b1b8e15a151724b71da61e7c6a5920">_resolution</a> - 1 &amp;&amp; y != <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa9b1b8e15a151724b71da61e7c6a5920">_resolution</a> - 1)</div>
+<div class="line"><span class="lineno">  117</span>                    {</div>
+<div class="line"><span class="lineno">  118</span>                        triangles[triIndex] = i;</div>
+<div class="line"><span class="lineno">  119</span>                        triangles[triIndex+1] = i+<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa9b1b8e15a151724b71da61e7c6a5920">_resolution</a>+1;</div>
+<div class="line"><span class="lineno">  120</span>                        triangles[triIndex+2] = i+<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa9b1b8e15a151724b71da61e7c6a5920">_resolution</a>;</div>
+<div class="line"><span class="lineno">  121</span>                        triangles[triIndex+3] = i;</div>
+<div class="line"><span class="lineno">  122</span>                        triangles[triIndex+4] = i+1;</div>
+<div class="line"><span class="lineno">  123</span>                        triangles[triIndex+5] = i+<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa9b1b8e15a151724b71da61e7c6a5920">_resolution</a>+1;</div>
+<div class="line"><span class="lineno">  124</span>                        triIndex += 6;</div>
+<div class="line"><span class="lineno">  125</span>                    }</div>
+<div class="line"><span class="lineno">  126</span>                }</div>
+<div class="line"><span class="lineno">  127</span>            } </div>
+<div class="line"><span class="lineno">  128</span>            <span class="keywordflow">return</span> (vertices, triangles);</div>
+<div class="line"><span class="lineno">  129</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_html_a560d69481a9aeda36c358ebe3dd04d88"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a560d69481a9aeda36c358ebe3dd04d88">_Project.World.Planet.Scripts.Deprecated.TerrainFace._localUp</a></div><div class="ttdeci">readonly Vector3 _localUp</div><div class="ttdef"><b>Definition</b> <a href="TerrainFace_8cs_source.html#l00016">TerrainFace.cs:16</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_html_aa9b1b8e15a151724b71da61e7c6a5920"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa9b1b8e15a151724b71da61e7c6a5920">_Project.World.Planet.Scripts.Deprecated.TerrainFace._resolution</a></div><div class="ttdeci">readonly int _resolution</div><div class="ttdef"><b>Definition</b> <a href="TerrainFace_8cs_source.html#l00012">TerrainFace.cs:12</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="TerrainFace_8cs_source.html#l00017">_Project.World.Planet.Scripts.Deprecated.TerrainFace._axisA</a>, <a class="el" href="TerrainFace_8cs_source.html#l00018">_Project.World.Planet.Scripts.Deprecated.TerrainFace._axisB</a>, <a class="el" href="TerrainFace_8cs_source.html#l00016">_Project.World.Planet.Scripts.Deprecated.TerrainFace._localUp</a>, <a class="el" href="TerrainFace_8cs_source.html#l00012">_Project.World.Planet.Scripts.Deprecated.TerrainFace._resolution</a>, and <a class="el" href="TerrainFace_8cs_source.html#l00041">_Project.World.Planet.Scripts.Deprecated.TerrainFace.Vector3</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TerrainFace_8cs_source.html#l00131">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructMesh()</a>.</p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_a0aa2451ca7853d3a5e455ac862b75bba_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_a0aa2451ca7853d3a5e455ac862b75bba_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_a0aa2451ca7853d3a5e455ac862b75bba_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_a0aa2451ca7853d3a5e455ac862b75bba_icgraph">
+<area shape="rect" title=" " alt="" coords="925,94,1165,149"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a013ddc776cc12554373159ef518b3c6d" title=" " alt="" coords="603,101,877,141"/>
+<area shape="poly" title=" " alt="" coords="912,124,878,124,878,119,912,119"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7657ebd1e1babc458977eef2f0000865" title=" " alt="" coords="280,69,555,109"/>
+<area shape="poly" title=" " alt="" coords="589,109,554,106,555,100,589,104"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a52a19523a873ec08b0277ee6075dfd31" title=" " alt="" coords="297,133,538,173"/>
+<area shape="poly" title=" " alt="" coords="589,139,538,144,538,139,589,134"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a006282df421b561c4f438b8e76719537" title=" " alt="" coords="13,5,225,45"/>
+<area shape="poly" title=" " alt="" coords="309,69,212,48,213,43,310,64"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#aba874eae00444382814f49f5ff61a230" title=" " alt="" coords="5,69,232,109"/>
+<area shape="poly" title=" " alt="" coords="266,92,232,92,232,87,266,87"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a9e2375855774b110fb83b40aaeadd324" title=" " alt="" coords="13,133,225,173"/>
+<area shape="poly" title=" " alt="" coords="283,156,225,156,225,151,283,151"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a013ddc776cc12554373159ef518b3c6d" name="a013ddc776cc12554373159ef518b3c6d"></a>
@@ -260,6 +350,83 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TerrainFace_8cs_source.html#l00131">131</a> of file <a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>        {</div>
+<div class="line"><span class="lineno">  133</span>            <span class="comment">// Safety check </span></div>
+<div class="line"><span class="lineno">  134</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aac24ba518cc93c9e6c7cf844be2380cd">_mesh</a> == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  135</span>        </div>
+<div class="line"><span class="lineno">  136</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a10d62a987b25c745bad322a485fce26b">Vector3</a>[] pointOnUnitSphere;</div>
+<div class="line"><span class="lineno">  137</span>            <span class="keywordtype">int</span>[] triangles;</div>
+<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a7ec284a7324dd3280b2b8cedbd495151">_cubeMesh</a>)</div>
+<div class="line"><span class="lineno">  139</span>            {</div>
+<div class="line"><span class="lineno">  140</span>                <span class="comment">// Generate subdivided triangle mesh</span></div>
+<div class="line"><span class="lineno">  141</span>                var (pointOnOctahedron, fragmentedTriangles) = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa8ff34882a9b40c142753884fdae6889">TriangleFragmentation</a>(<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a6a9b97e841ee8919d9f3ed8409f0d399">_vertices</a>, <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa9b1b8e15a151724b71da61e7c6a5920">_resolution</a>);</div>
+<div class="line"><span class="lineno">  142</span>                triangles = fragmentedTriangles;</div>
+<div class="line"><span class="lineno">  143</span>                pointOnUnitSphere = pointOnOctahedron;</div>
+<div class="line"><span class="lineno">  144</span>                <span class="comment">// Project all vertices onto sphere</span></div>
+<div class="line"><span class="lineno">  145</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; pointOnUnitSphere.Length; i++)</div>
+<div class="line"><span class="lineno">  146</span>                {</div>
+<div class="line"><span class="lineno">  147</span>                    pointOnUnitSphere[i] = pointOnUnitSphere[i].normalized;</div>
+<div class="line"><span class="lineno">  148</span>                }</div>
+<div class="line"><span class="lineno">  149</span>            }</div>
+<div class="line"><span class="lineno">  150</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  151</span>            {</div>
+<div class="line"><span class="lineno">  152</span>                <span class="comment">// Generate cube sphere face</span></div>
+<div class="line"><span class="lineno">  153</span>                pointOnUnitSphere = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a0aa2451ca7853d3a5e455ac862b75bba">ConstructCubeMesh</a>().Item1;</div>
+<div class="line"><span class="lineno">  154</span>                triangles = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a0aa2451ca7853d3a5e455ac862b75bba">ConstructCubeMesh</a>().Item2;</div>
+<div class="line"><span class="lineno">  155</span>            }</div>
+<div class="line"><span class="lineno">  156</span>            <span class="comment">// Apply generated geometry to mesh</span></div>
+<div class="line"><span class="lineno">  157</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aac24ba518cc93c9e6c7cf844be2380cd">_mesh</a>.Clear();</div>
+<div class="line"><span class="lineno">  158</span>            _mesh.vertices = pointOnUnitSphere;</div>
+<div class="line"><span class="lineno">  159</span>            _mesh.triangles = triangles;</div>
+<div class="line"><span class="lineno">  160</span>            <span class="comment">// Recalculate lighting normals and mesh boundaries</span></div>
+<div class="line"><span class="lineno">  161</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aac24ba518cc93c9e6c7cf844be2380cd">_mesh</a>.RecalculateNormals();</div>
+<div class="line"><span class="lineno">  162</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aac24ba518cc93c9e6c7cf844be2380cd">_mesh</a>.RecalculateBounds();</div>
+<div class="line"><span class="lineno">  163</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_html_a0aa2451ca7853d3a5e455ac862b75bba"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a0aa2451ca7853d3a5e455ac862b75bba">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructCubeMesh</a></div><div class="ttdeci">int[] ConstructCubeMesh()</div><div class="ttdef"><b>Definition</b> <a href="TerrainFace_8cs_source.html#l00097">TerrainFace.cs:97</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_html_a6a9b97e841ee8919d9f3ed8409f0d399"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a6a9b97e841ee8919d9f3ed8409f0d399">_Project.World.Planet.Scripts.Deprecated.TerrainFace._vertices</a></div><div class="ttdeci">readonly Vector3[] _vertices</div><div class="ttdef"><b>Definition</b> <a href="TerrainFace_8cs_source.html#l00014">TerrainFace.cs:14</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_html_a7ec284a7324dd3280b2b8cedbd495151"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a7ec284a7324dd3280b2b8cedbd495151">_Project.World.Planet.Scripts.Deprecated.TerrainFace._cubeMesh</a></div><div class="ttdeci">readonly bool _cubeMesh</div><div class="ttdef"><b>Definition</b> <a href="TerrainFace_8cs_source.html#l00009">TerrainFace.cs:9</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_html_aa8ff34882a9b40c142753884fdae6889"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa8ff34882a9b40c142753884fdae6889">_Project.World.Planet.Scripts.Deprecated.TerrainFace.TriangleFragmentation</a></div><div class="ttdeci">static int[] TriangleFragmentation(Vector3[] triangle, int res)</div><div class="ttdef"><b>Definition</b> <a href="TerrainFace_8cs_source.html#l00041">TerrainFace.cs:41</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_html_aac24ba518cc93c9e6c7cf844be2380cd"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aac24ba518cc93c9e6c7cf844be2380cd">_Project.World.Planet.Scripts.Deprecated.TerrainFace._mesh</a></div><div class="ttdeci">readonly Mesh _mesh</div><div class="ttdef"><b>Definition</b> <a href="TerrainFace_8cs_source.html#l00010">TerrainFace.cs:10</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="TerrainFace_8cs_source.html#l00009">_Project.World.Planet.Scripts.Deprecated.TerrainFace._cubeMesh</a>, <a class="el" href="TerrainFace_8cs_source.html#l00010">_Project.World.Planet.Scripts.Deprecated.TerrainFace._mesh</a>, <a class="el" href="TerrainFace_8cs_source.html#l00012">_Project.World.Planet.Scripts.Deprecated.TerrainFace._resolution</a>, <a class="el" href="TerrainFace_8cs_source.html#l00014">_Project.World.Planet.Scripts.Deprecated.TerrainFace._vertices</a>, <a class="el" href="TerrainFace_8cs_source.html#l00097">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructCubeMesh()</a>, <a class="el" href="TerrainFace_8cs_source.html#l00041">_Project.World.Planet.Scripts.Deprecated.TerrainFace.TriangleFragmentation()</a>, and <a class="el" href="TerrainFace_8cs_source.html#l00041">_Project.World.Planet.Scripts.Deprecated.TerrainFace.Vector3</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PlanetCube_8cs_source.html#l00106">_Project.World.Planet.Scripts.Deprecated.PlanetCube.GenerateMesh()</a>, and <a class="el" href="PlanetOctahedron_8cs_source.html#l00107">_Project.World.Planet.Scripts.Deprecated.Planet.GenerateMesh()</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_a013ddc776cc12554373159ef518b3c6d_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_a013ddc776cc12554373159ef518b3c6d_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_a013ddc776cc12554373159ef518b3c6d_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_a013ddc776cc12554373159ef518b3c6d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,49,280,89"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a0aa2451ca7853d3a5e455ac862b75bba" title=" " alt="" coords="370,5,610,60"/>
+<area shape="poly" title=" " alt="" coords="280,52,356,44,357,49,280,57"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#aa8ff34882a9b40c142753884fdae6889" title=" " alt="" coords="328,85,652,125"/>
+<area shape="poly" title=" " alt="" coords="280,80,315,84,314,89,280,86"/>
+</map>
+</div>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_a013ddc776cc12554373159ef518b3c6d_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_a013ddc776cc12554373159ef518b3c6d_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_a013ddc776cc12554373159ef518b3c6d_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_a013ddc776cc12554373159ef518b3c6d_icgraph">
+<area shape="rect" title=" " alt="" coords="603,101,877,141"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7657ebd1e1babc458977eef2f0000865" title=" " alt="" coords="280,69,555,109"/>
+<area shape="poly" title=" " alt="" coords="589,109,554,106,555,100,589,104"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a52a19523a873ec08b0277ee6075dfd31" title=" " alt="" coords="297,133,538,173"/>
+<area shape="poly" title=" " alt="" coords="589,139,538,144,538,139,589,134"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a006282df421b561c4f438b8e76719537" title=" " alt="" coords="13,5,225,45"/>
+<area shape="poly" title=" " alt="" coords="309,69,212,48,213,43,310,64"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#aba874eae00444382814f49f5ff61a230" title=" " alt="" coords="5,69,232,109"/>
+<area shape="poly" title=" " alt="" coords="266,92,232,92,232,87,266,87"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a9e2375855774b110fb83b40aaeadd324" title=" " alt="" coords="13,133,225,173"/>
+<area shape="poly" title=" " alt="" coords="283,156,225,156,225,151,283,151"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -297,6 +464,87 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TerrainFace_8cs_source.html#l00041">41</a> of file <a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>        {</div>
+<div class="line"><span class="lineno">   43</span>            <span class="comment">// Total vertex count for a triangular grid</span></div>
+<div class="line"><span class="lineno">   44</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a10d62a987b25c745bad322a485fce26b">Vector3</a>[] vertices = <span class="keyword">new</span> <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a10d62a987b25c745bad322a485fce26b">Vector3</a>[(res + 1)*(res + 2) / 2];</div>
+<div class="line"><span class="lineno">   45</span>            <span class="comment">// Each subdivision creates small triangles</span></div>
+<div class="line"><span class="lineno">   46</span>            <span class="keywordtype">int</span>[] triangles = <span class="keyword">new</span> <span class="keywordtype">int</span>[res * res*3];</div>
+<div class="line"><span class="lineno">   47</span>            <span class="comment">// Original triangle corners.</span></div>
+<div class="line"><span class="lineno">   48</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a10d62a987b25c745bad322a485fce26b">Vector3</a> a = triangle[2];</div>
+<div class="line"><span class="lineno">   49</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a10d62a987b25c745bad322a485fce26b">Vector3</a> b = triangle[1];</div>
+<div class="line"><span class="lineno">   50</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a10d62a987b25c745bad322a485fce26b">Vector3</a> c = triangle[0];</div>
+<div class="line"><span class="lineno">   51</span>            <span class="comment">// Distance between subdivision steps in barycentric space.</span></div>
+<div class="line"><span class="lineno">   52</span>            <span class="keywordtype">float</span> step = 1f / res;</div>
+<div class="line"><span class="lineno">   53</span>            <span class="keywordtype">int</span> vertexIndex = 0;</div>
+<div class="line"><span class="lineno">   54</span>            <span class="keywordtype">int</span> indexPos = 0;</div>
+<div class="line"><span class="lineno">   55</span>            <span class="comment">// Generate all subdivided vertices row by row.</span></div>
+<div class="line"><span class="lineno">   56</span>            <span class="comment">// Uses barycentric interpolation to stay inside the triangle.</span></div>
+<div class="line"><span class="lineno">   57</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt;= res; row++)</div>
+<div class="line"><span class="lineno">   58</span>            {</div>
+<div class="line"><span class="lineno">   59</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt;= res-row; col++)</div>
+<div class="line"><span class="lineno">   60</span>                {</div>
+<div class="line"><span class="lineno">   61</span>                    <span class="keywordtype">float</span> u = col*step;</div>
+<div class="line"><span class="lineno">   62</span>                    <span class="keywordtype">float</span> v = row*step;</div>
+<div class="line"><span class="lineno">   63</span>                    <span class="comment">// Interpolate between triangle corners.</span></div>
+<div class="line"><span class="lineno">   64</span>                    vertices[vertexIndex++] = (1f-u-v)*a+u*b+v*c;</div>
+<div class="line"><span class="lineno">   65</span>                }  </div>
+<div class="line"><span class="lineno">   66</span>            }</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>            <span class="comment">// Build triangle indices for the mesh.</span></div>
+<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; res; row++)</div>
+<div class="line"><span class="lineno">   70</span>            {</div>
+<div class="line"><span class="lineno">   71</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; res-row; col++)</div>
+<div class="line"><span class="lineno">   72</span>                {</div>
+<div class="line"><span class="lineno">   73</span>                    <span class="comment">// First triangle in the current grid cell.</span></div>
+<div class="line"><span class="lineno">   74</span>                    triangles[indexPos++] =  VertexIndex(row, col);</div>
+<div class="line"><span class="lineno">   75</span>                    triangles[indexPos++] = VertexIndex(row, col+1);</div>
+<div class="line"><span class="lineno">   76</span>                    triangles[indexPos++] = VertexIndex(row+1, col);</div>
+<div class="line"><span class="lineno">   77</span>                    <span class="comment">// Second triangle (if the cell is not on the edge).</span></div>
+<div class="line"><span class="lineno">   78</span>                    <span class="keywordflow">if</span> (col+1&lt;res-row)</div>
+<div class="line"><span class="lineno">   79</span>                    {</div>
+<div class="line"><span class="lineno">   80</span>                        triangles[indexPos++] = VertexIndex(row, col+1);</div>
+<div class="line"><span class="lineno">   81</span>                        triangles[indexPos++] = VertexIndex(row+1, col+1);</div>
+<div class="line"><span class="lineno">   82</span>                        triangles[indexPos++] = VertexIndex(row+1, col);</div>
+<div class="line"><span class="lineno">   83</span>                    }</div>
+<div class="line"><span class="lineno">   84</span>                } </div>
+<div class="line"><span class="lineno">   85</span>            }</div>
+<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">return</span> (vertices, triangles);</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>            <span class="comment">// Converts triangular grid coordinates (row, col)</span></div>
+<div class="line"><span class="lineno">   89</span>            <span class="comment">// into a flat array index.</span></div>
+<div class="line"><span class="lineno">   90</span>            <span class="keywordtype">int</span> VertexIndex(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col)</div>
+<div class="line"><span class="lineno">   91</span>            {</div>
+<div class="line"><span class="lineno">   92</span>                <span class="keywordflow">return</span> row * (res + 1) - row * (row - 1) / 2 + col;</div>
+<div class="line"><span class="lineno">   93</span>            }</div>
+<div class="line"><span class="lineno">   94</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="TerrainFace_8cs_source.html#l00041">_Project.World.Planet.Scripts.Deprecated.TerrainFace.Vector3</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TerrainFace_8cs_source.html#l00131">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructMesh()</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_aa8ff34882a9b40c142753884fdae6889_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_aa8ff34882a9b40c142753884fdae6889_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_aa8ff34882a9b40c142753884fdae6889_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace_aa8ff34882a9b40c142753884fdae6889_icgraph">
+<area shape="rect" title=" " alt="" coords="925,101,1249,141"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1TerrainFace.html#a013ddc776cc12554373159ef518b3c6d" title=" " alt="" coords="603,101,877,141"/>
+<area shape="poly" title=" " alt="" coords="912,124,878,124,878,119,912,119"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a7657ebd1e1babc458977eef2f0000865" title=" " alt="" coords="280,69,555,109"/>
+<area shape="poly" title=" " alt="" coords="589,109,554,106,555,100,589,104"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a52a19523a873ec08b0277ee6075dfd31" title=" " alt="" coords="297,133,538,173"/>
+<area shape="poly" title=" " alt="" coords="589,139,538,144,538,139,589,134"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#a006282df421b561c4f438b8e76719537" title=" " alt="" coords="13,5,225,45"/>
+<area shape="poly" title=" " alt="" coords="309,69,212,48,213,43,310,64"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html#aba874eae00444382814f49f5ff61a230" title=" " alt="" coords="5,69,232,109"/>
+<area shape="poly" title=" " alt="" coords="266,92,232,92,232,87,266,87"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html#a9e2375855774b110fb83b40aaeadd324" title=" " alt="" coords="13,133,225,173"/>
+<area shape="poly" title=" " alt="" coords="283,156,225,156,225,151,283,151"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -320,6 +568,10 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TerrainFace_8cs_source.html#l00017">17</a> of file <a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TerrainFace_8cs_source.html#l00097">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructCubeMesh()</a>, and <a class="el" href="TerrainFace_8cs_source.html#l00021">_Project.World.Planet.Scripts.Deprecated.TerrainFace.TerrainFace()</a>.</p>
+
 </div>
 </div>
 <a id="a1ce66f7b1f26c7ff4102268df9e6fd72" name="a1ce66f7b1f26c7ff4102268df9e6fd72"></a>
@@ -341,6 +593,10 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TerrainFace_8cs_source.html#l00018">18</a> of file <a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TerrainFace_8cs_source.html#l00097">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructCubeMesh()</a>, and <a class="el" href="TerrainFace_8cs_source.html#l00021">_Project.World.Planet.Scripts.Deprecated.TerrainFace.TerrainFace()</a>.</p>
 
 </div>
 </div>
@@ -364,6 +620,10 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TerrainFace_8cs_source.html#l00009">9</a> of file <a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TerrainFace_8cs_source.html#l00131">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructMesh()</a>.</p>
+
 </div>
 </div>
 <a id="a560d69481a9aeda36c358ebe3dd04d88" name="a560d69481a9aeda36c358ebe3dd04d88"></a>
@@ -385,6 +645,10 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TerrainFace_8cs_source.html#l00016">16</a> of file <a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TerrainFace_8cs_source.html#l00097">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructCubeMesh()</a>.</p>
 
 </div>
 </div>
@@ -408,6 +672,10 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TerrainFace_8cs_source.html#l00010">10</a> of file <a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TerrainFace_8cs_source.html#l00131">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructMesh()</a>.</p>
+
 </div>
 </div>
 <a id="aa9b1b8e15a151724b71da61e7c6a5920" name="aa9b1b8e15a151724b71da61e7c6a5920"></a>
@@ -429,6 +697,10 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TerrainFace_8cs_source.html#l00012">12</a> of file <a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TerrainFace_8cs_source.html#l00097">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructCubeMesh()</a>, and <a class="el" href="TerrainFace_8cs_source.html#l00131">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructMesh()</a>.</p>
 
 </div>
 </div>
@@ -452,6 +724,10 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TerrainFace_8cs_source.html#l00014">14</a> of file <a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TerrainFace_8cs_source.html#l00131">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructMesh()</a>.</p>
+
 </div>
 </div>
 <a id="a10d62a987b25c745bad322a485fce26b" name="a10d62a987b25c745bad322a485fce26b"></a>
@@ -473,6 +749,10 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TerrainFace_8cs_source.html#l00041">41</a> of file <a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TerrainFace_8cs_source.html#l00097">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructCubeMesh()</a>, <a class="el" href="TerrainFace_8cs_source.html#l00131">_Project.World.Planet.Scripts.Deprecated.TerrainFace.ConstructMesh()</a>, <a class="el" href="TerrainFace_8cs_source.html#l00021">_Project.World.Planet.Scripts.Deprecated.TerrainFace.TerrainFace()</a>, and <a class="el" href="TerrainFace_8cs_source.html#l00041">_Project.World.Planet.Scripts.Deprecated.TerrainFace.TriangleFragmentation()</a>.</p>
 
 </div>
 </div>
@@ -496,10 +776,12 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TerrainFace_8cs_source.html#l00097">97</a> of file <a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Assets/_Project/World/Planet/Scripts/Deprecated/<a class="el" href="TerrainFace_8cs.html">TerrainFace.cs</a></li>
+<li>Assets/_Project/World/Planet/Scripts/Deprecated/<a class="el" href="TerrainFace_8cs_source.html">TerrainFace.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -83,9 +84,11 @@ $(function() {
 
 <p>the chunk system bootstrap is the unity component that manages the chunks. you have to apply the renderer that renders the chunks and a settings object for further customization. a viewer is also required for streaming the chunks around that object. the main camera is recommended.  
  <a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for _Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for _Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChund20f8c271b066aaf7de237f04dd5c404.png" border="0" usemap="#a__Project_8World_8Planet_8Scripts_8Chunking_8GridChunkSystem_8Unity_8GridChunkSystemBootstrap_inherit__map" alt="Inheritance graph"/></div>
 <map name="a__Project_8World_8Planet_8Scripts_8Chunking_8GridChunkSystem_8Unity_8GridChunkSystemBootstrap_inherit__map" id="a__Project_8World_8Planet_8Scripts_8Chunking_8GridChunkSystem_8Unity_8GridChunkSystemBootstrap_inherit__map">
 <area shape="rect" title="the chunk system bootstrap is the unity component that manages the chunks. you have to apply the rend..." alt="" coords="5,79,277,133"/>
@@ -93,9 +96,11 @@ Inheritance diagram for _Project.World.Planet.Scripts.Chunking.GridChunkSystem.U
 <area shape="poly" title=" " alt="" coords="144,44,144,79,139,79,139,44"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for _Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap:</div>
-<div class="dyncontent">
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for _Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap__coll__graph.png" border="0" usemap="#a__Project_8World_8Planet_8Scripts_8Chunking_8GridChunkSystem_8Unity_8GridChunkSystemBootstrap_coll__map" alt="Collaboration graph"/></div>
 <map name="a__Project_8World_8Planet_8Scripts_8Chunking_8GridChunkSystem_8Unity_8GridChunkSystemBootstrap_coll__map" id="a__Project_8World_8Planet_8Scripts_8Chunking_8GridChunkSystem_8Unity_8GridChunkSystemBootstrap_coll__map">
 <area shape="rect" title="the chunk system bootstrap is the unity component that manages the chunks. you have to apply the rend..." alt="" coords="2044,68,2316,123"/>
@@ -146,6 +151,8 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>the chunk system bootstrap is the unity component that manages the chunks. you have to apply the renderer that renders the chunks and a settings object for further customization. a viewer is also required for streaming the chunks around that object. the main camera is recommended. </p>
+
+<p class="definition">Definition at line <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00009">9</a> of file <a class="el" href="GridChunkSystemBootstrap_8cs_source.html">GridChunkSystemBootstrap.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a25ecc585050c05e6cfa18d63e2e519a8" name="a25ecc585050c05e6cfa18d63e2e519a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a25ecc585050c05e6cfa18d63e2e519a8">&#9670;&#160;</a></span>OnDisable()</h2>
@@ -169,6 +176,39 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00041">41</a> of file <a class="el" href="GridChunkSystemBootstrap_8cs_source.html">GridChunkSystemBootstrap.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>        {</div>
+<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#a4bdef371a5eff7a06325f431adcffd05">renderer</a> != <span class="keyword">null</span>) <span class="comment">// if there is a renderer assigned we need to dispose it and its components to prevent memory leaks and other issues</span></div>
+<div class="line"><span class="lineno">   44</span>            {</div>
+<div class="line"><span class="lineno">   45</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#a4bdef371a5eff7a06325f431adcffd05">renderer</a>.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a9f7290d33eedc1e852ea941dd9bed21d">SetChunkManager</a>(<span class="keyword">null</span>); <span class="comment">// &quot;remove&quot; the chunk manager</span></div>
+<div class="line"><span class="lineno">   46</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#a4bdef371a5eff7a06325f431adcffd05">renderer</a>.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a35e19f071b96ce70b67fc511e8249beb">SetViewer</a>(<span class="keyword">null</span>); <span class="comment">// and viewer</span></div>
+<div class="line"><span class="lineno">   47</span>            }</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#a72a9171e9bc00b619a7e5b046087b0a4">_chunkManager</a> = <span class="keyword">null</span>; <span class="comment">// remove the chunk manager object reference</span></div>
+<div class="line"><span class="lineno">   50</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_html_a35e19f071b96ce70b67fc511e8249beb"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a35e19f071b96ce70b67fc511e8249beb">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.SetViewer</a></div><div class="ttdeci">void SetViewer(Transform viewer)</div><div class="ttdef"><b>Definition</b> <a href="GridChunkSystemRenderer_8cs_source.html#l00029">GridChunkSystemRenderer.cs:29</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_html_a9f7290d33eedc1e852ea941dd9bed21d"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a9f7290d33eedc1e852ea941dd9bed21d">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.SetChunkManager</a></div><div class="ttdeci">void SetChunkManager(GridChunkManager chunkManager)</div><div class="ttdef"><b>Definition</b> <a href="GridChunkSystemRenderer_8cs_source.html#l00017">GridChunkSystemRenderer.cs:17</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap_html_a4bdef371a5eff7a06325f431adcffd05"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#a4bdef371a5eff7a06325f431adcffd05">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap.renderer</a></div><div class="ttdeci">new GridChunkSystemRenderer renderer</div><div class="ttdef"><b>Definition</b> <a href="GridChunkSystemBootstrap_8cs_source.html#l00012">GridChunkSystemBootstrap.cs:12</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap_html_a72a9171e9bc00b619a7e5b046087b0a4"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#a72a9171e9bc00b619a7e5b046087b0a4">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap._chunkManager</a></div><div class="ttdeci">GridChunkManager _chunkManager</div><div class="ttdef"><b>Definition</b> <a href="GridChunkSystemBootstrap_8cs_source.html#l00015">GridChunkSystemBootstrap.cs:15</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00015">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap._chunkManager</a>, <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00012">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap.renderer</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00017">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.SetChunkManager()</a>, and <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00029">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.SetViewer()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap_a25ecc585050c05e6cfa18d63e2e519a8_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap_a25ecc585050c05e6cfa18d63e2e519a8_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap_a25ecc585050c05e6cfa18d63e2e519a8_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap_a25ecc585050c05e6cfa18d63e2e519a8_cgraph">
+<area shape="rect" title=" " alt="" coords="5,45,277,100"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a9f7290d33eedc1e852ea941dd9bed21d" title=" " alt="" coords="325,5,601,60"/>
+<area shape="poly" title=" " alt="" coords="277,53,311,49,312,54,278,58"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a35e19f071b96ce70b67fc511e8249beb" title=" " alt="" coords="325,84,601,139"/>
+<area shape="poly" title=" " alt="" coords="278,86,312,90,311,96,277,92"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a6632d490d416717ca02223b696467f5d" title=" " alt="" coords="649,5,925,60"/>
+<area shape="poly" title=" " alt="" coords="601,30,635,30,635,35,601,35"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -195,6 +235,53 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00017">17</a> of file <a class="el" href="GridChunkSystemBootstrap_8cs_source.html">GridChunkSystemBootstrap.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>        {</div>
+<div class="line"><span class="lineno">   19</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#a4bdef371a5eff7a06325f431adcffd05">renderer</a> == <span class="keyword">null</span>) <span class="comment">// only add a renderer if the current one is not set</span></div>
+<div class="line"><span class="lineno">   20</span>            {</div>
+<div class="line"><span class="lineno">   21</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#a4bdef371a5eff7a06325f431adcffd05">renderer</a> = GetComponent&lt;GridChunkSystemRenderer&gt;(); </div>
+<div class="line"><span class="lineno">   22</span>            }</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#ace35657642651218668915d71a8ccca1">settings</a> == <span class="keyword">null</span>) <span class="comment">// the user has to specify the settings themselves so if the settings arent specified when the object is instantiated we throw an error </span></div>
+<div class="line"><span class="lineno">   25</span>            {</div>
+<div class="line"><span class="lineno">   26</span>                Debug.LogError(<span class="stringliteral">&quot;GridChunkSystemSettings is missing.&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   27</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   28</span>            }</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#a4bdef371a5eff7a06325f431adcffd05">renderer</a> == <span class="keyword">null</span>) <span class="comment">// same goes for the renderer</span></div>
+<div class="line"><span class="lineno">   31</span>            {</div>
+<div class="line"><span class="lineno">   32</span>                Debug.LogError(<span class="stringliteral">&quot;GridChunkSystemRenderer is missing.&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   33</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   34</span>            }</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#a72a9171e9bc00b619a7e5b046087b0a4">_chunkManager</a> = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#ace35657642651218668915d71a8ccca1">settings</a>.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemSettings.html#a954c7a6a587df4e7b9ba3be1d1f9ff49">CreateManager</a>(); <span class="comment">// create the chunk manager based on the settings. this is where the logic of the chunk system is being created.</span></div>
+<div class="line"><span class="lineno">   37</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#a4bdef371a5eff7a06325f431adcffd05">renderer</a>.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a9f7290d33eedc1e852ea941dd9bed21d">SetChunkManager</a>(<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#a72a9171e9bc00b619a7e5b046087b0a4">_chunkManager</a>); <span class="comment">// apply the chunk manager to the renderer</span></div>
+<div class="line"><span class="lineno">   38</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#a4bdef371a5eff7a06325f431adcffd05">renderer</a>.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a35e19f071b96ce70b67fc511e8249beb">SetViewer</a>(<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#a72fe6d5906531ed9086b03ae4aa11440">viewer</a>);</div>
+<div class="line"><span class="lineno">   39</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap_html_a72fe6d5906531ed9086b03ae4aa11440"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#a72fe6d5906531ed9086b03ae4aa11440">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap.viewer</a></div><div class="ttdeci">Transform viewer</div><div class="ttdef"><b>Definition</b> <a href="GridChunkSystemBootstrap_8cs_source.html#l00013">GridChunkSystemBootstrap.cs:13</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap_html_ace35657642651218668915d71a8ccca1"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html#ace35657642651218668915d71a8ccca1">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap.settings</a></div><div class="ttdeci">GridChunkSystemSettings settings</div><div class="ttdef"><b>Definition</b> <a href="GridChunkSystemBootstrap_8cs_source.html#l00011">GridChunkSystemBootstrap.cs:11</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemSettings_html_a954c7a6a587df4e7b9ba3be1d1f9ff49"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemSettings.html#a954c7a6a587df4e7b9ba3be1d1f9ff49">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemSettings.CreateManager</a></div><div class="ttdeci">GridChunkManager CreateManager()</div><div class="ttdef"><b>Definition</b> <a href="GridChunkSystemSettings_8cs_source.html#l00017">GridChunkSystemSettings.cs:17</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00015">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap._chunkManager</a>, <a class="el" href="GridChunkSystemSettings_8cs_source.html#l00017">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemSettings.CreateManager()</a>, <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00012">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap.renderer</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00017">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.SetChunkManager()</a>, <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00011">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap.settings</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00029">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.SetViewer()</a>, and <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00013">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap.viewer</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap_a2f2926fe94621c137cd75c7e6e628bed_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap_a2f2926fe94621c137cd75c7e6e628bed_cgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap_a2f2926fe94621c137cd75c7e6e628bed_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap_a2f2926fe94621c137cd75c7e6e628bed_cgraph">
+<area shape="rect" title=" " alt="" coords="5,84,277,139"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemSettings.html#a954c7a6a587df4e7b9ba3be1d1f9ff49" title=" " alt="" coords="327,5,599,60"/>
+<area shape="poly" title=" " alt="" coords="253,81,337,61,338,66,255,87"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a9f7290d33eedc1e852ea941dd9bed21d" title=" " alt="" coords="325,84,601,139"/>
+<area shape="poly" title=" " alt="" coords="278,109,311,109,311,114,278,114"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a35e19f071b96ce70b67fc511e8249beb" title=" " alt="" coords="325,163,601,217"/>
+<area shape="poly" title=" " alt="" coords="255,136,338,157,337,162,253,141"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a6632d490d416717ca02223b696467f5d" title=" " alt="" coords="649,84,925,139"/>
+<area shape="poly" title=" " alt="" coords="601,109,635,109,635,114,601,114"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -218,6 +305,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00015">15</a> of file <a class="el" href="GridChunkSystemBootstrap_8cs_source.html">GridChunkSystemBootstrap.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00041">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap.OnDisable()</a>, and <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00017">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap.OnEnable()</a>.</p>
+
 </div>
 </div>
 <a id="a4bdef371a5eff7a06325f431adcffd05" name="a4bdef371a5eff7a06325f431adcffd05"></a>
@@ -239,6 +330,10 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00012">12</a> of file <a class="el" href="GridChunkSystemBootstrap_8cs_source.html">GridChunkSystemBootstrap.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00041">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap.OnDisable()</a>, and <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00017">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap.OnEnable()</a>.</p>
 
 </div>
 </div>
@@ -262,6 +357,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00011">11</a> of file <a class="el" href="GridChunkSystemBootstrap_8cs_source.html">GridChunkSystemBootstrap.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00017">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap.OnEnable()</a>.</p>
+
 </div>
 </div>
 <a id="a72fe6d5906531ed9086b03ae4aa11440" name="a72fe6d5906531ed9086b03ae4aa11440"></a>
@@ -284,10 +383,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00013">13</a> of file <a class="el" href="GridChunkSystemBootstrap_8cs_source.html">GridChunkSystemBootstrap.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GridChunkSystemBootstrap_8cs_source.html#l00017">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemBootstrap.OnEnable()</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Assets/_Project/World/Planet/Scripts/Chunking/GridChunkSystem/Unity/<a class="el" href="GridChunkSystemBootstrap_8cs.html">GridChunkSystemBootstrap.cs</a></li>
+<li>Assets/_Project/World/Planet/Scripts/Chunking/GridChunkSystem/Unity/<a class="el" href="GridChunkSystemBootstrap_8cs_source.html">GridChunkSystemBootstrap.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
