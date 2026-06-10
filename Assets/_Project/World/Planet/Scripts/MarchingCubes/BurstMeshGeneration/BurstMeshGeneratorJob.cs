@@ -11,6 +11,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration
     [BurstCompile]
     public unsafe struct BurstMeshGeneratorJob : IJob
     {
+        [ReadOnly]
         public DensityFieldData DensityField;
 
         public NativeList<float3> Vertices;
@@ -21,7 +22,9 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration
 
         public float IsoLevel;
 
+        [ReadOnly]
         public NativeArray<int> EdgeTable;
+        [ReadOnly]
         public NativeArray<int> TriTable;
         
         

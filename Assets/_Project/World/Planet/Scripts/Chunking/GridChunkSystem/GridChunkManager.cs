@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using _Project.World.Planet.Scripts.Chunking.Core;
 using _Project.World.Planet.Scripts.WorldGen.Burst;
@@ -41,7 +42,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         private int _activeGenerationTasks; // number of current chunk density generation tasks 
 
         private const int ChunksPerFrame = 20; // maximum amount of chunks that can get generated per frame
-        private const int MaxConcurrentGenerationTasks = 1; // max concurrent (simultaneous) chunk generations
+        private const int MaxConcurrentGenerationTasks = 8; // max concurrent (simultaneous) chunk generations
 
         public readonly int ChunkSize; // the size of a singular chunk
 
@@ -208,7 +209,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         /// <param name="coord">the coordinate of the chunk that gets generated</param>
         private async Task GenerateChunkAsync(ChunkCoord coord)
         {
-            _activeGenerationTasks++; // keep track of the current amount of chunks that are being generated since they can generate across multiple frames
+            Interlocked.Increment(ref _activeGenerationTasks); // keep track of the current amount of chunks that are being generated since they can generate across multiple frames
 
             _chunkStates[coord] = ChunkLifecycleState.Generating; // set the current state to generating
 
@@ -220,9 +221,13 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
                                                               // this _completedChunks queue will get processed in the main thread in the update method to shift the
                                                               // generated data over to the main dictionaries and trigger the chunk change event
             }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
             finally
             {
-                _activeGenerationTasks--; // and finally (even if the task failed) remove it from the active tasks count
+                Interlocked.Decrement(ref _activeGenerationTasks); // and finally (even if the task failed) remove it from the active tasks count
             }
         }
 

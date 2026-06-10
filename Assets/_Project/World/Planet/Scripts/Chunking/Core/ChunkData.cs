@@ -1,5 +1,6 @@
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
+using Unity.Collections;
 
 namespace _Project.World.Planet.Scripts.Chunking.Core
 {
@@ -10,6 +11,7 @@ namespace _Project.World.Planet.Scripts.Chunking.Core
     {
         public ChunkCoord Coord;
         public MeshData MeshData;
+        [ReadOnly]
         public DensityFieldData DensityField;
         public ChunkState State;
     }

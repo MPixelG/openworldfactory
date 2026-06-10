@@ -17,8 +17,6 @@ namespace _Project.World.Planet.Scripts.Chunking
 
         private readonly int _chunkSize;
         
-        private readonly BurstMeshGenerator _burstMeshGenerator;
-
         /// <summary>
         /// creates a chunk generator. the chunk generator is responsible for generating the chunk data (density values and mesh data).
         /// the density sampler settings are used for generating the density field and the chunk size is used for both
@@ -30,7 +28,6 @@ namespace _Project.World.Planet.Scripts.Chunking
         {
             _densitySamplerSettings = densitySamplerSettings;
             _chunkSize = chunkSize;
-            _burstMeshGenerator = new BurstMeshGenerator();
         }
 
         /// <summary>
@@ -62,7 +59,7 @@ namespace _Project.World.Planet.Scripts.Chunking
             // we use the static function GenerateMeshDataAt to generate the mesh data for the chunk based on its
             // density field and the chunk size
             //MeshData meshData = MarchingCubesMeshDataGenerator.GenerateMeshDataAt(densityField);
-            MeshData meshData = _burstMeshGenerator.GenerateBurstMesh(densityField);
+            MeshData meshData = BurstMeshGenerator.GenerateBurstMesh(densityField);
             
 
             data.MeshData = meshData; // now we need to update the mesh data
