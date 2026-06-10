@@ -1,0 +1,5 @@
+<map id="_Project.World.Planet.Scripts.Chunking.ChunkGenerator.GenerateChunkAt" name="_Project.World.Planet.Scripts.Chunking.ChunkGenerator.GenerateChunkAt">
+<area shape="rect" id="Node000001" title="generates the chunk data at a given chunk position." alt="" coords="5,5,261,60"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGenerator.html#ae3b62393622d042b2ed3dbfe960fd36d" title=" " alt="" coords="309,5,597,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,30,296,30,296,35,261,35"/>
+</map>

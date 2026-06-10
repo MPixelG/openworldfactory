@@ -2,8 +2,10 @@
 <area shape="rect" id="Node000001" title="loads / unloads chunks if they are in the different queueues. it doesnt check what chunks need to be ..." alt="" coords="5,45,281,100"/>
 <area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a6f809eacb6fa867fdcd119e8291f7981" title="generates a chunk at a given position using the chunk generator" alt="" coords="329,5,605,60"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="281,53,315,49,316,54,282,58"/>
-<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#af0feb1e1104b07d8876d81b644b1be9c" title="unloads the chunk at a given position" alt="" coords="329,84,605,139"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="282,86,316,91,315,96,281,92"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#af0feb1e1104b07d8876d81b644b1be9c" title="unloads the chunk at a given position" alt="" coords="329,84,605,139"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="282,86,316,91,315,96,281,92"/>
 <area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkGenerator.html#a0fea0694891c9f157bd89cfc7b2fef69" title="generates the chunk data at a given chunk position." alt="" coords="653,5,909,60"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="606,30,640,30,640,35,606,35"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGenerator.html#ae3b62393622d042b2ed3dbfe960fd36d" title=" " alt="" coords="957,5,1245,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="909,30,944,30,944,35,909,35"/>
 </map>
