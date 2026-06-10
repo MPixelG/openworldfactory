@@ -224,34 +224,34 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00260">260</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  264</span>        {</div>
-<div class="line"><span class="lineno">  265</span>            <span class="keywordflow">if</span> (!math.all(math.isfinite(a)) ||</div>
-<div class="line"><span class="lineno">  266</span>                !math.all(math.isfinite(b)) ||</div>
-<div class="line"><span class="lineno">  267</span>                !math.all(math.isfinite(c)))</div>
-<div class="line"><span class="lineno">  268</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  269</span> </div>
-<div class="line"><span class="lineno">  270</span>            <span class="keywordtype">int</span> i0 = <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a27a824111d86d6b871c6c8ca5a4b4fdf">GetOrAddVertex</a>(ka, a);</div>
-<div class="line"><span class="lineno">  271</span>            <span class="keywordtype">int</span> i1 = <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a27a824111d86d6b871c6c8ca5a4b4fdf">GetOrAddVertex</a>(kb, b);</div>
-<div class="line"><span class="lineno">  272</span>            <span class="keywordtype">int</span> i2 = <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a27a824111d86d6b871c6c8ca5a4b4fdf">GetOrAddVertex</a>(kc, c);</div>
-<div class="line"><span class="lineno">  273</span> </div>
-<div class="line"><span class="lineno">  274</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ae98ba816877503d1269e1a2459219514">Indices</a>.Add(i0);</div>
-<div class="line"><span class="lineno">  275</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ae98ba816877503d1269e1a2459219514">Indices</a>.Add(i1);</div>
-<div class="line"><span class="lineno">  276</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ae98ba816877503d1269e1a2459219514">Indices</a>.Add(i2);</div>
-<div class="line"><span class="lineno">  277</span> </div>
-<div class="line"><span class="lineno">  278</span>            float3 normal = math.normalize(math.cross(b - a, c - a));</div>
-<div class="line"><span class="lineno">  279</span> </div>
-<div class="line"><span class="lineno">  280</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>[i0] += normal;</div>
-<div class="line"><span class="lineno">  281</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>[i1] += normal;</div>
-<div class="line"><span class="lineno">  282</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>[i2] += normal;</div>
-<div class="line"><span class="lineno">  283</span>        }</div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a27a824111d86d6b871c6c8ca5a4b4fdf"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a27a824111d86d6b871c6c8ca5a4b4fdf">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GetOrAddVertex</a></div><div class="ttdeci">int GetOrAddVertex(VertexKey key, float3 v)</div><div class="ttdoc">checks if the given vertex already exists in the vertices list and if so returns its index,...</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00289">BurstMeshGeneratorJob.cs:289</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_ab373d2ccfa89cf031f5768aebedd1b27"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Normals</a></div><div class="ttdeci">NativeList&lt; float3 &gt; Normals</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00017">BurstMeshGeneratorJob.cs:17</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_ae98ba816877503d1269e1a2459219514"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ae98ba816877503d1269e1a2459219514">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Indices</a></div><div class="ttdeci">NativeList&lt; int &gt; Indices</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00018">BurstMeshGeneratorJob.cs:18</a></div></div>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00263">263</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  267</span>        {</div>
+<div class="line"><span class="lineno">  268</span>            <span class="keywordflow">if</span> (!math.all(math.isfinite(a)) ||</div>
+<div class="line"><span class="lineno">  269</span>                !math.all(math.isfinite(b)) ||</div>
+<div class="line"><span class="lineno">  270</span>                !math.all(math.isfinite(c)))</div>
+<div class="line"><span class="lineno">  271</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  272</span> </div>
+<div class="line"><span class="lineno">  273</span>            <span class="keywordtype">int</span> i0 = <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a27a824111d86d6b871c6c8ca5a4b4fdf">GetOrAddVertex</a>(ka, a);</div>
+<div class="line"><span class="lineno">  274</span>            <span class="keywordtype">int</span> i1 = <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a27a824111d86d6b871c6c8ca5a4b4fdf">GetOrAddVertex</a>(kb, b);</div>
+<div class="line"><span class="lineno">  275</span>            <span class="keywordtype">int</span> i2 = <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a27a824111d86d6b871c6c8ca5a4b4fdf">GetOrAddVertex</a>(kc, c);</div>
+<div class="line"><span class="lineno">  276</span> </div>
+<div class="line"><span class="lineno">  277</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ae98ba816877503d1269e1a2459219514">Indices</a>.Add(i0);</div>
+<div class="line"><span class="lineno">  278</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ae98ba816877503d1269e1a2459219514">Indices</a>.Add(i1);</div>
+<div class="line"><span class="lineno">  279</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ae98ba816877503d1269e1a2459219514">Indices</a>.Add(i2);</div>
+<div class="line"><span class="lineno">  280</span> </div>
+<div class="line"><span class="lineno">  281</span>            float3 normal = math.normalize(math.cross(b - a, c - a));</div>
+<div class="line"><span class="lineno">  282</span> </div>
+<div class="line"><span class="lineno">  283</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>[i0] += normal;</div>
+<div class="line"><span class="lineno">  284</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>[i1] += normal;</div>
+<div class="line"><span class="lineno">  285</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>[i2] += normal;</div>
+<div class="line"><span class="lineno">  286</span>        }</div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a27a824111d86d6b871c6c8ca5a4b4fdf"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a27a824111d86d6b871c6c8ca5a4b4fdf">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GetOrAddVertex</a></div><div class="ttdeci">int GetOrAddVertex(VertexKey key, float3 v)</div><div class="ttdoc">checks if the given vertex already exists in the vertices list and if so returns its index,...</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00292">BurstMeshGeneratorJob.cs:292</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_ab373d2ccfa89cf031f5768aebedd1b27"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Normals</a></div><div class="ttdeci">NativeList&lt; float3 &gt; Normals</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00018">BurstMeshGeneratorJob.cs:18</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_ae98ba816877503d1269e1a2459219514"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ae98ba816877503d1269e1a2459219514">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Indices</a></div><div class="ttdeci">NativeList&lt; int &gt; Indices</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00019">BurstMeshGeneratorJob.cs:19</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00289">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GetOrAddVertex()</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00018">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Indices</a>, and <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00017">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Normals</a>.</p>
+<p class="reference">References <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00292">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GetOrAddVertex()</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00019">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Indices</a>, and <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00018">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Normals</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00049">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00052">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -304,28 +304,28 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00032">32</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   33</span>        {</div>
-<div class="line"><span class="lineno">   34</span>            <span class="keywordtype">int</span> size = <a class="code hl_class" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html">DensityField</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">Size</a>-2;</div>
-<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; size; x++)</div>
-<div class="line"><span class="lineno">   36</span>            {</div>
-<div class="line"><span class="lineno">   37</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; size; y++)</div>
-<div class="line"><span class="lineno">   38</span>                {</div>
-<div class="line"><span class="lineno">   39</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> z = 0; z &lt; size; z++)</div>
-<div class="line"><span class="lineno">   40</span>                    {</div>
-<div class="line"><span class="lineno">   41</span>                        <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a529ecfc4cdcc8bde7ab6532f2a1924bd">GenerateAt</a>((<span class="keyword">new</span> int3(x, y, z)), <a class="code hl_class" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html">DensityField</a>); <span class="comment">// generate the mesh for every grid cell and use the mesh builder to add it all to one large mesh</span></div>
-<div class="line"><span class="lineno">   42</span>                    }</div>
-<div class="line"><span class="lineno">   43</span>                }</div>
-<div class="line"><span class="lineno">   44</span>            }</div>
-<div class="line"><span class="lineno">   45</span>            </div>
-<div class="line"><span class="lineno">   46</span>            <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#aa864d520846141fbf86de1be22126202">NormalizeNormals</a>();</div>
-<div class="line"><span class="lineno">   47</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00035">35</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>        {</div>
+<div class="line"><span class="lineno">   37</span>            <span class="keywordtype">int</span> size = <a class="code hl_class" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html">DensityField</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">Size</a>-2;</div>
+<div class="line"><span class="lineno">   38</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; size; x++)</div>
+<div class="line"><span class="lineno">   39</span>            {</div>
+<div class="line"><span class="lineno">   40</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; size; y++)</div>
+<div class="line"><span class="lineno">   41</span>                {</div>
+<div class="line"><span class="lineno">   42</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> z = 0; z &lt; size; z++)</div>
+<div class="line"><span class="lineno">   43</span>                    {</div>
+<div class="line"><span class="lineno">   44</span>                        <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a529ecfc4cdcc8bde7ab6532f2a1924bd">GenerateAt</a>((<span class="keyword">new</span> int3(x, y, z)), <a class="code hl_class" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html">DensityField</a>); <span class="comment">// generate the mesh for every grid cell and use the mesh builder to add it all to one large mesh</span></div>
+<div class="line"><span class="lineno">   45</span>                    }</div>
+<div class="line"><span class="lineno">   46</span>                }</div>
+<div class="line"><span class="lineno">   47</span>            }</div>
+<div class="line"><span class="lineno">   48</span>            </div>
+<div class="line"><span class="lineno">   49</span>            <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#aa864d520846141fbf86de1be22126202">NormalizeNormals</a>();</div>
+<div class="line"><span class="lineno">   50</span>        }</div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_html"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField</a></div><div class="ttdef"><b>Definition</b> <a href="DensityField_8cs_source.html#l00007">DensityField.cs:8</a></div></div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField_html_a632399fa3a1205a9829f0524d7620ec1"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a632399fa3a1205a9829f0524d7620ec1">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.Size</a></div><div class="ttdeci">readonly int Size</div><div class="ttdef"><b>Definition</b> <a href="DensityField_8cs_source.html#l00010">DensityField.cs:10</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a529ecfc4cdcc8bde7ab6532f2a1924bd"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a529ecfc4cdcc8bde7ab6532f2a1924bd">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt</a></div><div class="ttdeci">void GenerateAt(int3 pos, DensityFieldData grid)</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00049">BurstMeshGeneratorJob.cs:49</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_aa864d520846141fbf86de1be22126202"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#aa864d520846141fbf86de1be22126202">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.NormalizeNormals</a></div><div class="ttdeci">void NormalizeNormals()</div><div class="ttdoc">this normalizes the normals. that means every normal has a length of exactly 1.</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00307">BurstMeshGeneratorJob.cs:307</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a529ecfc4cdcc8bde7ab6532f2a1924bd"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a529ecfc4cdcc8bde7ab6532f2a1924bd">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt</a></div><div class="ttdeci">void GenerateAt(int3 pos, DensityFieldData grid)</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00052">BurstMeshGeneratorJob.cs:52</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_aa864d520846141fbf86de1be22126202"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#aa864d520846141fbf86de1be22126202">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.NormalizeNormals</a></div><div class="ttdeci">void NormalizeNormals()</div><div class="ttdoc">this normalizes the normals. that means every normal has a length of exactly 1.</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00310">BurstMeshGeneratorJob.cs:310</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00049">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00307">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.NormalizeNormals()</a>, and <a class="el" href="DensityField_8cs_source.html#l00010">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.Size</a>.</p>
+<p class="reference">References <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00052">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00310">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.NormalizeNormals()</a>, and <a class="el" href="DensityField_8cs_source.html#l00010">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.Size</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -387,179 +387,179 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00049">49</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>        {</div>
-<div class="line"><span class="lineno">   51</span>            <span class="keywordtype">int</span> cubeIndex =</div>
-<div class="line"><span class="lineno">   52</span>                <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a3df3d5aa96c255b06033b78b3367c7c2">GetCubeIndexAt</a>(pos, grid,</div>
-<div class="line"><span class="lineno">   53</span>                    <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>); <span class="comment">// calculates the cube index at that position. look at the description of that function if you want to know what it does</span></div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">if</span> (cubeIndex is 255 or 0) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>            <span class="keywordtype">int</span></div>
-<div class="line"><span class="lineno">   58</span>                edgeFlags = <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ac93923a1be7e5e24021c9dbd52394424">EdgeTable</a>[cubeIndex]; <span class="comment">// converts the given corner configuration to a binary number where every bit represents one edge. note that we convert an 8 bit number (one bit for every corner) to a 12 bit number (one bit for every edge). </span></div>
-<div class="line"><span class="lineno">   59</span>            <span class="comment">// we take that value from a huge precomputed table that contains the edge configuration for every possible corner configuration. So every bit is 1 if the isosurface cuts through that edge. </span></div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">if</span> (edgeFlags ==</div>
-<div class="line"><span class="lineno">   63</span>                0) <span class="comment">// if the isosurface doesnt cut through any edge, we can skip this cube and return an empty list of triangles</span></div>
-<div class="line"><span class="lineno">   64</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>            <span class="comment">// the resulting vertices can be 12 max since there are only 12 edges. we fill the rest of the values with -1.</span></div>
-<div class="line"><span class="lineno">   67</span>            Vtx* vertices = stackalloc Vtx[12];</div>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00052">52</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>        {</div>
+<div class="line"><span class="lineno">   54</span>            <span class="keywordtype">int</span> cubeIndex =</div>
+<div class="line"><span class="lineno">   55</span>                <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a3df3d5aa96c255b06033b78b3367c7c2">GetCubeIndexAt</a>(pos, grid,</div>
+<div class="line"><span class="lineno">   56</span>                    <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>); <span class="comment">// calculates the cube index at that position. look at the description of that function if you want to know what it does</span></div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">if</span> (cubeIndex is 255 or 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>            <span class="keywordtype">int</span></div>
+<div class="line"><span class="lineno">   61</span>                edgeFlags = <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ac93923a1be7e5e24021c9dbd52394424">EdgeTable</a>[cubeIndex]; <span class="comment">// converts the given corner configuration to a binary number where every bit represents one edge. note that we convert an 8 bit number (one bit for every corner) to a 12 bit number (one bit for every edge). </span></div>
+<div class="line"><span class="lineno">   62</span>            <span class="comment">// we take that value from a huge precomputed table that contains the edge configuration for every possible corner configuration. So every bit is 1 if the isosurface cuts through that edge. </span></div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>            <span class="keywordflow">if</span> (edgeFlags ==</div>
+<div class="line"><span class="lineno">   66</span>                0) <span class="comment">// if the isosurface doesnt cut through any edge, we can skip this cube and return an empty list of triangles</span></div>
+<div class="line"><span class="lineno">   67</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>            <span class="comment">// helper vars for the single corners of the cube</span></div>
-<div class="line"><span class="lineno">   70</span>            int3 p0 = <span class="keyword">new</span> int3(pos.x, pos.y, pos.z);</div>
-<div class="line"><span class="lineno">   71</span>            int3 p1 = <span class="keyword">new</span> int3(pos.x + 1, pos.y, pos.z);</div>
-<div class="line"><span class="lineno">   72</span>            int3 p2 = <span class="keyword">new</span> int3(pos.x + 1, pos.y + 1, pos.z);</div>
-<div class="line"><span class="lineno">   73</span>            int3 p3 = <span class="keyword">new</span> int3(pos.x, pos.y + 1, pos.z);</div>
-<div class="line"><span class="lineno">   74</span>            int3 p4 = <span class="keyword">new</span> int3(pos.x, pos.y, pos.z + 1);</div>
-<div class="line"><span class="lineno">   75</span>            int3 p5 = <span class="keyword">new</span> int3(pos.x + 1, pos.y, pos.z + 1);</div>
-<div class="line"><span class="lineno">   76</span>            int3 p6 = <span class="keyword">new</span> int3(pos.x + 1, pos.y + 1, pos.z + 1);</div>
-<div class="line"><span class="lineno">   77</span>            int3 p7 = <span class="keyword">new</span> int3(pos.x, pos.y + 1, pos.z + 1);</div>
-<div class="line"><span class="lineno">   78</span> </div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>            <span class="comment">// here we check if the given bit is 1. the binary operator &amp; acts as an AND mask, so 0b11011101 &amp; 0b01010011 = 0b01010001. this way we can check every edge separately. c# doesnt let you directly cast ints to bools (1=true, 0=false) so we just compare it to 0 to know if its true or not</span></div>
-<div class="line"><span class="lineno">   81</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 1) != 0)</div>
-<div class="line"><span class="lineno">   82</span>            {</div>
-<div class="line"><span class="lineno">   83</span>                vertices[0].Pos =</div>
-<div class="line"><span class="lineno">   84</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p0,</div>
-<div class="line"><span class="lineno">   85</span>                        p1, <span class="comment">// so we know now that this edge is used but if we just pass the center between the start and end point of that edge it would be way to blocky. so we just interpolate between the 2 densities of the corresponding values. this way everything is distributed smoothly.</span></div>
-<div class="line"><span class="lineno">   86</span>                        grid.DensityAt(p0), grid.DensityAt(p1));</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>                vertices[0].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 0);</div>
-<div class="line"><span class="lineno">   89</span>            }</div>
+<div class="line"><span class="lineno">   69</span>            <span class="comment">// the resulting vertices can be 12 max since there are only 12 edges. we fill the rest of the values with -1.</span></div>
+<div class="line"><span class="lineno">   70</span>            Vtx* vertices = stackalloc Vtx[12];</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>            <span class="comment">// helper vars for the single corners of the cube</span></div>
+<div class="line"><span class="lineno">   73</span>            int3 p0 = <span class="keyword">new</span> int3(pos.x, pos.y, pos.z);</div>
+<div class="line"><span class="lineno">   74</span>            int3 p1 = <span class="keyword">new</span> int3(pos.x + 1, pos.y, pos.z);</div>
+<div class="line"><span class="lineno">   75</span>            int3 p2 = <span class="keyword">new</span> int3(pos.x + 1, pos.y + 1, pos.z);</div>
+<div class="line"><span class="lineno">   76</span>            int3 p3 = <span class="keyword">new</span> int3(pos.x, pos.y + 1, pos.z);</div>
+<div class="line"><span class="lineno">   77</span>            int3 p4 = <span class="keyword">new</span> int3(pos.x, pos.y, pos.z + 1);</div>
+<div class="line"><span class="lineno">   78</span>            int3 p5 = <span class="keyword">new</span> int3(pos.x + 1, pos.y, pos.z + 1);</div>
+<div class="line"><span class="lineno">   79</span>            int3 p6 = <span class="keyword">new</span> int3(pos.x + 1, pos.y + 1, pos.z + 1);</div>
+<div class="line"><span class="lineno">   80</span>            int3 p7 = <span class="keyword">new</span> int3(pos.x, pos.y + 1, pos.z + 1);</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>            <span class="comment">// here we check if the given bit is 1. the binary operator &amp; acts as an AND mask, so 0b11011101 &amp; 0b01010011 = 0b01010001. this way we can check every edge separately. c# doesnt let you directly cast ints to bools (1=true, 0=false) so we just compare it to 0 to know if its true or not</span></div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 1) != 0)</div>
+<div class="line"><span class="lineno">   85</span>            {</div>
+<div class="line"><span class="lineno">   86</span>                vertices[0].Pos =</div>
+<div class="line"><span class="lineno">   87</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p0,</div>
+<div class="line"><span class="lineno">   88</span>                        p1, <span class="comment">// so we know now that this edge is used but if we just pass the center between the start and end point of that edge it would be way to blocky. so we just interpolate between the 2 densities of the corresponding values. this way everything is distributed smoothly.</span></div>
+<div class="line"><span class="lineno">   89</span>                        grid.DensityAt(p0), grid.DensityAt(p1));</div>
 <div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 2) != 0)</div>
-<div class="line"><span class="lineno">   92</span>            {</div>
-<div class="line"><span class="lineno">   93</span>                vertices[1].Pos =</div>
-<div class="line"><span class="lineno">   94</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p1, p2,</div>
-<div class="line"><span class="lineno">   95</span>                        grid.DensityAt(p1), grid.DensityAt(p2));</div>
-<div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>                vertices[1].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 1);</div>
-<div class="line"><span class="lineno">   98</span>            }</div>
+<div class="line"><span class="lineno">   91</span>                vertices[0].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 0);</div>
+<div class="line"><span class="lineno">   92</span>            }</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 2) != 0)</div>
+<div class="line"><span class="lineno">   95</span>            {</div>
+<div class="line"><span class="lineno">   96</span>                vertices[1].Pos =</div>
+<div class="line"><span class="lineno">   97</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p1, p2,</div>
+<div class="line"><span class="lineno">   98</span>                        grid.DensityAt(p1), grid.DensityAt(p2));</div>
 <div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 4) != 0)</div>
-<div class="line"><span class="lineno">  101</span>            {</div>
-<div class="line"><span class="lineno">  102</span>                vertices[2].Pos =</div>
-<div class="line"><span class="lineno">  103</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p2, p3,</div>
-<div class="line"><span class="lineno">  104</span>                        grid.DensityAt(p2), grid.DensityAt(p3));</div>
-<div class="line"><span class="lineno">  105</span> </div>
-<div class="line"><span class="lineno">  106</span>                vertices[2].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 2);</div>
-<div class="line"><span class="lineno">  107</span>            }</div>
+<div class="line"><span class="lineno">  100</span>                vertices[1].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 1);</div>
+<div class="line"><span class="lineno">  101</span>            }</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 4) != 0)</div>
+<div class="line"><span class="lineno">  104</span>            {</div>
+<div class="line"><span class="lineno">  105</span>                vertices[2].Pos =</div>
+<div class="line"><span class="lineno">  106</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p2, p3,</div>
+<div class="line"><span class="lineno">  107</span>                        grid.DensityAt(p2), grid.DensityAt(p3));</div>
 <div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 8) != 0)</div>
-<div class="line"><span class="lineno">  110</span>            {</div>
-<div class="line"><span class="lineno">  111</span>                vertices[3].Pos =</div>
-<div class="line"><span class="lineno">  112</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p3, p0,</div>
-<div class="line"><span class="lineno">  113</span>                        grid.DensityAt(p3), grid.DensityAt(p0));</div>
-<div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>                vertices[3].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 3);</div>
-<div class="line"><span class="lineno">  116</span>            }</div>
+<div class="line"><span class="lineno">  109</span>                vertices[2].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 2);</div>
+<div class="line"><span class="lineno">  110</span>            }</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 8) != 0)</div>
+<div class="line"><span class="lineno">  113</span>            {</div>
+<div class="line"><span class="lineno">  114</span>                vertices[3].Pos =</div>
+<div class="line"><span class="lineno">  115</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p3, p0,</div>
+<div class="line"><span class="lineno">  116</span>                        grid.DensityAt(p3), grid.DensityAt(p0));</div>
 <div class="line"><span class="lineno">  117</span> </div>
-<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 16) != 0)</div>
-<div class="line"><span class="lineno">  119</span>            {</div>
-<div class="line"><span class="lineno">  120</span>                vertices[4].Pos =</div>
-<div class="line"><span class="lineno">  121</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p4, p5,</div>
-<div class="line"><span class="lineno">  122</span>                        grid.DensityAt(p4), grid.DensityAt(p5));</div>
-<div class="line"><span class="lineno">  123</span> </div>
-<div class="line"><span class="lineno">  124</span>                vertices[4].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 4);</div>
-<div class="line"><span class="lineno">  125</span>            }</div>
+<div class="line"><span class="lineno">  118</span>                vertices[3].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 3);</div>
+<div class="line"><span class="lineno">  119</span>            }</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 16) != 0)</div>
+<div class="line"><span class="lineno">  122</span>            {</div>
+<div class="line"><span class="lineno">  123</span>                vertices[4].Pos =</div>
+<div class="line"><span class="lineno">  124</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p4, p5,</div>
+<div class="line"><span class="lineno">  125</span>                        grid.DensityAt(p4), grid.DensityAt(p5));</div>
 <div class="line"><span class="lineno">  126</span> </div>
-<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 32) != 0)</div>
-<div class="line"><span class="lineno">  128</span>            {</div>
-<div class="line"><span class="lineno">  129</span>                vertices[5].Pos =</div>
-<div class="line"><span class="lineno">  130</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p5, p6,</div>
-<div class="line"><span class="lineno">  131</span>                        grid.DensityAt(p5), grid.DensityAt(p6));</div>
-<div class="line"><span class="lineno">  132</span> </div>
-<div class="line"><span class="lineno">  133</span>                vertices[5].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 5);</div>
-<div class="line"><span class="lineno">  134</span>            }</div>
+<div class="line"><span class="lineno">  127</span>                vertices[4].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 4);</div>
+<div class="line"><span class="lineno">  128</span>            }</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 32) != 0)</div>
+<div class="line"><span class="lineno">  131</span>            {</div>
+<div class="line"><span class="lineno">  132</span>                vertices[5].Pos =</div>
+<div class="line"><span class="lineno">  133</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p5, p6,</div>
+<div class="line"><span class="lineno">  134</span>                        grid.DensityAt(p5), grid.DensityAt(p6));</div>
 <div class="line"><span class="lineno">  135</span> </div>
-<div class="line"><span class="lineno">  136</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 64) != 0)</div>
-<div class="line"><span class="lineno">  137</span>            {</div>
-<div class="line"><span class="lineno">  138</span>                vertices[6].Pos =</div>
-<div class="line"><span class="lineno">  139</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p6, p7,</div>
-<div class="line"><span class="lineno">  140</span>                        grid.DensityAt(p6), grid.DensityAt(p7));</div>
-<div class="line"><span class="lineno">  141</span> </div>
-<div class="line"><span class="lineno">  142</span>                vertices[6].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 6);</div>
-<div class="line"><span class="lineno">  143</span>            }</div>
+<div class="line"><span class="lineno">  136</span>                vertices[5].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 5);</div>
+<div class="line"><span class="lineno">  137</span>            }</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 64) != 0)</div>
+<div class="line"><span class="lineno">  140</span>            {</div>
+<div class="line"><span class="lineno">  141</span>                vertices[6].Pos =</div>
+<div class="line"><span class="lineno">  142</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p6, p7,</div>
+<div class="line"><span class="lineno">  143</span>                        grid.DensityAt(p6), grid.DensityAt(p7));</div>
 <div class="line"><span class="lineno">  144</span> </div>
-<div class="line"><span class="lineno">  145</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 128) != 0)</div>
-<div class="line"><span class="lineno">  146</span>            {</div>
-<div class="line"><span class="lineno">  147</span>                vertices[7].Pos =</div>
-<div class="line"><span class="lineno">  148</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p7, p4,</div>
-<div class="line"><span class="lineno">  149</span>                        grid.DensityAt(p7), grid.DensityAt(p4));</div>
-<div class="line"><span class="lineno">  150</span> </div>
-<div class="line"><span class="lineno">  151</span>                vertices[7].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 7);</div>
-<div class="line"><span class="lineno">  152</span>            }</div>
+<div class="line"><span class="lineno">  145</span>                vertices[6].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 6);</div>
+<div class="line"><span class="lineno">  146</span>            }</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 128) != 0)</div>
+<div class="line"><span class="lineno">  149</span>            {</div>
+<div class="line"><span class="lineno">  150</span>                vertices[7].Pos =</div>
+<div class="line"><span class="lineno">  151</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p7, p4,</div>
+<div class="line"><span class="lineno">  152</span>                        grid.DensityAt(p7), grid.DensityAt(p4));</div>
 <div class="line"><span class="lineno">  153</span> </div>
-<div class="line"><span class="lineno">  154</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 256) != 0)</div>
-<div class="line"><span class="lineno">  155</span>            {</div>
-<div class="line"><span class="lineno">  156</span>                vertices[8].Pos =</div>
-<div class="line"><span class="lineno">  157</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p0, p4,</div>
-<div class="line"><span class="lineno">  158</span>                        grid.DensityAt(p0), grid.DensityAt(p4));</div>
-<div class="line"><span class="lineno">  159</span> </div>
-<div class="line"><span class="lineno">  160</span>                vertices[8].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 8);</div>
-<div class="line"><span class="lineno">  161</span>            }</div>
+<div class="line"><span class="lineno">  154</span>                vertices[7].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 7);</div>
+<div class="line"><span class="lineno">  155</span>            }</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 256) != 0)</div>
+<div class="line"><span class="lineno">  158</span>            {</div>
+<div class="line"><span class="lineno">  159</span>                vertices[8].Pos =</div>
+<div class="line"><span class="lineno">  160</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p0, p4,</div>
+<div class="line"><span class="lineno">  161</span>                        grid.DensityAt(p0), grid.DensityAt(p4));</div>
 <div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 512) != 0)</div>
-<div class="line"><span class="lineno">  164</span>            {</div>
-<div class="line"><span class="lineno">  165</span>                vertices[9].Pos =</div>
-<div class="line"><span class="lineno">  166</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p1, p5,</div>
-<div class="line"><span class="lineno">  167</span>                        grid.DensityAt(p1), grid.DensityAt(p5));</div>
-<div class="line"><span class="lineno">  168</span> </div>
-<div class="line"><span class="lineno">  169</span>                vertices[9].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 9);</div>
-<div class="line"><span class="lineno">  170</span>            }</div>
+<div class="line"><span class="lineno">  163</span>                vertices[8].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 8);</div>
+<div class="line"><span class="lineno">  164</span>            }</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 512) != 0)</div>
+<div class="line"><span class="lineno">  167</span>            {</div>
+<div class="line"><span class="lineno">  168</span>                vertices[9].Pos =</div>
+<div class="line"><span class="lineno">  169</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p1, p5,</div>
+<div class="line"><span class="lineno">  170</span>                        grid.DensityAt(p1), grid.DensityAt(p5));</div>
 <div class="line"><span class="lineno">  171</span> </div>
-<div class="line"><span class="lineno">  172</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 1024) != 0)</div>
-<div class="line"><span class="lineno">  173</span>            {</div>
-<div class="line"><span class="lineno">  174</span>                vertices[10].Pos =</div>
-<div class="line"><span class="lineno">  175</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p2, p6,</div>
-<div class="line"><span class="lineno">  176</span>                        grid.DensityAt(p2), grid.DensityAt(p6));</div>
-<div class="line"><span class="lineno">  177</span> </div>
-<div class="line"><span class="lineno">  178</span>                vertices[10].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 10);</div>
-<div class="line"><span class="lineno">  179</span>            }</div>
+<div class="line"><span class="lineno">  172</span>                vertices[9].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 9);</div>
+<div class="line"><span class="lineno">  173</span>            }</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 1024) != 0)</div>
+<div class="line"><span class="lineno">  176</span>            {</div>
+<div class="line"><span class="lineno">  177</span>                vertices[10].Pos =</div>
+<div class="line"><span class="lineno">  178</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p2, p6,</div>
+<div class="line"><span class="lineno">  179</span>                        grid.DensityAt(p2), grid.DensityAt(p6));</div>
 <div class="line"><span class="lineno">  180</span> </div>
-<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 2048) != 0)</div>
-<div class="line"><span class="lineno">  182</span>            {</div>
-<div class="line"><span class="lineno">  183</span>                vertices[11].Pos =</div>
-<div class="line"><span class="lineno">  184</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p3, p7,</div>
-<div class="line"><span class="lineno">  185</span>                        grid.DensityAt(p3), grid.DensityAt(p7));</div>
-<div class="line"><span class="lineno">  186</span> </div>
-<div class="line"><span class="lineno">  187</span>                vertices[11].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 11);</div>
-<div class="line"><span class="lineno">  188</span>            }</div>
+<div class="line"><span class="lineno">  181</span>                vertices[10].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 10);</div>
+<div class="line"><span class="lineno">  182</span>            }</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>            <span class="keywordflow">if</span> ((edgeFlags &amp; 2048) != 0)</div>
+<div class="line"><span class="lineno">  185</span>            {</div>
+<div class="line"><span class="lineno">  186</span>                vertices[11].Pos =</div>
+<div class="line"><span class="lineno">  187</span>                    <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">VertexInterp</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">IsoLevel</a>, p3, p7,</div>
+<div class="line"><span class="lineno">  188</span>                        grid.DensityAt(p3), grid.DensityAt(p7));</div>
 <div class="line"><span class="lineno">  189</span> </div>
-<div class="line"><span class="lineno">  190</span> </div>
-<div class="line"><span class="lineno">  191</span>            <span class="comment">//now we need to convert the vertices to triangles and take just the filled ones</span></div>
+<div class="line"><span class="lineno">  190</span>                vertices[11].Key = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">VertexKey</a>(pos, 11);</div>
+<div class="line"><span class="lineno">  191</span>            }</div>
 <div class="line"><span class="lineno">  192</span> </div>
-<div class="line"><span class="lineno">  193</span>            <span class="comment">//so we have the used edges but we dont know how the triangles are supposed to be generated to occupy the given edge configuration. </span></div>
-<div class="line"><span class="lineno">  194</span>            <span class="comment">// thats why we have another huge precomputed table that contains the triangle configuration for every possible edge configuration. so we just need to loop through that table until we find a -1 which marks the end of the triangle list for that edge configuration.</span></div>
-<div class="line"><span class="lineno">  195</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0;</div>
-<div class="line"><span class="lineno">  196</span>                 <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ad41e0f859b4f3f0f60a3eb56e987a5d0">Tri</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a9ee692108ad54e61a476529e03106d20">TriTable</a>, cubeIndex, i) != -1;</div>
-<div class="line"><span class="lineno">  197</span>                 i += 3) <span class="comment">// go in steps of 3 (a triangle consists of 3 points) until we find a -1 which marks the end of that triangle list</span></div>
-<div class="line"><span class="lineno">  198</span>            {</div>
-<div class="line"><span class="lineno">  199</span>                <span class="keywordtype">int</span> a = <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ad41e0f859b4f3f0f60a3eb56e987a5d0">Tri</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a9ee692108ad54e61a476529e03106d20">TriTable</a>, cubeIndex, i);</div>
-<div class="line"><span class="lineno">  200</span>                <span class="keywordtype">int</span> b = <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ad41e0f859b4f3f0f60a3eb56e987a5d0">Tri</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a9ee692108ad54e61a476529e03106d20">TriTable</a>, cubeIndex, i+1);</div>
-<div class="line"><span class="lineno">  201</span>                <span class="keywordtype">int</span> c = <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ad41e0f859b4f3f0f60a3eb56e987a5d0">Tri</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a9ee692108ad54e61a476529e03106d20">TriTable</a>, cubeIndex, i+2);</div>
-<div class="line"><span class="lineno">  202</span> </div>
-<div class="line"><span class="lineno">  203</span>                <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ae36a67e88fb304887650874b85d12d06">AddTriangle</a>(</div>
-<div class="line"><span class="lineno">  204</span>                    vertices[a].Pos, vertices[a].Key,</div>
-<div class="line"><span class="lineno">  205</span>                    vertices[b].Pos, vertices[b].Key,</div>
-<div class="line"><span class="lineno">  206</span>                    vertices[c].Pos, vertices[c].Key</div>
-<div class="line"><span class="lineno">  207</span>                );</div>
-<div class="line"><span class="lineno">  208</span>            }</div>
-<div class="line"><span class="lineno">  209</span>        }</div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a0d74506b324ce125cb41e283f494cf0f"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.VertexInterp</a></div><div class="ttdeci">static float3 VertexInterp(float isoLevel, int3 p1, int3 p2, float valP1, float valP2)</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00241">BurstMeshGeneratorJob.cs:241</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a3df3d5aa96c255b06033b78b3367c7c2"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a3df3d5aa96c255b06033b78b3367c7c2">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GetCubeIndexAt</a></div><div class="ttdeci">static int GetCubeIndexAt(int3 pos, DensityFieldData grid, float isoLevel)</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00211">BurstMeshGeneratorJob.cs:211</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a4301c1b5c73885a71ecec8d7be1f5b85"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.IsoLevel</a></div><div class="ttdeci">float IsoLevel</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00022">BurstMeshGeneratorJob.cs:22</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a9ee692108ad54e61a476529e03106d20"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a9ee692108ad54e61a476529e03106d20">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.TriTable</a></div><div class="ttdeci">NativeArray&lt; int &gt; TriTable</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00025">BurstMeshGeneratorJob.cs:25</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_ac93923a1be7e5e24021c9dbd52394424"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ac93923a1be7e5e24021c9dbd52394424">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.EdgeTable</a></div><div class="ttdeci">NativeArray&lt; int &gt; EdgeTable</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00024">BurstMeshGeneratorJob.cs:24</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_ad41e0f859b4f3f0f60a3eb56e987a5d0"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ad41e0f859b4f3f0f60a3eb56e987a5d0">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Tri</a></div><div class="ttdeci">static int Tri(NativeArray&lt; int &gt; triTable, int cubeIndex, int i)</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00231">BurstMeshGeneratorJob.cs:231</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_ae36a67e88fb304887650874b85d12d06"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ae36a67e88fb304887650874b85d12d06">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.AddTriangle</a></div><div class="ttdeci">void AddTriangle(float3 a, VertexKey ka, float3 b, VertexKey kb, float3 c, VertexKey kc)</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00260">BurstMeshGeneratorJob.cs:260</a></div></div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>            <span class="comment">//now we need to convert the vertices to triangles and take just the filled ones</span></div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>            <span class="comment">//so we have the used edges but we dont know how the triangles are supposed to be generated to occupy the given edge configuration. </span></div>
+<div class="line"><span class="lineno">  197</span>            <span class="comment">// thats why we have another huge precomputed table that contains the triangle configuration for every possible edge configuration. so we just need to loop through that table until we find a -1 which marks the end of the triangle list for that edge configuration.</span></div>
+<div class="line"><span class="lineno">  198</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><span class="lineno">  199</span>                 <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ad41e0f859b4f3f0f60a3eb56e987a5d0">Tri</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a9ee692108ad54e61a476529e03106d20">TriTable</a>, cubeIndex, i) != -1;</div>
+<div class="line"><span class="lineno">  200</span>                 i += 3) <span class="comment">// go in steps of 3 (a triangle consists of 3 points) until we find a -1 which marks the end of that triangle list</span></div>
+<div class="line"><span class="lineno">  201</span>            {</div>
+<div class="line"><span class="lineno">  202</span>                <span class="keywordtype">int</span> a = <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ad41e0f859b4f3f0f60a3eb56e987a5d0">Tri</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a9ee692108ad54e61a476529e03106d20">TriTable</a>, cubeIndex, i);</div>
+<div class="line"><span class="lineno">  203</span>                <span class="keywordtype">int</span> b = <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ad41e0f859b4f3f0f60a3eb56e987a5d0">Tri</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a9ee692108ad54e61a476529e03106d20">TriTable</a>, cubeIndex, i+1);</div>
+<div class="line"><span class="lineno">  204</span>                <span class="keywordtype">int</span> c = <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ad41e0f859b4f3f0f60a3eb56e987a5d0">Tri</a>(<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a9ee692108ad54e61a476529e03106d20">TriTable</a>, cubeIndex, i+2);</div>
+<div class="line"><span class="lineno">  205</span> </div>
+<div class="line"><span class="lineno">  206</span>                <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ae36a67e88fb304887650874b85d12d06">AddTriangle</a>(</div>
+<div class="line"><span class="lineno">  207</span>                    vertices[a].Pos, vertices[a].Key,</div>
+<div class="line"><span class="lineno">  208</span>                    vertices[b].Pos, vertices[b].Key,</div>
+<div class="line"><span class="lineno">  209</span>                    vertices[c].Pos, vertices[c].Key</div>
+<div class="line"><span class="lineno">  210</span>                );</div>
+<div class="line"><span class="lineno">  211</span>            }</div>
+<div class="line"><span class="lineno">  212</span>        }</div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a0d74506b324ce125cb41e283f494cf0f"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a0d74506b324ce125cb41e283f494cf0f">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.VertexInterp</a></div><div class="ttdeci">static float3 VertexInterp(float isoLevel, int3 p1, int3 p2, float valP1, float valP2)</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00244">BurstMeshGeneratorJob.cs:244</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a3df3d5aa96c255b06033b78b3367c7c2"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a3df3d5aa96c255b06033b78b3367c7c2">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GetCubeIndexAt</a></div><div class="ttdeci">static int GetCubeIndexAt(int3 pos, DensityFieldData grid, float isoLevel)</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00214">BurstMeshGeneratorJob.cs:214</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a4301c1b5c73885a71ecec8d7be1f5b85"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4301c1b5c73885a71ecec8d7be1f5b85">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.IsoLevel</a></div><div class="ttdeci">float IsoLevel</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00023">BurstMeshGeneratorJob.cs:23</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a9ee692108ad54e61a476529e03106d20"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a9ee692108ad54e61a476529e03106d20">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.TriTable</a></div><div class="ttdeci">NativeArray&lt; int &gt; TriTable</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00028">BurstMeshGeneratorJob.cs:28</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_ac93923a1be7e5e24021c9dbd52394424"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ac93923a1be7e5e24021c9dbd52394424">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.EdgeTable</a></div><div class="ttdeci">NativeArray&lt; int &gt; EdgeTable</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00026">BurstMeshGeneratorJob.cs:26</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_ad41e0f859b4f3f0f60a3eb56e987a5d0"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ad41e0f859b4f3f0f60a3eb56e987a5d0">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Tri</a></div><div class="ttdeci">static int Tri(NativeArray&lt; int &gt; triTable, int cubeIndex, int i)</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00234">BurstMeshGeneratorJob.cs:234</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_ae36a67e88fb304887650874b85d12d06"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ae36a67e88fb304887650874b85d12d06">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.AddTriangle</a></div><div class="ttdeci">void AddTriangle(float3 a, VertexKey ka, float3 b, VertexKey kb, float3 c, VertexKey kc)</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00263">BurstMeshGeneratorJob.cs:263</a></div></div>
 <div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey_html"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.VertexKey</a></div><div class="ttdef"><b>Definition</b> <a href="MeshDataBuilder_8cs_source.html#l00144">MeshDataBuilder.cs:145</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00260">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.AddTriangle()</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00024">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.EdgeTable</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00211">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GetCubeIndexAt()</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00022">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.IsoLevel</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00325">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Vtx.Key</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00324">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Vtx.Pos</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00231">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Tri()</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00025">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.TriTable</a>, and <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00241">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.VertexInterp()</a>.</p>
+<p class="reference">References <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00263">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.AddTriangle()</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00026">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.EdgeTable</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00214">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GetCubeIndexAt()</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00023">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.IsoLevel</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00328">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Vtx.Key</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00327">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Vtx.Pos</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00234">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Tri()</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00028">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.TriTable</a>, and <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00244">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.VertexInterp()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00032">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Execute()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00035">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Execute()</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -635,26 +635,26 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00211">211</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  212</span>        {</div>
-<div class="line"><span class="lineno">  213</span>            <span class="keywordtype">int</span> cubeIndex = 0;</div>
-<div class="line"><span class="lineno">  214</span> </div>
-<div class="line"><span class="lineno">  215</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x, pos.y, pos.z) &gt; isoLevel)</div>
-<div class="line"><span class="lineno">  216</span>                cubeIndex |=</div>
-<div class="line"><span class="lineno">  217</span>                    1; <span class="comment">// the |= operator sets every bit that is set in the right operand to 1 in the left operand also to 1.</span></div>
-<div class="line"><span class="lineno">  218</span>            <span class="comment">// so if the left number (cubeIndex) is 0b11001000 and the right one (the mask, lets say 4) is 0b00000100 the result of that operation would be 0b11001100</span></div>
-<div class="line"><span class="lineno">  219</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x + 1, pos.y, pos.z) &gt; isoLevel) cubeIndex |= 2;</div>
-<div class="line"><span class="lineno">  220</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x + 1, pos.y + 1, pos.z) &gt; isoLevel) cubeIndex |= 4;</div>
-<div class="line"><span class="lineno">  221</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x, pos.y + 1, pos.z) &gt; isoLevel) cubeIndex |= 8;</div>
-<div class="line"><span class="lineno">  222</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x, pos.y, pos.z + 1) &gt; isoLevel) cubeIndex |= 16;</div>
-<div class="line"><span class="lineno">  223</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x + 1, pos.y, pos.z + 1) &gt; isoLevel) cubeIndex |= 32;</div>
-<div class="line"><span class="lineno">  224</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x + 1, pos.y + 1, pos.z + 1) &gt; isoLevel) cubeIndex |= 64;</div>
-<div class="line"><span class="lineno">  225</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x, pos.y + 1, pos.z + 1) &gt; isoLevel) cubeIndex |= 128;</div>
-<div class="line"><span class="lineno">  226</span> </div>
-<div class="line"><span class="lineno">  227</span>            <span class="keywordflow">return</span> cubeIndex;</div>
-<div class="line"><span class="lineno">  228</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00214">214</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  215</span>        {</div>
+<div class="line"><span class="lineno">  216</span>            <span class="keywordtype">int</span> cubeIndex = 0;</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x, pos.y, pos.z) &gt; isoLevel)</div>
+<div class="line"><span class="lineno">  219</span>                cubeIndex |=</div>
+<div class="line"><span class="lineno">  220</span>                    1; <span class="comment">// the |= operator sets every bit that is set in the right operand to 1 in the left operand also to 1.</span></div>
+<div class="line"><span class="lineno">  221</span>            <span class="comment">// so if the left number (cubeIndex) is 0b11001000 and the right one (the mask, lets say 4) is 0b00000100 the result of that operation would be 0b11001100</span></div>
+<div class="line"><span class="lineno">  222</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x + 1, pos.y, pos.z) &gt; isoLevel) cubeIndex |= 2;</div>
+<div class="line"><span class="lineno">  223</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x + 1, pos.y + 1, pos.z) &gt; isoLevel) cubeIndex |= 4;</div>
+<div class="line"><span class="lineno">  224</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x, pos.y + 1, pos.z) &gt; isoLevel) cubeIndex |= 8;</div>
+<div class="line"><span class="lineno">  225</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x, pos.y, pos.z + 1) &gt; isoLevel) cubeIndex |= 16;</div>
+<div class="line"><span class="lineno">  226</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x + 1, pos.y, pos.z + 1) &gt; isoLevel) cubeIndex |= 32;</div>
+<div class="line"><span class="lineno">  227</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x + 1, pos.y + 1, pos.z + 1) &gt; isoLevel) cubeIndex |= 64;</div>
+<div class="line"><span class="lineno">  228</span>            <span class="keywordflow">if</span> (grid.DensityAt(pos.x, pos.y + 1, pos.z + 1) &gt; isoLevel) cubeIndex |= 128;</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>            <span class="keywordflow">return</span> cubeIndex;</div>
+<div class="line"><span class="lineno">  231</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00049">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00052">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>.</p>
 <div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
@@ -708,26 +708,26 @@ Static Private Member Functions</h2></td></tr>
 
 <p>checks if the given vertex already exists in the vertices list and if so returns its index, otherwise it adds it to the list and returns the new index </p>
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00289">289</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  290</span>        {</div>
-<div class="line"><span class="lineno">  291</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a3cc0398160161f77121ad54a02828658">VertexMap</a>.TryGetValue(key, out <span class="keywordtype">int</span> index))</div>
-<div class="line"><span class="lineno">  292</span>                <span class="keywordflow">return</span> index;</div>
-<div class="line"><span class="lineno">  293</span> </div>
-<div class="line"><span class="lineno">  294</span>            index = <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4046839df00d95faff2a2bb78cfffb4f">Vertices</a>.Length;</div>
-<div class="line"><span class="lineno">  295</span> </div>
-<div class="line"><span class="lineno">  296</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4046839df00d95faff2a2bb78cfffb4f">Vertices</a>.Add(v);</div>
-<div class="line"><span class="lineno">  297</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>.Add(float3.zero);</div>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00292">292</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  293</span>        {</div>
+<div class="line"><span class="lineno">  294</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a3cc0398160161f77121ad54a02828658">VertexMap</a>.TryGetValue(key, out <span class="keywordtype">int</span> index))</div>
+<div class="line"><span class="lineno">  295</span>                <span class="keywordflow">return</span> index;</div>
+<div class="line"><span class="lineno">  296</span> </div>
+<div class="line"><span class="lineno">  297</span>            index = <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4046839df00d95faff2a2bb78cfffb4f">Vertices</a>.Length;</div>
 <div class="line"><span class="lineno">  298</span> </div>
-<div class="line"><span class="lineno">  299</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a3cc0398160161f77121ad54a02828658">VertexMap</a>.Add(key, index);</div>
-<div class="line"><span class="lineno">  300</span> </div>
-<div class="line"><span class="lineno">  301</span>            <span class="keywordflow">return</span> index;</div>
-<div class="line"><span class="lineno">  302</span>        }</div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a3cc0398160161f77121ad54a02828658"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a3cc0398160161f77121ad54a02828658">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.VertexMap</a></div><div class="ttdeci">NativeHashMap&lt; VertexKey, int &gt; VertexMap</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00020">BurstMeshGeneratorJob.cs:20</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a4046839df00d95faff2a2bb78cfffb4f"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4046839df00d95faff2a2bb78cfffb4f">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Vertices</a></div><div class="ttdeci">NativeList&lt; float3 &gt; Vertices</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00016">BurstMeshGeneratorJob.cs:16</a></div></div>
+<div class="line"><span class="lineno">  299</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4046839df00d95faff2a2bb78cfffb4f">Vertices</a>.Add(v);</div>
+<div class="line"><span class="lineno">  300</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>.Add(float3.zero);</div>
+<div class="line"><span class="lineno">  301</span> </div>
+<div class="line"><span class="lineno">  302</span>            <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a3cc0398160161f77121ad54a02828658">VertexMap</a>.Add(key, index);</div>
+<div class="line"><span class="lineno">  303</span> </div>
+<div class="line"><span class="lineno">  304</span>            <span class="keywordflow">return</span> index;</div>
+<div class="line"><span class="lineno">  305</span>        }</div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a3cc0398160161f77121ad54a02828658"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a3cc0398160161f77121ad54a02828658">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.VertexMap</a></div><div class="ttdeci">NativeHashMap&lt; VertexKey, int &gt; VertexMap</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00021">BurstMeshGeneratorJob.cs:21</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob_html_a4046839df00d95faff2a2bb78cfffb4f"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#a4046839df00d95faff2a2bb78cfffb4f">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Vertices</a></div><div class="ttdeci">NativeList&lt; float3 &gt; Vertices</div><div class="ttdef"><b>Definition</b> <a href="BurstMeshGeneratorJob_8cs_source.html#l00017">BurstMeshGeneratorJob.cs:17</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00017">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Normals</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00020">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.VertexMap</a>, and <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00016">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Vertices</a>.</p>
+<p class="reference">References <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00018">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Normals</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00021">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.VertexMap</a>, and <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00017">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Vertices</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00260">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.AddTriangle()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00263">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.AddTriangle()</a>.</p>
 <div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
@@ -772,24 +772,24 @@ Static Private Member Functions</h2></td></tr>
 
 <p>this normalizes the normals. that means every normal has a length of exactly 1. </p>
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00307">307</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  308</span>        {</div>
-<div class="line"><span class="lineno">  309</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>.Length; i++)</div>
-<div class="line"><span class="lineno">  310</span>            {</div>
-<div class="line"><span class="lineno">  311</span>                float3 n = <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>[i];</div>
-<div class="line"><span class="lineno">  312</span>                <span class="keywordflow">if</span> (!math.all(math.isfinite(n)) || math.lengthsq(n) &lt; 1e-12f)</div>
-<div class="line"><span class="lineno">  313</span>                {</div>
-<div class="line"><span class="lineno">  314</span>                    <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>[i] = <span class="keyword">new</span> float3(0f, 1f, 0f);</div>
-<div class="line"><span class="lineno">  315</span>                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  316</span>                }</div>
-<div class="line"><span class="lineno">  317</span> </div>
-<div class="line"><span class="lineno">  318</span>                <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>[i] = math.normalize(n);</div>
-<div class="line"><span class="lineno">  319</span>            }</div>
-<div class="line"><span class="lineno">  320</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00310">310</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  311</span>        {</div>
+<div class="line"><span class="lineno">  312</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>.Length; i++)</div>
+<div class="line"><span class="lineno">  313</span>            {</div>
+<div class="line"><span class="lineno">  314</span>                float3 n = <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>[i];</div>
+<div class="line"><span class="lineno">  315</span>                <span class="keywordflow">if</span> (!math.all(math.isfinite(n)) || math.lengthsq(n) &lt; 1e-12f)</div>
+<div class="line"><span class="lineno">  316</span>                {</div>
+<div class="line"><span class="lineno">  317</span>                    <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>[i] = <span class="keyword">new</span> float3(0f, 1f, 0f);</div>
+<div class="line"><span class="lineno">  318</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  319</span>                }</div>
+<div class="line"><span class="lineno">  320</span> </div>
+<div class="line"><span class="lineno">  321</span>                <a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27">Normals</a>[i] = math.normalize(n);</div>
+<div class="line"><span class="lineno">  322</span>            }</div>
+<div class="line"><span class="lineno">  323</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00017">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Normals</a>.</p>
+<p class="reference">References <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00018">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Normals</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00032">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Execute()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00035">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Execute()</a>.</p>
 <div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
@@ -845,12 +845,12 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00231">231</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  235</span>        {</div>
-<div class="line"><span class="lineno">  236</span>            <span class="keywordflow">return</span> triTable[cubeIndex * 16 + i];</div>
-<div class="line"><span class="lineno">  237</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00234">234</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  238</span>        {</div>
+<div class="line"><span class="lineno">  239</span>            <span class="keywordflow">return</span> triTable[cubeIndex * 16 + i];</div>
+<div class="line"><span class="lineno">  240</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00049">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00052">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>.</p>
 <div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
@@ -920,26 +920,26 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00241">241</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  242</span>        {</div>
-<div class="line"><span class="lineno">  243</span>            float3 p;</div>
-<div class="line"><span class="lineno">  244</span> </div>
-<div class="line"><span class="lineno">  245</span>            <span class="keywordflow">if</span> (math.abs(isoLevel - valP1) &lt; 0.00001)</div>
-<div class="line"><span class="lineno">  246</span>                <span class="keywordflow">return</span> (<span class="keyword">new</span> float3(p1.x, p1.y, p1.z));</div>
-<div class="line"><span class="lineno">  247</span>            <span class="keywordflow">if</span> (math.abs(isoLevel - valP2) &lt; 0.00001)</div>
-<div class="line"><span class="lineno">  248</span>                <span class="keywordflow">return</span> (<span class="keyword">new</span> float3(p2.x, p2.y, p2.z));</div>
-<div class="line"><span class="lineno">  249</span>            <span class="keywordflow">if</span> (math.abs(valP1 - valP2) &lt; 0.00001)</div>
-<div class="line"><span class="lineno">  250</span>                <span class="keywordflow">return</span> (<span class="keyword">new</span> float3(p1.x, p1.y, p1.z));</div>
-<div class="line"><span class="lineno">  251</span> </div>
-<div class="line"><span class="lineno">  252</span>            <span class="keywordtype">float</span> mu = (isoLevel - valP1) / (valP2 - valP1);</div>
-<div class="line"><span class="lineno">  253</span>            p.x = p1.x + mu * (p2.x - p1.x);</div>
-<div class="line"><span class="lineno">  254</span>            p.y = p1.y + mu * (p2.y - p1.y);</div>
-<div class="line"><span class="lineno">  255</span>            p.z = p1.z + mu * (p2.z - p1.z);</div>
-<div class="line"><span class="lineno">  256</span> </div>
-<div class="line"><span class="lineno">  257</span>            <span class="keywordflow">return</span> p;</div>
-<div class="line"><span class="lineno">  258</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00244">244</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  245</span>        {</div>
+<div class="line"><span class="lineno">  246</span>            float3 p;</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>            <span class="keywordflow">if</span> (math.abs(isoLevel - valP1) &lt; 0.00001)</div>
+<div class="line"><span class="lineno">  249</span>                <span class="keywordflow">return</span> (<span class="keyword">new</span> float3(p1.x, p1.y, p1.z));</div>
+<div class="line"><span class="lineno">  250</span>            <span class="keywordflow">if</span> (math.abs(isoLevel - valP2) &lt; 0.00001)</div>
+<div class="line"><span class="lineno">  251</span>                <span class="keywordflow">return</span> (<span class="keyword">new</span> float3(p2.x, p2.y, p2.z));</div>
+<div class="line"><span class="lineno">  252</span>            <span class="keywordflow">if</span> (math.abs(valP1 - valP2) &lt; 0.00001)</div>
+<div class="line"><span class="lineno">  253</span>                <span class="keywordflow">return</span> (<span class="keyword">new</span> float3(p1.x, p1.y, p1.z));</div>
+<div class="line"><span class="lineno">  254</span> </div>
+<div class="line"><span class="lineno">  255</span>            <span class="keywordtype">float</span> mu = (isoLevel - valP1) / (valP2 - valP1);</div>
+<div class="line"><span class="lineno">  256</span>            p.x = p1.x + mu * (p2.x - p1.x);</div>
+<div class="line"><span class="lineno">  257</span>            p.y = p1.y + mu * (p2.y - p1.y);</div>
+<div class="line"><span class="lineno">  258</span>            p.z = p1.z + mu * (p2.z - p1.z);</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>            <span class="keywordflow">return</span> p;</div>
+<div class="line"><span class="lineno">  261</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00049">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00052">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>.</p>
 <div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
@@ -970,7 +970,7 @@ Static Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00014">14</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00015">15</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
 
 </div>
 </div>
@@ -986,9 +986,9 @@ Static Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00024">24</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00026">26</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00049">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00052">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>.</p>
 
 </div>
 </div>
@@ -1004,9 +1004,9 @@ Static Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00018">18</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00019">19</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00260">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.AddTriangle()</a>, and <a class="el" href="BurstMeshGenerator_8cs_source.html#l00037">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGenerator.GenerateBurstMesh()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00263">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.AddTriangle()</a>.</p>
 
 </div>
 </div>
@@ -1022,9 +1022,9 @@ Static Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00022">22</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00023">23</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00049">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00052">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>.</p>
 
 </div>
 </div>
@@ -1040,9 +1040,9 @@ Static Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00017">17</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00018">18</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00260">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.AddTriangle()</a>, <a class="el" href="BurstMeshGenerator_8cs_source.html#l00037">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGenerator.GenerateBurstMesh()</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00289">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GetOrAddVertex()</a>, and <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00307">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.NormalizeNormals()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00263">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.AddTriangle()</a>, <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00292">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GetOrAddVertex()</a>, and <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00310">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.NormalizeNormals()</a>.</p>
 
 </div>
 </div>
@@ -1058,9 +1058,9 @@ Static Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00025">25</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00028">28</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00049">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00052">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GenerateAt()</a>.</p>
 
 </div>
 </div>
@@ -1076,9 +1076,9 @@ Static Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00020">20</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00021">21</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="BurstMeshGenerator_8cs_source.html#l00037">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGenerator.GenerateBurstMesh()</a>, and <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00289">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GetOrAddVertex()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00292">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GetOrAddVertex()</a>.</p>
 
 </div>
 </div>
@@ -1094,9 +1094,9 @@ Static Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00016">16</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00017">17</a> of file <a class="el" href="BurstMeshGeneratorJob_8cs_source.html">BurstMeshGeneratorJob.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="BurstMeshGenerator_8cs_source.html#l00037">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGenerator.GenerateBurstMesh()</a>, and <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00289">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GetOrAddVertex()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BurstMeshGeneratorJob_8cs_source.html#l00292">_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.GetOrAddVertex()</a>.</p>
 
 </div>
 </div>
