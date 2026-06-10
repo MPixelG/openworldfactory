@@ -42,7 +42,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         private int _activeGenerationTasks; // number of current chunk density generation tasks 
 
         private const int ChunksPerFrame = 20; // maximum amount of chunks that can get generated per frame
-        private const int MaxConcurrentGenerationTasks = 8; // max concurrent (simultaneous) chunk generations
+        private const int MaxConcurrentGenerationTasks = 2; // max concurrent (simultaneous) chunk generations
 
         public readonly int ChunkSize; // the size of a singular chunk
 
