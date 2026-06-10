@@ -13,9 +13,14 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration
         [ReadOnly]
         private static readonly MarchingCubesTables Tables = new();
 
-        public static MeshData GenerateBurstMesh(DensityFieldData densityField)
+        /// <summary>
+        /// generates the mesh data for given density field.
+        /// </summary>
+        /// <param name="densityField">the density field used for generating the mesh</param>
+        /// <returns>the mesh data of that region</returns>
+        public static MeshData GenerateMesh(DensityFieldData densityField)
         {
-            BurstMeshGeneratorJob job = new BurstMeshGeneratorJob()
+            MeshGeneration.Core.BurstMeshGeneratorJob job = new MeshGeneration.Core.BurstMeshGeneratorJob()
             {
                 IsoLevel = 0.5f,
                 Indices = new NativeList<int>(Allocator.TempJob),

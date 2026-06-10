@@ -1,10 +1,41 @@
+using System;
+using Unity.Collections;
+
 namespace _Project.World.Planet.Scripts.MarchingCubes.Core
 {
-    
-    // this class contains the precomputed values for the marching cubes algorithm
-    public static class McTables
+    // this class contains the precomputed values for the marching cubes algorithm and automatically converts them to native arrays and disposes them.
+    public class MarchingCubesTables : IDisposable
     {
-        public static readonly int[,] TriTable =
+        [ReadOnly]
+        public NativeArray<int> EdgeTable;
+        [ReadOnly]
+        public NativeArray<int> TriTable;
+        
+        public void Dispose()
+        {
+            EdgeTable.Dispose();
+            TriTable.Dispose();
+        }
+
+        public MarchingCubesTables()
+        {
+            EdgeTable = new NativeArray<int>(EdgeTableVals, Allocator.Persistent);
+
+            int rows = TriTableVals.GetLength(0);
+            int cols = TriTableVals.GetLength(1);
+
+            TriTable = new NativeArray<int>(rows * cols, Allocator.Persistent);
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    TriTable[i * cols + j] = TriTableVals[i, j];
+                }
+            }
+        }
+        
+        public static readonly int[,] TriTableVals =
         {
             { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
             { 0, 8, 3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
@@ -264,7 +295,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.Core
             { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 }
         };
         
-        public static readonly int[] EdgeTable ={
+        public static readonly int[] EdgeTableVals ={
             0x0  , 0x109, 0x203, 0x30a, 0x406, 0x50f, 0x605, 0x70c,
             0x80c, 0x905, 0xa0f, 0xb06, 0xc0a, 0xd03, 0xe09, 0xf00,
             0x190, 0x99 , 0x393, 0x29a, 0x596, 0x49f, 0x795, 0x69c,

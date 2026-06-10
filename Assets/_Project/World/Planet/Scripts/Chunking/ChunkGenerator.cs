@@ -59,7 +59,7 @@ namespace _Project.World.Planet.Scripts.Chunking
             // we use the static function GenerateMeshDataAt to generate the mesh data for the chunk based on its
             // density field and the chunk size
             //MeshData meshData = MarchingCubesMeshDataGenerator.GenerateMeshDataAt(densityField);
-            MeshData meshData = BurstMeshGenerator.GenerateBurstMesh(densityField);
+            MeshData meshData = BurstMeshGenerator.GenerateMesh(densityField);
             
 
             data.MeshData = meshData; // now we need to update the mesh data
