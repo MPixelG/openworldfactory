@@ -1,0 +1,5 @@
+<map id="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core.BurstMeshGeneratorJob.AddTriangle" name="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core.BurstMeshGeneratorJob.AddTriangle">
+<area shape="rect" id="Node000001" title="this adds a triangle to the mesh and calculates its indices and normals. this way you can just call t..." alt="" coords="5,5,276,60"/>
+<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob.html#af4bce4bf0e007b6462b5a619c5a3d6b5" title="checks if the given vertex already exists in the vertices list and if so returns its index,..." alt="" coords="324,5,609,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="276,30,310,30,310,35,276,35"/>
+</map>

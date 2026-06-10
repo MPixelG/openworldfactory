@@ -1,4 +1,5 @@
 <map id="World/Planet/Scripts/MarchingCubes/MeshGeneration" name="World/Planet/Scripts/MarchingCubes/MeshGeneration">
-<area shape="rect" id="node1" href="dir_3753925cdad5cc1678b18399e5ece744.html" title="MeshGeneration" alt="" coords="26,52,155,77"/>
-<area shape="rect" id="clust1" href="dir_a8243e582227659d83a9642e92d633a2.html" title="MarchingCubes" alt="" coords="16,16,165,88"/>
+<area shape="rect" id="node2" href="dir_7bae9cd2e02807876799233fc2fb22ee.html" title="Core" alt="" coords="38,63,90,88"/>
+<area shape="rect" id="clust2" href="dir_3753925cdad5cc1678b18399e5ece744.html" alt="" coords="27,52,253,99"/>
+<area shape="rect" id="clust1" href="dir_a8243e582227659d83a9642e92d633a2.html" title="MarchingCubes" alt="" coords="16,16,264,109"/>
 </map>

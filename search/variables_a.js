@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['normals_0',['normals',['../struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1BurstMeshGeneration_1_1BurstMeshGeneratorJob.html#ab373d2ccfa89cf031f5768aebedd1b27',1,'_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob.Normals'],['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a97844c9be77507dc67f9e2fbbbc06b88',1,'_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Normals']]]
+  ['oceanthreshold_0',['OceanThreshold',['../struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Burst_1_1BurstSphericalNoiseSamplerJob.html#a0fbebd06ece021e4bd474f4d068ef9e2',1,'_Project::World::Planet::Scripts::WorldGen::Burst::BurstSphericalNoiseSamplerJob']]],
+  ['origin_1',['Origin',['../struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Burst_1_1BurstSphericalNoiseSamplerJob.html#a9f5997947a29ee64e0666fb215ba5375',1,'_Project::World::Planet::Scripts::WorldGen::Burst::BurstSphericalNoiseSamplerJob']]]
 ];

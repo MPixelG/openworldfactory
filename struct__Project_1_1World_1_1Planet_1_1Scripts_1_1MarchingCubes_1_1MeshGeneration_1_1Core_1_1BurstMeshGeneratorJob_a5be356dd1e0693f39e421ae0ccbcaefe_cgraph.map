@@ -1,0 +1,13 @@
+<map id="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core.BurstMeshGeneratorJob.GenerateAt" name="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core.BurstMeshGeneratorJob.GenerateAt">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,124,276,179"/>
+<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob.html#a32d41c6e51c6cdd47e4b1bfaed66b317" title="this adds a triangle to the mesh and calculates its indices and normals. this way you can just call t..." alt="" coords="332,5,603,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,121,323,69,345,62,346,67,325,74,200,126"/>
+<area shape="rect" id="Node000004" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob.html#a46a24e8fbccc71c17605dc7523beba06" title=" " alt="" coords="324,84,611,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="276,132,310,128,311,133,276,137"/>
+<area shape="rect" id="Node000005" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob.html#a25bf5de77da44f2994dcf3af173a9c0c" title=" " alt="" coords="332,163,603,217"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="276,165,319,170,318,175,276,170"/>
+<area shape="rect" id="Node000006" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob.html#aaf5c1dbea36614adc9fac9878268a3d1" title=" " alt="" coords="332,241,603,296"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="202,176,325,226,351,235,349,240,323,231,200,181"/>
+<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob.html#af4bce4bf0e007b6462b5a619c5a3d6b5" title="checks if the given vertex already exists in the vertices list and if so returns its index,..." alt="" coords="659,5,944,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="603,30,645,30,645,35,603,35"/>
+</map>

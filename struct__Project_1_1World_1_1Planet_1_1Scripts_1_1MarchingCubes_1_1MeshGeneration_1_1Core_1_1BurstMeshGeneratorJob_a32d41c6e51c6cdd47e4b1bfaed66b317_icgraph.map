@@ -1,0 +1,7 @@
+<map id="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core.BurstMeshGeneratorJob.AddTriangle" name="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core.BurstMeshGeneratorJob.AddTriangle">
+<area shape="rect" id="Node000001" title="this adds a triangle to the mesh and calculates its indices and normals. this way you can just call t..." alt="" coords="643,5,913,60"/>
+<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob.html#a5be356dd1e0693f39e421ae0ccbcaefe" title=" " alt="" coords="324,5,595,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="629,35,595,35,595,30,629,30"/>
+<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob.html#a2461e01748d83476a8631ae960e1bf02" title=" " alt="" coords="5,5,276,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="311,35,276,35,276,30,311,30"/>
+</map>

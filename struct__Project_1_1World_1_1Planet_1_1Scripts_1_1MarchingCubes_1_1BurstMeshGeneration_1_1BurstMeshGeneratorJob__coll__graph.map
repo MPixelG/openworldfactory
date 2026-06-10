@@ -1,7 +1,0 @@
-<map id="_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob" name="_Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration.BurstMeshGeneratorJob">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,276,177"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="21,20,68,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,54,121,121,117,124,61,58"/>
-<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityFieldData.html" title=" " alt="" coords="93,5,383,60"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,72,165,124,161,121,205,69"/>
-</map>

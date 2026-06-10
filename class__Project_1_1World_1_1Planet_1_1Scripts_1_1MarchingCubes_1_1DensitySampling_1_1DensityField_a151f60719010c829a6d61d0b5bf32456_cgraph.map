@@ -1,4 +1,0 @@
-<map id="_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt" name="_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.DensityAt">
-<area shape="rect" id="Node000001" title="returns the density value at a given position. caution! this does not interpolate between positions s..." alt="" coords="5,29,296,84"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="95,29,95,19,105,10,124,5,151,3,183,6,202,14,200,19,182,11,151,8,124,10,107,15,100,21,100,29"/>
-</map>

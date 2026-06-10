@@ -1,5 +1,0 @@
-<map id="_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.IndexOf" name="_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.DensityField.IndexOf">
-<area shape="rect" id="Node000001" title="calculates a unique 1d index for storing the 3d grid in a 1d array. we use a 1d array since it is mor..." alt="" coords="344,5,635,60"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1DensityField.html#a3c762b93316860524d06e9563816b087" title="returns the density value at a given position. caution! this does not interpolate between positions s..." alt="" coords="5,5,296,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="330,35,296,35,296,30,330,30"/>
-</map>
