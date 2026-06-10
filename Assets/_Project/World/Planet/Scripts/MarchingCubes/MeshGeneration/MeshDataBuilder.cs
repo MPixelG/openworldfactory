@@ -7,7 +7,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
 {
     public class MeshDataBuilder
     {
-        private readonly MeshData _meshData = new();
+        private readonly MeshData _meshData = new(new List<float3>(), new List<float3>(), new List<int>());
 
         private readonly Dictionary<VertexKey, int> _vertexMap = new(); // this is used for index deduplication.
                                                                      // since every triangle has 3 vertices and many triangles share vertices with each other, we want to avoid adding the same vertex multiple times to the vertices list.
@@ -160,6 +160,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
             => X == other.X && Y == other.Y && Z == other.Z && Edge == other.Edge;
 
         public override int GetHashCode()
-            => HashCode.Combine(X, Y, Z, Edge);
+        {
+            return (int)math.hash(new int4(X, Y, Z, Edge));
+        }
     }
 }

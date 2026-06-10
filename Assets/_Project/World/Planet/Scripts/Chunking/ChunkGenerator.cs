@@ -1,7 +1,10 @@
+using System.Diagnostics;
 using _Project.World.Planet.Scripts.Chunking.Core;
+using _Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using _Project.World.Planet.Scripts.WorldGen.Burst;
+using Debug = UnityEngine.Debug;
 
 namespace _Project.World.Planet.Scripts.Chunking
 {
@@ -14,6 +17,8 @@ namespace _Project.World.Planet.Scripts.Chunking
             _densitySamplerSettings; // the settings used for generating the density field
 
         private readonly int _chunkSize;
+        
+        private readonly BurstMeshGenerator _burstMeshGenerator;
 
         /// <summary>
         /// creates a chunk generator. the chunk generator is responsible for generating the chunk data (density values and mesh data).
@@ -26,6 +31,7 @@ namespace _Project.World.Planet.Scripts.Chunking
         {
             _densitySamplerSettings = densitySamplerSettings;
             _chunkSize = chunkSize;
+            _burstMeshGenerator = new BurstMeshGenerator();
         }
 
         /// <summary>
@@ -35,33 +41,46 @@ namespace _Project.World.Planet.Scripts.Chunking
         /// <returns>the chunk data of the chunk at the given position</returns>
         public ChunkData GenerateChunkAt(ChunkCoord position)
         {
-            ChunkData data =
-                new ChunkData // the initial unfilled chunk data with the coord and the state set to generating density
-                {
-                    Coord = position,
-                    State = ChunkState.GeneratingDensity,
-                };
+            Stopwatch totalSw = Stopwatch.StartNew();
 
-            DensityField densityField = DensityFieldBuilder.BuildBurstDensityField(
+            ChunkData data = new ChunkData
+            {
+                Coord = position,
+                State = ChunkState.GeneratingDensity,
+            };
+
+            // Density Generation messen
+            Stopwatch densitySw = Stopwatch.StartNew();
+
+            DensityFieldData densityField = DensityFieldBuilder.BuildBurstDensityFieldData(
                 _densitySamplerSettings,
                 _chunkSize,
                 position
-            ); // run a burst job to generate the density field for the chunk at the given position.
-            // the world position is calculated by multiplying the chunk position with the chunk size.
-            // this way we can use the same noise settings for all chunks and just
-            // sample them at different positions in world space.
+            );
 
-            data.DensityField = densityField; // update its density field with the newly calculated one
-            data.State = ChunkState.Meshing; // and set its state to meshing
+            densitySw.Stop();
 
-            // we use the static function GenerateMeshDataAt to generate the mesh data for the chunk based on its
-            // density field and the chunk size
-            MeshData meshData = MarchingCubesMeshDataGenerator.GenerateMeshDataAt(densityField);
+            data.DensityField = densityField;
+            data.State = ChunkState.Meshing;
 
-            data.MeshData = meshData; // now we need to update the mesh data
+            // Mesh Generation messen
+            Stopwatch meshSw = Stopwatch.StartNew();
 
-            data.State = ChunkState.WaitingForMeshUpload; // and finally set the state to WaitingForMeshUpload since we
-            // now wait for one of the next frames to upload the mesh to unity
+            MeshData meshData = _burstMeshGenerator.GenerateBurstMesh(densityField);
+
+            meshSw.Stop();
+
+            data.MeshData = meshData;
+            data.State = ChunkState.WaitingForMeshUpload;
+
+            totalSw.Stop();
+
+            Debug.Log(
+                $"Chunk {position}: " +
+                $"Density={densitySw.Elapsed.TotalMilliseconds:F2}ms, " +
+                $"Mesh={meshSw.Elapsed.TotalMilliseconds:F2}ms, " +
+                $"Total={totalSw.Elapsed.TotalMilliseconds:F2}ms"
+            );
 
             return data;
         }

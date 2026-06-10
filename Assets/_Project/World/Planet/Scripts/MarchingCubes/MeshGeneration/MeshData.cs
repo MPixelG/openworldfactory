@@ -8,8 +8,15 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
     /// </summary>
     public class MeshData
     {
-        public readonly List<float3> Vertices = new();
-        public readonly List<float3> Normals = new();
-        public readonly List<int> Indices = new();
+        public readonly List<float3> Vertices;
+        public readonly List<float3> Normals;
+        public readonly List<int> Indices;
+
+        public MeshData(List<float3> vertices, List<float3> normals, List<int> indices)
+        {
+            Vertices = vertices;
+            Normals = normals;
+            Indices = indices;
+        }
     }
 }

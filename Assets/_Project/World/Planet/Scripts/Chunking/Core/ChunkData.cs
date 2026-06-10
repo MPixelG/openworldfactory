@@ -10,7 +10,7 @@ namespace _Project.World.Planet.Scripts.Chunking.Core
     {
         public ChunkCoord Coord;
         public MeshData MeshData;
-        public DensityField DensityField;
+        public DensityFieldData DensityField;
         public ChunkState State;
     }
 }
