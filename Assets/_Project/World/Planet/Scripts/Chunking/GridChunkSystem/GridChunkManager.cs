@@ -223,6 +223,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
             }
             catch (Exception e)
             {
+                // ReSharper disable once Unity.PerformanceCriticalCodeInvocation
                 Debug.LogException(e);
             }
             finally

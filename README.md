@@ -3,6 +3,6 @@
 ❮
   <a href="https://discord.gg/ZJkhDunRVc">Join our Discord</a>
 ||
-  <a href="">Read the docs</a>
+  <a href="https://mpixelg.github.io/openworldfactory/annotated.html">Read the docs</a>
 ❯
 </p>

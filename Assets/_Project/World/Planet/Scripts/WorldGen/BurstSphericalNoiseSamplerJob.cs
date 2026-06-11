@@ -159,7 +159,7 @@ namespace _Project.World.Planet.Scripts.WorldGen.Burst
 
             terrain -= TerrainHeight * 0.15f * continent;
 
-            Densities[index] = (math.clamp(FractalNoise(worldPos/25f, 3, 0.3f), 0, 1)*Radius / (sphereDensity + terrain));
+            Densities[index] = (sphereDensity + terrain) + math.clamp(FractalNoise(worldPos/25f, 3, 0.3f), 0, 1)*Radius;
         }
         
 
