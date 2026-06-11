@@ -103,44 +103,54 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            OctreeNode currentNode = tree.Nodes[0]; <span class="comment">// set the current node to the root node</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            float3 currentLocalPos = localPos;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            float3 currentLocalPos = localPos; <span class="comment">// the current local pos will get scaled every layer we go down to always be between 0 and 1 within that node </span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="keywordflow">while</span> (currentNode.ChildMask != 0)</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                <span class="keywordtype">int</span> childIndexOffset =</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                    (currentLocalPos.x &gt;= 0.5f ? 1 : 0) |</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                    (currentLocalPos.y &gt;= 0.5f ? 2 : 0) |</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                    (currentLocalPos.z &gt;= 0.5f ? 4 : 0);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                <span class="keywordtype">int</span> childIndex = currentNode.FirstChildIndex + childIndexOffset;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                currentNode = tree.Nodes[childIndex];</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                currentLocalPos = math.frac(currentLocalPos * 2f);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <a class="code hl_enumeration" href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree.html#a55f5665a21b57526a8fa506f62ce3bdd">OctreeNodeState</a> currentNodeState = currentNode.State;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordflow">switch</span> (currentNodeState)</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree.html#a55f5665a21b57526a8fa506f62ce3bdd">OctreeNodeState</a>.Empty:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree.html#a55f5665a21b57526a8fa506f62ce3bdd">OctreeNodeState</a>.Full:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree.html#a55f5665a21b57526a8fa506f62ce3bdd">OctreeNodeState</a>.Mixed:</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                    float3 currentLocalPosUpscaled = currentLocalPos * currentNode.Resolution;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                    <span class="keywordflow">return</span> currentNode.DensityField.DensityAt(currentLocalPosUpscaled);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree.html#a55f5665a21b57526a8fa506f62ce3bdd">OctreeNodeState</a>.Unknown: <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                <span class="keywordflow">default</span>: <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentOutOfRangeException();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        }</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                <span class="comment">// the child index offset is the index of the child we want to go to.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                <span class="comment">// we calculate it based on the current local position.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                <span class="comment">// if the x value is above 0.5, we want to go to the right half of the node, so we add 1 to the child index offset.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                <span class="comment">// if the y value is above 0.5, we want to go to the top half of the node, so we add 2 to the child index offset.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                <span class="comment">// and if the z value is above 0.5, we want to go to the back half of the node, so we add 4 to the child index offset.</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                <span class="comment">// this way we can easily calculate the child index offset based on the current local position.</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                <span class="keywordtype">int</span> childIndexOffset = </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                    (currentLocalPos.x &gt;= 0.5f ? 1 : 0) |</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                    (currentLocalPos.y &gt;= 0.5f ? 2 : 0) |</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                    (currentLocalPos.z &gt;= 0.5f ? 4 : 0);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                <span class="keywordtype">int</span> childIndex = currentNode.FirstChildIndex + childIndexOffset; <span class="comment">// the final child index (the index in the complete node list) is calculated by just adding the offset to the first child index</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                currentNode = tree.Nodes[childIndex]; <span class="comment">// set the current node to the child node (we traverse into that node)</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                currentLocalPos = math.frac(currentLocalPos * 2f); <span class="comment">// now we just need to convert the local space of the parent into the local space of the child.</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                                                                   <span class="comment">// we do this by multiplying the current local pos by 2. </span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                                                                   <span class="comment">// if the resulting position is above 1 we subtract 1. </span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                                                                   <span class="comment">// thats basically what the math.frac() function does.</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <a class="code hl_enumeration" href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree.html#a55f5665a21b57526a8fa506f62ce3bdd">OctreeNodeState</a> currentNodeState = currentNode.State;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">switch</span> (currentNodeState)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree.html#a55f5665a21b57526a8fa506f62ce3bdd">OctreeNodeState</a>.Empty: <span class="comment">// if the complete node only consists of density values below the isolevel we can just return 0 since it will be below the isolevel anyway</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree.html#a55f5665a21b57526a8fa506f62ce3bdd">OctreeNodeState</a>.Full: <span class="comment">// the same goes for a full node (only containing values above the isolevel)</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree.html#a55f5665a21b57526a8fa506f62ce3bdd">OctreeNodeState</a>.Mixed:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                    float3 currentLocalPosUpscaled = currentLocalPos * currentNode.DensityField.Size; <span class="comment">// currently the local pos is between 0 and 1. the positions in the density field range from 0 to the size of the density field,</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                                                                                                      <span class="comment">// so we need to upscale the local pos to get the correct position in the density field.</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                    <span class="keywordflow">return</span> currentNode.DensityField.DensityAt(currentLocalPosUpscaled); <span class="comment">// this DensityAt function (with a float3 as an input) does the interpolation for us</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree.html#a55f5665a21b57526a8fa506f62ce3bdd">OctreeNodeState</a>.Unknown: <span class="comment">// this shouldnt really happen (same goes for every other case) so we throw an exception.</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                <span class="keywordflow">default</span>: <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentOutOfRangeException();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
 <div class="ttc" id="anamespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree_html"><div class="ttname"><a href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree.html">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Octree</a></div><div class="ttdef"><b>Definition</b> <a href="Octree_8cs_source.html#l00004">Octree.cs:5</a></div></div>
-<div class="ttc" id="anamespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree_html_a55f5665a21b57526a8fa506f62ce3bdd"><div class="ttname"><a href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree.html#a55f5665a21b57526a8fa506f62ce3bdd">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Octree.OctreeNodeState</a></div><div class="ttdeci">OctreeNodeState</div><div class="ttdef"><b>Definition</b> <a href="OctreeNode_8cs_source.html#l00017">OctreeNode.cs:18</a></div></div>
+<div class="ttc" id="anamespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree_html_a55f5665a21b57526a8fa506f62ce3bdd"><div class="ttname"><a href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Octree.html#a55f5665a21b57526a8fa506f62ce3bdd">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Octree.OctreeNodeState</a></div><div class="ttdeci">OctreeNodeState</div><div class="ttdef"><b>Definition</b> <a href="OctreeNode_8cs_source.html#l00033">OctreeNode.cs:34</a></div></div>
 <div class="ttc" id="anamespace__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_html"><div class="ttname"><a href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling.html">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling</a></div><div class="ttdef"><b>Definition</b> <a href="DensityBurstHelper_8cs_source.html#l00004">DensityBurstHelper.cs:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
