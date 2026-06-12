@@ -10,12 +10,13 @@ namespace _Project.World.Planet.Scripts.WorldGen
     {
         public float radius;
         
-        public BurstSphericalNoiseSamplerJob CreateSampler(int gridSize, int3 origin)
+        public BurstSphericalNoiseSamplerJob CreateSampler(int3 min, int3 max, byte resolution)
         {
             return new BurstSphericalNoiseSamplerJob
             {
-                Origin = origin,
-                Size = gridSize,
+                Min = min,
+                Max = max,
+                Resolution = resolution,
                 
                 Radius = radius,
                 ReferenceRadius = 200f,

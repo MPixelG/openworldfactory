@@ -1,15 +1,16 @@
 using System.Collections.Generic;
 using _Project.World.Planet.Scripts.MarchingCubes.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
-using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
 
-namespace _Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration
+namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
 {
+     
     public static class BurstMeshGenerator
     {
+        public const float IsoLevel = 0.5f;
         [ReadOnly]
         private static readonly MarchingCubesTables Tables = new();
 

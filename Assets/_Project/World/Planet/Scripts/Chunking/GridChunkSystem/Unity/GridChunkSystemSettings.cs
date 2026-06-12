@@ -11,7 +11,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity
     [CreateAssetMenu(menuName = "WorldGen/Chunking/Grid Chunk System")]
     public class GridChunkSystemSettings : ScriptableObject
     {
-        [Min(1)] [SerializeField] private int chunkSize = 16; // the size of a chunk
+        [Min(1)] [SerializeField] private byte chunkSize = 16; // the size of a chunk
         [Min(0)] [SerializeField] private int viewDistanceInChunks = 4; // this view distance is the radius of the sphere of chunks to keep around the viewer
         [SerializeField] private BurstSamplerSettings densitySamplerSettings; // this contains all the noise and world gen settings  
 

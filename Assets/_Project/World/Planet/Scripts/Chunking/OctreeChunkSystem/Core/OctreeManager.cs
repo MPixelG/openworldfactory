@@ -1,6 +1,7 @@
 using System;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.Densities;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
+using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Collections;
 using Unity.Mathematics;
@@ -11,10 +12,10 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
     {
 
         public static Octree Build(
-            float3 min,
-            float3 max,
+            int3 min,
+            int3 max,
             BurstSamplerSettings settings,
-            int maxDepth
+            byte maxDepth
         )
         {
             Octree tree = new()
@@ -50,19 +51,93 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         /// <returns>the index of the build node</returns>
         private static int BuildNode(
             ref Octree tree,
-            float3 min,
-            float3 max,
+            int3 min,
+            int3 max,
             BurstSamplerSettings settings,
-            int depth,
-            int maxDepth
+            byte depth,
+            byte maxDepth
         )
         {
+            DensityFieldData sample = DensityFieldBuilder.BuildBurstDensityFieldDataInTree(
+                settings,
+                min,
+                max,
+                5 // we only need to sample the density at the corners and some samples in between to determine the state of the node. 5 is a good number for that.
+            );
+
+            float minDensity=float.PositiveInfinity;
+            float maxDensity=float.NegativeInfinity;
+            foreach (float densitySample in sample.Densities)
+            {
+                if(densitySample < minDensity) minDensity = densitySample;
+                if(densitySample > maxDensity) maxDensity = densitySample;
+            }
+            
+            OctreeNodeState state = minDensity > BurstMeshGenerator.IsoLevel // if every value is above the isolevel the node is completely full
+                ? OctreeNodeState.Full
+                : maxDensity < BurstMeshGenerator.IsoLevel // if every value is below the isolevel the node is completely empty
+                    ? OctreeNodeState.Empty
+                    : OctreeNodeState.Mixed; // else the values are above and below the isolevel so its mixed
+            
+            //todo if there are values below and above the isolevel in one quarter of a chunk we dont have to sample in that child chunk to see if its full empty since we know its mixed
 
 
 
+            OctreeNode node = new OctreeNode
+            {
+                Coord = min,
+                Depth = depth,
+                State = state,
+                FirstChildIndex = tree.Nodes.Length, 
+                ChildMask = 0
+            };
+            
+            int nodeIndex = tree.AddNode(node);
+            
+            if (depth >= maxDepth || state == OctreeNodeState.Full || state == OctreeNodeState.Empty) // if we reached the max depth or the node is completely full or empty,
+                                                                                                      // we stop building and just add that node to the tree
+            {
+                return nodeIndex;
+            }
 
+            int3 size = max - min;
+            int3 half = size / 2;
 
-            return -1; //todo
+            for(int i = 0; i < 8; i++)
+            {
+                int3 offset = GetChildOffset(i);
+
+                int3 childMin =
+                    min + offset * half;
+
+                int3 childMax =
+                    childMin + half;
+
+                BuildNode(
+                    ref tree,
+                    childMin,
+                    childMax,
+                    settings,
+                    (byte)(depth + 1),
+                    maxDepth
+                );
+            }
+            
+            node.ChildMask = 0xFF; // for now this is enough todo do better
+            
+            tree.Nodes[nodeIndex] = node;
+            
+            return nodeIndex;
+        }
+
+        private static int3 GetChildOffset(int index)
+        {
+            return new int3
+            {
+                x = (index & 1) != 0 ? 1 : 0,
+                y = (index & 2) != 0 ? 1 : 0,
+                z = (index & 4) != 0 ? 1 : 0
+            };
         }
 
         /// <summary>

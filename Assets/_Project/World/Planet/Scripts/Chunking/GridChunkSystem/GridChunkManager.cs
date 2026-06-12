@@ -57,7 +57,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         /// <param name="viewDistanceInChunks">the view distance of the viewer, acting as a radius of the sphere of included chunks around the viewer</param>
         /// <param name="densitySamplerSettings">the settings used for generating the density values</param>
         public GridChunkManager(
-            int chunkSize,
+            byte chunkSize,
             int viewDistanceInChunks,
             BurstSamplerSettings densitySamplerSettings
         )

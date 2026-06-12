@@ -10,8 +10,9 @@ namespace _Project.World.Planet.Scripts.WorldGen.Burst
     {
         public NativeArray<float> Densities;
 
-        public int Size;
-        public int3 Origin;
+        public byte Resolution;
+        public int3 Min;
+        public int3 Max;
 
         public float Radius;
         
@@ -55,11 +56,21 @@ namespace _Project.World.Planet.Scripts.WorldGen.Burst
 
         public void Execute(int index)
         {
-            int x = index % Size;
-            int y = (index / Size) % Size;
-            int z = index / (Size * Size);
+            int resolution = Resolution;
+            int x = index % resolution;
+            int y = (index / resolution) % resolution;
+            int z = index / (resolution * resolution);
 
-            float3 worldPos = new float3(x, y, z) + Origin;
+            float3 worldPos;
+            if (resolution == 1)
+            {
+                worldPos = ((float3) Min + Max) * 0.5f;
+            }
+            else
+            {
+                float3 step = (Max - Min) / (resolution - 1);
+                worldPos = new float3(x, y, z) * step + Min;
+            }
 
             float dist = math.length(worldPos);
 

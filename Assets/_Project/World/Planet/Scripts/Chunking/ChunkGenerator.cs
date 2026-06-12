@@ -1,5 +1,4 @@
 using _Project.World.Planet.Scripts.Chunking.Core;
-using _Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using _Project.World.Planet.Scripts.WorldGen;
@@ -16,7 +15,7 @@ namespace _Project.World.Planet.Scripts.Chunking
         private readonly BurstSamplerSettings
             _densitySamplerSettings; // the settings used for generating the density field
 
-        private readonly int _chunkSize;
+        private readonly byte _chunkSize;
         
         /// <summary>
         /// creates a chunk generator. the chunk generator is responsible for generating the chunk data (density values and mesh data).
@@ -25,7 +24,7 @@ namespace _Project.World.Planet.Scripts.Chunking
         /// </summary>
         /// <param name="densitySamplerSettings">the settings used for generation</param>
         /// <param name="chunkSize">the chunk size used for converting chunk to world space</param>
-        public ChunkGenerator(BurstSamplerSettings densitySamplerSettings, int chunkSize)
+        public ChunkGenerator(BurstSamplerSettings densitySamplerSettings, byte chunkSize)
         {
             _densitySamplerSettings = densitySamplerSettings;
             _chunkSize = chunkSize;
