@@ -1,0 +1,7 @@
+<map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager.ProcessQueues" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager.ProcessQueues">
+<area shape="rect" id="Node000001" title="loads / unloads chunks if they are in the different queueues. it doesnt check what chunks need to be ..." alt="" coords="5,45,272,100"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a3c18d8fe3608d900ce97787a849d70b7" title="generates a chunk at a given position using the chunk generator" alt="" coords="320,5,587,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="272,53,306,49,307,54,273,58"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a544ae74b82f460990f7d3bbda4728509" title="unloads the chunk at a given position" alt="" coords="320,84,587,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="273,86,307,91,306,96,272,92"/>
+</map>

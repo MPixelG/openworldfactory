@@ -1,0 +1,9 @@
+<map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemSettings" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemSettings">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,183,267,237"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="13,87,137,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,123,123,181,119,184,86,126"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html" title=" " alt="" coords="161,80,391,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="243,130,172,185,168,180,239,126"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="211,5,341,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="279,44,279,80,273,80,273,44"/>
+</map>

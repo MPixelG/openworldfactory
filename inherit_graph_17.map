@@ -1,21 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,291,129,317"/>
-<area shape="rect" id="Node000001" href="$class__Project_1_1Gameplay_1_1BasicCameraMovement.html" title="Basic free&#45;fly camera movement using the new Unity Input System." alt="" coords="199,5,432,45"/>
-<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="70,276,80,229,100,169,131,107,151,80,176,55,197,42,200,46,179,59,155,83,135,110,105,171,85,230,75,278"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1Rendering_1_1Debug_1_1BillboardText.html" title=" " alt="" coords="218,69,413,109"/>
-<area shape="poly" id="edge7_Node000000_Node000002" title=" " alt="" coords="74,277,88,241,109,198,138,155,176,119,217,99,219,104,179,124,143,159,114,201,93,243,79,279"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html" title="A chunk is a region of density values in space. it is used to split the terrain into multiple portion..." alt="" coords="209,133,421,173"/>
-<area shape="poly" id="edge8_Node000000_Node000003" title=" " alt="" coords="82,278,120,230,147,204,176,183,208,168,210,173,179,188,150,208,124,233,86,282"/>
-<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html" title=" " alt="" coords="177,198,453,253"/>
-<area shape="poly" id="edge9_Node000000_Node000004" title=" " alt="" coords="113,284,176,261,213,250,215,255,178,267,115,289"/>
-<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html" title="the chunk system bootstrap is the unity component that manages the chunks. you have to apply the rend..." alt="" coords="179,277,451,331"/>
-<area shape="poly" id="edge10_Node000000_Node000005" title=" " alt="" coords="144,301,179,301,179,307,144,307"/>
-<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1NodeRenderer.html" title=" " alt="" coords="185,355,446,410"/>
-<area shape="poly" id="edge11_Node000000_Node000006" title=" " alt="" coords="116,319,178,340,219,353,217,358,177,345,115,324"/>
-<area shape="rect" id="Node000007" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1TerrainNodeRenderer.html" title=" " alt="" coords="185,434,446,489"/>
-<area shape="poly" id="edge12_Node000000_Node000007" title=" " alt="" coords="87,326,125,373,151,398,179,419,203,431,200,436,176,424,147,402,121,377,82,329"/>
-<area shape="rect" id="Node000008" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html" title=" " alt="" coords="209,513,421,553"/>
-<area shape="poly" id="edge13_Node000000_Node000008" title=" " alt="" coords="78,329,91,367,112,413,141,459,179,498,210,515,208,520,176,502,137,463,107,416,86,369,73,331"/>
-<area shape="rect" id="Node000009" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html" title=" " alt="" coords="209,577,421,617"/>
-<area shape="poly" id="edge14_Node000000_Node000009" title=" " alt="" coords="74,330,84,380,102,443,133,508,154,538,179,563,211,582,208,586,176,567,150,541,129,511,97,445,78,381,69,330"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,85,96,110"/>
+<area shape="rect" id="Node000001" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html" title="A chunk coord is basically an int3 but as its own data type. this way we always know what an int3 val..." alt="" coords="189,5,401,45"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="89,76,143,55,188,42,190,47,145,60,91,81"/>
+<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1NodeKey.html" title=" " alt="" coords="166,70,425,125"/>
+<area shape="poly" id="edge3_Node000000_Node000002" title=" " alt="" coords="110,95,166,95,166,100,110,100"/>
+<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1VertexKey.html" title=" " alt="" coords="144,149,447,189"/>
+<area shape="poly" id="edge4_Node000000_Node000003" title=" " alt="" coords="92,113,145,133,193,147,191,152,143,139,90,118"/>
 </map>
