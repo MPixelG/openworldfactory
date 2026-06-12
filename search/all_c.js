@@ -17,6 +17,5 @@ var searchData=
   ['operator_20chunkcoord_14',['operator ChunkCoord',['../struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a1a082c6e1ef83a0afab36bbb91c677e5',1,'_Project::World::Planet::Scripts::Chunking::Core::ChunkCoord']]],
   ['operator_20int3_15',['operator int3',['../struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a0b6e77bb659ec3cbdda319b58c5cca47',1,'_Project::World::Planet::Scripts::Chunking::Core::ChunkCoord']]],
   ['operator_21_3d_16',['operator!=',['../struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a5626b7f160d0cd4d7155dfa0f2efd8cc',1,'_Project::World::Planet::Scripts::Chunking::Core::ChunkCoord']]],
-  ['operator_3d_3d_17',['operator==',['../struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a7841ed66c4dce0d5959896cd66dbfa79',1,'_Project::World::Planet::Scripts::Chunking::Core::ChunkCoord']]],
-  ['origin_18',['Origin',['../struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Burst_1_1BurstSphericalNoiseSamplerJob.html#a9f5997947a29ee64e0666fb215ba5375',1,'_Project::World::Planet::Scripts::WorldGen::Burst::BurstSphericalNoiseSamplerJob']]]
+  ['operator_3d_3d_17',['operator==',['../struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a7841ed66c4dce0d5959896cd66dbfa79',1,'_Project::World::Planet::Scripts::Chunking::Core::ChunkCoord']]]
 ];
