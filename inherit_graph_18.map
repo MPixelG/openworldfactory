@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,56,135,81"/>
+<area shape="rect" id="Node000001" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemSettings.html" title="the settings contain everything thats customizable about the system. so visual settings,..." alt="" coords="183,5,455,60"/>
+<area shape="poly" id="edge15_Node000000_Node000001" title=" " alt="" coords="148,55,182,50,183,55,149,60"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html" title=" " alt="" coords="203,85,434,125"/>
+<area shape="poly" id="edge16_Node000000_Node000002" title=" " alt="" coords="149,77,203,85,203,91,148,83"/>
+</map>
