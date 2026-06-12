@@ -9,8 +9,6 @@ namespace _Project.World.Planet.Scripts.Chunking
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
     public class ChunkRenderer : MonoBehaviour
     {
-        private static readonly int Cull = Shader.PropertyToID("_Cull");
-
         private MeshFilter _meshFilter; // the mesh filter is used to pass the vertices to unity.
         private MeshRenderer _meshRenderer; // and the mesh renderer actually renders these. 
 

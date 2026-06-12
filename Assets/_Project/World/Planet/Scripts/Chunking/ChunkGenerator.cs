@@ -2,6 +2,7 @@ using _Project.World.Planet.Scripts.Chunking.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.BurstMeshGeneration;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
+using _Project.World.Planet.Scripts.WorldGen;
 using _Project.World.Planet.Scripts.WorldGen.Burst;
 using UnityEngine;
 

@@ -1,13 +1,84 @@
 using System;
+using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.Densities;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
+using _Project.World.Planet.Scripts.WorldGen;
+using Unity.Collections;
 using Unity.Mathematics;
 
-namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Octree
+namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
 {
     public static class OctreeManager
     {
 
-        public static float DensityAt(this Octree tree, float3 position)
+        public static Octree Build(
+            float3 min,
+            float3 max,
+            BurstSamplerSettings settings,
+            int maxDepth
+        )
+        {
+            Octree tree = new()
+            {
+                Min = min,
+                Max = max,
+                Nodes = new NativeList<OctreeNode>(Allocator.Persistent)
+            };
+
+            BuildNode(
+                ref tree,
+                min,
+                max,
+                settings,
+                0,
+                maxDepth
+            );
+
+            return tree;
+        }
+
+        /// <summary>
+        /// recursively builds the children of the given node until the max depth is reached or the node is completely full or empty.
+        /// it calculates the density values for the corners of the node and determines the state of the node based on those values.
+        /// if the child node is mixed and the max depth is not reached, it will create that child node and recursively build it.
+        /// </summary>
+        /// <param name="tree">the tree that will contain the nodes</param>
+        /// <param name="min">one corner of the octree node in world space</param>
+        /// <param name="max">the other corner in world space</param>
+        /// <param name="settings">the settings for generating the density values</param>
+        /// <param name="depth">the current depth of that node</param>
+        /// <param name="maxDepth">the maximum depth the tree will go to</param>
+        /// <returns>the index of the build node</returns>
+        private static int BuildNode(
+            ref Octree tree,
+            float3 min,
+            float3 max,
+            BurstSamplerSettings settings,
+            int depth,
+            int maxDepth
+        )
+        {
+
+
+
+
+
+            return -1; //todo
+        }
+
+        /// <summary>
+        /// adds a node to the given octree
+        /// </summary>
+        /// <param name="octree">the octree to add the node to</param>
+        /// <param name="node">the node to add</param>
+        /// <returns>the index of that added node in the nodes list of the octree</returns>
+        private static int AddNode(this Octree octree, OctreeNode node)
+        {
+            int index = octree.Nodes.Length; // the index of the new node is the current length of the node list (since we add the new node at the end of the list)
+            octree.Nodes.Add(node); // add the new node to the list
+            return index; // return the index of the new node
+        }
+        
+        public static float DensityAt(this Octree tree, DensityStorage densityStorage, float3 position)
         {
             
             float3 localPos = (position - tree.Min) / (tree.Max - tree.Min); // a position from 0|0|0 to 1|1|1 within the octree or below / above if the position is outside the octree 
@@ -52,16 +123,22 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Octree
                     return 1;
                 case OctreeNodeState.Mixed:
                 {
-                    float3 currentLocalPosUpscaled = currentLocalPos * currentNode.DensityField.Size; // currently the local pos is between 0 and 1. the positions in the density field range from 0 to the size of the density field,
+                    NodeKey currentNodeKey = new NodeKey
+                    {
+                        Coord = currentNode.Coord,
+                        Depth = currentNode.Depth
+                    };
+                    
+                    DensityFieldData densityField = densityStorage.GetDensityFieldDataOf(currentNodeKey);
+                    float3 currentLocalPosUpscaled = currentLocalPos * densityField.Size; // currently the local pos is between 0 and 1. the positions in the density field range from 0 to the size of the density field,
                                                                                                       // so we need to upscale the local pos to get the correct position in the density field.
 
-                    return currentNode.DensityField.DensityAt(currentLocalPosUpscaled); // this DensityAt function (with a float3 as an input) does the interpolation for us
+                    return densityField.DensityAt(currentLocalPosUpscaled); // this DensityAt function (with a float3 as an input) does the interpolation for us
                 }
                 
                 case OctreeNodeState.Unknown: // this shouldnt really happen (same goes for every other case) so we throw an exception.
                 default: throw new ArgumentOutOfRangeException();
             }
         }
-        
     }
 }

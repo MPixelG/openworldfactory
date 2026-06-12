@@ -1,7 +1,8 @@
+using _Project.World.Planet.Scripts.WorldGen.Burst;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace _Project.World.Planet.Scripts.WorldGen.Burst
+namespace _Project.World.Planet.Scripts.WorldGen
 {
     [CreateAssetMenu(menuName = "WorldGen/Burst Density Samplers/Spherical Noise")]
 

@@ -1,11 +1,15 @@
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
+using Unity.Mathematics;
 
-namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Octree
+namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
 {
     public struct OctreeNode
     {
-        public int FirstChildIndex; // since the nodes are stored linear in one big list on one layer we can store the index of the first child
+        public int3 Coord;
+        public byte Depth;
         
+        
+        public int FirstChildIndex; // since the nodes are stored linear in one big list on one layer we can store the index of the first child
         public byte ChildMask; // an octree node can have up to 8 children. every bit of this byte represents one child.
                                // so 0b01010001 would indicate that that node has a bottom left front, top left front and top left back
                                // child, but no other children. this is how i chose to count the corners:
@@ -26,11 +30,12 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Octree
                                       // if its mixed, it means that the density field is above the isolevel in some places and below it in others.
                                       // and if its unknown, it means that we haven't sampled the density field for that node yet. 
                                       // this way we can easily skip over completely empty or completely full density fields when we mesh it since theres only a mesh if the isosurface slices through that chunk
-
-        public DensityFieldData DensityField; // the density field contains the density data of that node
+        
+        
+        
     }
 
-    public enum OctreeNodeState
+    public enum OctreeNodeState : byte
     {
         Unknown,
         Empty,

@@ -202,11 +202,11 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
             float3 p;
 
             if (math.abs(isoLevel - valP1) < 0.00001)
-                return (new float3(p1.x, p1.y, p1.z));
+                return new float3(p1.x, p1.y, p1.z);
             if (math.abs(isoLevel - valP2) < 0.00001)
-                return (new float3(p2.x, p2.y, p2.z));
+                return new float3(p2.x, p2.y, p2.z);
             if (math.abs(valP1 - valP2) < 0.00001)
-                return (new float3(p1.x, p1.y, p1.z));
+                return new float3(p1.x, p1.y, p1.z);
 
             float mu = (isoLevel - valP1) / (valP2 - valP1);
             p.x = p1.x + mu * (p2.x - p1.x);

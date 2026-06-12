@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using _Project.World.Planet.Scripts.Chunking.Core;
+using _Project.World.Planet.Scripts.WorldGen;
 using _Project.World.Planet.Scripts.WorldGen.Burst;
 using Unity.Mathematics;
 using UnityEngine;

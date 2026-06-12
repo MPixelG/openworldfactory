@@ -1,7 +1,7 @@
 using Unity.Collections;
 using Unity.Mathematics;
 
-namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Octree
+namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
 {
     /// <summary>
     /// a struct that represents an octree. it contains a list of octree nodes and the min and max bounds of the octree.

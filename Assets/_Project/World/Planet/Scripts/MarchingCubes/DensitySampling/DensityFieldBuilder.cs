@@ -1,4 +1,5 @@
 using _Project.World.Planet.Scripts.Chunking.Core;
+using _Project.World.Planet.Scripts.WorldGen;
 using _Project.World.Planet.Scripts.WorldGen.Burst;
 using Unity.Collections;
 using Unity.Jobs;

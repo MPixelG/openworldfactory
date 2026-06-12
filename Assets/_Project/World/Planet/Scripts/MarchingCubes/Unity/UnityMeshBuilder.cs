@@ -1,6 +1,7 @@
+using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using UnityEngine;
 
-namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
+namespace _Project.World.Planet.Scripts.MarchingCubes.Unity
 {
     public static class UnityMeshBuilder
     {
