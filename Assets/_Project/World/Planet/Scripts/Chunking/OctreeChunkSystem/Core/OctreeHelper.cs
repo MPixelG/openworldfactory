@@ -8,7 +8,7 @@ using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
 {
-    public static class OctreeManager
+    public static class OctreeHelper
     {
 
         public static Octree Build(

@@ -1,6 +1,5 @@
 using System;
 using _Project.World.Planet.Scripts.WorldGen;
-using _Project.World.Planet.Scripts.WorldGen.Burst;
 using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity
