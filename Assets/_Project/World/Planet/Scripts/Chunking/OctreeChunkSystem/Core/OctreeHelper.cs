@@ -11,6 +11,14 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
     public static class OctreeHelper
     {
 
+        /// <summary>
+        /// builds an octree in a given space with a given max depth using the given density generation settings. 
+        /// </summary>
+        /// <param name="min">the first corner of the space the octree will occupy</param>
+        /// <param name="max">the other corner of the space the octree will occupy</param>
+        /// <param name="settings">the settings used to generate the density values</param>
+        /// <param name="maxDepth">the maximum depth the octree will go down to. be careful with this value though as it increases exponentially. 5 is normally already more than enough.</param>
+        /// <returns>the generated octree</returns>
         public static Octree Build(
             int3 min,
             int3 max,
@@ -22,15 +30,15 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             {
                 Min = min,
                 Max = max,
-                Nodes = new NativeList<OctreeNode>(Allocator.Persistent)
+                Nodes = new NativeList<OctreeNode>(Allocator.Persistent) // create a persistent dynamically sized native list containing the octree nodes
             };
 
-            BuildNode(
+            BuildNode( // we add the root node (which recursively builds its children) so that the tree has its content
                 ref tree,
                 min,
                 max,
                 settings,
-                0,
+                0, // the current depth (of the root node) is always 0
                 maxDepth
             );
 
@@ -73,9 +81,9 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
                 if(densitySample > maxDensity) maxDensity = densitySample;
             }
             
-            OctreeNodeState state = minDensity > BurstMeshGenerator.IsoLevel // if every value is above the isolevel the node is completely full
+            OctreeNodeState state = maxDensity < BurstMeshGenerator.IsoLevel // if every value is below the isolevel the node is completely full
                 ? OctreeNodeState.Full
-                : maxDensity < BurstMeshGenerator.IsoLevel // if every value is below the isolevel the node is completely empty
+                : minDensity > BurstMeshGenerator.IsoLevel // if every value is above the isolevel the node is completely empty
                     ? OctreeNodeState.Empty
                     : OctreeNodeState.Mixed; // else the values are above and below the isolevel so its mixed
             
@@ -105,15 +113,16 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
 
             for(int i = 0; i < 8; i++)
             {
-                int3 offset = GetChildOffset(i);
+                int3 offset = GetChildOffset(i); // get the offset of that child node (in a range of 0 to 1).
+                                                 // so for example corner 0 in the front left bottom would have an offset of 0|0|0,
+                                                 // while the corner in the back right top would have an offset of 1|1|1. 
 
                 int3 childMin =
-                    min + offset * half;
+                    min + offset * half; // now scaled that offset so that it represents the local spacing (so a higher depth = less space) and add the min to it to move it to the correct global pos
 
-                int3 childMax =
-                    childMin + half;
+                int3 childMax = childMin + half;
 
-                BuildNode(
+                BuildNode( // recursively call that function for that child. it will stop as soon as its deep enough, since we provided a max depth and a current depth.
                     ref tree,
                     childMin,
                     childMax,
@@ -125,11 +134,17 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             
             node.ChildMask = 0xFF; // for now this is enough todo do better
             
-            tree.Nodes[nodeIndex] = node;
+            tree.Nodes[nodeIndex] = node; // update the nodes values (currently only the child mask)
             
-            return nodeIndex;
+            return nodeIndex; // and return the nodes index
         }
 
+        /// <summary>
+        /// the offset of that child node (in a range of 0 to 1).
+        /// so for example corner 0 in the front left bottom would have an offset of 0|0|0, while the corner in the back right top would have an offset of 1|1|1. 
+        /// </summary>
+        /// <param name="index">the index of the corner</param>
+        /// <returns>the offset (between 0|0|0 and 1|1|1, only full decimals)</returns>
         private static int3 GetChildOffset(int index)
         {
             return new int3
