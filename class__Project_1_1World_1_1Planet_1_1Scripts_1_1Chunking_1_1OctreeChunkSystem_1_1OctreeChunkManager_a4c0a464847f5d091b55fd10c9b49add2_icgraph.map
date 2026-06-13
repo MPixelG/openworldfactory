@@ -1,7 +1,0 @@
-<map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager.ProcessCompletedChunks" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager.ProcessCompletedChunks">
-<area shape="rect" id="Node000001" title="processes the completed chunk generations. it shifts the generated data from the _completedChunks que..." alt="" coords="632,5,924,60"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a57f31265da52b89179743efd7f2343ff" title="updates the chunk manager. this should be called once per frame. it processes the completed chunk gen..." alt="" coords="317,5,584,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="618,35,584,35,584,30,618,30"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#ac45c3ec15a80614fe3a73d2dc33f6d21" title=" " alt="" coords="5,5,269,60"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="303,35,270,35,270,30,303,30"/>
-</map>

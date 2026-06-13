@@ -1,15 +1,5 @@
 <map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.Update" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.Update">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,84,269,139"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a57f31265da52b89179743efd7f2343ff" title="updates the chunk manager. this should be called once per frame. it processes the completed chunk gen..." alt="" coords="317,84,584,139"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="270,109,304,109,304,114,270,114"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a4c0a464847f5d091b55fd10c9b49add2" title="processes the completed chunk generations. it shifts the generated data from the _completedChunks que..." alt="" coords="632,5,924,60"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="564,81,650,61,651,66,566,87"/>
-<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a071de7f2985399a826974a79dddb3b2c" title="loads / unloads chunks if they are in the different queueues. it doesnt check what chunks need to be ..." alt="" coords="645,84,911,139"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="584,109,631,109,631,114,584,114"/>
-<area shape="rect" id="Node000007" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#aa77e76c4c8ff5cd283c1c522e6331fcb" title="syncs the loaded chunks with the viewers position. it calculates what chunks should be loaded based o..." alt="" coords="645,163,911,217"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="566,136,651,157,650,162,564,141"/>
-<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a3c18d8fe3608d900ce97787a849d70b7" title="generates a chunk at a given position using the chunk generator" alt="" coords="972,45,1239,100"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="911,93,958,87,958,93,912,98"/>
-<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a544ae74b82f460990f7d3bbda4728509" title="unloads the chunk at a given position" alt="" coords="972,124,1239,179"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="912,125,958,131,958,136,911,130"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,269,60"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a9b2a3ef34535261b7c438f67139e7c54" title=" " alt="" coords="317,5,584,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="270,30,304,30,304,35,270,35"/>
 </map>
