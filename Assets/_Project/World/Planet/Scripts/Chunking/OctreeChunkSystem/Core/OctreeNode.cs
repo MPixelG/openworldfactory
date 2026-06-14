@@ -1,4 +1,3 @@
-using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
@@ -30,8 +29,6 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
                                       // if its mixed, it means that the density field is above the isolevel in some places and below it in others.
                                       // and if its unknown, it means that we haven't sampled the density field for that node yet. 
                                       // this way we can easily skip over completely empty or completely full density fields when we mesh it since theres only a mesh if the isosurface slices through that chunk
-        
-        
         
     }
 

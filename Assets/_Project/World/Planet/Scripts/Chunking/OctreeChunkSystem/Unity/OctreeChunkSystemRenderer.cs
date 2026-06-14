@@ -19,6 +19,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity
 
         public void OnDrawGizmos()
         {
+            if(!_chunkManager.OctreeReady) return;
             Octree octree = _chunkManager.Octree;
             
             

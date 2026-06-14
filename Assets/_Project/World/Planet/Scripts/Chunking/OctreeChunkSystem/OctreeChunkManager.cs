@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
-using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity;
 using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Mathematics;
 using UnityEngine;
@@ -18,7 +12,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
         public int3 Origin;
         public float Size;
         
-        private BurstSamplerSettings _densitySamplerSettings;
+        private readonly BurstSamplerSettings _densitySamplerSettings;
         
 
         /// <param name="origin">the origin world pos of the system</param>
@@ -33,14 +27,18 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
             Origin = new int3(origin.x, origin.y, origin.z);
             Size = size;
 
+            OctreeReady = false;
             _densitySamplerSettings = densitySamplerSettings;
 
             RebuildOctree();
         }
 
+        public bool OctreeReady { get; private set; }
+
         public void RebuildOctree()
         {
             Octree = OctreeHelper.Build(Origin, new int3((int) Size, (int) Size, (int) Size), _densitySamplerSettings, 5);
+            OctreeReady = true;
         }
 
         public void Update(float3 viewerPos)
