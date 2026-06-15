@@ -32,7 +32,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             Octree tree = new()
             {
                 Min = min,
-                Max = max,
+                Max = min + new int3(1 << maxDepth),
                 MaxDepth = maxDepth,
                 Nodes = new NativeList<v2.OctreeNode>(Allocator.Persistent) // create a persistent dynamically sized native list containing the octree nodes
             };
