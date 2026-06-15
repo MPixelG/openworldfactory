@@ -117,7 +117,9 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
             
 
             Mesh unityMesh = UnityMeshBuilder.Build(meshData);
-
+            
+            meshData.Dispose();
+            
             chunkRenderer.ApplyMeshData(unityMesh);
 
             _chunkRenderers.Add(loadedChunkCoord, chunkRenderer);
@@ -134,8 +136,11 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         {
             ChunkRenderer chunkRenderer = _chunkRenderers[loadedChunkCoord];
             MeshData meshData = _chunkManager.GetChunkAt(loadedChunkCoord)?.MeshData;
+            
             if (meshData == null) return;
             Mesh unityMesh = UnityMeshBuilder.Build(meshData);
+            
+            meshData.Dispose(); // we can dispose the mesh data after building the unity mesh since we don't need it anymore. this is important to avoid memory leaks since the mesh data uses native collections that are not managed by the garbage collector.
             chunkRenderer.ApplyMeshData(unityMesh);
         }
     }

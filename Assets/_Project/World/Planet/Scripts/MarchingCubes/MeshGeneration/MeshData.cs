@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Collections;
 using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
@@ -8,15 +9,22 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
     /// </summary>
     public class MeshData
     {
-        public readonly List<float3> Vertices;
-        public readonly List<float3> Normals;
-        public readonly List<int> Indices;
+        public NativeList<float3> Vertices;
+        public NativeList<float3> Normals;
+        public NativeList<int> Indices;
 
-        public MeshData(List<float3> vertices, List<float3> normals, List<int> indices)
+        public MeshData(NativeList<float3> vertices, NativeList<float3> normals, NativeList<int> indices)
         {
             Vertices = vertices;
             Normals = normals;
             Indices = indices;
+        }
+
+        public void Dispose()
+        {
+            Vertices.Dispose();
+            Normals.Dispose();
+            Indices.Dispose();
         }
     }
 }

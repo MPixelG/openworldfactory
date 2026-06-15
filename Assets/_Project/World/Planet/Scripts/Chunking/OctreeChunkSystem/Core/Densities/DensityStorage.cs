@@ -5,14 +5,14 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.Densitie
 {
     public class DensityStorage
     {
-        private Dictionary<NodeKey, DensityFieldData> _densityFields;
+        private Dictionary<ulong, DensityFieldData> _densityFields;
 
-        public DensityFieldData GetDensityFieldDataOf(NodeKey key)
+        public DensityFieldData GetDensityFieldDataOf(ulong key)
         {
             return _densityFields[key];
         }
 
-        public void SetDensityFieldDataOf(NodeKey key, DensityFieldData data)
+        public void SetDensityFieldDataOf(ulong key, DensityFieldData data)
         {
             _densityFields[key] = data;
         }

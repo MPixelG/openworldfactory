@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0351d5d45eb44e7a1ab08207a098cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemSettings
-  chunkSize: 16
-  viewDistanceInChunks: 4
+  origin: {x: 0, y: 0, z: 0}
+  size: 500
   densitySamplerSettings: {fileID: 11400000, guid: ab8c10478901f229f823a60c4bcfd531, type: 2}

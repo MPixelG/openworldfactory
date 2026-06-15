@@ -1,5 +1,6 @@
 using System;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.Densities;
+using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.v2;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using _Project.World.Planet.Scripts.WorldGen;
@@ -10,35 +11,36 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
 {
     public static class OctreeHelper
     {
-
         /// <summary>
         /// builds an octree in a given space with a given max depth using the given density generation settings. 
         /// </summary>
         /// <param name="min">the first corner of the space the octree will occupy</param>
         /// <param name="max">the other corner of the space the octree will occupy</param>
         /// <param name="settings">the settings used to generate the density values</param>
-        /// <param name="maxDepth">the maximum depth the octree will go down to. be careful with this value though as it increases exponentially. 5 is normally already more than enough.</param>
+        /// <param name="resolution">the maximum depth the octree will go down to. be careful with this value though as it increases exponentially. 5 is normally already more than enough.</param>
         /// <returns>the generated octree</returns>
         public static Octree Build(
             int3 min,
             int3 max,
             BurstSamplerSettings settings,
-            byte maxDepth
+            int resolution
         )
         {
+            int3 size = max - min;
+            byte maxDepth = (byte) math.ceil(math.log2(math.cmax(size / resolution))); // the max depth is calculated based on the size of the octree and the desired resolution. we want the smallest nodes to be at least as big as the resolution, so we calculate how many times we can divide the size by 2 until we reach the resolution. that gives us the max depth.
+            
             Octree tree = new()
             {
                 Min = min,
                 Max = max,
-                Nodes = new NativeList<OctreeNode>(Allocator.Persistent) // create a persistent dynamically sized native list containing the octree nodes
+                MaxDepth = maxDepth,
+                Nodes = new NativeList<v2.OctreeNode>(Allocator.Persistent) // create a persistent dynamically sized native list containing the octree nodes
             };
 
             BuildNode( // we add the root node (which recursively builds its children) so that the tree has its content
                 ref tree,
-                min,
-                max,
-                settings,
-                0, // the current depth (of the root node) is always 0
+                MortonCodeHelper.Encode(new int3(0, 0, 0), 0),
+                settings, // the current depth (of the root node) is always 0
                 maxDepth
             );
 
@@ -51,21 +53,26 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         /// if the child node is mixed and the max depth is not reached, it will create that child node and recursively build it.
         /// </summary>
         /// <param name="tree">the tree that will contain the nodes</param>
-        /// <param name="min">one corner of the octree node in world space</param>
-        /// <param name="max">the other corner in world space</param>
+        /// <param name="mortonCode"></param>
         /// <param name="settings">the settings for generating the density values</param>
-        /// <param name="depth">the current depth of that node</param>
         /// <param name="maxDepth">the maximum depth the tree will go to</param>
         /// <returns>the index of the build node</returns>
         private static int BuildNode(
             ref Octree tree,
-            int3 min,
-            int3 max,
+            ulong mortonCode,
             BurstSamplerSettings settings,
-            byte depth,
             byte maxDepth
         )
         {
+            byte depth = mortonCode.GetDepth();
+            
+            int nodeSize = 1 << (maxDepth - depth);
+            
+            int3 localGridPos = mortonCode.DecodeCoord();
+            int3 min = tree.Min + (localGridPos * nodeSize); 
+            int3 max = min + new int3(nodeSize);
+            
+            
             DensityFieldData sample = DensityFieldBuilder.BuildBurstDensityFieldDataInTree(
                 settings,
                 min,
@@ -81,20 +88,19 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
                 if(densitySample > maxDensity) maxDensity = densitySample;
             }
             
-            OctreeNodeState state = maxDensity < BurstMeshGenerator.IsoLevel // if every value is below the isolevel the node is completely full
-                ? OctreeNodeState.Full
+            v2.OctreeNodeState state = maxDensity < BurstMeshGenerator.IsoLevel // if every value is below the isolevel the node is completely full
+                ? v2.OctreeNodeState.Full
                 : minDensity > BurstMeshGenerator.IsoLevel // if every value is above the isolevel the node is completely empty
-                    ? OctreeNodeState.Empty
-                    : OctreeNodeState.Mixed; // else the values are above and below the isolevel so its mixed
+                    ? v2.OctreeNodeState.Empty
+                    : v2.OctreeNodeState.Mixed; // else the values are above and below the isolevel so its mixed
             
             //todo if there are values below and above the isolevel in one quarter of a chunk we dont have to sample in that child chunk to see if its full empty since we know its mixed
 
 
 
-            OctreeNode node = new OctreeNode
+            v2.OctreeNode node = new v2.OctreeNode
             {
-                Coord = min,
-                Depth = depth,
+                MortonCode = mortonCode,
                 State = state,
                 FirstChildIndex = tree.Nodes.Length, 
                 ChildMask = 0
@@ -102,32 +108,19 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             
             int nodeIndex = tree.AddNode(node);
             
-            if (depth >= maxDepth || state == OctreeNodeState.Full || state == OctreeNodeState.Empty) // if we reached the max depth or the node is completely full or empty,
+            if (depth >= maxDepth || state == v2.OctreeNodeState.Full || state == v2.OctreeNodeState.Empty) // if we reached the max depth or the node is completely full or empty,
                                                                                                       // we stop building and just add that node to the tree
             {
                 return nodeIndex;
             }
 
-            int3 size = max - min;
-            int3 half = size / 2;
 
             for(int i = 0; i < 8; i++)
             {
-                int3 offset = GetChildOffset(i); // get the offset of that child node (in a range of 0 to 1).
-                                                 // so for example corner 0 in the front left bottom would have an offset of 0|0|0,
-                                                 // while the corner in the back right top would have an offset of 1|1|1. 
-
-                int3 childMin =
-                    min + offset * half; // now scaled that offset so that it represents the local spacing (so a higher depth = less space) and add the min to it to move it to the correct global pos
-
-                int3 childMax = childMin + half;
-
                 BuildNode( // recursively call that function for that child. it will stop as soon as its deep enough, since we provided a max depth and a current depth.
                     ref tree,
-                    childMin,
-                    childMax,
+                    mortonCode.AppendChild((byte) i),
                     settings,
-                    (byte)(depth + 1),
                     maxDepth
                 );
             }
@@ -161,14 +154,14 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         /// <param name="octree">the octree to add the node to</param>
         /// <param name="node">the node to add</param>
         /// <returns>the index of that added node in the nodes list of the octree</returns>
-        private static int AddNode(this Octree octree, OctreeNode node)
+        private static int AddNode(this Octree octree, v2.OctreeNode node)
         {
             int index = octree.Nodes.Length; // the index of the new node is the current length of the node list (since we add the new node at the end of the list)
             octree.Nodes.Add(node); // add the new node to the list
             return index; // return the index of the new node
         }
         
-        public static float DensityAt(this Octree tree, DensityStorage densityStorage, float3 position)
+        /*public static float DensityAt(this Octree tree, DensityStorage densityStorage, float3 position)
         {
             
             float3 localPos = (position - tree.Min) / (tree.Max - tree.Min); // a position from 0|0|0 to 1|1|1 within the octree or below / above if the position is outside the octree 
@@ -177,7 +170,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
                 localPos.z > 1) return 0; // if the position is outside the bounds of the octree, return 0
             
 
-            OctreeNode currentNode = tree.Nodes[0]; // set the current node to the root node
+            v2.OctreeNode currentNode = tree.Nodes[0]; // set the current node to the root node
             
             
             float3 currentLocalPos = localPos; // the current local pos will get scaled every layer we go down to always be between 0 and 1 within that node 
@@ -204,31 +197,25 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
                                                                    // thats basically what the math.frac() function does.
             }
 
-            OctreeNodeState currentNodeState = currentNode.State;
+            v2.OctreeNodeState currentNodeState = currentNode.State;
             switch (currentNodeState)
             {
-                case OctreeNodeState.Empty: // if the complete node only consists of density values below the isolevel we can just return 0 since it will be below the isolevel anyway
+                case v2.OctreeNodeState.Empty: // if the complete node only consists of density values below the isolevel we can just return 0 since it will be below the isolevel anyway
                     return 0;
-                case OctreeNodeState.Full: // the same goes for a full node (only containing values above the isolevel)
+                case v2.OctreeNodeState.Full: // the same goes for a full node (only containing values above the isolevel)
                     return 1;
-                case OctreeNodeState.Mixed:
+                case v2.OctreeNodeState.Mixed:
                 {
-                    NodeKey currentNodeKey = new NodeKey
-                    {
-                        Coord = currentNode.Coord,
-                        Depth = currentNode.Depth
-                    };
-                    
-                    DensityFieldData densityField = densityStorage.GetDensityFieldDataOf(currentNodeKey);
+                    DensityFieldData densityField = densityStorage.GetDensityFieldDataOf(currentNode.MortonCode);
                     float3 currentLocalPosUpscaled = currentLocalPos * densityField.Size; // currently the local pos is between 0 and 1. the positions in the density field range from 0 to the size of the density field,
                                                                                                       // so we need to upscale the local pos to get the correct position in the density field.
 
                     return densityField.DensityAt(currentLocalPosUpscaled); // this DensityAt function (with a float3 as an input) does the interpolation for us
                 }
                 
-                case OctreeNodeState.Unknown: // this shouldnt really happen (same goes for every other case) so we throw an exception.
+                case v2.OctreeNodeState.Unknown: // this shouldnt really happen (same goes for every other case) so we throw an exception.
                 default: throw new ArgumentOutOfRangeException();
             }
-        }
+        }*/
     }
 }
