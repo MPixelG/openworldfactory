@@ -8,5 +8,5 @@ var searchData=
   ['octreechunksystemrenderer_2ecs_5',['OctreeChunkSystemRenderer.cs',['../OctreeChunkSystemRenderer_8cs.html',1,'']]],
   ['octreechunksystemsettings_2ecs_6',['OctreeChunkSystemSettings.cs',['../OctreeChunkSystemSettings_8cs.html',1,'']]],
   ['octreehelper_2ecs_7',['OctreeHelper.cs',['../OctreeHelper_8cs.html',1,'']]],
-  ['octreenode_2ecs_8',['OctreeNode.cs',['../OctreeNode_8cs.html',1,'']]]
+  ['octreenode_2ecs_8',['octreenode.cs',['../Core_2OctreeNode_8cs.html',1,'(Global Namespace)'],['../v2_2OctreeNode_8cs.html',1,'(Global Namespace)']]]
 ];

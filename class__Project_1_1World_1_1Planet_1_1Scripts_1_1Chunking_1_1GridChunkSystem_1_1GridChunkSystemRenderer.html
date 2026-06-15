@@ -258,19 +258,22 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  117</span>            </div>
 <div class="line"><span class="lineno">  118</span> </div>
 <div class="line"><span class="lineno">  119</span>            Mesh unityMesh = UnityMeshBuilder.Build(meshData);</div>
-<div class="line"><span class="lineno">  120</span> </div>
-<div class="line"><span class="lineno">  121</span>            chunkRenderer.ApplyMeshData(unityMesh);</div>
-<div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a471aa2bd29e9d18c6b5b6ba7b0a933a9">_chunkRenderers</a>.Add(loadedChunkCoord, chunkRenderer);</div>
-<div class="line"><span class="lineno">  124</span>        }</div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkData_html_a074abc4f198df2abbf38c2a4d7531a9c"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkData.html#a074abc4f198df2abbf38c2a4d7531a9c">_Project.World.Planet.Scripts.Chunking.Core.ChunkData.MeshData</a></div><div class="ttdeci">MeshData MeshData</div><div class="ttdef"><b>Definition</b> <a href="ChunkData_8cs_source.html#l00013">ChunkData.cs:13</a></div></div>
+<div class="line"><span class="lineno">  120</span>            </div>
+<div class="line"><span class="lineno">  121</span>            meshData.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a505ceff4d0e25ef76a03b712a09f03e3">Dispose</a>();</div>
+<div class="line"><span class="lineno">  122</span>            </div>
+<div class="line"><span class="lineno">  123</span>            chunkRenderer.ApplyMeshData(unityMesh);</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a471aa2bd29e9d18c6b5b6ba7b0a933a9">_chunkRenderers</a>.Add(loadedChunkCoord, chunkRenderer);</div>
+<div class="line"><span class="lineno">  126</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkData_html_a074abc4f198df2abbf38c2a4d7531a9c"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkData.html#a074abc4f198df2abbf38c2a4d7531a9c">_Project.World.Planet.Scripts.Chunking.Core.ChunkData.MeshData</a></div><div class="ttdeci">MeshData MeshData</div><div class="ttdef"><b>Definition</b> <a href="Core_2ChunkData_8cs_source.html#l00013">ChunkData.cs:13</a></div></div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager_html_a79650c30c63ce53caf21eaafc54779e0"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a79650c30c63ce53caf21eaafc54779e0">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager.GetChunkAt</a></div><div class="ttdeci">ChunkData GetChunkAt(ChunkCoord coord)</div><div class="ttdoc">returns the chunk data of a given position. if no chunk exists at that position, null is returned.</div><div class="ttdef"><b>Definition</b> <a href="GridChunkManager_8cs_source.html#l00081">GridChunkManager.cs:81</a></div></div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager_html_a9161da9323ad517748f08098d0bae57a"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a9161da9323ad517748f08098d0bae57a">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager.ChunkSize</a></div><div class="ttdeci">readonly int ChunkSize</div><div class="ttdef"><b>Definition</b> <a href="GridChunkManager_8cs_source.html#l00048">GridChunkManager.cs:48</a></div></div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_html_a471aa2bd29e9d18c6b5b6ba7b0a933a9"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a471aa2bd29e9d18c6b5b6ba7b0a933a9">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer._chunkRenderers</a></div><div class="ttdeci">readonly Dictionary&lt; ChunkCoord, ChunkRenderer &gt; _chunkRenderers</div><div class="ttdef"><b>Definition</b> <a href="GridChunkSystemRenderer_8cs_source.html#l00018">GridChunkSystemRenderer.cs:18</a></div></div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_html_a620a609a39e76df69a7028e06cb20f91"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a620a609a39e76df69a7028e06cb20f91">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer._chunkManager</a></div><div class="ttdeci">GridChunkManager _chunkManager</div><div class="ttdef"><b>Definition</b> <a href="GridChunkSystemRenderer_8cs_source.html#l00015">GridChunkSystemRenderer.cs:15</a></div></div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData_html"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData</a></div><div class="ttdoc">a small class that stores vertices, normals and indices.</div><div class="ttdef"><b>Definition</b> <a href="MeshData_8cs_source.html#l00009">MeshData.cs:10</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData_html"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData</a></div><div class="ttdoc">a small class that stores vertices, normals and indices.</div><div class="ttdef"><b>Definition</b> <a href="MeshData_8cs_source.html#l00010">MeshData.cs:11</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData_html_a505ceff4d0e25ef76a03b712a09f03e3"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a505ceff4d0e25ef76a03b712a09f03e3">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Dispose</a></div><div class="ttdeci">void Dispose()</div><div class="ttdef"><b>Definition</b> <a href="MeshData_8cs_source.html#l00023">MeshData.cs:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00015">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer._chunkManager</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00018">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer._chunkRenderers</a>, <a class="el" href="ChunkRenderer_8cs_source.html#l00046">_Project.World.Planet.Scripts.Chunking.ChunkRenderer.ApplyMeshData()</a>, <a class="el" href="GridChunkManager_8cs_source.html#l00048">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager.ChunkSize</a>, <a class="el" href="GridChunkManager_8cs_source.html#l00081">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager.GetChunkAt()</a>, and <a class="el" href="ChunkData_8cs_source.html#l00013">_Project.World.Planet.Scripts.Chunking.Core.ChunkData.MeshData</a>.</p>
+<p class="reference">References <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00015">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer._chunkManager</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00018">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer._chunkRenderers</a>, <a class="el" href="ChunkRenderer_8cs_source.html#l00046">_Project.World.Planet.Scripts.Chunking.ChunkRenderer.ApplyMeshData()</a>, <a class="el" href="GridChunkManager_8cs_source.html#l00048">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager.ChunkSize</a>, <a class="el" href="MeshData_8cs_source.html#l00023">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Dispose()</a>, <a class="el" href="GridChunkManager_8cs_source.html#l00081">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager.GetChunkAt()</a>, and <a class="el" href="Core_2ChunkData_8cs_source.html#l00013">_Project.World.Planet.Scripts.Chunking.Core.ChunkData.MeshData</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00074">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.SyncRenderers()</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -280,11 +283,13 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_ac39b432dc11a7d366ae3892b97688f69_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_ac39b432dc11a7d366ae3892b97688f69_cgraph" alt=""/></div>
 <map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_ac39b432dc11a7d366ae3892b97688f69_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_ac39b432dc11a7d366ae3892b97688f69_cgraph">
-<area shape="rect" title=" " alt="" coords="5,66,281,121"/>
+<area shape="rect" title=" " alt="" coords="5,102,281,157"/>
 <area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a681ef138d0e2ee824f9ad012376b27b2" title="applies a given mesh to this renderer" alt="" coords="329,37,623,77"/>
-<area shape="poly" title=" " alt="" coords="281,76,315,72,316,77,282,81"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a79650c30c63ce53caf21eaafc54779e0" title="returns the chunk data of a given position. if no chunk exists at that position, null is returned." alt="" coords="338,102,614,157"/>
-<area shape="poly" title=" " alt="" coords="282,106,324,110,324,116,281,111"/>
+<area shape="poly" title=" " alt="" coords="270,99,369,78,370,83,271,105"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a505ceff4d0e25ef76a03b712a09f03e3" title=" " alt="" coords="340,102,612,157"/>
+<area shape="poly" title=" " alt="" coords="282,127,326,127,326,132,282,132"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a79650c30c63ce53caf21eaafc54779e0" title="returns the chunk data of a given position. if no chunk exists at that position, null is returned." alt="" coords="338,181,614,235"/>
+<area shape="poly" title=" " alt="" coords="260,154,347,175,346,180,259,159"/>
 <area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a5640743dd19c8884caeed976334beaf8" title=" " alt="" coords="671,5,987,45"/>
 <area shape="poly" title=" " alt="" coords="622,41,657,38,657,44,623,47"/>
 <area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a705a40744556fe569f1ad6ddaa4f540d" title=" " alt="" coords="688,69,969,109"/>
@@ -332,12 +337,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00126">126</a> of file <a class="el" href="GridChunkSystemRenderer_8cs_source.html">GridChunkSystemRenderer.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  127</span>        {</div>
-<div class="line"><span class="lineno">  128</span>            ChunkRenderer chunkRenderer = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a471aa2bd29e9d18c6b5b6ba7b0a933a9">_chunkRenderers</a>[loadedChunkCoord];</div>
-<div class="line"><span class="lineno">  129</span>            Destroy(chunkRenderer.gameObject);</div>
-<div class="line"><span class="lineno">  130</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a471aa2bd29e9d18c6b5b6ba7b0a933a9">_chunkRenderers</a>.Remove(loadedChunkCoord);</div>
-<div class="line"><span class="lineno">  131</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00128">128</a> of file <a class="el" href="GridChunkSystemRenderer_8cs_source.html">GridChunkSystemRenderer.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>        {</div>
+<div class="line"><span class="lineno">  130</span>            ChunkRenderer chunkRenderer = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a471aa2bd29e9d18c6b5b6ba7b0a933a9">_chunkRenderers</a>[loadedChunkCoord];</div>
+<div class="line"><span class="lineno">  131</span>            Destroy(chunkRenderer.gameObject);</div>
+<div class="line"><span class="lineno">  132</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a471aa2bd29e9d18c6b5b6ba7b0a933a9">_chunkRenderers</a>.Remove(loadedChunkCoord);</div>
+<div class="line"><span class="lineno">  133</span>        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00018">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer._chunkRenderers</a>.</p>
 
@@ -645,15 +650,15 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   91</span>                }</div>
 <div class="line"><span class="lineno">   92</span>            }</div>
 <div class="line"><span class="lineno">   93</span>        }</div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_html_a994fe711e3c2ef01749eace831584066"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a994fe711e3c2ef01749eace831584066">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.DestroyRendererAt</a></div><div class="ttdeci">void DestroyRendererAt(ChunkCoord loadedChunkCoord)</div><div class="ttdef"><b>Definition</b> <a href="GridChunkSystemRenderer_8cs_source.html#l00126">GridChunkSystemRenderer.cs:126</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_html_a994fe711e3c2ef01749eace831584066"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a994fe711e3c2ef01749eace831584066">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.DestroyRendererAt</a></div><div class="ttdeci">void DestroyRendererAt(ChunkCoord loadedChunkCoord)</div><div class="ttdef"><b>Definition</b> <a href="GridChunkSystemRenderer_8cs_source.html#l00128">GridChunkSystemRenderer.cs:128</a></div></div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_html_ac39b432dc11a7d366ae3892b97688f69"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ac39b432dc11a7d366ae3892b97688f69">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.CreateRendererAt</a></div><div class="ttdeci">void CreateRendererAt(ChunkCoord loadedChunkCoord)</div><div class="ttdef"><b>Definition</b> <a href="GridChunkSystemRenderer_8cs_source.html#l00095">GridChunkSystemRenderer.cs:95</a></div></div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_html_ae74169a910aae91b19a9a78bc425acb2"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ae74169a910aae91b19a9a78bc425acb2">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.UpdateRendererAt</a></div><div class="ttdeci">void UpdateRendererAt(ChunkCoord loadedChunkCoord)</div><div class="ttdef"><b>Definition</b> <a href="GridChunkSystemRenderer_8cs_source.html#l00133">GridChunkSystemRenderer.cs:133</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_html_ae74169a910aae91b19a9a78bc425acb2"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ae74169a910aae91b19a9a78bc425acb2">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.UpdateRendererAt</a></div><div class="ttdeci">void UpdateRendererAt(ChunkCoord loadedChunkCoord)</div><div class="ttdef"><b>Definition</b> <a href="GridChunkSystemRenderer_8cs_source.html#l00135">GridChunkSystemRenderer.cs:135</a></div></div>
 <div class="ttc" id="anamespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_html_abafe30cfedaf23d3b495d15af388fa6d"><div class="ttname"><a href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core.html#abafe30cfedaf23d3b495d15af388fa6d">_Project.World.Planet.Scripts.Chunking.Core.ChunkChangeType</a></div><div class="ttdeci">ChunkChangeType</div><div class="ttdoc">the type of the ChunkChange.</div><div class="ttdef"><b>Definition</b> <a href="ChunkChange_8cs_source.html#l00022">ChunkChange.cs:23</a></div></div>
 <div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkChange_html"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkChange.html">_Project.World.Planet.Scripts.Chunking.Core.ChunkChange</a></div><div class="ttdoc">a chunk change is a change the chunk manager made. this is used to signal the unity side of the proje...</div><div class="ttdef"><b>Definition</b> <a href="ChunkChange_8cs_source.html#l00007">ChunkChange.cs:8</a></div></div>
 <div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkChange_html_acac2241303ea93d7f1c861ed7e1003c6"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkChange.html#acac2241303ea93d7f1c861ed7e1003c6">_Project.World.Planet.Scripts.Chunking.Core.ChunkChange.Coord</a></div><div class="ttdeci">ChunkCoord Coord</div><div class="ttdef"><b>Definition</b> <a href="ChunkChange_8cs_source.html#l00009">ChunkChange.cs:9</a></div></div>
 <div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkChange_html_acc7ad6005074674f4cff521e94fb6319"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkChange.html#acc7ad6005074674f4cff521e94fb6319">_Project.World.Planet.Scripts.Chunking.Core.ChunkChange.Type</a></div><div class="ttdeci">ChunkChangeType Type</div><div class="ttdef"><b>Definition</b> <a href="ChunkChange_8cs_source.html#l00010">ChunkChange.cs:10</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00019">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer._chunkChanges</a>, <a class="el" href="ChunkChange_8cs_source.html#l00009">_Project.World.Planet.Scripts.Chunking.Core.ChunkChange.Coord</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00095">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.CreateRendererAt()</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00126">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.DestroyRendererAt()</a>, <a class="el" href="ChunkChange_8cs_source.html#l00010">_Project.World.Planet.Scripts.Chunking.Core.ChunkChange.Type</a>, and <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00133">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.UpdateRendererAt()</a>.</p>
+<p class="reference">References <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00019">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer._chunkChanges</a>, <a class="el" href="ChunkChange_8cs_source.html#l00009">_Project.World.Planet.Scripts.Chunking.Core.ChunkChange.Coord</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00095">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.CreateRendererAt()</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00128">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.DestroyRendererAt()</a>, <a class="el" href="ChunkChange_8cs_source.html#l00010">_Project.World.Planet.Scripts.Chunking.Core.ChunkChange.Type</a>, and <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00135">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.UpdateRendererAt()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00066">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.Update()</a>.</p>
 <div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -663,23 +668,26 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_a03c3c81b867c37a362470388531af700_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_a03c3c81b867c37a362470388531af700_cgraph" alt=""/></div>
 <map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_a03c3c81b867c37a362470388531af700_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_a03c3c81b867c37a362470388531af700_cgraph">
-<area shape="rect" title=" " alt="" coords="5,106,281,161"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ac39b432dc11a7d366ae3892b97688f69" title=" " alt="" coords="329,106,605,161"/>
-<area shape="poly" title=" " alt="" coords="281,131,315,131,315,136,281,136"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a994fe711e3c2ef01749eace831584066" title=" " alt="" coords="329,185,605,239"/>
-<area shape="poly" title=" " alt="" coords="257,158,341,179,340,184,256,163"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ae74169a910aae91b19a9a78bc425acb2" title=" " alt="" coords="329,27,605,82"/>
-<area shape="poly" title=" " alt="" coords="256,103,340,83,341,88,257,109"/>
+<area shape="rect" title=" " alt="" coords="5,145,281,199"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ac39b432dc11a7d366ae3892b97688f69" title=" " alt="" coords="329,145,605,199"/>
+<area shape="poly" title=" " alt="" coords="281,169,315,169,315,175,281,175"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a994fe711e3c2ef01749eace831584066" title=" " alt="" coords="329,223,605,278"/>
+<area shape="poly" title=" " alt="" coords="257,197,341,217,340,223,256,202"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ae74169a910aae91b19a9a78bc425acb2" title=" " alt="" coords="329,66,605,121"/>
+<area shape="poly" title=" " alt="" coords="256,142,340,121,341,127,257,147"/>
 <area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a681ef138d0e2ee824f9ad012376b27b2" title="applies a given mesh to this renderer" alt="" coords="653,37,947,77"/>
-<area shape="poly" title=" " alt="" coords="587,103,698,78,699,83,588,108"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a79650c30c63ce53caf21eaafc54779e0" title="returns the chunk data of a given position. if no chunk exists at that position, null is returned." alt="" coords="662,103,938,158"/>
-<area shape="poly" title=" " alt="" coords="606,130,648,129,648,135,606,135"/>
+<area shape="poly" title=" " alt="" coords="581,142,604,131,618,120,627,109,637,98,652,87,668,80,670,85,655,92,640,102,631,113,622,124,607,136,583,147"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a505ceff4d0e25ef76a03b712a09f03e3" title=" " alt="" coords="664,102,936,157"/>
+<area shape="poly" title=" " alt="" coords="605,152,650,146,650,151,606,157"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a79650c30c63ce53caf21eaafc54779e0" title="returns the chunk data of a given position. if no chunk exists at that position, null is returned." alt="" coords="662,181,938,235"/>
+<area shape="poly" title=" " alt="" coords="606,184,648,189,648,194,605,190"/>
 <area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a5640743dd19c8884caeed976334beaf8" title=" " alt="" coords="995,5,1311,45"/>
 <area shape="poly" title=" " alt="" coords="946,41,981,38,981,44,947,47"/>
 <area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a705a40744556fe569f1ad6ddaa4f540d" title=" " alt="" coords="1012,69,1293,109"/>
 <area shape="poly" title=" " alt="" coords="947,68,998,73,998,78,946,73"/>
-<area shape="poly" title=" " alt="" coords="606,53,639,53,639,59,606,58"/>
-<area shape="poly" title=" " alt="" coords="588,80,667,98,666,103,587,85"/>
+<area shape="poly" title=" " alt="" coords="605,76,639,72,640,77,606,81"/>
+<area shape="poly" title=" " alt="" coords="606,106,650,110,650,116,605,111"/>
+<area shape="poly" title=" " alt="" coords="577,118,607,131,631,149,655,167,669,173,667,178,652,172,628,154,604,136,575,123"/>
 </map>
 </div>
 <div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -737,43 +745,46 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_ad09ca2ea43799c554c71e58f971d8439_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_ad09ca2ea43799c554c71e58f971d8439_cgraph" alt=""/></div>
 <map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_ad09ca2ea43799c554c71e58f971d8439_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_ad09ca2ea43799c554c71e58f971d8439_cgraph">
-<area shape="rect" title=" " alt="" coords="5,223,281,277"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a03c3c81b867c37a362470388531af700" title=" " alt="" coords="329,144,605,199"/>
-<area shape="poly" title=" " alt="" coords="256,220,340,199,341,205,257,225"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#ad574d29d7a45ae0b4f62c50c26c7e2ae" title="updates the chunk manager. this should be called once per frame. it processes the completed chunk gen..." alt="" coords="329,261,605,316"/>
-<area shape="poly" title=" " alt="" coords="282,264,316,268,315,273,281,269"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ac39b432dc11a7d366ae3892b97688f69" title=" " alt="" coords="653,5,929,60"/>
-<area shape="poly" title=" " alt="" coords="512,141,577,105,652,69,671,62,672,67,654,74,579,109,514,146"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a994fe711e3c2ef01749eace831584066" title=" " alt="" coords="653,163,929,217"/>
-<area shape="poly" title=" " alt="" coords="606,177,640,179,639,184,605,182"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ae74169a910aae91b19a9a78bc425acb2" title=" " alt="" coords="653,84,929,139"/>
-<area shape="poly" title=" " alt="" coords="605,143,639,137,640,142,606,148"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a681ef138d0e2ee824f9ad012376b27b2" title="applies a given mesh to this renderer" alt="" coords="987,90,1280,130"/>
-<area shape="poly" title=" " alt="" coords="913,57,1031,84,1030,90,912,63"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a79650c30c63ce53caf21eaafc54779e0" title="returns the chunk data of a given position. if no chunk exists at that position, null is returned." alt="" coords="995,8,1271,63"/>
-<area shape="poly" title=" " alt="" coords="930,31,981,31,981,37,930,36"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a5640743dd19c8884caeed976334beaf8" title=" " alt="" coords="1337,58,1653,98"/>
-<area shape="poly" title=" " alt="" coords="1280,94,1323,91,1324,96,1281,100"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a705a40744556fe569f1ad6ddaa4f540d" title=" " alt="" coords="1355,122,1636,162"/>
-<area shape="poly" title=" " alt="" coords="1281,120,1341,126,1341,131,1280,126"/>
-<area shape="poly" title=" " alt="" coords="930,108,972,108,972,113,930,113"/>
-<area shape="poly" title=" " alt="" coords="915,81,996,63,997,68,916,86"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#acf48488734cd01d040aa748481210ba9" title="processes the completed chunk generations. it shifts the generated data from the _completedChunks que..." alt="" coords="653,241,929,296"/>
-<area shape="poly" title=" " alt="" coords="605,277,639,275,640,281,606,283"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a801c839c6937815070f58de0f0fc05e8" title="loads / unloads chunks if they are in the different queueues. it doesnt check what chunks need to be ..." alt="" coords="653,320,929,375"/>
-<area shape="poly" title=" " alt="" coords="606,311,640,317,639,322,605,316"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#ae9455f87b933943de8afb5fbe1df72db" title="syncs the loaded chunks with the viewers position. it calculates what chunks should be loaded based o..." alt="" coords="653,399,929,453"/>
-<area shape="poly" title=" " alt="" coords="515,314,580,350,654,385,672,392,671,397,652,390,577,355,512,318"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a6f809eacb6fa867fdcd119e8291f7981" title="generates a chunk at a given position using the chunk generator" alt="" coords="995,320,1271,375"/>
-<area shape="poly" title=" " alt="" coords="930,345,981,345,981,350,930,350"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#af0feb1e1104b07d8876d81b644b1be9c" title="unloads the chunk at a given position" alt="" coords="995,241,1271,296"/>
-<area shape="poly" title=" " alt="" coords="910,317,1000,297,1001,302,911,323"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkGenerator.html#a0fea0694891c9f157bd89cfc7b2fef69" title="generates the chunk data at a given chunk position." alt="" coords="1367,320,1623,375"/>
-<area shape="poly" title=" " alt="" coords="1272,345,1353,345,1353,350,1272,350"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a1c33f9053e683f078390968438958a96" title="calculates the visible chunks based on the viewers position and the view distance in chunks" alt="" coords="977,399,1289,453"/>
-<area shape="poly" title=" " alt="" coords="930,423,964,423,964,429,930,429"/>
-<area shape="rect" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a11f747d1ae0a7f7d0ce6ea39eb804e3f" title=" " alt="" coords="1372,406,1619,446"/>
-<area shape="poly" title=" " alt="" coords="1290,423,1358,423,1358,429,1290,429"/>
+<area shape="rect" title=" " alt="" coords="5,283,281,338"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a03c3c81b867c37a362470388531af700" title=" " alt="" coords="329,205,605,259"/>
+<area shape="poly" title=" " alt="" coords="256,281,340,260,341,265,257,286"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#ad574d29d7a45ae0b4f62c50c26c7e2ae" title="updates the chunk manager. this should be called once per frame. it processes the completed chunk gen..." alt="" coords="329,322,605,377"/>
+<area shape="poly" title=" " alt="" coords="282,324,316,329,315,334,281,330"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ac39b432dc11a7d366ae3892b97688f69" title=" " alt="" coords="653,66,929,121"/>
+<area shape="poly" title=" " alt="" coords="512,202,577,165,652,130,671,123,672,128,654,134,579,170,514,207"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a994fe711e3c2ef01749eace831584066" title=" " alt="" coords="653,223,929,278"/>
+<area shape="poly" title=" " alt="" coords="606,237,640,239,639,245,605,243"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#ae74169a910aae91b19a9a78bc425acb2" title=" " alt="" coords="653,145,929,199"/>
+<area shape="poly" title=" " alt="" coords="605,204,639,197,640,203,606,209"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a681ef138d0e2ee824f9ad012376b27b2" title="applies a given mesh to this renderer" alt="" coords="987,37,1280,77"/>
+<area shape="poly" title=" " alt="" coords="929,76,972,72,973,77,930,81"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a505ceff4d0e25ef76a03b712a09f03e3" title=" " alt="" coords="997,102,1269,157"/>
+<area shape="poly" title=" " alt="" coords="930,105,984,111,983,116,929,111"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a79650c30c63ce53caf21eaafc54779e0" title="returns the chunk data of a given position. if no chunk exists at that position, null is returned." alt="" coords="995,181,1271,235"/>
+<area shape="poly" title=" " alt="" coords="904,118,931,130,955,148,979,166,996,173,994,178,976,170,952,152,928,134,902,123"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a5640743dd19c8884caeed976334beaf8" title=" " alt="" coords="1337,5,1653,45"/>
+<area shape="poly" title=" " alt="" coords="1280,42,1323,38,1324,43,1281,47"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a705a40744556fe569f1ad6ddaa4f540d" title=" " alt="" coords="1355,69,1636,109"/>
+<area shape="poly" title=" " alt="" coords="1281,68,1341,73,1341,78,1280,73"/>
+<area shape="poly" title=" " alt="" coords="901,142,928,130,942,119,951,109,961,97,976,87,993,80,995,84,979,92,964,101,955,112,946,123,931,134,904,147"/>
+<area shape="poly" title=" " alt="" coords="929,152,983,145,984,151,930,157"/>
+<area shape="poly" title=" " alt="" coords="930,184,982,189,981,195,929,189"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#acf48488734cd01d040aa748481210ba9" title="processes the completed chunk generations. it shifts the generated data from the _completedChunks que..." alt="" coords="653,302,929,357"/>
+<area shape="poly" title=" " alt="" coords="605,338,639,336,640,341,606,343"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a801c839c6937815070f58de0f0fc05e8" title="loads / unloads chunks if they are in the different queueues. it doesnt check what chunks need to be ..." alt="" coords="653,381,929,435"/>
+<area shape="poly" title=" " alt="" coords="606,372,640,378,639,383,605,377"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#ae9455f87b933943de8afb5fbe1df72db" title="syncs the loaded chunks with the viewers position. it calculates what chunks should be loaded based o..." alt="" coords="653,459,929,514"/>
+<area shape="poly" title=" " alt="" coords="515,374,580,411,654,446,672,452,671,457,652,450,577,415,512,379"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a6f809eacb6fa867fdcd119e8291f7981" title="generates a chunk at a given position using the chunk generator" alt="" coords="995,302,1271,357"/>
+<area shape="poly" title=" " alt="" coords="910,378,1000,357,1001,362,911,383"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#af0feb1e1104b07d8876d81b644b1be9c" title="unloads the chunk at a given position" alt="" coords="995,381,1271,435"/>
+<area shape="poly" title=" " alt="" coords="930,405,981,405,981,411,930,411"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkGenerator.html#a0fea0694891c9f157bd89cfc7b2fef69" title="generates the chunk data at a given chunk position." alt="" coords="1367,302,1623,357"/>
+<area shape="poly" title=" " alt="" coords="1272,327,1353,327,1353,332,1272,332"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html#a1c33f9053e683f078390968438958a96" title="calculates the visible chunks based on the viewers position and the view distance in chunks" alt="" coords="977,459,1289,514"/>
+<area shape="poly" title=" " alt="" coords="930,484,964,484,964,489,930,489"/>
+<area shape="rect" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a11f747d1ae0a7f7d0ce6ea39eb804e3f" title=" " alt="" coords="1372,467,1619,507"/>
+<area shape="poly" title=" " alt="" coords="1290,484,1358,484,1358,489,1290,489"/>
 </map>
 </div>
 
@@ -803,16 +814,19 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00133">133</a> of file <a class="el" href="GridChunkSystemRenderer_8cs_source.html">GridChunkSystemRenderer.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  134</span>        {</div>
-<div class="line"><span class="lineno">  135</span>            ChunkRenderer chunkRenderer = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a471aa2bd29e9d18c6b5b6ba7b0a933a9">_chunkRenderers</a>[loadedChunkCoord];</div>
-<div class="line"><span class="lineno">  136</span>            <a class="code hl_class" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html">MeshData</a> meshData = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a620a609a39e76df69a7028e06cb20f91">_chunkManager</a>.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a79650c30c63ce53caf21eaafc54779e0">GetChunkAt</a>(loadedChunkCoord)?.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkData.html#a074abc4f198df2abbf38c2a4d7531a9c">MeshData</a>;</div>
-<div class="line"><span class="lineno">  137</span>            <span class="keywordflow">if</span> (meshData == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  138</span>            Mesh unityMesh = UnityMeshBuilder.Build(meshData);</div>
-<div class="line"><span class="lineno">  139</span>            chunkRenderer.ApplyMeshData(unityMesh);</div>
-<div class="line"><span class="lineno">  140</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00135">135</a> of file <a class="el" href="GridChunkSystemRenderer_8cs_source.html">GridChunkSystemRenderer.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>        {</div>
+<div class="line"><span class="lineno">  137</span>            ChunkRenderer chunkRenderer = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a471aa2bd29e9d18c6b5b6ba7b0a933a9">_chunkRenderers</a>[loadedChunkCoord];</div>
+<div class="line"><span class="lineno">  138</span>            <a class="code hl_class" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html">MeshData</a> meshData = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html#a620a609a39e76df69a7028e06cb20f91">_chunkManager</a>.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a79650c30c63ce53caf21eaafc54779e0">GetChunkAt</a>(loadedChunkCoord)?.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkData.html#a074abc4f198df2abbf38c2a4d7531a9c">MeshData</a>;</div>
+<div class="line"><span class="lineno">  139</span>            </div>
+<div class="line"><span class="lineno">  140</span>            <span class="keywordflow">if</span> (meshData == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  141</span>            Mesh unityMesh = UnityMeshBuilder.Build(meshData);</div>
+<div class="line"><span class="lineno">  142</span>            </div>
+<div class="line"><span class="lineno">  143</span>            meshData.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a505ceff4d0e25ef76a03b712a09f03e3">Dispose</a>(); <span class="comment">// we can dispose the mesh data after building the unity mesh since we don&#39;t need it anymore. this is important to avoid memory leaks since the mesh data uses native collections that are not managed by the garbage collector.</span></div>
+<div class="line"><span class="lineno">  144</span>            chunkRenderer.ApplyMeshData(unityMesh);</div>
+<div class="line"><span class="lineno">  145</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00015">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer._chunkManager</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00018">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer._chunkRenderers</a>, <a class="el" href="ChunkRenderer_8cs_source.html#l00046">_Project.World.Planet.Scripts.Chunking.ChunkRenderer.ApplyMeshData()</a>, <a class="el" href="GridChunkManager_8cs_source.html#l00081">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager.GetChunkAt()</a>, and <a class="el" href="ChunkData_8cs_source.html#l00013">_Project.World.Planet.Scripts.Chunking.Core.ChunkData.MeshData</a>.</p>
+<p class="reference">References <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00015">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer._chunkManager</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00018">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer._chunkRenderers</a>, <a class="el" href="ChunkRenderer_8cs_source.html#l00046">_Project.World.Planet.Scripts.Chunking.ChunkRenderer.ApplyMeshData()</a>, <a class="el" href="MeshData_8cs_source.html#l00023">_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.MeshData.Dispose()</a>, <a class="el" href="GridChunkManager_8cs_source.html#l00081">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager.GetChunkAt()</a>, and <a class="el" href="Core_2ChunkData_8cs_source.html#l00013">_Project.World.Planet.Scripts.Chunking.Core.ChunkData.MeshData</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00074">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.SyncRenderers()</a>.</p>
 <div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -822,11 +836,13 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_ae74169a910aae91b19a9a78bc425acb2_cgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_ae74169a910aae91b19a9a78bc425acb2_cgraph" alt=""/></div>
 <map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_ae74169a910aae91b19a9a78bc425acb2_cgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer_ae74169a910aae91b19a9a78bc425acb2_cgraph">
-<area shape="rect" title=" " alt="" coords="5,66,281,121"/>
+<area shape="rect" title=" " alt="" coords="5,102,281,157"/>
 <area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a681ef138d0e2ee824f9ad012376b27b2" title="applies a given mesh to this renderer" alt="" coords="329,37,623,77"/>
-<area shape="poly" title=" " alt="" coords="281,76,315,72,316,77,282,81"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a79650c30c63ce53caf21eaafc54779e0" title="returns the chunk data of a given position. if no chunk exists at that position, null is returned." alt="" coords="338,102,614,157"/>
-<area shape="poly" title=" " alt="" coords="282,106,324,110,324,116,281,111"/>
+<area shape="poly" title=" " alt="" coords="270,99,369,78,370,83,271,105"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1MeshData.html#a505ceff4d0e25ef76a03b712a09f03e3" title=" " alt="" coords="340,102,612,157"/>
+<area shape="poly" title=" " alt="" coords="282,127,326,127,326,132,282,132"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkManager.html#a79650c30c63ce53caf21eaafc54779e0" title="returns the chunk data of a given position. if no chunk exists at that position, null is returned." alt="" coords="338,181,614,235"/>
+<area shape="poly" title=" " alt="" coords="260,154,347,175,346,180,259,159"/>
 <area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a5640743dd19c8884caeed976334beaf8" title=" " alt="" coords="671,5,987,45"/>
 <area shape="poly" title=" " alt="" coords="622,41,657,38,657,44,623,47"/>
 <area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html#a705a40744556fe569f1ad6ddaa4f540d" title=" " alt="" coords="688,69,969,109"/>
@@ -899,7 +915,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00015">15</a> of file <a class="el" href="GridChunkSystemRenderer_8cs_source.html">GridChunkSystemRenderer.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00095">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.CreateRendererAt()</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00021">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.SetChunkManager()</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00066">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.Update()</a>, and <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00133">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.UpdateRendererAt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00095">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.CreateRendererAt()</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00021">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.SetChunkManager()</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00066">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.Update()</a>, and <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00135">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.UpdateRendererAt()</a>.</p>
 
 </div>
 </div>
@@ -925,7 +941,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00018">18</a> of file <a class="el" href="GridChunkSystemRenderer_8cs_source.html">GridChunkSystemRenderer.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00095">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.CreateRendererAt()</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00126">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.DestroyRendererAt()</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00049">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.RebuildRendererDictionary()</a>, and <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00133">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.UpdateRendererAt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00095">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.CreateRendererAt()</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00128">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.DestroyRendererAt()</a>, <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00049">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.RebuildRendererDictionary()</a>, and <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00135">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.UpdateRendererAt()</a>.</p>
 
 </div>
 </div>

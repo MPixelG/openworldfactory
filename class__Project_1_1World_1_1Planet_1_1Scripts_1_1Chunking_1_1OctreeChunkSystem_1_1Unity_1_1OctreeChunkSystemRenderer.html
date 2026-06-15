@@ -133,12 +133,16 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a300d1aa9e59bd7c356e160ddaf2bd04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63e43c585da6183d8e1244dfe43829f0" id="r_a63e43c585da6183d8e1244dfe43829f0"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a63e43c585da6183d8e1244dfe43829f0">_viewer</a></td></tr>
 <tr class="separator:a63e43c585da6183d8e1244dfe43829f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9053599941f95e1be48cbba533bd47e4" id="r_a9053599941f95e1be48cbba533bd47e4"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a9053599941f95e1be48cbba533bd47e4">octreeGizmoDrawLayer</a> = 0</td></tr>
+<tr class="memitem:a9053599941f95e1be48cbba533bd47e4" id="r_a9053599941f95e1be48cbba533bd47e4"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a9053599941f95e1be48cbba533bd47e4">octreeGizmoDrawLayer</a></td></tr>
 <tr class="separator:a9053599941f95e1be48cbba533bd47e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f72b659ff8d3ccb644b930f22269f9" id="r_a41f72b659ff8d3ccb644b930f22269f9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a41f72b659ff8d3ccb644b930f22269f9">drawAllLayersUpToSelected</a></td></tr>
+<tr class="separator:a41f72b659ff8d3ccb644b930f22269f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0aeed94d664e57c3a635199e72a401d" id="r_aa0aeed94d664e57c3a635199e72a401d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#aa0aeed94d664e57c3a635199e72a401d">showSolidStateCubes</a> = true</td></tr>
+<tr class="separator:aa0aeed94d664e57c3a635199e72a401d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00008">8</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00009">9</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5ad8ddad93bb59706e251482c2b25220" name="a5ad8ddad93bb59706e251482c2b25220"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5ad8ddad93bb59706e251482c2b25220">&#9670;&#160;</a></span>OnDrawGizmos()</h2>
@@ -163,47 +167,70 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00020">20</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>        {</div>
-<div class="line"><span class="lineno">   22</span>            <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html">Octree</a> octree = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a300d1aa9e59bd7c356e160ddaf2bd04c">_chunkManager</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#ad3ce1f7090daaf231e75bb3f9a167135">Octree</a>;</div>
-<div class="line"><span class="lineno">   23</span>            </div>
-<div class="line"><span class="lineno">   24</span>            </div>
-<div class="line"><span class="lineno">   25</span>            float3 rootSize = octree.Max - octree.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html#a510cc25763927d157746aeb6925f14e9">Min</a>;</div>
-<div class="line"><span class="lineno">   26</span>            </div>
-<div class="line"><span class="lineno">   27</span>            <span class="keywordflow">foreach</span> (<a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html">OctreeNode</a> octreeNode <span class="keywordflow">in</span> <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a300d1aa9e59bd7c356e160ddaf2bd04c">_chunkManager</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#ad3ce1f7090daaf231e75bb3f9a167135">Octree</a>.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html#a3071083fb75099659dcd474f4f79fb20">Nodes</a>)</div>
-<div class="line"><span class="lineno">   28</span>            {</div>
-<div class="line"><span class="lineno">   29</span>                <span class="keywordflow">if</span> (octreeNode.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html#ae09df05d20a6db6d7c970d6e1b0da34a">Depth</a> &gt; <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a9053599941f95e1be48cbba533bd47e4">octreeGizmoDrawLayer</a>) <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   30</span>                Gizmos.color = Color.Lerp(Color.white, Color.red, (<span class="keywordtype">float</span>) octreeNode.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html#ae09df05d20a6db6d7c970d6e1b0da34a">Depth</a> / <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a9053599941f95e1be48cbba533bd47e4">octreeGizmoDrawLayer</a>).WithAlpha(0.1f);</div>
-<div class="line"><span class="lineno">   31</span>                int3 min = octreeNode.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html#a4d14baa644ddfcae32c6eee03852e58f">Coord</a>;</div>
-<div class="line"><span class="lineno">   32</span>                float3 size = rootSize / (1 &lt;&lt; octreeNode.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html#ae09df05d20a6db6d7c970d6e1b0da34a">Depth</a>);</div>
-<div class="line"><span class="lineno">   33</span>                Gizmos.DrawWireCube(min + size/2, size);</div>
+<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00024">24</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>        {</div>
+<div class="line"><span class="lineno">   26</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a300d1aa9e59bd7c356e160ddaf2bd04c">_chunkManager</a> == <span class="keyword">null</span> || !<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a300d1aa9e59bd7c356e160ddaf2bd04c">_chunkManager</a>.<a class="code hl_property" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a29a94ba0037080d9d8492d6710e61f02">OctreeReady</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   27</span>            </div>
+<div class="line"><span class="lineno">   28</span>            <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html">Octree</a> octree = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a300d1aa9e59bd7c356e160ddaf2bd04c">_chunkManager</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#ad3ce1f7090daaf231e75bb3f9a167135">Octree</a>;</div>
+<div class="line"><span class="lineno">   29</span>            <span class="keywordtype">byte</span> maxDepth = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a300d1aa9e59bd7c356e160ddaf2bd04c">_chunkManager</a>.<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#ad3ce1f7090daaf231e75bb3f9a167135">Octree</a>.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html#ac2e407853303188f8640e9f82748cc02">MaxDepth</a>;</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>            <span class="keywordflow">foreach</span> (v2.OctreeNode octreeNode in octree.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html#acef9de6aa4d975122e43fa820cded39e">Nodes</a>)</div>
+<div class="line"><span class="lineno">   32</span>            {</div>
+<div class="line"><span class="lineno">   33</span>                <span class="keywordtype">byte</span> depth = octreeNode.MortonCode.GetDepth();</div>
 <div class="line"><span class="lineno">   34</span>                </div>
-<div class="line"><span class="lineno">   35</span>                </div>
-<div class="line"><span class="lineno">   36</span>                <span class="keywordflow">if</span> (octreeNode.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html#ae09df05d20a6db6d7c970d6e1b0da34a">Depth</a> != <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a9053599941f95e1be48cbba533bd47e4">octreeGizmoDrawLayer</a>) <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   37</span>                Gizmos.color = (octreeNode.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html#a40ecb0ef3fa3d3a6c0acbcb36e631b1a">State</a>)<span class="keywordflow">switch</span></div>
-<div class="line"><span class="lineno">   38</span>                {</div>
-<div class="line"><span class="lineno">   39</span>                    OctreeNodeState.Empty =&gt; Color.purple,</div>
-<div class="line"><span class="lineno">   40</span>                    OctreeNodeState.Full =&gt; Color.green.WithAlpha(0.1f),</div>
-<div class="line"><span class="lineno">   41</span>                    OctreeNodeState.Mixed =&gt; Color.yellow.WithAlpha(0.05f),</div>
-<div class="line"><span class="lineno">   42</span>                    OctreeNodeState.Unknown =&gt; Color.blue,</div>
-<div class="line"><span class="lineno">   43</span>                    _ =&gt; Gizmos.color</div>
-<div class="line"><span class="lineno">   44</span>                };</div>
-<div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>                Gizmos.DrawCube(min + size / 2, size/5);</div>
-<div class="line"><span class="lineno">   47</span>            }</div>
-<div class="line"><span class="lineno">   48</span>        }</div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager_html_ad3ce1f7090daaf231e75bb3f9a167135"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#ad3ce1f7090daaf231e75bb3f9a167135">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager.Octree</a></div><div class="ttdeci">Octree Octree</div><div class="ttdef"><b>Definition</b> <a href="OctreeChunkManager_8cs_source.html#l00016">OctreeChunkManager.cs:16</a></div></div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer_html_a300d1aa9e59bd7c356e160ddaf2bd04c"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a300d1aa9e59bd7c356e160ddaf2bd04c">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer._chunkManager</a></div><div class="ttdeci">OctreeChunkManager _chunkManager</div><div class="ttdef"><b>Definition</b> <a href="OctreeChunkSystemRenderer_8cs_source.html#l00010">OctreeChunkSystemRenderer.cs:10</a></div></div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer_html_a9053599941f95e1be48cbba533bd47e4"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a9053599941f95e1be48cbba533bd47e4">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.octreeGizmoDrawLayer</a></div><div class="ttdeci">byte octreeGizmoDrawLayer</div><div class="ttdef"><b>Definition</b> <a href="OctreeChunkSystemRenderer_8cs_source.html#l00013">OctreeChunkSystemRenderer.cs:13</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode_html"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeNode</a></div><div class="ttdef"><b>Definition</b> <a href="OctreeNode_8cs_source.html#l00006">OctreeNode.cs:7</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode_html_a40ecb0ef3fa3d3a6c0acbcb36e631b1a"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html#a40ecb0ef3fa3d3a6c0acbcb36e631b1a">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeNode.State</a></div><div class="ttdeci">OctreeNodeState State</div><div class="ttdef"><b>Definition</b> <a href="OctreeNode_8cs_source.html#l00027">OctreeNode.cs:27</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode_html_a4d14baa644ddfcae32c6eee03852e58f"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html#a4d14baa644ddfcae32c6eee03852e58f">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeNode.Coord</a></div><div class="ttdeci">int3 Coord</div><div class="ttdef"><b>Definition</b> <a href="OctreeNode_8cs_source.html#l00008">OctreeNode.cs:8</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode_html_ae09df05d20a6db6d7c970d6e1b0da34a"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html#ae09df05d20a6db6d7c970d6e1b0da34a">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeNode.Depth</a></div><div class="ttdeci">byte Depth</div><div class="ttdef"><b>Definition</b> <a href="OctreeNode_8cs_source.html#l00009">OctreeNode.cs:9</a></div></div>
+<div class="line"><span class="lineno">   35</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a41f72b659ff8d3ccb644b930f22269f9">drawAllLayersUpToSelected</a>)</div>
+<div class="line"><span class="lineno">   36</span>                {</div>
+<div class="line"><span class="lineno">   37</span>                    <span class="keywordflow">if</span> (depth &gt; <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a9053599941f95e1be48cbba533bd47e4">octreeGizmoDrawLayer</a>) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   38</span>                }</div>
+<div class="line"><span class="lineno">   39</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   40</span>                {</div>
+<div class="line"><span class="lineno">   41</span>                    <span class="keywordflow">if</span> (depth != <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a9053599941f95e1be48cbba533bd47e4">octreeGizmoDrawLayer</a>) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   42</span>                }</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>                <span class="keywordtype">int</span> nodeSize = 1 &lt;&lt; (maxDepth - depth);</div>
+<div class="line"><span class="lineno">   45</span>                float3 size = <span class="keyword">new</span> float3(nodeSize);</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>                int3 localGridPos = octreeNode.MortonCode.DecodeCoord();</div>
+<div class="line"><span class="lineno">   48</span>                float3 worldMin = octree.Min + (localGridPos * nodeSize);</div>
+<div class="line"><span class="lineno">   49</span>                float3 center = worldMin + (size * 0.5f);</div>
+<div class="line"><span class="lineno">   50</span>                </div>
+<div class="line"><span class="lineno">   51</span>                <span class="keywordtype">float</span> depthLerp = maxDepth &gt; 0 ? (float)depth / maxDepth : 0f;</div>
+<div class="line"><span class="lineno">   52</span>                Color wireColor = Color.Lerp(Color.white, Color.red, depthLerp);</div>
+<div class="line"><span class="lineno">   53</span>                wireColor.a = depth == <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a9053599941f95e1be48cbba533bd47e4">octreeGizmoDrawLayer</a> ? 0.15f : 0.05f;</div>
+<div class="line"><span class="lineno">   54</span>                Gizmos.color = wireColor;</div>
+<div class="line"><span class="lineno">   55</span>                </div>
+<div class="line"><span class="lineno">   56</span>                Gizmos.DrawWireCube(center, size);</div>
+<div class="line"><span class="lineno">   57</span>                </div>
+<div class="line"><span class="lineno">   58</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#aa0aeed94d664e57c3a635199e72a401d">showSolidStateCubes</a>)</div>
+<div class="line"><span class="lineno">   59</span>                {</div>
+<div class="line"><span class="lineno">   60</span>                    Color gizmoColor = octreeNode.State <span class="keywordflow">switch</span></div>
+<div class="line"><span class="lineno">   61</span>                    {</div>
+<div class="line"><span class="lineno">   62</span>                        v2.OctreeNodeState.Empty =&gt; <span class="keyword">new</span> Color(0.5f, 0f, 0.5f, 0.2f),</div>
+<div class="line"><span class="lineno">   63</span>                        v2.OctreeNodeState.Full =&gt; <span class="keyword">new</span> Color(0f, 1f, 0f, 0.1f),</div>
+<div class="line"><span class="lineno">   64</span>                        v2.OctreeNodeState.Mixed =&gt; <span class="keyword">new</span> Color(1f, 0.92f, 0.016f, 0.4f),</div>
+<div class="line"><span class="lineno">   65</span>                        v2.OctreeNodeState.Unknown =&gt; Color.blue,</div>
+<div class="line"><span class="lineno">   66</span>                        _ =&gt; Gizmos.color</div>
+<div class="line"><span class="lineno">   67</span>                    };</div>
+<div class="line"><span class="lineno">   68</span>                    </div>
+<div class="line"><span class="lineno">   69</span>                    <span class="keywordflow">if</span>(depth != <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a9053599941f95e1be48cbba533bd47e4">octreeGizmoDrawLayer</a>) gizmoColor = gizmoColor.WithAlphaMultiplied(0.3f);</div>
+<div class="line"><span class="lineno">   70</span>                    Gizmos.color = gizmoColor;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>                    <span class="keywordtype">float</span> cubeScale = octreeNode.State == v2.OctreeNodeState.Mixed ? 0.25f : 0.15f;</div>
+<div class="line"><span class="lineno">   73</span>                    Gizmos.DrawCube(center, size * cubeScale);</div>
+<div class="line"><span class="lineno">   74</span>                }</div>
+<div class="line"><span class="lineno">   75</span>            }</div>
+<div class="line"><span class="lineno">   76</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager_html_a29a94ba0037080d9d8492d6710e61f02"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a29a94ba0037080d9d8492d6710e61f02">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager.OctreeReady</a></div><div class="ttdeci">bool OctreeReady</div><div class="ttdef"><b>Definition</b> <a href="OctreeChunkManager_8cs_source.html#l00036">OctreeChunkManager.cs:36</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager_html_ad3ce1f7090daaf231e75bb3f9a167135"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#ad3ce1f7090daaf231e75bb3f9a167135">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager.Octree</a></div><div class="ttdeci">Octree Octree</div><div class="ttdef"><b>Definition</b> <a href="OctreeChunkManager_8cs_source.html#l00010">OctreeChunkManager.cs:10</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer_html_a300d1aa9e59bd7c356e160ddaf2bd04c"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a300d1aa9e59bd7c356e160ddaf2bd04c">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer._chunkManager</a></div><div class="ttdeci">OctreeChunkManager _chunkManager</div><div class="ttdef"><b>Definition</b> <a href="OctreeChunkSystemRenderer_8cs_source.html#l00011">OctreeChunkSystemRenderer.cs:11</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer_html_a41f72b659ff8d3ccb644b930f22269f9"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a41f72b659ff8d3ccb644b930f22269f9">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.drawAllLayersUpToSelected</a></div><div class="ttdeci">bool drawAllLayersUpToSelected</div><div class="ttdef"><b>Definition</b> <a href="OctreeChunkSystemRenderer_8cs_source.html#l00016">OctreeChunkSystemRenderer.cs:16</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer_html_a9053599941f95e1be48cbba533bd47e4"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a9053599941f95e1be48cbba533bd47e4">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.octreeGizmoDrawLayer</a></div><div class="ttdeci">byte octreeGizmoDrawLayer</div><div class="ttdef"><b>Definition</b> <a href="OctreeChunkSystemRenderer_8cs_source.html#l00015">OctreeChunkSystemRenderer.cs:15</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer_html_aa0aeed94d664e57c3a635199e72a401d"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#aa0aeed94d664e57c3a635199e72a401d">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.showSolidStateCubes</a></div><div class="ttdeci">bool showSolidStateCubes</div><div class="ttdef"><b>Definition</b> <a href="OctreeChunkSystemRenderer_8cs_source.html#l00017">OctreeChunkSystemRenderer.cs:17</a></div></div>
 <div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree_html"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.Octree</a></div><div class="ttdoc">a struct that represents an octree. it contains a list of octree nodes and the min and max bounds of ...</div><div class="ttdef"><b>Definition</b> <a href="Octree_8cs_source.html#l00011">Octree.cs:12</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree_html_a3071083fb75099659dcd474f4f79fb20"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html#a3071083fb75099659dcd474f4f79fb20">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.Octree.Nodes</a></div><div class="ttdeci">NativeList&lt; OctreeNode &gt; Nodes</div><div class="ttdef"><b>Definition</b> <a href="Octree_8cs_source.html#l00013">Octree.cs:13</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree_html_a510cc25763927d157746aeb6925f14e9"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html#a510cc25763927d157746aeb6925f14e9">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.Octree.Min</a></div><div class="ttdeci">float3 Min</div><div class="ttdef"><b>Definition</b> <a href="Octree_8cs_source.html#l00014">Octree.cs:14</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree_html_ac2e407853303188f8640e9f82748cc02"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html#ac2e407853303188f8640e9f82748cc02">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.Octree.MaxDepth</a></div><div class="ttdeci">byte MaxDepth</div><div class="ttdef"><b>Definition</b> <a href="Octree_8cs_source.html#l00016">Octree.cs:16</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree_html_acef9de6aa4d975122e43fa820cded39e"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html#acef9de6aa4d975122e43fa820cded39e">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.Octree.Nodes</a></div><div class="ttdeci">NativeList&lt; v2.OctreeNode &gt; Nodes</div><div class="ttdef"><b>Definition</b> <a href="Octree_8cs_source.html#l00013">Octree.cs:13</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00010">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer._chunkManager</a>, <a class="el" href="OctreeNode_8cs_source.html#l00008">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeNode.Coord</a>, <a class="el" href="OctreeNode_8cs_source.html#l00009">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeNode.Depth</a>, <a class="el" href="Octree_8cs_source.html#l00014">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.Octree.Min</a>, <a class="el" href="Octree_8cs_source.html#l00013">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.Octree.Nodes</a>, <a class="el" href="OctreeChunkManager_8cs_source.html#l00016">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager.Octree</a>, <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00013">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.octreeGizmoDrawLayer</a>, and <a class="el" href="OctreeNode_8cs_source.html#l00027">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeNode.State</a>.</p>
+<p class="reference">References <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00011">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer._chunkManager</a>, <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00016">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.drawAllLayersUpToSelected</a>, <a class="el" href="Octree_8cs_source.html#l00016">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.Octree.MaxDepth</a>, <a class="el" href="Octree_8cs_source.html#l00013">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.Octree.Nodes</a>, <a class="el" href="OctreeChunkManager_8cs_source.html#l00010">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager.Octree</a>, <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00015">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.octreeGizmoDrawLayer</a>, <a class="el" href="OctreeChunkManager_8cs_source.html#l00036">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager.OctreeReady</a>, and <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00017">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.showSolidStateCubes</a>.</p>
 
 </div>
 </div>
@@ -231,12 +258,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00015">15</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>        {</div>
-<div class="line"><span class="lineno">   17</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a300d1aa9e59bd7c356e160ddaf2bd04c">_chunkManager</a> = chunkManager;</div>
-<div class="line"><span class="lineno">   18</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00019">19</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>        {</div>
+<div class="line"><span class="lineno">   21</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a300d1aa9e59bd7c356e160ddaf2bd04c">_chunkManager</a> = chunkManager;</div>
+<div class="line"><span class="lineno">   22</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00010">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer._chunkManager</a>.</p>
+<p class="reference">References <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00011">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer._chunkManager</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="OctreeChunkSystemBootstrap_8cs_source.html#l00038">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemBootstrap.OnDisable()</a>, and <a class="el" href="OctreeChunkSystemBootstrap_8cs_source.html#l00015">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemBootstrap.OnEnable()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -279,15 +306,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00051">51</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>        {</div>
-<div class="line"><span class="lineno">   53</span>            float3 viewerPosition = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a63e43c585da6183d8e1244dfe43829f0">_viewer</a> != <span class="keyword">null</span> ? _viewer.position : float3.zero;</div>
-<div class="line"><span class="lineno">   54</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a300d1aa9e59bd7c356e160ddaf2bd04c">_chunkManager</a>?.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a9b2a3ef34535261b7c438f67139e7c54">Update</a>(viewerPosition);</div>
-<div class="line"><span class="lineno">   55</span>        }</div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager_html_a9b2a3ef34535261b7c438f67139e7c54"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a9b2a3ef34535261b7c438f67139e7c54">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager.Update</a></div><div class="ttdeci">void Update(float3 viewerPos)</div><div class="ttdef"><b>Definition</b> <a href="OctreeChunkManager_8cs_source.html#l00046">OctreeChunkManager.cs:46</a></div></div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer_html_a63e43c585da6183d8e1244dfe43829f0"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a63e43c585da6183d8e1244dfe43829f0">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer._viewer</a></div><div class="ttdeci">Transform _viewer</div><div class="ttdef"><b>Definition</b> <a href="OctreeChunkSystemRenderer_8cs_source.html#l00011">OctreeChunkSystemRenderer.cs:11</a></div></div>
+<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00078">78</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>        {</div>
+<div class="line"><span class="lineno">   80</span>            float3 viewerPosition = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a63e43c585da6183d8e1244dfe43829f0">_viewer</a> != <span class="keyword">null</span> ? _viewer.position : float3.zero;</div>
+<div class="line"><span class="lineno">   81</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a300d1aa9e59bd7c356e160ddaf2bd04c">_chunkManager</a>?.<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a9b2a3ef34535261b7c438f67139e7c54">Update</a>(viewerPosition);</div>
+<div class="line"><span class="lineno">   82</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager_html_a9b2a3ef34535261b7c438f67139e7c54"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a9b2a3ef34535261b7c438f67139e7c54">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager.Update</a></div><div class="ttdeci">void Update(float3 viewerPos)</div><div class="ttdef"><b>Definition</b> <a href="OctreeChunkManager_8cs_source.html#l00045">OctreeChunkManager.cs:45</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer_html_a63e43c585da6183d8e1244dfe43829f0"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a63e43c585da6183d8e1244dfe43829f0">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer._viewer</a></div><div class="ttdeci">Transform _viewer</div><div class="ttdef"><b>Definition</b> <a href="OctreeChunkSystemRenderer_8cs_source.html#l00012">OctreeChunkSystemRenderer.cs:12</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00010">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer._chunkManager</a>, <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00011">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer._viewer</a>, and <a class="el" href="OctreeChunkManager_8cs_source.html#l00046">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager.Update()</a>.</p>
+<p class="reference">References <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00011">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer._chunkManager</a>, <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00012">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer._viewer</a>, and <a class="el" href="OctreeChunkManager_8cs_source.html#l00045">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager.Update()</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -324,9 +351,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00010">10</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00011">11</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00020">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.OnDrawGizmos()</a>, <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00015">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.SetChunkManager()</a>, and <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00051">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00024">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.OnDrawGizmos()</a>, <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00019">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.SetChunkManager()</a>, and <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00078">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.Update()</a>.</p>
 
 </div>
 </div>
@@ -350,9 +377,35 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00011">11</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00012">12</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00051">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00078">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.Update()</a>.</p>
+
+</div>
+</div>
+<a id="a41f72b659ff8d3ccb644b930f22269f9" name="a41f72b659ff8d3ccb644b930f22269f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41f72b659ff8d3ccb644b930f22269f9">&#9670;&#160;</a></span>drawAllLayersUpToSelected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.drawAllLayersUpToSelected</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00016">16</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00024">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.OnDrawGizmos()</a>.</p>
 
 </div>
 </div>
@@ -366,7 +419,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">byte _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.octreeGizmoDrawLayer = 0</td>
+          <td class="memname">byte _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.octreeGizmoDrawLayer</td>
         </tr>
       </table>
   </td>
@@ -376,9 +429,35 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00013">13</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00015">15</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00020">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.OnDrawGizmos()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00024">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.OnDrawGizmos()</a>.</p>
+
+</div>
+</div>
+<a id="aa0aeed94d664e57c3a635199e72a401d" name="aa0aeed94d664e57c3a635199e72a401d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0aeed94d664e57c3a635199e72a401d">&#9670;&#160;</a></span>showSolidStateCubes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.showSolidStateCubes = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00017">17</a> of file <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html">OctreeChunkSystemRenderer.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00024">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.OnDrawGizmos()</a>.</p>
 
 </div>
 </div>
