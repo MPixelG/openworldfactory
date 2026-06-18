@@ -1,0 +1,7 @@
+<map id="_Project.World.Planet.Scripts.v2.PlanetManager" name="_Project.World.Planet.Scripts.v2.PlanetManager">
+<area shape="rect" id="Node000001" title=" " alt="" coords="365,49,597,89"/>
+<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html" title="a struct that represents an octree. it contains a list of octree nodes and the min and max bounds of ..." alt="" coords="5,5,264,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="278,45,365,54,365,59,277,50"/>
+<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetConfig.html" title=" " alt="" coords="19,85,251,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="264,89,365,78,365,83,265,94"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="_Project.World.Planet.Scripts.v2.Unity.PlanetBootstrap" name="_Project.World.Planet.Scripts.v2.Unity.PlanetBootstrap">
+<area shape="rect" id="Node000001" title=" " alt="" coords="755,55,987,95"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="419,5,543,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="557,26,755,56,754,61,556,32"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetSettings.html" title=" " alt="" coords="365,55,597,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="611,73,754,73,754,78,611,78"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="70,35,199,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="213,51,365,63,365,69,213,56"/>
+<area shape="rect" id="Node000005" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetConfig.html" title=" " alt="" coords="19,85,251,125"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="264,91,365,82,365,88,265,96"/>
+<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html" title=" " alt="" coords="365,119,597,159"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="265,115,365,125,365,130,264,120"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="611,115,754,92,755,97,612,121"/>
+<area shape="rect" id="Node000007" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html" title="a struct that represents an octree. it contains a list of octree nodes and the min and max bounds of ..." alt="" coords="5,149,264,204"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="277,159,365,149,365,154,278,164"/>
+</map>
