@@ -10,7 +10,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
     /// </summary>
     public struct Octree
     {
-        public NativeList<v2.OctreeNode> Nodes;
+        public NativeList<OctreeNode> Nodes;
         public int3 Min;
         public int3 Max;
         public byte MaxDepth;

@@ -1,5 +1,4 @@
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
-using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.v2;
 using UnityEngine;
 using Unity.Mathematics;
 using Unity.VisualScripting;
@@ -28,7 +27,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity
             Octree octree = _chunkManager.Octree;
             byte maxDepth = _chunkManager.Octree.MaxDepth;
 
-            foreach (v2.OctreeNode octreeNode in octree.Nodes)
+            foreach (OctreeNode octreeNode in octree.Nodes)
             {
                 byte depth = octreeNode.MortonCode.GetDepth();
                 
@@ -59,17 +58,17 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity
                 {
                     Color gizmoColor = octreeNode.State switch
                     {
-                        v2.OctreeNodeState.Empty => new Color(0.5f, 0f, 0.5f, 0.2f),
-                        v2.OctreeNodeState.Full => new Color(0f, 1f, 0f, 0.1f),
-                        v2.OctreeNodeState.Mixed => new Color(1f, 0.92f, 0.016f, 0.4f),
-                        v2.OctreeNodeState.Unknown => Color.blue,
+                        OctreeNodeState.Empty => new Color(0.5f, 0f, 0.5f, 0.2f),
+                        OctreeNodeState.Full => new Color(0f, 1f, 0f, 0.1f),
+                        OctreeNodeState.Mixed => new Color(1f, 0.92f, 0.016f, 0.4f),
+                        OctreeNodeState.Unknown => Color.blue,
                         _ => Gizmos.color
                     };
                     
                     if(depth != octreeGizmoDrawLayer) gizmoColor = gizmoColor.WithAlphaMultiplied(0.3f);
                     Gizmos.color = gizmoColor;
 
-                    float cubeScale = octreeNode.State == v2.OctreeNodeState.Mixed ? 0.25f : 0.15f;
+                    float cubeScale = octreeNode.State == OctreeNodeState.Mixed ? 0.25f : 0.15f;
                     Gizmos.DrawCube(center, size * cubeScale);
                 }
             }

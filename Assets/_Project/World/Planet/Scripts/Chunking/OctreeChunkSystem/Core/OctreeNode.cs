@@ -1,6 +1,4 @@
-using Unity.Mathematics;
-
-namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.v2
+namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
 {
     public struct OctreeNode
     {
