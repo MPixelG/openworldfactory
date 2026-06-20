@@ -32,7 +32,8 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
                 Min = min,
                 Max = min + new int3(1 << maxDepth),
                 MaxDepth = maxDepth,
-                Nodes = new NativeList<OctreeNode>(Allocator.Persistent) // create a persistent dynamically sized native list containing the octree nodes
+                Nodes = new NativeList<OctreeNode>(Allocator.Persistent), // create a persistent dynamically sized native list containing the octree nodes
+                IndexLookup = new NativeHashMap<ulong, int>(1024, Allocator.Persistent)
             };
 
             BuildNode( // we add the root node (which recursively builds its children) so that the tree has its content
@@ -95,10 +96,19 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             //todo if there are values below and above the isolevel in one quarter of a chunk we dont have to sample in that child chunk to see if its full empty since we know its mixed
             
             
+            OctreeNode node = new OctreeNode
+            {
+                MortonCode = mortonCode,
+                State = state,
+                FirstChildIndex = tree.Nodes.Length, 
+                ChildMask = 0xFF // for now this is enough todo do better
+            }; 
             
             if (depth >= maxDepth || state == OctreeNodeState.Full || state == OctreeNodeState.Empty) // if we reached the max depth or the node is completely full or empty,
                                                                                                       // we stop building and just add that node to the tree
             {
+                node.ChildMask = 0;
+                tree.AddNode(node);
                 return;
             }
 
@@ -113,13 +123,6 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
                 );
             }
             
-            OctreeNode node = new OctreeNode
-            {
-                MortonCode = mortonCode,
-                State = state,
-                FirstChildIndex = tree.Nodes.Length, 
-                ChildMask = 0xFF // for now this is enough todo do better
-            }; 
             
             tree.AddNode(node);
         }
@@ -159,6 +162,16 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             node.ChildMask = 0; // remove the children of that node by setting the child mask to 0
             octree.Nodes[nodeIndex] = node; // update the nodes values (currently only the child mask)
         }
+        
+        /// <summary>
+        /// disposes the native collections of the octree. make sure to call this when you are done with the octree to avoid memory leaks.
+        /// </summary>
+        /// <param name="octree">the octree to dispose</param>
+        public static void Dispose(this Octree octree)
+        {
+            if (octree.Nodes.IsCreated) octree.Nodes.Dispose();
+            if (octree.IndexLookup.IsCreated) octree.IndexLookup.Dispose();
+        }
 
         /// <summary>
         /// adds a node to the given octree
@@ -168,7 +181,9 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         /// <returns>the index of that added node in the nodes list of the octree</returns>
         private static void AddNode(this Octree octree, OctreeNode node)
         {
+            int index = octree.Nodes.Length;
             octree.Nodes.Add(node); // add the new node to the list
+            octree.IndexLookup[node.MortonCode] = index;
         }
         
         /*public static float DensityAt(this Octree tree, DensityStorage densityStorage, float3 position)
