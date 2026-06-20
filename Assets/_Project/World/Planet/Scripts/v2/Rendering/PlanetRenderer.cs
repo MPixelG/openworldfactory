@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Project.World.Planet.Scripts.v2
+namespace _Project.World.Planet.Scripts.v2.Rendering
 {
     public class PlanetRenderer : MonoBehaviour
     {

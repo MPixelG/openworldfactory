@@ -1,4 +1,4 @@
-namespace _Project.World.Planet.Scripts.v2
+namespace _Project.World.Planet.Scripts.v2.Data
 {
     public struct ChunkData
     {

@@ -1,4 +1,6 @@
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
+using _Project.World.Planet.Scripts.v2.Data;
+using _Project.World.Planet.Scripts.v2.Unity;
 using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.v2

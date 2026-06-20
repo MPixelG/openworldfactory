@@ -3,7 +3,7 @@ using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace _Project.World.Planet.Scripts.v2
+namespace _Project.World.Planet.Scripts.v2.Rendering
 {
     public class FrustumCullingSystem
     {

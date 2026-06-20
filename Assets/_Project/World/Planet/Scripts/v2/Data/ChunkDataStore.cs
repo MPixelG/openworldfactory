@@ -1,7 +1,6 @@
-using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using Unity.Collections;
 
-namespace _Project.World.Planet.Scripts.v2
+namespace _Project.World.Planet.Scripts.v2.Data
 {
     public class ChunkDataStore
     {
