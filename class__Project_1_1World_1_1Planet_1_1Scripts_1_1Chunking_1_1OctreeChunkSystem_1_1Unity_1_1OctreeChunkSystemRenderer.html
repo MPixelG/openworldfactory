@@ -418,7 +418,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  118</span> </div>
 <div class="line"><span class="lineno">  119</span>                <span class="keywordtype">int</span> nodeSize = 1 &lt;&lt; (maxDepth - depth);</div>
 <div class="line"><span class="lineno">  120</span> </div>
-<div class="line"><span class="lineno">  121</span>                int3 localGridPos = node.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html#ae66ac275dcdae6efcc8d1ab0e6ea273e">MortonCode</a>.DecodeCoord();</div>
+<div class="line"><span class="lineno">  121</span>                int3 localGridPos = node.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html#ae66ac275dcdae6efcc8d1ab0e6ea273e">MortonCode</a>.DecodeToCoord();</div>
 <div class="line"><span class="lineno">  122</span> </div>
 <div class="line"><span class="lineno">  123</span>                float3 worldMin = octree.Min + (localGridPos * nodeSize);</div>
 <div class="line"><span class="lineno">  124</span> </div>

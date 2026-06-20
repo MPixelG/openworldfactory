@@ -78,7 +78,6 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#properties">Properties</a> &#124;
 <a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">_Project.World.Planet.Scripts.Chunking.Core.ChunkCoord Struct Reference</div></div>
 </div><!--header-->
@@ -145,15 +144,6 @@ Static Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a43d0cfa29f44a09d96eca32db87c3d59" id="r_a43d0cfa29f44a09d96eca32db87c3d59"><td class="memItemLeft" align="right" valign="top">readonly int3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a43d0cfa29f44a09d96eca32db87c3d59">Value</a></td></tr>
 <tr class="separator:a43d0cfa29f44a09d96eca32db87c3d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
-Properties</h2></td></tr>
-<tr class="memitem:a006a6d2f73252f4b54830b57adf2cbd6" id="r_a006a6d2f73252f4b54830b57adf2cbd6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a006a6d2f73252f4b54830b57adf2cbd6">X</a><code> [get]</code></td></tr>
-<tr class="separator:a006a6d2f73252f4b54830b57adf2cbd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a499f41c6e3c89eebfff395af29d3eeeb" id="r_a499f41c6e3c89eebfff395af29d3eeeb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a499f41c6e3c89eebfff395af29d3eeeb">Y</a><code> [get]</code></td></tr>
-<tr class="separator:a499f41c6e3c89eebfff395af29d3eeeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47d7558d0b593b7962b1f4e5f937ee74" id="r_a47d7558d0b593b7962b1f4e5f937ee74"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a47d7558d0b593b7962b1f4e5f937ee74">Z</a><code> [get]</code></td></tr>
-<tr class="separator:a47d7558d0b593b7962b1f4e5f937ee74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A chunk coord is basically an int3 but as its own data type. this way we always know what an int3 value means. <br  />
@@ -481,11 +471,11 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ChunkCoord_8cs_source.html#l00046">46</a> of file <a class="el" href="ChunkCoord_8cs_source.html">ChunkCoord.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span>        {</div>
-<div class="line"><span class="lineno">   48</span>            <span class="keywordtype">string</span>[] coords = coord.Replace(<span class="stringliteral">&quot;ChunkCoord(&quot;</span>, <span class="stringliteral">&quot;&quot;</span>).Replace(<span class="stringliteral">&quot;)&quot;</span>, <span class="stringliteral">&quot;&quot;</span>).Split(<span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a0e0d45f2b89e69dcd24becef60248584">ChunkCoord</a>(<span class="keywordtype">int</span>.Parse(coords[0]), <span class="keywordtype">int</span>.Parse(coords[1]), <span class="keywordtype">int</span>.Parse(coords[2]));</div>
-<div class="line"><span class="lineno">   50</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="ChunkCoord_8cs_source.html#l00042">42</a> of file <a class="el" href="ChunkCoord_8cs_source.html">ChunkCoord.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>        {</div>
+<div class="line"><span class="lineno">   44</span>            <span class="keywordtype">string</span>[] coords = coord.Replace(<span class="stringliteral">&quot;ChunkCoord(&quot;</span>, <span class="stringliteral">&quot;&quot;</span>).Replace(<span class="stringliteral">&quot;)&quot;</span>, <span class="stringliteral">&quot;&quot;</span>).Split(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><span class="lineno">   45</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_function" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a0e0d45f2b89e69dcd24becef60248584">ChunkCoord</a>(<span class="keywordtype">int</span>.Parse(coords[0]), <span class="keywordtype">int</span>.Parse(coords[1]), <span class="keywordtype">int</span>.Parse(coords[2]));</div>
+<div class="line"><span class="lineno">   46</span>        }</div>
 <div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord_html_a0e0d45f2b89e69dcd24becef60248584"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html#a0e0d45f2b89e69dcd24becef60248584">_Project.World.Planet.Scripts.Chunking.Core.ChunkCoord.ChunkCoord</a></div><div class="ttdeci">ChunkCoord(int3 value)</div><div class="ttdef"><b>Definition</b> <a href="ChunkCoord_8cs_source.html#l00013">ChunkCoord.cs:13</a></div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="GridChunkSystemRenderer_8cs_source.html#l00045">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkSystemRenderer.RebuildRendererDictionary()</a>.</p>
@@ -539,79 +529,6 @@ Properties</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="ChunkCoord_8cs_source.html#l00011">11</a> of file <a class="el" href="ChunkCoord_8cs_source.html">ChunkCoord.cs</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ChunkCoord_8cs_source.html#l00017">_Project.World.Planet.Scripts.Chunking.Core.ChunkCoord.ChunkCoord()</a>, <a class="el" href="ChunkCoord_8cs_source.html#l00013">_Project.World.Planet.Scripts.Chunking.Core.ChunkCoord.ChunkCoord()</a>, and <a class="el" href="ChunkStreamer_8cs_source.html#l00031">_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkStreamer.ComputeVisibleChunks()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Property Documentation</h2>
-<a id="a006a6d2f73252f4b54830b57adf2cbd6" name="a006a6d2f73252f4b54830b57adf2cbd6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a006a6d2f73252f4b54830b57adf2cbd6">&#9670;&#160;</a></span>X</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int _Project.World.Planet.Scripts.Chunking.Core.ChunkCoord.X</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="ChunkCoord_8cs_source.html#l00026">26</a> of file <a class="el" href="ChunkCoord_8cs_source.html">ChunkCoord.cs</a>.</p>
-
-</div>
-</div>
-<a id="a499f41c6e3c89eebfff395af29d3eeeb" name="a499f41c6e3c89eebfff395af29d3eeeb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a499f41c6e3c89eebfff395af29d3eeeb">&#9670;&#160;</a></span>Y</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int _Project.World.Planet.Scripts.Chunking.Core.ChunkCoord.Y</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="ChunkCoord_8cs_source.html#l00027">27</a> of file <a class="el" href="ChunkCoord_8cs_source.html">ChunkCoord.cs</a>.</p>
-
-</div>
-</div>
-<a id="a47d7558d0b593b7962b1f4e5f937ee74" name="a47d7558d0b593b7962b1f4e5f937ee74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47d7558d0b593b7962b1f4e5f937ee74">&#9670;&#160;</a></span>Z</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int _Project.World.Planet.Scripts.Chunking.Core.ChunkCoord.Z</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="ChunkCoord_8cs_source.html#l00028">28</a> of file <a class="el" href="ChunkCoord_8cs_source.html">ChunkCoord.cs</a>.</p>
 
 </div>
 </div>

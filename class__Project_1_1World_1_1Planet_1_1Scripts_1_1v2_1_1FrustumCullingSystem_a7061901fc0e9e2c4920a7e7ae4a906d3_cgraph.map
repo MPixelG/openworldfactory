@@ -1,0 +1,6 @@
+<map id="_Project.World.Planet.Scripts.v2.FrustumCullingSystem.Traverse" name="_Project.World.Planet.Scripts.v2.FrustumCullingSystem.Traverse">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,237,69"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="70,30,66,20,75,10,93,5,121,3,154,5,171,13,169,18,152,11,121,8,94,10,78,15,72,21,75,28"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1FrustumCullingSystem.html#a442d6591cbc623f741dbe0f793f27241" title=" " alt="" coords="285,29,517,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,47,272,47,272,52,237,52"/>
+</map>

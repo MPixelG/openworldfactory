@@ -1,10 +1,11 @@
 <map id="_Project.World.Planet.Scripts.v2.Unity.PlanetSettings" name="_Project.World.Planet.Scripts.v2.Unity.PlanetSettings">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,285,237,325"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="51,5,181,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,44,124,285,118,285,114,45"/>
-<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html" title=" " alt="" coords="138,80,369,120"/>
-<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="149,35,222,78,220,82,146,40"/>
-<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetConfig.html" title=" " alt="" coords="137,183,369,223"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,233,148,287,144,283,216,229"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="256,134,256,183,251,183,251,134"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="38,190,162,215"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,228,120,285,115,286,103,229"/>
+<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetConfig.html" title=" " alt="" coords="187,183,419,223"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="258,232,157,288,154,283,255,227"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html" title=" " alt="" coords="187,80,418,120"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="305,134,305,183,300,183,300,134"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="238,5,367,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="305,44,305,80,300,80,300,44"/>
 </map>

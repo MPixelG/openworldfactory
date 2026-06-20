@@ -1,7 +1,11 @@
 <map id="_Project.World.Planet.Scripts.v2.Unity.PlanetBootstrap.OnEnable" name="_Project.World.Planet.Scripts.v2.Unity.PlanetBootstrap.OnEnable">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,13,237,53"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,85,237,125"/>
 <area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html#a8aaeaf39191549bff2b3e13ae7a1d0d7" title=" " alt="" coords="285,5,552,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,30,272,30,272,35,237,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,82,292,61,293,66,205,87"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#ad126f7beecb027f89592ae413b839c87" title=" " alt="" coords="303,85,535,125"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="237,102,289,102,289,107,237,107"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetRenderer.html#aa1070464fe479acf8bc8d90d87ddeed3" title=" " alt="" coords="297,149,541,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="216,122,312,143,311,148,215,127"/>
 <area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#a3458e6f59f4003d8761ff04e7f84f069" title=" " alt="" coords="600,13,832,53"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="552,30,586,30,586,35,552,35"/>
 </map>
