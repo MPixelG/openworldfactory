@@ -1,4 +1,3 @@
-using _Project.World.Planet.Scripts.WorldGen.Burst;
 using Unity.Mathematics;
 using UnityEngine;
 

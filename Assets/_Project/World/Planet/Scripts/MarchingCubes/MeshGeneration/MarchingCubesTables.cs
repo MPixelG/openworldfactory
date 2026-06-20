@@ -1,7 +1,7 @@
 using System;
 using Unity.Collections;
 
-namespace _Project.World.Planet.Scripts.MarchingCubes.Core
+namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
 {
     // this class contains the precomputed values for the marching cubes algorithm and automatically converts them to native arrays and disposes them.
     public class MarchingCubesTables : IDisposable

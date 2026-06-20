@@ -112,8 +112,6 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
                 tree.Nodes[^1] = node; // update the node with the correct child mask (since it has no children)
                 return;
             }
-            
-
 
 
             for(int i = 0; i < 8; i++)
@@ -134,7 +132,8 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         /// <param name="octree">the octree the node is inside of</param>
         /// <param name="nodeIndex">the position of that node represented in the linear node list in the octree</param>
         /// <param name="settings">the settings used for density generation</param>
-        /// <param name="force">if true, the node will be split even if it reached the max depth. this can lead to problems if you try to split a node that is already at the max depth, so use with caution.</param>
+        /// <param name="force">if true, the node will be split even if it reached the max depth.
+        /// this can lead to problems, so use with caution</param>
         public static void Split(this Octree octree, int nodeIndex, BurstSamplerSettings settings, bool force=false)
         {
             if (nodeIndex == -1) throw new Exception("Node not found"); // if there is no node with that morton code, we throw an exception
@@ -144,9 +143,10 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             if (node.ChildMask != 0) return; // if that node already has children, we dont need to split it again
             
             byte depth = node.MortonCode.GetDepth();
-            if (depth >= octree.MaxDepth && !force) return; // if we reached the max depth we cant split it anymore
+            if (depth >= octree.MaxDepth && !force) return; // if we reached the max depth we cant split it anymore (except if the user wants to)
             
-            BuildNode(ref octree, node.MortonCode, settings, (byte)(depth + 1)); // build the children of that node (this will automatically stop at one layer below the current depth and when a node is full or empty)
+            BuildNode(ref octree, node.MortonCode, settings, (byte)(depth + 1)); // build the children of that node (this will automatically stop at one layer
+                                                                                 // below the current depth and when a node is full or empty)
             
             node.ChildMask = 0xFF; 
             octree.Nodes[nodeIndex] = node; // update the nodes values (currently only the child mask)
@@ -164,14 +164,18 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         }
 
 
-        public static OctreeNode GetNodeAtPosition(this Octree octree, ulong mortonCode)
+        public static OctreeNode? GetNodeAtPosition(this Octree octree, ulong mortonCode)
         {
-            return octree.Nodes[octree.IndexLookup[mortonCode]]; // get the node at the given morton code by using the index lookup to find its position in the node list
+            bool containsValue = octree.IndexLookup.TryGetValue(mortonCode, out int nodeIndex); // get the position of the node with the given morton code in the node list by using the index lookup
+            bool outOfBounds = nodeIndex >= octree.Nodes.Length;
+            if(!containsValue || outOfBounds) return null;
+            
+            return octree.Nodes[nodeIndex]; // get the node at the given morton code by using the index lookup to find its position in the node list
         }
 
-        public static OctreeNode GetNodeAtIndex(this Octree octree, int nodeIndex)
+        public static OctreeNode? GetNodeAtIndex(this Octree octree, int nodeIndex)
         {
-            return octree.Nodes[nodeIndex];
+            return (nodeIndex) < octree.Nodes.Length ? octree.Nodes[nodeIndex] : null;
         }
         
         /// <summary>

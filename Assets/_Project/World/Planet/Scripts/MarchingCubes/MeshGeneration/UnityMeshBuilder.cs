@@ -1,9 +1,8 @@
 using System.Collections.Generic;
-using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace _Project.World.Planet.Scripts.MarchingCubes.Unity
+namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
 {
     public static class UnityMeshBuilder
     {

@@ -2,10 +2,8 @@ using _Project.World.Planet.Scripts.Chunking.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using _Project.World.Planet.Scripts.WorldGen;
-using _Project.World.Planet.Scripts.WorldGen.Burst;
-using UnityEngine;
 
-namespace _Project.World.Planet.Scripts.Chunking
+namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 {
     /// <summary>
     /// the chunk generator is responsible for generating the chunk data. this includes the density field and the mesh data. 

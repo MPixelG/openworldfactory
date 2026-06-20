@@ -8,12 +8,12 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity
     public struct NodeChange
     {
 
-        public NodeKey Coord;
+        public ulong MortonCode;
         public NodeChangeType Type;
 
-        public NodeChange(NodeKey coord, NodeChangeType type)
+        public NodeChange(ulong mortonCode, NodeChangeType type)
         {
-            Coord = coord;
+            MortonCode = mortonCode;
             Type = type;
         }
 

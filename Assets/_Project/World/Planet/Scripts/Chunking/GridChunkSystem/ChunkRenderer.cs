@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Project.World.Planet.Scripts.Chunking
+namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 
 {
     /// <summary>
@@ -39,6 +39,7 @@ namespace _Project.World.Planet.Scripts.Chunking
         }
 
 
+        // ReSharper disable Unity.PerformanceAnalysis
         /// <summary>
         /// applies a given mesh to this renderer
         /// </summary>

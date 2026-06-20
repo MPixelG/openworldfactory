@@ -3,7 +3,7 @@ using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
 
-namespace _Project.World.Planet.Scripts.WorldGen.Burst
+namespace _Project.World.Planet.Scripts.WorldGen
 {
     [BurstCompile]
     public struct BurstSphericalNoiseSamplerJob : IJobParallelFor

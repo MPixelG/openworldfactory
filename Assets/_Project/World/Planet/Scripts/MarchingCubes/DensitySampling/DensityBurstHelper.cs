@@ -13,13 +13,14 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
         /// <returns>the density of the given position. it is usually a value between 0 and 1.</returns>
         public static float DensityAt(this DensityFieldData data, int3 position)
         {
-            return DensityAt(data, position.x, position.y, position.z);
+            return data.DensityAt(position.x, position.y, position.z);
         }
-        
+
 
         /// <summary>
         /// returns the density value at a given position. caution! this does not interpolate between positions so it only returns values for values that are exactly on the requested grid positions.
         /// </summary>
+        /// <param name="data">the density field this function samples from</param>
         /// <param name="x">the x position of the requested density value</param>
         /// <param name="y">the y position of the requested density value</param>
         /// <param name="z">the z position of the requested density value</param>

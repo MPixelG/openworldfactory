@@ -1,4 +1,4 @@
-namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
+namespace _Project.World.Planet.Scripts.v2
 {
     public struct ChunkData
     {

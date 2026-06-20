@@ -128,7 +128,6 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity
                 {
                     Center = center,
                     Size = nodeSize,
-                    State = node.State
                 };
 
                 if (!_debugOctreeBlocks.TryGetValue(depth, out var layer))
@@ -238,7 +237,6 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity
         {
             public float3 Center;
             public float Size;
-            public OctreeNodeState State;
         }
     }
 }
