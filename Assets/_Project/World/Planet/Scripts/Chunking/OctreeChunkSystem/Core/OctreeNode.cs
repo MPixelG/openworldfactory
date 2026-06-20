@@ -14,12 +14,6 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         /// </summary>
         public ulong MortonCode; 
 
-
-        /// <summary>
-        /// since the nodes are stored linearly in one big list on one layer we can store the index of the first child
-        /// </summary>
-        public int FirstChildIndex;
-
         /// <summary>
         /// an octree node can have up to 8 children. every bit of this byte represents one child.
         /// so 0b01010001 would indicate that that node has a bottom left front, top left front and top left back

@@ -217,9 +217,10 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity
             _cubeMaterial =
                 new Material(
                     Shader.Find("Universal Render Pipeline/Lit")
-                );
-
-            _cubeMaterial.enableInstancing = true;
+                )
+                {
+                    enableInstancing = true
+                };
 
             _meshReady = true;
         }

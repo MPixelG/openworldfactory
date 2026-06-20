@@ -15,7 +15,5 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         public int3 Min;
         public int3 Max;
         public byte MaxDepth;
-        
-
     }
 }
