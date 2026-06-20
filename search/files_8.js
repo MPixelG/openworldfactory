@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['planetbootstrap_2ecs_0',['planetbootstrap.cs',['../PlanetBootstrap_8cs.html',1,'(Global Namespace)'],['../Unity_2PlanetBootstrap_8cs.html',1,'(Global Namespace)']]],
+  ['planetbootstrap_2ecs_0',['PlanetBootstrap.cs',['../PlanetBootstrap_8cs.html',1,'']]],
   ['planetconfig_2ecs_1',['PlanetConfig.cs',['../PlanetConfig_8cs.html',1,'']]],
   ['planetcube_2ecs_2',['PlanetCube.cs',['../PlanetCube_8cs.html',1,'']]],
   ['planetmanager_2ecs_3',['PlanetManager.cs',['../PlanetManager_8cs.html',1,'']]],

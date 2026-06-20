@@ -2,4 +2,6 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,5,264,45"/>
 <area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#ad126f7beecb027f89592ae413b839c87" title=" " alt="" coords="312,5,544,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="264,23,298,23,298,28,264,28"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1ChunkGenerationPipeline.html#ab7cdeb1de0870438cf105532de99b492" title=" " alt="" coords="592,5,897,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="544,23,578,23,578,28,544,28"/>
 </map>
