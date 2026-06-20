@@ -15,6 +15,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
         public NativeList<float3> Normals;
         public NativeList<int> Indices;
 
+        [DeallocateOnJobCompletion]
         public NativeHashMap<VertexKey, int> VertexMap; // this is used for index deduplication.
         // since every triangle has 3 vertices and many triangles share vertices with each other, we want to avoid adding the same vertex multiple times to the vertices list.
         // that would be a waste of memory and also cause visual artifacts. so we use this dictionary to check if we already added a vertex and if so we just reuse its index instead of adding it again.

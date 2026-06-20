@@ -1,4 +1,5 @@
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
+using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
@@ -44,6 +45,35 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
             
             job.VertexMap.Dispose();
             return meshData;
+        }
+        
+        /// <summary>
+        /// generates the mesh data for given density field.
+        /// </summary>
+        /// <param name="densityField">the density field used for generating the mesh</param>
+        /// <returns>the mesh data of that region</returns>
+        public static JobHandle ScheduleGenerateMesh(JobHandle densityJobHandle, DensityFieldData densityField, out NativeList<int> Indices, out NativeList<float3> Vertices, out NativeList<float3> Normals)
+        {
+            
+            Core.BurstMeshGeneratorJob job = new Core.BurstMeshGeneratorJob()
+            {
+                IsoLevel = 0.5f,
+                Indices = new NativeList<int>(Allocator.Persistent),
+                Normals = new NativeList<float3>(Allocator.Persistent),
+                Vertices = new NativeList<float3>(Allocator.Persistent),
+                VertexMap = new NativeHashMap<VertexKey, int>(50000, Allocator.TempJob),
+                DensityField = densityField, //densityField is not known
+                
+                EdgeTable = Tables.EdgeTable,
+                TriTable = Tables.TriTable,
+            };
+            
+            Indices = job.Indices;
+            Vertices = job.Vertices;
+            Normals = job.Normals;
+            
+            JobHandle handle = job.Schedule(dependsOn: densityJobHandle);
+            return handle;
         }
     }
 }

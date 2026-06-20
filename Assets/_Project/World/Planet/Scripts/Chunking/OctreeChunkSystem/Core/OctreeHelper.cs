@@ -65,17 +65,14 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         {
             byte depth = mortonCode.GetDepth();
             
-            int nodeSize = 1 << (maxDepth - depth);
-            
-            int3 localGridPos = mortonCode.DecodeToCoord();
-            int3 min = tree.Min + (localGridPos * nodeSize); 
-            int3 max = min + new int3(nodeSize);
+
             
             
             DensityFieldData sample = DensityFieldBuilder.BuildBurstDensityFieldDataInTree(
                 settings,
-                min,
-                max,
+                mortonCode,
+                tree.MaxDepth,
+                tree.Min,
                 5 // we only need to sample the density at the corners and some samples in between to determine the state of the node. 5 is a good number for that.
             );
 

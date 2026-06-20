@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.v2.Rendering
@@ -9,6 +10,11 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
         private FrustumCullingSystem _frustumCullingSystem;
         
         [SerializeField] private Camera viewer;
+        
+        public void SetPlanetManager(PlanetManager planetManager)
+        {
+            _planetManager = planetManager;
+        }
 
         private void Awake()
         {
@@ -24,9 +30,9 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
             );
         }
 
-        public void SetPlanetManager(PlanetManager planetManager)
+        private void OnDestroy()
         {
-            _planetManager = planetManager;
+            _planetManager.Dispose();
         }
     }
 }
