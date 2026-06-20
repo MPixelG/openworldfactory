@@ -22,10 +22,6 @@ namespace _Project.World.Planet.Scripts.Chunking.Core
         // the implicit operators let us use a chunk coord as an int3 and the other way around. this way you can also use the int3 constructor for example.
         public static implicit operator int3(ChunkCoord c) => c.Value;
         public static implicit operator ChunkCoord(int3 v) => new(v);
-    
-        public int X => Value.x;
-        public int Y => Value.y;
-        public int Z => Value.z;
 
         public bool Equals(ChunkCoord other) => Value.Equals(other.Value);
 
@@ -49,6 +45,6 @@ namespace _Project.World.Planet.Scripts.Chunking.Core
             return new ChunkCoord(int.Parse(coords[0]), int.Parse(coords[1]), int.Parse(coords[2]));
         }
 
-        public override string ToString() => $"ChunkCoord({X}, {Y}, {Z})";
+        public override string ToString() => $"ChunkCoord({Value.x}, {Value.y}, {Value.z})";
     }
 }

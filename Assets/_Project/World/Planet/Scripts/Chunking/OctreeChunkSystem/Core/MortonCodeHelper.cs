@@ -34,7 +34,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         /// returns the morton code for the given 3d coordinate and depth. the coordinate should be in the range of [0, 2^depth) for each axis, where depth is the maximum depth of the octree.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ulong Encode(int3 coord, byte depth)
+        public static ulong EncodeToMorton(this int3 coord, byte depth)
         {
             // we can encode the 3d coordinate into a morton code by interleaving the bits of the x, y and z coordinates
             ulong morton = ExpandBits((uint)coord.x) |
@@ -51,7 +51,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         /// returns a 3d coordinate from that location
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int3 DecodeCoord(this ulong locationCode)
+        public static int3 DecodeToCoord(this ulong locationCode)
         {
             // remove the sentinel bit
             int highestBitIndex = 63 - math.lzcnt(locationCode);

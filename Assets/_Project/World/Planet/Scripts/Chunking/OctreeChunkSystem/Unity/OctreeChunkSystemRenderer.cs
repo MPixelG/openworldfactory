@@ -118,7 +118,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity
 
                 int nodeSize = 1 << (maxDepth - depth);
 
-                int3 localGridPos = node.MortonCode.DecodeCoord();
+                int3 localGridPos = node.MortonCode.DecodeToCoord();
 
                 float3 worldMin = octree.Min + (localGridPos * nodeSize);
 

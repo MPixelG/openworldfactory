@@ -1,9 +1,9 @@
-using System;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Collections;
 using Unity.Mathematics;
+using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
 {
@@ -38,7 +38,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
 
             BuildNode( // we add the root node (which recursively builds its children) so that the tree has its content
                 ref tree,
-                MortonCodeHelper.Encode(new int3(0, 0, 0), 0),
+                new int3(0, 0, 0).EncodeToMorton(0),
                 settings, // the current depth (of the root node) is always 0
                 maxDepth
             );
@@ -67,7 +67,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             
             int nodeSize = 1 << (maxDepth - depth);
             
-            int3 localGridPos = mortonCode.DecodeCoord();
+            int3 localGridPos = mortonCode.DecodeToCoord();
             int3 min = tree.Min + (localGridPos * nodeSize); 
             int3 max = min + new int3(nodeSize);
             
@@ -130,13 +130,16 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         /// splits the node at the given position exactly one time
         /// </summary>
         /// <param name="octree">the octree the node is inside of</param>
-        /// <param name="nodeIndex">the position of that node represented in the linear node list in the octree</param>
+        /// <param name="mortonCode">the position of that node represented as a morton code</param>
         /// <param name="settings">the settings used for density generation</param>
         /// <param name="force">if true, the node will be split even if it reached the max depth.
         /// this can lead to problems, so use with caution</param>
-        public static void Split(this Octree octree, int nodeIndex, BurstSamplerSettings settings, bool force=false)
+        public static void Split(this Octree octree, ulong mortonCode, BurstSamplerSettings settings, bool force=false)
         {
-            if (nodeIndex == -1) throw new Exception("Node not found"); // if there is no node with that morton code, we throw an exception
+            bool containsValue = octree.IndexLookup.TryGetValue(mortonCode, out int nodeIndex); // get the position of the node with the given morton code in the node list by using the index lookup
+            bool outOfBounds = nodeIndex >= octree.Nodes.Length;
+            if(!containsValue || outOfBounds) return;
+            
             
             OctreeNode node = octree.Nodes[nodeIndex]; // get the node
             
@@ -153,8 +156,12 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         }
         
         
-        public static void Merge(this Octree octree, int nodeIndex)
+        public static void Merge(this Octree octree, ulong mortonCode)
         {
+            bool containsValue = octree.IndexLookup.TryGetValue(mortonCode, out int nodeIndex); // get the position of the node with the given morton code in the node list by using the index lookup
+            bool outOfBounds = nodeIndex >= octree.Nodes.Length;
+            if(!containsValue || outOfBounds) return;
+            
             OctreeNode node = octree.Nodes[nodeIndex]; // get the node
             
             if (node.ChildMask == 0) return; // if that node has no children, we dont need to merge it
@@ -176,6 +183,23 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         public static OctreeNode? GetNodeAtIndex(this Octree octree, int nodeIndex)
         {
             return (nodeIndex) < octree.Nodes.Length ? octree.Nodes[nodeIndex] : null;
+        }
+        
+        public static Bounds GetBounds(this Octree octree, ulong mortonCode)
+        {
+            byte depth = mortonCode.GetDepth();
+
+            int nodeSize = 1 << (octree.MaxDepth - depth);
+
+            int3 localPos = mortonCode.DecodeToCoord();
+
+            float3 min = octree.Min + localPos * nodeSize;
+            float3 size = new float3(nodeSize);
+
+            return new Bounds(
+                min + size * 0.5f,
+                size
+            );
         }
         
         /// <summary>

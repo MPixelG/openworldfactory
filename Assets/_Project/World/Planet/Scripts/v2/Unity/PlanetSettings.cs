@@ -3,12 +3,11 @@ using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.v2.Unity
 {
-    public class PlanetSettings : ScriptableObject
+    public class PlanetSettings : MonoBehaviour
     {
-        [SerializeField] private PlanetConfig config;
+        public PlanetConfig config;
         
         public event Action<PlanetConfig> OnSettingsChanged;
-        public PlanetConfig Config => config;
 
         private void OnValidate()
         {
