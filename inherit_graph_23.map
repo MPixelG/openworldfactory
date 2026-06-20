@@ -1,29 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,449,129,474"/>
-<area shape="rect" id="Node000001" href="$class__Project_1_1Gameplay_1_1BasicCameraMovement.html" title="Basic free&#45;fly camera movement using the new Unity Input System." alt="" coords="199,5,432,45"/>
-<area shape="poly" id="edge7_Node000000_Node000001" title=" " alt="" coords="70,434,83,349,106,235,137,127,155,84,175,55,197,40,200,44,179,59,160,87,142,128,111,236,88,350,75,435"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1Rendering_1_1Debug_1_1BillboardText.html" title=" " alt="" coords="218,69,413,109"/>
-<area shape="poly" id="edge8_Node000000_Node000002" title=" " alt="" coords="66,435,71,371,86,286,100,240,119,196,144,155,176,119,195,106,217,96,219,101,198,110,179,123,148,158,124,199,105,242,92,287,76,371,71,435"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1ChunkRenderer.html" title="A chunk is a region of density values in space. it is used to split the terrain into multiple portion..." alt="" coords="209,133,421,173"/>
-<area shape="poly" id="edge9_Node000000_Node000003" title=" " alt="" coords="68,435,77,382,95,314,109,278,127,243,149,211,176,183,208,164,211,169,179,187,153,215,131,246,114,280,100,315,82,383,74,435"/>
-<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1GridChunkSystemRenderer.html" title=" " alt="" coords="177,198,453,253"/>
-<area shape="poly" id="edge10_Node000000_Node000004" title=" " alt="" coords="73,434,87,396,108,350,137,302,176,262,193,251,196,255,179,266,141,306,112,352,92,398,78,436"/>
-<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1Unity_1_1GridChunkSystemBootstrap.html" title="the chunk system bootstrap is the unity component that manages the chunks. you have to apply the rend..." alt="" coords="179,277,451,331"/>
-<area shape="poly" id="edge11_Node000000_Node000005" title=" " alt="" coords="82,436,121,387,147,362,176,340,198,329,200,334,179,345,150,366,125,391,86,439"/>
-<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1NodeRenderer.html" title=" " alt="" coords="185,355,446,410"/>
-<area shape="poly" id="edge12_Node000000_Node000006" title=" " alt="" coords="113,441,176,419,213,408,215,413,178,424,115,446"/>
-<area shape="rect" id="Node000007" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemBootstrap.html" title=" " alt="" coords="185,434,446,489"/>
-<area shape="poly" id="edge13_Node000000_Node000007" title=" " alt="" coords="144,459,185,459,185,464,144,464"/>
-<area shape="rect" id="Node000008" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html" title=" " alt="" coords="185,513,446,567"/>
-<area shape="poly" id="edge14_Node000000_Node000008" title=" " alt="" coords="116,476,178,497,219,510,217,515,177,503,115,481"/>
-<area shape="rect" id="Node000009" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemSettings.html" title=" " alt="" coords="185,591,446,646"/>
-<area shape="poly" id="edge15_Node000000_Node000009" title=" " alt="" coords="87,483,125,531,151,555,179,576,203,589,200,594,176,581,147,559,121,534,82,487"/>
-<area shape="rect" id="Node000010" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1TerrainNodeRenderer.html" title=" " alt="" coords="185,670,446,725"/>
-<area shape="poly" id="edge16_Node000000_Node000010" title=" " alt="" coords="78,486,92,524,113,570,142,616,179,655,198,667,195,672,176,659,137,619,108,572,87,526,73,488"/>
-<area shape="rect" id="Node000011" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html" title=" " alt="" coords="209,749,421,789"/>
-<area shape="poly" id="edge17_Node000000_Node000011" title=" " alt="" coords="74,487,82,539,101,606,114,641,132,675,153,707,179,734,211,753,208,757,176,738,149,710,127,678,110,644,96,608,77,541,69,488"/>
-<area shape="rect" id="Node000012" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html" title=" " alt="" coords="209,813,421,853"/>
-<area shape="poly" id="edge18_Node000000_Node000012" title=" " alt="" coords="71,488,76,551,92,636,105,681,124,724,148,764,179,799,210,819,208,823,176,803,144,768,119,727,100,682,86,637,71,552,66,488"/>
-<area shape="rect" id="Node000013" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html" title=" " alt="" coords="199,877,431,917"/>
-<area shape="poly" id="edge19_Node000000_Node000013" title=" " alt="" coords="75,488,88,573,111,686,142,794,160,836,179,863,201,879,198,883,175,867,155,838,137,796,106,688,83,574,70,488"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,20,120,45"/>
+<area shape="rect" id="Node000001" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Burst_1_1BurstSphericalNoiseSamplerJob.html" title=" " alt="" coords="168,5,427,60"/>
+<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="134,30,168,30,168,35,134,35"/>
 </map>

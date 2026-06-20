@@ -1,5 +1,9 @@
 <map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.Update" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.Update">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,269,60"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a9b2a3ef34535261b7c438f67139e7c54" title=" " alt="" coords="317,5,584,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="270,30,304,30,304,35,270,35"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,84,269,139"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a3c2801f9866d3ed0714e64e49fd0bae7" title=" " alt="" coords="317,5,669,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,81,317,69,354,60,355,66,318,74,261,87"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1OctreeChunkSystemRenderer.html#a531c1fe7e4e2bcefc8da32902fb95f03" title=" " alt="" coords="331,84,656,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="270,109,317,109,317,114,270,114"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1OctreeChunkManager.html#a9b2a3ef34535261b7c438f67139e7c54" title=" " alt="" coords="360,163,627,217"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="262,136,356,157,355,162,261,141"/>
 </map>

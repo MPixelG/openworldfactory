@@ -153,7 +153,7 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="OctreeNode_8cs_source.html#l00015">15</a> of file <a class="el" href="OctreeNode_8cs_source.html">OctreeNode.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00023">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.OnDrawGizmos()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00089">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.RebuildOctreeBlocks()</a>.</p>
 
 </div>
 </div>
@@ -172,6 +172,8 @@ Public Attributes</h2></td></tr>
 <p>the state of the node is either empty, full, mixed or unknown. if its empty, it means that the density field is below the isolevel everywhere in that node. if its full, it means that the density field is above the isolevel everywhere in that node. if its mixed, it means that the density field is above the isolevel in some places and below it in others. and if its unknown, it means that we haven't sampled the density field for that node yet. this way we can easily skip over completely empty or completely full density fields when we mesh it since theres only a mesh if the isosurface slices through that chunk </p>
 
 <p class="definition">Definition at line <a class="el" href="OctreeNode_8cs_source.html#l00049">49</a> of file <a class="el" href="OctreeNode_8cs_source.html">OctreeNode.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="OctreeChunkSystemRenderer_8cs_source.html#l00089">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer.RebuildOctreeBlocks()</a>.</p>
 
 </div>
 </div>
