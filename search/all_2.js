@@ -11,6 +11,6 @@ var searchData=
   ['burstmeshgeneratorjob_2emeshbuilder_2ecs_8',['BurstMeshGeneratorJob.MeshBuilder.cs',['../BurstMeshGeneratorJob_8MeshBuilder_8cs.html',1,'']]],
   ['burstsamplersettings_9',['BurstSamplerSettings',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html',1,'_Project::World::Planet::Scripts::WorldGen']]],
   ['burstsamplersettings_2ecs_10',['BurstSamplerSettings.cs',['../BurstSamplerSettings_8cs.html',1,'']]],
-  ['burstsphericalnoisesamplerjob_11',['BurstSphericalNoiseSamplerJob',['../struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Burst_1_1BurstSphericalNoiseSamplerJob.html',1,'_Project::World::Planet::Scripts::WorldGen::Burst']]],
+  ['burstsphericalnoisesamplerjob_11',['BurstSphericalNoiseSamplerJob',['../struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSphericalNoiseSamplerJob.html',1,'_Project::World::Planet::Scripts::WorldGen']]],
   ['burstsphericalnoisesamplerjob_2ecs_12',['BurstSphericalNoiseSamplerJob.cs',['../BurstSphericalNoiseSamplerJob_8cs.html',1,'']]]
 ];

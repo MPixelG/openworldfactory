@@ -1,7 +1,0 @@
-<map id="_Project.World.Planet.Scripts.Chunking.ChunkGenerator" name="_Project.World.Planet.Scripts.Chunking.ChunkGenerator">
-<area shape="rect" id="Node000001" title="the chunk generator is responsible for generating the chunk data. this includes the density field and..." alt="" coords="15,183,227,223"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html" title=" " alt="" coords="5,80,236,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,134,123,183,118,183,118,134"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="56,5,185,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="123,44,123,80,118,80,118,44"/>
-</map>

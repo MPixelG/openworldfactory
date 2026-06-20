@@ -1,0 +1,5 @@
+<map id="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkRenderer" name="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.ChunkRenderer">
+<area shape="rect" id="Node000001" title="A chunk is a region of density values in space. it is used to split the terrain into multiple portion..." alt="" coords="5,79,313,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="97,5,221,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,44,162,79,157,79,157,44"/>
+</map>

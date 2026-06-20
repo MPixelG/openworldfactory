@@ -82,70 +82,68 @@ $(document).ready(function() { init_codefold(0); });
   <div class="headertitle"><div class="title">BurstSamplerSettings.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="BurstSamplerSettings_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Burst.html">_Project.World.Planet.Scripts.WorldGen.Burst</a>;</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>Unity.Mathematics;</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>UnityEngine;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen.html">    5</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen.html">_Project.World.Planet.Scripts.WorldGen</a></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    [CreateAssetMenu(menuName = <span class="stringliteral">&quot;WorldGen/Burst Density Samplers/Spherical Noise&quot;</span>)]</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html">    9</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html">BurstSamplerSettings</a> : ScriptableObject</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html#a672e3761700f416116b4f8cb1929890e">   11</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html#a672e3761700f416116b4f8cb1929890e">radius</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html#ad052daf9a710750a4e5614b71b993241">   13</a></span>        <span class="keyword">public</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Burst_1_1BurstSphericalNoiseSamplerJob.html">BurstSphericalNoiseSamplerJob</a> <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html#ad052daf9a710750a4e5614b71b993241">CreateSampler</a>(int3 min, int3 max, <span class="keywordtype">byte</span> resolution)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Burst_1_1BurstSphericalNoiseSamplerJob.html">BurstSphericalNoiseSamplerJob</a></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                Min = min,</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                Max = max,</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                Resolution = resolution,</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                Radius = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html#a672e3761700f416116b4f8cb1929890e">radius</a>,</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                ReferenceRadius = 200f,</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                TerrainHeight = 169f,</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                ContinentFrequency = 1.2f,</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                ContinentOctaves = 8,</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                ContinentPersistence = 0.5f,</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                OceanThreshold = 0.48f,</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                MountainMaskFrequency = 3f,</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                MountainThreshold = 0.82f,</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                MountainBlend = 0.32f,</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                MountainFrequency = 7f,</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                MountainOctaves = 12,</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                MountainPersistence = 0.6f,</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                MountainSharpness = 15.5f,</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                PlainsStrength = 2.5f,</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                PlainsFrequency = 3f,</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                DetailFrequency = 30f,</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                DetailStrength = 1.8f,</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                WarpFrequency = 0.6f,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                WarpStrength = 0.3f,</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            };</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+<a href="BurstSamplerSettings_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>Unity.Mathematics;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen.html">    4</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen.html">_Project.World.Planet.Scripts.WorldGen</a></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    [CreateAssetMenu(menuName = <span class="stringliteral">&quot;WorldGen/Burst Density Samplers/Spherical Noise&quot;</span>)]</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html">    8</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html">BurstSamplerSettings</a> : ScriptableObject</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html#a672e3761700f416116b4f8cb1929890e">   10</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html#a672e3761700f416116b4f8cb1929890e">radius</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html#ad052daf9a710750a4e5614b71b993241">   12</a></span>        <span class="keyword">public</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSphericalNoiseSamplerJob.html">BurstSphericalNoiseSamplerJob</a> <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html#ad052daf9a710750a4e5614b71b993241">CreateSampler</a>(int3 min, int3 max, <span class="keywordtype">byte</span> resolution)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSphericalNoiseSamplerJob.html">BurstSphericalNoiseSamplerJob</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                Min = min,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                Max = max,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                Resolution = resolution,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                Radius = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html#a672e3761700f416116b4f8cb1929890e">radius</a>,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                ReferenceRadius = 200f,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                TerrainHeight = 169f,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                ContinentFrequency = 1.2f,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                ContinentOctaves = 8,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                ContinentPersistence = 0.5f,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                OceanThreshold = 0.48f,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                MountainMaskFrequency = 3f,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                MountainThreshold = 0.82f,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                MountainBlend = 0.32f,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                MountainFrequency = 7f,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                MountainOctaves = 12,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                MountainPersistence = 0.6f,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                MountainSharpness = 15.5f,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                PlainsStrength = 2.5f,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                PlainsFrequency = 3f,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                DetailFrequency = 30f,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                DetailStrength = 1.8f,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                WarpFrequency = 0.6f,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                WarpStrength = 0.3f,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            };</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
 </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
 </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
 </div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings_html"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html">_Project.World.Planet.Scripts.WorldGen.BurstSamplerSettings</a></div><div class="ttdef"><b>Definition</b> <a href="BurstSamplerSettings_8cs_source.html#l00009">BurstSamplerSettings.cs:10</a></div></div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings_html_a672e3761700f416116b4f8cb1929890e"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html#a672e3761700f416116b4f8cb1929890e">_Project.World.Planet.Scripts.WorldGen.BurstSamplerSettings.radius</a></div><div class="ttdeci">float radius</div><div class="ttdef"><b>Definition</b> <a href="BurstSamplerSettings_8cs_source.html#l00011">BurstSamplerSettings.cs:11</a></div></div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings_html_ad052daf9a710750a4e5614b71b993241"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html#ad052daf9a710750a4e5614b71b993241">_Project.World.Planet.Scripts.WorldGen.BurstSamplerSettings.CreateSampler</a></div><div class="ttdeci">BurstSphericalNoiseSamplerJob CreateSampler(int3 min, int3 max, byte resolution)</div><div class="ttdef"><b>Definition</b> <a href="BurstSamplerSettings_8cs_source.html#l00013">BurstSamplerSettings.cs:13</a></div></div>
-<div class="ttc" id="anamespace__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Burst_html"><div class="ttname"><a href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Burst.html">_Project.World.Planet.Scripts.WorldGen.Burst</a></div><div class="ttdef"><b>Definition</b> <a href="BurstSphericalNoiseSamplerJob_8cs_source.html#l00006">BurstSphericalNoiseSamplerJob.cs:7</a></div></div>
-<div class="ttc" id="anamespace__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_html"><div class="ttname"><a href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen.html">_Project.World.Planet.Scripts.WorldGen</a></div><div class="ttdef"><b>Definition</b> <a href="BurstSamplerSettings_8cs_source.html#l00005">BurstSamplerSettings.cs:6</a></div></div>
-<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Burst_1_1BurstSphericalNoiseSamplerJob_html"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Burst_1_1BurstSphericalNoiseSamplerJob.html">_Project.World.Planet.Scripts.WorldGen.Burst.BurstSphericalNoiseSamplerJob</a></div><div class="ttdef"><b>Definition</b> <a href="BurstSphericalNoiseSamplerJob_8cs_source.html#l00009">BurstSphericalNoiseSamplerJob.cs:10</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings_html"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html">_Project.World.Planet.Scripts.WorldGen.BurstSamplerSettings</a></div><div class="ttdef"><b>Definition</b> <a href="BurstSamplerSettings_8cs_source.html#l00008">BurstSamplerSettings.cs:9</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings_html_a672e3761700f416116b4f8cb1929890e"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html#a672e3761700f416116b4f8cb1929890e">_Project.World.Planet.Scripts.WorldGen.BurstSamplerSettings.radius</a></div><div class="ttdeci">float radius</div><div class="ttdef"><b>Definition</b> <a href="BurstSamplerSettings_8cs_source.html#l00010">BurstSamplerSettings.cs:10</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings_html_ad052daf9a710750a4e5614b71b993241"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html#ad052daf9a710750a4e5614b71b993241">_Project.World.Planet.Scripts.WorldGen.BurstSamplerSettings.CreateSampler</a></div><div class="ttdeci">BurstSphericalNoiseSamplerJob CreateSampler(int3 min, int3 max, byte resolution)</div><div class="ttdef"><b>Definition</b> <a href="BurstSamplerSettings_8cs_source.html#l00012">BurstSamplerSettings.cs:12</a></div></div>
+<div class="ttc" id="anamespace__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_html"><div class="ttname"><a href="namespace__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen.html">_Project.World.Planet.Scripts.WorldGen</a></div><div class="ttdef"><b>Definition</b> <a href="BurstSamplerSettings_8cs_source.html#l00004">BurstSamplerSettings.cs:5</a></div></div>
+<div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSphericalNoiseSamplerJob_html"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSphericalNoiseSamplerJob.html">_Project.World.Planet.Scripts.WorldGen.BurstSphericalNoiseSamplerJob</a></div><div class="ttdef"><b>Definition</b> <a href="BurstSphericalNoiseSamplerJob_8cs_source.html#l00009">BurstSphericalNoiseSamplerJob.cs:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

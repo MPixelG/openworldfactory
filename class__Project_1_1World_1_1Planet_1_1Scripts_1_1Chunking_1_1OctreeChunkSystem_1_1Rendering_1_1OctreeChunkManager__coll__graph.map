@@ -1,5 +1,0 @@
-<map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Rendering.OctreeChunkManager" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Rendering.OctreeChunkManager">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,300,177"/>
-<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html" title="a struct that represents an octree. it contains a list of octree nodes and the min and max bounds of ..." alt="" coords="23,5,282,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,74,155,122,150,122,150,74"/>
-</map>

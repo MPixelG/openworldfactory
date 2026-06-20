@@ -1,7 +1,0 @@
-<map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.NodeChange" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.NodeChange">
-<area shape="rect" id="Node000001" title="a chunk change is a change the chunk manager made. this is used to signal the unity side of the proje..." alt="" coords="5,197,267,252"/>
-<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1NodeKey.html" title=" " alt="" coords="7,80,265,135"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,148,139,197,133,197,133,148"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="47,5,225,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="139,45,139,80,133,80,133,45"/>
-</map>

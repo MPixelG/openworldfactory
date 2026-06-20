@@ -1,7 +1,6 @@
 <map id="World/Planet/Scripts/Chunking/OctreeChunkSystem" name="World/Planet/Scripts/Chunking/OctreeChunkSystem">
-<area shape="rect" id="node2" href="dir_13bce3e549d03d3b3ba69aa86c609235.html" title="Core" alt="" coords="233,63,285,88"/>
-<area shape="rect" id="node3" href="dir_b537b6fd6e1f270c3cf6202538250a5e.html" title="Rendering" alt="" coords="120,63,208,88"/>
-<area shape="rect" id="node4" href="dir_7e06c0afaf66bb9f7ad99813f7a3d76e.html" title="Unity" alt="" coords="38,63,95,88"/>
-<area shape="rect" id="clust2" href="dir_72fc2c640a086ba19001b618bc32bdfa.html" alt="" coords="27,52,475,99"/>
-<area shape="rect" id="clust1" href="dir_1c1f74ee313d88e9c7e05007ef9ebb90.html" title="Chunking" alt="" coords="16,16,485,109"/>
+<area shape="rect" id="node2" href="dir_13bce3e549d03d3b3ba69aa86c609235.html" title="Core" alt="" coords="119,63,171,88"/>
+<area shape="rect" id="node3" href="dir_7e06c0afaf66bb9f7ad99813f7a3d76e.html" title="Unity" alt="" coords="38,63,95,88"/>
+<area shape="rect" id="clust2" href="dir_72fc2c640a086ba19001b618bc32bdfa.html" alt="" coords="27,52,361,99"/>
+<area shape="rect" id="clust1" href="dir_1c1f74ee313d88e9c7e05007ef9ebb90.html" title="Chunking" alt="" coords="16,16,372,109"/>
 </map>
