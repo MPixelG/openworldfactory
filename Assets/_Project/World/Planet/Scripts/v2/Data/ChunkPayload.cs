@@ -7,8 +7,8 @@ namespace _Project.World.Planet.Scripts.v2.Data
     public struct ChunkPayload
     {
         public DensityFieldData DensityField;
-        public NativeArray<float3> Vertices;
-        public NativeArray<float3> Normals;
-        public NativeArray<int> Indices;
+        public NativeList<float3> Vertices;
+        public NativeList<float3> Normals;
+        public NativeList<int> Indices;
     }
 }

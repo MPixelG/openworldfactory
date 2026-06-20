@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using _Project.World.Planet.Scripts.v2.Data;
@@ -15,6 +16,7 @@ namespace _Project.World.Planet.Scripts.v2
         private readonly Queue<ulong> _generationQueue = new();
         private readonly Dictionary<ulong, JobHandle> _activeMeshingJobs = new();
         private readonly Dictionary<ulong, ChunkPayload> _activeMeshingJobResults = new();
+        private readonly Dictionary<ulong, NativeHashMap<VertexKey, int>> _meshingJobGarbage = new();
 
         private BurstSamplerSettings _settings;
         private byte _maxDepth;
@@ -69,24 +71,27 @@ namespace _Project.World.Planet.Scripts.v2
             );
 
             JobHandle meshGenerationJobHandle = BurstMeshGenerator.ScheduleGenerateMesh(densityJobHandle, densityField,
-                out NativeList<int> indices, out NativeList<float3> vertices, out NativeList<float3> normals);
+                out NativeList<int> indices, out NativeList<float3> vertices, out NativeList<float3> normals, out NativeHashMap<VertexKey, int> vertexMap);
 
             ChunkPayload payload = new ChunkPayload
             {
                 DensityField = densityField,
-                Vertices = vertices.ToArray(Allocator.Persistent),
-                Normals = normals.ToArray(Allocator.Persistent), // todo check if keeping it as lists is more performant
-                Indices = indices.ToArray(Allocator.Persistent),
+                Vertices = vertices,
+                Normals = normals,
+                Indices = indices,
             };
 
             _activeMeshingJobs.Add(mortonCode, meshGenerationJobHandle);
             _activeMeshingJobResults.Add(mortonCode, payload);
+            _meshingJobGarbage.Add(mortonCode, vertexMap);
         }
 
         private void UpdateFinishedJobs()
         {
-            foreach (ulong mortonCode in _activeMeshingJobs.Keys)
+            for (var i = 0; i < _activeMeshingJobs.Keys.Count; i++)
             {
+                ulong mortonCode = _activeMeshingJobs.Keys.ElementAt(i);
+
                 if (!_activeMeshingJobs.TryGetValue(mortonCode, out JobHandle jobHandle)) continue;
 
                 bool completed = jobHandle.IsCompleted;
@@ -99,9 +104,13 @@ namespace _Project.World.Planet.Scripts.v2
                     Payload = _activeMeshingJobResults[mortonCode], 
                     MortonCode = mortonCode
                 });
+                
+                _meshingJobGarbage[mortonCode].Dispose();
 
                 _activeMeshingJobs.Remove(mortonCode);
                 _activeMeshingJobResults.Remove(mortonCode);
+                _meshingJobGarbage.Remove(mortonCode);
+                i--;
             }
         }
     }

@@ -52,7 +52,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
         /// </summary>
         /// <param name="densityField">the density field used for generating the mesh</param>
         /// <returns>the mesh data of that region</returns>
-        public static JobHandle ScheduleGenerateMesh(JobHandle densityJobHandle, DensityFieldData densityField, out NativeList<int> Indices, out NativeList<float3> Vertices, out NativeList<float3> Normals)
+        public static JobHandle ScheduleGenerateMesh(JobHandle densityJobHandle, DensityFieldData densityField, out NativeList<int> Indices, out NativeList<float3> Vertices, out NativeList<float3> Normals, out NativeHashMap<VertexKey, int> VertexMap)
         {
             
             Core.BurstMeshGeneratorJob job = new Core.BurstMeshGeneratorJob()
@@ -71,6 +71,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
             Indices = job.Indices;
             Vertices = job.Vertices;
             Normals = job.Normals;
+            VertexMap = job.VertexMap;
             
             JobHandle handle = job.Schedule(dependsOn: densityJobHandle);
             return handle;
