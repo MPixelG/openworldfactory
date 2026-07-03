@@ -6,7 +6,7 @@ namespace _Project.World.Planet.Scripts.v2.Unity
     [System.Serializable]
     public struct PlanetConfig
     {
-        public int chunkSize;
+        public byte chunkSize;
         public int3 origin;
         public float size;
 

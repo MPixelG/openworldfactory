@@ -21,6 +21,7 @@ namespace _Project.World.Planet.Scripts.v2
         private BurstSamplerSettings _settings;
         private byte _maxDepth;
         private int3 _min;
+        private byte _chunkSize;
 
         public event Action<ChunkGeneration> OnChunkGenerated;
 
@@ -40,6 +41,10 @@ namespace _Project.World.Planet.Scripts.v2
             _min = min;
         }
 
+        public void UpdateChunkSize(byte chunkSize)
+        {
+            _chunkSize = chunkSize;
+        }
 
         public void Update()
         {
@@ -59,14 +64,13 @@ namespace _Project.World.Planet.Scripts.v2
             ulong mortonCode = _generationQueue.Dequeue();
 
 
-            const byte resolution = 32;
 
             JobHandle densityJobHandle = DensityFieldBuilder.ScheduleBurstDensityFieldDataBuildInTree(
                 _settings,
                 mortonCode,
                 _maxDepth,
                 _min,
-                resolution,
+                _chunkSize,
                 out DensityFieldData densityField
             );
 

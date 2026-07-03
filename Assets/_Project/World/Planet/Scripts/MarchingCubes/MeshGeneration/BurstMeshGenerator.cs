@@ -62,7 +62,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
                 Normals = new NativeList<float3>(Allocator.Persistent),
                 Vertices = new NativeList<float3>(Allocator.Persistent),
                 VertexMap = new NativeHashMap<VertexKey, int>(50000, Allocator.TempJob),
-                DensityField = densityField, //densityField is not known
+                DensityField = densityField,
                 
                 EdgeTable = Tables.EdgeTable,
                 TriTable = Tables.TriTable,

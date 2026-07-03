@@ -55,19 +55,18 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         /// <param name="mortonCode"></param>
         /// <param name="settings">the settings for generating the density values</param>
         /// <param name="maxDepth">the maximum depth the tree will go to</param>
+        /// <param name="parentIndex">the index of the parent node (-1 if root)</param>
         /// <returns>the index of the build node</returns>
-        private static void BuildNode(
+        private static int BuildNode(
             ref Octree tree,
             ulong mortonCode,
             BurstSamplerSettings settings,
-            byte maxDepth
+            byte maxDepth,
+            int parentIndex = -1
         )
         {
             byte depth = mortonCode.GetDepth();
-            
 
-            
-            
             DensityFieldData sample = DensityFieldBuilder.BuildBurstDensityFieldDataInTree(
                 settings,
                 mortonCode,
@@ -76,53 +75,64 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
                 5 // we only need to sample the density at the corners and some samples in between to determine the state of the node. 5 is a good number for that.
             );
 
-            float minDensity=float.PositiveInfinity;
-            float maxDensity=float.NegativeInfinity;
+            float minDensity = float.PositiveInfinity;
+            float maxDensity = float.NegativeInfinity;
             foreach (float densitySample in sample.Densities)
             {
-                if(densitySample < minDensity) minDensity = densitySample;
-                if(densitySample > maxDensity) maxDensity = densitySample;
+                if (densitySample < minDensity) minDensity = densitySample;
+                if (densitySample > maxDensity) maxDensity = densitySample;
             }
-            
-            OctreeNodeState state = maxDensity < BurstMeshGenerator.IsoLevel // if every value is below the isolevel the node is completely full
-                ? OctreeNodeState.Full
-                : minDensity > BurstMeshGenerator.IsoLevel // if every value is above the isolevel the node is completely empty
-                    ? OctreeNodeState.Empty
-                    : OctreeNodeState.Mixed; // else the values are above and below the isolevel so its mixed
-            
-            //todo if there are values below and above the isolevel in one quarter of a chunk we dont have to sample in that child chunk to see if its full empty since we know its mixed
-            
-            
+
+            OctreeNodeState state =
+                maxDensity <
+                BurstMeshGenerator.IsoLevel // if every value is below the isolevel the node is completely full
+                    ? OctreeNodeState.Full
+                    : minDensity >
+                      BurstMeshGenerator.IsoLevel // if every value is above the isolevel the node is completely empty
+                        ? OctreeNodeState.Empty
+                        : OctreeNodeState.Mixed; // else the values are above and below the isolevel so its mixed
+
             OctreeNode node = new OctreeNode
             {
                 MortonCode = mortonCode,
                 State = state,
-                ChildMask = 0xFF // for now this is enough todo do better
+                ChildMask = 0 // Start with 0, will be updated if children are added
             };
-            
-            tree.AddNode(node);
-            
-            if (depth >= maxDepth || state == OctreeNodeState.Full || state == OctreeNodeState.Empty) // if we reached the max depth or the node is completely full or empty,
-                                                                                                      // we stop building and just add that node to the tree
+
+            int nodeIndex = tree.AddNodeAndGetIndex(node); // Add node and get its index
+
+            if (depth >= maxDepth || state == OctreeNodeState.Full || state == OctreeNodeState.Empty)
             {
-                node.ChildMask = 0;
-                tree.Nodes[^1] = node; // update the node with the correct child mask (since it has no children)
-                return;
+                // Leaf node - no children
+                return nodeIndex;
             }
 
-
-            for(int i = 0; i < 8; i++)
+            // Build children and track which ones exist
+            byte childMask = 0;
+            for (int i = 0; i < 8; i++)
             {
-                BuildNode( // recursively call that function for that child. it will stop as soon as its deep enough, since we provided a max depth and a current depth.
+                int childIndex = BuildNode(
                     ref tree,
-                    mortonCode.AppendChild((byte) i),
+                    mortonCode.AppendChild((byte)i),
                     settings,
-                    maxDepth
+                    maxDepth,
+                    nodeIndex
                 );
+
+                if (childIndex >= 0) // Child was successfully created
+                {
+                    childMask |= (byte)(1 << i);
+                }
             }
+
+            // Update parent node with child mask
+            node.ChildMask = childMask;
+            tree.Nodes[nodeIndex] = node;
+
+            return nodeIndex;
         }
-        
-        
+
+
         /// <summary>
         /// splits the node at the given position exactly one time
         /// </summary>
@@ -145,11 +155,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             byte depth = node.MortonCode.GetDepth();
             if (depth >= octree.MaxDepth && !force) return; // if we reached the max depth we cant split it anymore (except if the user wants to)
             
-            BuildNode(ref octree, node.MortonCode, settings, (byte)(depth + 1)); // build the children of that node (this will automatically stop at one layer
-                                                                                 // below the current depth and when a node is full or empty)
-            
-            node.ChildMask = 0xFF; 
-            octree.Nodes[nodeIndex] = node; // update the nodes values (currently only the child mask)
+            BuildNode(ref octree, node.MortonCode, settings, (byte)(depth + 1), nodeIndex); // build the children of that node
         }
         
         
@@ -209,6 +215,20 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             if (octree.IndexLookup.IsCreated) octree.IndexLookup.Dispose();
         }
 
+        /// <summary>
+        /// adds a node to the given octree and returns its index
+        /// </summary>
+        /// <param name="octree">the octree to add the node to</param>
+        /// <param name="node">the node to add</param>
+        /// <returns>the index of that added node in the nodes list of the octree</returns>
+        private static int AddNodeAndGetIndex(this Octree octree, OctreeNode node)
+        {
+            int index = octree.Nodes.Length;
+            octree.Nodes.Add(node); // add the new node to the list
+            octree.IndexLookup[node.MortonCode] = index;
+            return index;
+        }
+        
         /// <summary>
         /// adds a node to the given octree
         /// </summary>
