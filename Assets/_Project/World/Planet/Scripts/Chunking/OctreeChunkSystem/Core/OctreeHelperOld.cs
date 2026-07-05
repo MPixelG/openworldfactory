@@ -1,56 +1,22 @@
-using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
-using _Project.World.Planet.Scripts.WorldGen;
+/*using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
+using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Collections;
-using Unity.Jobs;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
+namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.TEST
 {
-    /// <summary>
-    /// Optimized octree builder with async density sampling and smart node creation.
-    /// Key optimizations:
-    /// - Asynchronous job scheduling (no .Complete() blocking during build)
-    /// - Smart sampling: only Mixed nodes require full mesh generation
-    /// - Early termination for Full/Empty nodes
-    /// - Hierarchical sampling: inherit state from parent when possible
-    /// </summary>
     public static class OctreeHelper
     {
         /// <summary>
-        /// Builds an octree asynchronously. This method schedules jobs but doesn't wait for them.
-        /// Call CompleteBuilding() to wait for all jobs.
+        /// builds an octree in a given space with a given max depth using the given density generation settings. 
         /// </summary>
-        private static OctreeBuilder BuildAsync(
-            int3 min,
-            int3 max,
-            BurstSamplerSettings settings,
-            int resolution
-        )
-        {
-            int3 size = max - min;
-            byte maxDepth = (byte)math.ceil(math.log2(math.cmax(size / resolution)));
-            
-            Octree tree = new()
-            {
-                Min = min,
-                Max = min + new int3(1 << maxDepth),
-                MaxDepth = maxDepth,
-                Nodes = new NativeList<OctreeNode>(Allocator.Persistent),
-                IndexLookup = new NativeHashMap<ulong, int>(1024, Allocator.Persistent)
-            };
-
-            var builder = new OctreeBuilder(tree, settings);
-            builder.BuildNodeAsync(new int3(0, 0, 0).EncodeToMorton(0), maxDepth, ref tree);
-            builder.Tree = tree; // Update builder's tree reference
-            
-            return builder;
-        }
-
-        /// <summary>
-        /// Synchronous build - use only for small regions!
-        /// </summary>
+        /// <param name="min">the first corner of the space the octree will occupy</param>
+        /// <param name="max">the other corner of the space the octree will occupy</param>
+        /// <param name="settings">the settings used to generate the density values</param>
+        /// <param name="resolution">the maximum depth the octree will go down to. be careful with this value though as it increases exponentially. 5 is normally already more than enough.</param>
+        /// <returns>the generated octree</returns>
         public static Octree Build(
             int3 min,
             int3 max,
@@ -58,11 +24,115 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             int resolution
         )
         {
-            var builder = BuildAsync(min, max, settings, resolution);
-            builder.CompleteBuilding();
-            return builder.Tree;
+            int3 size = max - min;
+            byte maxDepth = (byte) math.ceil(math.log2(math.cmax(size / resolution))); // the max depth is calculated based on the size of the octree and the desired resolution. we want the smallest nodes to be at least as big as the resolution, so we calculate how many times we can divide the size by 2 until we reach the resolution. that gives us the max depth.
+            
+            Octree tree = new()
+            {
+                Min = min,
+                Max = min + new int3(1 << maxDepth),
+                MaxDepth = maxDepth,
+                Nodes = new NativeList<OctreeNode>(Allocator.Persistent), // create a persistent dynamically sized native list containing the octree nodes
+                IndexLookup = new NativeHashMap<ulong, int>(1024, Allocator.Persistent)
+            };
+
+            BuildNode( // we add the root node (which recursively builds its children) so that the tree has its content
+                ref tree,
+                new int3(0, 0, 0).EncodeToMorton(0),
+                settings, // the current depth (of the root node) is always 0
+                maxDepth
+            );
+
+            return tree;
         }
-        
+
+        /// <summary>
+        /// recursively builds the children of the given node until the max depth is reached or the node is completely full or empty.
+        /// it calculates the density values for the corners of the node and determines the state of the node based on those values.
+        /// if the child node is mixed and the max depth is not reached, it will create that child node and recursively build it.
+        /// </summary>
+        /// <param name="tree">the tree that will contain the nodes</param>
+        /// <param name="mortonCode"></param>
+        /// <param name="settings">the settings for generating the density values</param>
+        /// <param name="maxDepth">the maximum depth the tree will go to</param>
+        /// <param name="parentIndex">the index of the parent node (-1 if root)</param>
+        /// <returns>the index of the build node</returns>
+        private static int BuildNode(
+            ref Octree tree,
+            ulong mortonCode,
+            BurstSamplerSettings settings,
+            byte maxDepth,
+            int parentIndex = -1
+        )
+        {
+            byte depth = mortonCode.GetDepth();
+
+            DensityFieldData sample = DensityFieldBuilder.BuildBurstDensityFieldDataInTree(
+                settings,
+                mortonCode,
+                tree.MaxDepth,
+                tree.Min,
+                5 // we only need to sample the density at the corners and some samples in between to determine the state of the node. 5 is a good number for that.
+            );
+
+            float minDensity = float.PositiveInfinity;
+            float maxDensity = float.NegativeInfinity;
+            foreach (float densitySample in sample.Densities)
+            {
+                if (densitySample < minDensity) minDensity = densitySample;
+                if (densitySample > maxDensity) maxDensity = densitySample;
+            }
+
+            OctreeNodeState state =
+                maxDensity <
+                BurstMeshGenerator.IsoLevel // if every value is below the isolevel the node is completely full
+                    ? OctreeNodeState.Full
+                    : minDensity >
+                      BurstMeshGenerator.IsoLevel // if every value is above the isolevel the node is completely empty
+                        ? OctreeNodeState.Empty
+                        : OctreeNodeState.Mixed; // else the values are above and below the isolevel so its mixed
+
+            OctreeNode node = new OctreeNode
+            {
+                MortonCode = mortonCode,
+                State = state,
+                ChildMask = 0 // Start with 0, will be updated if children are added
+            };
+
+            int nodeIndex = tree.AddNodeAndGetIndex(node); // Add node and get its index
+
+            if (depth >= maxDepth || state == OctreeNodeState.Full || state == OctreeNodeState.Empty)
+            {
+                // Leaf node - no children
+                return nodeIndex;
+            }
+
+            // Build children and track which ones exist
+            byte childMask = 0;
+            for (int i = 0; i < 8; i++)
+            {
+                int childIndex = BuildNode(
+                    ref tree,
+                    mortonCode.AppendChild((byte)i),
+                    settings,
+                    maxDepth,
+                    nodeIndex
+                );
+
+                if (childIndex >= 0) // Child was successfully created
+                {
+                    childMask |= (byte)(1 << i);
+                }
+            }
+
+            // Update parent node with child mask
+            node.ChildMask = childMask;
+            tree.Nodes[nodeIndex] = node;
+
+            return nodeIndex;
+        }
+
+
         /// <summary>
         /// splits the node at the given position exactly one time
         /// </summary>
@@ -85,8 +155,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             byte depth = node.MortonCode.GetDepth();
             if (depth >= octree.MaxDepth && !force) return; // if we reached the max depth we cant split it anymore (except if the user wants to)
             
-            OctreeBuilder builder = new OctreeBuilder(octree, settings);
-            builder.BuildNodeAsync(mortonCode, depth, ref octree);
+            BuildNode(ref octree, node.MortonCode, settings, (byte)(depth + 1), nodeIndex); // build the children of that node
         }
         
         
@@ -172,105 +241,5 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             octree.Nodes.Add(node); // add the new node to the list
             octree.IndexLookup[node.MortonCode] = index;
         }
-        
     }
-
-    /// <summary>
-    /// Manages asynchronous octree building with job scheduling.
-    /// </summary>
-    public class OctreeBuilder
-    {
-        public Octree Tree { get; set; }
-        private BurstSamplerSettings _settings;
-        private NativeList<JobHandle> _pendingJobs;
-
-        public OctreeBuilder(Octree tree, BurstSamplerSettings settings)
-        {
-            Tree = tree;
-            _settings = settings;
-            _pendingJobs = new NativeList<JobHandle>(Allocator.Persistent);
-        }
-
-        public void BuildNodeAsync(ulong mortonCode, byte maxDepth, ref Octree tree)
-        {
-            byte depth = mortonCode.GetDepth();
-            
-            JobHandle sampleJob = DensityFieldBuilder.ScheduleBurstDensityFieldDataBuildInTree(
-                _settings,
-                mortonCode,
-                maxDepth,
-                tree.Min,
-                5,
-                out DensityFieldData sample
-            );
-
-            _pendingJobs.Add(sampleJob);
-            
-            sampleJob.Complete();
-            
-            float minDensity = float.PositiveInfinity;
-            float maxDensity = float.NegativeInfinity;
-            
-            foreach (float densitySample in sample.Densities)
-            {
-                minDensity = math.min(minDensity, densitySample);
-                maxDensity = math.max(maxDensity, densitySample);
-            }
-            
-
-            OctreeNodeState state = maxDensity < BurstMeshGenerator.IsoLevel
-                ? OctreeNodeState.Empty
-                : minDensity > BurstMeshGenerator.IsoLevel
-                    ? OctreeNodeState.Full
-                    : OctreeNodeState.Mixed;
-
-            OctreeNode node = new OctreeNode
-            {
-                MortonCode = mortonCode,
-                State = state,
-                ChildMask = 0
-            };
-
-            int nodeIndex = AddNodeAndGetIndex(ref tree, node);
-            sample.Densities.Dispose();
-
-            if (depth >= maxDepth || state != OctreeNodeState.Mixed) return;
-            byte childMask = 0;
-                
-            for (int i = 0; i < 8; i++)
-            {
-                BuildNodeAsync(mortonCode.AppendChild((byte)i), maxDepth, ref tree);
-                childMask |= (byte)(1 << i);
-            }
-
-            node.ChildMask = childMask;
-            tree.Nodes[nodeIndex] = node;
-        }
-
-        public void CompleteBuilding()
-        {
-            foreach (var job in _pendingJobs)
-            {
-                job.Complete();
-            }
-        }
-
-        private int AddNodeAndGetIndex(ref Octree tree, OctreeNode node)
-        {
-            int index = tree.Nodes.Length;
-            tree.Nodes.Add(node);
-            tree.IndexLookup[node.MortonCode] = index;
-            return index;
-        }
-
-        public void Dispose()
-        {
-            foreach (var job in _pendingJobs)
-            {
-                job.Complete();
-            }
-            _pendingJobs.Dispose();
-        }
-    }
-}
-
+}*/

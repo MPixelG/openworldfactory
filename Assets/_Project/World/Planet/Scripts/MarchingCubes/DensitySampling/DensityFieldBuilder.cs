@@ -4,6 +4,7 @@ using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
+using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
 {
@@ -21,7 +22,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
         /// <returns></returns>
         public static DensityFieldData BuildBurstDensityFieldData(BurstSamplerSettings settings, byte size, ChunkCoord origin)
         {
-            byte gridSize = checked((byte)(size + 2)); // the grid size is the chunk size + 2 since we need to sample the density at the corners of the chunk as well for the marching cubes algorithm to work properly.
+            byte gridSize = checked((byte)(size+2)); // the grid size is the chunk size + 2 since we need to sample the density at the corners of the chunk as well for the marching cubes algorithm to work properly.
             
             // builds a native array (basically an array but its used for burst jobs since you cant use a lot of stuff there) with the required grid size.
             NativeArray<float> densitiesOut = new NativeArray<float>(gridSize*gridSize*gridSize, Allocator.Persistent);

@@ -70,7 +70,7 @@ namespace _Project.World.Planet.Scripts.v2
                 mortonCode,
                 _maxDepth,
                 _min,
-                _chunkSize,
+                (byte)(_chunkSize+1),
                 out DensityFieldData densityField
             );
 
@@ -82,7 +82,7 @@ namespace _Project.World.Planet.Scripts.v2
                 DensityField = densityField,
                 Vertices = vertices,
                 Normals = normals,
-                Indices = indices,
+                Indices = indices
             };
 
             _activeMeshingJobs.Add(mortonCode, meshGenerationJobHandle);

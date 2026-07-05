@@ -1,8 +1,8 @@
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
-using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
+using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
 {
@@ -54,7 +54,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
         /// <returns>the mesh data of that region</returns>
         public static JobHandle ScheduleGenerateMesh(JobHandle densityJobHandle, DensityFieldData densityField, out NativeList<int> Indices, out NativeList<float3> Vertices, out NativeList<float3> Normals, out NativeHashMap<VertexKey, int> VertexMap)
         {
-            
+            Debug.Log($"Density Resolution for: {densityField.Size}");
             Core.BurstMeshGeneratorJob job = new Core.BurstMeshGeneratorJob()
             {
                 IsoLevel = 0.5f,

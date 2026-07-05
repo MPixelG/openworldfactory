@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using Unity.Collections;
 
 namespace _Project.World.Planet.Scripts.v2.Data
@@ -28,6 +31,19 @@ namespace _Project.World.Planet.Scripts.v2.Data
         {
             bool containsValue = _chunkPayloads.TryGetValue(mortonCode, out ChunkPayload payload);
             return containsValue ? payload : null;
+        }
+
+        public List<ulong> GetMortonCodes()
+        {
+            List<ulong> mortonCodes = new List<ulong>();
+            NativeArray<ulong> keys = _chunks.GetKeyArray(Allocator.Temp);
+            for(int i = 0; i < keys.Count(); i++)
+            {
+                ulong key = keys[i];
+                mortonCodes.Add(key);
+            }
+
+            return mortonCodes;
         }
 
         public void SetLODAt(ulong mortonCode, byte lod)

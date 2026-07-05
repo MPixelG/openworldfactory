@@ -4,7 +4,7 @@ namespace _Project.World.Planet.Scripts.v2.Data
     {
         public ChunkChangeType ChangeType;
         public ulong MortonCode;
-        public ChunkPayload Payload;
+        public ChunkPayload? Payload;
     }
 
     public enum ChunkChangeType

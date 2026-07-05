@@ -26,11 +26,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
         /// <param name="z">the z position of the requested density value</param>
         /// <returns>the density of the given position. it is usually a value between 0 and 1.</returns>
         public static float DensityAt(this DensityFieldData data, int x, int y, int z)
-        {
-            x++;
-            y++;
-            z++;
-            
+        {           
             if (x < 0) x = 0;
             if (x >= data.Size) x = data.Size - 1;
             if (y < 0) y = 0;

@@ -15,10 +15,15 @@ namespace _Project.World.Planet.Scripts.v2.Unity
 
         private void OnEnable()
         {
+            Debug.Log("Enabled");
             _planetManager = new PlanetManager(settings.config);
+            Debug.Log("Created");
             _planetManager.RebuildOctree();
-            
+            Debug.Log("Rebuilt");
+           
             if(settings != null) settings.OnSettingsChanged += HandleSettingsChanged;
+            
+            Debug.Log("settings listener applied");
             
             renderer.SetPlanetManager(_planetManager); // apply the chunk manager to the renderer
             Debug.Log("Planet manager set: " + _planetManager);

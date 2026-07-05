@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
@@ -11,9 +12,10 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
     {
         private PlanetManager _planetManager;
         
-        private FrustumCullingSystem _frustumCullingSystem = new();
+        private FrustumCullingSystem _frustumCullingSystem;
         
         [SerializeField] private Camera viewer;
+        [SerializeField] private bool drawGizmos = true;
 
 
         private Dictionary<ulong, Mesh> _chunkMeshes = new();
@@ -30,26 +32,47 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
 
         private void OnChunkChange(ChunkChange change)
         {
-            Mesh mesh = UnityMeshBuilder.Build(
-                change.Payload.Vertices,
-                change.Payload.Normals,
-                change.Payload.Indices
-            );
-            
-            _chunkMeshes[change.MortonCode] = mesh;
+            switch (change.ChangeType)
+            {
+                case ChunkChangeType.Update:
+                case ChunkChangeType.Load:
+                {
+                    if (change.Payload is {} payload)
+                    {
+                        Mesh mesh = UnityMeshBuilder.Build(
+                            payload.Vertices,
+                            payload.Normals,
+                            payload.Indices
+                        );
+                        _chunkMeshes[change.MortonCode] = mesh;
+                    }
+                    
+                    break;
+                }
+                case ChunkChangeType.Unload:
+                    _chunkMeshes.Remove(change.MortonCode);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         private void OnEnable()
         {
+            _frustumCullingSystem = new FrustumCullingSystem();
             _chunkMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit"));
         }
 
         private void Update()
         {
-            _frustumCullingSystem.Update(
+            if(_frustumCullingSystem == null) Debug.LogWarning("FrustumCullingSystem is null");
+            if(_planetManager == null) Debug.LogWarning("Planet Manager is null");
+            if(viewer == null) Debug.LogWarning("Viewer is null");
+            _frustumCullingSystem?.Update(
                 _planetManager.Octree,
                 viewer
             );
+
             _planetManager.Update();
             
             DrawChunks();
@@ -83,7 +106,7 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
 
         private void OnDrawGizmos()
         {
-            if(_planetManager == null)
+            if(_planetManager == null || !drawGizmos)
                 return;
             
             foreach (ulong chunkMeshesCoord in _chunkMeshes.Keys)

@@ -75,7 +75,7 @@ namespace _Project.World.Planet.Scripts.WorldGen
             float dist = math.length(worldPos);
 
             float sphereDensity = dist - Radius;
-
+            
             float3 dir = math.normalizesafe(worldPos);
             
 
