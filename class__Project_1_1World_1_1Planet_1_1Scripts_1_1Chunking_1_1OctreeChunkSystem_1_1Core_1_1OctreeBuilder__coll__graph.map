@@ -1,0 +1,7 @@
+<map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeBuilder" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeBuilder">
+<area shape="rect" id="Node000001" title="Manages asynchronous octree building with job scheduling." alt="" coords="5,183,264,237"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html" title=" " alt="" coords="19,80,250,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,133,137,183,132,183,132,133"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="70,5,199,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="137,44,137,80,132,80,132,44"/>
+</map>

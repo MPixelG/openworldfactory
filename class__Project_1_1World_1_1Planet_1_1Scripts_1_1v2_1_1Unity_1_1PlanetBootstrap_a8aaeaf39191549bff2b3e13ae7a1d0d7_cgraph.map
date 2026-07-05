@@ -1,7 +1,11 @@
 <map id="_Project.World.Planet.Scripts.v2.Unity.PlanetBootstrap.HandleSettingsChanged" name="_Project.World.Planet.Scripts.v2.Unity.PlanetBootstrap.HandleSettingsChanged">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,272,60"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#a3458e6f59f4003d8761ff04e7f84f069" title=" " alt="" coords="320,13,552,53"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="272,30,306,30,306,35,272,35"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1ChunkGenerationPipeline.html#ae7a73df52feaeacc135f30ddb9b8104b" title=" " alt="" coords="600,13,863,53"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="552,30,587,30,587,35,552,35"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,62,272,117"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#a3458e6f59f4003d8761ff04e7f84f069" title=" " alt="" coords="320,69,552,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="272,87,306,87,306,92,272,92"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1ChunkGenerationPipeline.html#a1b80e4b6ecf9b49ec8bdf10d7f3eded4" title=" " alt="" coords="600,5,907,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="536,67,640,45,641,51,537,72"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1ChunkGenerationPipeline.html#ae7a73df52feaeacc135f30ddb9b8104b" title=" " alt="" coords="622,69,885,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="552,87,608,87,608,92,552,92"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1ChunkGenerationPipeline.html#abd71db2d90e7b15b6679431f7d0d7735" title=" " alt="" coords="607,134,899,189"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="526,107,620,128,619,134,524,112"/>
 </map>

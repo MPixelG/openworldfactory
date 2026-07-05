@@ -1,0 +1,7 @@
+<map id="_Project.World.Planet.Scripts.v2.PlanetManager.ClearChunks" name="_Project.World.Planet.Scripts.v2.PlanetManager.ClearChunks">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,37,237,77"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a115f4390aacb6f981d11d388df965daa" title=" " alt="" coords="307,5,539,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,42,293,36,294,42,238,48"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a945d5aaec1509ce9c5522376a6ee5f00" title=" " alt="" coords="285,69,561,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="238,67,272,71,271,76,237,72"/>
+</map>

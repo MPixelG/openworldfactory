@@ -92,6 +92,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6256dfd6d0b6a06c3c88a641ca6ee991"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a752d5e076cf1352e492003a4c2a933f9" id="r_a752d5e076cf1352e492003a4c2a933f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkPayload.html">ChunkPayload</a>?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a752d5e076cf1352e492003a4c2a933f9">GetChunkPayloadAt</a> (ulong mortonCode)</td></tr>
 <tr class="separator:a752d5e076cf1352e492003a4c2a933f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a945d5aaec1509ce9c5522376a6ee5f00" id="r_a945d5aaec1509ce9c5522376a6ee5f00"><td class="memItemLeft" align="right" valign="top">List&lt; ulong &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a945d5aaec1509ce9c5522376a6ee5f00">GetMortonCodes</a> ()</td></tr>
+<tr class="separator:a945d5aaec1509ce9c5522376a6ee5f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa13a2e7297838475263588049bcb2bd4" id="r_aa13a2e7297838475263588049bcb2bd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#aa13a2e7297838475263588049bcb2bd4">SetLODAt</a> (ulong mortonCode, byte lod)</td></tr>
 <tr class="separator:aa13a2e7297838475263588049bcb2bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a998c5f531ae5bf165b9d80167856e700" id="r_a998c5f531ae5bf165b9d80167856e700"><td class="memItemLeft" align="right" valign="top">byte?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a998c5f531ae5bf165b9d80167856e700">GetLODAt</a> (ulong mortonCode)</td></tr>
@@ -110,7 +112,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00005">5</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00008">8</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a43993228237b9a195d9d41230762b8a0" name="a43993228237b9a195d9d41230762b8a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a43993228237b9a195d9d41230762b8a0">&#9670;&#160;</a></span>ChunkDataStore() <span class="overload">[1/2]</span></h2>
@@ -146,15 +148,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00010">10</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   11</span>        {</div>
-<div class="line"><span class="lineno">   12</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a> = chunks;</div>
-<div class="line"><span class="lineno">   13</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#af391c2dfb5c188245967403bc1b07a57">_chunkPayloads</a> = chunkPayloads;</div>
-<div class="line"><span class="lineno">   14</span>        }</div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_html_a5aa14ab797f27bc1ed37e57da7e52fd4"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunks</a></div><div class="ttdeci">NativeHashMap&lt; ulong, ChunkData &gt; _chunks</div><div class="ttdef"><b>Definition</b> <a href="ChunkDataStore_8cs_source.html#l00007">ChunkDataStore.cs:7</a></div></div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_html_af391c2dfb5c188245967403bc1b07a57"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#af391c2dfb5c188245967403bc1b07a57">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunkPayloads</a></div><div class="ttdeci">NativeHashMap&lt; ulong, ChunkPayload &gt; _chunkPayloads</div><div class="ttdef"><b>Definition</b> <a href="ChunkDataStore_8cs_source.html#l00008">ChunkDataStore.cs:8</a></div></div>
+<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00013">13</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>        {</div>
+<div class="line"><span class="lineno">   15</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a> = chunks;</div>
+<div class="line"><span class="lineno">   16</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#af391c2dfb5c188245967403bc1b07a57">_chunkPayloads</a> = chunkPayloads;</div>
+<div class="line"><span class="lineno">   17</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_html_a5aa14ab797f27bc1ed37e57da7e52fd4"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunks</a></div><div class="ttdeci">NativeHashMap&lt; ulong, ChunkData &gt; _chunks</div><div class="ttdef"><b>Definition</b> <a href="ChunkDataStore_8cs_source.html#l00010">ChunkDataStore.cs:10</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_html_af391c2dfb5c188245967403bc1b07a57"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#af391c2dfb5c188245967403bc1b07a57">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunkPayloads</a></div><div class="ttdeci">NativeHashMap&lt; ulong, ChunkPayload &gt; _chunkPayloads</div><div class="ttdef"><b>Definition</b> <a href="ChunkDataStore_8cs_source.html#l00011">ChunkDataStore.cs:11</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00008">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunkPayloads</a>, and <a class="el" href="ChunkDataStore_8cs_source.html#l00007">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunks</a>.</p>
+<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00011">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunkPayloads</a>, and <a class="el" href="ChunkDataStore_8cs_source.html#l00010">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunks</a>.</p>
 
 </div>
 </div>
@@ -182,13 +184,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00015">15</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>        {</div>
-<div class="line"><span class="lineno">   17</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a> = <span class="keyword">new</span> NativeHashMap&lt;ulong, ChunkData&gt;(initialCapacity, Allocator.Persistent);</div>
-<div class="line"><span class="lineno">   18</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#af391c2dfb5c188245967403bc1b07a57">_chunkPayloads</a> = <span class="keyword">new</span> NativeHashMap&lt;ulong, ChunkPayload&gt;(initialCapacity, Allocator.Persistent);</div>
-<div class="line"><span class="lineno">   19</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00018">18</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>        {</div>
+<div class="line"><span class="lineno">   20</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a> = <span class="keyword">new</span> NativeHashMap&lt;ulong, ChunkData&gt;(initialCapacity, Allocator.Persistent);</div>
+<div class="line"><span class="lineno">   21</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#af391c2dfb5c188245967403bc1b07a57">_chunkPayloads</a> = <span class="keyword">new</span> NativeHashMap&lt;ulong, ChunkPayload&gt;(initialCapacity, Allocator.Persistent);</div>
+<div class="line"><span class="lineno">   22</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00008">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunkPayloads</a>, and <a class="el" href="ChunkDataStore_8cs_source.html#l00007">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunks</a>.</p>
+<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00011">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunkPayloads</a>, and <a class="el" href="ChunkDataStore_8cs_source.html#l00010">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunks</a>.</p>
 
 </div>
 </div>
@@ -216,13 +218,33 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00047">47</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>        {</div>
-<div class="line"><span class="lineno">   49</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a>.Clear();</div>
-<div class="line"><span class="lineno">   50</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#af391c2dfb5c188245967403bc1b07a57">_chunkPayloads</a>.Clear();</div>
-<div class="line"><span class="lineno">   51</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00063">63</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>        {</div>
+<div class="line"><span class="lineno">   65</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a>.Clear();</div>
+<div class="line"><span class="lineno">   66</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#af391c2dfb5c188245967403bc1b07a57">_chunkPayloads</a>.Clear();</div>
+<div class="line"><span class="lineno">   67</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00008">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunkPayloads</a>, and <a class="el" href="ChunkDataStore_8cs_source.html#l00007">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunks</a>.</p>
+<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00011">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunkPayloads</a>, and <a class="el" href="ChunkDataStore_8cs_source.html#l00010">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunks</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PlanetManager_8cs_source.html#l00091">_Project.World.Planet.Scripts.v2.PlanetManager.ClearChunks()</a>.</p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_a115f4390aacb6f981d11d388df965daa_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_a115f4390aacb6f981d11d388df965daa_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_a115f4390aacb6f981d11d388df965daa_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_a115f4390aacb6f981d11d388df965daa_icgraph">
+<area shape="rect" title=" " alt="" coords="872,37,1104,77"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#a9b303f97ea9ba06974b1aca421cc0a44" title=" " alt="" coords="592,37,824,77"/>
+<area shape="poly" title=" " alt="" coords="858,60,824,60,824,55,858,55"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#ad126f7beecb027f89592ae413b839c87" title=" " alt="" coords="312,37,544,77"/>
+<area shape="poly" title=" " alt="" coords="578,60,544,60,544,55,578,55"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html#a92fae171218cbbaf83840ec43a0df3d8" title=" " alt="" coords="19,5,251,45"/>
+<area shape="poly" title=" " alt="" coords="298,46,251,41,251,35,298,41"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html#a2385a768c7c98ab10de7ac816460ecf3" title=" " alt="" coords="5,69,264,109"/>
+<area shape="poly" title=" " alt="" coords="298,74,265,78,264,73,298,69"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -249,13 +271,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00053">53</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   54</span>        {</div>
-<div class="line"><span class="lineno">   55</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a>.Dispose();</div>
-<div class="line"><span class="lineno">   56</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#af391c2dfb5c188245967403bc1b07a57">_chunkPayloads</a>.Dispose();</div>
-<div class="line"><span class="lineno">   57</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00069">69</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>        {</div>
+<div class="line"><span class="lineno">   71</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a>.Dispose();</div>
+<div class="line"><span class="lineno">   72</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#af391c2dfb5c188245967403bc1b07a57">_chunkPayloads</a>.Dispose();</div>
+<div class="line"><span class="lineno">   73</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00008">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunkPayloads</a>, and <a class="el" href="ChunkDataStore_8cs_source.html#l00007">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunks</a>.</p>
+<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00011">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunkPayloads</a>, and <a class="el" href="ChunkDataStore_8cs_source.html#l00010">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunks</a>.</p>
 
 </div>
 </div>
@@ -283,13 +305,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00027">27</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>        {</div>
-<div class="line"><span class="lineno">   29</span>            <span class="keywordtype">bool</span> containsValue = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#af391c2dfb5c188245967403bc1b07a57">_chunkPayloads</a>.TryGetValue(mortonCode, out ChunkPayload payload);</div>
-<div class="line"><span class="lineno">   30</span>            <span class="keywordflow">return</span> containsValue ? payload : <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   31</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00030">30</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>        {</div>
+<div class="line"><span class="lineno">   32</span>            <span class="keywordtype">bool</span> containsValue = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#af391c2dfb5c188245967403bc1b07a57">_chunkPayloads</a>.TryGetValue(mortonCode, out ChunkPayload payload);</div>
+<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">return</span> containsValue ? payload : <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   34</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00008">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunkPayloads</a>.</p>
+<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00011">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunkPayloads</a>.</p>
 
 </div>
 </div>
@@ -317,13 +339,73 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00041">41</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>        {</div>
-<div class="line"><span class="lineno">   43</span>            <span class="keywordtype">bool</span> containsValue = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a>.TryGetValue(mortonCode, out ChunkData data);</div>
-<div class="line"><span class="lineno">   44</span>            <span class="keywordflow">return</span> containsValue ? data.LOD : <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   45</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00057">57</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>        {</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordtype">bool</span> containsValue = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a>.TryGetValue(mortonCode, out ChunkData data);</div>
+<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">return</span> containsValue ? data.LOD : <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   61</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00007">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunks</a>.</p>
+<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00010">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunks</a>.</p>
+
+</div>
+</div>
+<a id="a945d5aaec1509ce9c5522376a6ee5f00" name="a945d5aaec1509ce9c5522376a6ee5f00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a945d5aaec1509ce9c5522376a6ee5f00">&#9670;&#160;</a></span>GetMortonCodes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; ulong &gt; _Project.World.Planet.Scripts.v2.Data.ChunkDataStore.GetMortonCodes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00036">36</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>        {</div>
+<div class="line"><span class="lineno">   38</span>            List&lt;ulong&gt; mortonCodes = <span class="keyword">new</span> List&lt;ulong&gt;();</div>
+<div class="line"><span class="lineno">   39</span>            NativeArray&lt;ulong&gt; keys = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a>.GetKeyArray(Allocator.Temp);</div>
+<div class="line"><span class="lineno">   40</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; keys.Count(); i++)</div>
+<div class="line"><span class="lineno">   41</span>            {</div>
+<div class="line"><span class="lineno">   42</span>                ulong key = keys[i];</div>
+<div class="line"><span class="lineno">   43</span>                mortonCodes.Add(key);</div>
+<div class="line"><span class="lineno">   44</span>            }</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>            <span class="keywordflow">return</span> mortonCodes;</div>
+<div class="line"><span class="lineno">   47</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00010">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunks</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PlanetManager_8cs_source.html#l00091">_Project.World.Planet.Scripts.v2.PlanetManager.ClearChunks()</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_a945d5aaec1509ce9c5522376a6ee5f00_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_a945d5aaec1509ce9c5522376a6ee5f00_icgraph" alt=""/></div>
+<map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_a945d5aaec1509ce9c5522376a6ee5f00_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_a945d5aaec1509ce9c5522376a6ee5f00_icgraph">
+<area shape="rect" title=" " alt="" coords="872,37,1148,77"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#a9b303f97ea9ba06974b1aca421cc0a44" title=" " alt="" coords="592,37,824,77"/>
+<area shape="poly" title=" " alt="" coords="858,60,824,60,824,55,858,55"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#ad126f7beecb027f89592ae413b839c87" title=" " alt="" coords="312,37,544,77"/>
+<area shape="poly" title=" " alt="" coords="578,60,544,60,544,55,578,55"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html#a92fae171218cbbaf83840ec43a0df3d8" title=" " alt="" coords="19,5,251,45"/>
+<area shape="poly" title=" " alt="" coords="298,46,251,41,251,35,298,41"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html#a2385a768c7c98ab10de7ac816460ecf3" title=" " alt="" coords="5,69,264,109"/>
+<area shape="poly" title=" " alt="" coords="298,74,265,78,264,73,298,69"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -361,19 +443,19 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00022">22</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>        {</div>
-<div class="line"><span class="lineno">   24</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#af391c2dfb5c188245967403bc1b07a57">_chunkPayloads</a>[mortonCode] = payload;</div>
-<div class="line"><span class="lineno">   25</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00025">25</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>        {</div>
+<div class="line"><span class="lineno">   27</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#af391c2dfb5c188245967403bc1b07a57">_chunkPayloads</a>[mortonCode] = payload;</div>
+<div class="line"><span class="lineno">   28</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00008">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunkPayloads</a>.</p>
+<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00011">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunkPayloads</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PlanetManager_8cs_source.html#l00055">_Project.World.Planet.Scripts.v2.PlanetManager.OnChunkGenerated()</a>.</p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+<p class="reference">Referenced by <a class="el" href="PlanetManager_8cs_source.html#l00078">_Project.World.Planet.Scripts.v2.PlanetManager.OnChunkGenerated()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_a6256dfd6d0b6a06c3c88a641ca6ee991_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_a6256dfd6d0b6a06c3c88a641ca6ee991_icgraph" alt=""/></div>
 <map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_a6256dfd6d0b6a06c3c88a641ca6ee991_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore_a6256dfd6d0b6a06c3c88a641ca6ee991_icgraph">
 <area shape="rect" title=" " alt="" coords="896,37,1191,77"/>
@@ -424,15 +506,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00033">33</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>        {</div>
-<div class="line"><span class="lineno">   35</span>            ChunkData chunkData = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a>.ContainsKey(mortonCode) ? <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a>[mortonCode] : <span class="keyword">new</span> ChunkData(){MortonCode = mortonCode, LOD = lod};</div>
-<div class="line"><span class="lineno">   36</span>            chunkData.LOD = lod;</div>
-<div class="line"><span class="lineno">   37</span>            </div>
-<div class="line"><span class="lineno">   38</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a>[mortonCode] = chunkData;</div>
-<div class="line"><span class="lineno">   39</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00049">49</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>        {</div>
+<div class="line"><span class="lineno">   51</span>            ChunkData chunkData = <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a>.ContainsKey(mortonCode) ? <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a>[mortonCode] : <span class="keyword">new</span> ChunkData(){MortonCode = mortonCode, LOD = lod};</div>
+<div class="line"><span class="lineno">   52</span>            chunkData.LOD = lod;</div>
+<div class="line"><span class="lineno">   53</span>            </div>
+<div class="line"><span class="lineno">   54</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a5aa14ab797f27bc1ed37e57da7e52fd4">_chunks</a>[mortonCode] = chunkData;</div>
+<div class="line"><span class="lineno">   55</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00007">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunks</a>.</p>
+<p class="reference">References <a class="el" href="ChunkDataStore_8cs_source.html#l00010">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore._chunks</a>.</p>
 
 </div>
 </div>
@@ -457,9 +539,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00008">8</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00011">11</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ChunkDataStore_8cs_source.html#l00015">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.ChunkDataStore()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00010">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.ChunkDataStore()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00047">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.Clear()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00053">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.Dispose()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00027">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.GetChunkPayloadAt()</a>, and <a class="el" href="ChunkDataStore_8cs_source.html#l00022">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.SetChunkPayloadAt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ChunkDataStore_8cs_source.html#l00018">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.ChunkDataStore()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00013">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.ChunkDataStore()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00063">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.Clear()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00069">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.Dispose()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00030">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.GetChunkPayloadAt()</a>, and <a class="el" href="ChunkDataStore_8cs_source.html#l00025">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.SetChunkPayloadAt()</a>.</p>
 
 </div>
 </div>
@@ -483,9 +565,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00007">7</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ChunkDataStore_8cs_source.html#l00010">10</a> of file <a class="el" href="ChunkDataStore_8cs_source.html">ChunkDataStore.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ChunkDataStore_8cs_source.html#l00015">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.ChunkDataStore()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00010">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.ChunkDataStore()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00047">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.Clear()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00053">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.Dispose()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00041">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.GetLODAt()</a>, and <a class="el" href="ChunkDataStore_8cs_source.html#l00033">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.SetLODAt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ChunkDataStore_8cs_source.html#l00018">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.ChunkDataStore()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00013">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.ChunkDataStore()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00063">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.Clear()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00069">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.Dispose()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00057">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.GetLODAt()</a>, <a class="el" href="ChunkDataStore_8cs_source.html#l00036">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.GetMortonCodes()</a>, and <a class="el" href="ChunkDataStore_8cs_source.html#l00049">_Project.World.Planet.Scripts.v2.Data.ChunkDataStore.SetLODAt()</a>.</p>
 
 </div>
 </div>

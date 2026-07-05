@@ -1,9 +1,13 @@
 <map id="_Project.World.Planet.Scripts.v2.Unity.PlanetBootstrap.OnDisable" name="_Project.World.Planet.Scripts.v2.Unity.PlanetBootstrap.OnDisable">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,13,240,53"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html#a8aaeaf39191549bff2b3e13ae7a1d0d7" title=" " alt="" coords="288,5,555,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="240,30,274,30,274,35,240,35"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#a3458e6f59f4003d8761ff04e7f84f069" title=" " alt="" coords="603,13,835,53"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="555,30,589,30,589,35,555,35"/>
-<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1ChunkGenerationPipeline.html#ae7a73df52feaeacc135f30ddb9b8104b" title=" " alt="" coords="883,13,1145,53"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="835,30,869,30,869,35,835,35"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,69,240,109"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html#a8aaeaf39191549bff2b3e13ae7a1d0d7" title=" " alt="" coords="288,62,555,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="240,87,274,87,274,92,240,92"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#a3458e6f59f4003d8761ff04e7f84f069" title=" " alt="" coords="603,69,835,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="555,87,589,87,589,92,555,92"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1ChunkGenerationPipeline.html#a1b80e4b6ecf9b49ec8bdf10d7f3eded4" title=" " alt="" coords="883,5,1189,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="818,67,922,45,923,51,819,72"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1ChunkGenerationPipeline.html#ae7a73df52feaeacc135f30ddb9b8104b" title=" " alt="" coords="905,69,1167,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="835,87,891,87,891,92,835,92"/>
+<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1ChunkGenerationPipeline.html#abd71db2d90e7b15b6679431f7d0d7735" title=" " alt="" coords="890,134,1182,189"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="808,107,903,128,901,134,807,112"/>
 </map>
