@@ -69,7 +69,7 @@ namespace _Project.World.Planet.Scripts.v2
 
             byte voxelResolution = (byte)(_chunkSize + 1);
 
-            JobHandle densityJobHandle = DensityFieldBuilder.ScheduleBurstDensityFieldDataBuildInTree(
+            JobHandle densityJobHandle = DensityFieldBuilder.ScheduleExactBurstDensityFieldDataBuildInTree(
                 _settings,
                 mortonCode,
                 _maxDepth,

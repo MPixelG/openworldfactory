@@ -29,7 +29,7 @@ namespace _Project.World.Planet.Scripts.v2
         public bool OctreeReady {get; private set; }
         public void RebuildOctree()
         {
-            Octree = OctreeHelper.Build(_config.origin, _config.origin + new int3(_config.size), _config.samplerSettings, 1);
+            //Octree = OctreeHelper.Build(_config.origin, _config.origin + new int3(_config.size), _config.samplerSettings, 1); TODO
             OctreeReady = true;
             
             _chunkGenerationPipeline.UpdateMin(_config.origin);
@@ -58,16 +58,6 @@ namespace _Project.World.Planet.Scripts.v2
             _chunkGenerationPipeline.UpdateMin(config.origin);
             _chunkGenerationPipeline.UpdateSamplerSettings(config.samplerSettings);
             _chunkGenerationPipeline.UpdateChunkSize(config.chunkSize);
-        }
-
-        public void SplitChunkAt(ulong mortonCode)
-        {
-            Octree.Split(mortonCode, _config.samplerSettings);
-        }
-        
-        public void MergeChunkAt(ulong mortonCode)
-        {
-            Octree.Merge(mortonCode);
         }
         
         private void OnChunkGenerated(ChunkGeneration chunkGeneration)

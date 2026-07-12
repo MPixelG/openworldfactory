@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
@@ -6,224 +7,49 @@ using Unity.Mathematics;
 namespace _Project.World.Planet.Scripts.WorldGen
 {
     [BurstCompile]
-    public struct BurstSphericalNoiseSamplerJob : IJobParallelFor
+    [StructLayout(LayoutKind.Auto)]
+    public partial struct BurstSphericalNoiseSamplerJob : IJobParallelFor
     {
+        public DensitySamplingJobType JobType;
+        
         public NativeArray<float> Densities;
 
+        public MinMaxValue MinMaxValue;
+        
         public byte Resolution;
-        public int3 Min;
-        public int3 Max;
-
-        public float Radius;
-        
-
-        public float TerrainHeight;
-
-        public float ReferenceRadius;
-        
-
-        public float ContinentFrequency;
-        public int ContinentOctaves;
-        public float ContinentPersistence;
-
-        public float OceanThreshold;
-        
-
-        public float MountainMaskFrequency;
-
-        public float MountainThreshold;
-
-        public float MountainBlend;
-        
-        
-        public float MountainFrequency;
-        public int MountainOctaves;
-        public float MountainPersistence;
-
-        public float MountainSharpness;
-        
-
-        public float PlainsStrength;
-        public float PlainsFrequency;
-        
-
-        public float DetailFrequency;
-        public float DetailStrength;
-        
-
-        public float WarpFrequency;
-        public float WarpStrength;
+        public int3 MinPos;
+        public int3 MaxPos;
 
         public void Execute(int index)
+        {
+            float3 worldPos = ToWorldPos(index);
+            float val = GenerateAt(worldPos);
+            Densities[index] = val;
+        }
+
+        private float3 ToWorldPos(int index)
         {
             int resolution = Resolution;
             int x = index % resolution;
             int y = (index / resolution) % resolution;
             int z = index / (resolution * resolution);
-
-            float3 worldPos;
-            if (resolution == 1)
-            {
-                worldPos = ((float3) Min + Max) * 0.5f;
-            }
-            else
-            {
-                float3 step = (Max - Min) / (resolution - 1);
-                worldPos = new float3(x, y, z) * step + Min;
-            }
-
-            float dist = math.length(worldPos);
-
-            float sphereDensity = dist - Radius;
             
-            float3 dir = math.normalizesafe(worldPos);
-            
+            if (resolution == 1) return ((float3)MinPos + MaxPos) * 0.5f;
 
-            float scale = ReferenceRadius / Radius;
-
-            float3 samplePos = dir * scale;
-            
-
-            float continent = FractalNoise(
-                samplePos * ContinentFrequency,
-                ContinentOctaves,
-                ContinentPersistence
-            );
-
-            continent = continent * 0.5f + 0.5f;
-
-            continent = math.smoothstep(
-                OceanThreshold,
-                1f,
-                continent
-            );
-            
-
-            float3 warp = new float3(
-                noise.cnoise(samplePos * WarpFrequency + 17f),
-                noise.cnoise(samplePos * WarpFrequency + 53f),
-                noise.cnoise(samplePos * WarpFrequency + 91f)
-            );
-
-            float3 warpedPos = samplePos + warp * WarpStrength;
-            
-
-            float mountainMask = FractalNoise(
-                warpedPos * MountainMaskFrequency,
-                3,
-                0.5f
-            );
-
-            mountainMask = mountainMask * 0.5f + 0.5f;
-
-            mountainMask = math.smoothstep(
-                MountainThreshold,
-                MountainThreshold + MountainBlend,
-                mountainMask
-            );
-
-            mountainMask *= continent;
-            
-
-            float mountains = RidgedNoise(
-                warpedPos * MountainFrequency,
-                MountainOctaves,
-                MountainPersistence
-            );
-
-            mountains = math.pow(
-                mountains,
-                MountainSharpness
-            );
-
-            mountains *= mountainMask;
-            
-
-            float plains = FractalNoise(
-                warpedPos * PlainsFrequency,
-                2,
-                0.5f
-            );
-
-            plains *= PlainsStrength;
-
-            plains *= (1f - mountainMask);
-            
-
-            float detail = noise.cnoise(
-                warpedPos * DetailFrequency
-            );
-
-            detail *= DetailStrength;
-
-            detail *= math.lerp(
-                0.3f,
-                1f,
-                mountainMask
-            );
-            
-
-            float terrain =
-                mountains * TerrainHeight +
-                plains +
-                detail;
-
-            terrain -= TerrainHeight * 0.15f * continent;
-
-            Densities[index] = (sphereDensity + terrain) + math.clamp(FractalNoise(worldPos/25f, 3, 0.3f), 0, 1)*Radius;
+            float3 step = (MaxPos - MinPos) / (resolution - 1);
+            return new float3(x, y, z) * step + MinPos;
         }
-        
+    }
 
-        private static float FractalNoise(
-            float3 pos,
-            int octaves,
-            float persistence)
-        {
-            float total = 0f;
-            float amplitude = 1f;
-            float frequency = 1f;
-            float maxValue = 0f;
+    public enum DensitySamplingJobType
+    {
+        Exact,
+        MinMax,
+    }
 
-            for (int i = 0; i < octaves; i++)
-            {
-                total += noise.cnoise(pos * frequency) * amplitude;
-
-                maxValue += amplitude;
-
-                amplitude *= persistence;
-                frequency *= 2f;
-            }
-
-            return total / maxValue;
-        }
-
-        private static float RidgedNoise(
-            float3 pos,
-            int octaves,
-            float persistence)
-        {
-            float total = 0f;
-            float amplitude = 1f;
-            float frequency = 1f;
-            float maxValue = 0f;
-
-            for (int i = 0; i < octaves; i++)
-            {
-                float n = noise.cnoise(pos * frequency);
-
-                n = 1f - math.abs(n);
-
-                n *= n;
-
-                total += n * amplitude;
-
-                maxValue += amplitude;
-
-                amplitude *= persistence;
-                frequency *= 2f;
-            }
-
-            return total / maxValue;
-        }
+    public struct MinMaxValue
+    {
+        public float Min;
+        public float Max;
     }
 }

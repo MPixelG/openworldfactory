@@ -37,7 +37,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
 
         public void RebuildOctree()
         {
-            Octree = OctreeHelper.Build(Origin, Origin + new int3(Size), _densitySamplerSettings, 1);
+            //Octree = OctreeHelper.Build(Origin, Origin + new int3(Size), _densitySamplerSettings, 1); TODO
             OctreeReady = true;
         }
 
