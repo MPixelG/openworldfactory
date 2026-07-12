@@ -162,26 +162,25 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FrustumCullingSystem_8cs_source.html#l00090">90</a> of file <a class="el" href="FrustumCullingSystem_8cs_source.html">FrustumCullingSystem.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   93</span>        {</div>
-<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">foreach</span> (Plane plane <span class="keywordflow">in</span> planes)</div>
-<div class="line"><span class="lineno">   95</span>            {</div>
-<div class="line"><span class="lineno">   96</span>                Vector3 normal = plane.normal;</div>
+<p class="definition">Definition at line <a class="el" href="FrustumCullingSystem_8cs_source.html#l00088">88</a> of file <a class="el" href="FrustumCullingSystem_8cs_source.html">FrustumCullingSystem.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>        {</div>
+<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">foreach</span> (Plane plane <span class="keywordflow">in</span> planes)</div>
+<div class="line"><span class="lineno">   93</span>            {</div>
+<div class="line"><span class="lineno">   94</span>                Vector3 normal = plane.normal;</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>                Vector3 p = bounds.min;</div>
 <div class="line"><span class="lineno">   97</span> </div>
-<div class="line"><span class="lineno">   98</span>                Vector3 p = bounds.min;</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>                <span class="keywordflow">if</span> (normal.x &gt;= 0) p.x = bounds.max.x;</div>
-<div class="line"><span class="lineno">  101</span>                <span class="keywordflow">if</span> (normal.y &gt;= 0) p.y = bounds.max.y;</div>
-<div class="line"><span class="lineno">  102</span>                <span class="keywordflow">if</span> (normal.z &gt;= 0) p.z = bounds.max.z;</div>
-<div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>                <span class="keywordflow">if</span> (plane.GetDistanceToPoint(p) &lt; 0)</div>
-<div class="line"><span class="lineno">  105</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  106</span>            }</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  109</span>        }</div>
+<div class="line"><span class="lineno">   98</span>                <span class="keywordflow">if</span> (normal.x &gt;= 0) p.x = bounds.max.x;</div>
+<div class="line"><span class="lineno">   99</span>                <span class="keywordflow">if</span> (normal.y &gt;= 0) p.y = bounds.max.y;</div>
+<div class="line"><span class="lineno">  100</span>                <span class="keywordflow">if</span> (normal.z &gt;= 0) p.z = bounds.max.z;</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>                <span class="keywordflow">if</span> (plane.GetDistanceToPoint(p) &lt; 0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  103</span>            }</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  106</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="FrustumCullingSystem_8cs_source.html#l00050">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Traverse()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FrustumCullingSystem_8cs_source.html#l00048">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Traverse()</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -228,21 +227,21 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FrustumCullingSystem_8cs_source.html#l00112">112</a> of file <a class="el" href="FrustumCullingSystem_8cs_source.html">FrustumCullingSystem.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  113</span>        {</div>
-<div class="line"><span class="lineno">  114</span>            <span class="keywordtype">float</span> positionDelta =</div>
-<div class="line"><span class="lineno">  115</span>                Vector3.Distance(</div>
-<div class="line"><span class="lineno">  116</span>                    camera.transform.position,</div>
-<div class="line"><span class="lineno">  117</span>                    <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a2d5f4dfcc665a77c8e4d161ae6e8cc28">_lastPosition</a>);</div>
-<div class="line"><span class="lineno">  118</span> </div>
-<div class="line"><span class="lineno">  119</span>            <span class="keywordtype">float</span> rotationDelta =</div>
-<div class="line"><span class="lineno">  120</span>                Quaternion.Angle(</div>
-<div class="line"><span class="lineno">  121</span>                    camera.transform.rotation,</div>
-<div class="line"><span class="lineno">  122</span>                    <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a2b48715b7b3d16dbc9f9dbd2c0533187">_lastRotation</a>);</div>
-<div class="line"><span class="lineno">  123</span> </div>
-<div class="line"><span class="lineno">  124</span>            <span class="keywordflow">return</span> positionDelta &gt; <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a175e83c548f178933409c483584fa6ae">PositionThreshold</a> ||</div>
-<div class="line"><span class="lineno">  125</span>                   rotationDelta &gt; <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#ac985f1ce3daad6aca8b0278a23f04169">RotationThreshold</a>;</div>
-<div class="line"><span class="lineno">  126</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="FrustumCullingSystem_8cs_source.html#l00109">109</a> of file <a class="el" href="FrustumCullingSystem_8cs_source.html">FrustumCullingSystem.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>        {</div>
+<div class="line"><span class="lineno">  111</span>            <span class="keywordtype">float</span> positionDelta =</div>
+<div class="line"><span class="lineno">  112</span>                Vector3.Distance(</div>
+<div class="line"><span class="lineno">  113</span>                    camera.transform.position,</div>
+<div class="line"><span class="lineno">  114</span>                    <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a2d5f4dfcc665a77c8e4d161ae6e8cc28">_lastPosition</a>);</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>            <span class="keywordtype">float</span> rotationDelta =</div>
+<div class="line"><span class="lineno">  117</span>                Quaternion.Angle(</div>
+<div class="line"><span class="lineno">  118</span>                    camera.transform.rotation,</div>
+<div class="line"><span class="lineno">  119</span>                    <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a2b48715b7b3d16dbc9f9dbd2c0533187">_lastRotation</a>);</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>            <span class="keywordflow">return</span> positionDelta &gt; <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a175e83c548f178933409c483584fa6ae">PositionThreshold</a> ||</div>
+<div class="line"><span class="lineno">  122</span>                   rotationDelta &gt; <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#ac985f1ce3daad6aca8b0278a23f04169">RotationThreshold</a>;</div>
+<div class="line"><span class="lineno">  123</span>        }</div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem_html_a175e83c548f178933409c483584fa6ae"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a175e83c548f178933409c483584fa6ae">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.PositionThreshold</a></div><div class="ttdeci">const float PositionThreshold</div><div class="ttdef"><b>Definition</b> <a href="FrustumCullingSystem_8cs_source.html#l00015">FrustumCullingSystem.cs:15</a></div></div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem_html_a2b48715b7b3d16dbc9f9dbd2c0533187"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a2b48715b7b3d16dbc9f9dbd2c0533187">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem._lastRotation</a></div><div class="ttdeci">Quaternion _lastRotation</div><div class="ttdef"><b>Definition</b> <a href="FrustumCullingSystem_8cs_source.html#l00013">FrustumCullingSystem.cs:13</a></div></div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem_html_a2d5f4dfcc665a77c8e4d161ae6e8cc28"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a2d5f4dfcc665a77c8e4d161ae6e8cc28">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem._lastPosition</a></div><div class="ttdeci">Vector3 _lastPosition</div><div class="ttdef"><b>Definition</b> <a href="FrustumCullingSystem_8cs_source.html#l00012">FrustumCullingSystem.cs:12</a></div></div>
@@ -308,51 +307,51 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FrustumCullingSystem_8cs_source.html#l00050">50</a> of file <a class="el" href="FrustumCullingSystem_8cs_source.html">FrustumCullingSystem.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   54</span>        {</div>
-<div class="line"><span class="lineno">   55</span>            <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html">OctreeNode</a>? nodeNullable =</div>
-<div class="line"><span class="lineno">   56</span>                octree.GetNodeAtPosition(mortonCode);</div>
+<p class="definition">Definition at line <a class="el" href="FrustumCullingSystem_8cs_source.html#l00048">48</a> of file <a class="el" href="FrustumCullingSystem_8cs_source.html">FrustumCullingSystem.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>        {</div>
+<div class="line"><span class="lineno">   53</span>            <span class="keywordflow">if</span>(mortonCode.GetDepth() &gt; 4)</div>
+<div class="line"><span class="lineno">   54</span>                <span class="keywordflow">return</span>; <span class="comment">//TODO dynamic</span></div>
+<div class="line"><span class="lineno">   55</span>            </div>
+<div class="line"><span class="lineno">   56</span>            <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html">OctreeNode</a>? nodeNullable = octree.GetNodeAtPosition(mortonCode);</div>
 <div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">if</span> (!nodeNullable.HasValue)</div>
-<div class="line"><span class="lineno">   59</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>            <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html">OctreeNode</a> node = nodeNullable.Value;</div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>            Bounds bounds =</div>
-<div class="line"><span class="lineno">   64</span>                octree.GetBounds(mortonCode);</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a63a76d2c9eb8c652da32b11855407faf">IsVisible</a>(bounds, planes))</div>
-<div class="line"><span class="lineno">   67</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">if</span> (!nodeNullable.HasValue) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>            <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html">OctreeNode</a> node = nodeNullable.Value;</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>            Bounds bounds = octree.GetBounds(mortonCode);</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a63a76d2c9eb8c652da32b11855407faf">IsVisible</a>(bounds, planes))</div>
+<div class="line"><span class="lineno">   65</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>            <span class="keywordtype">bool</span> isLeaf = node.ChildMask == 0 || mortonCode.GetDepth() == 4;</div>
 <div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>            <span class="keywordtype">bool</span> isLeaf = node.ChildMask == 0;</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">if</span> (isLeaf)</div>
-<div class="line"><span class="lineno">   72</span>            {</div>
-<div class="line"><span class="lineno">   73</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#ab4fc7a2466f19eace609da976a575a6e">VisibleChunks</a>.Add(mortonCode);</div>
-<div class="line"><span class="lineno">   74</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   75</span>            }</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">for</span> (<span class="keywordtype">byte</span> i = 0; i &lt; 8; i++)</div>
-<div class="line"><span class="lineno">   78</span>            {</div>
-<div class="line"><span class="lineno">   79</span>                <span class="keywordflow">if</span> ((node.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html#ad6710a7aceeb3e0fb784d7afdb7376e7">ChildMask</a> &amp; (1 &lt;&lt; i)) == 0)</div>
-<div class="line"><span class="lineno">   80</span>                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>                <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a06572c2d24fafb76360f40484e2ceccc">Traverse</a>(</div>
-<div class="line"><span class="lineno">   83</span>                    octree,</div>
-<div class="line"><span class="lineno">   84</span>                    mortonCode.AppendChild(i),</div>
-<div class="line"><span class="lineno">   85</span>                    planes</div>
-<div class="line"><span class="lineno">   86</span>                );</div>
-<div class="line"><span class="lineno">   87</span>            }</div>
-<div class="line"><span class="lineno">   88</span>        }</div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem_html_a06572c2d24fafb76360f40484e2ceccc"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a06572c2d24fafb76360f40484e2ceccc">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Traverse</a></div><div class="ttdeci">void Traverse(Octree octree, ulong mortonCode, Plane[] planes)</div><div class="ttdef"><b>Definition</b> <a href="FrustumCullingSystem_8cs_source.html#l00050">FrustumCullingSystem.cs:50</a></div></div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem_html_a63a76d2c9eb8c652da32b11855407faf"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a63a76d2c9eb8c652da32b11855407faf">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.IsVisible</a></div><div class="ttdeci">static bool IsVisible(Bounds bounds, Plane[] planes)</div><div class="ttdef"><b>Definition</b> <a href="FrustumCullingSystem_8cs_source.html#l00090">FrustumCullingSystem.cs:90</a></div></div>
+<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">if</span> (isLeaf)</div>
+<div class="line"><span class="lineno">   70</span>            {</div>
+<div class="line"><span class="lineno">   71</span>                <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#ab4fc7a2466f19eace609da976a575a6e">VisibleChunks</a>.Add(mortonCode);</div>
+<div class="line"><span class="lineno">   72</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   73</span>            }</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>            <span class="keywordflow">for</span> (<span class="keywordtype">byte</span> i = 0; i &lt; 8; i++)</div>
+<div class="line"><span class="lineno">   76</span>            {</div>
+<div class="line"><span class="lineno">   77</span>                <span class="keywordflow">if</span> ((node.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html#ad6710a7aceeb3e0fb784d7afdb7376e7">ChildMask</a> &amp; (1 &lt;&lt; i)) == 0)</div>
+<div class="line"><span class="lineno">   78</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>                <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a06572c2d24fafb76360f40484e2ceccc">Traverse</a>(</div>
+<div class="line"><span class="lineno">   81</span>                    octree,</div>
+<div class="line"><span class="lineno">   82</span>                    mortonCode.AppendChild(i),</div>
+<div class="line"><span class="lineno">   83</span>                    planes</div>
+<div class="line"><span class="lineno">   84</span>                );</div>
+<div class="line"><span class="lineno">   85</span>            }</div>
+<div class="line"><span class="lineno">   86</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem_html_a06572c2d24fafb76360f40484e2ceccc"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a06572c2d24fafb76360f40484e2ceccc">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Traverse</a></div><div class="ttdeci">void Traverse(Octree octree, ulong mortonCode, Plane[] planes)</div><div class="ttdef"><b>Definition</b> <a href="FrustumCullingSystem_8cs_source.html#l00048">FrustumCullingSystem.cs:48</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem_html_a63a76d2c9eb8c652da32b11855407faf"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a63a76d2c9eb8c652da32b11855407faf">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.IsVisible</a></div><div class="ttdeci">static bool IsVisible(Bounds bounds, Plane[] planes)</div><div class="ttdef"><b>Definition</b> <a href="FrustumCullingSystem_8cs_source.html#l00088">FrustumCullingSystem.cs:88</a></div></div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem_html_ab4fc7a2466f19eace609da976a575a6e"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#ab4fc7a2466f19eace609da976a575a6e">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.VisibleChunks</a></div><div class="ttdeci">readonly List&lt; ulong &gt; VisibleChunks</div><div class="ttdef"><b>Definition</b> <a href="FrustumCullingSystem_8cs_source.html#l00010">FrustumCullingSystem.cs:10</a></div></div>
 <div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode_html"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeNode</a></div><div class="ttdef"><b>Definition</b> <a href="OctreeNode_8cs_source.html#l00003">OctreeNode.cs:4</a></div></div>
 <div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode_html_ad6710a7aceeb3e0fb784d7afdb7376e7"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeNode.html#ad6710a7aceeb3e0fb784d7afdb7376e7">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeNode.ChildMask</a></div><div class="ttdeci">byte ChildMask</div><div class="ttdoc">an octree node can have up to 8 children. every bit of this byte represents one child....</div><div class="ttdef"><b>Definition</b> <a href="OctreeNode_8cs_source.html#l00033">OctreeNode.cs:33</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="OctreeNode_8cs_source.html#l00033">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeNode.ChildMask</a>, <a class="el" href="FrustumCullingSystem_8cs_source.html#l00090">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.IsVisible()</a>, <a class="el" href="FrustumCullingSystem_8cs_source.html#l00050">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Traverse()</a>, and <a class="el" href="FrustumCullingSystem_8cs_source.html#l00010">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.VisibleChunks</a>.</p>
+<p class="reference">References <a class="el" href="OctreeNode_8cs_source.html#l00033">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeNode.ChildMask</a>, <a class="el" href="FrustumCullingSystem_8cs_source.html#l00088">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.IsVisible()</a>, <a class="el" href="FrustumCullingSystem_8cs_source.html#l00048">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Traverse()</a>, and <a class="el" href="FrustumCullingSystem_8cs_source.html#l00010">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.VisibleChunks</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FrustumCullingSystem_8cs_source.html#l00050">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Traverse()</a>, and <a class="el" href="FrustumCullingSystem_8cs_source.html#l00032">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.UpdateVisibleChunks()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FrustumCullingSystem_8cs_source.html#l00048">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Traverse()</a>, and <a class="el" href="FrustumCullingSystem_8cs_source.html#l00032">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.UpdateVisibleChunks()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -431,9 +430,9 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   29</span>            <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a2b48715b7b3d16dbc9f9dbd2c0533187">_lastRotation</a> = camera.transform.rotation;</div>
 <div class="line"><span class="lineno">   30</span>        }</div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem_html_a0d883a021bbf6dade598c757b03fb5c0"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a0d883a021bbf6dade598c757b03fb5c0">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.UpdateVisibleChunks</a></div><div class="ttdeci">void UpdateVisibleChunks(Octree octree, Camera camera)</div><div class="ttdef"><b>Definition</b> <a href="FrustumCullingSystem_8cs_source.html#l00032">FrustumCullingSystem.cs:32</a></div></div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem_html_a76eca8698eb8b6e49ecd6c07ec059dbd"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a76eca8698eb8b6e49ecd6c07ec059dbd">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.NeedsUpdate</a></div><div class="ttdeci">bool NeedsUpdate(Camera camera)</div><div class="ttdef"><b>Definition</b> <a href="FrustumCullingSystem_8cs_source.html#l00112">FrustumCullingSystem.cs:112</a></div></div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem_html_a76eca8698eb8b6e49ecd6c07ec059dbd"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#a76eca8698eb8b6e49ecd6c07ec059dbd">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.NeedsUpdate</a></div><div class="ttdeci">bool NeedsUpdate(Camera camera)</div><div class="ttdef"><b>Definition</b> <a href="FrustumCullingSystem_8cs_source.html#l00109">FrustumCullingSystem.cs:109</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="FrustumCullingSystem_8cs_source.html#l00012">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem._lastPosition</a>, <a class="el" href="FrustumCullingSystem_8cs_source.html#l00013">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem._lastRotation</a>, <a class="el" href="FrustumCullingSystem_8cs_source.html#l00112">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.NeedsUpdate()</a>, and <a class="el" href="FrustumCullingSystem_8cs_source.html#l00032">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.UpdateVisibleChunks()</a>.</p>
+<p class="reference">References <a class="el" href="FrustumCullingSystem_8cs_source.html#l00012">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem._lastPosition</a>, <a class="el" href="FrustumCullingSystem_8cs_source.html#l00013">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem._lastRotation</a>, <a class="el" href="FrustumCullingSystem_8cs_source.html#l00109">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.NeedsUpdate()</a>, and <a class="el" href="FrustumCullingSystem_8cs_source.html#l00032">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.UpdateVisibleChunks()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PlanetRenderer_8cs_source.html#l00066">_Project.World.Planet.Scripts.v2.Rendering.PlanetRenderer.Update()</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -516,11 +515,9 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   43</span>                <span class="keyword">new</span> int3(0,0,0).EncodeToMorton(0),</div>
 <div class="line"><span class="lineno">   44</span>                planes</div>
 <div class="line"><span class="lineno">   45</span>            );</div>
-<div class="line"><span class="lineno">   46</span>            </div>
-<div class="line"><span class="lineno">   47</span>            Debug.Log(<span class="stringliteral">&quot;Updated, new amount of visible chunks: &quot;</span> + <a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1FrustumCullingSystem.html#ab4fc7a2466f19eace609da976a575a6e">VisibleChunks</a>.Count);</div>
-<div class="line"><span class="lineno">   48</span>        }</div>
+<div class="line"><span class="lineno">   46</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="FrustumCullingSystem_8cs_source.html#l00050">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Traverse()</a>, and <a class="el" href="FrustumCullingSystem_8cs_source.html#l00010">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.VisibleChunks</a>.</p>
+<p class="reference">References <a class="el" href="FrustumCullingSystem_8cs_source.html#l00048">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Traverse()</a>, and <a class="el" href="FrustumCullingSystem_8cs_source.html#l00010">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.VisibleChunks</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FrustumCullingSystem_8cs_source.html#l00019">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Update()</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -578,7 +575,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FrustumCullingSystem_8cs_source.html#l00012">12</a> of file <a class="el" href="FrustumCullingSystem_8cs_source.html">FrustumCullingSystem.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FrustumCullingSystem_8cs_source.html#l00112">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.NeedsUpdate()</a>, and <a class="el" href="FrustumCullingSystem_8cs_source.html#l00019">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FrustumCullingSystem_8cs_source.html#l00109">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.NeedsUpdate()</a>, and <a class="el" href="FrustumCullingSystem_8cs_source.html#l00019">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Update()</a>.</p>
 
 </div>
 </div>
@@ -604,7 +601,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FrustumCullingSystem_8cs_source.html#l00013">13</a> of file <a class="el" href="FrustumCullingSystem_8cs_source.html">FrustumCullingSystem.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FrustumCullingSystem_8cs_source.html#l00112">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.NeedsUpdate()</a>, and <a class="el" href="FrustumCullingSystem_8cs_source.html#l00019">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FrustumCullingSystem_8cs_source.html#l00109">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.NeedsUpdate()</a>, and <a class="el" href="FrustumCullingSystem_8cs_source.html#l00019">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Update()</a>.</p>
 
 </div>
 </div>
@@ -630,7 +627,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FrustumCullingSystem_8cs_source.html#l00015">15</a> of file <a class="el" href="FrustumCullingSystem_8cs_source.html">FrustumCullingSystem.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FrustumCullingSystem_8cs_source.html#l00112">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.NeedsUpdate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FrustumCullingSystem_8cs_source.html#l00109">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.NeedsUpdate()</a>.</p>
 
 </div>
 </div>
@@ -656,7 +653,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FrustumCullingSystem_8cs_source.html#l00017">17</a> of file <a class="el" href="FrustumCullingSystem_8cs_source.html">FrustumCullingSystem.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FrustumCullingSystem_8cs_source.html#l00112">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.NeedsUpdate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FrustumCullingSystem_8cs_source.html#l00109">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.NeedsUpdate()</a>.</p>
 
 </div>
 </div>
@@ -674,7 +671,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FrustumCullingSystem_8cs_source.html#l00010">10</a> of file <a class="el" href="FrustumCullingSystem_8cs_source.html">FrustumCullingSystem.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FrustumCullingSystem_8cs_source.html#l00050">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Traverse()</a>, and <a class="el" href="FrustumCullingSystem_8cs_source.html#l00032">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.UpdateVisibleChunks()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FrustumCullingSystem_8cs_source.html#l00048">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.Traverse()</a>, and <a class="el" href="FrustumCullingSystem_8cs_source.html#l00032">_Project.World.Planet.Scripts.v2.Rendering.FrustumCullingSystem.UpdateVisibleChunks()</a>.</p>
 
 </div>
 </div>

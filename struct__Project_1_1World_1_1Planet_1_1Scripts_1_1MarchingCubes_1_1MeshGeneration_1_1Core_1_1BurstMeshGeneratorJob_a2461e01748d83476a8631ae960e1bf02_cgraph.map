@@ -10,7 +10,7 @@
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="611,133,661,127,661,132,611,138"/>
 <area shape="rect" id="Node000006" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob.html#a25bf5de77da44f2994dcf3af173a9c0c" title=" " alt="" coords="683,163,953,217"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="611,164,669,170,668,176,611,169"/>
-<area shape="rect" id="Node000007" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob.html#aaf5c1dbea36614adc9fac9878268a3d1" title=" " alt="" coords="683,241,953,296"/>
+<area shape="rect" id="Node000007" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob.html#a28fe4221087d1a18518c35af3d0f16d9" title=" " alt="" coords="683,241,953,296"/>
 <area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="602,176,628,188,643,197,653,207,662,217,676,226,692,234,690,239,673,231,659,221,649,211,639,202,625,192,600,181"/>
 <area shape="rect" id="Node000004" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob.html#af4bce4bf0e007b6462b5a619c5a3d6b5" title="checks if the given vertex already exists in the vertices list and if so returns its index,..." alt="" coords="1009,5,1295,60"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="954,30,996,30,996,35,954,35"/>
