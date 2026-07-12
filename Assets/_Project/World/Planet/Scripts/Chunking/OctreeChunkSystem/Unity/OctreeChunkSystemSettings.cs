@@ -1,5 +1,5 @@
 using System;
-using _Project.World.Planet.Scripts.WorldGen;
+using _Project.World.Planet.Scripts.WorldGen.Parallel;
 using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity
@@ -9,7 +9,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity
         [SerializeField] public Vector3Int origin; // the size of a chunk
         [SerializeField] public float size;
         
-        [SerializeField] private BurstSamplerSettings densitySamplerSettings; // this contains all the noise and world gen settings  
+        [SerializeField] private ParallelBurstSamplerSettings densitySamplerSettings; // this contains all the noise and world gen settings  
 
         public OctreeChunkManager CreateManager()
         {

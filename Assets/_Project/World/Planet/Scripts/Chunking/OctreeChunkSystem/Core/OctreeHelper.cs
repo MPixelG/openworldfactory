@@ -1,25 +1,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
-using _Project.World.Planet.Scripts.WorldGen;
 using _Project.World.Planet.Scripts.WorldGen.Parallel;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
 using UnityEngine;
-
 // ReSharper disable MergeIntoNegatedPattern
 
 namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
 {
-    /// <summary>
-    /// Optimized octree builder with async density sampling and smart node creation.
-    /// Key optimizations:
-    /// - Asynchronous job scheduling (no .Complete() blocking during build)
-    /// - Smart sampling: only Mixed nodes require full mesh generation
-    /// - Early termination for Full/Empty nodes
-    /// - Hierarchical sampling: inherit state from parent when possible
-    /// </summary>
     public static class OctreeHelper
     {
         public static OctreeNode? GetNodeAtPosition(this Octree octree, ulong mortonCode)
@@ -66,30 +56,45 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
     /// </summary>
     public class OctreeBuilder
     {
-        private Octree Tree { get; }
+        private Octree Tree {get; }
         private readonly ParallelBurstSamplerSettings _settings;
 
         private readonly Queue<NativeList<ulong>> _pendingNodes;
 
 
-        public OctreeBuilder(Octree tree, ParallelBurstSamplerSettings settings)
+        public OctreeBuilder(int3 min, byte maxDepth, ParallelBurstSamplerSettings settings)
         {
-            Tree = tree;
             _settings = settings;
             _pendingNodes = new Queue<NativeList<ulong>>();
+            
+            Tree = new Octree
+            {
+                Min = min,
+                Max = min + new int3(1 << maxDepth),
+                MaxDepth = maxDepth,
+                Nodes = new NativeList<OctreeNode>(Allocator.Persistent),
+                IndexLookup = new NativeHashMap<ulong, int>(1024, Allocator.Persistent)
+            };
+            
         }
 
-        private void PrepareBuildNodeAsync(ulong mortonCode, MinMaxValue minMaxValue, byte maxDepth, ref Octree tree)
+        public void Build()
+        {
+            var octree = Tree;
+            BuildNode(new int3(0, 0, 0).EncodeToMorton(0), new MinMaxValue(){Min = float.NegativeInfinity, Max = float.PositiveInfinity}, Tree.MaxDepth, ref octree);
+        }
+
+        private void BuildNode(ulong mortonCode, MinMaxValue minMaxValue, byte maxDepth, ref Octree tree)
         {
             byte depth = mortonCode.GetDepth();
 
 
             OctreeNodeState state = minMaxValue.Max < BurstMeshGenerator.IsoLevel
-                ? OctreeNodeState.Empty
+                ? OctreeNodeState.Full
                 : minMaxValue.Min > BurstMeshGenerator.IsoLevel
-                    ? OctreeNodeState.Full
+                    ? OctreeNodeState.Empty
                     : OctreeNodeState.Mixed;
-
+            
             bool isValidNode = depth <= maxDepth && state == OctreeNodeState.Mixed;
 
             OctreeNode node = new OctreeNode
@@ -115,7 +120,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         {
             if (_pendingNodes.Count == 0 || _pendingNodes.Last().Length >= MaxJobBatchSize)
             {
-                _pendingNodes.Enqueue(new NativeList<ulong>(Allocator.TempJob));
+                _pendingNodes.Enqueue(new NativeList<ulong>(Allocator.Persistent));
             }
 
             NativeList<ulong> newest = _pendingNodes.Last();
@@ -134,6 +139,17 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             StartNewJobs();
         }
 
+        public bool IsDone()
+        {
+            return _currentHandle == null && _pendingNodes.Count == 0;
+        }
+
+        public Octree? GetReadyTree()
+        {
+            if(!IsDone()) return null;
+            return Tree;
+        }
+
         private void StartNewJobs()
         {
             if (_currentHandle != null) return;
@@ -141,8 +157,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             while (_pendingNodes.Count > 0)
             {
                 NativeList<ulong> currentNode = _pendingNodes.Dequeue();
-
-                _currentMinMaxValues?.Dispose();
+                
                 _currentMinMaxValues = new NativeArray<MinMaxValue>(currentNode.Length, Allocator.Persistent);
 
                 var minMaxValues = _currentMinMaxValues ?? default;
@@ -163,15 +178,29 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
 
         private void CompleteCompletedNodePresets(ref Octree tree)
         {
-            if (_currentHandle == null || !_currentHandle.Value.IsCompleted || _currentMinMaxValues == null ||
-                _currentMortons == null) return;
+            if (_currentHandle == null)
+                return;
+
+            if (!_currentHandle.Value.IsCompleted)
+                return;
+
             _currentHandle.Value.Complete();
+
+            if (_currentMinMaxValues == null || _currentMortons == null)
+                return;
 
             for (int i = _currentMinMaxValues.Value.Length - 1; i >= 0; --i)
             {
                 ulong morton = _currentMortons.Value[i];
-                PrepareBuildNodeAsync(morton, _currentMinMaxValues.Value[i], Tree.MaxDepth, ref tree);
+                BuildNode(morton, _currentMinMaxValues.Value[i], Tree.MaxDepth, ref tree);
             }
+
+            _currentMinMaxValues.Value.Dispose();
+            _currentMortons.Value.Dispose();
+
+            _currentMinMaxValues = null;
+            _currentMortons = null;
+            _currentHandle = null;
         }
 
         private static void AddNode(ref Octree tree, OctreeNode node)
@@ -179,6 +208,19 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             int index = tree.Nodes.Length;
             tree.Nodes.Add(node);
             tree.IndexLookup[node.MortonCode] = index;
+        }
+
+        public void Dispose()
+        {
+            _currentHandle?.Complete();
+            _currentMinMaxValues?.Dispose();
+            _currentMortons?.Dispose();
+
+            while (_pendingNodes.Count > 0)
+            {
+                NativeList<ulong> nodeList = _pendingNodes.Dequeue();
+                nodeList.Dispose();
+            }
         }
     }
 }

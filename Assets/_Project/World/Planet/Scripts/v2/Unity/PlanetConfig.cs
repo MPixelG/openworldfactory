@@ -1,4 +1,5 @@
 using _Project.World.Planet.Scripts.WorldGen;
+using _Project.World.Planet.Scripts.WorldGen.Parallel;
 using NUnit.Framework;
 using Unity.Mathematics;
 
@@ -11,6 +12,6 @@ namespace _Project.World.Planet.Scripts.v2.Unity
         public int3 origin;
         public float size;
 
-        public BurstSamplerSettings samplerSettings;
+        public ParallelBurstSamplerSettings samplerSettings;
     }
 }

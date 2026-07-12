@@ -1,5 +1,5 @@
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
-using _Project.World.Planet.Scripts.WorldGen;
+using _Project.World.Planet.Scripts.WorldGen.Parallel;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -12,7 +12,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
         public int3 Origin;
         public float Size;
         
-        private readonly BurstSamplerSettings _densitySamplerSettings;
+        private readonly ParallelBurstSamplerSettings _densitySamplerSettings;
         
 
         /// <param name="origin">the origin world pos of the system</param>
@@ -21,7 +21,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
         public OctreeChunkManager(
             Vector3Int origin,
             float size,
-            BurstSamplerSettings densitySamplerSettings
+            ParallelBurstSamplerSettings densitySamplerSettings
         )
         {
             Origin = new int3(origin.x, origin.y, origin.z);

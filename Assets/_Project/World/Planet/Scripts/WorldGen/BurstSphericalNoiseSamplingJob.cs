@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using Unity.Burst;
 using Unity.Collections;
@@ -8,7 +7,6 @@ using Unity.Mathematics;
 namespace _Project.World.Planet.Scripts.WorldGen.Parallel
 {
     [BurstCompile]
-    [StructLayout(LayoutKind.Auto)]
     public struct BurstSphericalNoiseSamplingJob : IJobParallelFor
     {
         public NativeArray<float> Densities;

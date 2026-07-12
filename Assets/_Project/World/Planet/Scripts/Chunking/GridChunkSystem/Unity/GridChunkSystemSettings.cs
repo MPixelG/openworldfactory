@@ -1,5 +1,6 @@
 using System;
 using _Project.World.Planet.Scripts.WorldGen;
+using _Project.World.Planet.Scripts.WorldGen.Parallel;
 using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity
@@ -12,7 +13,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity
     {
         [Min(1)] [SerializeField] private byte chunkSize = 16; // the size of a chunk
         [Min(0)] [SerializeField] private int viewDistanceInChunks = 4; // this view distance is the radius of the sphere of chunks to keep around the viewer
-        [SerializeField] private BurstSamplerSettings densitySamplerSettings; // this contains all the noise and world gen settings  
+        [SerializeField] private ParallelBurstSamplerSettings densitySamplerSettings; // this contains all the noise and world gen settings  
 
         public GridChunkManager CreateManager()
         {

@@ -5,11 +5,10 @@ using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using _Project.World.Planet.Scripts.v2.Data;
-using _Project.World.Planet.Scripts.WorldGen;
+using _Project.World.Planet.Scripts.WorldGen.Parallel;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
-using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.v2
 {
@@ -20,7 +19,7 @@ namespace _Project.World.Planet.Scripts.v2
         private readonly Dictionary<ulong, ChunkPayload> _activeMeshingJobResults = new();
         private readonly Dictionary<ulong, NativeHashMap<VertexKey, int>> _meshingJobGarbage = new();
 
-        private BurstSamplerSettings _settings;
+        private ParallelBurstSamplerSettings _settings;
         private byte _maxDepth;
         private int3 _min;
         private byte _chunkSize;
@@ -28,7 +27,7 @@ namespace _Project.World.Planet.Scripts.v2
         public event Action<ChunkGeneration> OnChunkGenerated;
 
 
-        public void UpdateSamplerSettings(BurstSamplerSettings settings)
+        public void UpdateSamplerSettings(ParallelBurstSamplerSettings settings)
         {
             _settings = settings;
         }

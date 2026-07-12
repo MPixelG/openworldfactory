@@ -27,6 +27,7 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
             
             _planetManager = planetManager;
             _planetManager.ChunkChange += OnChunkChange;
+            Debug.Log("PLANET MANAGER SET");
         }
 
 
@@ -68,10 +69,15 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
             if(_frustumCullingSystem == null) Debug.LogWarning("FrustumCullingSystem is null");
             if(_planetManager == null) Debug.LogWarning("Planet Manager is null");
             if(viewer == null) Debug.LogWarning("Viewer is null");
-            _frustumCullingSystem?.Update(
-                _planetManager.Octree,
-                viewer
-            );
+            if(_frustumCullingSystem == null || _planetManager == null || viewer == null) return;
+            if (_planetManager.OctreeReady)
+            {
+                _frustumCullingSystem?.Update(
+                    _planetManager.Octree,
+                    viewer
+                );
+            }
+            
 
             _planetManager.Update();
             

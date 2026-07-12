@@ -2,6 +2,7 @@ using _Project.World.Planet.Scripts.Chunking.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using _Project.World.Planet.Scripts.WorldGen;
+using _Project.World.Planet.Scripts.WorldGen.Parallel;
 
 namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 {
@@ -10,7 +11,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
     /// </summary>
     public class ChunkGenerator
     {
-        private readonly BurstSamplerSettings
+        private readonly ParallelBurstSamplerSettings
             _densitySamplerSettings; // the settings used for generating the density field
 
         private readonly byte _chunkSize;
@@ -22,7 +23,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         /// </summary>
         /// <param name="densitySamplerSettings">the settings used for generation</param>
         /// <param name="chunkSize">the chunk size used for converting chunk to world space</param>
-        public ChunkGenerator(BurstSamplerSettings densitySamplerSettings, byte chunkSize)
+        public ChunkGenerator(ParallelBurstSamplerSettings densitySamplerSettings, byte chunkSize)
         {
             _densitySamplerSettings = densitySamplerSettings;
             _chunkSize = chunkSize;

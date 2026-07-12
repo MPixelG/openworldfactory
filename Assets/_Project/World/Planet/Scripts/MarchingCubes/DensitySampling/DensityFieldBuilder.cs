@@ -1,6 +1,6 @@
 using _Project.World.Planet.Scripts.Chunking.Core;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
-using _Project.World.Planet.Scripts.WorldGen;
+using _Project.World.Planet.Scripts.WorldGen.Parallel;
 using Unity.Jobs;
 using Unity.Mathematics;
 
@@ -18,13 +18,13 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
         /// <param name="size">the chunk size. Caution! the chunk size is the grid size - 2!</param>
         /// <param name="origin">the origin (start) position of the chunk. Caution! this is measured in grid chunk space!</param>
         /// <returns></returns>
-        public static DensityFieldData BuildBurstDensityFieldData(BurstSamplerSettings settings, byte size, ChunkCoord origin)
+        public static DensityFieldData BuildBurstDensityFieldData(ParallelBurstSamplerSettings settings, byte size, ChunkCoord origin)
         {
-            byte gridSize = checked((byte)(size+2)); // the grid size is the chunk size + 2 since we need to sample the density at the corners of the chunk as well for the marching cubes algorithm to work properly.
+            byte gridSize = checked((byte)(size+1)); // the grid size is the chunk size + 1 since we need to sample the density at the corners of the chunk as well for the marching cubes algorithm to work properly.
             
             // builds a native array (basically an array but its used for burst jobs since you cant use a lot of stuff there) with the required grid size.
             
-            BurstSphericalNoiseSamplerJob job = settings.CreateExactSampler(origin.Value*size,origin.Value*size + gridSize, gridSize, out DensityFieldData densitiesOut); // get the job from the settings
+            ParallelBurstSphericalNoiseSamplingJob job = settings.CreateParallelExactSampler(origin.Value*size,origin.Value*size + gridSize, gridSize, out DensityFieldData densitiesOut); // get the job from the settings
             
             
             JobHandle handle = job.Schedule(densitiesOut.Densities.Length, 64); // schedule the job
@@ -44,7 +44,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
         /// <param name="origin">the origin position of the octree</param>
         /// <param name="resolution">the grid size of the density field. Caution! this is the grid size, not the chunk size! the chunk size is calculated by resolution - 1 since we need to sample the density at the corners of the chunk as well for the marching cubes algorithm to work properly.</param>
         /// <returns></returns>
-        public static JobHandle ScheduleExactBurstDensityFieldDataBuildInTree(BurstSamplerSettings settings, ulong mortonCode, byte maxDepth, int3 origin, byte resolution, out DensityFieldData densityField)
+        public static JobHandle ScheduleExactBurstDensityFieldDataBuildInTree(ParallelBurstSamplerSettings settings, ulong mortonCode, byte maxDepth, int3 origin, byte resolution, out DensityFieldData densityField)
         {
             byte depth = mortonCode.GetDepth();
             int nodeSize = 1 << (maxDepth - depth);
@@ -53,37 +53,9 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
             int3 min = origin + (localGridPos * nodeSize); 
             int3 max = min + new int3(nodeSize);
             
-            BurstSphericalNoiseSamplerJob job = settings.CreateExactSampler(min, max, resolution, out densityField); // get the job from the settings
+            ParallelBurstSphericalNoiseSamplingJob job = settings.CreateParallelExactSampler(min, max, resolution, out densityField); // get the job from the settings
             
             JobHandle handle = job.Schedule(densityField.Densities.Length, 64); // schedule the job
-            return handle;
-        }
-        
-        /// <summary>
-        /// schedules a density value generation job for a given area and resolution. it wont wait for the job to complete.
-        /// you can check if the job is completed by calling <c> handle.isCompleted </c> and then calling <c> handle.Complete() </c> afterward.
-        /// if you run <c> handle.Complete() </c> before the job is complete it will freeze the main thread (and thus the game) until the job is done.
-        /// </summary>
-        /// <param name="settings">the sampling settings used</param>
-        /// <param name="mortonCode">the morton code of the node in the tree</param>
-        /// <param name="maxDepth">the maximum depth of the tree</param>
-        /// <param name="origin">the origin position of the octree</param>
-        /// <param name="resolution">the grid size of the density field. Caution! this is the grid size, not the chunk size! the chunk size is calculated by resolution - 1 since we need to sample the density at the corners of the chunk as well for the marching cubes algorithm to work properly.</param>
-        /// <returns></returns>
-        public static JobHandle ScheduleMinMaxBurstDensityFieldDataBuildInTree(BurstSamplerSettings settings, ulong mortonCode, byte maxDepth, int3 origin, byte resolution, out MinMaxValue minMaxValue)
-        {
-            byte depth = mortonCode.GetDepth();
-            int nodeSize = 1 << (maxDepth - depth);
-            
-            int3 localGridPos = mortonCode.DecodeToCoord();
-            int3 minPos = origin + (localGridPos * nodeSize); 
-            int3 maxPos = minPos + new int3(nodeSize);
-            
-            BurstSphericalNoiseSamplerJob job = settings.CreateMinMaxSampler(minPos, maxPos, resolution, out minMaxValue); // get the job from the settings
-            
-            
-            
-            JobHandle handle = job.Schedule(resolution*resolution*resolution, 64); // schedule the job
             return handle;
         }
     }

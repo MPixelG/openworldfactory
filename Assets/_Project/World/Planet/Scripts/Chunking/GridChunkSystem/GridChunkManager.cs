@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using _Project.World.Planet.Scripts.Chunking.Core;
 using _Project.World.Planet.Scripts.WorldGen;
+using _Project.World.Planet.Scripts.WorldGen.Parallel;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -58,7 +59,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
         public GridChunkManager(
             byte chunkSize,
             int viewDistanceInChunks,
-            BurstSamplerSettings densitySamplerSettings
+            ParallelBurstSamplerSettings densitySamplerSettings
         )
         {
             ChunkSize = chunkSize;

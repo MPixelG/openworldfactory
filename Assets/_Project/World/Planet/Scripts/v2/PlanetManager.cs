@@ -2,7 +2,7 @@ using System;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using _Project.World.Planet.Scripts.v2.Data;
 using _Project.World.Planet.Scripts.v2.Unity;
-using Unity.Mathematics;
+using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.v2
 {
@@ -25,30 +25,42 @@ namespace _Project.World.Planet.Scripts.v2
             _chunkGenerationPipeline = new ChunkGenerationPipeline();
             _chunkGenerationPipeline.OnChunkGenerated += OnChunkGenerated;
         }
-        
-        public bool OctreeReady {get; private set; }
+
+        private OctreeBuilder _octreeBuilder;
+        public bool OctreeReady;
         public void RebuildOctree()
         {
-            //Octree = OctreeHelper.Build(_config.origin, _config.origin + new int3(_config.size), _config.samplerSettings, 1); TODO
-            OctreeReady = true;
+            _octreeBuilder = new OctreeBuilder(_config.origin, 10, _config.samplerSettings);
+            _octreeBuilder.Build();
+
+            OctreeReady = false;
             
             _chunkGenerationPipeline.UpdateMin(_config.origin);
             _chunkGenerationPipeline.UpdateMaxDepth(Octree.MaxDepth);
             _chunkGenerationPipeline.UpdateSamplerSettings(_config.samplerSettings);
             _chunkGenerationPipeline.UpdateChunkSize(_config.chunkSize);
             ClearChunks();
-
-            foreach (OctreeNode octreeNode in Octree.Nodes)
-            {
-                if (octreeNode.State != OctreeNodeState.Mixed) continue;
-                if (octreeNode.MortonCode.GetDepth() != 4) continue;
-                _chunkGenerationPipeline.QueueGenerationAt(octreeNode.MortonCode);
-            }
         }
 
         public void Update()
         {
             _chunkGenerationPipeline.Update();
+            _octreeBuilder.Update();
+            if (_octreeBuilder.IsDone() && !OctreeReady)
+            {
+                Octree? tree = _octreeBuilder.GetReadyTree();
+                Debug.Assert(tree != null, "Octree is null!");
+                Octree = tree.Value;
+                OctreeReady = true;
+                Debug.Log("OCTREE READY, node count: " + Octree.Nodes.Length);
+                foreach (OctreeNode octreeNode in Octree.Nodes)
+                {
+                    if (octreeNode.State != OctreeNodeState.Mixed) continue;
+                    if (octreeNode.MortonCode.GetDepth() != 3) continue;
+                    _chunkGenerationPipeline.QueueGenerationAt(octreeNode.MortonCode);
+                }
+                
+            }
         }
         
         
