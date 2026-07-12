@@ -30,7 +30,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         )
         {
             int3 size = max - min;
-            byte maxDepth = (byte)math.ceil(math.log2(math.cmax(size / resolution)));
+            byte maxDepth = (byte)math.ceil(math.log2((float)math.cmax(size) / resolution));
             
             Octree tree = new()
             {

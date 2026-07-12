@@ -197,7 +197,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
         }
 
         // lerps (linear interpolates) between 2 given points based on their density values and the iso level
-        private static float3 VertexInterp(float isoLevel, int3 p1, int3 p2, float valP1, float valP2)
+        private float3 VertexInterp(float isoLevel, int3 p1, int3 p2, float valP1, float valP2)
         {
             float3 p;
 
@@ -213,7 +213,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
             p.y = p1.y + mu * (p2.y - p1.y);
             p.z = p1.z + mu * (p2.z - p1.z);
 
-            return p;
+            return p * CellSize;
         }
     }
 }

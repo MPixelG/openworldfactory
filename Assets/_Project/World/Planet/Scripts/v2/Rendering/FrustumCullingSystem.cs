@@ -43,8 +43,6 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
                 new int3(0,0,0).EncodeToMorton(0),
                 planes
             );
-            
-            Debug.Log("Updated, new amount of visible chunks: " + VisibleChunks.Count);
         }
         
         private void Traverse(
@@ -52,21 +50,21 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
             ulong mortonCode,
             Plane[] planes)
         {
-            OctreeNode? nodeNullable =
-                octree.GetNodeAtPosition(mortonCode);
+            if(mortonCode.GetDepth() > 4)
+                return; //TODO dynamic
+            
+            OctreeNode? nodeNullable = octree.GetNodeAtPosition(mortonCode);
 
-            if (!nodeNullable.HasValue)
-                return;
+            if (!nodeNullable.HasValue) return;
 
             OctreeNode node = nodeNullable.Value;
 
-            Bounds bounds =
-                octree.GetBounds(mortonCode);
+            Bounds bounds = octree.GetBounds(mortonCode);
 
             if (!IsVisible(bounds, planes))
                 return;
 
-            bool isLeaf = node.ChildMask == 0;
+            bool isLeaf = node.ChildMask == 0 || mortonCode.GetDepth() == 4;
 
             if (isLeaf)
             {
@@ -101,8 +99,7 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
                 if (normal.y >= 0) p.y = bounds.max.y;
                 if (normal.z >= 0) p.z = bounds.max.z;
 
-                if (plane.GetDistanceToPoint(p) < 0)
-                    return false;
+                if (plane.GetDistanceToPoint(p) < 0) return false;
             }
 
             return true;

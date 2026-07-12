@@ -18,7 +18,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
         /// </summary>
         /// <param name="densityField">the density field used for generating the mesh</param>
         /// <returns>the mesh data of that region</returns>
-        public static MeshData GenerateMesh(DensityFieldData densityField)
+        public static MeshData GenerateMesh(DensityFieldData densityField, float cellSize)
         {
             Core.BurstMeshGeneratorJob job = new Core.BurstMeshGeneratorJob()
             {
@@ -27,7 +27,9 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
                 Normals = new NativeList<float3>(Allocator.Persistent),
                 Vertices = new NativeList<float3>(Allocator.Persistent),
                 VertexMap = new NativeHashMap<VertexKey, int>(50000, Allocator.TempJob),
+                
                 DensityField = densityField,
+                CellSize =  cellSize,
                 
                 EdgeTable = Tables.EdgeTable,
                 TriTable = Tables.TriTable,
@@ -52,9 +54,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
         /// </summary>
         /// <param name="densityField">the density field used for generating the mesh</param>
         /// <returns>the mesh data of that region</returns>
-        public static JobHandle ScheduleGenerateMesh(JobHandle densityJobHandle, DensityFieldData densityField, out NativeList<int> Indices, out NativeList<float3> Vertices, out NativeList<float3> Normals, out NativeHashMap<VertexKey, int> VertexMap)
+        public static JobHandle ScheduleGenerateMesh(JobHandle densityJobHandle, DensityFieldData densityField, float cellSize, out NativeList<int> Indices, out NativeList<float3> Vertices, out NativeList<float3> Normals, out NativeHashMap<VertexKey, int> VertexMap)
         {
-            Debug.Log($"Density Resolution for: {densityField.Size}");
             Core.BurstMeshGeneratorJob job = new Core.BurstMeshGeneratorJob()
             {
                 IsoLevel = 0.5f,
@@ -62,7 +63,9 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
                 Normals = new NativeList<float3>(Allocator.Persistent),
                 Vertices = new NativeList<float3>(Allocator.Persistent),
                 VertexMap = new NativeHashMap<VertexKey, int>(50000, Allocator.TempJob),
+                
                 DensityField = densityField,
+                CellSize = cellSize,
                 
                 EdgeTable = Tables.EdgeTable,
                 TriTable = Tables.TriTable,

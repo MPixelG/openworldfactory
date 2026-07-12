@@ -23,7 +23,7 @@ namespace _Project.World.Planet.Scripts.WorldGen
                 TerrainHeight = 169f,
 
                 ContinentFrequency = 1.2f,
-                ContinentOctaves = 8,
+                ContinentOctaves = 2,
                 ContinentPersistence = 0.5f,
 
                 OceanThreshold = 0.48f,
@@ -33,7 +33,7 @@ namespace _Project.World.Planet.Scripts.WorldGen
                 MountainBlend = 0.32f,
 
                 MountainFrequency = 7f,
-                MountainOctaves = 12,
+                MountainOctaves = 3,
                 MountainPersistence = 0.6f,
                 MountainSharpness = 15.5f,
 

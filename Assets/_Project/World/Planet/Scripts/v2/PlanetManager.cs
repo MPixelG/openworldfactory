@@ -3,7 +3,6 @@ using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using _Project.World.Planet.Scripts.v2.Data;
 using _Project.World.Planet.Scripts.v2.Unity;
 using Unity.Mathematics;
-using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.v2
 {
@@ -31,22 +30,18 @@ namespace _Project.World.Planet.Scripts.v2
         public void RebuildOctree()
         {
             Octree = OctreeHelper.Build(_config.origin, _config.origin + new int3(_config.size), _config.samplerSettings, 1);
-            Debug.Log("Octree Built");
             OctreeReady = true;
             
             _chunkGenerationPipeline.UpdateMin(_config.origin);
             _chunkGenerationPipeline.UpdateMaxDepth(Octree.MaxDepth);
             _chunkGenerationPipeline.UpdateSamplerSettings(_config.samplerSettings);
             _chunkGenerationPipeline.UpdateChunkSize(_config.chunkSize);
-            Debug.Log("Everything updated");
             ClearChunks();
-            Debug.Log("Chunks cleared");
-            
+
             foreach (OctreeNode octreeNode in Octree.Nodes)
             {
                 if (octreeNode.State != OctreeNodeState.Mixed) continue;
                 if (octreeNode.MortonCode.GetDepth() != 4) continue;
-                Debug.Log("Queued!");
                 _chunkGenerationPipeline.QueueGenerationAt(octreeNode.MortonCode);
             }
         }

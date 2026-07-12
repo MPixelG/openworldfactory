@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using _Project.World.Planet.Scripts.v2.Data;
@@ -8,6 +9,7 @@ using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
+using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.v2
 {
@@ -63,18 +65,25 @@ namespace _Project.World.Planet.Scripts.v2
 
             ulong mortonCode = _generationQueue.Dequeue();
 
+            float worldNodeSize = 1 << (_maxDepth - mortonCode.GetDepth());
 
+            byte voxelResolution = (byte)(_chunkSize + 1);
 
             JobHandle densityJobHandle = DensityFieldBuilder.ScheduleBurstDensityFieldDataBuildInTree(
                 _settings,
                 mortonCode,
                 _maxDepth,
                 _min,
-                (byte)(_chunkSize+1),
+                voxelResolution,
                 out DensityFieldData densityField
             );
+            
 
-            JobHandle meshGenerationJobHandle = BurstMeshGenerator.ScheduleGenerateMesh(densityJobHandle, densityField,
+            float cellSize = worldNodeSize / _chunkSize;
+
+            JobHandle meshGenerationJobHandle = BurstMeshGenerator.ScheduleGenerateMesh(
+                densityJobHandle, densityField,
+                cellSize,
                 out NativeList<int> indices, out NativeList<float3> vertices, out NativeList<float3> normals, out NativeHashMap<VertexKey, int> vertexMap);
 
             ChunkPayload payload = new ChunkPayload

@@ -45,7 +45,7 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
                             payload.Indices
                         );
                         _chunkMeshes[change.MortonCode] = mesh;
-                    }
+                    } else Debug.LogWarning($"Payload is null for MortonCode: {change.MortonCode}");
                     
                     break;
                 }
@@ -116,11 +116,21 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
                 int nodeSize =
                     1 << (_planetManager.Octree.MaxDepth - depth);
 
-                float3 pos =
+                /*float3 pos =
                     _planetManager.Octree.Min +
                     chunkMeshesCoord.DecodeToCoord() * nodeSize;
                 Gizmos.DrawWireCube(new Vector3(pos.x + (nodeSize / 2f), pos.y + (nodeSize / 2f), pos.z +
-                    (nodeSize / 2f)), new Vector3(nodeSize, nodeSize, nodeSize));
+                    (nodeSize / 2f)), new Vector3(nodeSize, nodeSize, nodeSize));*/
+                
+                int3 c = chunkMeshesCoord.DecodeToCoord();
+
+                float3 p = _planetManager.Octree.Min + c*nodeSize;
+
+                Gizmos.DrawSphere(p,1);
+
+
+                Bounds b = _planetManager.Octree.GetBounds(chunkMeshesCoord);
+                Gizmos.DrawWireCube(b.center,b.size);
             }
         }
 

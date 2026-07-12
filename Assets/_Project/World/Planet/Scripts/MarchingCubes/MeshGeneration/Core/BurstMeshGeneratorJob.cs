@@ -11,6 +11,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
     public partial struct BurstMeshGeneratorJob : IJob
     {
         [ReadOnly] public DensityFieldData DensityField;
+        [ReadOnly] public float CellSize;
 
         public NativeList<float3> Vertices;
         public NativeList<float3> Normals;
@@ -27,19 +28,20 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
 
         public void Execute()
         {
-            int size = DensityField.Size-1;
+            int size = DensityField.Size - 1;
             for (int x = 0; x < size; x++)
             {
                 for (int y = 0; y < size; y++)
                 {
                     for (int z = 0; z < size; z++)
                     {
-                        GenerateAt((new int3(x, y, z)), DensityField); // generate the mesh for every grid cell and use the mesh builder to add it all to one large mesh
+                        GenerateAt((new int3(x, y, z)),
+                            DensityField); // generate the mesh for every grid cell and use the mesh builder to add it all to one large mesh
                     }
                 }
             }
 
             NormalizeNormals();
-    }
+        }
     }
 }
