@@ -40,7 +40,7 @@ namespace _Project.World.Planet.Scripts.v2
         public void UpdateMin(int3 min)
         {
             _min = min;
-        }
+        } 
 
         public void UpdateChunkSize(byte chunkSize)
         {

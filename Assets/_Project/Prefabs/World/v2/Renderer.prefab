@@ -45,3 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.v2.PlanetRenderer
   viewer: {fileID: 0}
+  minDrawDepth: 0
+  maxDrawDepth: 10
+  drawGizmosPoints: 1
+  drawGizmosOutlines: 1
+  drawMesh: 1

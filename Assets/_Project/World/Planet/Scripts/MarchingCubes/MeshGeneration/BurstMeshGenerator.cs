@@ -62,7 +62,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
                 Indices = new NativeList<int>(Allocator.Persistent),
                 Normals = new NativeList<float3>(Allocator.Persistent),
                 Vertices = new NativeList<float3>(Allocator.Persistent),
-                VertexMap = new NativeHashMap<VertexKey, int>(50000, Allocator.TempJob),
+                VertexMap = new NativeHashMap<VertexKey, int>(50000, Allocator.Persistent),
                 
                 DensityField = densityField,
                 CellSize = cellSize,

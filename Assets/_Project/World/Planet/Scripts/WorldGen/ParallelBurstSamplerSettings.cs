@@ -80,7 +80,7 @@ namespace _Project.World.Planet.Scripts.WorldGen.Parallel
                 MortonCodes = mortons,
                 Results = minMaxValues, 
                 
-                maxDepth = maxDepth,
+                MaxDepth = maxDepth,
                 
 
                 Config = GetDefaultConfig(radius)

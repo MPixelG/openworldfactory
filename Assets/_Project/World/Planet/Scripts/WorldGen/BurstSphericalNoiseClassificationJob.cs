@@ -17,7 +17,7 @@ namespace _Project.World.Planet.Scripts.WorldGen.Parallel
         [ReadOnly] public NativeList<ulong> MortonCodes;
 
         public int3 Origin;
-        public byte maxDepth;
+        public byte MaxDepth;
 
         public BurstSphericalNoiseConfig Config;
 
@@ -28,7 +28,7 @@ namespace _Project.World.Planet.Scripts.WorldGen.Parallel
             float maxVal = float.NegativeInfinity;
 
             ulong morton = MortonCodes[mortonIndex];
-            int nodeSize = 1 << (maxDepth - morton.GetDepth());
+            int nodeSize = 1 << (MaxDepth - morton.GetDepth());
 
             float3 minPos = Origin + morton.DecodeToCoord() * nodeSize;
             

@@ -4,6 +4,7 @@ using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using _Project.World.Planet.Scripts.v2.Data;
 using Unity.Mathematics;
+using UnityEditor;
 using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.v2.Rendering
@@ -15,7 +16,11 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
         private FrustumCullingSystem _frustumCullingSystem;
         
         [SerializeField] private Camera viewer;
-        [SerializeField] private bool drawGizmos = true;
+        [SerializeField, Range(0, 20)] private ushort minDrawDepth;
+        [SerializeField, Range(0, 20)] private ushort maxDrawDepth=20;
+        [SerializeField] private bool drawGizmosPoints = true;
+        [SerializeField] private bool drawGizmosOutlines = true;
+        [SerializeField] private bool drawMesh = true;
 
 
         private Dictionary<ulong, Mesh> _chunkMeshes = new();
@@ -81,7 +86,7 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
 
             _planetManager.Update();
             
-            DrawChunks();
+            if(drawMesh) DrawChunks();
         }
 
         private Material _chunkMaterial;
@@ -91,6 +96,7 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
             foreach (ulong chunkMeshesCoord in _chunkMeshes.Keys)
             {
                 byte depth = chunkMeshesCoord.GetDepth();
+                if (depth < minDrawDepth || depth > maxDrawDepth) continue;
 
                 int nodeSize =
                     1 << (_planetManager.Octree.MaxDepth - depth);
@@ -112,12 +118,14 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
 
         private void OnDrawGizmos()
         {
-            if(_planetManager == null || !drawGizmos)
+            if(_planetManager == null || (!drawGizmosPoints && !drawGizmosOutlines))
                 return;
             
             foreach (ulong chunkMeshesCoord in _chunkMeshes.Keys)
             {
                 byte depth = chunkMeshesCoord.GetDepth();
+                
+                if (depth < minDrawDepth || depth > maxDrawDepth) continue;
 
                 int nodeSize =
                     1 << (_planetManager.Octree.MaxDepth - depth);
@@ -127,16 +135,30 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
                     chunkMeshesCoord.DecodeToCoord() * nodeSize;
                 Gizmos.DrawWireCube(new Vector3(pos.x + (nodeSize / 2f), pos.y + (nodeSize / 2f), pos.z +
                     (nodeSize / 2f)), new Vector3(nodeSize, nodeSize, nodeSize));*/
-                
-                int3 c = chunkMeshesCoord.DecodeToCoord();
+                if (drawGizmosPoints)
+                {
+                    int3 c = chunkMeshesCoord.DecodeToCoord();
+                    float3 p = _planetManager.Octree.Min + c * nodeSize;
+                    OctreeNode? node = _planetManager.Octree.GetNodeAtPosition(chunkMeshesCoord);
+                    if(node == null) continue;
+                    OctreeNodeState state = node.Value.State;
+                    Color gizmosColor = state switch
+                    {
+                        OctreeNodeState.Empty => Color.red,
+                        OctreeNodeState.Full => Color.green,
+                        OctreeNodeState.Mixed => Color.yellow,
+                        OctreeNodeState.Unknown => Color.blue,
+                        _ => throw new ArgumentOutOfRangeException()
+                    };
+                    Gizmos.color = gizmosColor;
+                    Gizmos.DrawSphere(p, 1);
+                }
 
-                float3 p = _planetManager.Octree.Min + c*nodeSize;
-
-                Gizmos.DrawSphere(p,1);
-
-
-                Bounds b = _planetManager.Octree.GetBounds(chunkMeshesCoord);
-                Gizmos.DrawWireCube(b.center,b.size);
+                if (drawGizmosOutlines)
+                {
+                    Bounds b = _planetManager.Octree.GetBounds(chunkMeshesCoord);
+                    Gizmos.DrawWireCube(b.center, b.size);
+                }
             }
         }
 

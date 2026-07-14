@@ -1,8 +1,11 @@
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using _Project.World.Planet.Scripts.v2.Data;
 using _Project.World.Planet.Scripts.v2.Unity;
-using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace _Project.World.Planet.Scripts.v2
 {
@@ -28,15 +31,17 @@ namespace _Project.World.Planet.Scripts.v2
 
         private OctreeBuilder _octreeBuilder;
         public bool OctreeReady;
+        private readonly Stopwatch _octreeBuilderStopwatch = new();
         public void RebuildOctree()
         {
-            _octreeBuilder = new OctreeBuilder(_config.origin, 10, _config.samplerSettings);
+            _octreeBuilder?.Dispose();  
+            _octreeBuilder = new OctreeBuilder(_config.origin, maxDepth: 9, _config.samplerSettings);
+            _octreeBuilderStopwatch.Reset();
+            _octreeBuilderStopwatch.Start();
             _octreeBuilder.Build();
-
             OctreeReady = false;
             
             _chunkGenerationPipeline.UpdateMin(_config.origin);
-            _chunkGenerationPipeline.UpdateMaxDepth(Octree.MaxDepth);
             _chunkGenerationPipeline.UpdateSamplerSettings(_config.samplerSettings);
             _chunkGenerationPipeline.UpdateChunkSize(_config.chunkSize);
             ClearChunks();
@@ -45,21 +50,37 @@ namespace _Project.World.Planet.Scripts.v2
         public void Update()
         {
             _chunkGenerationPipeline.Update();
-            _octreeBuilder.Update();
-            if (_octreeBuilder.IsDone() && !OctreeReady)
-            {
-                Octree? tree = _octreeBuilder.GetReadyTree();
-                Debug.Assert(tree != null, "Octree is null!");
-                Octree = tree.Value;
-                OctreeReady = true;
-                Debug.Log("OCTREE READY, node count: " + Octree.Nodes.Length);
-                foreach (OctreeNode octreeNode in Octree.Nodes)
-                {
-                    if (octreeNode.State != OctreeNodeState.Mixed) continue;
-                    if (octreeNode.MortonCode.GetDepth() != 3) continue;
-                    _chunkGenerationPipeline.QueueGenerationAt(octreeNode.MortonCode);
-                }
+            if(!_octreeBuilder.IsDone()) _octreeBuilder.Update();
+            
+            if (!_octreeBuilder.IsDone() || OctreeReady) return;
+            
+            Octree? tree = _octreeBuilder.GetReadyTree();
+            _octreeBuilderStopwatch.Stop();
+            Debug.Assert(tree != null, "Octree is null!");
+            
+            Octree = tree.Value;
+            _chunkGenerationPipeline.UpdateMaxDepth(Octree.MaxDepth);
                 
+            
+            OctreeReady = true;
+            Debug.Log("OCTREE READY, node count: " + Octree.Nodes.Length + ", Time elapsed: " + _octreeBuilderStopwatch.ElapsedMilliseconds + "ms \n ======================================");
+            Debug.Log("Node Count of different depths: ");
+            List<OctreeNode> octreeNodes = new();
+            foreach (var t in Octree.Nodes)
+            {
+                octreeNodes.Add(t);
+            }
+            for (int i = 0; i < Octree.MaxDepth; i++)
+            {
+                Debug.Log($"Depth {i}: {octreeNodes.Count(node => node.MortonCode.GetDepth() == i)}");
+            }
+            
+            Debug.Log("Done! \n ========================");
+                
+                
+            foreach (OctreeNode octreeNode in Octree.Nodes)
+            {
+                _chunkGenerationPipeline.QueueGenerationAt(octreeNode.MortonCode);
             }
         }
         
