@@ -1,7 +1,9 @@
 <map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeBuilder" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeBuilder">
-<area shape="rect" id="Node000001" title="Manages asynchronous octree building with job scheduling." alt="" coords="5,183,264,237"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html" title=" " alt="" coords="19,80,250,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,133,137,183,132,183,132,133"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="70,5,199,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="137,44,137,80,132,80,132,44"/>
+<area shape="rect" id="Node000001" title="Manages asynchronous octree building with job scheduling." alt="" coords="573,44,832,99"/>
+<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html" title="a struct that represents an octree. it contains a list of octree nodes and the min and max bounds of ..." alt="" coords="193,5,452,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="466,45,573,56,573,61,465,50"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Parallel_1_1ParallelBurstSamplerSettings.html" title=" " alt="" coords="184,84,461,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="475,93,573,82,574,88,475,98"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,99,135,124"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="148,109,184,109,184,114,148,114"/>
 </map>

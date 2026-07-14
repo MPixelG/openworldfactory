@@ -1,0 +1,7 @@
+<map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeBuilder.BuildNode" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeBuilder.BuildNode">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,45,264,100"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#abd929932781a40f1ab81aad889ce7ce0" title=" " alt="" coords="312,5,571,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="264,53,298,49,299,54,264,58"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#ac7ed4b52e0ad29325ca4f68d76213b5e" title=" " alt="" coords="312,84,571,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="264,86,299,91,298,96,264,92"/>
+</map>

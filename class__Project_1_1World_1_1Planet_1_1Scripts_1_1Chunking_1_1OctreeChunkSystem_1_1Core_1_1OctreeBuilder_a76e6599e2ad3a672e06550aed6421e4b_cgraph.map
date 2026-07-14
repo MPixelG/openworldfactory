@@ -1,0 +1,9 @@
+<map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeBuilder.CompleteCompletedNodePresets" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeBuilder.CompleteCompletedNodePresets">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,45,336,100"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#ad150bd1e935921d886708b04cb80d88f" title=" " alt="" coords="384,45,643,100"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="336,70,370,70,370,75,336,75"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#abd929932781a40f1ab81aad889ce7ce0" title=" " alt="" coords="691,5,949,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="642,53,677,49,677,54,643,58"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#ac7ed4b52e0ad29325ca4f68d76213b5e" title=" " alt="" coords="691,84,949,139"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="643,86,677,91,677,96,642,92"/>
+</map>

@@ -1,9 +1,9 @@
 <map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.OctreeChunkManager">
-<area shape="rect" id="Node000001" title=" " alt="" coords="657,41,924,96"/>
-<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html" title="a struct that represents an octree. it contains a list of octree nodes and the min and max bounds of ..." alt="" coords="184,5,443,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="457,41,657,56,657,61,456,46"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html" title=" " alt="" coords="198,85,429,125"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="442,92,657,76,657,81,443,98"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="5,92,135,117"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="149,102,198,102,198,107,149,107"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="676,44,943,99"/>
+<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html" title="a struct that represents an octree. it contains a list of octree nodes and the min and max bounds of ..." alt="" coords="193,5,452,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="466,41,676,58,675,63,466,47"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Parallel_1_1ParallelBurstSamplerSettings.html" title=" " alt="" coords="184,84,461,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="475,96,675,80,676,85,475,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,99,135,124"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="148,109,184,109,184,114,148,114"/>
 </map>

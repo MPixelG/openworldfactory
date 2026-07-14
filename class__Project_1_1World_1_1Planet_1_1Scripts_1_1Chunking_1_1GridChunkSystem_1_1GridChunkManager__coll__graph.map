@@ -1,15 +1,15 @@
 <map id="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager" name="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.GridChunkManager">
-<area shape="rect" id="Node000001" title="this is the core of the logic of this system. the grid chunk manager is responsible for managing the ..." alt="" coords="1196,30,1472,85"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkGenerator.html" title="the chunk generator is responsible for generating the chunk data. this includes the density field and..." alt="" coords="717,5,1032,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1047,35,1196,45,1196,50,1046,40"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSamplerSettings.html" title=" " alt="" coords="255,5,485,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="499,23,717,23,717,28,499,28"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="41,13,170,38"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="184,23,255,23,255,28,184,28"/>
-<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html" title="the chunk streamer is responsible for calculating what chunks to display. it has no reference to any ..." alt="" coords="720,69,1029,109"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1043,75,1196,64,1196,70,1043,80"/>
-<area shape="rect" id="Node000006" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html" title="A chunk coord is basically an int3 but as its own data type. this way we always know what an int3 val..." alt="" coords="264,69,476,109"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="490,87,720,87,720,92,490,92"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="5,77,205,102"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="219,87,264,87,264,92,219,92"/>
+<area shape="rect" id="Node000001" title="this is the core of the logic of this system. the grid chunk manager is responsible for managing the ..." alt="" coords="1243,40,1519,95"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkGenerator.html" title="the chunk generator is responsible for generating the chunk data. this includes the density field and..." alt="" coords="764,14,1079,54"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1093,44,1243,55,1242,60,1093,49"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Parallel_1_1ParallelBurstSamplerSettings.html" title=" " alt="" coords="255,5,532,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="546,30,764,31,764,36,546,36"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="41,20,170,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="184,30,254,30,254,35,184,35"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1GridChunkSystem_1_1ChunkStreamer.html" title="the chunk streamer is responsible for calculating what chunks to display. it has no reference to any ..." alt="" coords="767,79,1076,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1089,90,1218,82,1242,80,1243,85,1219,87,1090,95"/>
+<area shape="rect" id="Node000006" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1Core_1_1ChunkCoord.html" title="A chunk coord is basically an int3 but as its own data type. this way we always know what an int3 val..." alt="" coords="287,85,499,125"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="513,101,766,98,766,104,513,106"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="5,92,205,117"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="219,102,287,102,287,107,219,107"/>
 </map>

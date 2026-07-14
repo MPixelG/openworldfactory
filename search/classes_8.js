@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['planet_0',['Planet',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html',1,'_Project::World::Planet::Scripts::Deprecated']]],
-  ['planetbootstrap_1',['PlanetBootstrap',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html',1,'_Project::World::Planet::Scripts::v2::Unity']]],
-  ['planetconfig_2',['PlanetConfig',['../struct__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetConfig.html',1,'_Project::World::Planet::Scripts::v2::Unity']]],
-  ['planetcube_3',['PlanetCube',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html',1,'_Project::World::Planet::Scripts::Deprecated']]],
-  ['planetmanager_4',['PlanetManager',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html',1,'_Project::World::Planet::Scripts::v2']]],
-  ['planetrenderer_5',['PlanetRenderer',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1PlanetRenderer.html',1,'_Project::World::Planet::Scripts::v2::Rendering']]],
-  ['planetsettings_6',['PlanetSettings',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetSettings.html',1,'_Project::World::Planet::Scripts::v2::Unity']]]
+  ['parallelburstsamplersettings_0',['ParallelBurstSamplerSettings',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Parallel_1_1ParallelBurstSamplerSettings.html',1,'_Project::World::Planet::Scripts::WorldGen::Parallel']]],
+  ['parallelburstsphericalnoisesamplingjob_1',['ParallelBurstSphericalNoiseSamplingJob',['../struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Parallel_1_1ParallelBurstSphericalNoiseSamplingJob.html',1,'_Project::World::Planet::Scripts::WorldGen::Parallel']]],
+  ['planet_2',['Planet',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html',1,'_Project::World::Planet::Scripts::Deprecated']]],
+  ['planetbootstrap_3',['PlanetBootstrap',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html',1,'_Project::World::Planet::Scripts::v2::Unity']]],
+  ['planetconfig_4',['PlanetConfig',['../struct__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetConfig.html',1,'_Project::World::Planet::Scripts::v2::Unity']]],
+  ['planetcube_5',['PlanetCube',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html',1,'_Project::World::Planet::Scripts::Deprecated']]],
+  ['planetmanager_6',['PlanetManager',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html',1,'_Project::World::Planet::Scripts::v2']]],
+  ['planetrenderer_7',['PlanetRenderer',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1PlanetRenderer.html',1,'_Project::World::Planet::Scripts::v2::Rendering']]],
+  ['planetsettings_8',['PlanetSettings',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetSettings.html',1,'_Project::World::Planet::Scripts::v2::Unity']]]
 ];
