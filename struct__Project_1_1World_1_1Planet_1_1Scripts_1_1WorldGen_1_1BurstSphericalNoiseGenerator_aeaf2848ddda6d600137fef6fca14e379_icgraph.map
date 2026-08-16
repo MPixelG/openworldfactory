@@ -1,0 +1,11 @@
+<map id="_Project.World.Planet.Scripts.WorldGen.BurstSphericalNoiseGenerator.RidgedNoise" name="_Project.World.Planet.Scripts.WorldGen.BurstSphericalNoiseGenerator.RidgedNoise">
+<area shape="rect" id="Node000001" title=" " alt="" coords="696,84,984,139"/>
+<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSphericalNoiseGenerator.html#a0d66d888fd9a212e5973cf6dc7596e66" title=" " alt="" coords="360,84,648,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="682,114,648,114,648,109,682,109"/>
+<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSphericalNoiseSamplingJob.html#a8bc26efae242d6ef2544ad028759dad8" title=" " alt="" coords="25,5,293,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="370,84,279,63,280,58,371,78"/>
+<area shape="rect" id="Node000004" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSphericalNoiseClassificationJob.html#a462fab040cbb38551255138340abc0f7" title=" " alt="" coords="5,84,312,139"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="346,114,312,114,312,109,346,109"/>
+<area shape="rect" id="Node000005" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Parallel_1_1BurstSphericalNoiseSamplingJob.html#a9ca80c23b577f586bddba118ef421f1f" title=" " alt="" coords="41,163,276,217"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="371,144,277,166,275,161,370,139"/>
+</map>

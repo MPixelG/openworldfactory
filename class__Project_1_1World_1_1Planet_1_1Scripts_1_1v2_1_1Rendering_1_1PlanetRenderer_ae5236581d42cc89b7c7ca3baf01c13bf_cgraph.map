@@ -1,11 +1,13 @@
 <map id="_Project.World.Planet.Scripts.v2.Rendering.PlanetRenderer.OnDestroy" name="_Project.World.Planet.Scripts.v2.Rendering.PlanetRenderer.OnDestroy">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,37,269,77"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#a112ce7ea6af89a0b22e73d8f5e1d4a5f" title=" " alt="" coords="353,5,585,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,42,339,35,339,40,270,47"/>
-<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1PlanetRenderer.html#a59c3defb8e9cfd84d3918effd26cb02c" title=" " alt="" coords="317,69,620,109"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="270,67,304,71,303,76,269,73"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#a48bbebc43922f574fdee7304fc0b153d" title=" " alt="" coords="668,5,919,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="585,23,654,23,654,28,585,28"/>
-<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a6256dfd6d0b6a06c3c88a641ca6ee991" title=" " alt="" coords="967,5,1261,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="919,23,953,23,953,28,919,28"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,269,121"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#a112ce7ea6af89a0b22e73d8f5e1d4a5f" title=" " alt="" coords="353,49,585,89"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,85,339,79,339,84,270,91"/>
+<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1PlanetRenderer.html#a59c3defb8e9cfd84d3918effd26cb02c" title=" " alt="" coords="317,113,620,153"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="270,111,304,114,303,119,269,116"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#a4edd07562f9b718788c4a5034b1c932b" title=" " alt="" coords="668,5,927,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="585,53,654,46,654,51,585,59"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#a48bbebc43922f574fdee7304fc0b153d" title=" " alt="" coords="672,85,923,125"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="585,79,658,87,658,92,585,84"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkDataStore.html#a6256dfd6d0b6a06c3c88a641ca6ee991" title=" " alt="" coords="975,85,1269,125"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="923,102,961,102,961,107,923,107"/>
 </map>

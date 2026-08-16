@@ -1,9 +1,13 @@
 <map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeBuilder.Dispose" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeBuilder.Dispose">
-<area shape="rect" id="Node000001" title=" " alt="" coords="592,30,851,85"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#ad126f7beecb027f89592ae413b839c87" title=" " alt="" coords="312,37,544,77"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="578,60,544,60,544,55,578,55"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html#a92fae171218cbbaf83840ec43a0df3d8" title=" " alt="" coords="19,5,251,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="298,46,251,41,251,35,298,41"/>
-<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html#a2385a768c7c98ab10de7ac816460ecf3" title=" " alt="" coords="5,69,264,109"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="298,74,265,78,264,73,298,69"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="597,30,856,85"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#a112ce7ea6af89a0b22e73d8f5e1d4a5f" title=" " alt="" coords="317,5,549,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="583,44,549,41,550,35,584,39"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#ad126f7beecb027f89592ae413b839c87" title=" " alt="" coords="317,69,549,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="584,76,550,79,549,74,583,70"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1PlanetRenderer.html#ae5236581d42cc89b7c7ca3baf01c13bf" title=" " alt="" coords="5,5,269,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="304,28,270,28,270,23,304,23"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html#a92fae171218cbbaf83840ec43a0df3d8" title=" " alt="" coords="21,69,253,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="304,92,254,92,254,87,304,87"/>
+<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html#a2385a768c7c98ab10de7ac816460ecf3" title=" " alt="" coords="8,133,267,173"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="327,115,231,136,230,131,326,110"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="_Project.World.Ship.Generation.ShipLayout" name="_Project.World.Ship.Generation.ShipLayout">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,108,232,148"/>
+<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Ship_1_1Generation_1_1ShipTile.html" title=" " alt="" coords="5,5,232,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,59,121,108,116,108,116,59"/>
+</map>

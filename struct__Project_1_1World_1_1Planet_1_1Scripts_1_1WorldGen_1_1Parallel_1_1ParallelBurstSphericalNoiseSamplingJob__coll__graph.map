@@ -1,7 +1,0 @@
-<map id="_Project.World.Planet.Scripts.WorldGen.Parallel.ParallelBurstSphericalNoiseSamplingJob" name="_Project.World.Planet.Scripts.WorldGen.Parallel.ParallelBurstSphericalNoiseSamplingJob">
-<area shape="rect" id="Node000001" title=" " alt="" coords="333,23,616,77"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="65,5,180,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,22,334,35,333,40,194,27"/>
-<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Parallel_1_1BurstSphericalNoiseConfig.html" title=" " alt="" coords="5,55,240,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="253,67,333,60,333,65,254,73"/>
-</map>
