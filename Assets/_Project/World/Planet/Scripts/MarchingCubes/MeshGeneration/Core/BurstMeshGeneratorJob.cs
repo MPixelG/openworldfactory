@@ -3,19 +3,18 @@ using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
-using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
 {
     [BurstCompile]
     public partial struct BurstMeshGeneratorJob : IJob
     {
-        [ReadOnly] public DensityFieldData DensityField;
+        [ReadOnly] public FieldData Field;
         [ReadOnly] public float CellSize;
 
         public NativeList<float3> Vertices;
         public NativeList<float3> Normals;
-        public NativeList<int> Indices;
+        public NativeList<Triangle> Triangles;
 
         public NativeHashMap<VertexKey, int> VertexMap; // this is used for index deduplication.
         // since every triangle has 3 vertices and many triangles share vertices with each other, we want to avoid adding the same vertex multiple times to the vertices list.
@@ -28,7 +27,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
 
         public void Execute()
         {
-            int size = DensityField.Size - 1;
+            int size = Field.Size - 1;
             for (int x = 0; x < size; x++)
             {
                 for (int y = 0; y < size; y++)
@@ -36,7 +35,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
                     for (int z = 0; z < size; z++)
                     {
                         GenerateAt((new int3(x, y, z)),
-                            DensityField); // generate the mesh for every grid cell and use the mesh builder to add it all to one large mesh
+                            Field); // generate the mesh for every grid cell and use the mesh builder to add it all to one large mesh
                     }
                 }
             }

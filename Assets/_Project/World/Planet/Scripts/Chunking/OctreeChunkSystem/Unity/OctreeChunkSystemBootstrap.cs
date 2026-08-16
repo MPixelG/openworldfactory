@@ -33,6 +33,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity
 
             _chunkManager = settings.CreateManager(); // create the chunk manager based on the settings. this is where the logic of the chunk system is being created.
             renderer.SetChunkManager(_chunkManager); // apply the chunk manager to the renderer
+            
         }
 
         private void OnDisable() // this is called when the component is removed or the unity prefab is destroyed

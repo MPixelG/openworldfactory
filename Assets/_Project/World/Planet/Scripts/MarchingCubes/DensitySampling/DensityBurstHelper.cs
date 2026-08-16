@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using _Project.World.Planet.Scripts.MarchingCubes.Materials;
 using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
@@ -11,7 +12,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
         /// <param name="data">the density field data used</param>
         /// <param name="position">the grid position of the requested density value</param>
         /// <returns>the density of the given position. it is usually a value between 0 and 1.</returns>
-        public static float DensityAt(this DensityFieldData data, int3 position)
+        public static float DensityAt(this FieldData data, int3 position)
         {
             return data.DensityAt(position.x, position.y, position.z);
         }
@@ -25,8 +26,20 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
         /// <param name="y">the y position of the requested density value</param>
         /// <param name="z">the z position of the requested density value</param>
         /// <returns>the density of the given position. it is usually a value between 0 and 1.</returns>
-        public static float DensityAt(this DensityFieldData data, int x, int y, int z)
+        public static float DensityAt(this FieldData data, int x, int y, int z)
         {           
+            Voxel voxel = VoxelAt(data, x, y, z);
+            return voxel.Density; // return the density value at the given position. 
+        }
+
+        public static VoxelMaterial MaterialAt(this FieldData data, int x, int y, int z)
+        {           
+            Voxel voxel = VoxelAt(data, x, y, z);
+            return voxel.VoxelMaterial; // return the density value at the given position. 
+        }
+        public static Voxel VoxelAt(this FieldData data, int x, int y, int z)
+        {
+            //Bound Checks
             if (x < 0) x = 0;
             if (x >= data.Size) x = data.Size - 1;
             if (y < 0) y = 0;
@@ -34,7 +47,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
             if (z < 0) z = 0;
             if (z >= data.Size) z = data.Size - 1;
             
-            return data.Densities[IndexOf(x, y, z, data.Size)]; // return the density value at the given position. we calculate the index in the 1d array based on the x, y and z values and the size of the grid.
+            return data.Fields[IndexOf(x, y, z, data.Size)]; // we calculate the index in the 1d array based on the x, y and z values and the size of the grid.
         }
         
         /// <summary>
@@ -44,7 +57,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
         /// <param name="pos">the grid position of the requested density value</param>
         /// <returns>the density of the given position. it is usually a value between 0 and 1.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float DensityAt(this DensityFieldData data, float3 pos) => data.DensityAt(pos.x, pos.y, pos.z);
+        public static float DensityAt(this FieldData data, float3 pos) => data.DensityAt(pos.x, pos.y, pos.z);
         
         /// <summary>
         /// returns the density value at a given position. if the value lies between cells the density gets interpolated.
@@ -54,7 +67,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
         /// <param name="y">the y position of the requested density value</param>
         /// <param name="z">the z position of the requested density value</param>
         /// <returns>the density of the given position. it is usually a value between 0 and 1.</returns>
-        public static float DensityAt(this DensityFieldData data, float x, float y, float z)
+        public static float DensityAt(this FieldData data, float x, float y, float z)
         {
             int x0 = (int)math.floor(x);
             int x1 = x0 + 1;

@@ -1,5 +1,5 @@
 using System;
-using _Project.World.Planet.Scripts.WorldGen.Parallel;
+using _Project.World.Planet.Scripts.WorldGen;
 using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity

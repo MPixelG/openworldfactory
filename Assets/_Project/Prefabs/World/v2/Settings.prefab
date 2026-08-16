@@ -52,3 +52,4 @@ MonoBehaviour:
       z: 0
     size: 500
     samplerSettings: {fileID: 11400000, guid: 2f70783060dd05999821f9d47d4ca88b, type: 2}
+    materialDatabase: {fileID: 11400000, guid: 44d5c2fe13b6c5825b3e6f014ae4ed33, type: 2}

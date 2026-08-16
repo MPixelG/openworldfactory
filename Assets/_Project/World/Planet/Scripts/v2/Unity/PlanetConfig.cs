@@ -1,6 +1,5 @@
+using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity;
 using _Project.World.Planet.Scripts.WorldGen;
-using _Project.World.Planet.Scripts.WorldGen.Parallel;
-using NUnit.Framework;
 using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.v2.Unity
@@ -13,5 +12,7 @@ namespace _Project.World.Planet.Scripts.v2.Unity
         public float size;
 
         public ParallelBurstSamplerSettings samplerSettings;
+        public MaterialDatabase materialDatabase;
+
     }
 }

@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
+using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity;
+using _Project.World.Planet.Scripts.MarchingCubes.Materials;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using _Project.World.Planet.Scripts.v2.Data;
 using Unity.Mathematics;
-using UnityEditor;
 using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.v2.Rendering
@@ -22,6 +23,8 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
         [SerializeField] private bool drawGizmosOutlines = true;
         [SerializeField] private bool drawMesh = true;
 
+        private MaterialDatabase _materialDatabase;
+
 
         private Dictionary<ulong, Mesh> _chunkMeshes = new();
         
@@ -33,6 +36,11 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
             _planetManager = planetManager;
             _planetManager.ChunkChange += OnChunkChange;
             Debug.Log("PLANET MANAGER SET");
+        }
+
+        public void SetMaterialDatabase(MaterialDatabase materialDatabase)
+        {
+            _materialDatabase = materialDatabase;
         }
 
 
@@ -48,7 +56,7 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
                         Mesh mesh = UnityMeshBuilder.Build(
                             payload.Vertices,
                             payload.Normals,
-                            payload.Indices
+                            payload.Triangles
                         );
                         _chunkMeshes[change.MortonCode] = mesh;
                     } else Debug.LogWarning($"Payload is null for MortonCode: {change.MortonCode}");
@@ -93,42 +101,70 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
         
         private void DrawChunks()
         {
-            foreach (ulong chunkMeshesCoord in _chunkMeshes.Keys)
-            {
-                byte depth = chunkMeshesCoord.GetDepth();
-                if (depth < minDrawDepth || depth > maxDrawDepth) continue;
-
-                int nodeSize =
-                    1 << (_planetManager.Octree.MaxDepth - depth);
-
-                float3 pos =
-                    _planetManager.Octree.Min +
-                    chunkMeshesCoord.DecodeToCoord() * nodeSize;
-                
-                Graphics.DrawMesh(
-                    _chunkMeshes[chunkMeshesCoord],
-                    new Vector3(pos.x, pos.y, pos.z),
-                    Quaternion.identity,
-                    _chunkMaterial,
-                    0
-                );
-                
-            }
-        }
-
-        private void OnDrawGizmos()
-        {
-            if(_planetManager == null || (!drawGizmosPoints && !drawGizmosOutlines))
-                return;
+            int maxDepth = _planetManager.Octree.MaxDepth;
+            float3 min = _planetManager.Octree.Min;
+            float3 max = _planetManager.Octree.Max;
+            
+            int maxOctreeSize = 1 << maxDepth;
             
             foreach (ulong chunkMeshesCoord in _chunkMeshes.Keys)
             {
                 byte depth = chunkMeshesCoord.GetDepth();
-                
                 if (depth < minDrawDepth || depth > maxDrawDepth) continue;
 
-                int nodeSize =
-                    1 << (_planetManager.Octree.MaxDepth - depth);
+                int logicalNodeSize = 1 << (maxDepth - depth);
+                float3 nodeSize = (max - min)*((float)logicalNodeSize/maxOctreeSize);
+
+                float3 localPos = chunkMeshesCoord.DecodeToCoord();
+                float3 worldPos = min + localPos * nodeSize;
+                
+                Mesh mesh = _chunkMeshes[chunkMeshesCoord]; //todo cache
+                if (mesh.vertexCount == 0) continue;
+                
+                float3 size = max - min;
+
+                
+                int submeshCount = _chunkMeshes[chunkMeshesCoord].subMeshCount;
+                for (int submeshIndex = 0; submeshIndex < submeshCount; submeshIndex++)
+                {
+                    Material material = _materialDatabase.GetMaterial((VoxelMaterial) submeshIndex);
+                    if (material == null) continue;
+                    var renderParams = new RenderParams(material)
+                    { 
+                        worldBounds = new Bounds(min + size*0.5f, size),
+                    };
+                    
+                    Graphics.RenderMesh(
+                        renderParams,
+                        _chunkMeshes[chunkMeshesCoord],
+                        submeshIndex,
+                        Matrix4x4.Translate(new Vector3(worldPos.x, worldPos.y, worldPos.z))
+                    );
+                }
+            }
+        }
+
+        private void OnDrawGizmos()
+        { 
+            if(_planetManager == null || (!drawGizmosPoints && !drawGizmosOutlines))
+                return;
+            
+            int maxDepth = _planetManager.Octree.MaxDepth;
+            float3 min = _planetManager.Octree.Min;
+            float3 max = _planetManager.Octree.Max;
+            
+            int maxOctreeSize = 1 << maxDepth;
+            
+            foreach (ulong chunkMeshesCoord in _chunkMeshes.Keys)
+            {
+                byte depth = chunkMeshesCoord.GetDepth();
+                if (depth < minDrawDepth || depth > maxDrawDepth) continue;
+                
+                int logicalNodeSize = 1 << (maxDepth - depth);
+                float3 nodeSize = (max - min)*((float)logicalNodeSize/maxOctreeSize);
+
+                float3 localPos = chunkMeshesCoord.DecodeToCoord();
+                float3 worldPos = min + localPos * nodeSize;
 
                 /*float3 pos =
                     _planetManager.Octree.Min +
@@ -137,8 +173,6 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
                     (nodeSize / 2f)), new Vector3(nodeSize, nodeSize, nodeSize));*/
                 if (drawGizmosPoints)
                 {
-                    int3 c = chunkMeshesCoord.DecodeToCoord();
-                    float3 p = _planetManager.Octree.Min + c * nodeSize;
                     OctreeNode? node = _planetManager.Octree.GetNodeAtPosition(chunkMeshesCoord);
                     if(node == null) continue;
                     OctreeNodeState state = node.Value.State;
@@ -151,13 +185,12 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
                         _ => throw new ArgumentOutOfRangeException()
                     };
                     Gizmos.color = gizmosColor;
-                    Gizmos.DrawSphere(p, 1);
+                    Gizmos.DrawSphere(worldPos, 1);
                 }
 
                 if (drawGizmosOutlines)
                 {
-                    Bounds b = _planetManager.Octree.GetBounds(chunkMeshesCoord);
-                    Gizmos.DrawWireCube(b.center, b.size);
+                    Gizmos.DrawWireCube(worldPos + new float3(nodeSize / 2f),new float3(nodeSize));
                 }
             }
         }

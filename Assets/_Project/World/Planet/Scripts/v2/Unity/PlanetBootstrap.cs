@@ -22,6 +22,7 @@ namespace _Project.World.Planet.Scripts.v2.Unity
             
             
             renderer.SetPlanetManager(_planetManager); // apply the chunk manager to the renderer
+            renderer.SetMaterialDatabase(settings.config.materialDatabase);
         }
 
         private void OnDisable()
@@ -32,6 +33,7 @@ namespace _Project.World.Planet.Scripts.v2.Unity
         private void HandleSettingsChanged(PlanetConfig config)
         {
             _planetManager.UpdateConfig(config);
+            renderer.SetMaterialDatabase(config.materialDatabase);
         }
 
         public void RebuildOctree()

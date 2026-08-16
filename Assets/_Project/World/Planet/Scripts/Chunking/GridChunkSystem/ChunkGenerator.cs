@@ -43,7 +43,7 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
                     State = ChunkState.GeneratingDensity,
                 };
 
-            DensityFieldData densityField = DensityFieldBuilder.BuildBurstDensityFieldData(
+            FieldData field = DensityFieldBuilder.BuildBurstDensityFieldData(
                 _densitySamplerSettings,
                 _chunkSize,
                 position
@@ -52,13 +52,13 @@ namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
             // this way we can use the same noise settings for all chunks and just
             // sample them at different positions in world space.
 
-            data.DensityField = densityField; // update its density field with the newly calculated one
+            data.Field = field; // update its density field with the newly calculated one
             data.State = ChunkState.Meshing; // and set its state to meshing
 
             // we use the static function GenerateMeshDataAt to generate the mesh data for the chunk based on its
             // density field and the chunk size
             //MeshData meshData = MarchingCubesMeshDataGenerator.GenerateMeshDataAt(densityField);
-            MeshData meshData = BurstMeshGenerator.GenerateMesh(densityField, 32f); //TODO FIXME not always 32 (this code isnt used so its not thaat important to fix) 
+            MeshData meshData = BurstMeshGenerator.GenerateMesh(field, 32f); //TODO FIXME not always 32 (this code isnt used so its not thaat important to fix) 
             
 
             data.MeshData = meshData; // now we need to update the mesh data

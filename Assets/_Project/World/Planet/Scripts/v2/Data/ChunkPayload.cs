@@ -1,4 +1,5 @@
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
+using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core;
 using Unity.Collections;
 using Unity.Mathematics;
 
@@ -6,24 +7,24 @@ namespace _Project.World.Planet.Scripts.v2.Data
 {
     public struct ChunkPayload
     {
-        public DensityFieldData DensityField;
+        public FieldData Field;
         public NativeList<float3> Vertices;
         public NativeList<float3> Normals;
-        public NativeList<int> Indices;
+        public NativeList<Triangle> Triangles;
 
         /// <summary>
         /// Dispose all native collections to prevent memory leaks.
         /// </summary>
         public void Dispose()
         {
-            if (DensityField.Densities.IsCreated)
-                DensityField.Densities.Dispose();
+            if (Field.Fields.IsCreated)
+                Field.Fields.Dispose();
             if (Vertices.IsCreated)
                 Vertices.Dispose();
             if (Normals.IsCreated)
                 Normals.Dispose();
-            if (Indices.IsCreated)
-                Indices.Dispose();
+            if (Triangles.IsCreated)
+                Triangles.Dispose();
         }
     }
 }

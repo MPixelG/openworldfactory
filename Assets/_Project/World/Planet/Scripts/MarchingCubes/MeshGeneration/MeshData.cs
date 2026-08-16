@@ -1,3 +1,4 @@
+using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core;
 using Unity.Collections;
 using Unity.Mathematics;
 
@@ -10,20 +11,20 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
     {
         public NativeList<float3> Vertices;
         public NativeList<float3> Normals;
-        public NativeList<int> Indices;
+        public NativeList<Triangle> Triangles;
 
-        public MeshData(NativeList<float3> vertices, NativeList<float3> normals, NativeList<int> indices)
+        public MeshData(NativeList<float3> vertices, NativeList<float3> normals, NativeList<Triangle> triangles)
         {
             Vertices = vertices;
             Normals = normals;
-            Indices = indices;
+            Triangles = triangles;
         }
 
         public void Dispose()
         {
             Vertices.Dispose();
             Normals.Dispose();
-            Indices.Dispose();
+            Triangles.Dispose();
         }
     }
 }

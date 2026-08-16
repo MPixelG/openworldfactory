@@ -7,16 +7,6 @@ namespace _Project.World.Planet.Scripts.WorldGen.Parallel
 
         public float TerrainHeight;
 
-        public float ReferenceRadius;
-        
-
-        public float ContinentFrequency;
-        public int ContinentOctaves;
-        public float ContinentPersistence;
-
-        public float OceanThreshold;
-        
-
         public float MountainMaskFrequency;
 
         public float MountainThreshold;

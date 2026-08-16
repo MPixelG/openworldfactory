@@ -4,8 +4,9 @@ using System.Linq;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
+using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core;
 using _Project.World.Planet.Scripts.v2.Data;
-using _Project.World.Planet.Scripts.WorldGen.Parallel;
+using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
@@ -22,6 +23,7 @@ namespace _Project.World.Planet.Scripts.v2
         private ParallelBurstSamplerSettings _settings;
         private byte _maxDepth;
         private int3 _min;
+        private int3 _max;
         private byte _chunkSize;
 
         public event Action<ChunkGeneration> OnChunkGenerated;
@@ -37,9 +39,10 @@ namespace _Project.World.Planet.Scripts.v2
             _maxDepth = maxDepth;
         }
 
-        public void UpdateMin(int3 min)
+        public void UpdateMinMax(int3 min, int3 max)
         {
             _min = min;
+            _max = max; 
         } 
 
         public void UpdateChunkSize(byte chunkSize)
@@ -63,34 +66,36 @@ namespace _Project.World.Planet.Scripts.v2
             if (_generationQueue.Count == 0) return;
 
             ulong mortonCode = _generationQueue.Dequeue();
+            
+            int logicalNodeSize = 1 << (_maxDepth - mortonCode.GetDepth());
+            int maxOctreeSize = 1 << _maxDepth;
+            float worldNodeSize = ((float)logicalNodeSize / maxOctreeSize) * (_max.x - _min.x);
 
-            float worldNodeSize = 1 << (_maxDepth - mortonCode.GetDepth());
-
-            byte voxelResolution = (byte)(_chunkSize + 1);
+            byte voxelResolution = (byte)(_chunkSize + 1); // +1 for the extra voxel needed for marching cubes
 
             JobHandle densityJobHandle = DensityFieldBuilder.ScheduleExactBurstDensityFieldDataBuildInTree(
                 _settings,
                 mortonCode,
-                _maxDepth,
+                worldNodeSize,
                 _min,
                 voxelResolution,
-                out DensityFieldData densityField
+                out FieldData densityField
             );
-            
+
 
             float cellSize = worldNodeSize / _chunkSize;
 
             JobHandle meshGenerationJobHandle = BurstMeshGenerator.ScheduleGenerateMesh(
                 densityJobHandle, densityField,
                 cellSize,
-                out NativeList<int> indices, out NativeList<float3> vertices, out NativeList<float3> normals, out NativeHashMap<VertexKey, int> vertexMap);
+                out NativeList<Triangle> triangles, out NativeList<float3> vertices, out NativeList<float3> normals, out NativeHashMap<VertexKey, int> vertexMap);
 
             ChunkPayload payload = new ChunkPayload
             {
-                DensityField = densityField,
+                Field = densityField,
                 Vertices = vertices,
                 Normals = normals,
-                Indices = indices
+                Triangles = triangles
             };
 
             _activeMeshingJobs.Add(mortonCode, meshGenerationJobHandle);

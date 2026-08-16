@@ -1,9 +1,10 @@
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
+using _Project.World.Planet.Scripts.WorldGen.Parallel;
 using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace _Project.World.Planet.Scripts.WorldGen.Parallel
+namespace _Project.World.Planet.Scripts.WorldGen
 {
     [CreateAssetMenu(menuName = "WorldGen/Burst Density Samplers/Spherical Noise")]
     public class ParallelBurstSamplerSettings : ScriptableObject
@@ -13,52 +14,45 @@ namespace _Project.World.Planet.Scripts.WorldGen.Parallel
         private static BurstSphericalNoiseConfig GetDefaultConfig(float radius) => new()
         {
             Radius = radius,
-            ReferenceRadius = 200f,
 
-            TerrainHeight = 169f,
+            TerrainHeight = 0.06f,
+            
+            MountainMaskFrequency = 0.02f,
+            MountainThreshold = 0.72f,
+            MountainBlend = 0.3f, 
 
-            ContinentFrequency = 1.2f,
-            ContinentOctaves = 2,
-            ContinentPersistence = 0.5f,
+            MountainFrequency = 0.025f,
+            MountainOctaves = 9,
+            MountainPersistence = 0.4f,
+            MountainSharpness = 1f,
 
-            OceanThreshold = 0.48f,
+            PlainsStrength = 20f,
+            PlainsFrequency = 0.01f,
 
-            MountainMaskFrequency = 3f,
-            MountainThreshold = 0.82f,
-            MountainBlend = 0.32f,
+            DetailFrequency = 0.3f,
+            DetailStrength = 0.008f,
 
-            MountainFrequency = 7f,
-            MountainOctaves = 3,
-            MountainPersistence = 0.6f,
-            MountainSharpness = 15.5f,
-
-            PlainsStrength = 2.5f,
-            PlainsFrequency = 3f,
-
-            DetailFrequency = 30f,
-            DetailStrength = 1.8f,
-
-            WarpFrequency = 0.6f,
-            WarpStrength = 0.3f,
+            WarpFrequency = 0.01f,
+            WarpStrength = 1f,
         };
         
         public ParallelBurstSphericalNoiseSamplingJob CreateParallelExactSampler(
-            int3 minPos, int3 maxPos, byte resolution,
-            out DensityFieldData densityField)
+            float3 minPos, float3 maxPos, byte resolution,
+            out FieldData field)
         {
-            densityField = new DensityFieldData
+            field = new FieldData
             {
                 Size = resolution,
-                Densities = new NativeArray<float>(resolution * resolution * resolution+2,
+                Fields = new NativeArray<Voxel>(resolution * resolution * resolution,
                     Allocator.Persistent)
             };
 
             return new ParallelBurstSphericalNoiseSamplingJob()
             {
                 Resolution = resolution,
-                MinPos = minPos,
-                MaxPos = maxPos,
-                Densities = densityField.Densities,
+                Min = minPos,
+                Max = maxPos,
+                Fields = field.Fields,
 
                 Config = GetDefaultConfig(radius)
             };
@@ -67,12 +61,14 @@ namespace _Project.World.Planet.Scripts.WorldGen.Parallel
 
         public BurstSphericalNoiseClassificationJob CreateMinMaxSamplers(
             NativeList<ulong> mortons,
-            int3 origin, byte resolution, byte maxDepth,
+            float3 min, float3 max, byte resolution, byte maxDepth,
             ref NativeArray<MinMaxValue> minMaxValues)
         {
             return new BurstSphericalNoiseClassificationJob
             {
-                Origin = origin,
+                Min = min,
+                Max = max,
+                
 
                 Resolution = resolution,
                 

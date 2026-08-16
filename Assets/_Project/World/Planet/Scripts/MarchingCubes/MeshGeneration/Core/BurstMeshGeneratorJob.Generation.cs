@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
+using _Project.World.Planet.Scripts.MarchingCubes.Materials;
 using Unity.Collections;
 using Unity.Mathematics;
 
@@ -7,7 +8,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
 {
     public unsafe partial struct BurstMeshGeneratorJob
     {
-        private void GenerateAt(int3 pos, DensityFieldData grid)
+        private void GenerateAt(int3 pos, FieldData grid)
         {
             int cubeIndex = GetCubeIndexAt(pos, grid, IsoLevel); // calculates the cube index at that position.
                                                                 // look at the description of that function if you want to know what it does
@@ -147,6 +148,15 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
                 vertices[11].Key = new VertexKey(pos, 11);
             }
 
+            
+            VoxelMaterial m0 = grid.MaterialAt(p0.x, p0.y, p0.z);
+            VoxelMaterial m1 = grid.MaterialAt(p1.x, p1.y, p1.z);
+            VoxelMaterial m2 = grid.MaterialAt(p2.x, p2.y, p2.z);
+            VoxelMaterial m3 = grid.MaterialAt(p3.x, p3.y, p3.z);
+            VoxelMaterial m4 = grid.MaterialAt(p4.x, p4.y, p4.z);
+            VoxelMaterial m5 = grid.MaterialAt(p5.x, p5.y, p5.z);
+            VoxelMaterial m6 = grid.MaterialAt(p6.x, p6.y, p6.z);
+            VoxelMaterial m7 = grid.MaterialAt(p7.x, p7.y, p7.z);
 
             //now we need to convert the vertices to triangles and take just the filled ones
 
@@ -159,16 +169,103 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
                 int a = Tri(TriTable, cubeIndex, i);
                 int b = Tri(TriTable, cubeIndex, i + 1); 
                 int c = Tri(TriTable, cubeIndex, i + 2);
+                
+                GetEdgeMaterials(a, m0, m1, m2, m3, m4, m5, m6, m7,
+                    out VoxelMaterial a0, out VoxelMaterial a1);
+
+                GetEdgeMaterials(b, m0, m1, m2, m3, m4, m5, m6, m7,
+                    out VoxelMaterial b0, out VoxelMaterial b1);
+
+                GetEdgeMaterials(c, m0, m1, m2, m3, m4, m5, m6, m7,
+                    out VoxelMaterial c0, out VoxelMaterial c1);
+                
+                VoxelMaterial material = GetDominantMaterial(
+                    a0, a1,
+                    b0, b1,
+                    c0, c1
+                );
 
                 AddTriangle(
                     vertices[a].Pos, vertices[a].Key,
                     vertices[b].Pos, vertices[b].Key,
-                    vertices[c].Pos, vertices[c].Key
+                    vertices[c].Pos, vertices[c].Key,
+                    material
                 );
             }
         }
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static void GetEdgeMaterials(
+            int edge,
+            VoxelMaterial m0,
+            VoxelMaterial m1,
+            VoxelMaterial m2,
+            VoxelMaterial m3,
+            VoxelMaterial m4,
+            VoxelMaterial m5,
+            VoxelMaterial m6,
+            VoxelMaterial m7,
+            out VoxelMaterial a,
+            out VoxelMaterial b)
+        {
+            switch (edge)
+            {
+                case 0:  a = m0; b = m1; break;
+                case 1:  a = m1; b = m2; break;
+                case 2:  a = m2; b = m3; break;
+                case 3:  a = m3; b = m0; break;
 
-        private static int GetCubeIndexAt(int3 pos, DensityFieldData grid, float isoLevel)
+                case 4:  a = m4; b = m5; break;
+                case 5:  a = m5; b = m6; break;
+                case 6:  a = m6; b = m7; break;
+                case 7:  a = m7; b = m4; break;
+
+                case 8:  a = m0; b = m4; break;
+                case 9:  a = m1; b = m5; break;
+                case 10: a = m2; b = m6; break;
+                case 11: a = m3; b = m7; break;
+
+                default:
+                    a = VoxelMaterial.Air;
+                    b = VoxelMaterial.Air;
+                    break;
+            }
+        }
+
+        private static VoxelMaterial GetDominantMaterial(
+            VoxelMaterial a,
+            VoxelMaterial b,
+            VoxelMaterial c,
+            VoxelMaterial d,
+            VoxelMaterial e,
+            VoxelMaterial f)
+        {
+            int* counts = stackalloc int[4];
+
+            counts[(int)a]++;
+            counts[(int)b]++;
+            counts[(int)c]++;
+            counts[(int)d]++;
+            counts[(int)e]++;
+            counts[(int)f]++;
+
+            int max = 0;
+            int maxIndex = 0;
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (counts[i] > max)
+                {
+                    max = counts[i];
+                    maxIndex = i;
+                }
+            }
+
+            return (VoxelMaterial)maxIndex;
+        }
+        
+
+        private static int GetCubeIndexAt(int3 pos, FieldData grid, float isoLevel)
         {
             int cubeIndex = 0;
 

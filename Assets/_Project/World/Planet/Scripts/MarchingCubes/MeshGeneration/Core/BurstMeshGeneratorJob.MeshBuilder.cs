@@ -1,4 +1,6 @@
+using _Project.World.Planet.Scripts.MarchingCubes.Materials;
 using Unity.Mathematics;
+using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
 {
@@ -11,7 +13,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
         private void AddTriangle(
             float3 a, VertexKey ka,
             float3 b, VertexKey kb,
-            float3 c, VertexKey kc)
+            float3 c, VertexKey kc,
+            VoxelMaterial material)
         {
             if (!math.all(math.isfinite(a)) ||
                 !math.all(math.isfinite(b)) ||
@@ -22,9 +25,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
             int i1 = GetOrAddVertex(kb, b);
             int i2 = GetOrAddVertex(kc, c);
 
-            Indices.Add(i0);
-            Indices.Add(i1);
-            Indices.Add(i2);
+            Triangles.Add(new Triangle(i0, i1, i2, material));
 
             float3 normal = math.normalize(math.cross(b - a, c - a));
 

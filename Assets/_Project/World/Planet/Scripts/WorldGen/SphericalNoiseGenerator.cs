@@ -1,6 +1,8 @@
+using _Project.World.Planet.Scripts.WorldGen.Parallel;
 using Unity.Mathematics;
+using UnityEngine;
 
-namespace _Project.World.Planet.Scripts.WorldGen.Parallel
+namespace _Project.World.Planet.Scripts.WorldGen
 {
     public struct BurstSphericalNoiseGenerator
     {
@@ -12,27 +14,25 @@ namespace _Project.World.Planet.Scripts.WorldGen.Parallel
 
             float sphereDensity = dist - config.Radius;
             
+            float3 warpTmp = new float3(
+                noise.cnoise(worldPos*0.1f * config.WarpFrequency + 17f),
+                noise.cnoise(worldPos*0.1f * config.WarpFrequency + 53f),
+                noise.cnoise(worldPos*0.1f * config.WarpFrequency + 91f)
+            );
+            
+            float res_ = RidgedNoise(
+                warpTmp * config.MountainMaskFrequency*250f,
+                2,
+                0.5f
+            );
+            return res_;
+            
             float3 dir = math.normalizesafe(worldPos);
             
 
-            float scale = config.ReferenceRadius / config.Radius;
+            float scale = config.Radius;
 
             float3 samplePos = dir * scale;
-            
-
-            float continent = FractalNoise(
-                samplePos * config.ContinentFrequency,
-                config.ContinentOctaves,
-                config.ContinentPersistence
-            );
-
-            continent = continent * 0.5f + 0.5f;
-
-            continent = math.smoothstep(
-                config.OceanThreshold,
-                1f,
-                continent
-            );
             
 
             float3 warp = new float3(
@@ -44,9 +44,9 @@ namespace _Project.World.Planet.Scripts.WorldGen.Parallel
             float3 warpedPos = samplePos + warp * config.WarpStrength;
             
 
-            float mountainMask = FractalNoise(
+            float mountainMask = RidgedNoise(
                 warpedPos * config.MountainMaskFrequency,
-                3,
+                4,
                 0.5f
             );
 
@@ -57,15 +57,15 @@ namespace _Project.World.Planet.Scripts.WorldGen.Parallel
                 config.MountainThreshold + config.MountainBlend,
                 mountainMask
             );
-
-            mountainMask *= continent;
             
 
-            float mountains = RidgedNoise(
+            float mountains = FractalNoise(
                 warpedPos * config.MountainFrequency,
                 config.MountainOctaves,
-                config.MountainPersistence
+                config.MountainPersistence, 2, 0.7f
             );
+            
+            mountains = mountains * 0.5f + 0.5f;
 
             mountains = math.pow(
                 mountains,
@@ -78,12 +78,12 @@ namespace _Project.World.Planet.Scripts.WorldGen.Parallel
             float plains = FractalNoise(
                 warpedPos * config.PlainsFrequency,
                 2,
-                0.5f
+                0.5f, 1, 1
             );
 
             plains *= config.PlainsStrength;
 
-            plains *= (1f - mountainMask);
+            plains *= math.min(1f - mountainMask, 1);
             
 
             float detail = noise.cnoise(
@@ -97,26 +97,25 @@ namespace _Project.World.Planet.Scripts.WorldGen.Parallel
                 1f,
                 mountainMask
             );
-            
 
-            float terrain =
-                mountains * config.TerrainHeight +
-                plains +
-                detail;
 
-            terrain -= config.TerrainHeight * 0.15f * continent;
+            float terrain = mountains * config.TerrainHeight * config.Radius + plains + detail;
 
-            return (sphereDensity + terrain) + math.clamp(FractalNoise(worldPos/25f, 3, 0.3f), 0, 1)*config.Radius;
+            return (sphereDensity - terrain);
         }
         
 
         private static float FractalNoise(
             float3 pos,
             int octaves,
-            float persistence)
+            float persistence,
+            float startSharpness,
+            float sharpnessPersistence
+            )
         {
             float total = 0f;
             float amplitude = 1f;
+            float sharpness = startSharpness;
             float frequency = 1f;
             float maxValue = 0f;
 
@@ -124,10 +123,11 @@ namespace _Project.World.Planet.Scripts.WorldGen.Parallel
             {
                 total += noise.cnoise(pos * frequency) * amplitude;
 
-                maxValue += amplitude;
-
+                maxValue += math.pow(amplitude, sharpness);
+                
                 amplitude *= persistence;
                 frequency *= 2f;
+                sharpness *= sharpnessPersistence;
             }
 
             return total / maxValue;

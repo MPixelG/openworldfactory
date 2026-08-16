@@ -5,6 +5,8 @@ using System.Linq;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using _Project.World.Planet.Scripts.v2.Data;
 using _Project.World.Planet.Scripts.v2.Unity;
+using JetBrains.Annotations;
+using Unity.Mathematics;
 using Debug = UnityEngine.Debug;
 
 namespace _Project.World.Planet.Scripts.v2
@@ -29,19 +31,19 @@ namespace _Project.World.Planet.Scripts.v2
             _chunkGenerationPipeline.OnChunkGenerated += OnChunkGenerated;
         }
 
-        private OctreeBuilder _octreeBuilder;
+        [CanBeNull] private OctreeBuilder _octreeBuilder;
         public bool OctreeReady;
         private readonly Stopwatch _octreeBuilderStopwatch = new();
         public void RebuildOctree()
         {
             _octreeBuilder?.Dispose();  
-            _octreeBuilder = new OctreeBuilder(_config.origin, maxDepth: 9, _config.samplerSettings);
+            _octreeBuilder = new OctreeBuilder(_config.origin, _config.origin + new int3(_config.size), maxDepth: 5, _config.samplerSettings);
             _octreeBuilderStopwatch.Reset();
             _octreeBuilderStopwatch.Start();
             _octreeBuilder.Build();
             OctreeReady = false;
             
-            _chunkGenerationPipeline.UpdateMin(_config.origin);
+            _chunkGenerationPipeline.UpdateMinMax(_config.origin, _config.origin + new int3(_config.size));
             _chunkGenerationPipeline.UpdateSamplerSettings(_config.samplerSettings);
             _chunkGenerationPipeline.UpdateChunkSize(_config.chunkSize);
             ClearChunks();
@@ -50,9 +52,9 @@ namespace _Project.World.Planet.Scripts.v2
         public void Update()
         {
             _chunkGenerationPipeline.Update();
-            if(!_octreeBuilder.IsDone()) _octreeBuilder.Update();
+            if(!_octreeBuilder?.IsDone() ?? false) _octreeBuilder.Update();
             
-            if (!_octreeBuilder.IsDone() || OctreeReady) return;
+            if ((!_octreeBuilder?.IsDone() ?? true) || OctreeReady) return;
             
             Octree? tree = _octreeBuilder.GetReadyTree();
             _octreeBuilderStopwatch.Stop();
@@ -88,7 +90,7 @@ namespace _Project.World.Planet.Scripts.v2
         public void UpdateConfig(PlanetConfig config)
         {
             _config = config;
-            _chunkGenerationPipeline.UpdateMin(config.origin);
+            _chunkGenerationPipeline.UpdateMinMax(config.origin, config.origin + new int3(_config.size));
             _chunkGenerationPipeline.UpdateSamplerSettings(config.samplerSettings);
             _chunkGenerationPipeline.UpdateChunkSize(config.chunkSize);
         }
@@ -124,6 +126,7 @@ namespace _Project.World.Planet.Scripts.v2
         public void Dispose()
         {
             Octree.Dispose();
+            _octreeBuilder?.Dispose();
             _chunkGenerationPipeline.OnChunkGenerated -= OnChunkGenerated;
         }
     }

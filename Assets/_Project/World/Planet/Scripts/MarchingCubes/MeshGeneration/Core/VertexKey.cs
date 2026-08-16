@@ -1,7 +1,7 @@
 using System;
 using Unity.Mathematics;
 
-namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
+namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
 {
     public readonly struct VertexKey : IEquatable<VertexKey>
     {

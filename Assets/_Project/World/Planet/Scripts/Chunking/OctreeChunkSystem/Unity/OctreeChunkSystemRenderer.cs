@@ -220,6 +220,8 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity
                 {
                     enableInstancing = true
                 };
+            
+            
 
             _meshReady = true;
         }

@@ -1,3 +1,4 @@
+using _Project.World.Planet.Scripts.MarchingCubes.Materials;
 using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
@@ -6,5 +7,6 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
     {
         public float3 Pos;
         public VertexKey Key;
+        public VoxelMaterial Material;
     }
 }

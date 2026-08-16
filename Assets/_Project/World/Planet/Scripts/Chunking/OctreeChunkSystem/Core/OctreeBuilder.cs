@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
-using _Project.World.Planet.Scripts.WorldGen.Parallel;
+using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Jobs.LowLevel.Unsafe;
 using Unity.Mathematics;
-using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
 {
@@ -21,7 +20,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         private readonly Queue<NativeList<ulong>> _pendingNodes;
 
 
-        public OctreeBuilder(int3 min, byte maxDepth, ParallelBurstSamplerSettings settings)
+        public OctreeBuilder(int3 min, int3 max, byte maxDepth, ParallelBurstSamplerSettings settings)
         {
             _settings = settings;
             _pendingNodes = new Queue<NativeList<ulong>>();
@@ -29,12 +28,11 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
             _tree = new Octree
             {
                 Min = min,
-                Max = min + new int3(1 << maxDepth),
+                Max = max,
                 MaxDepth = maxDepth,
                 Nodes = new NativeList<OctreeNode>(Allocator.Persistent),
                 IndexLookup = new NativeHashMap<ulong, int>(1024, Allocator.Persistent)
             };
-            
         }
 
         public void Build()
@@ -90,7 +88,6 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
         {
             CompleteCompletedNodePresets();
             StartNewJobs();
-            Debug.Log("Current running jobs: " + _runningJobs.Count + ", pending nodes: " + _pendingNodes.Count);
         }
 
         public bool IsDone()
@@ -124,6 +121,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core
                 var job = _settings.CreateMinMaxSamplers(
                     mortons,
                     _tree.Min,
+                    _tree.Max,
                     SampleResolution,
                     _tree.MaxDepth,
                     ref tmp);

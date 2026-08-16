@@ -2,16 +2,17 @@ using Unity.Collections;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
 {
-    public struct DensityFieldData
+    public struct FieldData
     {
-        public NativeArray<float> Densities;
+        public NativeArray<Voxel> Fields;
         public int Size;
+
 
         public void Dispose()
         {
-            if (Densities.IsCreated)
+            if (Fields.IsCreated)
             {
-                Densities.Dispose();
+                Fields.Dispose();
             }
         }
     }
