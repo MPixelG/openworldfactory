@@ -14,19 +14,6 @@ namespace _Project.World.Planet.Scripts.WorldGen
 
             float sphereDensity = dist - config.Radius;
             
-            float3 warpTmp = new float3(
-                noise.cnoise(worldPos*0.1f * config.WarpFrequency + 17f),
-                noise.cnoise(worldPos*0.1f * config.WarpFrequency + 53f),
-                noise.cnoise(worldPos*0.1f * config.WarpFrequency + 91f)
-            );
-            
-            float res_ = RidgedNoise(
-                warpTmp * config.MountainMaskFrequency*250f,
-                2,
-                0.5f
-            );
-            return res_;
-            
             float3 dir = math.normalizesafe(worldPos);
             
 

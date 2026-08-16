@@ -71,7 +71,7 @@ namespace _Project.World.Planet.Scripts.v2
             int maxOctreeSize = 1 << _maxDepth;
             float worldNodeSize = ((float)logicalNodeSize / maxOctreeSize) * (_max.x - _min.x);
 
-            byte voxelResolution = (byte)(_chunkSize + 1); // +1 for the extra voxel needed for marching cubes
+            byte voxelResolution = (byte)(_chunkSize+1f); // +1 for the extra voxel needed for marching cubes
 
             JobHandle densityJobHandle = DensityFieldBuilder.ScheduleExactBurstDensityFieldDataBuildInTree(
                 _settings,

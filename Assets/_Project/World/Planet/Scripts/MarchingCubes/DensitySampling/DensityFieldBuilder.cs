@@ -48,8 +48,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
         public static JobHandle ScheduleExactBurstDensityFieldDataBuildInTree(ParallelBurstSamplerSettings settings, ulong mortonCode, float nodeSize, int3 origin, byte resolution, out FieldData field)
         {
             float3 localGridPos = mortonCode.DecodeToCoord();
-            float3 min = origin + (localGridPos * nodeSize);
-            float3 max = min + new int3(nodeSize+1);
+            float3 min = origin + (localGridPos * (nodeSize)); 
+            float3 max = min + nodeSize;
             
             ParallelBurstSphericalNoiseSamplingJob job = settings.CreateParallelExactSampler(min, max, resolution, out field); // get the job from the settings
             

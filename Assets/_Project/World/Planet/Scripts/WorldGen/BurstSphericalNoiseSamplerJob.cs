@@ -27,7 +27,7 @@ namespace _Project.World.Planet.Scripts.WorldGen
             float val = BurstSphericalNoiseGenerator.GenerateAt(worldPos, Config);
             voxel.Density = val;
             
-            //use stone for high densities and dirt for low densities 
+            //use stone for high altitudes and dirt for low altitudes
             voxel.VoxelMaterial = worldPos.y > 200f ? VoxelMaterial.Stone : VoxelMaterial.Dirt;
             
             Fields[index] = voxel;
@@ -41,7 +41,7 @@ namespace _Project.World.Planet.Scripts.WorldGen
 
             if (Resolution <= 1) return Min + (Max-Min) * 0.5f;
 
-            float3 step = (Max-Min) / (Resolution - 1);
+            float3 step = (Max-Min) / (Resolution - 1f);
             return new float3(x, y, z) * step + Min;
         }
     }
