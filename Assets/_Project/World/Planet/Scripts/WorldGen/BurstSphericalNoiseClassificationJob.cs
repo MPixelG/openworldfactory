@@ -1,5 +1,4 @@
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
-using _Project.World.Planet.Scripts.WorldGen.Parallel;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
@@ -42,7 +41,7 @@ namespace _Project.World.Planet.Scripts.WorldGen
             for (int index = 0; index < Resolution * Resolution * Resolution; index++)
             {
                 float3 worldPos = ToWorldPos(pos, nodeSize, index);
-                float val = BurstSphericalNoiseGenerator.GenerateAt(worldPos, Config);
+                float val = BurstSphericalNoiseGenerator.GenerateAt(worldPos, Config).Item1;
 
                 minVal = math.min(val, minVal);
                 maxVal = math.max(val, maxVal);

@@ -1,5 +1,4 @@
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
-using _Project.World.Planet.Scripts.WorldGen.Parallel;
 using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
@@ -15,15 +14,19 @@ namespace _Project.World.Planet.Scripts.WorldGen
         {
             Radius = radius,
 
-            TerrainHeight = 0.06f,
+            TerrainHeight = 0.17f,
+            
+            ContinentOctaves = 7,
+            ContinentPersistence = 0.5f,
+            ContinentFrequency = 0.005f,
             
             MountainMaskFrequency = 0.02f,
             MountainThreshold = 0.72f,
             MountainBlend = 0.3f, 
 
-            MountainFrequency = 0.025f,
-            MountainOctaves = 9,
-            MountainPersistence = 0.4f,
+            MountainFrequency = 0.002f,
+            MountainOctaves = 12,
+            MountainPersistence = 0.45f,
             MountainSharpness = 1f,
 
             PlainsStrength = 20f,

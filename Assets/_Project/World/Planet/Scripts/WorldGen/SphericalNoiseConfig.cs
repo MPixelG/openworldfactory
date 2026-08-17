@@ -1,16 +1,18 @@
-namespace _Project.World.Planet.Scripts.WorldGen.Parallel
+namespace _Project.World.Planet.Scripts.WorldGen
 {
     public struct BurstSphericalNoiseConfig
     {
         public float Radius;
         
+        public float ContinentFrequency;
+        public int ContinentOctaves;
+        public float ContinentPersistence;
 
         public float TerrainHeight;
 
         public float MountainMaskFrequency;
 
         public float MountainThreshold;
-
         public float MountainBlend;
         
         
@@ -19,7 +21,6 @@ namespace _Project.World.Planet.Scripts.WorldGen.Parallel
         public float MountainPersistence;
 
         public float MountainSharpness;
-        
 
         public float PlainsStrength;
         public float PlainsFrequency;

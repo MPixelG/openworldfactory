@@ -83,13 +83,6 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
             if(_planetManager == null) Debug.LogWarning("Planet Manager is null");
             if(viewer == null) Debug.LogWarning("Viewer is null");
             if(_frustumCullingSystem == null || _planetManager == null || viewer == null) return;
-            if (_planetManager.OctreeReady)
-            {
-                _frustumCullingSystem?.Update(
-                    _planetManager.Octree,
-                    viewer
-                );
-            }
             
 
             _planetManager.Update();
@@ -118,7 +111,7 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
                 float3 localPos = chunkMeshesCoord.DecodeToCoord();
                 float3 worldPos = min + localPos * nodeSize;
                 
-                Mesh mesh = _chunkMeshes[chunkMeshesCoord]; //todo cache
+                Mesh mesh = _chunkMeshes[chunkMeshesCoord];
                 if (mesh.vertexCount == 0) continue;
                 
                 float3 size = max - min;

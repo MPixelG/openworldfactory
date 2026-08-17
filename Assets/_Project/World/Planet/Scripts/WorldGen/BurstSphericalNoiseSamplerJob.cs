@@ -1,6 +1,4 @@
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
-using _Project.World.Planet.Scripts.MarchingCubes.Materials;
-using _Project.World.Planet.Scripts.WorldGen.Parallel;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
@@ -24,11 +22,7 @@ namespace _Project.World.Planet.Scripts.WorldGen
             Voxel voxel = new Voxel();
             float3 worldPos = ToWorldPos(index);
             
-            float val = BurstSphericalNoiseGenerator.GenerateAt(worldPos, Config);
-            voxel.Density = val;
-            
-            //use stone for high altitudes and dirt for low altitudes
-            voxel.VoxelMaterial = worldPos.y > 200f ? VoxelMaterial.Stone : VoxelMaterial.Dirt;
+            (voxel.Density, voxel.VoxelMaterial) = BurstSphericalNoiseGenerator.GenerateAt(worldPos, Config);
             
             Fields[index] = voxel;
         }

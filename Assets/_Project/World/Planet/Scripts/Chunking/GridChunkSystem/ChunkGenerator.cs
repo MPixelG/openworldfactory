@@ -2,7 +2,6 @@ using _Project.World.Planet.Scripts.Chunking.Core;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration;
 using _Project.World.Planet.Scripts.WorldGen;
-using _Project.World.Planet.Scripts.WorldGen.Parallel;
 
 namespace _Project.World.Planet.Scripts.Chunking.GridChunkSystem
 {
