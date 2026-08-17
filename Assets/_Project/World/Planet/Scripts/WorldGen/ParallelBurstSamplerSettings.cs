@@ -14,29 +14,29 @@ namespace _Project.World.Planet.Scripts.WorldGen
         {
             Radius = radius,
 
-            TerrainHeight = 0.17f,
+            TerrainHeight = 0.428f,
             
-            ContinentOctaves = 7,
-            ContinentPersistence = 0.5f,
-            ContinentFrequency = 0.005f,
+            ContinentOctaves = 5,
+            ContinentPersistence = 0.6f,
+            ContinentFrequency = 0.014f,
             
-            MountainMaskFrequency = 0.02f,
-            MountainThreshold = 0.72f,
-            MountainBlend = 0.3f, 
+            MountainMaskFrequency = 0f,
+            MountainThreshold = 0f,
+            MountainBlend = 0f, 
 
-            MountainFrequency = 0.002f,
-            MountainOctaves = 12,
-            MountainPersistence = 0.45f,
-            MountainSharpness = 1f,
+            MountainFrequency = 0.0086f,
+            MountainOctaves = 8,
+            MountainPersistence = 0.575f,
+            MountainSharpness = 5f,
 
-            PlainsStrength = 20f,
-            PlainsFrequency = 0.01f,
+            PlainsStrength = 0f,
+            PlainsFrequency = 0f,
 
-            DetailFrequency = 0.3f,
-            DetailStrength = 0.008f,
+            DetailFrequency = 0f,
+            DetailStrength = 0f,
 
-            WarpFrequency = 0.01f,
-            WarpStrength = 1f,
+            WarpFrequency = 0.0053f,
+            WarpStrength = 0.32f,
         };
         
         public ParallelBurstSphericalNoiseSamplingJob CreateParallelExactSampler(

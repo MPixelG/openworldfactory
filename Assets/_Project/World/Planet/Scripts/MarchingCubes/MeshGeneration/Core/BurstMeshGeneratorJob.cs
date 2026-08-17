@@ -1,4 +1,5 @@
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
+using _Project.World.Planet.Scripts.MarchingCubes.Materials;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
@@ -25,6 +26,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
         [ReadOnly] public NativeArray<int> EdgeTable;
         [ReadOnly] public NativeArray<int> TriTable;
 
+        [ReadOnly] public int MaterialCount;
+
         public void Execute()
         {
             int size = Field.Size - 1;
@@ -35,7 +38,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
                     for (int z = 0; z < size; z++)
                     {
                         GenerateAt((new int3(x, y, z)),
-                            Field); // generate the mesh for every grid cell and use the mesh builder to add it all to one large mesh
+                            Field, MaterialCount); // generate the mesh for every grid cell and use the mesh builder to add it all to one large mesh
                     }
                 }
             }

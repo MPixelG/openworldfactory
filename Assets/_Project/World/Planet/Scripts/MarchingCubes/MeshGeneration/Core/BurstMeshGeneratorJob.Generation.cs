@@ -8,7 +8,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
 {
     public unsafe partial struct BurstMeshGeneratorJob
     {
-        private void GenerateAt(int3 pos, FieldData grid)
+        private void GenerateAt(int3 pos, FieldData grid, int materialCount)
         {
             int cubeIndex = GetCubeIndexAt(pos, grid, IsoLevel); // calculates the cube index at that position.
                                                                 // look at the description of that function if you want to know what it does
@@ -182,7 +182,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
                 VoxelMaterial material = GetDominantMaterial(
                     a0, a1,
                     b0, b1,
-                    c0, c1
+                    c0, c1,
+                    materialCount
                 );
 
                 AddTriangle(
@@ -238,9 +239,10 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
             VoxelMaterial c,
             VoxelMaterial d,
             VoxelMaterial e,
-            VoxelMaterial f)
+            VoxelMaterial f,
+            int materialCount)
         {
-            int* counts = stackalloc int[4];
+            int* counts = stackalloc int[materialCount];
 
             counts[(int)a]++;
             counts[(int)b]++;
@@ -252,7 +254,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
             int max = 0;
             int maxIndex = 0;
 
-            for (int i = 0; i < 4; i++)
+            
+            for (int i = 0; i < materialCount-1; i++)
             {
                 if (counts[i] > max)
                 {

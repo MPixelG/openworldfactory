@@ -121,10 +121,13 @@ namespace _Project.World.Planet.Scripts.v2.Rendering
                 for (int submeshIndex = 0; submeshIndex < submeshCount; submeshIndex++)
                 {
                     Material material = _materialDatabase.GetMaterial((VoxelMaterial) submeshIndex);
-                    if (material == null) continue;
+                    if (material == null)
+                    {
+                        continue;
+                    }
                     var renderParams = new RenderParams(material)
                     { 
-                        worldBounds = new Bounds(min + size*0.5f, size),
+                        worldBounds = new Bounds(min + size*0.5f, size)
                     };
                     
                     Graphics.RenderMesh(

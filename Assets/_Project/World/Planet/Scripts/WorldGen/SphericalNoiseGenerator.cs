@@ -32,7 +32,7 @@ namespace _Project.World.Planet.Scripts.WorldGen
                 4,
                 0.5f
             );
-
+            
             mountainMask = mountainMask * 0.5f + 0.5f;
 
             mountainMask = math.smoothstep(
@@ -109,23 +109,30 @@ namespace _Project.World.Planet.Scripts.WorldGen
                 noise.cnoise(samplePos * config.WarpFrequency + 17f),
                 noise.cnoise(samplePos * config.WarpFrequency + 53f),
                 noise.cnoise(samplePos * config.WarpFrequency + 91f)
-            ) * config.WarpStrength + samplePos;
+            ) * config.WarpStrength * config.Radius + samplePos;
 
             float terrain = (FractalNoise(
                 warpedPos * config.MountainFrequency,
                 config.MountainOctaves,
                 config.MountainPersistence, config.MountainSharpness, 1f
-            ) * 0.5f + 0.5f) * continentalness *
+            ) * 0.5f + 0.5f) *
                             (RidgedNoise(
                     warpedPos * config.MountainFrequency * 0.2f,
                     3,
                     0.45f
                    
-                ) * 0.5f + 0.5f) * continentalness;
+                ) * 0.5f + 0.5f);
 
-            terrain *= config.TerrainHeight;
-            VoxelMaterial mat = terrain > 0.1f ? VoxelMaterial.Dirt : VoxelMaterial.Water;
-
+            terrain *= config.TerrainHeight * continentalness;
+            float relTerrainHeight = terrain * config.Radius;
+            
+            VoxelMaterial mat;
+            if (relTerrainHeight < 0.3f) mat = VoxelMaterial.Water;
+            else if (relTerrainHeight < 0.8) mat = VoxelMaterial.Sand; 
+            else if (relTerrainHeight < 3.3) mat = VoxelMaterial.Grass;
+            else if (relTerrainHeight < 12.5) mat = VoxelMaterial.Stone;
+            else mat = VoxelMaterial.Snow;
+            
             return (dist - (terrain + 1f) * config.Radius, mat);
         }
 

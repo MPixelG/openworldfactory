@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b68d5983354aadbe3563bfb4b601e7, type: 3}
   m_Name: NEW burstSettings
   m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.WorldGen.Parallel.ParallelBurstSamplerSettings
-  radius: 256
+  radius: 144

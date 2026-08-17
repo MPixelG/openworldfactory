@@ -4,14 +4,14 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.Materials
     
     public enum VoxelMaterial
     {
-        Air = 0,
-        Dirt = 1,
-        Stone = 2,
-        Water = 3,
-        Sand = 4,
-        Grass = 5,
-        Snow = 6,
-        Lava = 7,
+        Dirt = 0,
+        Stone = 1,
+        Water = 2,
+        Sand = 3,
+        Grass = 4,
+        Snow = 5,
+        Lava = 6,
+        Air = 7,
     }
 
     
