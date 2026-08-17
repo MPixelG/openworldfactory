@@ -1,0 +1,5 @@
+<map id="_Project.Dev.WorldGenDebug.Scripts.HeightMapRenderer" name="_Project.Dev.WorldGenDebug.Scripts.HeightMapRenderer">
+<area shape="rect" id="Node000001" title="Generates a spherical terrain preview mesh by sampling the same world&#45;gen noise as the 3D pipeline...." alt="" coords="5,79,221,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="51,5,175,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,44,116,79,111,79,111,44"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.PlanetSettings" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.PlanetSettings">
+<area shape="rect" id="Node000001" title=" " alt="" coords="985,23,1247,77"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="701,5,825,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="838,22,985,36,985,41,838,27"/>
+<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1PlanetConfig.html" title=" " alt="" coords="632,55,893,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="907,66,985,59,985,64,907,72"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html" title=" " alt="" coords="184,29,463,69"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="476,58,632,69,632,75,476,63"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,73,135,99"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="148,72,187,66,188,71,149,77"/>
+<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1MaterialDatabase.html" title=" " alt="" coords="193,93,454,148"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="149,94,193,100,192,105,148,99"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="468,105,631,91,632,96,468,111"/>
+</map>

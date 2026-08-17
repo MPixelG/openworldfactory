@@ -1,0 +1,10 @@
+<map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Rendering.FrustumCullingSystem.IsVisible" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Rendering.FrustumCullingSystem.IsVisible">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1051,29,1345,84"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Rendering_1_1FrustumCullingSystem.html#a7b18054cf06ec9bd7a788bf84c702dce" title=" " alt="" coords="708,29,1003,84"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1037,59,1003,59,1003,54,1037,54"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="913,19,892,11,855,8,824,10,804,15,795,21,795,29,790,29,790,19,802,10,824,5,855,3,893,6,915,14"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Rendering_1_1FrustumCullingSystem.html#a941253033ee2c712f9b936176e4d800a" title=" " alt="" coords="348,29,660,84"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="694,59,660,59,660,54,694,54"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Rendering_1_1FrustumCullingSystem.html#a0efe9e2e495af5b07bd0b3e5df274423" title=" " alt="" coords="5,29,300,84"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="334,59,300,59,300,54,334,54"/>
+</map>

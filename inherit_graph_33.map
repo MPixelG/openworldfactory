@@ -1,3 +1,21 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$struct__Project_1_1World_1_1Ship_1_1Generation_1_1ShipTile.html" title=" " alt="" coords="5,5,232,45"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,277,129,302"/>
+<area shape="rect" id="Node000001" href="$class__Project_1_1Dev_1_1WorldGenDebug_1_1Scripts_1_1HeightMapRenderer.html" title="Generates a spherical terrain preview mesh by sampling the same world&#45;gen noise as the 3D pipeline...." alt="" coords="217,5,433,45"/>
+<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="71,263,82,217,101,161,132,104,152,78,176,55,195,43,215,34,217,39,197,48,179,59,156,81,136,107,106,163,87,219,76,264"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1Dev_1_1WorldGenDebug_1_1Scripts_1_1WorldGenDebugVisualizer.html" title="Real&#45;time debug visualizer for world generation. Displays a 2D height map preview that updates when p..." alt="" coords="205,69,444,109"/>
+<area shape="poly" id="edge9_Node000000_Node000002" title=" " alt="" coords="75,263,90,229,112,190,140,152,176,119,204,104,206,109,179,124,144,155,116,193,95,232,80,265"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1Gameplay_1_1BasicCameraMovement.html" title="Basic free&#45;fly camera movement using the new Unity Input System." alt="" coords="208,133,441,173"/>
+<area shape="poly" id="edge10_Node000000_Node000003" title=" " alt="" coords="85,264,123,222,149,201,176,183,207,170,209,175,179,188,152,205,127,226,89,268"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1Rendering_1_1Debug_1_1BillboardText.html" title=" " alt="" coords="227,197,422,237"/>
+<area shape="poly" id="edge11_Node000000_Node000004" title=" " alt="" coords="112,269,177,247,226,234,228,239,178,252,113,274"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Rendering_1_1PlanetRenderer.html" title=" " alt="" coords="177,262,472,317"/>
+<area shape="poly" id="edge12_Node000000_Node000005" title=" " alt="" coords="143,287,177,287,177,292,143,292"/>
+<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1PlanetSettings.html" title=" " alt="" coords="194,341,455,395"/>
+<area shape="poly" id="edge13_Node000000_Node000006" title=" " alt="" coords="116,304,178,325,221,338,219,343,177,331,114,309"/>
+<area shape="rect" id="Node000007" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html" title=" " alt="" coords="219,420,431,460"/>
+<area shape="poly" id="edge14_Node000000_Node000007" title=" " alt="" coords="86,312,125,360,150,384,179,404,219,422,217,427,176,409,147,388,121,363,82,315"/>
+<area shape="rect" id="Node000008" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html" title=" " alt="" coords="219,484,431,524"/>
+<area shape="poly" id="edge15_Node000000_Node000008" title=" " alt="" coords="79,315,93,350,114,393,142,435,179,470,219,490,217,494,176,474,138,438,109,395,88,352,74,316"/>
+<area shape="rect" id="Node000009" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html" title=" " alt="" coords="209,548,441,588"/>
+<area shape="poly" id="edge16_Node000000_Node000009" title=" " alt="" coords="75,315,85,363,104,422,135,483,155,510,179,534,210,552,207,556,176,538,151,514,130,486,99,424,80,364,70,316"/>
 </map>

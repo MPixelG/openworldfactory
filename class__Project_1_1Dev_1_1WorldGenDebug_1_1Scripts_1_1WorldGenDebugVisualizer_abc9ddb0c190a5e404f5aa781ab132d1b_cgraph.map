@@ -1,0 +1,7 @@
+<map id="_Project.Dev.WorldGenDebug.Scripts.WorldGenDebugVisualizer.Update" name="_Project.Dev.WorldGenDebug.Scripts.WorldGenDebugVisualizer.Update">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,248,60"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1Dev_1_1WorldGenDebug_1_1Scripts_1_1WorldGenDebugVisualizer.html#abc65d3fbe27d6292477f84de80db49a1" title="Manually regenerates the height map. Called automatically if autoUpdate is enabled." alt="" coords="296,5,539,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,30,282,30,282,35,248,35"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1Dev_1_1WorldGenDebug_1_1Scripts_1_1WorldGenDebugVisualizer.html#a560141e38f9e36571b2ef7e427b5b6c2" title=" " alt="" coords="587,5,829,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="539,30,573,30,573,35,539,35"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="_Project.Dev.WorldGenDebug.Scripts.WorldGenDebugVisualizer" name="_Project.Dev.WorldGenDebug.Scripts.WorldGenDebugVisualizer">
+<area shape="rect" id="Node000001" title="Real&#45;time debug visualizer for world generation. Displays a 2D height map preview that updates when p..." alt="" coords="615,30,853,70"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="253,5,377,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="391,21,615,38,614,44,390,26"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1MaterialDatabase.html" title=" " alt="" coords="184,55,445,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="459,68,614,56,615,62,459,74"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,69,135,95"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="148,79,184,79,184,85,148,85"/>
+</map>

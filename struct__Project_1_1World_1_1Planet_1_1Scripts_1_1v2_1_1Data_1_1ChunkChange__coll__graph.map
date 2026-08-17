@@ -1,7 +1,0 @@
-<map id="_Project.World.Planet.Scripts.v2.Data.ChunkChange" name="_Project.World.Planet.Scripts.v2.Data.ChunkChange">
-<area shape="rect" id="Node000001" title=" " alt="" coords="41,211,273,251"/>
-<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Data_1_1ChunkPayload.html" title=" " alt="" coords="41,108,273,148"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,162,159,211,154,211,154,162"/>
-<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1FieldData.html" title=" " alt="" coords="5,5,308,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="159,59,159,108,154,108,154,59"/>
-</map>

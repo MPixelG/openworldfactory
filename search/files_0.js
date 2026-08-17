@@ -7,6 +7,5 @@ var searchData=
   ['burstmeshgeneratorjob_2egeneration_2ecs_4',['BurstMeshGeneratorJob.Generation.cs',['../BurstMeshGeneratorJob_8Generation_8cs.html',1,'']]],
   ['burstmeshgeneratorjob_2emeshbuilder_2ecs_5',['BurstMeshGeneratorJob.MeshBuilder.cs',['../BurstMeshGeneratorJob_8MeshBuilder_8cs.html',1,'']]],
   ['burstsphericalnoiseclassificationjob_2ecs_6',['BurstSphericalNoiseClassificationJob.cs',['../BurstSphericalNoiseClassificationJob_8cs.html',1,'']]],
-  ['burstsphericalnoisesamplerjob_2ecs_7',['BurstSphericalNoiseSamplerJob.cs',['../BurstSphericalNoiseSamplerJob_8cs.html',1,'']]],
-  ['burstsphericalnoisesamplingjob_2ecs_8',['BurstSphericalNoiseSamplingJob.cs',['../BurstSphericalNoiseSamplingJob_8cs.html',1,'']]]
+  ['burstsphericalnoisesamplerjob_2ecs_7',['BurstSphericalNoiseSamplerJob.cs',['../BurstSphericalNoiseSamplerJob_8cs.html',1,'']]]
 ];

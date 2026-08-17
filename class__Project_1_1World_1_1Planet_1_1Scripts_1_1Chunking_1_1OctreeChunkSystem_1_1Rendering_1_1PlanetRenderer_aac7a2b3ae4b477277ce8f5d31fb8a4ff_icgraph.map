@@ -1,0 +1,9 @@
+<map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Rendering.PlanetRenderer.OnChunkChange" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Rendering.PlanetRenderer.OnChunkChange">
+<area shape="rect" id="Node000001" title=" " alt="" coords="628,45,923,100"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Rendering_1_1PlanetRenderer.html#aab20aacb40feceee47e8090d744a9699" title=" " alt="" coords="285,5,580,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="614,57,580,52,580,47,615,51"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Rendering_1_1PlanetRenderer.html#a95aef6ff368b91a2bfd14190ffe1449e" title=" " alt="" coords="285,84,580,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="615,93,580,97,580,92,614,88"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html#a92fae171218cbbaf83840ec43a0df3d8" title=" " alt="" coords="5,91,237,131"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="272,114,238,114,238,109,272,109"/>
+</map>

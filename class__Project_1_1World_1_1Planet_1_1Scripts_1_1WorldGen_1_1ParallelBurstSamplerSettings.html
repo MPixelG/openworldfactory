@@ -121,12 +121,12 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:ab984c8ef0cadf1ee56e9e2f19c2f6262" id="r_ab984c8ef0cadf1ee56e9e2f19c2f6262"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Parallel_1_1BurstSphericalNoiseConfig.html">BurstSphericalNoiseConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#ab984c8ef0cadf1ee56e9e2f19c2f6262">GetDefaultConfig</a> (float <a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#aa06a396a7cd53595a62b1ff7008c2388">radius</a>)</td></tr>
+<tr class="memitem:ab984c8ef0cadf1ee56e9e2f19c2f6262" id="r_ab984c8ef0cadf1ee56e9e2f19c2f6262"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSphericalNoiseConfig.html">BurstSphericalNoiseConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#ab984c8ef0cadf1ee56e9e2f19c2f6262">GetDefaultConfig</a> (float <a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#aa06a396a7cd53595a62b1ff7008c2388">radius</a>)</td></tr>
 <tr class="separator:ab984c8ef0cadf1ee56e9e2f19c2f6262"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00010">10</a> of file <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html">ParallelBurstSamplerSettings.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00009">9</a> of file <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html">ParallelBurstSamplerSettings.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="adbfbbf05ded3a365047d7245af9a38ae" name="adbfbbf05ded3a365047d7245af9a38ae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adbfbbf05ded3a365047d7245af9a38ae">&#9670;&#160;</a></span>CreateMinMaxSamplers()</h2>
@@ -186,30 +186,30 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00062">62</a> of file <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html">ParallelBurstSamplerSettings.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>        {</div>
-<div class="line"><span class="lineno">   67</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> BurstSphericalNoiseClassificationJob</div>
-<div class="line"><span class="lineno">   68</span>            {</div>
-<div class="line"><span class="lineno">   69</span>                Min = min,</div>
-<div class="line"><span class="lineno">   70</span>                Max = max,</div>
-<div class="line"><span class="lineno">   71</span>                </div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>                Resolution = resolution,</div>
+<p class="definition">Definition at line <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00065">65</a> of file <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html">ParallelBurstSamplerSettings.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>        {</div>
+<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> BurstSphericalNoiseClassificationJob</div>
+<div class="line"><span class="lineno">   71</span>            {</div>
+<div class="line"><span class="lineno">   72</span>                Min = min,</div>
+<div class="line"><span class="lineno">   73</span>                Max = max,</div>
 <div class="line"><span class="lineno">   74</span>                </div>
-<div class="line"><span class="lineno">   75</span>                </div>
-<div class="line"><span class="lineno">   76</span>                MortonCodes = mortons,</div>
-<div class="line"><span class="lineno">   77</span>                Results = minMaxValues, </div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>                Resolution = resolution,</div>
+<div class="line"><span class="lineno">   77</span>                </div>
 <div class="line"><span class="lineno">   78</span>                </div>
-<div class="line"><span class="lineno">   79</span>                MaxDepth = maxDepth,</div>
-<div class="line"><span class="lineno">   80</span>                </div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>                Config = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#ab984c8ef0cadf1ee56e9e2f19c2f6262">GetDefaultConfig</a>(<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#aa06a396a7cd53595a62b1ff7008c2388">radius</a>)</div>
-<div class="line"><span class="lineno">   83</span>            };</div>
-<div class="line"><span class="lineno">   84</span>        }</div>
-<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings_html_aa06a396a7cd53595a62b1ff7008c2388"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#aa06a396a7cd53595a62b1ff7008c2388">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.radius</a></div><div class="ttdeci">float radius</div><div class="ttdef"><b>Definition</b> <a href="ParallelBurstSamplerSettings_8cs_source.html#l00012">ParallelBurstSamplerSettings.cs:12</a></div></div>
+<div class="line"><span class="lineno">   79</span>                MortonCodes = mortons,</div>
+<div class="line"><span class="lineno">   80</span>                Results = minMaxValues, </div>
+<div class="line"><span class="lineno">   81</span>                </div>
+<div class="line"><span class="lineno">   82</span>                MaxDepth = maxDepth,</div>
+<div class="line"><span class="lineno">   83</span>                </div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>                Config = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#ab984c8ef0cadf1ee56e9e2f19c2f6262">GetDefaultConfig</a>(<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#aa06a396a7cd53595a62b1ff7008c2388">radius</a>)</div>
+<div class="line"><span class="lineno">   86</span>            };</div>
+<div class="line"><span class="lineno">   87</span>        }</div>
+<div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings_html_aa06a396a7cd53595a62b1ff7008c2388"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#aa06a396a7cd53595a62b1ff7008c2388">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.radius</a></div><div class="ttdeci">float radius</div><div class="ttdef"><b>Definition</b> <a href="ParallelBurstSamplerSettings_8cs_source.html#l00011">ParallelBurstSamplerSettings.cs:11</a></div></div>
 <div class="ttc" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings_html_ab984c8ef0cadf1ee56e9e2f19c2f6262"><div class="ttname"><a href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#ab984c8ef0cadf1ee56e9e2f19c2f6262">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.GetDefaultConfig</a></div><div class="ttdeci">static BurstSphericalNoiseConfig GetDefaultConfig(float radius)</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#ab984c8ef0cadf1ee56e9e2f19c2f6262">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.GetDefaultConfig()</a>, and <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00012">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.radius</a>.</p>
+<p class="reference">References <a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#ab984c8ef0cadf1ee56e9e2f19c2f6262">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.GetDefaultConfig()</a>, and <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00011">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.radius</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="OctreeBuilder_8cs_source.html#l00108">_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core.OctreeBuilder.StartNewJobs()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -231,15 +231,15 @@ Static Private Member Functions</h2></td></tr>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings_adbfbbf05ded3a365047d7245af9a38ae_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings_adbfbbf05ded3a365047d7245af9a38ae_icgraph" alt=""/></div>
 <map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings_adbfbbf05ded3a365047d7245af9a38ae_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings_adbfbbf05ded3a365047d7245af9a38ae_icgraph">
-<area shape="rect" title=" " alt="" coords="1189,5,1472,60"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#ad4183cc81cf7c99542cef618480b415e" title=" " alt="" coords="883,5,1141,60"/>
-<area shape="poly" title=" " alt="" coords="1175,35,1141,35,1141,30,1175,30"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#abee00fca8218ffb9db3ff0f2709ea250" title=" " alt="" coords="576,5,835,60"/>
-<area shape="poly" title=" " alt="" coords="869,35,835,35,835,30,869,30"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#a2b902eadd78796acf552d09fdad1b96a" title=" " alt="" coords="296,13,528,53"/>
-<area shape="poly" title=" " alt="" coords="562,35,528,35,528,30,562,30"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1PlanetRenderer.html#a76f64979d54de81c093bd24f6d47eab8" title=" " alt="" coords="5,13,248,53"/>
-<area shape="poly" title=" " alt="" coords="282,35,248,35,248,30,282,30"/>
+<area shape="rect" title=" " alt="" coords="1275,5,1557,60"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#ad4183cc81cf7c99542cef618480b415e" title=" " alt="" coords="968,5,1227,60"/>
+<area shape="poly" title=" " alt="" coords="1261,35,1227,35,1227,30,1261,30"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#abee00fca8218ffb9db3ff0f2709ea250" title=" " alt="" coords="661,5,920,60"/>
+<area shape="poly" title=" " alt="" coords="955,35,920,35,920,30,955,30"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1PlanetManager.html#af0c9368b6efac1d71e1d958cac25a136" title=" " alt="" coords="348,5,613,60"/>
+<area shape="poly" title=" " alt="" coords="648,35,613,35,613,30,648,30"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Rendering_1_1PlanetRenderer.html#a88e80a6f8c26e2ea634bd5bcddbb273f" title=" " alt="" coords="5,5,300,60"/>
+<area shape="poly" title=" " alt="" coords="334,35,300,35,300,30,334,30"/>
 </map>
 </div>
 
@@ -291,29 +291,29 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00039">39</a> of file <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html">ParallelBurstSamplerSettings.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>        {</div>
-<div class="line"><span class="lineno">   43</span>            field = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1FieldData.html">FieldData</a></div>
-<div class="line"><span class="lineno">   44</span>            {</div>
-<div class="line"><span class="lineno">   45</span>                Size = resolution,</div>
-<div class="line"><span class="lineno">   46</span>                Fields = <span class="keyword">new</span> NativeArray&lt;Voxel&gt;(resolution * resolution * resolution,</div>
-<div class="line"><span class="lineno">   47</span>                    Allocator.Persistent)</div>
-<div class="line"><span class="lineno">   48</span>            };</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> ParallelBurstSphericalNoiseSamplingJob()</div>
-<div class="line"><span class="lineno">   51</span>            {</div>
-<div class="line"><span class="lineno">   52</span>                Resolution = resolution,</div>
-<div class="line"><span class="lineno">   53</span>                Min = minPos,</div>
-<div class="line"><span class="lineno">   54</span>                Max = maxPos,</div>
-<div class="line"><span class="lineno">   55</span>                Fields = field.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1FieldData.html#aca95c5bb536d652f91095c1c8038c549">Fields</a>,</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>                Config = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#ab984c8ef0cadf1ee56e9e2f19c2f6262">GetDefaultConfig</a>(<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#aa06a396a7cd53595a62b1ff7008c2388">radius</a>)</div>
-<div class="line"><span class="lineno">   58</span>            };</div>
-<div class="line"><span class="lineno">   59</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00042">42</a> of file <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html">ParallelBurstSamplerSettings.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>        {</div>
+<div class="line"><span class="lineno">   46</span>            field = <span class="keyword">new</span> <a class="code hl_struct" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1FieldData.html">FieldData</a></div>
+<div class="line"><span class="lineno">   47</span>            {</div>
+<div class="line"><span class="lineno">   48</span>                Size = resolution,</div>
+<div class="line"><span class="lineno">   49</span>                Fields = <span class="keyword">new</span> NativeArray&lt;Voxel&gt;(resolution * resolution * resolution,</div>
+<div class="line"><span class="lineno">   50</span>                    Allocator.Persistent)</div>
+<div class="line"><span class="lineno">   51</span>            };</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> ParallelBurstSphericalNoiseSamplingJob()</div>
+<div class="line"><span class="lineno">   54</span>            {</div>
+<div class="line"><span class="lineno">   55</span>                Resolution = resolution,</div>
+<div class="line"><span class="lineno">   56</span>                Min = minPos,</div>
+<div class="line"><span class="lineno">   57</span>                Max = maxPos,</div>
+<div class="line"><span class="lineno">   58</span>                Fields = field.<a class="code hl_variable" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1FieldData.html#aca95c5bb536d652f91095c1c8038c549">Fields</a>,</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>                Config = <a class="code hl_function" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#ab984c8ef0cadf1ee56e9e2f19c2f6262">GetDefaultConfig</a>(<a class="code hl_variable" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#aa06a396a7cd53595a62b1ff7008c2388">radius</a>)</div>
+<div class="line"><span class="lineno">   61</span>            };</div>
+<div class="line"><span class="lineno">   62</span>        }</div>
 <div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1FieldData_html"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1FieldData.html">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.FieldData</a></div><div class="ttdef"><b>Definition</b> <a href="FieldData_8cs_source.html#l00005">FieldData.cs:6</a></div></div>
 <div class="ttc" id="astruct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1FieldData_html_aca95c5bb536d652f91095c1c8038c549"><div class="ttname"><a href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1DensitySampling_1_1FieldData.html#aca95c5bb536d652f91095c1c8038c549">_Project.World.Planet.Scripts.MarchingCubes.DensitySampling.FieldData.Fields</a></div><div class="ttdeci">NativeArray&lt; Voxel &gt; Fields</div><div class="ttdef"><b>Definition</b> <a href="FieldData_8cs_source.html#l00007">FieldData.cs:7</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="BurstSphericalNoiseSamplerJob_8cs_source.html#l00014">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSphericalNoiseSamplingJob.Fields</a>, <a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#ab984c8ef0cadf1ee56e9e2f19c2f6262">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.GetDefaultConfig()</a>, and <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00012">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.radius</a>.</p>
+<p class="reference">References <a class="el" href="BurstSphericalNoiseSamplerJob_8cs_source.html#l00012">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSphericalNoiseSamplingJob.Fields</a>, <a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#ab984c8ef0cadf1ee56e9e2f19c2f6262">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.GetDefaultConfig()</a>, and <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00011">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.radius</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -339,7 +339,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1Parallel_1_1BurstSphericalNoiseConfig.html">BurstSphericalNoiseConfig</a> _Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.GetDefaultConfig </td>
+          <td class="memname">static <a class="el" href="struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSphericalNoiseConfig.html">BurstSphericalNoiseConfig</a> _Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.GetDefaultConfig </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>radius</em></td><td>)</td>
@@ -353,9 +353,9 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00012">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.radius</a>.</p>
+<p class="reference">References <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00011">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.radius</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00062">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.CreateMinMaxSamplers()</a>, and <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00039">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.CreateParallelExactSampler()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00065">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.CreateMinMaxSamplers()</a>, and <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00042">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.CreateParallelExactSampler()</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -363,19 +363,19 @@ Static Private Member Functions</h2></td></tr>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings_ab984c8ef0cadf1ee56e9e2f19c2f6262_icgraph.png" border="0" usemap="#aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings_ab984c8ef0cadf1ee56e9e2f19c2f6262_icgraph" alt=""/></div>
 <map name="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings_ab984c8ef0cadf1ee56e9e2f19c2f6262_icgraph" id="aclass__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings_ab984c8ef0cadf1ee56e9e2f19c2f6262_icgraph">
-<area shape="rect" title=" " alt="" coords="1520,45,1803,100"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#adbfbbf05ded3a365047d7245af9a38ae" title=" " alt="" coords="1189,5,1472,60"/>
-<area shape="poly" title=" " alt="" coords="1506,57,1472,52,1472,47,1507,51"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#adfb0dea2f21b220809141245b6ebe8cb" title=" " alt="" coords="1189,84,1472,139"/>
-<area shape="poly" title=" " alt="" coords="1507,93,1472,97,1472,92,1506,88"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#ad4183cc81cf7c99542cef618480b415e" title=" " alt="" coords="883,5,1141,60"/>
-<area shape="poly" title=" " alt="" coords="1175,35,1141,35,1141,30,1175,30"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#abee00fca8218ffb9db3ff0f2709ea250" title=" " alt="" coords="576,5,835,60"/>
-<area shape="poly" title=" " alt="" coords="869,35,835,35,835,30,869,30"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1PlanetManager.html#a2b902eadd78796acf552d09fdad1b96a" title=" " alt="" coords="296,13,528,53"/>
-<area shape="poly" title=" " alt="" coords="562,35,528,35,528,30,562,30"/>
-<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Rendering_1_1PlanetRenderer.html#a76f64979d54de81c093bd24f6d47eab8" title=" " alt="" coords="5,13,248,53"/>
-<area shape="poly" title=" " alt="" coords="282,35,248,35,248,30,282,30"/>
+<area shape="rect" title=" " alt="" coords="1605,45,1888,100"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#adbfbbf05ded3a365047d7245af9a38ae" title=" " alt="" coords="1275,5,1557,60"/>
+<area shape="poly" title=" " alt="" coords="1592,57,1557,52,1558,47,1592,51"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#adfb0dea2f21b220809141245b6ebe8cb" title=" " alt="" coords="1275,84,1557,139"/>
+<area shape="poly" title=" " alt="" coords="1592,93,1558,97,1557,92,1592,88"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#ad4183cc81cf7c99542cef618480b415e" title=" " alt="" coords="968,5,1227,60"/>
+<area shape="poly" title=" " alt="" coords="1261,35,1227,35,1227,30,1261,30"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#abee00fca8218ffb9db3ff0f2709ea250" title=" " alt="" coords="661,5,920,60"/>
+<area shape="poly" title=" " alt="" coords="955,35,920,35,920,30,955,30"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1PlanetManager.html#af0c9368b6efac1d71e1d958cac25a136" title=" " alt="" coords="348,5,613,60"/>
+<area shape="poly" title=" " alt="" coords="648,35,613,35,613,30,648,30"/>
+<area shape="rect" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Rendering_1_1PlanetRenderer.html#a88e80a6f8c26e2ea634bd5bcddbb273f" title=" " alt="" coords="5,5,300,60"/>
+<area shape="poly" title=" " alt="" coords="334,35,300,35,300,30,334,30"/>
 </map>
 </div>
 
@@ -394,9 +394,9 @@ Static Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00012">12</a> of file <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html">ParallelBurstSamplerSettings.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00011">11</a> of file <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html">ParallelBurstSamplerSettings.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00062">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.CreateMinMaxSamplers()</a>, <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00039">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.CreateParallelExactSampler()</a>, and <a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#ab984c8ef0cadf1ee56e9e2f19c2f6262">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.GetDefaultConfig()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00065">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.CreateMinMaxSamplers()</a>, <a class="el" href="ParallelBurstSamplerSettings_8cs_source.html#l00042">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.CreateParallelExactSampler()</a>, and <a class="el" href="class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html#ab984c8ef0cadf1ee56e9e2f19c2f6262">_Project.World.Planet.Scripts.WorldGen.ParallelBurstSamplerSettings.GetDefaultConfig()</a>.</p>
 
 </div>
 </div>

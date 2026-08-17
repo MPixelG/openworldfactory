@@ -1,8 +1,0 @@
-<map id="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemSettings" name="_Project.World.Planet.Scripts.Chunking.GridChunkSystem.Unity.GridChunkSystemSettings">
-<area shape="rect" id="Node000001" title="the settings contain everything thats customizable about the system. so visual settings,..." alt="" coords="671,5,943,60"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,27,135,52"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,29,159,29,403,22,647,26,670,26,670,32,647,31,403,28,159,34,148,35"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html" title=" " alt="" coords="184,47,463,87"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="149,45,184,49,184,55,148,51"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="476,54,670,40,671,45,477,59"/>
-</map>

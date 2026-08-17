@@ -1,0 +1,9 @@
+<map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.PlanetManager.Dispose" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.PlanetManager.Dispose">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,45,271,100"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#a4edd07562f9b718788c4a5034b1c932b" title=" " alt="" coords="322,5,581,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="271,53,308,48,309,54,271,58"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1PlanetManager.html#a7b34e7d3bb0195537d78875b66ba6628" title=" " alt="" coords="319,84,584,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="271,86,306,91,305,96,271,92"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Data_1_1ChunkDataStore.html#a55ab1dce858dd2b6d46ecf2316d97b8e" title=" " alt="" coords="632,84,891,139"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="584,109,618,109,618,114,584,114"/>
+</map>

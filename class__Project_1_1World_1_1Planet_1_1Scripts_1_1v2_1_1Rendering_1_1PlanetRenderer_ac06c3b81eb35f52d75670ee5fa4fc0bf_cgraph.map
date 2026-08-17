@@ -1,5 +1,0 @@
-<map id="_Project.World.Planet.Scripts.v2.Rendering.PlanetRenderer.DrawChunks" name="_Project.World.Planet.Scripts.v2.Rendering.PlanetRenderer.DrawChunks">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,13,283,53"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1MaterialDatabase.html#a3620d2a84488318cf147a923333fba07" title=" " alt="" coords="331,5,592,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="283,30,317,30,317,35,283,35"/>
-</map>

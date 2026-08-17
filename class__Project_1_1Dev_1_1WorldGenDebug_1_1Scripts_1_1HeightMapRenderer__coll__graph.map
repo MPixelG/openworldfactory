@@ -1,0 +1,12 @@
+<map id="_Project.Dev.WorldGenDebug.Scripts.HeightMapRenderer" name="_Project.Dev.WorldGenDebug.Scripts.HeightMapRenderer">
+<area shape="rect" id="Node000001" title="Generates a spherical terrain preview mesh by sampling the same world&#45;gen noise as the 3D pipeline...." alt="" coords="5,300,221,340"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="30,95,154,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,134,114,300,109,300,92,135"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1Dev_1_1WorldGenDebug_1_1Scripts_1_1WorldGenDebugVisualizer.html" title="Real&#45;time debug visualizer for world generation. Displays a 2D height map preview that updates when p..." alt="" coords="130,197,369,237"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="122,126,223,195,220,199,119,130"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,248,140,302,137,298,211,243"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1MaterialDatabase.html" title=" " alt="" coords="179,80,440,135"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="290,148,262,198,258,196,286,146"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="245,5,374,31"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="312,45,312,80,307,80,307,45"/>
+</map>

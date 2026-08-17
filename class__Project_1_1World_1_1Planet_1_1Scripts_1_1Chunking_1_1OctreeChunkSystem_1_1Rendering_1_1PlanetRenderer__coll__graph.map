@@ -1,0 +1,29 @@
+<map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Rendering.PlanetRenderer" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Rendering.PlanetRenderer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1620,275,1915,329"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="1205,145,1329,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1343,167,1415,181,1507,201,1597,227,1708,272,1706,277,1595,233,1506,206,1414,186,1342,172"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1PlanetManager.html" title=" " alt="" coords="1135,195,1400,249"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1414,243,1620,276,1619,281,1413,248"/>
+<area shape="rect" id="Node000004" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1PlanetConfig.html" title=" " alt="" coords="634,241,895,296"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="909,253,1134,232,1135,237,909,258"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html" title=" " alt="" coords="184,182,463,222"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="470,221,634,246,633,252,469,227"/>
+<area shape="rect" id="Node000009" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1ChunkGenerationPipeline.html" title=" " alt="" coords="632,163,897,217"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="476,195,632,191,632,196,476,201"/>
+<area shape="rect" id="Node000010" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html" title="Manages asynchronous octree building with job scheduling." alt="" coords="635,84,894,139"/>
+<area shape="poly" id="edge13_Node000010_Node000005" title=" " alt="" coords="434,177,635,135,636,140,435,182"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,229,135,255"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="148,227,196,219,197,225,149,232"/>
+<area shape="rect" id="Node000007" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1MaterialDatabase.html" title=" " alt="" coords="193,259,454,313"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="149,253,193,261,192,266,148,258"/>
+<area shape="poly" id="edge15_Node000001_Node000007" title=" " alt="" coords="468,296,632,306,905,312,1178,312,1620,304,1620,310,1178,318,905,317,632,311,468,301"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="468,285,608,282,634,280,634,286,608,287,468,291"/>
+<area shape="rect" id="Node000008" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Data_1_1ChunkDataStore.html" title=" " alt="" coords="635,5,894,60"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="908,40,958,51,1008,68,1055,91,1098,121,1108,137,1111,153,1113,168,1122,181,1137,192,1134,197,1118,185,1108,170,1105,154,1103,139,1094,125,1052,95,1006,73,956,57,907,46"/>
+<area shape="poly" id="edge9_Node000003_Node000009" title=" " alt="" coords="911,197,1135,211,1134,216,911,202"/>
+<area shape="poly" id="edge11_Node000003_Node000010" title=" " alt="" coords="908,136,1097,177,1160,192,1159,197,1095,182,907,142"/>
+<area shape="rect" id="Node000011" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1Octree.html" title="a struct that represents an octree. it contains a list of octree nodes and the min and max bounds of ..." alt="" coords="194,77,453,132"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="466,104,635,107,635,112,466,109"/>
+<area shape="rect" id="Node000012" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Rendering_1_1FrustumCullingSystem.html" title=" " alt="" coords="1120,372,1415,427"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="1428,390,1512,380,1595,365,1653,348,1706,327,1708,332,1654,353,1597,370,1513,386,1429,395"/>
+</map>
