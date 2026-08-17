@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1972943210589416019}
-  - component: {fileID: 7249772968198516740}
+  - component: {fileID: 3514549922429336580}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7249772968198516740
+--- !u!114 &3514549922429336580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3268066995928118947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e882ca14e2b848768fabc113d43bb9c3, type: 3}
+  m_Script: {fileID: 11500000, guid: b64f9b7bc228474daeb128a668f6e652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.v2.Unity.PlanetBootstrap
   settings: {fileID: 0}

@@ -59,6 +59,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Rendering
                             payload.Triangles
                         );
                         _chunkMeshes[change.MortonCode] = mesh;
+                        payload.Dispose(); //TODO fix, may cause issues when there are multiple listeners that use the same allocation, leads to race condition 
                     } else Debug.LogWarning($"Payload is null for MortonCode: {change.MortonCode}");
                     
                     break;

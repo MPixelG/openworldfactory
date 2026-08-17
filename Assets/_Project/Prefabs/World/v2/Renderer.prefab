@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2895291208597007170}
-  - component: {fileID: 3101221940758029436}
+  - component: {fileID: 1898460248074540471}
   m_Layer: 0
   m_Name: Renderer
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3101221940758029436
+--- !u!114 &1898460248074540471
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,12 +41,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8826783759496140961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a61b1dab4ca44b4bae90cc2a31e7709f, type: 3}
+  m_Script: {fileID: 11500000, guid: fa680931fff2424a93ecdbf7af1d8b67, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.v2.PlanetRenderer
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Rendering.PlanetRenderer
   viewer: {fileID: 0}
   minDrawDepth: 0
-  maxDrawDepth: 10
-  drawGizmosPoints: 1
-  drawGizmosOutlines: 1
+  maxDrawDepth: 20
+  drawGizmosPoints: 0
+  drawGizmosOutlines: 0
   drawMesh: 1
