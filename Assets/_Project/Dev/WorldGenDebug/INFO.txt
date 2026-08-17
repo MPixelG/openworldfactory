@@ -1,0 +1,2 @@
+vibe coded just for tweaking values and debugging world gen. temporary. 
+use it if you want to improve the world generation and dont want to wait 5 minutes for every generation.
