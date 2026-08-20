@@ -1,4 +1,4 @@
-using System.Runtime.CompilerServices;
+/*using System.Runtime.CompilerServices;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using _Project.World.Planet.Scripts.MarchingCubes.Materials;
 using Unity.Collections;
@@ -8,9 +8,9 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
 {
     public unsafe partial struct BurstMeshGeneratorJob
     {
-        private void GenerateAt(int3 pos, FieldData grid, int materialCount)
+        private void GenerateTransvoxelCellAt(int3 pos, FieldData grid, int materialCount)
         {
-            int cubeIndex = GetCubeIndexAt(pos, grid, IsoLevel); // calculates the cube index at that position.
+            int cubeIndex = GetCubeIndexAt2(pos, grid, IsoLevel); // calculates the cube index at that position.
                                                                 // look at the description of that function if you want to know what it does
 
             if (cubeIndex is 255 or 0) return;  // if the isosurface doesnt cut through any edge, we can skip this cube and return an empty list of triangles
@@ -163,20 +163,20 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
             //so we have the used edges but we dont know how the triangles are supposed to be generated to occupy the given edge configuration. 
             // thats why we have another huge precomputed table that contains the triangle configuration for every possible edge configuration. so we just need to loop through that table until we find a -1 which marks the end of the triangle list for that edge configuration.
             for (int i = 0;
-                 Tri(TriTable, cubeIndex, i) != -1;
+                 Tri2(TriTable, cubeIndex, i) != -1;
                  i += 3) // go in steps of 3 (a triangle consists of 3 points) until we find a -1 which marks the end of that triangle list
             {
-                int a = Tri(TriTable, cubeIndex, i);
-                int b = Tri(TriTable, cubeIndex, i + 1); 
-                int c = Tri(TriTable, cubeIndex, i + 2);
+                int a = Tri2(TriTable, cubeIndex, i);
+                int b = Tri2(TriTable, cubeIndex, i + 1); 
+                int c = Tri2(TriTable, cubeIndex, i + 2);
                 
-                GetEdgeMaterials(a, m0, m1, m2, m3, m4, m5, m6, m7,
+                GetMcEdgeMaterials(a, m0, m1, m2, m3, m4, m5, m6, m7,
                     out VoxelMaterial a0, out VoxelMaterial a1);
 
-                GetEdgeMaterials(b, m0, m1, m2, m3, m4, m5, m6, m7,
+                GetMcEdgeMaterials(b, m0, m1, m2, m3, m4, m5, m6, m7,
                     out VoxelMaterial b0, out VoxelMaterial b1);
 
-                GetEdgeMaterials(c, m0, m1, m2, m3, m4, m5, m6, m7,
+                GetMcEdgeMaterials(c, m0, m1, m2, m3, m4, m5, m6, m7,
                     out VoxelMaterial c0, out VoxelMaterial c1);
                 
                 VoxelMaterial material = GetDominantMaterial(
@@ -196,7 +196,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
         }
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static void GetEdgeMaterials(
+        private static void GetEdgeMaterials2(
             int edge,
             VoxelMaterial m0,
             VoxelMaterial m1,
@@ -232,49 +232,14 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
                     break;
             }
         }
-
-        private static VoxelMaterial GetDominantMaterial(
-            VoxelMaterial a,
-            VoxelMaterial b,
-            VoxelMaterial c,
-            VoxelMaterial d,
-            VoxelMaterial e,
-            VoxelMaterial f,
-            int materialCount)
-        {
-            int* counts = stackalloc int[materialCount];
-
-            counts[(int)a]++;
-            counts[(int)b]++;
-            counts[(int)c]++;
-            counts[(int)d]++;
-            counts[(int)e]++;
-            counts[(int)f]++;
-
-            int max = 0;
-            int maxIndex = 0;
-
-            
-            for (int i = 0; i < materialCount-1; i++)
-            {
-                if (counts[i] > max)
-                {
-                    max = counts[i];
-                    maxIndex = i;
-                }
-            }
-
-            return (VoxelMaterial)maxIndex;
-        }
         
 
-        private static int GetCubeIndexAt(int3 pos, FieldData grid, float isoLevel)
+        private static int GetCubeIndexAt2(int3 pos, FieldData grid, float isoLevel)
         {
             int cubeIndex = 0;
 
-            if (grid.DensityAt(pos.x, pos.y, pos.z) > isoLevel)
-                cubeIndex |=
-                    1; // the |= operator sets every bit that is set in the right operand to 1 in the left operand also to 1.
+            // the |= operator sets every bit that is set in the right operand to 1 in the left operand also to 1.
+            if (grid.DensityAt(pos.x, pos.y, pos.z) > isoLevel) cubeIndex |= 1;
             // so if the left number (cubeIndex) is 0b11001000 and the right one (the mask, lets say 4) is 0b00000100 the result of that operation would be 0b11001100
             if (grid.DensityAt(pos.x + 1, pos.y, pos.z) > isoLevel) cubeIndex |= 2;
             if (grid.DensityAt(pos.x + 1, pos.y + 1, pos.z) > isoLevel) cubeIndex |= 4;
@@ -288,32 +253,12 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static int Tri(
+        private static int Tri2(
             NativeArray<int> triTable,
             int cubeIndex,
             int i)
         {
             return triTable[cubeIndex * 16 + i];
         }
-
-        // lerps (linear interpolates) between 2 given points based on their density values and the iso level
-        private float3 VertexInterp(float isoLevel, int3 p1, int3 p2, float valP1, float valP2)
-        {
-            float3 p;
-
-            if (math.abs(isoLevel - valP1) < 0.00001)
-                return new float3(p1.x, p1.y, p1.z) * CellSize;
-            if (math.abs(isoLevel - valP2) < 0.00001)
-                return new float3(p2.x, p2.y, p2.z) * CellSize;
-            if (math.abs(valP1 - valP2) < 0.00001)
-                return new float3(p1.x, p1.y, p1.z) * CellSize;
-
-            float mu = (isoLevel - valP1) / (valP2 - valP1);
-            p.x = p1.x + mu * (p2.x - p1.x);
-            p.y = p1.y + mu * (p2.y - p1.y);
-            p.z = p1.z + mu * (p2.z - p1.z);
-
-            return p * CellSize;
-        }
     }
-}
+}*/

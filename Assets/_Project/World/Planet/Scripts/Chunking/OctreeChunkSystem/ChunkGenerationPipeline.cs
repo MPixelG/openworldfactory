@@ -85,7 +85,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
 
             float cellSize = worldNodeSize / _chunkSize;
 
-            JobHandle meshGenerationJobHandle = BurstMeshGenerator.ScheduleGenerateMesh(
+            JobHandle meshGenerationJobHandle = BurstMeshGenerator.ScheduleGenerateMarchingCubesMesh(
                 densityJobHandle, densityField,
                 cellSize,
                 out NativeList<Triangle> triangles, out NativeList<float3> vertices, out NativeList<float3> normals, out NativeHashMap<VertexKey, int> vertexMap);

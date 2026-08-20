@@ -26,7 +26,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Rendering
         private MaterialDatabase _materialDatabase;
 
 
-        private Dictionary<ulong, Mesh> _chunkMeshes = new();
+        private readonly Dictionary<ulong, Mesh> _chunkMeshes = new();
         
         
         public void SetPlanetManager(PlanetManager planetManager)

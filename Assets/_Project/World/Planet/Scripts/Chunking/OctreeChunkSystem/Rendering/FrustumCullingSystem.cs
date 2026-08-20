@@ -103,7 +103,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Rendering
             }
 
             return true;
-        }
+        } 
         
         
         private bool NeedsUpdate(Camera camera)

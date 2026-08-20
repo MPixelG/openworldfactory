@@ -1,6 +1,5 @@
 using _Project.World.Planet.Scripts.MarchingCubes.Materials;
 using Unity.Mathematics;
-using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
 {

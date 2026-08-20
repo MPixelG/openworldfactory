@@ -28,14 +28,19 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
         /// <returns>the density of the given position. it is usually a value between 0 and 1.</returns>
         public static float DensityAt(this FieldData data, int x, int y, int z)
         {           
-            Voxel voxel = VoxelAt(data, x, y, z);
+            Voxel voxel = data.VoxelAt(x, y, z);
             return voxel.Density; // return the density value at the given position. 
         }
 
         public static VoxelMaterial MaterialAt(this FieldData data, int x, int y, int z)
         {           
-            Voxel voxel = VoxelAt(data, x, y, z);
-            return voxel.VoxelMaterial; // return the density value at the given position. 
+            Voxel voxel = data.VoxelAt(x, y, z);
+            return voxel.VoxelMaterial; // return the material at the given position. 
+        }
+        
+        public static VoxelMaterial MaterialAt(this FieldData data, int3 pos)
+        {           
+            return data.MaterialAt(pos.x, pos.y, pos.z); 
         }
         public static Voxel VoxelAt(this FieldData data, int x, int y, int z)
         {
