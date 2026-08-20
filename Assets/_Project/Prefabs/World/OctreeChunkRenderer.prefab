@@ -44,4 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2be62a4dc04db38423d8cb496fa229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity.OctreeChunkSystemRenderer
-  octreeGizmoDrawLayer: 0
+  octreeGizmoDrawLayer: 4
+  drawAllLayersUpToSelected: 0
+  showStateCubes: 1
+  showFullStates: 0
+  showEmptyStates: 0
+  showMixedStates: 0
+  showUnknownStates: 0
