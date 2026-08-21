@@ -1,0 +1,19 @@
+<map id="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core.BurstMeshGeneratorJob2.ExecuteMarchingCubes" name="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core.BurstMeshGeneratorJob2.ExecuteMarchingCubes">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,163,344,217"/>
+<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob2.html#a466b3948c83bb17336d75b880afd55f7" title=" " alt="" coords="392,155,700,225"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="344,187,378,187,378,193,344,193"/>
+<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob2.html#ae310a62c38994e464b34f5767fe63157" title="this adds a triangle to the mesh and calculates its indices and normals. this way you can just call t..." alt="" coords="777,5,1048,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="595,153,665,109,747,69,766,62,768,67,749,74,668,114,598,157"/>
+<area shape="rect" id="Node000005" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob2.html#ada5f1f98002000f7b1d73056d3cebc17" title=" " alt="" coords="748,84,1077,139"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="700,154,771,139,772,144,701,160"/>
+<area shape="rect" id="Node000006" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob2.html#a17ce8d9361b354ac863003490d9861e5" title="TODO summary." alt="" coords="756,163,1069,217"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="700,187,742,187,742,193,700,193"/>
+<area shape="rect" id="Node000007" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob2.html#aaa494307be23a013f6ca51dd6b62582e" title=" " alt="" coords="751,241,1074,296"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="701,220,772,236,771,241,700,226"/>
+<area shape="rect" id="Node000009" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob2.html#a7d1fd83ecce3e274f6cdb202804cf3d5" title=" " alt="" coords="777,320,1048,375"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="599,223,669,265,749,305,772,313,770,318,747,310,666,270,596,227"/>
+<area shape="rect" id="Node000004" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob2.html#ad5d097900ede8d0dfc81ca05652fbe24" title="checks if the given vertex already exists in the vertices list and if so returns its index,..." alt="" coords="1133,5,1426,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1049,30,1119,30,1119,35,1049,35"/>
+<area shape="rect" id="Node000008" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob2.html#a12e6335216326bcb5a9bc99dac500f30" title=" " alt="" coords="1125,241,1433,296"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1074,266,1112,266,1112,271,1074,271"/>
+</map>

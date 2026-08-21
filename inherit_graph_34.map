@@ -1,7 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,56,135,81"/>
-<area shape="rect" id="Node000001" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1MaterialDatabase.html" title=" " alt="" coords="191,5,453,60"/>
-<area shape="poly" id="edge17_Node000000_Node000001" title=" " alt="" coords="148,55,191,49,192,54,149,60"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html" title=" " alt="" coords="183,85,461,125"/>
-<area shape="poly" id="edge18_Node000000_Node000002" title=" " alt="" coords="149,77,183,82,182,87,148,82"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,92,120,117"/>
+<area shape="rect" id="Node000001" href="$struct__Project_1_1Dev_1_1WorldGenDebug_1_1Scripts_1_1HeightMapGenerator2D_1_1BurstLatLongSamplingJob.html" title=" " alt="" coords="200,5,463,60"/>
+<area shape="poly" id="edge4_Node000000_Node000001" title=" " alt="" coords="115,85,167,70,215,57,216,63,169,75,117,91"/>
+<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1BurstSphericalNoiseClassificationJob.html" title=" " alt="" coords="168,85,495,125"/>
+<area shape="poly" id="edge5_Node000000_Node000002" title=" " alt="" coords="134,102,168,102,168,107,134,107"/>
+<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSphericalNoiseSamplingJob.html" title=" " alt="" coords="197,149,465,204"/>
+<area shape="poly" id="edge6_Node000000_Node000003" title=" " alt="" coords="117,119,169,134,216,147,215,152,167,139,115,124"/>
 </map>

@@ -1,0 +1,9 @@
+<map id="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core.BurstMeshGeneratorJob2.GetDominantMaterial" name="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core.BurstMeshGeneratorJob2.GetDominantMaterial">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1067,13,1396,67"/>
+<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob2.html#a466b3948c83bb17336d75b880afd55f7" title=" " alt="" coords="711,5,1019,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1053,43,1019,43,1019,37,1053,37"/>
+<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob2.html#aa1e102368320dcddba274c81b4a7fc35" title=" " alt="" coords="324,13,663,67"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="697,43,663,43,663,37,697,37"/>
+<area shape="rect" id="Node000004" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob2.html#a48cf2e3a4db2d3850b4daa8c961d7831" title=" " alt="" coords="5,13,276,67"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="310,43,276,43,276,37,310,37"/>
+</map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['debug_0',['Debug',['../PlanetManager_8cs.html#a0100be52d45f14348918ea69ec09f959',1,'PlanetManager.cs']]]
+  ['burstmeshgeneratorjob2_0',['BurstMeshGeneratorJob2',['../BurstMeshGenerator_8cs.html#ac593c0c3ff2b214762c47456bd7b9182',1,'BurstMeshGenerator.cs']]]
 ];
