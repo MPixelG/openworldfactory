@@ -5,7 +5,6 @@ using System.Linq;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Data;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Unity;
-using _Project.World.Planet.Scripts.v2;
 using JetBrains.Annotations;
 using Unity.Mathematics;
 using Debug = UnityEngine.Debug;
@@ -78,7 +77,6 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
                 Debug.Log($"Depth {i}: {octreeNodes.Count(node => node.MortonCode.GetDepth() == i)}");
             }
             
-            Debug.Log("Done! \n ========================");
                 
                 
             foreach (OctreeNode octreeNode in Octree.Nodes)

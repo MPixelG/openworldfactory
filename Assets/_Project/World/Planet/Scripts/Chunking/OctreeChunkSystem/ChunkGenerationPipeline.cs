@@ -10,6 +10,8 @@ using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
+using UnityEngine;
+using Random = Unity.Mathematics.Random;
 
 namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
 {
@@ -61,9 +63,11 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
             _generationQueue.Enqueue(mortonCode);
         }
 
+        private Random _random = Random.CreateFromIndex(0);
         private void ProcessNextInQueue()
         {
-            if (_generationQueue.Count == 0) return;
+            if (_generationQueue.Count == 0 || _activeMeshingJobs.Count > 0) return;
+            
 
             ulong mortonCode = _generationQueue.Dequeue();
             
@@ -88,6 +92,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
             JobHandle meshGenerationJobHandle = BurstMeshGenerator.ScheduleGenerateMarchingCubesMesh(
                 densityJobHandle, densityField,
                 cellSize,
+                _random,
                 out NativeList<Triangle> triangles, out NativeList<float3> vertices, out NativeList<float3> normals, out NativeHashMap<VertexKey, int> vertexMap);
 
             ChunkPayload payload = new ChunkPayload
@@ -113,6 +118,8 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
 
                 bool completed = jobHandle.IsCompleted;
                 if (!completed) continue;
+
+                Debug.Log("finished job");
 
                 jobHandle.Complete();
 

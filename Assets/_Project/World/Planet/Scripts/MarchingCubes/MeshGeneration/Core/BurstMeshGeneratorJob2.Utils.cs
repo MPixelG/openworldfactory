@@ -3,7 +3,7 @@ using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
 {
-    public unsafe partial struct BurstMeshGeneratorJob
+    public unsafe partial struct BurstMeshGeneratorJob2
     {
         private static VoxelMaterial GetDominantMaterial(
             VoxelMaterial a,
@@ -27,7 +27,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
             int maxIndex = 0;
 
             
-            for (int i = 0; i < materialCount-1; i++)
+            for (int i = 0; i < materialCount-1; i++) //exclude air (its the last field)
             {
                 if (counts[i] > max)
                 {
@@ -36,7 +36,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
                 }
             }
 
-            return (VoxelMaterial)maxIndex;
+            return (VoxelMaterial) maxIndex;
         }
 
         // lerps (linear interpolates) between 2 given points based on their density values and the iso level

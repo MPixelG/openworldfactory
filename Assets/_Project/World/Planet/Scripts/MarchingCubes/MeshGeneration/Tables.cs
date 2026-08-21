@@ -1,26 +1,25 @@
 using System.Runtime.InteropServices;
 using Unity.Collections;
 using UnityEngine;
+
 // the warning indicates that, since the fields are readonly, calling dispose will copy the struct value and the Dispose() will not affect the original nativeArray struct
 // however nativeArrays are just pointers to an allocation. so it does not matter what nativeArray struct instance you call dispose on as long as they all point to the same allocation. 
 // ReSharper disable PossiblyImpureMethodCallOnReadonlyVariable 
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
 {
-    public static class Tables
+    public class Tables
     {
-        [ReadOnly] public static NativeArray<byte> RegularCellClass;
-        [ReadOnly] public static NativeArray<RegularCellData> RegularCellData;
-        [ReadOnly] public static NativeArray<ushort> RegularVertexData;
-        [ReadOnly] public static NativeArray<byte> TransitionCellClass;
-        [ReadOnly] public static NativeArray<byte> TransitionCornerData;
-        [ReadOnly] public static NativeArray<ushort> TransitionVertexData;
-        [ReadOnly] public static NativeArray<TransitionCellData> TransitionCellData;
+        public NativeArray<byte> RegularCellClass;
+        public NativeArray<RegularCellData> RegularCellData;
+        public NativeArray<ushort> RegularVertexData;
+        public NativeArray<byte> TransitionCellClass;
+        public NativeArray<byte> TransitionCornerData;
+        public NativeArray<ushort> TransitionVertexData;
+        public NativeArray<TransitionCellData> TransitionCellData;
 
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        private static void Initialize()
+        public void Initialize()
         {
-            Debug.Log("INITIALIZING!!");
             RegularCellClass = new NativeArray<byte>(RawRegularCellClass, Allocator.Persistent);
             RegularCellData = new NativeArray<RegularCellData>(RawRegularCellData, Allocator.Persistent);
             RegularVertexData = new NativeArray<ushort>(RawRegularVertexData, Allocator.Persistent);
@@ -28,11 +27,20 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
             TransitionCornerData = new NativeArray<byte>(RawTransitionCornerData, Allocator.Persistent);
             TransitionVertexData = new NativeArray<ushort>(RawTransitionVertexData, Allocator.Persistent);
             TransitionCellData = new NativeArray<TransitionCellData>(RawTransitionCellData, Allocator.Persistent);
-            Application.quitting += Dispose;
-            Debug.Log("INITIALIZED!!!");
+            Application.quitting += Dispose; 
         }
 
-        public static void Dispose()
+        public void EnsureInitialized()
+        {
+            if (!RegularCellClass.IsCreated || !RegularCellData.IsCreated || !RegularVertexData.IsCreated ||
+                !TransitionCellClass.IsCreated || !TransitionCornerData.IsCreated || !TransitionVertexData.IsCreated ||
+                !TransitionCellData.IsCreated)
+            {
+                Initialize();
+            }
+        }
+
+        private void Dispose()
         {
             if (RegularCellClass.IsCreated) RegularCellClass.Dispose();
             if (RegularCellData.IsCreated) RegularCellData.Dispose();
@@ -43,7 +51,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
             if (TransitionCellData.IsCreated) TransitionCellData.Dispose();
         }
 
-        private static readonly byte[] RawRegularCellClass = {
+        private static byte[] RawRegularCellClass =
+        {
             0x00, 0x01, 0x01, 0x03, 0x01, 0x03, 0x02, 0x04, 0x01, 0x02, 0x03, 0x04, 0x03, 0x04, 0x04, 0x03,
             0x01, 0x03, 0x02, 0x04, 0x02, 0x04, 0x06, 0x0C, 0x02, 0x05, 0x05, 0x0B, 0x05, 0x0A, 0x07, 0x04,
             0x01, 0x02, 0x03, 0x04, 0x02, 0x05, 0x05, 0x0A, 0x02, 0x06, 0x04, 0x0C, 0x05, 0x07, 0x0B, 0x04,
@@ -62,7 +71,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
             0x03, 0x04, 0x04, 0x03, 0x04, 0x03, 0x0D, 0x01, 0x04, 0x0D, 0x03, 0x01, 0x03, 0x01, 0x01, 0x00
         };
 
-        private static readonly RegularCellData[] RawRegularCellData = {
+        private static RegularCellData[] RawRegularCellData =
+        {
             new(0x00),
             new(0x31, 0, 1, 2),
             new(0x62, 0, 1, 2, 3, 4, 5),
@@ -81,7 +91,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
             new(0x95, 0, 4, 5, 0, 3, 4, 0, 1, 3, 1, 2, 3, 6, 7, 8)
         };
 
-        private static readonly ushort[] RawRegularVertexData = {
+        private static ushort[] RawRegularVertexData =
+        {
             0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
             0x6201, 0x5102, 0x3304, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
             0x6201, 0x2315, 0x4113, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
@@ -340,7 +351,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
             0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
         };
 
-        private static readonly byte[] RawTransitionCellClass = {
+        private static byte[] RawTransitionCellClass =
+        {
             0x00, 0x01, 0x02, 0x84, 0x01, 0x05, 0x04, 0x04, 0x02, 0x87, 0x09, 0x8C, 0x84, 0x0B, 0x05, 0x05,
             0x01, 0x08, 0x07, 0x8D, 0x05, 0x0F, 0x8B, 0x0B, 0x04, 0x0D, 0x0C, 0x1C, 0x04, 0x8B, 0x85, 0x85,
             0x02, 0x07, 0x09, 0x8C, 0x87, 0x10, 0x0C, 0x0C, 0x09, 0x12, 0x15, 0x9A, 0x8C, 0x19, 0x90, 0x10,
@@ -375,11 +387,13 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
             0x85, 0x85, 0x8B, 0x04, 0xA6, 0x25, 0x07, 0x82, 0x84, 0x84, 0x85, 0x81, 0x04, 0x82, 0x81, 0x80
         };
 
-        private static readonly byte[] RawTransitionCornerData = {
+        private static byte[] RawTransitionCornerData =
+        {
             0x30, 0x21, 0x20, 0x12, 0x40, 0x82, 0x10, 0x81, 0x80, 0x37, 0x27, 0x17, 0x87
         };
 
-        private static readonly ushort[] RawTransitionVertexData = {
+        private static ushort[] RawTransitionVertexData =
+        {
             0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
             0x2301, 0x1503, 0x199B, 0x289A, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
             0x2301, 0x2412, 0x4514, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
@@ -894,7 +908,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
             0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
         };
 
-        private static readonly TransitionCellData[] RawTransitionCellData = new TransitionCellData[]
+        private static TransitionCellData[] RawTransitionCellData = new TransitionCellData[]
         {
             new(0x00),
             new(0x42, 0, 1, 3, 1, 2, 3),
@@ -959,11 +973,11 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
     [StructLayout(LayoutKind.Sequential)]
     public unsafe struct RegularCellData
     {
-        public readonly byte geometryCounts;
+        public byte geometryCounts;
         public fixed byte vertexIndex[15];
 
-        public readonly int VertexCount => geometryCounts >> 4;
-        public readonly int TriangleCount => geometryCounts & 0x0F;
+        public int VertexCount => geometryCounts >> 4;
+        public int TriangleCount => geometryCounts & 0x0F;
 
         public RegularCellData(byte geometryCounts, params byte[] indices)
         {
@@ -987,8 +1001,8 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
         public byte geometryCounts;
         public fixed byte vertexIndex[36];
 
-        public readonly int VertexCount => geometryCounts >> 4;
-        public readonly int TriangleCount => geometryCounts & 0x0F;
+        public int VertexCount => geometryCounts >> 4;
+        public int TriangleCount => geometryCounts & 0x0F;
 
         public TransitionCellData(byte geometryCounts, params byte[] indices)
         {

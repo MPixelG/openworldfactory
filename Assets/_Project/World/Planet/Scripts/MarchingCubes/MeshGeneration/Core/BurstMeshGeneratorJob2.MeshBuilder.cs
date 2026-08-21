@@ -1,15 +1,20 @@
 using _Project.World.Planet.Scripts.MarchingCubes.Materials;
+using Unity.Collections;
 using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
 {
-    public partial struct BurstMeshGeneratorJob
+    public partial struct BurstMeshGeneratorJob2
     {
         /// <summary>
         /// this adds a triangle to the mesh and calculates its indices and normals.
         /// this way you can just call this method for every triangle you want to add and it will take care of the rest.
         /// </summary>
-        private void AddTriangle(
+        private static void AddTriangle(
+            ref NativeHashMap<VertexKey, int> vertexMap,
+            ref NativeList<float3> vertices,
+            ref NativeList<float3> normals,
+            ref NativeList<Triangle> triangles,
             float3 a, VertexKey ka,
             float3 b, VertexKey kb,
             float3 c, VertexKey kc,
@@ -20,34 +25,41 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
                 !math.all(math.isfinite(c)))
                 return;
 
-            int i0 = GetOrAddVertex(ka, a);
-            int i1 = GetOrAddVertex(kb, b);
-            int i2 = GetOrAddVertex(kc, c);
+            int i0 = GetOrAddVertex(ref vertexMap, ref vertices, ref normals, ka, a);
+            int i1 = GetOrAddVertex(ref vertexMap, ref vertices, ref normals, kb, b);
+            int i2 = GetOrAddVertex(ref vertexMap, ref vertices, ref normals, kc, c);
 
-            Triangles.Add(new Triangle(i0, i1, i2, material));
+            triangles.Add(new Triangle(i0, i1, i2, material));
 
             float3 normal = math.normalize(math.cross(b - a, c - a));
-
-            Normals[i0] += normal;
-            Normals[i1] += normal;
-            Normals[i2] += normal;
+            normals[i0] += normal;
+            normals[i1] += normal;
+            normals[i2] += normal;
         }
+
 
         /// <summary>
         /// checks if the given vertex already exists in the vertices list and if so returns its index,
         /// otherwise it adds it to the list and returns the new index
         /// </summary>
-        private int GetOrAddVertex(VertexKey key, float3 v)
+        private static int GetOrAddVertex(
+            ref NativeHashMap<VertexKey, int> vertexMap, 
+            ref NativeList<float3> vertices, 
+            ref NativeList<float3> normals, 
+            VertexKey key, 
+            float3 v)
         {
-            if (VertexMap.TryGetValue(key, out int index))
-                return index;
+            if (vertexMap.TryGetValue(key, out int index))
+            {
+                return index; 
+            }
 
-            index = Vertices.Length;
+            index = vertices.Length;
 
-            Vertices.Add(v);
-            Normals.Add(float3.zero);
+            vertices.Add(v);
+            normals.Add(new float3(0, 0, 0));
 
-            VertexMap.Add(key, index);
+            vertexMap.Add(key, index);
 
             return index;
         }

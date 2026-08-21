@@ -1,39 +1,37 @@
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
-using _Project.World.Planet.Scripts.MarchingCubes.Materials;
 using Unity.Burst;
 using Unity.Collections;
+using Unity.Collections.LowLevel.Unsafe;
 using Unity.Jobs;
 using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
 {
     [BurstCompile]
-    public partial struct BurstMeshGeneratorJob : IJob
+    public partial struct BurstMeshGeneratorJob2 : IJob
     {
         [ReadOnly] public FieldData Field;
-        [ReadOnly] public float CellSize;
+        public float CellSize;
 
-        public NativeList<float3> Vertices;
-        public NativeList<float3> Normals;
-        public NativeList<Triangle> Triangles;
+        [NativeDisableParallelForRestriction] public NativeList<float3> Vertices;
+        [NativeDisableParallelForRestriction] public NativeList<float3> Normals;
+        [NativeDisableParallelForRestriction] public NativeList<Triangle> Triangles;
 
         // this is used for index deduplication.
         // since every triangle has 3 vertices and many triangles share vertices with each other, we want to avoid adding the same vertex multiple times to the vertices list.
         // that would be a waste of memory and also cause visual artifacts. so we use this dictionary to check if we already added a vertex and if so we just reuse its index instead of adding it again.
+        [NativeDisableContainerSafetyRestriction]
         public NativeHashMap<VertexKey, int> VertexMap; 
-
-        [ReadOnly] public float IsoLevel;
+        public float IsoLevel;
 
         
-        [ReadOnly] public NativeArray<byte> RegularCellClass;
-        [ReadOnly] public NativeArray<RegularCellData> RegularCellData;
-        [ReadOnly] public NativeArray<ushort> RegularVertexData;
-        [ReadOnly] public NativeArray<byte> TransitionCellClass;
-        [ReadOnly] public NativeArray<byte> TransitionCornerData;
-        [ReadOnly] public NativeArray<ushort> TransitionVertexData;
-        [ReadOnly] public NativeArray<TransitionCellData> TransitionCellData;
+        [NativeDisableParallelForRestriction, ReadOnly] public NativeArray<byte> RegularCellClass;
+        [NativeDisableParallelForRestriction, ReadOnly] public NativeArray<RegularCellData> RegularCellData;
+        [NativeDisableParallelForRestriction, ReadOnly] public NativeArray<ushort> RegularVertexData;
         
-        [ReadOnly] public int MaterialCount;
+        public int MaterialCount;
+        
+        public Random Random;
 
         public void Execute()
         {

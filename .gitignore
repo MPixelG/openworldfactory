@@ -103,5 +103,6 @@ InitTestScene*.unity*
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 /[Aa]ssets/_Recovery/*
+test[0-9].unity*
 test.unity*
 _Recovery.meta

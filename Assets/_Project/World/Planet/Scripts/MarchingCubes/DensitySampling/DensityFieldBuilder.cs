@@ -1,3 +1,4 @@
+using System;
 using _Project.World.Planet.Scripts.Chunking.Core;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using _Project.World.Planet.Scripts.WorldGen;
@@ -18,13 +19,14 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.DensitySampling
         /// <param name="size">the chunk size. Caution! the chunk size is the grid size - 2!</param>
         /// <param name="origin">the origin (start) position of the chunk. Caution! this is measured in grid chunk space!</param>
         /// <returns></returns>
-        public static FieldData BuildBurstDensityFieldData(ParallelBurstSamplerSettings settings, byte size, ChunkCoord origin)
+        [Obsolete("This method is deprecated. Use ScheduleExactBurstDensityFieldDataBuildInTree instead.")]
+        public static FieldData BuildBurstDensityFieldData(ParallelBurstSamplerSettings settings, byte size, byte resolution, ChunkCoord origin)
         {
             byte gridSize = checked((byte)(size+1)); // the grid size is the chunk size + 1 since we need to sample the density at the corners of the chunk as well for the marching cubes algorithm to work properly.
             
             // builds a native array (basically an array but its used for burst jobs since you cant use a lot of stuff there) with the required grid size.
             
-            ParallelBurstSphericalNoiseSamplingJob job = settings.CreateParallelExactSampler(origin.Value*size,origin.Value*size + gridSize, gridSize, out FieldData densitiesOut); // get the job from the settings
+            ParallelBurstSphericalNoiseSamplingJob job = settings.CreateParallelExactSampler(origin.Value*size,origin.Value*size + gridSize, (byte) (resolution+1), out FieldData densitiesOut); // get the job from the settings
             
             
             JobHandle handle = job.Schedule(densitiesOut.Fields.Length, 64); // schedule the job
