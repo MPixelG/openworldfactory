@@ -31,7 +31,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
 
             triangles.Add(new Triangle(i0, i1, i2, material));
 
-            float3 normal = math.normalize(math.cross(b - a, c - a));
+            float3 normal = math.cross(b - a, c - a);
             normals[i0] += normal;
             normals[i1] += normal;
             normals[i2] += normal;

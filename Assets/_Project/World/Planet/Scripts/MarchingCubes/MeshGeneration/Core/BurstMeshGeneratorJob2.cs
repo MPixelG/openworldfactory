@@ -1,9 +1,11 @@
+using System;
 using _Project.World.Planet.Scripts.MarchingCubes.DensitySampling;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Jobs;
 using Unity.Mathematics;
+using UnityEngine;
 
 namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
 {
@@ -30,8 +32,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
         [NativeDisableParallelForRestriction, ReadOnly] public NativeArray<ushort> RegularVertexData;
         
         public int MaterialCount;
-        
-        public Random Random;
+
 
         public void Execute()
         {

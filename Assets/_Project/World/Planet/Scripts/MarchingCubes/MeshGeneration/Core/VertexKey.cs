@@ -5,12 +5,12 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
 {
     public struct VertexKey : IEquatable<VertexKey>
     {
-        private int _x;
-        private int _y;
-        private int _z;
-        private int _x2;
-        private int _y2;
-        private int _z2;
+        private readonly int _x;
+        private readonly int _y;
+        private readonly int _z;
+        private readonly int _x2;
+        private readonly int _y2;
+        private readonly int _z2;
 
         public VertexKey(int3 e1, int3 e2)
         {

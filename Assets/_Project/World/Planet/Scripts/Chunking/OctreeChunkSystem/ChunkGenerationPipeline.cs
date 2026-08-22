@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Core;
 using _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Data;
@@ -10,7 +11,7 @@ using _Project.World.Planet.Scripts.WorldGen;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
-using UnityEngine;
+using Debug = UnityEngine.Debug;
 using Random = Unity.Mathematics.Random;
 
 namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
@@ -18,7 +19,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
     public class ChunkGenerationPipeline
     {
         private readonly Queue<ulong> _generationQueue = new();
-        private readonly Dictionary<ulong, JobHandle> _activeMeshingJobs = new();
+        private readonly Dictionary<ulong, (JobHandle, Stopwatch)> _activeMeshingJobs = new();
         private readonly Dictionary<ulong, ChunkPayload> _activeMeshingJobResults = new();
         private readonly Dictionary<ulong, NativeHashMap<VertexKey, int>> _meshingJobGarbage = new();
 
@@ -63,10 +64,10 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
             _generationQueue.Enqueue(mortonCode);
         }
 
-        private Random _random = Random.CreateFromIndex(0);
+        private const int MaxConcurrentGenerationJobs = 8;
         private void ProcessNextInQueue()
         {
-            if (_generationQueue.Count == 0 || _activeMeshingJobs.Count > 0) return;
+            if (_generationQueue.Count == 0 || _activeMeshingJobs.Count >= MaxConcurrentGenerationJobs) return;
             
 
             ulong mortonCode = _generationQueue.Dequeue();
@@ -92,7 +93,6 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
             JobHandle meshGenerationJobHandle = BurstMeshGenerator.ScheduleGenerateMarchingCubesMesh(
                 densityJobHandle, densityField,
                 cellSize,
-                _random,
                 out NativeList<Triangle> triangles, out NativeList<float3> vertices, out NativeList<float3> normals, out NativeHashMap<VertexKey, int> vertexMap);
 
             ChunkPayload payload = new ChunkPayload
@@ -102,8 +102,11 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
                 Normals = normals,
                 Triangles = triangles
             };
+            
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
 
-            _activeMeshingJobs.Add(mortonCode, meshGenerationJobHandle);
+            _activeMeshingJobs.Add(mortonCode, (meshGenerationJobHandle, stopwatch));
             _activeMeshingJobResults.Add(mortonCode, payload);
             _meshingJobGarbage.Add(mortonCode, vertexMap);
         }
@@ -114,12 +117,16 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
             {
                 ulong mortonCode = _activeMeshingJobs.Keys.ElementAt(i);
 
-                if (!_activeMeshingJobs.TryGetValue(mortonCode, out JobHandle jobHandle)) continue;
+                if (!_activeMeshingJobs.TryGetValue(mortonCode, out (JobHandle, Stopwatch) values)) continue;
+                JobHandle jobHandle = values.Item1;
+                Stopwatch stopwatch = values.Item2;
+                
+                
 
                 bool completed = jobHandle.IsCompleted;
                 if (!completed) continue;
 
-                Debug.Log("finished job");
+                Debug.Log($"finished job in {stopwatch.ElapsedMilliseconds} ms");
 
                 jobHandle.Complete();
 

@@ -12,10 +12,12 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Core
             VoxelMaterial d,
             VoxelMaterial e,
             VoxelMaterial f,
-            int materialCount)
+            int materialCount, ref int* counts)
         {
-            int* counts = stackalloc int[materialCount];
-
+            for (int i = 0; i < materialCount-1; i++)
+            {
+                counts[i] = 0;
+            }
             counts[(int)a]++;
             counts[(int)b]++;
             counts[(int)c]++;

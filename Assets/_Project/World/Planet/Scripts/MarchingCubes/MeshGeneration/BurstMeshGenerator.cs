@@ -67,7 +67,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
         /// <param name="normals">the generated normal list</param>
         /// <param name="vertexMap">the generated vertex deduplication map</param>
         /// <returns>the mesh data of that region</returns>
-        public static JobHandle ScheduleGenerateMarchingCubesMesh(JobHandle densityJobHandle, FieldData field, float cellSize, Unity.Mathematics.Random random, out NativeList<Triangle> triangles,  out NativeList<float3> vertices, out NativeList<float3> normals, out NativeHashMap<VertexKey, int> vertexMap)
+        public static JobHandle ScheduleGenerateMarchingCubesMesh(JobHandle densityJobHandle, FieldData field, float cellSize, out NativeList<Triangle> triangles,  out NativeList<float3> vertices, out NativeList<float3> normals, out NativeHashMap<VertexKey, int> vertexMap)
         {
             _tables.EnsureInitialized();
             int materialCount = System.Enum.GetValues(typeof(VoxelMaterial)).Length;
@@ -77,7 +77,7 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
                 Triangles = new NativeList<Triangle>(Allocator.Persistent),
                 Normals = new NativeList<float3>(Allocator.Persistent),
                 Vertices = new NativeList<float3>(Allocator.Persistent),
-                VertexMap = new NativeHashMap<VertexKey, int>(1000, Allocator.Persistent),
+                VertexMap = new NativeHashMap<VertexKey, int>(100, Allocator.Persistent),
 
                 Field = field,
                 CellSize = cellSize,
@@ -86,7 +86,6 @@ namespace _Project.World.Planet.Scripts.MarchingCubes.MeshGeneration
                 RegularCellClass = _tables.RegularCellClass,
                 RegularCellData = _tables.RegularCellData,
                 RegularVertexData = _tables.RegularVertexData,
-                Random = random
             };
             
             triangles = job.Triangles;
