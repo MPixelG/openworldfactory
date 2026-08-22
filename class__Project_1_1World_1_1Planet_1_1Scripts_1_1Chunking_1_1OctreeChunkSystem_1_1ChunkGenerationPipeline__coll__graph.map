@@ -1,9 +1,7 @@
 <map id="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.ChunkGenerationPipeline" name="_Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.ChunkGenerationPipeline">
-<area shape="rect" id="Node000001" title=" " alt="" coords="156,183,421,237"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="12,183,277,237"/>
 <area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html" title=" " alt="" coords="5,80,284,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,126,255,180,252,185,179,130"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,133,147,183,142,183,142,133"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="80,5,209,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="147,44,147,80,142,80,142,44"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="308,87,365,113"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="329,126,303,184,298,182,324,124"/>
 </map>
