@@ -6,7 +6,7 @@ using Unity.Mathematics;
 
 namespace _Project.World.Planet.Scripts.WorldGen
 {
-    [BurstCompile]
+    [BurstCompile(OptimizeFor = OptimizeFor.Performance)]
     public struct ParallelBurstSphericalNoiseSamplingJob : IJobParallelFor
     {
         public NativeArray<Voxel> Fields;

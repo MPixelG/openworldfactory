@@ -19,9 +19,9 @@ Shader "Planet/VolumetricClouds"
         {
             Name "Clouds"
             Blend One SrcAlpha   // the shader does the following -> result = luminance × 1 + background × transmittance
-            ZWrite Off //no single depth available because of transparency and nature of clouds -> no distinct z value
-            ZTest  Always //unclear todo explanation
-            Cull   Front //prohibits that the volumetrics vanish when you enter the cloud shell
+            ZWrite Off // no single depth available because of transparency and nature of clouds -> no distinct z value
+            ZTest  Always // ZTest (Depth testing) compares the depth of all objects on that pixel and draws the one closest to the camera if active
+            Cull   Front // prohibits that the volumetrics vanish when you enter the cloud shell
 
             HLSLPROGRAM
             #pragma vertex   Vert
