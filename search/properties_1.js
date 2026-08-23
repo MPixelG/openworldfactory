@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['octree_0',['Octree',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1PlanetManager.html#ad83bc5f6aed8813ba8dec125c35e6aad',1,'_Project::World::Planet::Scripts::Chunking::OctreeChunkSystem::PlanetManager']]]
+  ['instance_0',['Instance',['../class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereController.html#af92a9c4cd863537c1799888d509c77d7',1,'_Project::World::Atmosphere::Shader::AtmosphereController']]]
 ];

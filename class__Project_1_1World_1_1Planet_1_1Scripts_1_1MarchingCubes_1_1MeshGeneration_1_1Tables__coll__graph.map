@@ -1,7 +1,5 @@
 <map id="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Tables" name="_Project.World.Planet.Scripts.MarchingCubes.MeshGeneration.Tables">
-<area shape="rect" id="Node000001" title=" " alt="" coords="505,53,784,93"/>
-<area shape="rect" id="Node000002" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1RegularCellData.html" title=" " alt="" coords="12,5,299,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="312,43,505,59,505,64,312,48"/>
-<area shape="rect" id="Node000003" href="$struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1TransitionCellData.html" title=" " alt="" coords="5,84,305,139"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="319,96,505,81,505,86,320,101"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,181,284,221"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="115,5,174,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,45,147,181,142,181,142,45"/>
 </map>

@@ -1,0 +1,9 @@
+<map id="_Project.World.Atmosphere.Shader.AtmosphereSettings" name="_Project.World.Atmosphere.Shader.AtmosphereSettings">
+<area shape="rect" id="Node000001" title=" " alt="" coords="109,211,311,251"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,135,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,41,200,209,195,212,83,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="159,5,261,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,45,213,211,207,211,207,45"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="339,5,398,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="374,44,375,76,372,114,362,153,341,188,326,202,308,213,306,208,323,198,337,185,357,151,367,113,370,76,369,44"/>
+</map>

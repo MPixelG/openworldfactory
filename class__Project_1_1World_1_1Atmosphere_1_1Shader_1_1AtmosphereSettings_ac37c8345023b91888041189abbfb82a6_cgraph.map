@@ -1,0 +1,7 @@
+<map id="_Project.World.Atmosphere.Shader.AtmosphereSettings.GetOpticalDepthHandle" name="_Project.World.Atmosphere.Shader.AtmosphereSettings.GetOpticalDepthHandle">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,280,60"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a8c1b8676b2d78a82dff034ae0f1edc79" title="Creates the persistent optical&#45;depth RenderTexture if necessary." alt="" coords="328,5,572,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="280,30,314,30,314,35,280,35"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a3a9148afbda108023506e4ec7da259b1" title=" " alt="" coords="620,5,879,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="572,30,606,30,606,35,572,35"/>
+</map>
