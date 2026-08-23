@@ -126,7 +126,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
                 bool completed = jobHandle.IsCompleted;
                 if (!completed) continue;
 
-                Debug.Log($"finished job in {stopwatch.ElapsedMilliseconds} ms");
+                //Debug.Log($"finished job in {stopwatch.ElapsedMilliseconds} ms");
 
                 jobHandle.Complete();
 

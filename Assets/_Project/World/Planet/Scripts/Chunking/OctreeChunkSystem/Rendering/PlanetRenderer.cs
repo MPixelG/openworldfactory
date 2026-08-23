@@ -35,7 +35,6 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem.Rendering
             
             _planetManager = planetManager;
             _planetManager.ChunkChange += OnChunkChange;
-            Debug.Log("PLANET MANAGER SET");
         }
 
         public void SetMaterialDatabase(MaterialDatabase materialDatabase)

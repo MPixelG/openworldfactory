@@ -6,13 +6,11 @@ namespace _Project.World.Atmosphere.Shader
     {
         public static AtmosphereController Instance { get; private set; }
 
-        public AtmosphereSettings settings;
-        public float planetRadius = 1000f;
+        public float planetRadius = 144f;
 
-        public Vector3 PlanetCentre =>
-            transform.position;
+        public Vector3 PlanetCentre => transform.position;
 
-        private void Awake()
+        private void OnEnable()
         {
             Instance = this;
         }

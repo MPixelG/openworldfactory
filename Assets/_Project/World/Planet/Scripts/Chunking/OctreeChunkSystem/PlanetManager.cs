@@ -65,19 +65,7 @@ namespace _Project.World.Planet.Scripts.Chunking.OctreeChunkSystem
                 
             
             OctreeReady = true;
-            Debug.Log("OCTREE READY, node count: " + Octree.Nodes.Length + ", Time elapsed: " + _octreeBuilderStopwatch.ElapsedMilliseconds + "ms \n ======================================");
-            Debug.Log("Node Count of different depths: ");
-            List<OctreeNode> octreeNodes = new();
-            foreach (var t in Octree.Nodes)
-            {
-                octreeNodes.Add(t);
-            }
-            for (int i = 0; i < Octree.MaxDepth; i++)
-            {
-                Debug.Log($"Depth {i}: {octreeNodes.Count(node => node.MortonCode.GetDepth() == i)}");
-            }
-            
-                
+            Debug.Log("OCTREE READY, node count: " + Octree.Nodes.Length + ", Time elapsed: " + _octreeBuilderStopwatch.ElapsedMilliseconds + "ms");
                 
             foreach (OctreeNode octreeNode in Octree.Nodes)
             {

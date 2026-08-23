@@ -63,5 +63,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a51801dd971340c4b1b2914ebf0cf7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.World.Atmosphere.Shader.AtmosphereController
-  settings: {fileID: 11400000, guid: 711e5c96fdeee87c1a4687ec0b9344fe, type: 2}
-  planetRadius: 144.5
+  planetRadius: 143.5

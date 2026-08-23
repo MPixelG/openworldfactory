@@ -1,42 +1,42 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.RenderGraphModule;
-using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering.Universal; 
+// ReSharper disable InconsistentNaming
 
 namespace _Project.World.Atmosphere.Shader
 {
     public class AtmospherePass : ScriptableRenderPass
     {
-        private readonly Material material;
-        private readonly AtmosphereSettings settings;
+        private readonly Material _material;
+        private readonly AtmosphereSettings _settings;
         
 
-        private static readonly int TextureSize =
-            UnityEngine.Shader.PropertyToID("textureSize");
+        private static readonly int C_TextureSize =
+            UnityEngine.Shader.PropertyToID("c_texture_size");
         
 
-        private static readonly int AtmosphereRadius =
-            UnityEngine.Shader.PropertyToID("atmosphereRadius");
+        private static readonly int C_AtmosphereRadius =
+            UnityEngine.Shader.PropertyToID("c_atmosphere_radius");
 
-        private static readonly int DensityFalloff =
-            UnityEngine.Shader.PropertyToID("densityFalloff");
+        private static readonly int C_DensityFalloff =
+            UnityEngine.Shader.PropertyToID("c_density_falloff");
 
-        private static readonly int Result =
-            UnityEngine.Shader.PropertyToID("Result");
+        private static readonly int C_Result =
+            UnityEngine.Shader.PropertyToID("c_result");
 
 
         private class ComputePassData
         {
-            public ComputeShader compute;
-            public int kernel;
+            public ComputeShader Compute;
+            public int Kernel;
 
-            public int textureSize;
-            public int numOutScatteringSteps;
-            public float atmosphereRadius;
-            public float densityFalloff;
+            public int TextureSize;
+            public float AtmosphereRadius;
+            public float DensityFalloff;
             
 
-            public TextureHandle result;
+            public TextureHandle Result;
         }
 
 
@@ -44,25 +44,20 @@ namespace _Project.World.Atmosphere.Shader
             Material material,
             AtmosphereSettings settings)
         {
-            this.material = material;
-            this.settings = settings;
+            _material = material;
+            _settings = settings;
         }
 
-
-        public void Dispose()
-        {
-            // AtmosphereSettings owns its persistent RenderTexture.
-        }
-
-
+ 
         public override void RecordRenderGraph(
             RenderGraph renderGraph,
             ContextContainer frameData)
         {
-            if (material == null ||
-                settings == null ||
-                settings.opticalDepthCompute == null)
+            if (_material == null ||
+                _settings == null ||
+                _settings.opticalDepthCompute == null)
             {
+                Debug.Log("ERROR IN RECORDING RENDER GRAPH FOR THE ATMOSPHERE: OpticalDepth");
                 return;
             }
 
@@ -78,61 +73,43 @@ namespace _Project.World.Atmosphere.Shader
 
                 return;
             }
-
-
-            // ------------------------------------------------------------
-            // 1. Set normal material parameters
-            // ------------------------------------------------------------
             
             var atmosphere = AtmosphereController.Instance;
 
-            if (atmosphere == null || material == null)
+            if (atmosphere == null || _material == null)
+            {
                 return;
+            }
 
-            settings.SetProperties(
-                material,
+            _settings.SetProperties(
+                _material,
                 atmosphere.PlanetCentre,
                 atmosphere.planetRadius
             );
+            
 
 
-            // ------------------------------------------------------------
-            // 2. Get/create persistent optical depth texture
-            // ------------------------------------------------------------
-
-            RenderTexture opticalDepth =
-                settings.GetOrCreateOpticalDepthTexture();
-
-
-            // Import the externally-owned RenderTexture into RenderGraph.
             TextureHandle opticalDepthHandle =
                 renderGraph.ImportTexture(
-                    settings.GetOpticalDepthHandle()
+                    _settings.GetOpticalDepthHandle()
                 );
+            
 
-            // ------------------------------------------------------------
-            // 3. Recompute optical depth only when necessary
-            // ------------------------------------------------------------
-
-            if (settings.NeedsOpticalDepthPrecompute)
+            if (_settings.NeedsOpticalDepthPrecompute)
             {
+                Debug.Log("Needs optical depth precompute");
                 AddOpticalDepthComputePass(
                     renderGraph,
                     opticalDepthHandle
                 );
 
-                settings.MarkOpticalDepthClean();
+                _settings.MarkOpticalDepthClean(); 
             }
 
 
-            // Make sure the material sees the persistent texture.
-            settings.SetOpticalDepthTexture(material);
+            _settings.SetOpticalDepthTexture(_material);
 
-
-            // ------------------------------------------------------------
-            // 4. Fullscreen atmosphere pass
-            // ------------------------------------------------------------
-
+            
             TextureHandle source =
                 resourceData.activeColorTexture;
 
@@ -158,7 +135,6 @@ namespace _Project.World.Atmosphere.Shader
             );
 
 
-            // Avoid an additional copy back to cameraColor.
             resourceData.cameraColor = destination;
         }
 
@@ -168,7 +144,7 @@ namespace _Project.World.Atmosphere.Shader
             TextureHandle opticalDepth)
         {
             int kernel =
-                settings.opticalDepthCompute.FindKernel("CSMain");
+                _settings.opticalDepthCompute.FindKernel("CSMain");
 
 
             using var builder =
@@ -178,28 +154,24 @@ namespace _Project.World.Atmosphere.Shader
                 );
 
 
-            passData.compute =
-                settings.opticalDepthCompute;
+            passData.Compute =
+                _settings.opticalDepthCompute;
 
-            passData.kernel = kernel;
+            passData.Kernel = kernel;
 
-            passData.textureSize =
-                settings.textureSize;
+            passData.TextureSize =
+                _settings.textureSize;
 
-            passData.numOutScatteringSteps =
-                settings.opticalDepthPoints;
+            passData.AtmosphereRadius =
+                1f + _settings.atmosphereScale;
 
-            passData.atmosphereRadius =
-                1f + settings.atmosphereScale;
+            passData.DensityFalloff =
+                _settings.densityFalloff;
 
-            passData.densityFalloff =
-                settings.densityFalloff;
-
-            passData.result =
+            passData.Result =
                 opticalDepth;
 
 
-            // The compute shader writes to this texture.
             builder.UseTexture(
                 opticalDepth,
                 AccessFlags.Write
@@ -212,63 +184,39 @@ namespace _Project.World.Atmosphere.Shader
                     ComputeGraphContext context
                 ) =>
                 {
-                    ComputeCommandBuffer cmd =
-                        context.cmd;
+                    ComputeCommandBuffer cmd = context.cmd;
 
 
                     cmd.SetComputeIntParam(
-                        data.compute,
-                        TextureSize,
-                        data.textureSize
+                        data.Compute,
+                        C_TextureSize,
+                        data.TextureSize
                     );
 
                     cmd.SetComputeFloatParam(
-                        data.compute,
-                        AtmosphereRadius,
-                        data.atmosphereRadius
+                        data.Compute,
+                        C_AtmosphereRadius,
+                        data.AtmosphereRadius
                     );
 
                     cmd.SetComputeFloatParam(
-                        data.compute,
-                        DensityFalloff,
-                        data.densityFalloff
+                        data.Compute,
+                        C_DensityFalloff,
+                        data.DensityFalloff
                     );
 
                     cmd.SetComputeTextureParam(
-                        data.compute,
-                        data.kernel,
-                        Result,
-                        data.result
+                        data.Compute,
+                        data.Kernel,
+                        C_Result,
+                        data.Result
                     );
-
-
-                    data.compute.GetKernelThreadGroupSizes(
-                        data.kernel,
-                        out uint threadGroupX,
-                        out uint threadGroupY,
-                        out uint threadGroupZ
-                    );
-
-
-                    int groupsX =
-                        Mathf.CeilToInt(
-                            data.textureSize /
-                            (float)threadGroupX
-                        );
-
-                    int groupsY =
-                        Mathf.CeilToInt(
-                            data.textureSize /
-                            (float)threadGroupY
-                        );
 
 
                     cmd.DispatchCompute(
-                        data.compute,
-                        data.kernel,
-                        groupsX,
-                        groupsY,
-                        1
+                        data.Compute,
+                        data.Kernel,
+                        8, 8, 1
                     );
                 }
             );
@@ -289,33 +237,22 @@ namespace _Project.World.Atmosphere.Shader
 
 
             passData.source = source;
-            passData.opticalDepth = opticalDepth;
-            passData.material = material;
+            passData.material = _material;
 
 
-            // Camera color is read.
             builder.UseTexture(
-                source,
-                AccessFlags.Read
+                source
+            );
+
+            
+            builder.UseTexture(
+                opticalDepth
             );
 
 
-            // Optical depth is read by the atmosphere shader.
-            //
-            // This is important: the RenderGraph does not know that
-            // the material samples _BakedOpticalDepth just by inspecting
-            // the Material. We explicitly declare the dependency here.
-            builder.UseTexture(
-                opticalDepth,
-                AccessFlags.Read
-            );
-
-
-            // Destination becomes the render target.
             builder.SetRenderAttachment(
                 destination,
-                0,
-                AccessFlags.Write
+                0
             );
 
 

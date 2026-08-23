@@ -5,24 +5,22 @@ namespace _Project.World.Atmosphere.Shader
 {
     public class AtmosphereFeature : ScriptableRendererFeature
     {
-        [SerializeField]
-        private Material material;
+        [SerializeField] private Material material;
 
-        [SerializeField]
-        private AtmosphereSettings settings;
+        [SerializeField] private AtmosphereSettings settings;
 
-        private AtmospherePass pass;
+        private AtmospherePass _pass;
 
 
         public override void Create()
         {
-            pass = new AtmospherePass(
+            _pass = new AtmospherePass(
                 material,
                 settings
-            );
-
-            pass.renderPassEvent =
-                RenderPassEvent.BeforeRenderingPostProcessing;
+            )
+            {
+                renderPassEvent = RenderPassEvent.BeforeRenderingPostProcessing
+            };
         }
 
 
@@ -47,14 +45,13 @@ namespace _Project.World.Atmosphere.Shader
                 return;
             }
 
-            renderer.EnqueuePass(pass);
+            renderer.EnqueuePass(_pass);
         }
 
 
         protected override void Dispose(bool disposing)
         {
-            //pass?.Dispose(); TODO dispose correctly
-            pass = null;
+            _pass = null;
         }
     }
 }

@@ -35,26 +35,26 @@ Shader "Planet/VolumetricClouds"
                 float _ROuter;
             CBUFFER_END
 
-            struct Attributes
+            struct attributes
             {
                 float4 positionOS : POSITION;
             };
 
-            struct Varyings
+            struct varyings
             {
                 float4 positionCS : SV_POSITION;
                 float3 positionWS : TEXCOORD0;
             };
 
-            Varyings Vert(Attributes IN)
+            varyings Vert(attributes IN)
             {
-                Varyings OUT;
+                varyings OUT;
                 OUT.positionWS = TransformObjectToWorld(IN.positionOS.xyz);
                 OUT.positionCS = TransformWorldToHClip(OUT.positionWS);
                 return OUT;
             }
 
-            half4 Frag(Varyings IN) : SV_Target
+            half4 Frag(varyings IN) : SV_Target
             {
                 // rgb = light we add, a = fraction of the background we keep
                 return half4(0.0, 0.0, 0.0, 0.5);

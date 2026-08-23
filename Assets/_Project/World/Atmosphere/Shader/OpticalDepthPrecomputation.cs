@@ -9,17 +9,10 @@ namespace _Project.World.Atmosphere.Shader
     {
         public bool enabled = true;
 
-        public UnityEngine.Shader atmosphereShader;
         public ComputeShader opticalDepthCompute;
 
         [Min(1)]
         public int textureSize = 256;
-
-        [Min(1)]
-        public int inScatteringPoints = 10;
-
-        [Min(1)]
-        public int opticalDepthPoints = 10;
 
         public float densityFalloff = 0.25f;
 
@@ -35,46 +28,26 @@ namespace _Project.World.Atmosphere.Shader
         [Range(0, 1)]
         public float atmosphereScale = 0.5f;
 
-        [Header("Test")]
-        public float timeOfDay;
-        public float sunDst = 1;
-
-        private RenderTexture opticalDepthTexture;
-        private RTHandle opticalDepthHandle;
-        private bool opticalDepthDirty = true;
-
-        private static readonly int AtmosphereRadius =
-            UnityEngine.Shader.PropertyToID("atmosphereRadius");
-
-        private static readonly int PlanetRadius =
-            UnityEngine.Shader.PropertyToID("planetRadius");
-
-        private static readonly int DensityFalloff =
-            UnityEngine.Shader.PropertyToID("densityFalloff");
-
-        private static readonly int ScatteringCoefficients =
-            UnityEngine.Shader.PropertyToID("scatteringCoefficients");
-
-        private static readonly int Intensity =
-            UnityEngine.Shader.PropertyToID("intensity");
-
-        private static readonly int DitherStrength =
-            UnityEngine.Shader.PropertyToID("ditherStrength");
-
-        private static readonly int DitherScale =
-            UnityEngine.Shader.PropertyToID("ditherScale");
-
-        private static readonly int BlueNoise =
-            UnityEngine.Shader.PropertyToID("_BlueNoise");
+        private RenderTexture _opticalDepthTexture;
+        private RTHandle _opticalDepthHandle;
+        private bool _opticalDepthDirty = true;
 
         private static readonly int BakedOpticalDepth =
             UnityEngine.Shader.PropertyToID("_BakedOpticalDepth");
 
+        private static readonly int DirToSun = UnityEngine.Shader.PropertyToID("dir_to_sun");
+        private static readonly int BlueNoise = UnityEngine.Shader.PropertyToID("_BlueNoise");
+        private static readonly int DitherScale = UnityEngine.Shader.PropertyToID("dither_scale");
+        private static readonly int DitherStrength = UnityEngine.Shader.PropertyToID("dither_strength");
+        private static readonly int Intensity = UnityEngine.Shader.PropertyToID("intensity");
+        private static readonly int ScatteringCoefficients = UnityEngine.Shader.PropertyToID("scattering_coefficients");
+        private static readonly int DensityFalloff = UnityEngine.Shader.PropertyToID("density_falloff");
+        private static readonly int AtmosphereRadius = UnityEngine.Shader.PropertyToID("atmosphere_radius");
+        private static readonly int OceanRadius = UnityEngine.Shader.PropertyToID("ocean_radius");
+        private static readonly int PlanetRadius = UnityEngine.Shader.PropertyToID("planet_radius");
+        private static readonly int PlanetCenter = UnityEngine.Shader.PropertyToID("planet_center");
 
-        /// <summary>
-        /// Sets all ordinary material parameters.
-        /// The expensive optical-depth precomputation is handled by AtmospherePass.
-        /// </summary>
+        
         public void SetProperties(
             Material material,
             Vector3 planetCentre,
@@ -85,41 +58,29 @@ namespace _Project.World.Atmosphere.Shader
 
             float atmosphereRadius =
                 (1f + atmosphereScale) * bodyRadius;
-
-            // Planet
+            
             material.SetVector(
-                "planetCentre",
+                PlanetCenter,
                 planetCentre
             );
 
             material.SetFloat(
-                "planetRadius",
+                PlanetRadius,
                 bodyRadius
             );
 
             material.SetFloat(
-                "oceanRadius",
+                OceanRadius,
                 bodyRadius
             );
 
             material.SetFloat(
-                "atmosphereRadius",
+                AtmosphereRadius,
                 atmosphereRadius
             );
 
-            // Atmosphere
-            material.SetInt(
-                "numInScatteringPoints",
-                inScatteringPoints
-            );
-
-            material.SetInt(
-                "numOpticalDepthPoints",
-                opticalDepthPoints
-            );
-
             material.SetFloat(
-                "densityFalloff",
+                DensityFalloff,
                 densityFalloff
             );
 
@@ -128,55 +89,49 @@ namespace _Project.World.Atmosphere.Shader
             float scatterZ = Pow(400f / wavelengths.z, 4f);
 
             material.SetVector(
-                "scatteringCoefficients",
+                ScatteringCoefficients,
                 new Vector3(scatterX, scatterY, scatterZ)
                 * scatteringStrength
             );
 
-            material.SetFloat("intensity", intensity);
-            material.SetFloat("ditherStrength", ditherStrength);
-            material.SetFloat("ditherScale", ditherScale);
-            material.SetTexture("_BlueNoise", blueNoise);
+            material.SetFloat(Intensity, intensity);
+            material.SetFloat(DitherStrength, ditherStrength);
+            material.SetFloat(DitherScale, ditherScale);
+            material.SetTexture(BlueNoise, blueNoise);
 
-
-            // Test-Sonne
+            
             var sun = GameObject.Find("Test Sun");
+            if (sun == null) return;
 
-            if (sun != null)
-            {
-                Vector3 sunPosition =
-                    sun.transform.position;
+            Vector3 sunPosition =
+                sun.transform.position;
 
-                material.SetVector(
-                    "dirToSun",
-                    (sunPosition - planetCentre).normalized
-                );
-            }
+            material.SetVector(
+                DirToSun,
+                (sunPosition - planetCentre).normalized
+            );
         }
 
 
         public bool NeedsOpticalDepthPrecompute =>
-            opticalDepthDirty ||
-            opticalDepthTexture == null ||
-            !opticalDepthTexture.IsCreated();
+            _opticalDepthDirty ||
+            _opticalDepthTexture == null ||
+            !_opticalDepthTexture.IsCreated();
 
-
-        /// <summary>
-        /// Creates the persistent optical-depth RenderTexture if necessary.
-        /// </summary>
-        public RenderTexture GetOrCreateOpticalDepthTexture()
+        
+        private RenderTexture GetOrCreateOpticalDepthTexture()
         {
-            if (opticalDepthTexture != null &&
-                opticalDepthTexture.IsCreated() &&
-                opticalDepthTexture.width == textureSize &&
-                opticalDepthTexture.height == textureSize)
+            if (_opticalDepthTexture != null &&
+                _opticalDepthTexture.IsCreated() &&
+                _opticalDepthTexture.width == textureSize &&
+                _opticalDepthTexture.height == textureSize)
             {
-                return opticalDepthTexture;
+                return _opticalDepthTexture;
             }
 
             ReleaseOpticalDepthTexture();
 
-            opticalDepthTexture = new RenderTexture(
+            _opticalDepthTexture = new RenderTexture(
                 textureSize,
                 textureSize,
                 0,
@@ -190,43 +145,37 @@ namespace _Project.World.Atmosphere.Shader
                 wrapMode = TextureWrapMode.Clamp
             };
 
-            opticalDepthTexture.Create();
+            _opticalDepthTexture.Create();
 
-            opticalDepthDirty = true;
+            MarkOpticalDepthDirty();
 
-            return opticalDepthTexture;
+            return _opticalDepthTexture;
         }
         
         public RTHandle GetOpticalDepthHandle()
         {
-            if (opticalDepthHandle == null)
+            if (_opticalDepthHandle == null)
             {
                 RenderTexture texture =
                     GetOrCreateOpticalDepthTexture();
 
-                opticalDepthHandle =
+                _opticalDepthHandle =
                     RTHandles.Alloc(texture);
             }
 
-            return opticalDepthHandle;
+            return _opticalDepthHandle;
         }
 
-
-        /// <summary>
-        /// Marks the precomputed optical depth as invalid.
-        /// </summary>
+        
         public void MarkOpticalDepthDirty()
         {
-            opticalDepthDirty = true;
+            _opticalDepthDirty = true;
         }
 
 
-        /// <summary>
-        /// Called after the compute pass has been registered.
-        /// </summary>
         public void MarkOpticalDepthClean()
         {
-            opticalDepthDirty = false;
+            _opticalDepthDirty = false;
         }
 
 
@@ -237,7 +186,7 @@ namespace _Project.World.Atmosphere.Shader
 
             material.SetTexture(
                 BakedOpticalDepth,
-                opticalDepthTexture
+                _opticalDepthTexture
             );
         }
 
@@ -245,10 +194,7 @@ namespace _Project.World.Atmosphere.Shader
         private void OnValidate()
         {
             textureSize = Max(1, textureSize);
-            inScatteringPoints = Max(1, inScatteringPoints);
-            opticalDepthPoints = Max(1, opticalDepthPoints);
-
-            opticalDepthDirty = true;
+            MarkOpticalDepthDirty();
         }
 
 
@@ -266,20 +212,19 @@ namespace _Project.World.Atmosphere.Shader
 
         private void ReleaseOpticalDepthTexture()
         {
-            if (opticalDepthHandle != null)
+            if (_opticalDepthHandle != null)
             {
-                opticalDepthHandle.Release();
-                opticalDepthHandle = null;
+                _opticalDepthHandle.Release();
+                _opticalDepthHandle = null;
             }
 
-            if (opticalDepthTexture != null)
-            {
-                if (opticalDepthTexture.IsCreated())
-                    opticalDepthTexture.Release();
+            if (_opticalDepthTexture == null) return;
+            
+            if (_opticalDepthTexture.IsCreated())
+                _opticalDepthTexture.Release();
 
-                DestroyImmediate(opticalDepthTexture);
-                opticalDepthTexture = null;
-            }
+            DestroyImmediate(_opticalDepthTexture);
+            _opticalDepthTexture = null;
         }
     }
 }
