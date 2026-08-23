@@ -1,7 +1,9 @@
 <map id="_Project.World.Atmosphere.Shader.AtmosphereSettings.GetOpticalDepthHandle" name="_Project.World.Atmosphere.Shader.AtmosphereSettings.GetOpticalDepthHandle">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,280,60"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a8c1b8676b2d78a82dff034ae0f1edc79" title="Creates the persistent optical&#45;depth RenderTexture if necessary." alt="" coords="328,5,572,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="280,30,314,30,314,35,280,35"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a3a9148afbda108023506e4ec7da259b1" title=" " alt="" coords="620,5,879,60"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="572,30,606,30,606,35,572,35"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,45,280,100"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a8c1b8676b2d78a82dff034ae0f1edc79" title=" " alt="" coords="328,45,572,100"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="280,70,314,70,314,75,280,75"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#aee4e2a7dfc851ab990219fe241c2d591" title=" " alt="" coords="630,5,869,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="572,54,616,48,617,53,573,59"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a3a9148afbda108023506e4ec7da259b1" title=" " alt="" coords="620,84,879,139"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="573,86,607,90,606,96,572,91"/>
 </map>

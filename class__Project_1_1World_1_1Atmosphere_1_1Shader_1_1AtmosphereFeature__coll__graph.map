@@ -1,19 +1,17 @@
 <map id="_Project.World.Atmosphere.Shader.AtmosphereFeature" name="_Project.World.Atmosphere.Shader.AtmosphereFeature">
-<area shape="rect" id="Node000001" title=" " alt="" coords="920,147,1123,187"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="639,97,833,123"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="814,123,922,145,921,150,813,128"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html" title=" " alt="" coords="327,246,529,286"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="543,253,684,236,837,211,949,185,950,190,838,217,684,241,543,258"/>
-<area shape="rect" id="Node000007" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html" title=" " alt="" coords="635,147,837,187"/>
-<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="488,238,552,214,653,185,654,190,554,219,490,243"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="5,348,135,373"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="148,352,223,341,302,322,349,304,390,284,393,288,351,309,303,327,224,346,149,357"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="19,299,121,324"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="135,314,215,315,302,307,343,297,381,284,383,289,344,302,303,313,215,321,135,319"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="41,176,99,201"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="92,210,121,239,140,252,160,262,200,274,243,280,326,279,326,284,243,285,199,279,158,267,137,257,118,243,88,214"/>
-<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="95,165,124,145,158,130,225,115,295,107,365,105,434,108,561,124,662,145,661,150,560,129,433,113,365,110,295,112,226,120,160,135,126,150,98,169"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="851,165,920,165,920,170,851,170"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="347,5,509,31"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="490,32,530,48,574,66,592,76,613,93,621,104,625,114,629,123,636,132,657,145,655,149,633,136,624,126,620,116,616,107,609,97,589,81,572,71,528,52,488,37"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="917,162,1120,202"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="629,112,824,137"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="806,137,917,159,916,165,805,143"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html" title=" " alt="" coords="311,253,513,293"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="527,262,671,248,828,226,945,199,946,205,828,231,671,253,527,267"/>
+<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html" title=" " alt="" coords="625,162,828,202"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="483,246,537,229,643,200,645,205,538,234,485,251"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,327,135,352"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="148,335,216,330,286,318,328,306,366,290,368,295,330,311,287,323,216,335,149,341"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="41,189,99,215"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="88,225,118,261,138,279,160,292,208,305,259,306,308,300,352,290,353,295,309,306,259,312,207,310,158,296,134,283,114,265,84,228"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="90,177,120,151,158,130,227,112,298,104,371,103,441,109,509,119,570,132,669,159,668,165,569,137,508,124,441,114,370,109,299,109,228,117,160,135,123,155,93,181"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="842,179,917,179,917,185,842,185"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="331,5,493,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="473,32,514,47,562,65,582,75,603,94,612,108,615,122,618,135,627,147,646,160,643,164,623,151,614,137,610,123,607,110,599,97,579,79,560,69,512,53,471,37"/>
 </map>

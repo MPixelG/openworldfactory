@@ -1,5 +1,5 @@
 <map id="_Project.World.Atmosphere.Shader.AtmosphereSettings.MarkOpticalDepthClean" name="_Project.World.Atmosphere.Shader.AtmosphereSettings.MarkOpticalDepthClean">
-<area shape="rect" id="Node000001" title="Called after the compute pass has been registered." alt="" coords="365,5,604,60"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="365,5,604,60"/>
 <area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#a1ef5912f5ac81ebf07f276a2ae4731a8" title=" " alt="" coords="5,13,317,53"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="352,35,318,35,318,30,352,30"/>
 </map>

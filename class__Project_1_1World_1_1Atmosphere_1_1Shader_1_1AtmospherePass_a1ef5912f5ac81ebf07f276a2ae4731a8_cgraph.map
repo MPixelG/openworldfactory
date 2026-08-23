@@ -1,20 +1,21 @@
 <map id="_Project.World.Atmosphere.Shader.AtmospherePass.RecordRenderGraph" name="_Project.World.Atmosphere.Shader.AtmospherePass.RecordRenderGraph">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,221,317,261"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,196,317,236"/>
 <area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#a158788451fd061caad825fe516ba79c8" title=" " alt="" coords="365,5,668,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,219,208,183,251,138,305,93,364,55,380,48,382,53,367,60,308,97,255,142,212,187,181,223"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,194,256,125,308,87,364,55,383,47,385,52,367,60,311,91,259,129,184,198"/>
 <area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#a2868f5a837dd440de5effd26e7d8c63b" title=" " alt="" coords="390,70,643,125"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,219,271,176,364,134,384,126,386,131,366,138,273,181,197,224"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,193,281,164,364,133,389,126,390,131,366,139,283,169,210,198"/>
 <area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#ac37c8345023b91888041189abbfb82a6" title=" " alt="" coords="379,149,654,203"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="270,219,366,201,367,206,271,224"/>
-<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a8c1b8676b2d78a82dff034ae0f1edc79" title="Creates the persistent optical&#45;depth RenderTexture if necessary." alt="" coords="716,182,960,237"/>
-<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="318,231,702,213,702,218,318,237"/>
-<area shape="rect" id="Node000007" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a68739c3a79e236d9c06d17ad58f2744a" title="Called after the compute pass has been registered." alt="" coords="397,279,636,334"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="271,259,384,280,383,285,270,264"/>
-<area shape="rect" id="Node000008" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a5a7f5e82379767afa59d21e0c9bbdbe8" title=" " alt="" coords="380,358,653,413"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="198,259,274,301,366,343,390,351,388,356,364,348,271,305,195,264"/>
-<area shape="rect" id="Node000009" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#af1e4192e28c0b283e1a27c5cc744defb" title="Sets all ordinary material parameters. The expensive optical&#45;depth precomputation is handled by Atmos..." alt="" coords="370,437,663,477"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="181,260,212,295,255,339,308,384,367,422,386,430,383,435,364,426,305,388,252,343,208,299,177,263"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="654,188,703,193,702,198,654,193"/>
-<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a3a9148afbda108023506e4ec7da259b1" title=" " alt="" coords="1008,182,1267,237"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="960,207,994,207,994,212,960,212"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="317,196,365,190,366,196,318,201"/>
+<area shape="rect" id="Node000008" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a68739c3a79e236d9c06d17ad58f2744a" title=" " alt="" coords="397,227,636,282"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="318,230,384,238,383,243,317,236"/>
+<area shape="rect" id="Node000009" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a5a7f5e82379767afa59d21e0c9bbdbe8" title=" " alt="" coords="380,306,653,361"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="212,234,366,291,395,300,393,305,364,296,210,239"/>
+<area shape="rect" id="Node000010" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#af1e4192e28c0b283e1a27c5cc744defb" title=" " alt="" coords="370,385,663,425"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="184,234,260,301,311,338,366,370,388,378,386,383,364,374,308,343,257,306,181,238"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a8c1b8676b2d78a82dff034ae0f1edc79" title=" " alt="" coords="716,149,960,203"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="654,173,702,173,702,179,654,179"/>
+<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#aee4e2a7dfc851ab990219fe241c2d591" title=" " alt="" coords="1018,109,1257,163"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="960,157,1004,151,1005,156,961,162"/>
+<area shape="rect" id="Node000007" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a3a9148afbda108023506e4ec7da259b1" title=" " alt="" coords="1008,187,1267,242"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="961,189,995,194,994,199,960,194"/>
 </map>

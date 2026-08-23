@@ -1,14 +1,12 @@
 <map id="_Project.World.Atmosphere.Shader.AtmospherePass" name="_Project.World.Atmosphere.Shader.AtmospherePass">
-<area shape="rect" id="Node000001" title=" " alt="" coords="192,332,395,372"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,227,168,253"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,257,259,330,257,334,119,261"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html" title=" " alt="" coords="192,220,395,260"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="296,274,296,332,291,332,291,274"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="9,5,138,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="88,42,130,111,161,150,195,185,220,203,247,217,245,222,218,207,192,189,157,153,126,114,83,45"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="163,5,264,31"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="209,44,204,75,201,111,205,149,217,185,232,204,251,218,248,222,228,207,212,188,199,151,196,111,199,74,204,44"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="424,5,483,31"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="497,32,509,41,520,53,536,88,541,120,535,152,520,188,504,214,484,239,437,280,387,312,342,334,340,330,385,307,434,275,480,235,499,211,515,185,530,150,536,120,531,90,515,56,506,45,494,36"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="412,32,392,42,375,56,365,73,359,88,357,118,357,150,353,168,345,188,318,222,314,218,340,185,348,167,351,150,352,118,354,87,360,70,371,53,389,38,410,27"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="192,361,395,401"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,257,168,282"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,286,259,359,257,364,119,291"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html" title=" " alt="" coords="192,249,395,289"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="296,303,296,361,291,361,291,303"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="186,5,315,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="253,44,257,122,262,169,272,215,285,248,280,250,267,217,257,170,251,122,248,45"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="376,5,435,31"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="422,42,427,54,443,124,448,181,446,208,439,237,409,300,394,320,376,337,336,364,333,359,372,333,390,317,404,297,434,235,441,208,443,181,437,125,421,55,417,44"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="363,24,327,34,311,43,298,56,285,79,277,105,273,159,280,210,290,249,284,250,274,211,268,159,272,104,280,77,294,53,308,39,325,29,362,19"/>
 </map>

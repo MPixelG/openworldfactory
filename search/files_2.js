@@ -6,6 +6,5 @@ var searchData=
   ['chunkdatastore_2ecs_3',['ChunkDataStore.cs',['../ChunkDataStore_8cs.html',1,'']]],
   ['chunkgenerationpipeline_2ecs_4',['ChunkGenerationPipeline.cs',['../ChunkGenerationPipeline_8cs.html',1,'']]],
   ['chunkpayload_2ecs_5',['ChunkPayload.cs',['../ChunkPayload_8cs.html',1,'']]],
-  ['chunkstate_2ecs_6',['ChunkState.cs',['../ChunkState_8cs.html',1,'']]],
-  ['computehelper_2ecs_7',['ComputeHelper.cs',['../ComputeHelper_8cs.html',1,'']]]
+  ['chunkstate_2ecs_6',['ChunkState.cs',['../ChunkState_8cs.html',1,'']]]
 ];

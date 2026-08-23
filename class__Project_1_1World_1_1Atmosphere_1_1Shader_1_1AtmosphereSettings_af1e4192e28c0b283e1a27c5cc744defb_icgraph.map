@@ -1,5 +1,5 @@
 <map id="_Project.World.Atmosphere.Shader.AtmosphereSettings.SetProperties" name="_Project.World.Atmosphere.Shader.AtmosphereSettings.SetProperties">
-<area shape="rect" id="Node000001" title="Sets all ordinary material parameters. The expensive optical&#45;depth precomputation is handled by Atmos..." alt="" coords="365,5,659,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="365,5,659,45"/>
 <area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#a1ef5912f5ac81ebf07f276a2ae4731a8" title=" " alt="" coords="5,5,317,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="351,28,318,28,318,23,351,23"/>
 </map>

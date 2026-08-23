@@ -1,0 +1,11 @@
+<map id="_Project.World.Atmosphere.Shader.AtmosphereSettings.MarkOpticalDepthDirty" name="_Project.World.Atmosphere.Shader.AtmosphereSettings.MarkOpticalDepthDirty">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1013,41,1252,96"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a8c1b8676b2d78a82dff034ae0f1edc79" title=" " alt="" coords="705,5,949,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="999,56,949,50,949,44,1000,50"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a957183c5cce0f2e4c95e863cc38b67b9" title=" " alt="" coords="688,85,965,125"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1000,87,966,91,965,86,1000,82"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#ac37c8345023b91888041189abbfb82a6" title=" " alt="" coords="365,5,640,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="691,35,641,35,641,30,691,30"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#a1ef5912f5ac81ebf07f276a2ae4731a8" title=" " alt="" coords="5,13,317,53"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="351,35,318,35,318,30,351,30"/>
+</map>

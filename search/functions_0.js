@@ -7,6 +7,5 @@ var searchData=
   ['addtriangle_4',['AddTriangle',['../struct__Project_1_1World_1_1Planet_1_1Scripts_1_1MarchingCubes_1_1MeshGeneration_1_1Core_1_1BurstMeshGeneratorJob2.html#ae310a62c38994e464b34f5767fe63157',1,'_Project::World::Planet::Scripts::MarchingCubes::MeshGeneration::Core::BurstMeshGeneratorJob2']]],
   ['addtriangletomaterialsubmesh_5',['AddTriangleToMaterialSubmesh',['../class__Project_1_1Dev_1_1WorldGenDebug_1_1Scripts_1_1HeightMapRenderer.html#ad93a668888885179efe74cbffbe31e96',1,'_Project::Dev::WorldGenDebug::Scripts::HeightMapRenderer']]],
   ['applymaterials_6',['ApplyMaterials',['../class__Project_1_1Dev_1_1WorldGenDebug_1_1Scripts_1_1HeightMapRenderer.html#aee4096e2ba5dc994fa997d73f214f7c6',1,'_Project::Dev::WorldGenDebug::Scripts::HeightMapRenderer']]],
-  ['atmospherepass_7',['AtmospherePass',['../class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#a70684549d6e725e6e2e8ba0d05c7b0b6',1,'_Project::World::Atmosphere::Shader::AtmospherePass']]],
-  ['awake_8',['Awake',['../class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereController.html#aab657f2cc15e4c91681fd1cebda2ecda',1,'_Project::World::Atmosphere::Shader::AtmosphereController']]]
+  ['atmospherepass_7',['AtmospherePass',['../class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#a70684549d6e725e6e2e8ba0d05c7b0b6',1,'_Project::World::Atmosphere::Shader::AtmospherePass']]]
 ];
