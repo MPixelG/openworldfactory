@@ -24,4 +24,4 @@ MonoBehaviour:
   ditherStrength: 7.27
   ditherScale: 4.41
   blueNoise: {fileID: 2800000, guid: ab3c302a114dd2f3f90a9fae99c71a5c, type: 3}
-  atmosphereScale: 0.24
+  atmosphereScale: 1

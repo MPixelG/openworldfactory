@@ -43,7 +43,6 @@ namespace _Project.World.Atmosphere.Shader
         private static readonly int ScatteringCoefficients = UnityEngine.Shader.PropertyToID("scattering_coefficients");
         private static readonly int DensityFalloff = UnityEngine.Shader.PropertyToID("density_falloff");
         private static readonly int AtmosphereRadius = UnityEngine.Shader.PropertyToID("atmosphere_radius");
-        private static readonly int OceanRadius = UnityEngine.Shader.PropertyToID("ocean_radius");
         private static readonly int PlanetRadius = UnityEngine.Shader.PropertyToID("planet_radius");
         private static readonly int PlanetCenter = UnityEngine.Shader.PropertyToID("planet_center");
 
@@ -66,11 +65,6 @@ namespace _Project.World.Atmosphere.Shader
 
             material.SetFloat(
                 PlanetRadius,
-                bodyRadius
-            );
-
-            material.SetFloat(
-                OceanRadius,
                 bodyRadius
             );
 

@@ -79,7 +79,6 @@ Shader "Custom/Atmosphere" //todo credit seb
 
             float3 planet_center;
             float atmosphere_radius;
-            float ocean_radius;
             float planet_radius;
 
             #define NUM_IN_SCATTERING_POINTS 10
@@ -93,8 +92,8 @@ Shader "Custom/Atmosphere" //todo credit seb
 
             float density_at_point(float3 density_sample_point)
             {
-                float height_above_surface = length(density_sample_point - planet_center) - ocean_radius;
-                float height01 = height_above_surface / (atmosphere_radius - ocean_radius);
+                float height_above_surface = length(density_sample_point - planet_center) - planet_radius;
+                float height01 = height_above_surface / (atmosphere_radius - planet_radius);
                 float local_density = exp(-height01 * density_falloff) * (1 - height01);
                 return local_density;
             }
@@ -116,8 +115,8 @@ Shader "Custom/Atmosphere" //todo credit seb
 
             float optical_depth_baked(float3 ray_origin, float3 ray_dir)
             {
-                float height = length(ray_origin - planet_center) - ocean_radius;
-                float height01 = saturate(height / (atmosphere_radius - ocean_radius));
+                float height = length(ray_origin - planet_center) - planet_radius;
+                float height01 = saturate(height / (atmosphere_radius - planet_radius));
 
                 float uv_x = 1 - (dot(normalize(ray_origin - planet_center), ray_dir) * .5 + .5);
                 return SAMPLE_TEXTURE2D_X(_BakedOpticalDepth, sampler_BakedOpticalDepth, float4(uv_x, height01,0,0));
@@ -159,7 +158,7 @@ Shader "Custom/Atmosphere" //todo credit seb
                     in_scattered_light += local_density * transmittance;
                     in_scatter_point += ray_dir * step_size;
                 }
-                in_scattered_light *= scattering_coefficients * intensity * step_size / ocean_radius;
+                in_scattered_light *= scattering_coefficients * intensity * step_size / planet_radius;
                 in_scattered_light += blue_noise * 0.01;
 
 
@@ -214,7 +213,7 @@ Shader "Custom/Atmosphere" //todo credit seb
 
                 float dst_to_scene = length(sceneWorldPos - ray_origin);
 
-                float2 atmosphere_hit = raySphere(planet_center, atmosphere_radius, ray_origin, ray_dir);
+                float2 atmosphere_hit = ray_sphere(planet_center, atmosphere_radius, ray_origin, ray_dir);
                 float dst_to_atmosphere = atmosphere_hit.x;
                 float dst_through_atmosphere = min(atmosphere_hit.y, dst_to_scene - dst_to_atmosphere);
 

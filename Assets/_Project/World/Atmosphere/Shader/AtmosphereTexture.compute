@@ -56,7 +56,6 @@ float calculate_out_scattering(float2 in_point, float2 out_point) {
 
 	return out_scatter_amount;
 }
-
 [numthreads(8,8,1)]
 void CSMain (uint2 id : SV_DispatchThreadID)
 {
@@ -69,7 +68,7 @@ void CSMain (uint2 id : SV_DispatchThreadID)
 	float2 dir = float2(x, y);
 	
 	float2 in_point = float2(0, lerp(planetRadius, c_atmosphere_radius, height01));
-	float dst_through_atmosphere = raySphere(0, c_atmosphere_radius, float3(in_point,0), float3(dir,0)).y;
+	float dst_through_atmosphere = ray_sphere(0, c_atmosphere_radius, float3(in_point,0), float3(dir,0)).y;
 	float out_scattering = optical_depth(in_point + dir * 0.0001, dir, dst_through_atmosphere-0.0002);
 
 	c_result[id.xy] = out_scattering;

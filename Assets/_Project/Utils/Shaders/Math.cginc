@@ -46,7 +46,7 @@ float Blend(float startHeight, float blendDst, float height) {
 // Returns vector (dstToSphere, dstThroughSphere)
 // If ray origin is inside sphere, dstToSphere = 0
 // If ray misses sphere, dstToSphere = maxValue; dstThroughSphere = 0
-float2 raySphere(float3 sphereCentre, float sphereRadius, float3 rayOrigin, float3 rayDir) {
+float2 ray_sphere(float3 sphereCentre, float sphereRadius, float3 rayOrigin, float3 rayDir) {
 	float3 offset = rayOrigin - sphereCentre;
 	float a = 1; // Set to dot(rayDir, rayDir) if rayDir might not be normalized
 	float b = 2 * dot(offset, rayDir);
