@@ -223,7 +223,8 @@ Shader "Custom/Atmosphere" //todo credit seb
 					const float epsilon = 0.0001;
 					float3 point_in_atmosphere = ray_origin + ray_dir * (dst_to_atmosphere + epsilon);
 					float3 light = calculate_light(point_in_atmosphere, ray_dir, dst_through_atmosphere - epsilon * 2, original_color, input.uv);
-                    return float4(light, 1);
+                    float light_strength = length(light);
+                    return float4(light*light_strength+original_color, 0);
                 }
                 return half4(original_color.rgb, 0.0);
             }
