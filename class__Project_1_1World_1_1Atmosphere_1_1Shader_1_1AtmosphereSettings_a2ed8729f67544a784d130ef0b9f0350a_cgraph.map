@@ -1,0 +1,9 @@
+<map id="_Project.World.Atmosphere.Shader.AtmosphereSettings.GetStarMapHandle" name="_Project.World.Atmosphere.Shader.AtmosphereSettings.GetStarMapHandle">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,45,260,100"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a11dfe0e4d7e310cfcf4fe2b816778ca8" title=" " alt="" coords="308,45,552,100"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,70,294,70,294,75,260,75"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a081f072b931669aae07bc6f7a82fd7a4" title=" " alt="" coords="610,5,849,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="552,54,596,48,597,53,553,59"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#aa2da570d1b4aa8a19c81112dc492e055" title=" " alt="" coords="600,84,859,139"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="553,86,587,90,586,96,552,91"/>
+</map>

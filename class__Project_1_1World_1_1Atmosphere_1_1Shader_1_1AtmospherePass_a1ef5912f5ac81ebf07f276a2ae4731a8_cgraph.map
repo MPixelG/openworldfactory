@@ -1,21 +1,35 @@
 <map id="_Project.World.Atmosphere.Shader.AtmospherePass.RecordRenderGraph" name="_Project.World.Atmosphere.Shader.AtmospherePass.RecordRenderGraph">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,210,317,250"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#ac3fb81e6c3559f127cd6f6ffb0c1e10a" title=" " alt="" coords="375,5,649,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,208,257,140,309,102,364,69,378,63,380,68,367,74,312,106,260,144,184,212"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,367,317,407"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#af7c7f1b9e9b8280eb54a9a0d733be6ae" title=" " alt="" coords="375,5,649,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,366,191,307,232,227,258,184,289,142,324,103,364,69,370,65,373,69,367,73,328,107,293,145,263,187,236,229,196,309,172,368"/>
 <area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#a2868f5a837dd440de5effd26e7d8c63b" title=" " alt="" coords="385,84,639,139"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,207,281,178,364,147,389,140,390,145,366,153,283,183,210,212"/>
-<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#ac37c8345023b91888041189abbfb82a6" title=" " alt="" coords="375,163,649,217"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="318,210,361,205,361,210,318,215"/>
-<area shape="rect" id="Node000008" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a68739c3a79e236d9c06d17ad58f2744a" title=" " alt="" coords="393,241,631,296"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="318,245,379,251,378,257,318,250"/>
-<area shape="rect" id="Node000009" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a5a7f5e82379767afa59d21e0c9bbdbe8" title=" " alt="" coords="375,320,649,375"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="212,248,366,305,394,314,393,319,364,310,210,253"/>
-<area shape="rect" id="Node000010" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#af1e4192e28c0b283e1a27c5cc744defb" title=" " alt="" coords="365,399,659,439"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="184,248,260,315,311,352,367,384,388,392,386,397,364,388,308,357,257,319,181,252"/>
-<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a8c1b8676b2d78a82dff034ae0f1edc79" title=" " alt="" coords="707,163,951,217"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="650,187,693,187,693,193,650,193"/>
-<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#aee4e2a7dfc851ab990219fe241c2d591" title=" " alt="" coords="1009,123,1247,177"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="951,171,995,165,995,170,951,176"/>
-<area shape="rect" id="Node000007" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a3a9148afbda108023506e4ec7da259b1" title=" " alt="" coords="999,201,1257,256"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="951,203,985,208,985,213,951,208"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,366,200,321,243,261,298,200,330,172,364,148,373,142,376,147,367,152,333,176,302,204,247,265,204,324,176,369"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#ac742e092deac9d9a1878a2680aeacccc" title=" " alt="" coords="381,163,643,217"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="181,365,257,297,309,259,364,226,378,220,380,225,367,231,312,264,260,301,184,369"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#ac37c8345023b91888041189abbfb82a6" title=" " alt="" coords="375,241,649,296"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="208,365,281,335,364,305,389,297,390,302,366,310,283,340,210,370"/>
+<area shape="rect" id="Node000009" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a2ed8729f67544a784d130ef0b9f0350a" title=" " alt="" coords="385,320,639,375"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="318,367,371,361,371,366,318,372"/>
+<area shape="rect" id="Node000013" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a68739c3a79e236d9c06d17ad58f2744a" title=" " alt="" coords="393,399,631,453"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="318,402,379,409,378,414,318,407"/>
+<area shape="rect" id="Node000014" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a8428c97b80b46cb7cdd5981c325b0c27" title=" " alt="" coords="393,477,631,532"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="211,405,366,463,390,471,389,476,364,469,209,410"/>
+<area shape="rect" id="Node000015" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a5a7f5e82379767afa59d21e0c9bbdbe8" title=" " alt="" coords="375,556,649,611"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="184,405,261,473,312,510,367,542,380,549,378,553,364,547,309,515,257,477,181,409"/>
+<area shape="rect" id="Node000016" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#af1e4192e28c0b283e1a27c5cc744defb" title=" " alt="" coords="365,635,659,675"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="176,406,204,452,247,510,302,571,333,598,367,621,378,627,376,632,364,626,330,602,298,575,243,514,200,455,172,409"/>
+<area shape="rect" id="Node000017" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a55609265adf09a728e500375c4cf7d7f" title=" " alt="" coords="385,700,639,755"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="173,406,197,462,239,538,265,578,295,617,329,654,367,685,376,691,373,695,364,689,326,658,291,621,261,581,234,540,193,464,168,408"/>
+<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a8c1b8676b2d78a82dff034ae0f1edc79" title=" " alt="" coords="707,241,951,296"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="650,266,693,266,693,271,650,271"/>
+<area shape="rect" id="Node000007" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#aee4e2a7dfc851ab990219fe241c2d591" title=" " alt="" coords="1009,163,1247,217"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="933,239,1009,218,1011,223,934,244"/>
+<area shape="rect" id="Node000008" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a3a9148afbda108023506e4ec7da259b1" title=" " alt="" coords="999,241,1257,296"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="951,266,985,266,985,271,951,271"/>
+<area shape="rect" id="Node000010" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a11dfe0e4d7e310cfcf4fe2b816778ca8" title=" " alt="" coords="707,320,951,375"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="640,345,693,345,693,350,640,350"/>
+<area shape="rect" id="Node000011" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a081f072b931669aae07bc6f7a82fd7a4" title=" " alt="" coords="1009,320,1247,375"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="951,345,995,345,995,350,951,350"/>
+<area shape="rect" id="Node000012" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#aa2da570d1b4aa8a19c81112dc492e055" title=" " alt="" coords="999,399,1257,453"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="934,372,1011,393,1009,398,933,377"/>
 </map>

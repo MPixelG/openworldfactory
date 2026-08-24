@@ -1,12 +1,12 @@
 <map id="_Project.World.Atmosphere.Shader.AtmospherePass" name="_Project.World.Atmosphere.Shader.AtmospherePass">
-<area shape="rect" id="Node000001" title=" " alt="" coords="192,361,395,401"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,257,168,282"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,286,259,359,257,364,119,291"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html" title=" " alt="" coords="192,249,395,289"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="296,303,296,361,291,361,291,303"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="192,405,395,445"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,279,168,304"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,309,265,403,262,407,115,314"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html" title=" " alt="" coords="192,271,395,311"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="296,325,296,405,291,405,291,325"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="185,5,314,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="252,44,255,121,261,169,271,215,284,248,280,250,265,217,255,170,249,122,246,44"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="252,44,257,121,271,215,288,270,283,272,265,217,252,122,247,45"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="423,5,481,31"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="495,31,509,40,520,53,540,96,546,134,538,173,520,217,504,244,484,268,438,309,388,341,343,364,340,359,386,336,435,305,481,264,500,241,515,215,533,171,540,134,535,98,515,56,505,44,492,35"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="410,26,342,37,314,45,297,57,283,79,275,104,271,131,271,158,278,209,289,248,284,250,273,210,266,158,266,130,269,103,278,77,293,53,312,41,341,31,409,20"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="495,31,509,40,520,53,539,96,543,133,536,172,520,217,504,250,483,281,433,335,378,377,331,407,328,403,375,373,429,331,479,278,499,248,515,215,531,170,538,133,534,97,515,56,505,44,492,35"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="410,26,342,37,314,45,297,57,281,82,272,110,268,140,268,170,277,227,289,270,284,272,272,228,263,171,263,140,267,109,277,79,293,53,312,41,341,31,409,20"/>
 </map>

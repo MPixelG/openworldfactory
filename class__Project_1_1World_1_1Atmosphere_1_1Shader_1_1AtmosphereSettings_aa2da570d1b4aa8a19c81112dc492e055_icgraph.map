@@ -1,0 +1,9 @@
+<map id="_Project.World.Atmosphere.Shader.AtmosphereSettings.ReleaseStarMapTexture" name="_Project.World.Atmosphere.Shader.AtmosphereSettings.ReleaseStarMapTexture">
+<area shape="rect" id="Node000001" title=" " alt="" coords="960,5,1219,60"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a11dfe0e4d7e310cfcf4fe2b816778ca8" title=" " alt="" coords="668,5,912,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="946,35,912,35,912,30,946,30"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a2ed8729f67544a784d130ef0b9f0350a" title=" " alt="" coords="365,5,620,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="655,35,620,35,620,30,655,30"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#a1ef5912f5ac81ebf07f276a2ae4731a8" title=" " alt="" coords="5,13,317,53"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="352,35,318,35,318,30,352,30"/>
+</map>

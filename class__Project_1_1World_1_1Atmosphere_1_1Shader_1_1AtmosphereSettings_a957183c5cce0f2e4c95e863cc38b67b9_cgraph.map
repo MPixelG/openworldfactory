@@ -1,5 +1,7 @@
 <map id="_Project.World.Atmosphere.Shader.AtmosphereSettings.OnValidate" name="_Project.World.Atmosphere.Shader.AtmosphereSettings.OnValidate">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,13,283,53"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,53,283,93"/>
 <area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#aee4e2a7dfc851ab990219fe241c2d591" title=" " alt="" coords="331,5,569,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="283,30,317,30,317,35,283,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="282,52,317,47,317,53,283,57"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a081f072b931669aae07bc6f7a82fd7a4" title=" " alt="" coords="331,84,569,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="283,88,317,92,316,97,282,93"/>
 </map>

@@ -1,0 +1,11 @@
+<map id="_Project.World.Atmosphere.Shader.AtmosphereSettings.MarkStarMapDirty" name="_Project.World.Atmosphere.Shader.AtmosphereSettings.MarkStarMapDirty">
+<area shape="rect" id="Node000001" title=" " alt="" coords="993,41,1232,96"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a11dfe0e4d7e310cfcf4fe2b816778ca8" title=" " alt="" coords="685,5,929,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="979,56,929,50,929,44,980,50"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a957183c5cce0f2e4c95e863cc38b67b9" title=" " alt="" coords="668,85,945,125"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="980,87,946,91,945,86,980,82"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html#a2ed8729f67544a784d130ef0b9f0350a" title=" " alt="" coords="365,5,620,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="671,35,620,35,620,30,671,30"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#a1ef5912f5ac81ebf07f276a2ae4731a8" title=" " alt="" coords="5,13,317,53"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="352,35,318,35,318,30,352,30"/>
+</map>

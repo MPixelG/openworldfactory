@@ -4,5 +4,6 @@ var searchData=
   ['shipevaluationresult_1',['ShipEvaluationResult',['../struct__Project_1_1World_1_1Ship_1_1Generation_1_1ShipEvaluationResult.html',1,'_Project::World::Ship::Generation']]],
   ['shipgenerator_2',['ShipGenerator',['../class__Project_1_1World_1_1Ship_1_1Generation_1_1ShipGenerator.html',1,'_Project::World::Ship::Generation']]],
   ['shiplayout_3',['ShipLayout',['../struct__Project_1_1World_1_1Ship_1_1Generation_1_1ShipLayout.html',1,'_Project::World::Ship::Generation']]],
-  ['shiptile_4',['ShipTile',['../struct__Project_1_1World_1_1Ship_1_1Generation_1_1ShipTile.html',1,'_Project::World::Ship::Generation']]]
+  ['shiptile_4',['ShipTile',['../struct__Project_1_1World_1_1Ship_1_1Generation_1_1ShipTile.html',1,'_Project::World::Ship::Generation']]],
+  ['starmapcomputepassdata_5',['StarMapComputePassData',['../class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass_1_1StarMapComputePassData.html',1,'_Project::World::Atmosphere::Shader::AtmospherePass']]]
 ];

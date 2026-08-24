@@ -1,9 +1,23 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,85,135,110"/>
-<area shape="rect" id="Node000001" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereSettings.html" title=" " alt="" coords="221,5,423,45"/>
-<area shape="poly" id="edge18_Node000000_Node000001" title=" " alt="" coords="115,77,182,55,227,43,228,48,183,60,117,82"/>
-<area shape="rect" id="Node000002" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1MaterialDatabase.html" title=" " alt="" coords="191,70,453,125"/>
-<area shape="poly" id="edge19_Node000000_Node000002" title=" " alt="" coords="148,95,191,95,191,100,148,100"/>
-<area shape="rect" id="Node000003" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1WorldGen_1_1ParallelBurstSamplerSettings.html" title=" " alt="" coords="183,149,461,189"/>
-<area shape="poly" id="edge20_Node000000_Node000003" title=" " alt="" coords="119,112,183,133,233,147,231,152,182,139,117,117"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,305,129,330"/>
+<area shape="rect" id="Node000001" href="$class__Project_1_1Dev_1_1WorldGenDebug_1_1Scripts_1_1HeightMapRenderer.html" title="Generates a spherical terrain preview mesh by sampling the same world&#45;gen noise as the 3D pipeline...." alt="" coords="217,5,433,45"/>
+<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="69,291,78,241,97,177,128,111,150,81,176,55,195,43,215,34,217,39,197,47,179,59,154,85,133,114,102,179,84,242,74,292"/>
+<area shape="rect" id="Node000002" href="$class__Project_1_1Dev_1_1WorldGenDebug_1_1Scripts_1_1WorldGenDebugVisualizer.html" title="Real&#45;time debug visualizer for world generation. Displays a 2D height map preview that updates when p..." alt="" coords="205,69,444,109"/>
+<area shape="poly" id="edge9_Node000000_Node000002" title=" " alt="" coords="73,290,86,252,107,205,137,158,176,119,204,104,206,108,179,123,141,162,112,208,91,254,78,292"/>
+<area shape="rect" id="Node000003" href="$class__Project_1_1Gameplay_1_1BasicCameraMovement.html" title="Basic free&#45;fly camera movement using the new Unity Input System." alt="" coords="208,133,441,173"/>
+<area shape="poly" id="edge10_Node000000_Node000003" title=" " alt="" coords="80,291,118,236,145,207,176,183,207,169,209,173,179,188,148,211,122,239,84,294"/>
+<area shape="rect" id="Node000004" href="$class__Project_1_1Rendering_1_1Debug_1_1BillboardText.html" title=" " alt="" coords="227,197,422,237"/>
+<area shape="poly" id="edge11_Node000000_Node000004" title=" " alt="" coords="95,294,132,269,176,247,226,231,228,236,178,252,135,274,98,299"/>
+<area shape="rect" id="Node000005" href="$class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereController.html" title=" " alt="" coords="218,261,431,301"/>
+<area shape="poly" id="edge12_Node000000_Node000005" title=" " alt="" coords="143,304,217,294,218,299,143,309"/>
+<area shape="rect" id="Node000006" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Rendering_1_1PlanetRenderer.html" title=" " alt="" coords="177,326,472,381"/>
+<area shape="poly" id="edge13_Node000000_Node000006" title=" " alt="" coords="143,325,177,330,177,335,143,330"/>
+<area shape="rect" id="Node000007" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Unity_1_1PlanetSettings.html" title=" " alt="" coords="194,405,455,459"/>
+<area shape="poly" id="edge14_Node000000_Node000007" title=" " alt="" coords="96,337,134,364,178,390,210,402,208,407,176,394,131,369,93,341"/>
+<area shape="rect" id="Node000008" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1Planet.html" title=" " alt="" coords="219,484,431,524"/>
+<area shape="poly" id="edge15_Node000000_Node000008" title=" " alt="" coords="82,341,119,406,146,440,179,468,220,488,217,492,176,473,142,444,114,409,77,344"/>
+<area shape="rect" id="Node000009" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1Deprecated_1_1PlanetCube.html" title=" " alt="" coords="219,548,431,588"/>
+<area shape="poly" id="edge16_Node000000_Node000009" title=" " alt="" coords="76,343,88,385,108,437,138,490,157,514,179,534,198,546,219,555,217,560,196,551,176,538,153,517,134,493,103,440,83,387,71,344"/>
+<area shape="rect" id="Node000010" href="$class__Project_1_1World_1_1Planet_1_1Scripts_1_1v2_1_1Unity_1_1PlanetBootstrap.html" title=" " alt="" coords="209,612,441,652"/>
+<area shape="poly" id="edge17_Node000000_Node000010" title=" " alt="" coords="73,344,81,398,99,467,113,503,131,538,152,570,179,598,210,616,207,621,176,602,148,574,126,541,108,505,94,469,76,399,68,344"/>
 </map>
