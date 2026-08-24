@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['addfullscreenpass_0',['AddFullscreenPass',['../class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#a158788451fd061caad825fe516ba79c8',1,'_Project::World::Atmosphere::Shader::AtmospherePass']]],
+  ['addfullscreenpasses_0',['AddFullscreenPasses',['../class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#ac3fb81e6c3559f127cd6f6ffb0c1e10a',1,'_Project::World::Atmosphere::Shader::AtmospherePass']]],
   ['addnode_1',['AddNode',['../class__Project_1_1World_1_1Planet_1_1Scripts_1_1Chunking_1_1OctreeChunkSystem_1_1Core_1_1OctreeBuilder.html#abd929932781a40f1ab81aad889ce7ce0',1,'_Project::World::Planet::Scripts::Chunking::OctreeChunkSystem::Core::OctreeBuilder']]],
   ['addopticaldepthcomputepass_2',['AddOpticalDepthComputePass',['../class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmospherePass.html#a2868f5a837dd440de5effd26e7d8c63b',1,'_Project::World::Atmosphere::Shader::AtmospherePass']]],
   ['addrenderpasses_3',['AddRenderPasses',['../class__Project_1_1World_1_1Atmosphere_1_1Shader_1_1AtmosphereFeature.html#ac7417a9ca0311b708cb5187104c98a44',1,'_Project::World::Atmosphere::Shader::AtmosphereFeature']]],
