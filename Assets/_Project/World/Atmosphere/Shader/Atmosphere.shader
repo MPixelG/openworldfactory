@@ -32,6 +32,10 @@ Shader "Custom/Atmosphere" //todo credit seb
 
             TEXTURE2D(_BakedOpticalDepth);
             SAMPLER(sampler_BakedOpticalDepth);
+            
+            TEXTURE2D(_BakedStarMap);
+            SAMPLER(sampler_BakedStarMap);
+
 
 
             struct attributes
@@ -119,7 +123,18 @@ Shader "Custom/Atmosphere" //todo credit seb
                 float height01 = saturate(height / (atmosphere_radius - planet_radius));
 
                 float uv_x = 1 - (dot(normalize(ray_origin - planet_center), ray_dir) * .5 + .5);
-                return SAMPLE_TEXTURE2D_X(_BakedOpticalDepth, sampler_BakedOpticalDepth, float4(uv_x, height01,0,0));
+
+                
+                return _BakedOpticalDepth.SampleLevel(sampler_BakedOpticalDepth, float2(uv_x*0.6, height01*0.6), 0).x;
+            } 
+            
+            float3 optical_depth_bakedT(float3 ray_origin, float3 ray_dir)
+            {
+                float height = length(ray_origin - planet_center) - planet_radius;
+                float height01 = saturate(height / (atmosphere_radius - planet_radius));
+
+                float uv_x = 1 - (dot(normalize(ray_origin - planet_center), ray_dir) * .5 + .5);
+                return SAMPLE_TEXTURE2D(_BakedOpticalDepth, sampler_BakedOpticalDepth, float4(ray_origin.xy / 20,0,0));
             } 
 
             float optical_depth_baked2(float3 ray_origin, float3 ray_dir, float ray_length)
@@ -222,6 +237,7 @@ Shader "Custom/Atmosphere" //todo credit seb
                 {
 					const float epsilon = 0.0001;
 					float3 point_in_atmosphere = ray_origin + ray_dir * (dst_to_atmosphere + epsilon);
+                    //if (input.uv.x > 0.5) return float4(optical_depth_bakedT(point_in_atmosphere, ray_dir), 0);
 					float3 light = calculate_light(point_in_atmosphere, ray_dir, dst_through_atmosphere - epsilon * 2, original_color, input.uv);
                     float light_strength = length(light);
                     return float4(light*light_strength+original_color, 0);

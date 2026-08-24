@@ -59,23 +59,30 @@ float calculateOutScattering(float2 inPoint, float2 outPoint) {
 	return outScatterAmount;
 }
 
-[numthreads(8,8,1)]
-void CSMain (uint2 id : SV_DispatchThreadID)
+
+
+[numthreads(8, 8, 1)]
+void CSMain (uint3 id : SV_DispatchThreadID) // Changed uint2 to uint3 to match Unity semantics
 {
-	const float planetRadius = 1;
+	// 1. Out-of-bounds check (prevents corruption on non-multiple-of-8 sizes)
+	if (id.x >= (uint)c_texture_size || id.y >= (uint)c_texture_size)
+		return;
 
-	float2 uv = id / (float)c_texture_size;
+	const float planetRadius = 1.0;
+
+	// 2. Map pixel center to UV space [0, 1]
+	float2 uv = (id.xy + 0.5) / (float)c_texture_size;
+
 	float height01 = uv.y;
-	float angle = uv.x * 3.14159265359;
-	float2 dir = float2(sin(angle), cos(angle));
-	float y = -2 * uv.x + 1;
-	float x = sin(acos(y));
-	dir = float2(x,y);
-	
+    
+	// Direction calculation
+	float y = -2.0 * uv.x + 1.0;
+	float x = sin(acos(clamp(y, -1.0, 1.0))); // Clamp prevents NaNs on edge pixels
+	float2 dir = float2(x, y);
+    
 	float2 inPoint = float2(0, lerp(planetRadius, c_atmosphere_radius, height01));
-	float dstThroughAtmosphere = ray_sphere(0, c_atmosphere_radius, float3(inPoint,0), float3(dir,0)).y;
-	float2 outPoint = inPoint + dir * ray_sphere(0, c_atmosphere_radius, float3(inPoint,0), float3(dir,0)).y;
-	float outScattering = opticalDepth(inPoint + dir * 0.0001, dir, dstThroughAtmosphere-0.0002);
+	float dstThroughAtmosphere = ray_sphere(0, c_atmosphere_radius, float3(inPoint, 0), float3(dir, 0)).y;
+	float outScattering = opticalDepth(inPoint + dir * 0.0001, dir, max(0.0, dstThroughAtmosphere - 0.0002));
 
-	c_result[id.xy] = outScattering;
+	c_result[id.xy] = float4(outScattering, 0, 0, 1);
 }

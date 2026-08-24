@@ -12,21 +12,23 @@ namespace _Project.World.Atmosphere.Shader
         private readonly AtmosphereSettings _settings;
         
 
-        private static readonly int C_TextureSize =
+        private static readonly int CD_TextureSize =
             UnityEngine.Shader.PropertyToID("c_texture_size");
         
 
-        private static readonly int C_AtmosphereRadius =
+        private static readonly int CD_AtmosphereRadius =
             UnityEngine.Shader.PropertyToID("c_atmosphere_radius");
 
-        private static readonly int C_DensityFalloff =
+        private static readonly int CD_DensityFalloff =
             UnityEngine.Shader.PropertyToID("c_density_falloff");
 
-        private static readonly int C_Result =
+        private static readonly int CD_Result =
             UnityEngine.Shader.PropertyToID("c_result");
+        
+        
 
 
-        private class ComputePassData
+        private class OpticalDepthComputePassData
         {
             public ComputeShader Compute;
             public int Kernel;
@@ -55,7 +57,7 @@ namespace _Project.World.Atmosphere.Shader
         {
             if (_material == null ||
                 _settings == null ||
-                _settings.opticalDepthCompute == null)
+                _settings.opticalDepthCompute == null )
             {
                 Debug.Log("ERROR IN RECORDING RENDER GRAPH FOR THE ATMOSPHERE: OpticalDepth");
                 return;
@@ -97,7 +99,6 @@ namespace _Project.World.Atmosphere.Shader
 
             if (_settings.NeedsOpticalDepthPrecompute)
             {
-                Debug.Log("Needs optical depth precompute");
                 AddOpticalDepthComputePass(
                     renderGraph,
                     opticalDepthHandle
@@ -105,7 +106,7 @@ namespace _Project.World.Atmosphere.Shader
 
                 _settings.MarkOpticalDepthClean(); 
             }
-
+            
 
             _settings.SetOpticalDepthTexture(_material);
 
@@ -127,7 +128,7 @@ namespace _Project.World.Atmosphere.Shader
                 renderGraph.CreateTexture(destinationDesc);
 
 
-            AddFullscreenPass(
+            AddFullscreenPasses(
                 renderGraph,
                 source,
                 destination,
@@ -148,7 +149,7 @@ namespace _Project.World.Atmosphere.Shader
 
 
             using var builder =
-                renderGraph.AddComputePass<ComputePassData>(
+                renderGraph.AddComputePass<OpticalDepthComputePassData>(
                     "Atmosphere Optical Depth",
                     out var passData
                 );
@@ -160,13 +161,13 @@ namespace _Project.World.Atmosphere.Shader
             passData.Kernel = kernel;
 
             passData.TextureSize =
-                _settings.textureSize;
+                _settings.opticalDepthTextureSize;
 
             passData.AtmosphereRadius =
                 1f + _settings.atmosphereScale;
 
             passData.DensityFalloff =
-                _settings.densityFalloff;
+                _settings.atmosphereDensityFalloff;
 
             passData.Result =
                 opticalDepth;
@@ -180,7 +181,7 @@ namespace _Project.World.Atmosphere.Shader
 
             builder.SetRenderFunc(
                 static (
-                    ComputePassData data,
+                    OpticalDepthComputePassData data,
                     ComputeGraphContext context
                 ) =>
                 {
@@ -189,45 +190,48 @@ namespace _Project.World.Atmosphere.Shader
 
                     cmd.SetComputeIntParam(
                         data.Compute,
-                        C_TextureSize,
+                        CD_TextureSize,
                         data.TextureSize
                     );
 
                     cmd.SetComputeFloatParam(
                         data.Compute,
-                        C_AtmosphereRadius,
+                        CD_AtmosphereRadius,
                         data.AtmosphereRadius
                     );
 
                     cmd.SetComputeFloatParam(
                         data.Compute,
-                        C_DensityFalloff,
+                        CD_DensityFalloff,
                         data.DensityFalloff
                     );
 
                     cmd.SetComputeTextureParam(
                         data.Compute,
                         data.Kernel,
-                        C_Result,
+                        CD_Result,
                         data.Result
                     );
 
+                    int threadGroupsX = Mathf.CeilToInt(data.TextureSize / 8f);
+                    int threadGroupsY = Mathf.CeilToInt(data.TextureSize / 8f);
 
                     cmd.DispatchCompute(
                         data.Compute,
                         data.Kernel,
-                        8, 8, 1
+                        threadGroupsX, threadGroupsY, 1
                     );
                 }
             );
         }
 
 
-        private void AddFullscreenPass(
+        private void AddFullscreenPasses(
             RenderGraph renderGraph,
             TextureHandle source,
             TextureHandle destination,
-            TextureHandle opticalDepth)
+            TextureHandle opticalDepth
+            )
         {
             using var builder =
                 renderGraph.AddRasterRenderPass<FullscreenPassData>(
