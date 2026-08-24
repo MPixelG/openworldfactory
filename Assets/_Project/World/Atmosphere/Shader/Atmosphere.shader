@@ -32,10 +32,9 @@ Shader "Custom/Atmosphere" //todo credit seb
 
             TEXTURE2D(_BakedOpticalDepth);
             SAMPLER(sampler_BakedOpticalDepth);
-            
+
             TEXTURE2D(_BakedStarMap);
             SAMPLER(sampler_BakedStarMap);
-
 
 
             struct attributes
@@ -78,6 +77,22 @@ Shader "Custom/Atmosphere" //todo credit seb
                 float y = uv.y * height;
                 return float2(x / scale, y / scale);
             }
+
+            float2 DirectionToOctUV(float3 dir)
+            {
+                dir /= (abs(dir.x) + abs(dir.y) + abs(dir.z));
+
+                float2 uv = dir.xz;
+                if (dir.y < 0.0)
+                {
+                    uv = (1.0 - abs(dir.zx)) * SignNotZero(dir.xz);
+                }
+
+                return uv * 0.5 + 0.5;
+            }
+
+
+
 
             float3 dir_to_sun;
 
@@ -124,10 +139,11 @@ Shader "Custom/Atmosphere" //todo credit seb
 
                 float uv_x = 1 - (dot(normalize(ray_origin - planet_center), ray_dir) * .5 + .5);
 
-                
-                return _BakedOpticalDepth.SampleLevel(sampler_BakedOpticalDepth, float2(uv_x*0.6, height01*0.6), 0).x;
-            } 
-            
+
+                return _BakedOpticalDepth.SampleLevel(sampler_BakedOpticalDepth, float2(uv_x * 0.6, height01 * 0.6), 0).
+                                                                  x;
+            }
+
             float3 optical_depth_bakedT(float3 ray_origin, float3 ray_dir)
             {
                 float height = length(ray_origin - planet_center) - planet_radius;
@@ -135,7 +151,7 @@ Shader "Custom/Atmosphere" //todo credit seb
 
                 float uv_x = 1 - (dot(normalize(ray_origin - planet_center), ray_dir) * .5 + .5);
                 return SAMPLE_TEXTURE2D(_BakedOpticalDepth, sampler_BakedOpticalDepth, float4(ray_origin.xy / 20,0,0));
-            } 
+            }
 
             float optical_depth_baked2(float3 ray_origin, float3 ray_dir, float ray_length)
             {
@@ -155,7 +171,7 @@ Shader "Custom/Atmosphere" //todo credit seb
             float3 calculate_light(float3 ray_origin, float3 ray_dir, float ray_length, float3 original_col, float2 uv)
             {
                 float blue_noise = SAMPLE_TEXTURE2D_X(_BlueNoise, sampler_BlueNoise,
-                                    float4(square_uv(uv) * dither_scale,0,0));
+                                       float4(square_uv(uv) * dither_scale,0,0));
                 blue_noise = (blue_noise - 0.5) * dither_strength;
 
                 float3 in_scatter_point = ray_origin;
@@ -165,10 +181,12 @@ Shader "Custom/Atmosphere" //todo credit seb
 
                 for (int i = 0; i < NUM_IN_SCATTERING_POINTS; i++)
                 {
-                    float sun_ray_optical_depth = optical_depth_baked(in_scatter_point + dir_to_sun * dither_strength, dir_to_sun);
+                    float sun_ray_optical_depth = optical_depth_baked(in_scatter_point + dir_to_sun * dither_strength,
+                             dir_to_sun);
                     float local_density = density_at_point(in_scatter_point);
                     view_ray_optical_depth = optical_depth_baked2(ray_origin, ray_dir, step_size * i);
-                    float3 transmittance = exp(-(sun_ray_optical_depth + view_ray_optical_depth) * scattering_coefficients);
+                    float3 transmittance = exp(
+                        -(sun_ray_optical_depth + view_ray_optical_depth) * scattering_coefficients);
 
                     in_scattered_light += local_density * transmittance;
                     in_scatter_point += ray_dir * step_size;
@@ -180,7 +198,8 @@ Shader "Custom/Atmosphere" //todo credit seb
                 const float brightness_adaption_strength = 0.15;
                 const float reflected_light_out_scatter_strength = 3;
                 float brightness_adaption = dot(in_scattered_light, 1) * brightness_adaption_strength;
-                float brightness_sum = view_ray_optical_depth * intensity * reflected_light_out_scatter_strength + brightness_adaption;
+                float brightness_sum = view_ray_optical_depth * intensity * reflected_light_out_scatter_strength +
+                    brightness_adaption;
                 float reflected_light_strength = exp(-brightness_sum);
                 float hdr_strength = saturate(dot(original_col, 1) / 3 - 1);
                 reflected_light_strength = lerp(reflected_light_strength, 1, hdr_strength);
@@ -198,6 +217,8 @@ Shader "Custom/Atmosphere" //todo credit seb
                 half4 original_color = SAMPLE_TEXTURE2D_X(_BlitTexture, sampler_BlitTexture, input.uv);
 
                 float scene_depth = SampleSceneDepth(input.uv);
+                
+
 
                 #if UNITY_REVERSED_Z
                 float depth = scene_depth;
@@ -224,6 +245,16 @@ Shader "Custom/Atmosphere" //todo credit seb
 
                 float3 ray_dir =
                     normalize(world_pos.xyz - ray_origin);
+                
+                bool hasDepth = (depth-0.9999999) * 200000 < 0.01;
+                
+                if (!hasDepth)
+                {
+                    float2 ray_sphere_uv = DirectionToOctUV(ray_dir);
+                    float star_map_color = SAMPLE_TEXTURE2D_X(_BakedStarMap, sampler_BakedStarMap, ray_sphere_uv);
+                    original_color = float4(star_map_color, star_map_color, star_map_color, 1); // TODO: add flickering of the stars using the ray dir as a seed and multiple sine waves in different frequencies for the flickering
+                    //TODO add configurable star brightness, color and background color
+                }
 
 
                 float dst_to_scene = length(sceneWorldPos - ray_origin);
@@ -235,12 +266,12 @@ Shader "Custom/Atmosphere" //todo credit seb
 
                 if (dst_through_atmosphere > 0)
                 {
-					const float epsilon = 0.0001;
-					float3 point_in_atmosphere = ray_origin + ray_dir * (dst_to_atmosphere + epsilon);
+                    const float epsilon = 0.0001;
+                    float3 point_in_atmosphere = ray_origin + ray_dir * (dst_to_atmosphere + epsilon);
                     //if (input.uv.x > 0.5) return float4(optical_depth_bakedT(point_in_atmosphere, ray_dir), 0);
-					float3 light = calculate_light(point_in_atmosphere, ray_dir, dst_through_atmosphere - epsilon * 2, original_color, input.uv);
+                    float3 light = calculate_light(point_in_atmosphere, ray_dir, dst_through_atmosphere - epsilon * 2, original_color, input.uv);
                     float light_strength = length(light);
-                    return float4(light*light_strength+original_color, 0);
+                    return float4(light * light_strength + original_color, 0); //todo make stars fade out when enough light is visible
                 }
                 return half4(original_color.rgb, 0.0);
             }

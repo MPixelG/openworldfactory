@@ -1,0 +1,173 @@
+#pragma kernel CSMain
+
+#include "Assets/_Project/Utils/Shaders/Math.cginc"
+
+RWTexture2D<float> cs_result;
+
+int cs_texture_size;
+float cs_star_frequency;
+
+
+
+float hash11(float p)
+{
+    p = frac(p * 0.1031);
+    p *= p + 33.33;
+    p *= p + p;
+    return frac(p);
+}
+
+
+float hash13(float3 p)
+{
+    p = frac(p * 0.1031);
+    p += dot(p, p.yzx + 33.33);
+    return frac((p.x + p.y) * p.z);
+}
+
+
+float3 hash33(float3 p)
+{
+    p = frac(p * 0.1031);
+    p += dot(p, p.yzx + 33.33);
+
+    return frac(
+        (p.xxy + p.yxx) *
+        p.zyx
+    );
+}
+
+
+float3 OctUVToDirection(float2 uv)
+{
+    float2 e = uv * 2.0 - 1.0;
+
+    float3 v = float3(
+        e.x,
+        1.0 - abs(e.x) - abs(e.y),
+        e.y
+    );
+
+    if (v.y < 0.0)
+    {
+        v.xz =
+            (1.0 - abs(v.zx)) *
+            SignNotZero(v.xz);
+    }
+
+    return normalize(v);
+}
+
+
+float Star(float3 dir, float seed)
+{
+    float3 p =
+        dir * 10000.0 +
+        seed * 173.17;
+
+    float3 random =
+        hash33(p);
+
+
+    float3 starDir =
+        normalize(
+            dir +
+            (random - 0.5) * 0.0008
+        );
+
+
+    float probability =
+        hash13(p + 91.7);
+
+    if (probability > 0.00001)  
+        return 0.0;
+
+
+
+    float brightnessRandom =
+        hash13(p + 271.3);
+    
+    float brightness =
+        pow(
+            brightnessRandom,
+            5.0
+        );
+
+    brightness =
+        lerp(
+            0.02,
+            1.0,
+            brightness
+        );
+    
+
+    float sizeRandom = hash13(p + 531.7); 
+
+    float size =
+        lerp(
+            0.003,
+            0.01,
+            pow(sizeRandom, 6.0)
+        );
+
+    
+    float d =
+        length(
+            cross(dir, starDir)
+        );
+
+    float star =
+        1.0 -
+        smoothstep(
+            0.0,
+            size,
+            d
+        );
+
+
+    return star * brightness;
+}
+
+
+
+float Stars(float3 dir)
+{
+    float result = 0.0;
+    
+    
+    int sampleCount =
+        (int)(cs_star_frequency);
+
+
+    sampleCount =
+        clamp(sampleCount, 0, 4096);
+
+    for (int i = 0; i < sampleCount; i++)
+    {
+        result += Star(
+            dir,
+            (float)i
+        );
+    }
+
+    return result;
+}
+
+
+[numthreads(16, 16, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    if ((int)id.x >= cs_texture_size ||
+        (int)id.y >= cs_texture_size)
+        return;
+
+    float2 uv =
+        (float2(id.xy) + 0.5) /
+        (float)cs_texture_size;
+
+    float3 dir =
+        OctUVToDirection(uv);
+
+    cs_result[id.xy] =
+        Stars(dir);
+}

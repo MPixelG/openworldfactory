@@ -8,8 +8,10 @@ namespace _Project.World.Atmosphere.Shader
     public class AtmosphereSettings : ScriptableObject
     {
         public bool enabled = true;
+        public bool starsEnabled = true;
 
         public ComputeShader opticalDepthCompute;
+        public ComputeShader starMapCompute;
 
         [Min(1)]
         public int opticalDepthTextureSize = 256;
@@ -28,13 +30,25 @@ namespace _Project.World.Atmosphere.Shader
         [Range(0, 1)]
         public float atmosphereScale = 0.5f;
         
+        [Header("Stars"), Min(1)]
+        public int starMapTextureSize = 256;
+        
+        [Min(0.001f)]
+        public float starFrequency = 0.02f;
+        
 
         public RenderTexture _opticalDepthTexture;
-        public RTHandle _opticalDepthHandle;
-        public bool _opticalDepthDirty = true;
+        private RTHandle _opticalDepthHandle;
+        private bool _opticalDepthDirty = true; 
+        
+        public RenderTexture _starMapTexture;
+        private RTHandle _starMapHandle;
+        private bool _starMapDirty = true;
 
         private static readonly int BakedOpticalDepth =
             UnityEngine.Shader.PropertyToID("_BakedOpticalDepth");
+        private static readonly int BakedStarMap =
+            UnityEngine.Shader.PropertyToID("_BakedStarMap");
 
         private static readonly int AtmosphereDirToSun = UnityEngine.Shader.PropertyToID("dir_to_sun");
         private static readonly int AtmosphereBlueNoise = UnityEngine.Shader.PropertyToID("_BlueNoise");
@@ -113,6 +127,11 @@ namespace _Project.World.Atmosphere.Shader
             _opticalDepthDirty ||
             _opticalDepthTexture == null ||
             !_opticalDepthTexture.IsCreated();
+        
+        public bool NeedsStarMapPrecompute =>
+            _starMapDirty ||
+            _starMapTexture == null ||
+            !_starMapTexture.IsCreated();
 
         
         private RenderTexture GetOrCreateOpticalDepthTexture()
@@ -146,22 +165,64 @@ namespace _Project.World.Atmosphere.Shader
 
             return _opticalDepthTexture;
         }
+        
+        private RenderTexture GetOrCreateStarMapTexture()
+        {
+            if (_starMapTexture != null &&
+                _starMapTexture.IsCreated() &&
+                _starMapTexture.width == opticalDepthTextureSize &&
+                _starMapTexture.height == opticalDepthTextureSize)
+            {
+                return _starMapTexture;
+            }
 
+            ReleaseStarMapTexture();
+
+            _starMapTexture = new RenderTexture(
+                starMapTextureSize,
+                starMapTextureSize,
+                0,
+                RenderTextureFormat.R8,
+                RenderTextureReadWrite.Linear
+            )
+            { 
+                name = $"{name}_BakedOpticalDepth",
+                enableRandomWrite = true,
+                filterMode = FilterMode.Bilinear,
+                wrapMode = TextureWrapMode.Clamp
+            };
+
+            _starMapTexture.Create();
+
+            MarkStarMapDirty();
+
+            return _starMapTexture;
+        }
+        
         public RTHandle GetOpticalDepthHandle()
         {
-            // Re-allocate handle if null or if texture was resized
             if (_opticalDepthHandle != null && _opticalDepthHandle.rt.width == opticalDepthTextureSize &&
                 _opticalDepthHandle.rt.height == opticalDepthTextureSize) return _opticalDepthHandle;
             
             
             _opticalDepthHandle?.Release();
 
-            // Ensure explicit fixed size allocation
             _opticalDepthHandle = RTHandles.Alloc(GetOrCreateOpticalDepthTexture());
 
             return _opticalDepthHandle;
         }
-        
+
+        public RTHandle GetStarMapHandle()
+        {
+            if (_starMapHandle != null && _starMapHandle.rt.width == starMapTextureSize &&
+                _starMapHandle.rt.height == starMapTextureSize) return _starMapHandle;
+            
+            _starMapHandle?.Release();
+
+            _starMapHandle = RTHandles.Alloc(GetOrCreateStarMapTexture());
+            
+            return _starMapHandle;
+        }
         
         public void MarkOpticalDepthDirty()
         {
@@ -172,6 +233,17 @@ namespace _Project.World.Atmosphere.Shader
         public void MarkOpticalDepthClean()
         {
             _opticalDepthDirty = false;
+        }
+        
+        public void MarkStarMapDirty()
+        {
+            _starMapDirty = true;
+        }
+
+
+        public void MarkStarMapClean()
+        {
+            _starMapDirty = false;
         }
 
 
@@ -185,12 +257,24 @@ namespace _Project.World.Atmosphere.Shader
                 _opticalDepthTexture
             );
         }
+        
+        public void SetStarMapTexture(Material material)
+        {
+            if (material == null)
+                return;
+
+            material.SetTexture(
+                BakedStarMap,
+                _starMapTexture
+            );
+        }
 
 
         private void OnValidate()
         {
             opticalDepthTextureSize = Max(1, opticalDepthTextureSize);
             MarkOpticalDepthDirty();
+            MarkStarMapDirty();
         }
 
 
@@ -221,6 +305,23 @@ namespace _Project.World.Atmosphere.Shader
 
             DestroyImmediate(_opticalDepthTexture);
             _opticalDepthTexture = null;
+        }
+        
+        private void ReleaseStarMapTexture()
+        {
+            if (_starMapHandle != null)
+            {
+                _starMapHandle.Release();
+                _starMapHandle = null;
+            }
+
+            if (_starMapTexture == null) return;
+            
+            if (_starMapTexture.IsCreated())
+                _starMapTexture.Release();
+
+            DestroyImmediate(_starMapTexture);
+            _starMapTexture = null;
         }
     }
 }

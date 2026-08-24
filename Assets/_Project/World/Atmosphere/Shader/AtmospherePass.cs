@@ -1,3 +1,5 @@
+using System;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.RenderGraphModule;
@@ -25,7 +27,16 @@ namespace _Project.World.Atmosphere.Shader
         private static readonly int CD_Result =
             UnityEngine.Shader.PropertyToID("c_result");
         
+        private static readonly int CS_TextureSize =
+            UnityEngine.Shader.PropertyToID("cs_texture_size");
         
+
+        private static readonly int CS_StarFrequency =
+            UnityEngine.Shader.PropertyToID("cs_star_frequency");
+        
+
+        private static readonly int CS_Result =
+            UnityEngine.Shader.PropertyToID("cs_result");
 
 
         private class OpticalDepthComputePassData
@@ -36,6 +47,18 @@ namespace _Project.World.Atmosphere.Shader
             public int TextureSize;
             public float AtmosphereRadius;
             public float DensityFalloff;
+            
+
+            public TextureHandle Result;
+        }
+        
+        private class StarMapComputePassData
+        {
+            public ComputeShader Compute;
+            public int Kernel;
+
+            public int TextureSize;
+            public float starFrequency;
             
 
             public TextureHandle Result;
@@ -57,7 +80,7 @@ namespace _Project.World.Atmosphere.Shader
         {
             if (_material == null ||
                 _settings == null ||
-                _settings.opticalDepthCompute == null )
+                _settings.opticalDepthCompute == null || _settings.starMapCompute == null)
             {
                 Debug.Log("ERROR IN RECORDING RENDER GRAPH FOR THE ATMOSPHERE: OpticalDepth");
                 return;
@@ -107,8 +130,24 @@ namespace _Project.World.Atmosphere.Shader
                 _settings.MarkOpticalDepthClean(); 
             }
             
+            TextureHandle starMapHandle =
+                renderGraph.ImportTexture(
+                    _settings.GetStarMapHandle()
+                );
+            
+
+            if (_settings.NeedsStarMapPrecompute)
+            {
+                AddStarMapComputePass(
+                    renderGraph,
+                    starMapHandle
+                );
+
+                _settings.MarkStarMapClean(); 
+            }
 
             _settings.SetOpticalDepthTexture(_material);
+            _settings.SetStarMapTexture(_material);
 
             
             TextureHandle source =
@@ -132,7 +171,8 @@ namespace _Project.World.Atmosphere.Shader
                 renderGraph,
                 source,
                 destination,
-                opticalDepthHandle
+                opticalDepthHandle,
+                starMapHandle
             );
 
 
@@ -212,14 +252,90 @@ namespace _Project.World.Atmosphere.Shader
                         CD_Result,
                         data.Result
                     );
-
-                    int threadGroupsX = Mathf.CeilToInt(data.TextureSize / 8f);
-                    int threadGroupsY = Mathf.CeilToInt(data.TextureSize / 8f);
+                    int threadGroupCount = (int) math.ceil(CD_TextureSize / 8f);
 
                     cmd.DispatchCompute(
                         data.Compute,
                         data.Kernel,
-                        threadGroupsX, threadGroupsY, 1
+                        threadGroupCount, threadGroupCount, 1
+                    );
+                }
+            );
+        }
+        
+        private void AddStarMapComputePass(
+            RenderGraph renderGraph,
+            TextureHandle starMap)
+        {
+            int kernel =
+                _settings.starMapCompute.FindKernel("CSMain");
+
+
+            using var builder =
+                renderGraph.AddComputePass<StarMapComputePassData>(
+                    "Atmosphere Star Map",
+                    out var passData
+                );
+
+
+            passData.Compute =
+                _settings.starMapCompute;
+
+            passData.Kernel = kernel;
+
+            passData.TextureSize =
+                _settings.starMapTextureSize;
+
+            passData.starFrequency =
+                _settings.starFrequency;
+
+            passData.Result =
+                starMap;
+
+
+            builder.UseTexture(
+                starMap,
+                AccessFlags.Write
+            );
+
+
+            builder.SetRenderFunc(
+                static (
+                    StarMapComputePassData data,
+                    ComputeGraphContext context
+                ) =>
+                {
+                    ComputeCommandBuffer cmd = context.cmd;
+
+
+                    cmd.SetComputeIntParam(
+                        data.Compute,
+                        CS_TextureSize,
+                        data.TextureSize
+                    );
+
+                    cmd.SetComputeFloatParam(
+                        data.Compute,
+                        CS_StarFrequency,
+                        data.starFrequency
+                    );
+
+                    cmd.SetComputeTextureParam(
+                        data.Compute,
+                        data.Kernel,
+                        CS_Result,
+                        data.Result
+                    );
+
+                    int threadGroupCount = (int) math.ceil(data.TextureSize / 8f);
+                    
+                    
+                    
+                    
+                    cmd.DispatchCompute(
+                        data.Compute,
+                        data.Kernel,
+                        threadGroupCount, threadGroupCount, 1
                     );
                 }
             );
@@ -230,7 +346,8 @@ namespace _Project.World.Atmosphere.Shader
             RenderGraph renderGraph,
             TextureHandle source,
             TextureHandle destination,
-            TextureHandle opticalDepth
+            TextureHandle opticalDepth,
+            TextureHandle starMap
             )
         {
             using var builder =
@@ -252,6 +369,11 @@ namespace _Project.World.Atmosphere.Shader
             builder.UseTexture(
                 opticalDepth
             );
+            
+            /*
+            builder.UseTexture(
+                starMap
+            );*/
 
 
             builder.SetRenderAttachment(
@@ -282,6 +404,7 @@ namespace _Project.World.Atmosphere.Shader
         {
             public TextureHandle source;
             public TextureHandle opticalDepth;
+            //public TextureHandle starMap;
             public Material material;
         }
     }

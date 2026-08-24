@@ -42,6 +42,11 @@ float Blend(float startHeight, float blendDst, float height) {
 	 return smoothstep(startHeight - blendDst / 2, startHeight + blendDst / 2, height);
 }
 
+float2 SignNotZero(float2 v)
+{
+	return float2((v.x >= 0.0) ? 1.0 : -1.0, (v.y >= 0.0) ? 1.0 : -1.0);
+}
+
 
 // Returns vector (dstToSphere, dstThroughSphere)
 // If ray origin is inside sphere, dstToSphere = 0

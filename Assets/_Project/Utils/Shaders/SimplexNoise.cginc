@@ -114,21 +114,20 @@ float simplex_noise(float3 v)
     return 42.0 * dot(m, px);
 }
 
+static const int NUM_OCTAVES = 8;
+
 //Simplex noise with octaves
-float simplex_noise_octaves(float3 inCoord, float scale, float3 speed, uint octaveNumber, float octaveScale, float octaveAttenuation, float time) {
+float simplex_noise_octaves(float3 pos, float persistence, float lacunarity) {
 
 	float output = 0.0f;
 	float weight = 1.0f;
 
-	for (uint i = 0; i < octaveNumber; i++)
-	{
-		float3 coord = inCoord * scale + time * speed;
-
-		output += simplex_noise(coord) * weight;
-
-		scale *= octaveScale;
-		weight *= 1.0f - octaveAttenuation;
-	}
+    
+    for (int i = 0; i < NUM_OCTAVES; i++) {
+        output += weight * simplex_noise(pos);
+        pos *= lacunarity;
+        weight *= persistence;
+    }
 
 	return output;
 }
@@ -210,23 +209,4 @@ float4 simplex_noise_gradient(float3 v)
         -6.0 * m3.w * x3 * dot(x3, g3) + m4.w * g3;
     float4 px = float4(dot(x0, g0), dot(x1, g1), dot(x2, g2), dot(x3, g3));
     return 42.0 * float4(grad, dot(m4, px));
-}
-
-//Simplex noise gradient with octaves
-float4 simplex_noise_gradient_octaves(float3 inCoord, float scale, float3 speed, uint octaveNumber, float octaveScale, float octaveAttenuation, float time) {
-
-	float4 output = 0.0f;
-	float weight = 1.0f;
-
-	for (uint i = 0; i < octaveNumber; i++)
-	{
-		float3 coord = inCoord * scale + time * speed;
-
-		output += simplex_noise_gradient(coord) * weight;
-
-		scale *= octaveScale;
-		weight *= 1.0f - octaveAttenuation;
-	}
-
-	return output;
 }
