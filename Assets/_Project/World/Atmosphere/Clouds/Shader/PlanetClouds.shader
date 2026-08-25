@@ -1,9 +1,11 @@
 Shader "Planet/VolumetricClouds"
+
 {
     Properties
     {
         _RInner ("Deck Bottom Radius", Float) = 165
         _ROuter ("Deck Top Radius",    Float) = 182
+        _PlanetCenter("Center of Planet", Vector) = (0,0,0,0)
     }
 
     SubShader
@@ -33,7 +35,10 @@ Shader "Planet/VolumetricClouds"
             CBUFFER_START(UnityPerMaterial) //batching order, future properties need to be added here later todo
                 float _RInner;
                 float _ROuter;
+                float4 _PlanetCenter;
             CBUFFER_END
+            
+            #include "PlanetCloudsCommon.hlsl"
 
             struct attributes
             {
@@ -56,8 +61,14 @@ Shader "Planet/VolumetricClouds"
 
             half4 Frag(varyings IN) : SV_Target
             {
-                // rgb = light we add, a = fraction of the background we keep
-                return half4(0.0, 0.0, 0.0, 0.5);
+            float3 ro = _WorldSpaceCameraPos - _PlanetCenter.xyz;
+            float3 rd = normalize(IN.positionWS - _WorldSpaceCameraPos);
+            float2 seg = RayShell(ro, rd, _RInner, _ROuter);
+            if (seg.y <= seg.x) discard;
+
+            // debug: how far does this ray travel through the deck?
+            float len = (seg.y - seg.x) / (_ROuter - _RInner);
+            return half4(len.xxx * 0.25, 0.0);
             }
             ENDHLSL
         }

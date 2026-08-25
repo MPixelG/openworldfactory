@@ -6,6 +6,7 @@
 // If tExit <= tEnter there is no segment: skip the pixel because it is not visible
 float2 RayShell(float3 ro, float3 rd, float rInner, float rOuter)
 {
+    //dot product of two values
     float b      = dot(ro, rd);
     float rr     = dot(ro, ro);
 
